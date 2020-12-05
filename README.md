@@ -12,8 +12,22 @@ We are having discussion on it and would love your input for the same at https:/
 
 But the tech stack will mainly involve:
 
-- React/Angular
-- MongoDB Atlas
-- NodeJS
+ <img src="https://img.shields.io/badge/-Angular-%23cc0000?style=flat&logo=Angular">
+ <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB">
+ <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">
+ <img src="https://img.shields.io/badge/-expressJS-yellowgreen">
+
+## Frontend
+
+Following are the steps to run the frontend of the community-website.
+
+1. Navigate to `community-website` folder using `cd community-website`
+2. Run `ng serve`
+
+## Backend
+
+All the backend code will go in the `backend` folder.
+
+1. Navigate to `backend` folder using `cd backend`
 
 For more information about the work that we do do checkout https://github.com/HITK-TECH-Community/HITK_Tech_Community

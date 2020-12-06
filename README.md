@@ -12,7 +12,7 @@ We are having discussion on it and would love your input for the same at https:/
 
 But the tech stack will mainly involve:
 
- <img src="https://img.shields.io/badge/-React%20JS-%2361DBFB"> <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  <img src="https://img.shields.io/badge/-expressJS-yellowgreen">
+ <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20"> <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  <img src="https://img.shields.io/badge/-expressJS-yellowgreen">
 
 ## Frontend
 

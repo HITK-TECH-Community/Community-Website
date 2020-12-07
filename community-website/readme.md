@@ -1,1 +1,0 @@
-All frontend code will go in this folder.

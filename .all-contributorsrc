@@ -18,6 +18,15 @@
         "ideas",
         "maintenance"
       ]
+    },
+    {
+      "login": "codewithvk",
+      "name": "Vivek Javiya",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/61119120?v=4",
+      "profile": "https://github.com/codewithvk",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

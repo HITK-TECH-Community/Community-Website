@@ -1,6 +1,15 @@
-All backend code wil go here.
+Steps to run the server.
 
-This server is created using node v14+
-Consider upgrading your node to the lts version (14.15.1) at least if the import statement does not work.
-After downloading or cloning, type npm install inside the backend folder in the terminal to install all the packages used.
-Then type npm run start to start the node server, or type npm run devstart to start the server using nodemon.
+1. Navigate to the backend folder by typing in the terminal
+
+   cd backend
+
+2. Then install all the dependencies listed in the package.json file using the command
+
+   npm install
+
+3. Then start the server with this command
+
+   npm run start
+
+4. Navigate to localhost:5000 to find the home page and localhost:5000/resources for the resources page.

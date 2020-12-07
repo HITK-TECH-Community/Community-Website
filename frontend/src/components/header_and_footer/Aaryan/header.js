@@ -52,16 +52,16 @@ class Header extends Component{
                                     </NavLink>
                                 </NavItem>
                             </Nav>
-                            <Nav className="ml-auto" navbar>
+                            <Nav className="ml-auto mt-auto" navbar>
                                 <NavItem>
-                                <NavLink className="btn btn-outline-info" to="/login">
+                                <NavLink className="btn" to="/login">
                                     <span className="fa fa-sign-in fa-lg"></span> Login
                                 </NavLink>
                                 </NavItem>
 
                                 <NavItem>
                                 <NavLink
-                                    className="btn btn-outline-info ml-1"
+                                    className="btn"
                                     to="/register"
                                 >
                                     <span className="fa fa-sign-in fa-lg"></span>Register

@@ -1,0 +1,29 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Kajol-Kumari",
+      "name": "kajol",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/44888949?v=4",
+      "profile": "https://www.linkedin.com/in/kajol-kumari-73245b166/",
+      "contributions": [
+        "code",
+        "eventOrganizing",
+        "doc",
+        "content",
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Community-Website",
+  "projectOwner": "HITK-TECH-Community",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

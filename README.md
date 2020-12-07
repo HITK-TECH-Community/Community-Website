@@ -1,6 +1,6 @@
 # Community-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-) ![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website) ![PullRequests](https://img.shields.io/github/issues-pr/HITK-TECH-Community/Community-Website)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>

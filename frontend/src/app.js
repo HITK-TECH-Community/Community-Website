@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-import './App.css';
+import './app.css';
 import Footer from './components/footer';
 import Header from './components/header';
 

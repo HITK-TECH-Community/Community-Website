@@ -14,4 +14,4 @@ const error = (req,res)=>{
     res.status(404).send('<p>404 Page Not Found</p>');
 }
 
-export default {home , resource_index , error};
+module.exports = {home , resource_index,error};

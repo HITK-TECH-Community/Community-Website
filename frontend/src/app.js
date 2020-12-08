@@ -1,12 +1,17 @@
 import './app.css';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from  './components/header_and_footer/Aaryan/footer';
+
+import Header from './components/header_and_footer/Aaryan/header'
+import {BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-     <Header />
-     <Footer />
+      <BrowserRouter>
+          <Header />
+          <Footer />
+      </BrowserRouter>
+     
     </div>
   );
 }

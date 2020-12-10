@@ -1,6 +1,6 @@
 # Community-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>
@@ -46,7 +46,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/sreechand2002"><img src="https://avatars1.githubusercontent.com/u/54146135?v=4" width="100px;" alt=""/><br /><sub><b>SREECHAND</b></sub></a><br /><a href="#design-sreechand2002" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/NewCoderBoi"><img src="https://avatars1.githubusercontent.com/u/59294265?v=4" width="100px;" alt=""/><br /><sub><b>Debatra Chatterjee</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=NewCoderBoi" title="Code">💻</a></td>
     <td align="center"><a href="https://aaryan8751.github.io/"><img src="https://avatars3.githubusercontent.com/u/60098288?v=4" width="100px;" alt=""/><br /><sub><b>Aaryan Sharma</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Aaryan8751" title="Code">💻</a></td>
-  <td align="center"><a href="https://github.com/Sapphire-Skies"><img src="https://avatars0.githubusercontent.com/u/55662582?v=4" width="100px;" alt=""/><br /><sub><b>Aditi Moulik</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Sapphire-Skies" title="Design Code">🎨&nbsp;💻</a></td>
+    <td align="center"><a href="https://github.com/headphone-rachit"><img src="https://avatars0.githubusercontent.com/u/65488082?v=4" width="100px;" alt=""/><br /><sub><b>headphone-rachit</b></sub></a><br /><a href="#design-headphone-rachit" title="Design">🎨</a></td>
+
   </tr>
 </table>
 

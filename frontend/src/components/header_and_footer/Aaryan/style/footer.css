@@ -13,11 +13,12 @@
 
 #footer{
     
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: #6868cb;
-    padding: 3% ;
+    padding: 3% 0%;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     

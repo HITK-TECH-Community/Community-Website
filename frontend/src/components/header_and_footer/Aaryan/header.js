@@ -83,7 +83,7 @@ class Header extends Component{
                         <p> We are a group of HITK students trying to fill the knowledge gap and help you find your place of discovery by sharing you the opportunities and resources at the right time!⏱️</p>
                     </div>
                     <div className="col-12 col-sm-6">
-                    <img src="" alt="LOGO in correct size" />
+                    <img src="/HITK_tech_comm_logo.png" height="250px" width="250px" alt="LOGO in correct size" />
                          
                     </div>
                  </div>

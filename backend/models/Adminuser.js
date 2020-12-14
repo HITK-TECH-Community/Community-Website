@@ -10,7 +10,7 @@ var AdminUser = new Schema({
     },
     admin: {
         type: Boolean,
-        default: true
+        default: false
     }
 });
 AdminUser.plugin(passportLocalMongoose);

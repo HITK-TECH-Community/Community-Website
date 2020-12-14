@@ -32,6 +32,9 @@ router.post('/signup', cors.corsWithOptions, (req, res, next) => {
         res.json({ err: err });
       }
       else {
+        if(req.body.admin){
+          user.admin = req.body.admin
+        }
         if(req.body.email){
           user.email = req.body.email
         }
@@ -79,8 +82,15 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
   })(req, res, next);
 });
 
-
-
+router.put('/changeusertoadmin',cors.corsWithOptions,authenticate.verifyUser,authenticate.verifyAdmin,(req, res, next) => {
+  User.findOneAndUpdate({username:req.body.username},{$set:{admin:"true"}},{new:true})
+    .then((user)=>{
+      res.statusCode=200;
+      res.setHeader('Content-Type','application/json')
+      res.json(user);
+      },(err)=>next(err))
+        .catch((err)=>next(err))
+})
 
 router.get('/checkJWTtoken', cors.corsWithOptions, (req, res) => {
   passport.authenticate('jwt', { session: false }, (err, user, info) => {

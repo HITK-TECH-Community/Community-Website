@@ -61,6 +61,8 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
     if (err)
       return next(err);
 
+    
+    
     if (!user) {
       res.statusCode = 401;
       res.setHeader('Content-Type', 'application/json');
@@ -75,6 +77,11 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
 
       var token = authenticate.getToken({ _id: req.user._id });
       var admin = req.user.admin;
+      if (req.user.admin===false){
+          var err = new Error('You are not authorized to perform this operation!');
+          err.status = 403;
+          return next(err);
+      }
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json({ success: true, status: 'Login Successful!', token: token, admin: admin });
@@ -82,7 +89,7 @@ router.post('/login', cors.corsWithOptions, (req, res, next) => {
   })(req, res, next);
 });
 
-router.put('/changeusertoadmin',cors.corsWithOptions,authenticate.verifyUser,authenticate.verifyAdmin,(req, res, next) => {
+router.put('/change_user_permission',cors.corsWithOptions,authenticate.verifyUser,authenticate.verifyAdmin,(req, res, next) => {
   User.findOneAndUpdate({username:req.body.username},{$set:{admin:"true"}},{new:true})
     .then((user)=>{
       res.statusCode=200;

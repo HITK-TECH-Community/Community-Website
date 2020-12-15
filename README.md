@@ -18,16 +18,16 @@ We are having discussion on it and would love your input for the same at https:/
 
 But the tech stack will mainly involve:
 
- <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20"> <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  <img src="https://img.shields.io/badge/-expressJS-yellowgreen">
+ <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  
 
-## Frontend
+## Frontend ⚛️
 
 Following are the steps to run the frontend of the community-website.
 
 1. Navigate to `community-website` folder using `cd community-website`
 All frontend code will go here.
 
-## Backend
+## Backend 💻
 
 All the backend code will go in the `backend` folder.
 
@@ -35,9 +35,9 @@ All the backend code will go in the `backend` folder.
 Al backend code will go here.
 
 For more information about the work that we do do checkout https://github.com/HITK-TECH-Community/HITK_Tech_Community
-## Contributors ✨
+## Contributors 🌟
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people ✨✨:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->

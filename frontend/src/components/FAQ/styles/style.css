@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+/* General
+-----------------------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+/* 
+-----------------------------------------------------------------------------*/
+body {
+  font-family: "Kumbh Sans", sans-serif, sans-serif;
+  font-size: 12px;
+  min-height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#af67e9),
+    to(#6565e7)
+  );
+  background: linear-gradient(top, #af67e9, #6565e7);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* Images
+---------------------------------------------------------------------------- */
+.container-images {
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-top: 1.7em;
+  position: absolute;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container-images {
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: -60px;
+    left: -230px;
+    height: 100%;
+    width: 60%;
+    -webkit-clip-path: inset(145px 0 0 398px);
+    clip-path: inset(145px 0 0 398px);
+    z-index: 10;
+  }
+}
+
+.img_woman {
+  padding-right: 30px;
+  top: 50px;
+}
+
+@media only screen and (min-width: 1199px) {
+  .img_woman {
+    display: none;
+  }
+}
+
+.img_woman_desktop {
+  margin-top: 150px;
+  margin-left: 330px;
+  z-index: 70;
+}
+
+@media only screen and (max-width: 1200px) {
+  .img_woman_desktop {
+    display: none;
+  }
+}
+
+.img_box_desktop {
+  position: absolute;
+  left: 75px;
+  top: 245px;
+  z-index: 1500;
+}
+
+@media only screen and (max-width: 1200px) {
+  .img_box_desktop {
+    display: none;
+  }
+}
+
+/* Accordions
+---------------------------------------------------------------------*/
+.card {
+  margin: 12em auto 7em auto;
+  background-color: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 90%;
+  height: 510px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .card {
+    width: 75%;
+    margin-top: 7em;
+    height: 480px;
+  }
+}
+
+.container-accordion {
+  margin: 0 auto;
+  padding: 0.5em;
+  width: 85%;
+}
+
+@media screen and (min-width: 1200px) {
+  .container-accordion {
+    width: 40%;
+    margin-right: 8em;
+    padding: 0;
+  }
+}
+
+h1 {
+  color: #1d1e35;
+  font-weight: 700;
+  font-size: 2em;
+  padding-top: 4em;
+  padding-bottom: 1.3em;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  h1 {
+    text-align: left;
+  }
+}
+
+.accordion {
+  padding: 0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 0.3em;
+  color: #4a4b5e;
+  cursor: pointer;
+  line-height: 1.5;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 0.2em solid #e7e7e9;
+}
+
+.active {
+  color: #1d1e35;
+  font-weight: bolder;
+  border-style: none;
+}
+
+.active .img-icon {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.accordion:hover {
+  color: #f47c57;
+}
+
+.img-icon {
+  height: 8px;
+  margin-top: 0.2em;
+}
+
+.panel {
+  padding: 0.5em;
+  padding-top: 0.5em;
+  padding-right: 3em;
+  padding-bottom: 1em;
+  border-bottom: 0.2em solid #e7e7e9;
+}
+
+.panel p {
+  color: #787887;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+div.panel {
+  display: none;
+}
+
+div.panel.show {
+  display: block !important;
+}
+
+/*
+-------------------------------------------------------------------------------*/
+.attribution {
+  text-align: center;
+  color: #7fc9eb;
+  margin-top: 10px;
+}
+
+a {
+  color: #7feba1;
+}
+
+.attribution p {
+  margin: 10px;
+}
+/*# sourceMappingURL=style.css.map */

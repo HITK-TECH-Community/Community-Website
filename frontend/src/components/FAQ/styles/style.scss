@@ -1,0 +1,226 @@
+// Colors
+$verydark_desaturated_blue: hsl(238, 29%, 16%);
+$softred: hsl(14, 88%, 65%);
+
+// Background gradient
+$soft_violet: hsl(273, 75%, 66%);
+$soft_blue: hsl(240, 73%, 65%);
+
+// Text
+$verydark_grayish_blue: hsl(237, 12%, 33%);
+$dark_grayish_blue: hsl(240, 6%, 50%);
+
+// Dividers
+$light_grayish_blue: hsl(240, 5%, 91%);
+
+// Typography 
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+$kumbh_sans: 'Kumbh Sans', sans-serif;
+
+// Gradient
+$colors_body: $soft_violet, $soft_blue;
+
+@mixin gradient($direction, $colors_body) {
+    background: linear-gradient($direction, $colors_body);
+}
+
+// Transform
+@mixin transform($property) {
+    transform: $property;
+}
+
+
+/* General
+-----------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+/* 
+-----------------------------------------------------------------------------*/
+body {
+    font-family: $kumbh_sans, sans-serif;
+    font-size: 12px;
+    min-height: 100%;
+    @include gradient(top, $colors_body);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+/* Images
+---------------------------------------------------------------------------- */
+.container-images {
+    background-image: url(../images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 1.7em;
+    position: absolute;
+
+    @media only screen and (min-width: 1200px) {
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        top: -60px;
+        left: -230px;
+        height: 100%;
+        width: 60%;
+        clip-path: inset(145px 0 0 398px);
+        z-index: 10;
+    }
+}
+
+.img_woman{
+    padding-right: 30px;
+    top: 50px;
+
+    @media only screen and (min-width: 1199px) {
+        display: none;
+    }
+}
+
+.img_woman_desktop {
+    margin-top: 150px;
+    margin-left: 330px;
+    z-index: 70;
+
+    @media only screen and (max-width: 1200px) {
+    display: none;
+    }
+}
+
+.img_box_desktop {
+    position: absolute;
+    left: 75px;
+    top: 245px;
+    z-index: 1500;
+
+    @media only screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+
+/* Accordions
+---------------------------------------------------------------------*/
+.card {
+    margin: 12em auto 7em auto;
+    background-color: white; 
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 90%;
+    height: 510px;
+    
+
+    @media only screen and (min-width: 1200px) {
+        width: 75%;
+        margin-top: 7em;
+        height: 480px;
+    }
+}
+
+.container-accordion {
+    margin: 0 auto;
+    padding: 0.5em;
+    width: 85%;
+
+    @media screen and (min-width: 1200px) {
+        width: 40%;
+        margin-right: 8em;
+        padding: 0;
+    }
+}
+
+h1 {
+    color: $verydark_desaturated_blue;
+    font-weight: 700;
+    font-size: 2em;
+    padding-top: 4em;
+    padding-bottom: 1.3em;
+    text-align: center;
+
+    @media only screen and (min-width: 1200px) {
+        text-align: left;
+    }
+}
+
+.accordion {
+    padding: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 0.3em;
+    color: $verydark_grayish_blue;
+    cursor: pointer;
+    line-height: 1.5;
+    transition: 0.4s;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 0.2em solid $light_grayish_blue;
+}
+
+.active {
+    color: $verydark_desaturated_blue;
+    font-weight: bolder;
+    border-style: none;
+}
+
+.active .img-icon {
+    @include transform(rotate(180deg));
+}
+
+.accordion:hover {
+    color: $softred;
+}
+
+.img-icon {
+    height: 8px;
+    margin-top: 0.2em;
+}
+
+.panel {
+    padding: 0.5em;
+    padding-top: 0.5em;
+    padding-right: 3em;
+    padding-bottom: 1em;
+    border-bottom: 0.2em solid $light_grayish_blue;  
+}
+
+.panel p {
+    color: $dark_grayish_blue;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+div.panel {
+    display: none;
+}
+
+div.panel.show {
+    display: block !important;
+}
+
+
+/*
+-------------------------------------------------------------------------------*/
+.attribution {
+    text-align: center;
+    color: #7FC9EB;
+    margin-top: 10px;
+}
+
+a {
+    color: #7FEBA1;
+}
+
+.attribution p {
+    margin: 10px;
+}

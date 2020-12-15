@@ -14,4 +14,3 @@ Fixes #
 
 closes #issue_num
 
-Fixes #

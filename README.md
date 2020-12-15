@@ -1,7 +1,10 @@
 # Community-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
+[![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
+[![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
+[![license](https://img.shields.io/github/license/HITK-TECH-Community/Community-Website)](#license)
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>
 <p align="center" width="400px"> <font size="5"> <b> HITK Tech Community 👩🏻‍💻👨🏻‍💻 </b></font></p> <br />

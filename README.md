@@ -5,6 +5,7 @@
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
 [![license](https://img.shields.io/github/license/HITK-TECH-Community/Community-Website)](#license)
+[![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>
 <p align="center" width="400px"> <font size="5"> <b> HITK Tech Community 👩🏻‍💻👨🏻‍💻 </b></font></p> <br />
@@ -13,10 +14,7 @@ We are a group of HITK students trying to fill the knowledge gap and help you fi
 
 This project aims to build the official site for the community page so that any student can use the resources shared by us.
 
-## Tech Stack
-We are having discussion on it and would love your input for the same at https://github.com/HITK-TECH-Community/Community-Website/issues/1
-
-But the tech stack will mainly involve:
+## Tech Stack 🗃
 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  
 
@@ -25,16 +23,27 @@ But the tech stack will mainly involve:
 Following are the steps to run the frontend of the community-website.
 
 1. Navigate to `community-website` folder using `cd community-website`
-All frontend code will go here.
+2. Run `npm install`. It will install all the required packages and dependencies.
+3. Run `npm start` to run the server.
+4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Backend 💻
 
 All the backend code will go in the `backend` folder.
 
 1. Navigate to `backend` folder using `cd backend`
-Al backend code will go here.
+2. Run `npm install`. It will install all the required packages and dependencies.
+3. Run `npm start` to run the server.
+4. Navigate to [http://localhost:5000](http://localhost:5000) to see the backend server runing in the browser.
 
-For more information about the work that we do do checkout https://github.com/HITK-TECH-Community/HITK_Tech_Community
+## Related Repositories 📂
+
+- [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community): The repository containing all the broadcasts done by HITK-TECH-Community
+
+## Community 👥
+
+[![Slack](https://img.shields.io/badge/chat-on_slack-purple.svg?style=for-the-badge&logo=slack)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
+
 ## Contributors 🌟
 
 Thanks goes to these wonderful people ✨✨:

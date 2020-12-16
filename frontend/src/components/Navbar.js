@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import Button from './Button';
+import Button from './button';
 import { Link } from 'react-router-dom';
-import './styles/Navbar.css';
-import Dropdown from './Dropdown';
+import './styles/navbar.css';
+import Dropdown from './dropdown';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -95,11 +95,11 @@ const Navbar = () => {
               className='nav-links-mobile'
               onClick={closeMobileMenu}
             >
-              Admin<span>?</span>
+              admin<span>?</span>
             </Link>
           </li>
         </ul>
-        <Button text='Admin' path='/admin' />
+        <Button text='admin' path='/admin' />
       </nav>
     </Fragment>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import './styles/Button.css';
+import './styles/button.css';
 
 const Button = (props) => {
   const { text, path } = props;

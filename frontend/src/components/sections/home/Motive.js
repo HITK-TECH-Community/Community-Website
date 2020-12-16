@@ -1,7 +1,7 @@
 import React from 'react';
 import MotiveLogo from '../../images/motive.png';
 
-import './styles/Motive.css';
+import './styles/motive.css';
 
 const Motive = () => {
   return (

@@ -34,3 +34,24 @@ Please attach the screenshots of the changes made in case of change in user inte
 ## Other information
 
 Any other information that is important to this pull request
+
+## close issue
+#issue_num
+
+## Questions:
+
+## Current Behavior
+
+:question:
+
+## Expected Behavior
+
+:question:
+
+
+## Reviewers:
+- [ ] @Dev 1
+- [ ] @Dev 2
+
+/label ~Feature 
+

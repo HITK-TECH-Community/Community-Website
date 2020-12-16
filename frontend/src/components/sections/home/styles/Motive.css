@@ -1,0 +1,70 @@
+.motive {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+
+.motive > div {
+  padding-left: 2rem;
+}
+
+.motive .dash {
+  width: 90px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.motive img {
+  width: 270px;
+}
+
+.fa-crosshairs {
+  font-size: 3.4rem;
+  color: #e00551;
+  color: #0a183d;
+}
+
+.motive h1 {
+  font-size: 3.2rem;
+  color: #0a183d;
+}
+
+.motive ul {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  opacity: 0.6;
+  padding-left: 1.5rem;
+}
+
+@media screen and (max-width: 823px) {
+  .motive {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8rem 0;
+    width: 100%;
+  }
+
+  .motive > div {
+    padding-left: 0;
+  }
+
+  .motive h1 {
+    font-size: 2.8rem;
+  }
+
+  .motive ul {
+    font-size: 1.3rem;
+  }
+
+  .motive img {
+    width: 150px;
+  }
+}

@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './app';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap-social/bootstrap-social.css';
-import reportWebVitals from './reportWebVitals';
+import './fonts/FuturaLT-Book.ttf';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import './index.css';
+// Creating css conflicts while using element tag such as 'nav'
+// as these classes are available to the entire app
+// Kindly import it to the required component only
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap-social/bootstrap-social.css';
 
-reportWebVitals();
+ReactDOM.render(<App />, document.getElementById('root'));

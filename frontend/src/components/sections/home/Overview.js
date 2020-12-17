@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../images/logo.png';
 
-import './styles/overview.css';
+import './styles/Overview.css';
 
 const Overview = () => {
   return (

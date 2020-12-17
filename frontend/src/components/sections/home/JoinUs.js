@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import './styles/join_us.css';
+import './styles/JoinUs.css';
 
 const Test = () => {
   return (

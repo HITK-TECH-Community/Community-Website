@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Overview from '../sections/home/overview';
-import JoinUs from '../sections/home/join_us';
-import Motive from '../sections/home/motive';
+import Overview from '../sections/home/Overview';
+import JoinUs from '../sections/home/JoinUs';
+import Motive from '../sections/home/Motive';
 
-import './styles/home.css';
+import './styles/Home.css';
 
 const Home = () => {
   return (

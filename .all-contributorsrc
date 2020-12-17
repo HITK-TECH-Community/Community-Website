@@ -90,6 +90,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "reetpriye",
+      "name": "Reet Priye",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/55601795?v=4",
+      "profile": "https://reetpriye.netlify.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

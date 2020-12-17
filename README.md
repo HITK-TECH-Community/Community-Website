@@ -64,6 +64,7 @@ Thanks goes to these wonderful people ✨✨:
   <tr>
     <td align="center"><a href="https://prakarsh7695.github.io/iPrakarsh.com/"><img src="https://avatars0.githubusercontent.com/u/65502337?v=4" width="100px;" alt=""/><br /><sub><b>Prakarsh Sharma</b></sub></a><br /><a href="#design-prakarsh7695" title="Design">🎨</a></td>
     <td align="center"><a href="https://www.stopstalk.com/user/profile/kenkirito123"><img src="https://avatars1.githubusercontent.com/u/68530218?v=4" width="100px;" alt=""/><br /><sub><b>lakshya Mishra</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kenkirito" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
   </tr>
 </table>
 

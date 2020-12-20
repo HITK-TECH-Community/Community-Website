@@ -1,48 +1,96 @@
-import React from 'react';
+import React from "react";
 
-import './footer.css';
+import "./footer.css";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-      <ul>
-        <li>
-          <a href='https://www.linkedin.com/company/hitk-tech-community' target="_blank">
-            <i className='fab fa-linkedin'></i>
-          </a>
+    <footer class="footer">
+      <div class="footer__addr">
+        <h1 class="footer__logo">HITK</h1>
+        <address>
+          505 Simpson Square, 505 Simpson Square, 505 Simpson Square
+          <br />
+        </address>
+        <p>Copyright © 2020 HITK Community</p>
+      </div>
+
+      <ul class="footer__nav">
+        <li class="nav__item">
+          <h2 class="nav__title">Navigation</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="#">About</a>
+            </li>
+
+            <li>
+              <a href="#">Broadcasts</a>
+            </li>
+
+            <li>
+              <a href="#">Resources</a>
+            </li>
+
+            <li>
+              <a href="#">Contact</a>
+            </li>
+
+            <li>
+              <a href="#">FAQs</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a href='https://instagram.com' target="_blank">
-            <i className='fab fa-slack'></i>
-          </a>
+
+        <li class="nav__item">
+          <h2 class="nav__title">Other</h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+
+            <li>
+              <a href="#">Terms of Use</a>
+            </li>
+
+            <li>
+              <a href="#">Sitemap</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <a href='https://facebook.com' target="_blank">
-            <i className='fab fa-facebook'></i>
+        <li class="nav__item">
+          <h2 class="nav__title">Social</h2>
+          <ul class="nav__ul">
+            <li>Be sure to give us a follow on the below social links</li>
+          </ul>
+          <a
+            href="https://www.linkedin.com/company/hitk-tech-community"
+            target="_blank"
+          >
+            <i className="fab fa-linkedin  fa-2x"></i>
           </a>
-        </li>
-        <li>
-          <a href='http://gitter.im' target="_blank">
-            <i className='fab fa-gitter'></i>
+          <a href="https://instagram.com" target="_blank">
+            <i className="fab fa-slack  fa-2x"></i>
           </a>
-        </li>
-        <li>
-          <a href='mailto:hitktechcommunity@gmail.com' target="_blank">
-            <i className='fas fa-envelope'></i>
+          <a href="https://facebook.com" target="_blank">
+            <i className="fab fa-facebook  fa-2x"></i>
           </a>
-        </li>
-        <li>
-          <a href='https://github.com/HITK-TECH-Community/' target="_blank">
-            <i className='fab fa-github'></i>
+          <a href="mailto:hitktechcommunity@gmail.com" target="_blank">
+            <i className="fas fa-envelope  fa-2x"></i>
+          </a>
+          <a href="https://github.com/HITK-TECH-Community/" target="_blank">
+            <i className="fab fa-github  fa-2x"></i>
           </a>
         </li>
       </ul>
-      <div className='footer-text'>
+      <div className="footer-text">
         <p>
-          Made with <i className='fas fa-heart'></i> by HITK Tech Community
+          Made with{" "}
+          <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by HITK
+          Tech Community
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

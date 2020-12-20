@@ -1,0 +1,19 @@
+.card {
+    background-color: #1B2431;
+    color: white;
+    padding: 8px 10px;
+    width: 60%;
+    height: 60%;
+}
+
+.login_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card-header {
+    text-align: center;
+}

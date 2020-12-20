@@ -1,5 +1,5 @@
 /* Golbal CSS File */
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 :root {
   --primary-color: #081624;
   --secondary-color: #0a183d;
@@ -13,7 +13,8 @@
 }
 
 body {
-  font-family: 'Futura LT Book', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  /* font-family: 'Futura LT Book', sans-serif; */
   font-size: 1rem;
   background-color: whitesmoke;
   color: #000;
@@ -37,7 +38,6 @@ body {
   height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
   color: rgb(36, 35, 35);
 }
 
@@ -58,7 +58,7 @@ body {
   .contact-us,
   .faqs,
   .admin {
-    font-size: 3rem;
+    font-size: 1rem;
   }
 
   .content {

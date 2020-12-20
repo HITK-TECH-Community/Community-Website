@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 // Pages Import
-import Home from './components/pages/home';
-import AboutUs from './components/pages/about_us';
-import Broadcasts from './components/pages/broadcasts';
-import Resources from './components/pages/resources';
-import ContactUs from './components/pages/contact_us';
-import Admin from './components/pages/admin';
-import Faqs from './components/pages/faqs';
-import NotFound from './components/pages/not_found';
+import Home from './components/home/home';
+import AboutUs from './components/about/about_us';
+import Broadcasts from './components/broadcast/broadcasts';
+import Resources from './components/resource/resources';
+import ContactUs from './components/contact/contact_us';
+import Admin from './components/admin/admin';
+import Faqs from './components/faq/faqs';
+import NotFound from './components/404/not_found';
 
 import './app.css';
 

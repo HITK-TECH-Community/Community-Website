@@ -44,6 +44,9 @@ All the backend code will go in the `backend` folder.
 
 [![Slack](https://img.shields.io/badge/chat-on_slack-purple.svg?style=for-the-badge&logo=slack)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
 
+## Open Source Programs We have been associated with 🤍
+<img src="assets/KWoC.png" width="200px" height="200px"> <img src="assets/SWoC.png" width="200px" height="200px"> <img src="assets/DWoC.png" width="200px" height="200px">
+
 ## Contributors 🌟
 
 Thanks goes to these wonderful people ✨✨:

@@ -45,7 +45,7 @@ All the backend code will go in the `backend` folder.
 [![Slack](https://img.shields.io/badge/chat-on_slack-purple.svg?style=for-the-badge&logo=slack)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
 
 ## Open Source Programs We have been associated with 🤍
-<img src="assets/KWoC.png" width="200px" height="200px"> <img src="assets/SWoC.png" width="200px" height="200px"> <img src="assets/DWoC.png" width="200px" height="200px">
+[<img src="assets/KWoC.png" width="180px" height="180px">](https://kwoc.kossiitkgp.org/) [<img src="assets/SWoC.png" width="180px" height="180px">](https://swoc.tech/index.html) [<img src="assets/DWoC.png" width="180px" height="180px">](https://devscript.tech/woc/)
 
 ## Contributors 🌟
 

@@ -20,23 +20,23 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">About</a>
+              <a href="/about-us">About</a>
             </li>
 
             <li>
-              <a href="#">Broadcasts</a>
+              <a href="/broadcasts">Broadcasts</a>
             </li>
 
             <li>
-              <a href="#">Resources</a>
+              <a href="/resources">Resources</a>
             </li>
 
             <li>
-              <a href="#">Contact</a>
+              <a href="/contact-us">Contact</a>
             </li>
 
             <li>
-              <a href="#">FAQs</a>
+              <a href="/faqs">FAQs</a>
             </li>
           </ul>
         </li>

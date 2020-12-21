@@ -13,25 +13,22 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       display: 'flex',
       flexWrap: 'wrap',
-     
-      height: '500px',
+      marginBottom: '100px',
       margin: `${theme.spacing(0)} auto`
     },
     loginBtn: {
-      
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(2),
       flexGrow: 1
     },
     header: {
-      
       textAlign: 'center',
       background: '#1B2431',
-      color: 'white'
+      color: '#fff'
     },
     card: {
       marginTop: theme.spacing(10),
       width: '700px',
-      height: '320px'
+      
     }
   })
 );
@@ -39,11 +36,11 @@ const useStyles = makeStyles((theme: Theme) =>
 //state type
 
 type State = {
-    username: 'string',
-    password:  'string',
-    isButtonDisabled: 'boolean',
-    helperText: 'string',
-    isError: 'boolean',
+  username: 'string',
+  password:  'string',
+  isButtonDisabled: 'boolean',
+  helperText: 'string',
+  isError: 'boolean'
 };
 
 const initialState:State = {
@@ -154,7 +151,7 @@ const Login = () => {
   return (
     <form className={classes.container} noValidate autoComplete="off">
       <Card className={classes.card}>
-        <CardHeader className={classes.header} title="Login" />
+        <CardHeader className={classes.header} title="Login App" />
         <CardContent>
           <div>
             <TextField
@@ -199,3 +196,4 @@ const Login = () => {
 }
 
 export default Login;
+

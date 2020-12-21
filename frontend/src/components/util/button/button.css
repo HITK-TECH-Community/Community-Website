@@ -63,12 +63,12 @@
 .main-btn.main-btn-2 {
   background: -webkit-linear-gradient(
     left,
-    #102baf 0%,
-    #1664ff 50%,
-    #102baf 100%
+    #121f3a 0%,
+    #2a4886 50%,
+    #162f66 100%
   );
-  background: -o-linear-gradient(left, #102baf 0%, #1664ff 50%, #102baf 100%);
-  background: linear-gradient(to right, #102baf 0%, #1664ff 50%, #102baf 100%);
+  background: -o-linear-gradient(left, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
   background-size: 200% auto;
   color: #fff;
   background-position: left center;

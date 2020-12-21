@@ -54,7 +54,9 @@ const ContactUs = () => {
               <i className="far fa-comment-alt"></i>
             </div>
 
-            <Button2 label="Submit" type="submit" />
+            <div style={{ textAlign: "center" }}>
+              <Button2 label="Submit" type="submit" />
+            </div>
           </div>
         </div>
       </div>

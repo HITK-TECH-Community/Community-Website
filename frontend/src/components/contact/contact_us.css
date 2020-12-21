@@ -4,7 +4,7 @@
 }
 .contact-parent {
   display: flex;
-  margin: 80px 0;
+  padding: 80px 0;
 }
 .contact-input {
   position: relative;
@@ -77,9 +77,9 @@
 
 .contact-header-text {
   font-size: 30px;
-  padding-left: 2rem;
   text-transform: capitalize;
   color: #121f3a;
+  text-align: center !important;
 }
 .contact-image {
   max-width: 100%;

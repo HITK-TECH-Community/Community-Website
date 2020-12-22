@@ -1,92 +1,199 @@
-import React, { useState } from 'react'
-import { Form, FormGroup, Label, Input,Card, CardBody, CardHeader } from 'reactstrap';
-import './login.css'
-function LoginForm() {
+import React, { useReducer, useEffect } from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-    const [initialState, setState] = useState({
-        username: '',
-        password: '',
+import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import CardHeader from '@material-ui/core/CardHeader';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      marginBottom: '100px',
+      margin: `${theme.spacing(0)} auto`
+    },
+    loginBtn: {
+      marginTop: theme.spacing(2),
+      flexGrow: 1
+    },
+    header: {
+      textAlign: 'center',
+      background: '#1B2431',
+      color: '#fff'
+    },
+    card: {
+      marginTop: theme.spacing(10),
+      width: '700px',
       
-        touched: {
-            username: false,
-            password: false
-        }
-    })
-
-
-    const handleLoginClick = (event) => {
-        event.preventDefault();
     }
+  })
+);
 
-    const handleBlur = (field) => (evt) => {
-        setState({
-            ...initialState,
-            touched: { ...initialState.touched, [field]: true }
-        });
-    }
+//state type
 
-    const handleInputChange = (event) => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
+type State = {
+  username: 'string',
+  password:  'string',
+  isButtonDisabled: 'boolean',
+  helperText: 'string',
+  isError: 'boolean'
+};
 
-        setState({
-            ...initialState,
-            [name]: value
-        });
-    }
+const initialState:State = {
+  username: '',
+  password: '',
+  isButtonDisabled: true,
+  helperText: '',
+  isError: false
+};
 
-    const validate = (username, password) => {
-        const errors = {
-            username: '',
-            password: '',
-            id: ''
-        }
-        if (initialState.touched.username && username.length < 3)
-            errors.username = 'Username should be of minimum length of 3 characters';
-        if (initialState.touched.username && username.length > 30)
-            errors.username = 'Username should not be greater than 30 characters';
-        if (initialState.touched.password && password.length < 5)
-            errors.password = 'Password should be of minimum length of 8 characters';
-        return errors;
-    }
-    
-    const errors = validate(initialState.username, initialState.password);
+type Action = { type: 'setUsername', payload: string }
+  | { type: 'setPassword', payload: string }
+  | { type: 'setIsButtonDisabled', payload: boolean }
+  | { type: 'loginSuccess', payload: string }
+  | { type: 'loginFailed', payload: string }
+  | { type: 'setIsError', payload: boolean };
 
-        return (
-            <div className="login_form">
-                <Card>
-                    <CardHeader><h4>Login</h4></CardHeader>
-
-                    {
-                        <CardBody className="text-justify">
-                            <Form  onSubmit={handleLoginClick}>
-                                <FormGroup>
-                                    <Label htmlFor="username" className="d-flex justify-content-start"><h6>Username</h6></Label>
-                                    <Input required type="text" id="username" name="username" value={initialState.username}
-                                        onChange={handleInputChange} valid={errors.username === ''} invalid={errors.username !== ''} onBlur={handleBlur('username')} />
-                                    <p>{errors.username}</p>
-                                </FormGroup>
-                                <FormGroup>
-                                    <Label htmlFor="password" className="d-flex justify-content-start"><h6>Password</h6></Label>
-                                    <Input required type="password" id="password" name="password" value={initialState.password}
-                                        onChange={handleInputChange} valid={errors.password === ''} invalid={errors.password !== ''} onBlur={handleBlur('password')}
-                                    />
-                                    <p>{errors.password}</p>
-                                </FormGroup>
-                                <FormGroup check className="d-flex justify-content-start">
-                                    <Label check>
-                                        <Input type="checkbox" name="remember" className="d-flex justify-content-start"
-                                        />
-                                        <p>Remember Me</p>
-                                    </Label>
-                                </FormGroup>
-                                <button type="submit" value="submit" className="btn btn-primary btn-md btn-block mt-2" style={{backgroundColor:"#6868cb"}} ><span className="fa fa-sign-in-alt fa-lg"></span>Login</button>
-                            </Form>
-                        </CardBody>}
-                </Card>
-            </div>
-        )
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case 'setUsername': 
+      return {
+        ...state,
+        username: action.payload
+      };
+    case 'setPassword': 
+      return {
+        ...state,
+        password: action.payload
+      };
+    case 'setIsButtonDisabled': 
+      return {
+        ...state,
+        isButtonDisabled: action.payload
+      };
+    case 'loginSuccess': 
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: false
+      };
+    case 'loginFailed': 
+      return {
+        ...state,
+        helperText: action.payload,
+        isError: true
+      };
+    case 'setIsError': 
+      return {
+        ...state,
+        isError: action.payload
+      };
+  }
 }
 
-export default LoginForm
+const Login = () => {
+  const classes = useStyles();
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if (state.username.trim() && state.password.trim()) {
+     dispatch({
+       type: 'setIsButtonDisabled',
+       payload: false
+     });
+    } else {
+      dispatch({
+        type: 'setIsButtonDisabled',
+        payload: true
+      });
+    }
+  }, [state.username, state.password]);
+
+  const handleLogin = () => {
+    if (state.username === 'abc@email.com' && state.password === 'password') {
+      dispatch({
+        type: 'loginSuccess',
+        payload: 'Login Successfully'
+      });
+    } else {
+      dispatch({
+        type: 'loginFailed',
+        payload: 'Incorrect username or password'
+      });
+    }
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent) => {
+    if (event.keyCode === 13 || event.which === 13) {
+      state.isButtonDisabled || handleLogin();
+    }
+  };
+
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
+    (event) => {
+      dispatch({
+        type: 'setUsername',
+        payload: event.target.value
+      });
+    };
+
+  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> =
+    (event) => {
+      dispatch({
+        type: 'setPassword',
+        payload: event.target.value
+      });
+    }
+  return (
+    <form className={classes.container} noValidate autoComplete="off">
+      <Card className={classes.card}>
+        <CardHeader className={classes.header} title="Login" />
+        <CardContent>
+          <div>
+            <TextField
+              error={state.isError}
+              fullWidth
+              id="username"
+              type="email"
+              label="Username"
+              placeholder="Username"
+              margin="normal"
+              onChange={handleUsernameChange}
+              onKeyPress={handleKeyPress}
+            />
+            <TextField
+              error={state.isError}
+              fullWidth
+              id="password"
+              type="password"
+              label="Password"
+              placeholder="Password"
+              margin="normal"
+              helperText={state.helperText}
+              onChange={handlePasswordChange}
+              onKeyPress={handleKeyPress}
+            />
+          </div>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            className={classes.loginBtn}
+            onClick={handleLogin}
+            disabled={state.isButtonDisabled}>
+            Login
+          </Button>
+        </CardActions>
+      </Card>
+    </form>
+  );
+}
+
+export default Login;
+

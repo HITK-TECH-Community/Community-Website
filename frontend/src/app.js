@@ -1,20 +1,41 @@
+
+import { Fragment } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
+// Pages Import
+import Home from './components/home/home';
+import AboutUs from './components/about/about_us';
+import Broadcasts from './components/broadcast/broadcasts';
+import Resources from './components/resource/resources';
+import ContactUs from './components/contact/contact_us';
+import Admin from './components/admin/admin';
+import Faqs from './components/faq/faqs';
+import NotFound from './components/404/not_found';
+
 import './app.css';
-import Footer from  './components/header_and_footer/Aaryan/footer';
-import { Faq } from "../src/components/FAQ/faq";
-import Header from './components/header_and_footer/Aaryan/header'
-import {BrowserRouter } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-          <Header />
-          <Faq />
-          <Footer />
-      </BrowserRouter>
-
-    </div>
+    <Fragment>
+      <div className='Container'>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about-us' component={AboutUs} />
+            <Route exact path='/broadcasts' component={Broadcasts} />
+            <Route exact path='/resources' component={Resources} />
+            <Route exact path='/contact-us' component={ContactUs} />
+            <Route exact path='/faqs' component={Faqs} />
+            <Route exact path='/admin' component={Admin} />
+            <Route component={NotFound} />
+          </Switch>
+        </Router>
+      </div>
+      <Footer className='Footer' />
+    </Fragment>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,6 @@
 # Community-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-bot-orange.svg?style=flat-square)](#contributors-)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)

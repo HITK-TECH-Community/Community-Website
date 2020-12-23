@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/style.css";
-import "./styles/style.scss";
 import women_mobile from "./images/illustration-woman-online-mobile.svg";
 import women_desktop from "./images/illustration-woman-online-desktop.svg";
 import box from "./images/illustration-box-desktop.svg";

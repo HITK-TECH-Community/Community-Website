@@ -69,12 +69,13 @@ const Footer = () => {
           >
             <i className="fab fa-linkedin  fa-2x"></i>
           </a>
-          <a href="https://instagram.com" target="_blank">
+          <a href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw" target="_blank">
             <i className="fab fa-slack  fa-2x"></i>
           </a>
+          {/* FYI - Uncomment it after we have a facebook page
           <a href="https://facebook.com" target="_blank">
             <i className="fab fa-facebook  fa-2x"></i>
-          </a>
+          </a> */}
           <a href="mailto:hitktechcommunity@gmail.com" target="_blank">
             <i className="fas fa-envelope  fa-2x"></i>
           </a>

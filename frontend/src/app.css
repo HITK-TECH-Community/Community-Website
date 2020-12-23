@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+/* Golbal CSS File */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+:root {
+  --primary-color: #081624;
+  --secondary-color: #0a183d;
+  --accent-color: #ff005a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Nunito', sans-serif;
+  /* font-family: 'Futura LT Book', sans-serif; */
+  font-size: 1rem;
+  background-color: whitesmoke;
+  color: #000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
+  margin: auto;
+  overflow: hidden;
+  padding: 1.5rem 7rem;
+}
+
+/* Temproary CSS [for dummy text] */
+.about-us,
+.resources,
+.broadcasts,
+.contact-us,
+.faqs,
+.admin {
+  font-family: 'PT Sans', sans-serif;
   display: flex;
-  flex-direction: column;
+  height: 90vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(36, 35, 35);
 }
 
-.App-link {
-  color: #61dafb;
+/* For the sticky footer */
+.Container {
+  flex: 1 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Footer {
+  flex-shrink: 0;
+}
+
+/* Media Query for Small Devices */
+@media screen and (max-width: 600px) {
+  .about-us,
+  .resources,
+  .broadcasts,
+  .contact-us,
+  .faqs,
+  .admin {
+    font-size: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* Media Query for Medium Size Devices */
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
   }
 }

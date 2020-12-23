@@ -1,6 +1,6 @@
 # Community-Website
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-bot-orange.svg?style=flat-square)](#contributors-)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
@@ -44,6 +44,11 @@ All the backend code will go in the `backend` folder.
 
 [![Slack](https://img.shields.io/badge/chat-on_slack-purple.svg?style=for-the-badge&logo=slack)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
 
+## Programs We have been associated with 🤍
+<a href="https://kwoc.kossiitkgp.org/" target="_blank"><img src="assets/KWoC.png" width="180px" height="180px"></a>
+<a href="https://swoc.tech/index.html" target="_blank"><img src="assets/SWoC.png" width="180px" height="180px"></a>
+<a href="https://devscript.tech/woc/" target="_blank"><img src="assets/DWoC.png" width="180px" height="180px"></a>
+
 ## Contributors 🌟
 
 Thanks goes to these wonderful people ✨✨:
@@ -63,6 +68,10 @@ Thanks goes to these wonderful people ✨✨:
   </tr>
   <tr>
     <td align="center"><a href="https://prakarsh7695.github.io/iPrakarsh.com/"><img src="https://avatars0.githubusercontent.com/u/65502337?v=4" width="100px;" alt=""/><br /><sub><b>Prakarsh Sharma</b></sub></a><br /><a href="#design-prakarsh7695" title="Design">🎨</a></td>
+    <td align="center"><a href="https://www.stopstalk.com/user/profile/kenkirito123"><img src="https://avatars1.githubusercontent.com/u/68530218?v=4" width="100px;" alt=""/><br /><sub><b>lakshya Mishra</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kenkirito" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
+    <td align="center"><a href="https://abhiisshakee.netlify.app/"><img src="https://avatars2.githubusercontent.com/u/37222497?v=4" width="100px;" alt=""/><br /><sub><b>Abhishek Mogaveera</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Abhishek971999" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vedikaag99"><img src="https://avatars1.githubusercontent.com/u/67699840?v=4" width="100px;" alt=""/><br /><sub><b>Vedika Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=vedikaag99" title="Code">💻</a></td>
   </tr>
 </table>
 

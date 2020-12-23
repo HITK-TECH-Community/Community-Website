@@ -71,6 +71,7 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://www.stopstalk.com/user/profile/kenkirito123"><img src="https://avatars1.githubusercontent.com/u/68530218?v=4" width="100px;" alt=""/><br /><sub><b>lakshya Mishra</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kenkirito" title="Documentation">📖</a></td>
     <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
     <td align="center"><a href="https://abhiisshakee.netlify.app/"><img src="https://avatars2.githubusercontent.com/u/37222497?v=4" width="100px;" alt=""/><br /><sub><b>Abhishek Mogaveera</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Abhishek971999" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/vedikaag99"><img src="https://avatars1.githubusercontent.com/u/67699840?v=4" width="100px;" alt=""/><br /><sub><b>Vedika Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=vedikaag99" title="Code">💻</a></td>
   </tr>
 </table>
 

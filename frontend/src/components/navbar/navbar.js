@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar'>
+      <nav className='navbar-div'>
         <NavLink to='/' className='navbar-logo'>
           HITK
         </NavLink>
@@ -88,7 +88,7 @@ const Navbar = () => {
               Contact Us
             </NavLink>
           </li>
-          <li className='nav-item faq'>
+          <li className='nav-item '>
             <NavLink to='/faqs' className='nav-links' onClick={closeMobileMenu} activeClassName="active-link" exact>
               FAQs
             </NavLink>

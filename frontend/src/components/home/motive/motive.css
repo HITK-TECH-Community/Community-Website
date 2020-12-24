@@ -11,6 +11,7 @@
   border-radius: 8px;
   position: relative;
   z-index: 5;
+  cursor: pointer;
   overflow: hidden;
   height: 100%;
 }
@@ -21,6 +22,7 @@
   width: 100%;
   height: 100%;
   top: 0;
+  cursor: pointer;
   left: 0;
   background: rgb(255, 0, 90);
   background: linear-gradient(
@@ -46,7 +48,28 @@
 
 .single-features .features-icon i {
   font-size: 60px;
-  color: #1863ff;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
@@ -54,6 +77,11 @@
   transition: all 0.3s ease-out 0s;
 }
 
+.single-features:hover .features-icon i {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .single-features .features-icon span {
   font-size: 60px;
   color: #1b273d;
@@ -132,15 +160,27 @@
 
 .fa-crosshairs {
   font-size: 3.4rem;
-  background: -webkit-linear-gradient(left, rgba(255, 0, 90, 1) 0%,
-  rgba(10, 24, 61, 1));
-    background: -o-linear-gradient(right,rgba(255, 0, 90, 1) 0%,
-    rgba(10, 24, 61, 1));
-    background: -moz-linear-gradient(right,  rgba(255, 0, 90, 1) 0%,
-    rgba(10, 24, 61, 1));
-    background: linear-gradient(to right, rgba(255, 0, 90, 1) 0%,
-    rgba(10, 24, 61, 1));
-    -webkit-background-clip: text;
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: -o-linear-gradient(
+    right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: -moz-linear-gradient(
+    right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

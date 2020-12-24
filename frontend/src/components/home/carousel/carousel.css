@@ -1,12 +1,68 @@
 .carousel-div {
-        padding: 30px 0px;
+  padding: 50px 0px;
 }
-
+/* 
 h1 {
-        text-align: center;
-        font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+} */
+
+.owl-item {
+  width: 300px !important;
+}
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.owl-nav button.owl-prev {
+  background-color: #121f3a !important;
+  color: #fff !important;
+  padding: 0 15px !important;
+  left: 0;
+}
+.owl-nav button.owl-next {
+  background-color: #121f3a !important;
+  color: #fff !important;
+  padding: 0 15px !important;
+  right: 0;
 }
 
-.img {
-        height: 480px;
+.owl-dots {
+  text-align: center;
+  padding-top: 15px;
+}
+.owl-dots button.owl-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ccc;
+  margin: 0 3px;
+}
+.owl-dots button.owl-dot.active {
+  background-color: #000;
+}
+.owl-dots button.owl-dot:focus {
+  outline: none;
+}
+.owl-dots button.owl-dot span {
+  display: none !important;
+}
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.38) !important;
+}
+span {
+  font-size: 70px;
+  position: relative;
+  top: -5px;
+}
+.owl-nav button:focus {
+  outline: none;
 }

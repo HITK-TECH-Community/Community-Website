@@ -41,6 +41,24 @@
   padding: 0.5rem 1rem;
 }
 
+.nav-admin-button {
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #fc0254;
+  transition: all 0.3s ease-out;
+}
+.nav-admin-button:hover {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid #fc0254;
+}
+
 a.nav-links:hover {
   background-color: #125181;
   border-radius: 8px;
@@ -85,7 +103,9 @@ a.nav-links:hover {
   .NavbarItems {
     position: relative;
   }
-
+  .nav-admin-button {
+    display: none;
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
@@ -157,7 +177,16 @@ a.nav-links:hover {
   .nav-links-mobile > span {
     font-family: sans-serif;
   }
-
+  .nav-links-mobile {
+    padding: 8px 20px;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 4px;
+    border: 2px solid #fc0254;
+  }
   .nav-links-mobile:hover {
     background: #fff;
     color: #1888ff;

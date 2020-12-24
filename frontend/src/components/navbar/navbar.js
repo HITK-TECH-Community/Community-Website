@@ -1,8 +1,10 @@
-import React, { Fragment, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import Button from '../util/button/button';
-import Dropdown from '../util/dropdown/dropdown';
-import './navbar.css';
+import React, { Fragment, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Button from "../util/button/button";
+import Dropdown from "../util/dropdown/dropdown";
+import "./navbar.css";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -30,33 +32,41 @@ const Navbar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar-div'>
-        <NavLink to='/' className='navbar-logo'>
+      <nav className="navbar-div">
+        <NavLink to="/" className="navbar-logo">
           HITK
         </NavLink>
-        <div className='menu-icon' onClick={toggleNav}>
-          <i className={isNavOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <div className="menu-icon" onClick={toggleNav}>
+          <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
-        <ul className={isNavOpen ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <NavLink activeClassName="active-link" to='/' className='nav-links' onClick={closeMobileMenu} exact>
+        <ul className={isNavOpen ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <NavLink
+              activeClassName="active-link"
+              to="/"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              exact
+            >
               Home
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink activeClassName="active-link"
-              to='/about-us'
-              className='nav-links'
+          <li className="nav-item">
+            <NavLink
+              activeClassName="active-link"
+              to="/about-us"
+              className="nav-links"
               onClick={closeMobileMenu}
               exact
             >
               About Us
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink activeClassName="active-link"
-              to='/resources'
-              className='nav-links'
+          <li className="nav-item">
+            <NavLink
+              activeClassName="active-link"
+              to="/resources"
+              className="nav-links"
               onClick={closeMobileMenu}
               exact
             >
@@ -64,47 +74,57 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li
-            className='nav-item'
+            className="nav-item"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <NavLink activeClassName="active-link"
-              to='/broadcasts'
-              className='nav-links'
+            <NavLink
+              activeClassName="active-link"
+              to="/broadcasts"
+              className="nav-links"
               onClick={closeMobileMenu}
               exact
             >
-              Broadcasts <i className='fas fa-caret-down'></i>
+              Broadcasts <i className="fas fa-caret-down"></i>
             </NavLink>
             {dropdown && <Dropdown />}
           </li>
-          <li className='nav-item'>
-            <NavLink activeClassName="active-link"
-              to='/contact-us'
-              className='nav-links'
+          <li className="nav-item">
+            <NavLink
+              activeClassName="active-link"
+              to="/contact-us"
+              className="nav-links"
               onClick={closeMobileMenu}
               exact
             >
               Contact Us
             </NavLink>
           </li>
-          <li className='nav-item '>
-            <NavLink to='/faqs' className='nav-links' onClick={closeMobileMenu} activeClassName="active-link" exact>
+          <li className="nav-item ">
+            <NavLink
+              to="/faqs"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              activeClassName="active-link"
+              exact
+            >
               FAQs
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink
-              to='/admin'
-              className='nav-links-mobile'
+          <li className="nav-item">
+            <Link
+              to="/admin"
+              className="nav-links-mobile"
               onClick={closeMobileMenu}
               exact
             >
-              admin<span>?</span>
-            </NavLink>
+              admin ?
+            </Link>
           </li>
         </ul>
-        <Button text='admin' path='/admin' />
+        <Link to="/admin">
+          <button className="nav-admin-button">admin ?</button>
+        </Link>
       </nav>
     </Fragment>
   );

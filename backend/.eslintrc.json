@@ -5,8 +5,9 @@
         "node": true
     },
     "extends": [
+        "airbnb-base",
         "prettier",
-        "airbnb-base"
+        "plugin:node/recommended"
     ],
     "plugins": [
         "prettier"
@@ -15,6 +16,13 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "no-console": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
     }
 }

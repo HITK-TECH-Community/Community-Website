@@ -6,12 +6,12 @@ const Footer = () => {
   return (
     <footer class="footer">
       <div class="footer__addr">
-        <h1 class="footer__logo">HITK</h1>
+        <h1 class="footer__logo">HITK Tech Community</h1>
         <address>
-          505 Simpson Square, 505 Simpson Square, 505 Simpson Square
+          <i class="fas fa-map-marker-alt"></i> 505 Simpson Square, 505 Simpson Square, 505 Simpson Square
           <br />
         </address>
-        <p>Copyright © 2020 HITK Community</p>
+        <p>Copyright © 2020 HITK Tech Community</p>
       </div>
 
       <ul class="footer__nav">
@@ -84,12 +84,14 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <div className="footer-text">
-        <p>
-          Made with{" "}
-          <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by HITK
-          Tech Community
-        </p>
+      <div className="footer-dash">
+        <div className="footer-text">
+          <p>
+            Made with{" "}
+            <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by HITK
+            Tech Community
+          </p>
+        </div>
       </div>
     </footer>
   );

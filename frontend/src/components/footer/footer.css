@@ -31,6 +31,7 @@
 .nav__title {
   font-weight: 600;
   font-size: 18px;
+  color:#fff;
 }
 
 .footer address {
@@ -99,18 +100,51 @@
 .heart {
   color: #c2d6d7;
 }
-.fa-gitter,
+/*.fa-gitter,*/
 .fa-linkedin,
 .fa-slack,
-.fa-facebook,
+/*.fa-facebook,*/
 .fa-envelope,
 .fa-github {
   padding: 5px;
   color: #fff;
 }
+.fa-linkedin:hover {
+  color: #0088cc;
+}
+
+.fa-slack:hover {
+  color: #dd2a7b;
+}
+
+.fa-envelope:hover {
+  color: #c71610;
+}
+
+.fa-github:hover {
+  color: #000;
+}
+
+.footer-dash{
+  text-align:center;
+  padding-top:2px;
+  width: 90px;
+  height:2px;
+  margin-bottom: 12px;
+  background: rgb(255, 0, 90);
+  background: /* gradient can be an image */
+  linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    purple 90%
+  );
+  background-size:100% 5px ;/* if linear-gradient, we need to resize it */
+}
 .footer-text {
+  padding-top:10px;
   text-align: center;
   font-size: 0.8rem;
+  background: #121f3a;
 }
 
 .nav__item {

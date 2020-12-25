@@ -15,6 +15,7 @@ const adminSchema = new Schema(
     email: {
       type: String,
       trim: true,
+      unique: true,
     },
     passwordHash: {
       type: String,

@@ -1,5 +1,5 @@
 const to = require('await-to-js').default;
-const Admin = require('../../models/admins');
+const Admin = require('../../models/Admin');
 
 module.exports = async (req, res, next) => {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };

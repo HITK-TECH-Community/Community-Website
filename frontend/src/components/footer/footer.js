@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer class="footer">
       <div class="footer__addr">
-        <h1 class="footer__logo">HITK</h1>
+        <h1 class="footer__logo">HITK Tech Community</h1>
         <address>
           <i class="fas fa-map-marker-alt"></i> 505 Simpson Square, 505 Simpson Square, 505 Simpson Square
           <br />

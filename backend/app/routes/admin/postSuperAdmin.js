@@ -1,28 +1,26 @@
 const to = require('await-to-js').default;
+const argon2 = require('argon2');
 const Admin = require('../../models/Admin');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
-  const options = { upsert: true, new: true, setDefaultsOnInsert: true };
   const adminData = {
-    firstName: 'Root',
-    lastName: 'Admin',
-    email: 'hitktechcommunity@gmail.com',
-    passwordHash:
-      '$argon2i$v=19$m=16,t=2,p=1$U0p1dUpISnpsb2I1YzBNNQ$cKpl7z7aH0VjOozCmqc4eA',
-    contact: '+919046500031',
+    ...req.body,
     isSuperAdmin: true,
   };
-  const [err, user] = await to(
-    Admin.findOneAndUpdate(
-      { email: 'hitktechcommunity@gmail.com' },
-      adminData,
-      options
-    )
-  );
+  adminData.passwordHash = await argon2.hash(adminData.password);
+  delete adminData.password;
+  const [err, user] = await to(Admin.create(adminData));
   if (err) {
-    console.log(err);
+    if (err.code === 11000) {
+      const error = new ErrorHandler(constants.ERRORS.INPUT, {
+        statusCode: 400,
+        message: 'Bad request: User already exists',
+        user: req.body.email,
+      });
+      return next(error);
+    }
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: 'Mongo Error: Insertion Failed',

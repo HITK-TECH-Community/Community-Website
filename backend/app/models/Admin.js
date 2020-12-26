@@ -28,6 +28,10 @@ const adminSchema = new Schema(
     isSuperAdmin: {
       type: Boolean,
     },
+    username: {
+      type: String,
+      trim: true,
+    },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );

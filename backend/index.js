@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const mongoose = require('mongoose');
 const http = require('http');
 const bodyParser = require('body-parser');
 const responseTime = require('response-time');
 const routes = require('./app/routes');
 const { errorHandler } = require('./helpers/error');
 require('colors');
+require('./helpers/dbConnection');
 
 const app = express();
 const server = http.Server(app);
@@ -53,15 +53,5 @@ server.listen(
 process.on('uncaughtException', (err) => {
   console.log(err);
 });
-
-mongoose.connect(
-  'mongodb+srv://admin:t3chC0mmunity@cluster0.dbhtp.mongodb.net/test',
-  { useNewUrlParser: true, dbName: 'communityWebsite' },
-  (err) => {
-    if (err) {
-      console.log(err);
-    } else console.log('connected to db');
-  }
-);
 
 module.exports = app;

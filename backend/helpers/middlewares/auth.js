@@ -4,7 +4,8 @@ const { ErrorHandler } = require('../error');
 const config = require('../../config');
 const constants = require('../../constants');
 
-const generateJWT = (payload) => sign(payload, config.JWT_SECRET_KEY);
+const generateJWT = (payload) =>
+  sign(payload, config.JWT_SECRET_KEY, { expiresIn: config.JWT_EXPIRES_IN });
 
 const getTokenFromHeader = async (req) => {
   if (

@@ -2,6 +2,7 @@ const argon2 = require('argon2');
 const Admin = require('../../models/Admin');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
+const { generateJWT } = require('../../../helpers/middlewares/auth');
 
 module.exports = async (req, res, next) => {
   const { email, password } = req.body;
@@ -30,6 +31,11 @@ module.exports = async (req, res, next) => {
     next(error);
     return false;
   }
-
-  return res.status(204).send();
+  const JWTPayload = {
+    name: `${userRecord.firstName} ${userRecord.lastName}`,
+    email: userRecord.email,
+  };
+  const JWT = generateJWT(JWTPayload);
+  const response = { ...JWTPayload, token: JWT };
+  return res.status(200).send(response);
 };

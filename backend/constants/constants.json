@@ -1,7 +1,7 @@
 {
   "ERRORS": {
     "AUTH": "Authentication Error",
-    "INPUT": "Invalid request",
+    "INPUT": "Invalid or malformed request",
     "DATABASE": "Database Error",
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",

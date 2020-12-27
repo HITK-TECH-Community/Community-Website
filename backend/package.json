@@ -1,26 +1,48 @@
 {
-  "name": "backend",
-  "version": "0.0.0",
-  "private": true,
+  "name": "community-website",
+  "version": "1.0.0",
+  "description": "HITK Community Website",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HITK-TECH-Community/Community-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HITK-TECH-Community/Community-Website/issues"
+  },
+  "homepage": "https://github.com/HITK-TECH-Community/Community-Website#readme",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
+    "argon2": "^0.27.1",
+    "await-to-js": "^2.1.1",
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "express-session": "^1.17.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.6",
-    "mongoose-currency": "^0.2.0",
-    "morgan": "~1.9.1",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.0.1",
-    "session-file-store": "^1.5.0"
+    "lodash": "^4.17.20",
+    "mongoose": "^5.11.8",
+    "response-time": "^2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
   }
 }

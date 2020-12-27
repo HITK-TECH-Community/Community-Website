@@ -10,25 +10,25 @@ Below you will find the process and workflow used to review and merge your chang
 - Take a look at the Existing Issues or create your **own** Issues!  
 - Wait for the Issue to be assigned to you after which you can start working on it.  
 - Note : Every change in this project should/must have an associated issue.   
-![issue](https://github.com/kanishkaa24/Community-Website/blob/main/Untitled%20design%20(6).png)  
+![issue](https://github.com/kanishkaa24/Community-Website/blob/main/1.png)  
   
 ## Step 1 : Fork the Project 🍴
 - Fork this Repository. This will create a Local Copy of this Repository on your Github Profile. Keep a reference to the original project in `upstream` remote.  
 ```  
-$ git clone https://github.com/<your-username>/<repo-name>  
+$ git clone https://github.com/<your-username>/Community-Website  
 $ cd <repo-name>  
-$ git remote add upstream https://github.com/<upstream-owner>/<repo-name>  
+$ git remote add upstream https://github.com/HITK-TECH-Community/Community-Website 
 ```  
-![fork](https://github.com/kanishkaa24/Community-Website/blob/main/Untitled%20design%20(7).png)  
+![fork](https://github.com/kanishkaa24/Community-Website/blob/main/2.png)  
   
-- If you have already forked the project, update your copy before working.  
+- Update your forked repo before working.  
 ```  
 $ git remote update  
 $ git checkout <branch-name>  
 $ git rebase upstream/<branch-name>  
 ```  
 ## Step 2 : Branch  🔖
-Create a new branch. Use its name to identify the issue your addressing.  
+Create a new branch. Use its name to identify the issue you are addressing.  
 ```  
 # It will create a new branch with name Branch_Name and switch to that branch 
 $ git checkout -b branch_name  
@@ -50,8 +50,7 @@ $ git add <some files>
 ```
 # This message get associated with all files you have changed  
 $ git commit -m "message"  
-```  
-- **NOTE**: A PR should have only one commit. Multiple commits should be squashed. 
+``` 
  
 ## Step 5 : Work Remotely  
 - Now you are ready to your work to the remote repository.  
@@ -59,14 +58,14 @@ $ git commit -m "message"
   
 ```  
 # To push your work to your remote repository  
-$ git push -u origin Branch_Name  
+$ git push -u origin <branch_name>  
 ```  
 - Here is how your branch will look.  
-![br](https://github.com/kanishkaa24/Community-Website/blob/main/Untitled%20design%20(8).png)  
+![br](https://github.com/kanishkaa24/Community-Website/blob/main/3.png)  
   
 ## Step 6 : Pull Request  🎣
 - Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.  
-![pullrequest](https://github.com/kanishkaa24/Community-Website/blob/main/Untitled%20design%20(9).png) 
+![pullrequest](https://github.com/kanishkaa24/Community-Website/blob/main/4.png) 
 - Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳  
   
 ## Need more help?🤔  

@@ -16,7 +16,8 @@
         "doc",
         "content",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "projectManagement"
       ]
     },
     {
@@ -126,6 +127,11 @@
       "profile": "https://github.com/jackfrost13",
       "contributions": [
         "code",
+        "eventOrganizing",
+        "doc",
+        "content",
+        "ideas",
+        "maintenance",
         "projectManagement"
       ]
     },

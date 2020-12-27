@@ -31,6 +31,7 @@ const adminSchema = new Schema(
     username: {
       type: String,
       trim: true,
+      unique: true,
     },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }

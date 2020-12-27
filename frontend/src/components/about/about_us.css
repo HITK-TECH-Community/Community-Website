@@ -1,0 +1,91 @@
+.aboutus-img{
+    width:100%;
+    height:85vh;
+    opacity:0.8;
+}
+.about-section{
+    position:relative;
+}
+.about-section h1{
+    position: absolute;
+    top:90px;
+    right:80px;
+    color:#fff;
+    font-weight: 900;
+    font-family: 'Futura LT Book';
+    font-size:60px;
+    text-shadow: 2px 2px black;
+}
+.about-section h4{
+    position: absolute;
+    top:170px;
+    right:80px;
+    color:#fff;
+}
+.dash {
+    width: 250px;
+    height: 5px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background: rgb(255, 0, 90);
+    background: linear-gradient(
+      45deg,
+      rgba(255, 0, 90, 1) 0%,
+      rgba(10, 24, 61, 1) 90%
+    );
+}
+.by-line{
+    color:grey;
+}
+.about {
+    color:white;
+    background-color: hsl(210, 64%, 9%);
+    padding: 60px 60px 60px 60px;
+  }
+.team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:34px;
+}
+.card_footer{
+    color:#000;
+    padding:5px;
+}
+.fa-twitter-square:hover{
+    color:#1DA1F2;
+}
+.sl{
+    color:#ECB22E;}
+.fa-3x{
+    font-size: 28px;
+}
+.in:hover{
+    color:#0e76a8;
+}
+.fa-github-square:hover{
+    color:indigo;
+}
+.card{
+    box-shadow:3px 3px 3px grey;
+    width:80% !important;
+    margin:auto;
+    margin-top:34px;
+    margin-bottom:34px !important;
+}
+.card:hover{
+    background: linear-gradient(45deg,transparent, grey);
+}
+@media only screen and (max-width: 600px)
+{
+    .aboutus-img{
+        height:65vh;
+    }
+   .about-section h1{
+       right:50px;
+       font-size:45px;
+   }
+   .about-section h4{
+    right:50px;
+    } 
+}

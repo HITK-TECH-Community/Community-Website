@@ -72,6 +72,7 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
     <td align="center"><a href="https://abhiisshakee.netlify.app/"><img src="https://avatars2.githubusercontent.com/u/37222497?v=4" width="100px;" alt=""/><br /><sub><b>Abhishek Mogaveera</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Abhishek971999" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vedikaag99"><img src="https://avatars1.githubusercontent.com/u/67699840?v=4" width="100px;" alt=""/><br /><sub><b>Vedika Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=vedikaag99" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jackfrost13"><img src="https://avatars3.githubusercontent.com/u/36669463?v=4" width="100px;" alt=""/><br /><sub><b>Rohit Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=jackfrost13" title="Code">💻</a> <a href="#projectManagement-jackfrost13" title="Project Management">📆</a></td>
   </tr>
 </table>
 

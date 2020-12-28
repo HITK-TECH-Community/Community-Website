@@ -30,7 +30,7 @@ This project aims to build the official site for the community page so that any 
 Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
 
 
-1. `cd frontend` Naviagate to `frontend` section.
+1. Navigate to `frontend` folder using `cd frontend`.
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.

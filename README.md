@@ -16,13 +16,21 @@ This project aims to build the official site for the community page so that any 
 
 ## Tech Stack 🗃
 
- <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  
+ <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js"> 
+ 
+##  Getting Started 👨‍💻
+### Setup the repository to your local environment.
+
+1. `fork` the repository ,     Creates a replica of repository to your local environment.
+2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Download all files to your machine.
+3. `cd Community-Website`  move to the root directory.
 
 ## Frontend ⚛️
 
-Following are the steps to run the frontend of the community-website.
+Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
 
-1. Navigate to `community-website` folder using `cd community-website`
+
+1. Navigate to `frontend` folder using `cd frontend`.
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -30,6 +38,7 @@ Following are the steps to run the frontend of the community-website.
 ## Backend 💻
 
 All the backend code will go in the `backend` folder.
+
 
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.

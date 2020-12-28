@@ -73,8 +73,8 @@ fixes #1234
 ```
 A good rule of thumb for the commit message is to have a present tense verb, followed by whatever it is you're doing in as much detail as possible in 50 chars. Capitalize words correctly and follow general English.
 ### For more details, visit
-- http://karma-runner.github.io/0.13/dev/git-commit-msg.html
-- https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
+- Git commit message guidelines http://karma-runner.github.io/0.13/dev/git-commit-msg.html
+- Writing Good Commit Messages: A Practical Git Guide https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
  
 ## Step 5 : Work Remotely  
 - Now you are ready to your work to the remote repository.  

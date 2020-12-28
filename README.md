@@ -19,16 +19,18 @@ This project aims to build the official site for the community page so that any 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js"> 
  
 ##  Getting Started 👨‍💻
+### Setup the repository to your local environment.
 
-1. `git clone`
-2. `cd Community-Website`
+1. `fork` the repository ,     Creates a replica of repository to your local environment.
+2. `git clone https://github.com/HITK-TECH-Community/Community-Website.git`   Download all files to your machine.
+3. `cd Community-Website`  move to the root directory.
 
 ## Frontend ⚛️
 
 Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
 
 
-1. `cd frontend`
+1. `cd frontend` Naviagate to `frontend` section.
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.

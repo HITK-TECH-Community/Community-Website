@@ -87,6 +87,7 @@ Thanks goes to these wonderful people ✨✨:
   <tr>
     <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars2.githubusercontent.com/u/70213384?v=4" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
     <td align="center"><a href="https://aniketsingh98571.github.io/Web-Portfolio/"><img src="https://avatars3.githubusercontent.com/u/63097956?v=4" width="100px;" alt=""/><br /><sub><b>Aniket Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=aniketsingh98571" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/himanshu007-creator"><img src="https://avatars2.githubusercontent.com/u/65963997?v=4" width="100px;" alt=""/><br /><sub><b>himanshu007-creator</b></sub></a><br /><a href="#design-himanshu007-creator" title="Design">🎨</a></td>
   </tr>
 </table>
 

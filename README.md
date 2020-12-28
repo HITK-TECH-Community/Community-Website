@@ -22,7 +22,7 @@ This project aims to build the official site for the community page so that any 
 ### Setup the repository to your local environment.
 
 1. `fork` the repository ,     Creates a replica of repository to your local environment.
-2. `git clone https://github.com/HITK-TECH-Community/Community-Website.git`   Download all files to your machine.
+2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Download all files to your machine.
 3. `cd Community-Website`  move to the root directory.
 
 ## Frontend ⚛️

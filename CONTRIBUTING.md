@@ -50,7 +50,31 @@ $ git add <some files>
 ```
 # This message get associated with all files you have changed  
 $ git commit -m "message"  
-``` 
+```
+
+### Commit message guidelines
+- Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+Any line of the commit message cannot be longer than 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools
+
+### Example commit message
+```
+feat(Profile): display QR code
+
+fetch the QR code from API and display it on the Profile page (ProfileFragment.kt)
+
+fixes #1234
+```
+A good rule of thumb for the commit message is to have a present tense verb, followed by whatever it is you're doing in as much detail as possible in 50 chars. Capitalize words correctly and follow general English.
+### For more details, visit
+- [Git commit message guidelines](http://karma-runner.github.io/0.13/dev/git-commit-msg.html)
+- [Writing Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
  
 ## Step 5 : Work Remotely  
 - Now you are ready to your work to the remote repository.  

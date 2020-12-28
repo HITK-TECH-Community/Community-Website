@@ -5,6 +5,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const responseTime = require('response-time');
 const routes = require('./app/routes');
+const updatedata = require('./app/routes/admin/update_data');
 const update = require('./app/routes/update_password');
 const { errorHandler } = require('./helpers/error');
 require('colors');
@@ -29,6 +30,7 @@ app.use(responseTime({ suffix: false }));
 // Use routes
 app.use('/', routes);
 app.use('/', update);
+app.use('/admin', updatedata);
 
 // Response handler
 // app.use(handleResponse);

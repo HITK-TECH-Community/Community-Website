@@ -72,6 +72,9 @@ fetch the QR code from API and display it on the Profile page (ProfileFragment.k
 fixes #1234
 ```
 A good rule of thumb for the commit message is to have a present tense verb, followed by whatever it is you're doing in as much detail as possible in 50 chars. Capitalize words correctly and follow general English.
+### For more details, visit
+- http://karma-runner.github.io/0.13/dev/git-commit-msg.html
+- https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
  
 ## Step 5 : Work Remotely  
 - Now you are ready to your work to the remote repository.  

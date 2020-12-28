@@ -16,29 +16,32 @@ This project aims to build the official site for the community page so that any 
 
 ## Tech Stack 🗃
 
- <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  
+ <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js"> 
+ 
+##  Getting Started 👨‍💻
+
+1. `git clone`
+2. `cd Community-Website`
 
 ## Frontend ⚛️
 
 Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
 
-1. `git clone`
-2. Navigate to `Community-Website` folder using `cd Community-Website`
-3. `cd frontend`
-4. Run `npm install`. It will install all the required packages and dependencies.
-5. Run `npm start` to run the server.
-6. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+1. `cd frontend`
+2. Run `npm install`. It will install all the required packages and dependencies.
+3. Run `npm start` to run the server.
+4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Backend 💻
 
 All the backend code will go in the `backend` folder.
 
-1. git clone
-2. `cd Community-Website`
-3. Navigate to `backend` folder using `cd backend`
-4. Run `npm install`. It will install all the required packages and dependencies.
-5. Run `npm run dev` to run the server in dev mode.
-6. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
+
+1. Navigate to `backend` folder using `cd backend`
+2. Run `npm install`. It will install all the required packages and dependencies.
+3. Run `npm run dev` to run the server in dev mode.
+4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
 ## Related Repositories 📂
 

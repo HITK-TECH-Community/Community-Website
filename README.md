@@ -33,8 +33,8 @@ All the backend code will go in the `backend` folder.
 
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm start` to run the server.
-4. Navigate to [http://localhost:5000](http://localhost:5000) to see the backend server runing in the browser.
+3. Run `npm run dev` to run the server in dev mode.
+4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
 ## Related Repositories 📂
 

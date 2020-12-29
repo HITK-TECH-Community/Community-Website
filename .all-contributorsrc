@@ -179,6 +179,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "atharva-upadhye-01",
+      "name": "Atharva Upadhye",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/70993547?v=4",
+      "profile": "http://atharva-upadhye-01.github.io",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

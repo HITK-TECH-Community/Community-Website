@@ -1,4 +1,5 @@
 import React from 'react';
+import "./faqs.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -8,7 +9,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        width: '100%',
+        width: '65%',
+       margin: '1rem auto',
     },
     heading: {
         fontSize: theme.typography.pxToRem(15),
@@ -30,34 +32,41 @@ export default function Faqs() {
     };
 
     return (
-        <div style={{ margin: '2rem 0', height: '90vh' }}>
-            <h1 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#016795' }}>FREQUENTLY ASKED QUESTION</h1>
-            <h1 style={{ fontWeight: 'bold', textAlign: 'center', color: '#1B2431' }}>Want to ask something from us?</h1>
-            <div style={{ width: '65%', margin: 'auto' }} className={classes.root}>
-                <Accordion style={{ margin: '1rem auto' }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <div>
+        <div className="faqs-top-section">
+        <img src="./images/faq.jpg" class="faq-image"></img>
+        <h1>FREQUENTLY ASKED QUESTION</h1>
+        </div>
+        <div class="faqs-section">
+            <h1 class="faqs-title-text">FREQUENTLY ASKED QUESTION</h1>
+                <div  className={classes.root}>
+                <div class="container">
+                <br></br>
+                <Accordion class="faq-block" expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
 
-                        <h3 style={{ fontWeight: '600', fontSize: '1rem' }}>How to contact with customer service?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;How to contact with customer service?</h3>
 
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails >
                         <Typography>
                             Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
                             maximus est, id dignissim quam.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                <br></br>
+                <Accordion class="faq-block" expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                     >
-                        <h3 style={{ fontWeight: '600', fontSize: '1rem' }}>How to delete my account?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;How to delete my account?</h3>
 
                     </AccordionSummary>
                     <AccordionDetails>
@@ -67,28 +76,30 @@ export default function Faqs() {
           </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ margin: '1rem auto' }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <br></br>
+                <Accordion class="faq-block" expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel3bh-content"
                         id="panel3bh-header"
                     >
-                        <h3 style={{ fontWeight: '600', fontSize: '1rem' }}>Where is edit option on dashboard?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;Where is edit option on dashboard?</h3>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails >
                         <Typography>
                             Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros,
                             vitae egestas augue. Duis vel est augue.
           </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <Accordion style={{ margin: '1rem auto' }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                <br></br>
+                <Accordion class="faq-block" expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <h3 style={{ fontWeight: '600', fontSize: '1rem' }}>Is there any custom pricing system?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;Is there any custom pricing system?</h3>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
@@ -97,7 +108,11 @@ export default function Faqs() {
           </Typography>
                     </AccordionDetails>
                 </Accordion>
+                <br></br>
+                
             </div>
+        </div>
+        </div>
         </div>
 
     );

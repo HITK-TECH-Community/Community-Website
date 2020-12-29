@@ -12,7 +12,7 @@
 
 .jumbo_bg{
     min-height: 30vh;
-    background-image: url(./images/parallax1.jpg);
+    background-image: url(./parallax1.jpg);
     background-attachment: fixed;
     background-position: center;
 }

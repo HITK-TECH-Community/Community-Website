@@ -1,0 +1,43 @@
+* {
+    color: #016795;
+}
+
+.bg_red {
+    background-color: #1B2431;
+}
+
+.btn-blue {
+    background-color: #1E488f;
+}
+
+.jumbo_bg{
+    min-height: 30vh;
+    background-image: url(./images/parallax1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.about_us_bg{
+    /* background-color: #1E488F; */
+    background-color: #1B2431;
+}
+
+.jumbo_p {
+    font-size: smaller;
+}
+
+.jumbo_h1 {
+    letter-spacing: 3px;
+}
+
+.first_desc {
+    min-height: 45vh;
+}
+
+.card_para {
+    font-size: small;
+}
+
+.team_hr {
+    margin-inline: 12rem;
+}

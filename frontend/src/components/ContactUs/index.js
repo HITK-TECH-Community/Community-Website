@@ -44,7 +44,7 @@ const Contact = () => {
                                     placeholder='Description'
                                 />
 
-                                <Button floated='right' color='blue'>Submit</Button>
+                                <Button style={{ marginLeft: '50%' }} color='blue'>Submit</Button>
                             </Form>
                         </Grid.Column>
                     </Grid.Row>

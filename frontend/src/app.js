@@ -10,7 +10,7 @@ import Resources from './components/resource/resources';
 import ContactUs from './components/contact/contact_us';
 import Admin from './components/admin/admin';
 import Faqs from './components/faq/faqs';
-import Contact from './components/ContactUs'
+import Contact from './components/contact/Design1'
 import NotFound from './components/404/not_found';
 import 'semantic-ui-css/semantic.min.css'
 

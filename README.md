@@ -16,13 +16,21 @@ This project aims to build the official site for the community page so that any 
 
 ## Tech Stack 🗃
 
- <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js">  
+ <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js"> 
+ 
+##  Getting Started 👨‍💻
+### Setup the repository to your local environment.
+
+1. `fork` the repository ,     Creates a replica of repository to your local environment.
+2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Download all files to your machine.
+3. `cd Community-Website`  move to the root directory.
 
 ## Frontend ⚛️
 
-Following are the steps to run the frontend of the community-website.
+Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
 
-1. Navigate to `community-website` folder using `cd community-website`
+
+1. Navigate to `frontend` folder using `cd frontend`.
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -31,10 +39,11 @@ Following are the steps to run the frontend of the community-website.
 
 All the backend code will go in the `backend` folder.
 
+
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm start` to run the server.
-4. Navigate to [http://localhost:5000](http://localhost:5000) to see the backend server runing in the browser.
+3. Run `npm run dev` to run the server in dev mode.
+4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
 ## Related Repositories 📂
 
@@ -58,7 +67,7 @@ Thanks goes to these wonderful people ✨✨:
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/kajol-kumari-73245b166/"><img src="https://avatars0.githubusercontent.com/u/44888949?v=4" width="100px;" alt=""/><br /><sub><b>kajol</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Code">💻</a> <a href="#eventOrganizing-Kajol-Kumari" title="Event Organizing">📋</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Documentation">📖</a> <a href="#content-Kajol-Kumari" title="Content">🖋</a> <a href="#ideas-Kajol-Kumari" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Kajol-Kumari" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/kajol-kumari-73245b166/"><img src="https://avatars0.githubusercontent.com/u/44888949?v=4" width="100px;" alt=""/><br /><sub><b>kajol</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Code">💻</a> <a href="#eventOrganizing-Kajol-Kumari" title="Event Organizing">📋</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Documentation">📖</a> <a href="#content-Kajol-Kumari" title="Content">🖋</a> <a href="#ideas-Kajol-Kumari" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Kajol-Kumari" title="Maintenance">🚧</a> <a href="#projectManagement-Kajol-Kumari" title="Project Management">📆</a></td>
     <td align="center"><a href="https://github.com/codewithvk"><img src="https://avatars1.githubusercontent.com/u/61119120?v=4" width="100px;" alt=""/><br /><sub><b>Vivek Javiya</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=codewithvk" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/sreechand2002"><img src="https://avatars1.githubusercontent.com/u/54146135?v=4" width="100px;" alt=""/><br /><sub><b>SREECHAND</b></sub></a><br /><a href="#design-sreechand2002" title="Design">🎨</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=sreechand2002" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/NewCoderBoi"><img src="https://avatars1.githubusercontent.com/u/59294265?v=4" width="100px;" alt=""/><br /><sub><b>Debatra Chatterjee</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=NewCoderBoi" title="Code">💻</a></td>
@@ -72,6 +81,15 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
     <td align="center"><a href="https://abhiisshakee.netlify.app/"><img src="https://avatars2.githubusercontent.com/u/37222497?v=4" width="100px;" alt=""/><br /><sub><b>Abhishek Mogaveera</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Abhishek971999" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vedikaag99"><img src="https://avatars1.githubusercontent.com/u/67699840?v=4" width="100px;" alt=""/><br /><sub><b>Vedika Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=vedikaag99" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jackfrost13"><img src="https://avatars3.githubusercontent.com/u/36669463?v=4" width="100px;" alt=""/><br /><sub><b>Rohit Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=jackfrost13" title="Code">💻</a> <a href="#eventOrganizing-jackfrost13" title="Event Organizing">📋</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=jackfrost13" title="Documentation">📖</a> <a href="#content-jackfrost13" title="Content">🖋</a> <a href="#ideas-jackfrost13" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jackfrost13" title="Maintenance">🚧</a> <a href="#projectManagement-jackfrost13" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/kanishka-aggarwal-255a51169/"><img src="https://avatars0.githubusercontent.com/u/71253790?v=4" width="100px;" alt=""/><br /><sub><b>Kanishka Aggarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kanishkaa24" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars2.githubusercontent.com/u/70213384?v=4" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://aniketsingh98571.github.io/Web-Portfolio/"><img src="https://avatars3.githubusercontent.com/u/63097956?v=4" width="100px;" alt=""/><br /><sub><b>Aniket Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=aniketsingh98571" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/himanshu007-creator"><img src="https://avatars2.githubusercontent.com/u/65963997?v=4" width="100px;" alt=""/><br /><sub><b>himanshu007-creator</b></sub></a><br /><a href="#design-himanshu007-creator" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/SuNiL-Chau"><img src="https://avatars0.githubusercontent.com/u/46418190?v=4" width="100px;" alt=""/><br /><sub><b>Sunil Chaudhary</b></sub></a><br /><a href="#design-SuNiL-Chau" title="Design">🎨</a></td>
+    <td align="center"><a href="http://atharva-upadhye-01.github.io"><img src="https://avatars0.githubusercontent.com/u/70993547?v=4" width="100px;" alt=""/><br /><sub><b>Atharva Upadhye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=atharva-upadhye-01" title="Code">💻</a></td>
   </tr>
 </table>
 

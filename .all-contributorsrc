@@ -16,7 +16,8 @@
         "doc",
         "content",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "projectManagement"
       ]
     },
     {
@@ -115,6 +116,75 @@
       "name": "Vedika Agarwal",
       "avatar_url": "https://avatars1.githubusercontent.com/u/67699840?v=4",
       "profile": "https://github.com/vedikaag99",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jackfrost13",
+      "name": "Rohit Agarwal",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/36669463?v=4",
+      "profile": "https://github.com/jackfrost13",
+      "contributions": [
+        "code",
+        "eventOrganizing",
+        "doc",
+        "content",
+        "ideas",
+        "maintenance",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "kanishkaa24",
+      "name": "Kanishka Aggarwal",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/71253790?v=4",
+      "profile": "https://www.linkedin.com/in/kanishka-aggarwal-255a51169/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Sloth-Panda",
+      "name": "Achyut Kumar Panda",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/70213384?v=4",
+      "profile": "https://github.com/Sloth-Panda",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "aniketsingh98571",
+      "name": "Aniket Singh",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/63097956?v=4",
+      "profile": "https://aniketsingh98571.github.io/Web-Portfolio/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "himanshu007-creator",
+      "name": "himanshu007-creator",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/65963997?v=4",
+      "profile": "https://github.com/himanshu007-creator",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "SuNiL-Chau",
+      "name": "Sunil Chaudhary",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/46418190?v=4",
+      "profile": "https://github.com/SuNiL-Chau",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "atharva-upadhye-01",
+      "name": "Atharva Upadhye",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/70993547?v=4",
+      "profile": "http://atharva-upadhye-01.github.io",
       "contributions": [
         "code"
       ]

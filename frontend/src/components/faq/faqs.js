@@ -30,7 +30,7 @@ export default function Faqs() {
     };
 
     return (
-        <div style={{ margin: '2rem 0', height: '100vh' }}>
+        <div style={{ margin: '2rem 0', height: '90vh' }}>
             <h1 style={{ textAlign: 'center', fontSize: '1.5rem', color: '#016795' }}>FREQUENTLY ASKED QUESTION</h1>
             <h1 style={{ fontWeight: 'bold', textAlign: 'center', color: '#1B2431' }}>Want to ask something from us?</h1>
             <div style={{ width: '65%', margin: 'auto' }} className={classes.root}>

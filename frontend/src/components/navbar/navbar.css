@@ -103,19 +103,22 @@ a.nav-links:hover {
   .NavbarItems {
     position: relative;
   }
+
   .nav-admin-button {
     display: none;
   }
+
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 90vh;
     position: absolute;
-    top: 80px;
+    top: 60px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    padding: 1rem;
   }
 
   .nav-menu.active {
@@ -127,11 +130,15 @@ a.nav-links:hover {
     z-index: 1;
   }
 
+  .nav-item {
+    height: auto;
+  }
+
   .nav-links {
     text-align: center;
-    padding: 2rem;
     width: 100%;
-    display: table;
+    display: flex;
+    justify-content: center;
   }
 
   .nav-links:hover {
@@ -140,18 +147,17 @@ a.nav-links:hover {
   }
 
   .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
+    margin-left: 1rem;
+  }
+
+  .navbar-div {
+    justify-content:flex-start;
   }
 
   .menu-icon {
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
+    right: 20px;
     font-size: 1.8rem;
     cursor: pointer;
   }
@@ -177,6 +183,7 @@ a.nav-links:hover {
   .nav-links-mobile > span {
     font-family: sans-serif;
   }
+
   .nav-links-mobile {
     padding: 8px 20px;
     outline: none;
@@ -187,6 +194,7 @@ a.nav-links:hover {
     border-radius: 4px;
     border: 2px solid #fc0254;
   }
+  
   .nav-links-mobile:hover {
     background: #fff;
     color: #1888ff;

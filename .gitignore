@@ -1,0 +1,3 @@
+backend/node_modules/
+.vscode
+backend/package-lock.json

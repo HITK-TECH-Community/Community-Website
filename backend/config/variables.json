@@ -1,0 +1,5 @@
+{
+  "MONGO_DB_URL": "mongodb+srv://openSourceContribution:E2K8GsQ4JnJ1EnXB@cluster0.dbhtp.mongodb.net/test",
+  "JWT_SECRET_KEY": "VUtpHgSWgrc00g3irHUlwgWYgyLduVtkrAUjRvM5v71H9oHuES7Q94nvDi6YzUT",
+  "JWT_EXPIRES_IN" : "6h"
+}

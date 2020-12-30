@@ -35,7 +35,6 @@ export default function Faqs() {
         <div>
         <div className="faqs-top-section">
         <img src="./images/faq.jpg" class="faq-image"></img>
-        <h1>FREQUENTLY ASKED QUESTION</h1>
         </div>
         <div class="faqs-section">
             <h1 class="faqs-title-text">FREQUENTLY ASKED QUESTION</h1>

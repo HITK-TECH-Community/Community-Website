@@ -8,17 +8,6 @@
     position:relative;
 }
 
-.faqs-top-section h1{
-    position: absolute;
-    top:20px;
-    right:200px;
-    color:black;
-    font-weight: 900;
-    font-family: 'Futura LT Book';
-    font-size:50px;
-    text-shadow: 2px 2px black;
-}
-
 .faqs-section{
     height: 90vh;
     background-color: white;
@@ -48,7 +37,6 @@
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .faq-question{
     font-weight: 600; 
     font-size: 1rem; 
@@ -60,6 +48,12 @@
 
 #panel1bh-header.Mui-expanded, #panel2bh-header.Mui-expanded, #panel3bh-header.Mui-expanded, #panel4bh-header.Mui-expanded{
     background-color: #eff8ff   ;
+}
+
+.faqs-section{
+    display: inline-block;
+    width: 100%;
+    overflow-y: auto;
 }
 
 .container-faq{

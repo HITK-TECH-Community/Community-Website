@@ -40,7 +40,7 @@ export default function Faqs() {
         <div class="faqs-section">
             <h1 class="faqs-title-text">FREQUENTLY ASKED QUESTION</h1>
                 <div  className={classes.root}>
-                <div class="container">
+                <div class="container-faq">
                 <br></br>
                 <Accordion class="faq-block" expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary

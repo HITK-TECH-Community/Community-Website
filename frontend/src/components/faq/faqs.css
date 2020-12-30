@@ -1,0 +1,72 @@
+.faq-image{
+    width:100%;
+    height:90vh;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.faqs-top-section{
+    position:relative;
+}
+
+.faqs-section{
+    height: 90vh;
+    background-color: white;
+}
+
+.faqs-title-text{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #016795;
+}
+
+.faqs-title-subtext{
+    font-weight: bold;
+    text-align: center;
+    color: #1B2431;
+}
+
+.faq-block,#panel1bh-header,#panel2bh-header,#panel3bh-header,#panel4bh-header{
+    background-color:  #d9ecf2;
+}
+
+#panel1bh-content,#panel2bh-content, #panel3bh-content, #panel4bh-content{
+    background-color: #f1f9f9;
+}  
+
+.faq-block{
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.faq-question{
+    font-weight: 600; 
+    font-size: 1rem; 
+}
+
+.MuiPaper-root.Mui-expanded, .MuiPaper-root::after{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+#panel1bh-header.Mui-expanded, #panel2bh-header.Mui-expanded, #panel3bh-header.Mui-expanded, #panel4bh-header.Mui-expanded{
+    background-color: #eff8ff   ;
+}
+
+.faqs-section{
+    display: inline-block;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.container-faq{
+    margin-top: 50px;
+    background-color: #d9ecf2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.faq-block:hover, #panel1bh-header:hover, #panel2bh-header:hover,  #panel3bh-header:hover,  #panel4bh-header:hover{
+    padding-left: 15px;
+    background-color: #cae4db;
+}
+
+.fa{
+    color: Dodgerblue;
+}

@@ -2,13 +2,16 @@
   background: #fff;
   padding: 0 30px;
 }
+
 .contact-parent {
   display: flex;
   padding: 80px 0;
 }
+
 .contact-input {
   position: relative;
 }
+
 .contact-input input,
 .contact-input textarea {
   width: 100%;
@@ -64,7 +67,6 @@
   color: #777777;
 }
 .contact-child {
-  /* display: flex; */
   flex: 1;
 }
 
@@ -81,9 +83,11 @@
   color: #121f3a;
   text-align: center !important;
 }
+
 .contact-image {
   max-width: 100%;
 }
+
 .child2 {
   flex-direction: column;
   justify-content: space-around;

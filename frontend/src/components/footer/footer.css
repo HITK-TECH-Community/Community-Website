@@ -100,6 +100,7 @@
 .heart {
   color: #c2d6d7;
 }
+
 /*.fa-gitter,*/
 .fa-linkedin,
 .fa-slack,
@@ -109,6 +110,7 @@
   padding: 5px;
   color: #fff;
 }
+
 .fa-linkedin:hover {
   color: #0088cc;
 }
@@ -140,6 +142,7 @@
   );
   background-size:100% 5px ;/* if linear-gradient, we need to resize it */
 }
+
 .footer-text {
   padding-top:10px;
   text-align: center;
@@ -150,6 +153,7 @@
 .nav__item {
   margin-bottom: 1.5rem;
 }
+
 @media screen and (min-width: 24.375em) {
   .legal .legal__links {
     margin-left: auto;

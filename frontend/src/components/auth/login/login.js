@@ -18,7 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     loginBtn: {
       marginTop: theme.spacing(2),
-      flexGrow: 1
+      flexGrow: 1,
+      //marginLeft: '50%',
+      background: '#1B2431',
+      color: '#fff' 
+      //background:'#2a4886'
     },
     header: {
       textAlign: 'center',

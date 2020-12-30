@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://github.com/himanshu007-creator"><img src="https://avatars2.githubusercontent.com/u/65963997?v=4" width="100px;" alt=""/><br /><sub><b>himanshu007-creator</b></sub></a><br /><a href="#design-himanshu007-creator" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/SuNiL-Chau"><img src="https://avatars0.githubusercontent.com/u/46418190?v=4" width="100px;" alt=""/><br /><sub><b>Sunil Chaudhary</b></sub></a><br /><a href="#design-SuNiL-Chau" title="Design">🎨</a></td>
     <td align="center"><a href="http://atharva-upadhye-01.github.io"><img src="https://avatars0.githubusercontent.com/u/70993547?v=4" width="100px;" alt=""/><br /><sub><b>Atharva Upadhye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=atharva-upadhye-01" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Sshivani-12"><img src="https://avatars0.githubusercontent.com/u/59923697?v=4" width="100px;" alt=""/><br /><sub><b>Shivani Wakde</b></sub></a><br /><a href="#design-Sshivani-12" title="Design">🎨</a></td>
   </tr>
 </table>
 

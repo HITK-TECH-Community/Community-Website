@@ -1,8 +1,12 @@
+const to = require('await-to-js').default;
+const argon2 = require('argon2');
 const Admin = require('../../models/Admin');
-const express = require("express");
-const router = express.Router();
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-router.put("/update-data/:id", async (req, res,next) => {
+
+//router.put("/update-data/:id", async (req, res,next) => {
+    module.exports =  async (req, res,next) => {
     console.log(req.params.id)
     Admin.findOneAndUpdate({_id:req.params.id},{
         $set:{
@@ -26,6 +30,8 @@ router.put("/update-data/:id", async (req, res,next) => {
             error:err
         })
     })
-  });
+    
+  };
 
-  module.exports = router;
+  
+  

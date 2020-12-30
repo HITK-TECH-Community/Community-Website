@@ -10,7 +10,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '65%',
-       margin: '1rem auto',
+        margin: '1rem auto',
     },
     heading: {
         fontSize: theme.typography.pxToRem(15),
@@ -49,7 +49,7 @@ export default function Faqs() {
                         id="panel1bh-header"
                     >
 
-                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;How to contact with customer service?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to contact with customer service?</h3>
 
                     </AccordionSummary>
                     <AccordionDetails >
@@ -66,7 +66,7 @@ export default function Faqs() {
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;How to delete my account?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to delete my account?</h3>
 
                     </AccordionSummary>
                     <AccordionDetails>
@@ -83,7 +83,7 @@ export default function Faqs() {
                         aria-controls="panel3bh-content"
                         id="panel3bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;Where is edit option on dashboard?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Where is edit option on dashboard?</h3>
                     </AccordionSummary>
                     <AccordionDetails >
                         <Typography>
@@ -99,7 +99,7 @@ export default function Faqs() {
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle"style={{color: 'Dodgerblue'}}  aria-hidden="true"></i>&nbsp; &nbsp;Is there any custom pricing system?</h3>
+                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Is there any custom pricing system?</h3>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>

@@ -1,0 +1,31 @@
+
+  .contact-image{
+    width: 75%;
+    height: 75%;
+    
+  }
+
+  .center{
+    width: 15%;
+    height: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .loginBtn{
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    padding: 5px;;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:0.8em;
+  margin-left: 238px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #354174;
+  border: 2px solid #8847a7;
+  
+  height: 90px;
+  }

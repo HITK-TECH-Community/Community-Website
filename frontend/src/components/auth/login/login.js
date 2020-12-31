@@ -1,25 +1,32 @@
 import React, { useReducer, useEffect } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-
+ 
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardHeader from '@material-ui/core/CardHeader';
 import Button from '@material-ui/core/Button';
+import "./login.css";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    contactsection:{
+       display: 'flex',
+      flexWrap: 'wrap',
+      marginBottom: '100px',
+      marginTop: '100px',
+      margin: `${theme.spacing(0)} auto`
+    },
+    
     container: {
       display: 'flex',
       flexWrap: 'wrap',
       marginBottom: '100px',
       margin: `${theme.spacing(0)} auto`
     },
-    loginBtn: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1
-    },
+    
     header: {
       textAlign: 'center',
       background: '#1B2431',
@@ -32,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   })
 );
+
 
 //state type
 
@@ -149,11 +157,19 @@ const Login = () => {
       });
     }
   return (
-    <form className={classes.container} noValidate autoComplete="off">
+    <div class={classes.contactsection}>
+      <div class="contact-parent">
+        <div class="contact-child child1">
+          <img src="./images/blog.svg" alt="" className="contact-image" />
+        </div>
+
+        <form className={classes.container} noValidate autoComplete="off">
       <Card className={classes.card}>
         <CardHeader className={classes.header} title="Login" />
         <CardContent>
           <div>
+           <img src="./images/profile.svg" alt="" class="center" />
+              
             <TextField
               error={state.isError}
               fullWidth
@@ -182,9 +198,9 @@ const Login = () => {
         <CardActions>
           <Button
             variant="contained"
-            size="large"
+            size="small"
             color="secondary"
-            className={classes.loginBtn}
+            class="loginBtn"
             onClick={handleLogin}
             disabled={state.isButtonDisabled}>
             Login
@@ -192,8 +208,9 @@ const Login = () => {
         </CardActions>
       </Card>
     </form>
+      </div>
+    </div>
   );
 }
 
 export default Login;
-

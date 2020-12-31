@@ -22,12 +22,12 @@ This project aims to build the official site for the community page so that any 
 ### Setup the repository to your local environment.
 
 1. `fork` the repository ,     Creates a replica of repository to your local environment.
-2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Download all files to your machine.
-3. `cd Community-Website`  move to the root directory.
+2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Downloads all repo files to your machine.
+3. `cd Community-Website`  Takes you to the root directory of the project.
 
 ## Frontend ⚛️
 
-Following are the steps to run the frontend of the community-website.All the code will go in `frontend` directory. 
+Following are the steps to run the frontend of the community-website. All the frontend code will go in the `frontend` directory. 
 
 
 1. Navigate to `frontend` folder using `cd frontend`.

@@ -3,15 +3,15 @@ import { Button2 } from "../util/button/button";
 import "./contact_us.css";
 const ContactUs = () => {
   return (
-    <div class="contact-section">
-      <div class="contact-parent">
-        <div class="contact-child child1">
+    <div className="contact-section">
+      <div className="contact-parent">
+        <div className="contact-child child1">
           <img src="./images/contact.jpg" alt="" className="contact-image" />
         </div>
 
-        <div class="contact-child child2">
-          <h3 class="contact-header-text">Get in touch</h3>
-          <div class="inside-contact">
+        <div className="contact-child child2">
+          <h3 className="contact-header-text">Get in touch</h3>
+          <div className="inside-contact">
             <div className="contact-input">
               <input
                 id="txt_name"

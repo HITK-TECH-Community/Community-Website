@@ -34,21 +34,21 @@ export default function Faqs() {
     return (
         <div>
         <div className="faqs-top-section">
-        <img src="./images/faq.jpg" class="faq-image"></img>
+        <img src="./images/faq.jpg" className="faq-image"></img>
         </div>
-        <div class="faqs-section">
-            <h1 class="faqs-title-text">FREQUENTLY ASKED QUESTION</h1>
+        <div className="faqs-section">
+            <h1 className="faqs-title-text">FREQUENTLY ASKED QUESTION</h1>
                 <div  className={classes.root}>
-                <div class="container-faq">
+                <div className="container-faq">
                 <br></br>
-                <Accordion class="faq-block" expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                <Accordion className="faq-block" expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
 
-                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to contact with customer service?</h3>
+                        <h3 className="faq-question"><i className="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to contact with customer service?</h3>
 
                     </AccordionSummary>
                     <AccordionDetails >
@@ -59,13 +59,13 @@ export default function Faqs() {
                     </AccordionDetails>
                 </Accordion>
                 <br></br>
-                <Accordion class="faq-block" expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                <Accordion className="faq-block" expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to delete my account?</h3>
+                        <h3 className="faq-question"><i className="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;How to delete my account?</h3>
 
                     </AccordionSummary>
                     <AccordionDetails>
@@ -76,13 +76,13 @@ export default function Faqs() {
                     </AccordionDetails>
                 </Accordion>
                 <br></br>
-                <Accordion class="faq-block" expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <Accordion className="faq-block" expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel3bh-content"
                         id="panel3bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Where is edit option on dashboard?</h3>
+                        <h3 className="faq-question"><i className="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Where is edit option on dashboard?</h3>
                     </AccordionSummary>
                     <AccordionDetails >
                         <Typography>
@@ -92,13 +92,13 @@ export default function Faqs() {
                     </AccordionDetails>
                 </Accordion>
                 <br></br>
-                <Accordion class="faq-block" expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                <Accordion className="faq-block" expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel4bh-content"
                         id="panel4bh-header"
                     >
-                        <h3 class="faq-question"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Is there any custom pricing system?</h3>
+                        <h3 className="faq-question"><i className="fa fa-question-circle" aria-hidden="true"></i>&nbsp; &nbsp;Is there any custom pricing system?</h3>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>

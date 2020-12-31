@@ -4,21 +4,21 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="footer__addr">
-        <h1 class="footer__logo">HITK Tech Community</h1>
+    <footer className="footer">
+      <div className="footer__addr">
+        <h1 className="footer__logo">HITK Tech Community</h1>
         <address>
-          <i class="fas fa-map-marker-alt"></i> 505 Simpson Square, 505 Simpson Square, 505 Simpson Square
+          <i className="fas fa-map-marker-alt"></i> 505 Simpson Square, 505 Simpson Square, 505 Simpson Square
           <br />
         </address>
         <p>Copyright © 2020 HITK Tech Community</p>
       </div>
 
-      <ul class="footer__nav">
-        <li class="nav__item">
-          <h2 class="nav__title">Navigation</h2>
+      <ul className="footer__nav">
+        <li className="nav__item">
+          <h2 className="nav__title">Navigation</h2>
 
-          <ul class="nav__ul">
+          <ul className="nav__ul">
             <li>
               <a href="/about-us">About</a>
             </li>
@@ -41,10 +41,10 @@ const Footer = () => {
           </ul>
         </li>
 
-        <li class="nav__item">
-          <h2 class="nav__title">Other</h2>
+        <li className="nav__item">
+          <h2 className="nav__title">Other</h2>
 
-          <ul class="nav__ul">
+          <ul className="nav__ul">
             <li>
               <a href="#">Privacy Policy</a>
             </li>
@@ -58,9 +58,9 @@ const Footer = () => {
             </li>
           </ul>
         </li>
-        <li class="nav__item">
-          <h2 class="nav__title">Social</h2>
-          <ul class="nav__ul">
+        <li className="nav__item">
+          <h2 className="nav__title">Social</h2>
+          <ul className="nav__ul">
             <li>Be sure to give us a follow on the below social links</li>
           </ul>
           <a

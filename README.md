@@ -93,6 +93,9 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://github.com/Sshivani-12"><img src="https://avatars0.githubusercontent.com/u/59923697?v=4" width="100px;" alt=""/><br /><sub><b>Shivani Wakde</b></sub></a><br /><a href="#design-Sshivani-12" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/sakshikhachane"><img src="https://avatars1.githubusercontent.com/u/53635792?v=4" width="100px;" alt=""/><br /><sub><b>Sakshi Khachane</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=sakshikhachane" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Swastik1710"><img src="https://avatars3.githubusercontent.com/u/71871571?v=4" width="100px;" alt=""/><br /><sub><b>Swastik Raj Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Swastik1710" title="Code">💻</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->

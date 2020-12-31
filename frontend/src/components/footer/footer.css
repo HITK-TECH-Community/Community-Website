@@ -160,13 +160,11 @@
 }
 
 /* Social Icons styles */
-
 .col ul li{
   margin-bottom: 20px;
 }
 
 .col .social li a{
-    
   position: relative;
   width: 50px;
   height: 50px;
@@ -305,7 +303,6 @@
   margin-top: -15px;
 }
 
-
 @media screen and (min-width: 24.375em) {
   .legal .legal__links {
     margin-left: auto;
@@ -329,4 +326,3 @@
     flex: 2 0px;
   }
 }
-

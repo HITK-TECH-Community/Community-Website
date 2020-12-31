@@ -52,6 +52,7 @@
   background-color: #fc0254;
   transition: all 0.3s ease-out;
 }
+
 .nav-admin-button:hover {
   background-color: transparent;
   color: #fff;

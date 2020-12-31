@@ -52,6 +52,7 @@
   background-color: #fff;
   border: 0;
 }
+
 .main-btn:hover {
   background-color: #fff;
   color: #1863ff;
@@ -76,6 +77,7 @@
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
 }
+
 .main-btn.main-btn-2:hover {
   background-position: right center;
   color: #fff;

@@ -95,6 +95,7 @@ Thanks goes to these wonderful people ✨✨:
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/Swastik1710"><img src="https://avatars3.githubusercontent.com/u/71871571?v=4" width="100px;" alt=""/><br /><sub><b>Swastik Raj Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Swastik1710" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shraddha-1402"><img src="https://avatars2.githubusercontent.com/u/69422250?v=4" width="100px;" alt=""/><br /><sub><b>Shraddha Gupta</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=shraddha-1402" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -121,8 +121,10 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="cprt_text">
-        <p className="cprt">Copyright © 2020 HITK Tech Community</p>
+      
+      <div className="cprt_text text-center d-flex align-items-center flex-column">
+      <div className="copy-divider mt-2" />
+        <p className="cprt py-3">Copyright © 2020 HITK Tech Community</p>
       </div>
     </div>
   );

@@ -262,7 +262,7 @@
 
 .input-field-footer{
   border: 2px solid transparent;
-  
+  border-radius: 8px;
   width: 250px;
   text-align: center;
   margin-right: 10px;
@@ -271,6 +271,7 @@
 .submit-btn-footer{
   outline: none;
   border: 2px solid transparent;
+  border-radius: 8px;
   font-size: 15px;
   color: #fff;
   cursor: pointer;
@@ -283,6 +284,11 @@
   color: #fff;
   border: 2px solid #ee4d55;
 }
+.copy-divider{
+  background-color: #0088cc;
+  height: 0.12rem;
+  width: 70%;
+}
 
 .cprt{
   padding: 4px ;
@@ -290,6 +296,7 @@
 
 .cprt_text{
   width: 100%;
+  
   background-color:#121f3a;
   color : white;
   text-align: center;

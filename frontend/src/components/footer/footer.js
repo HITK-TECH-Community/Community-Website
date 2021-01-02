@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#">Sitemap</a>
+                <a href="#">Get Involved</a>
               </li>
             </ul>
           </li>

@@ -12,7 +12,7 @@ const Test = () => {
           every opportunities.
         </h2>
         <button className='join-us-btn'>
-          <a href='https://www.linkedin.com/company/hitk-tech-community' target="_blank">
+          <a href='https://www.linkedin.com/company/hitk-tech-community' target="_blank" rel="noopener noreferrer">
             Follow us on Linked<i className='fab fa-linkedin'></i>
           </a>
         </button>

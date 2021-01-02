@@ -52,15 +52,15 @@ const Footer = () => {
 
             <ul className="nav__ul">
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="/#">Privacy Policy</a>
               </li>
 
               <li>
-                <a href="#">Terms of Use</a>
+                <a href="/#">Terms of Use</a>
               </li>
 
               <li>
-                <a href="#">Get Involved</a>
+                <a href="/#">Get Involved</a>
               </li>
             </ul>
           </li>
@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="col">
               <ul className="social">
                 <li>
-                  <a href="https://www.linkedin.com/company/hitk-tech-community" target="_blank">
+                  <a href="https://www.linkedin.com/company/hitk-tech-community" target="_blank" rel="noopener noreferrer">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -81,7 +81,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw" target="_blank">
+                  <a href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw" target="_blank" rel="noopener noreferrer">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -90,7 +90,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:hitktechcommunity@gmail.com" target="_blank">
+                  <a href="mailto:hitktechcommunity@gmail.com" target="_blank" rel="noopener noreferrer">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -99,7 +99,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/HITK-TECH-Community/" target="_blank">
+                  <a href="https://github.com/HITK-TECH-Community/" target="_blank" rel="noopener noreferrer">
                     <span></span>
                     <span></span>
                     <span></span>

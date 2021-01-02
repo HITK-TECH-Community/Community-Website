@@ -14,9 +14,9 @@ const Footer = () => {
           <div className="newsletter">
             <h2 className="nav__title">Sign Up for our Newsletter</h2>
             <p>Receive updates and news about various Job Opportunities, Internships, Webinars and Open Source Events.</p>
-            <form className="d-flex align-items-center mt-4">
-              <input type="text" className="input-field-footer py-2" placeholder="Email Id" required />
-              <button type="submit" className="submit-btn-footer py-2 px-3 ">Sign Up</button>
+            <form className="d-flex flex-column flex-md-row align-items-center mt-4">
+              <input type="text" className="input-field-footer py-2" placeholder="Email Id" required />                        
+              <button type="submit" className="mt-3 mt-md-0 submit-btn-footer py-2 px-3 ">Sign Up</button>
             </form>
           </div>
         </div>
@@ -123,7 +123,6 @@ const Footer = () => {
       </footer>
       
       <div className="cprt_text ">
-    
         <p className="cprt py-2">Copyright © 2020 HITK Tech Community</p>
       </div>
     </div>

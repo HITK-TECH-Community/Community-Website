@@ -97,6 +97,7 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://github.com/Swastik1710"><img src="https://avatars3.githubusercontent.com/u/71871571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Swastik Raj Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Swastik1710" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/shraddha-1402"><img src="https://avatars2.githubusercontent.com/u/69422250?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shraddha Gupta</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=shraddha-1402" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/musavveer"><img src="https://avatars2.githubusercontent.com/u/62888562?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Musavveer Rehaman</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=musavveer" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Shridhar-dev"><img src="https://avatars0.githubusercontent.com/u/52820662?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shridhar-dev</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Shridhar-dev" title="Code">💻</a></td>
   </tr>
 </table>
 

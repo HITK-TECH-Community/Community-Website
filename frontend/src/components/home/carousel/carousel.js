@@ -11,28 +11,28 @@ export class Owldemo1 extends Component {
       options: {
         loop: true,
         margin: 45,
-        nav:true,
-        responsive:{
+        nav: true,
+        responsive: {
           0: {
-              items: 1,
-            },
-            500: {
-              items: 2,
-              margin: 20, 
+            items: 1,
+          },
+          500: {
+            items: 2,
+            margin: 20,
           },
           800: {
-              items: 2,
-              margin: 0,
+            items: 2,
+            margin: 0,
           },
           1000: {
             items: 2,
             margin: 50,
           },
           1100: {
-            items: 3
-          }
-        }
-      }
+            items: 3,
+          },
+        },
+      },
     };
   }
   render() {

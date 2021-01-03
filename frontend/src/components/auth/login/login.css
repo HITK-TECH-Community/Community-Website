@@ -1,8 +1,7 @@
 
-  .contact-image{
-    width: 75%;
-    height: 75%;
-    
+  .contact-image1{
+    max-width: 70%;
+   margin-left: 50px;
   }
 
   .center{
@@ -12,20 +11,16 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .loginBtn{
-    text-transform: uppercase;
-    border: none;
-    color: white;
-    padding: 5px;;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size:0.8em;
-  margin-left: 238px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: #354174;
-  border: 2px solid #8847a7;
+  .row {
+    display: flex;
+  }
   
-  height: 90px;
+  .column {
+    flex: 50%;
+  }
+
+  .Btn{
+    
+    font-size: 5px;
+    background-color: rgb(54, 98, 218) !important;
   }

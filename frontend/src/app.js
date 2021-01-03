@@ -11,7 +11,7 @@ import ContactUs from './components/contact/contact_us';
 import Admin from './components/admin/admin';
 import Faqs from './components/faq/faqs';
 import NotFound from './components/404/not_found';
-
+import Login from './components/auth/login/login';
 import './app.css';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path='/resources' component={Resources} />
             <Route exact path='/contact-us' component={ContactUs} />
             <Route exact path='/faqs' component={Faqs} />
-            <Route exact path='/admin' component={Admin} />
+            <Route exact path='/admin' component={Login} />
             <Route component={NotFound} />
           </Switch>
         </Router>

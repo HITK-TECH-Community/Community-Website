@@ -16,14 +16,27 @@ const useStyles = makeStyles((theme: Theme) =>
        display: 'flex',
       flexWrap: 'wrap',
       marginBottom: '100px',
-      marginTop: '100px',
+     
+      
       margin: `${theme.spacing(0)} auto`
     },
-    
+    loginBtn:{
+     
+     fontWeight:'10',
+     display: 'inline-block',
+     textAlign: 'center',
+     size:'sm',
+     cursor: 'pointer',
+  
+     border: '2px solid #8847a7',
+     width:'100%',
+     height: '90px'
+
+    },
     container: {
       display: 'flex',
       flexWrap: 'wrap',
-      marginBottom: '100px',
+    
       margin: `${theme.spacing(0)} auto`
     },
     
@@ -31,10 +44,11 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: 'center',
       background: '#1B2431',
       color: '#fff'
+      
     },
     card: {
       marginTop: theme.spacing(10),
-      width: '700px',
+      width: '700px'
       
     }
   })
@@ -157,18 +171,18 @@ const Login = () => {
       });
     }
   return (
-    <div class={classes.contactsection}>
-      <div class="contact-parent">
-        <div class="contact-child child1">
-          <img src="./images/blog.svg" alt="" className="contact-image" />
+    <div className={classes.contactsection} class="row">
+      <div className="contact-parent">
+        <div className="column">
+          <img src="./images/blog.svg" alt="" className="contact-image1" />
         </div>
-
-        <form className={classes.container} noValidate autoComplete="off">
+        <div className="column">
+        <form className={classes.container}  noValidate autoComplete="off">
       <Card className={classes.card}>
         <CardHeader className={classes.header} title="Login" />
         <CardContent>
           <div>
-           <img src="./images/profile.svg" alt="" class="center" />
+           <img src="./images/profile.svg" alt="" className="center" />
               
             <TextField
               error={state.isError}
@@ -196,19 +210,20 @@ const Login = () => {
           </div>
         </CardContent>
         <CardActions>
-          <Button
+          <Button 
             variant="contained"
-            size="small"
-            color="secondary"
-            class="loginBtn"
+            
+            
+            className={classes.loginBtn}
             onClick={handleLogin}
             disabled={state.isButtonDisabled}>
             Login
           </Button>
         </CardActions>
       </Card>
-    </form>
-      </div>
+     </form>
+     </div>
+     </div>
     </div>
   );
 }

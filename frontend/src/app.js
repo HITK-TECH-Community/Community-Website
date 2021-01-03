@@ -13,6 +13,7 @@ import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
+import Terms from "./components/terms/terms";
 
 import "./app.css";
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route exact path="/faqs" component={Faqs} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/terms" component={Terms}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

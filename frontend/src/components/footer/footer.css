@@ -261,45 +261,42 @@
 }
 
 .input-field-footer{
-  border-radius: 10px;
-  line-height: 5px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   width: 250px;
   text-align: center;
   margin-right: 10px;
 } 
 
 .submit-btn-footer{
-  margin-top: 10px;
-  padding: 1px 10px;
-  line-height: 20px;
-  border-radius: 10px;
   outline: none;
-  border: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
   font-size: 15px;
   color: #fff;
   cursor: pointer;
   background-color: #ee4d55;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s;
 }
 .submit-btn-footer:hover {
+  
   background-color: transparent;
   color: #fff;
-  border-radius: 10px;
   border: 2px solid #ee4d55;
 }
 
 .cprt{
-  padding: 4px 0;
+  padding: 4px ;
 }
 
 .cprt_text{
   width: 100%;
-  background-color: #016795;
+  background-color:#016795;
   color : white;
   text-align: center;
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: -19px;
+  margin-bottom: 0px;
   margin-top: -15px;
 }
 

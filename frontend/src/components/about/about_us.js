@@ -14,7 +14,7 @@ const AboutUs = () => {
             <div className="col-lg-6">
                 <h1>Who are we and what we do?</h1>
                 <div className='dash'></div>
-                <h5 className='by-line text-left'>By students, For students</h5>
+                <h4 className='by-line text-left'>By students, For students</h4>
             </div>
             <div className="col-lg-6">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!</p>

@@ -17,10 +17,7 @@
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(7, auto);
-  grid-gap: 10px;
-  list-style: none;
+  display: flex;
   text-align: center;
   width: 70vw;
   justify-content: start;
@@ -31,6 +28,7 @@
 
 .nav-item {
   display: flex;
+  margin: 5px;
   align-items: center;
   height: 60px;
 }

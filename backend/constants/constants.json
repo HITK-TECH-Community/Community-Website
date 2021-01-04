@@ -5,6 +5,8 @@
     "DATABASE": "Database Error",
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
-    "USER": "User "
+    "USER": "User ",
+    "SERVER": "Internal Server Error",
+    "NOTFOUND": "Not Found"
   }
 }

@@ -70,7 +70,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="/#">Terms of Use</a>
+                <a href="/terms">Terms of Use</a>
               </li>
 
               <li>

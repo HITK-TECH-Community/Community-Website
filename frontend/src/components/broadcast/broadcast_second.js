@@ -8,13 +8,12 @@ import Card from './card.js'
 
 
 
-export class Owldemo extends Component {
+export class Owldemo1 extends Component {
     render() {
 
 
     return (
 
-        
         <div className="Bottom_bgbox">
         <div className="Bottom_bgbox_first">
       <div className="motive">
@@ -56,10 +55,10 @@ export class Owldemo extends Component {
         </OwlCarousel>
       </div>
      </div>
-     
+
     );
   }
 }
 
 
-export default Owldemo;
+export default Owldemo1;

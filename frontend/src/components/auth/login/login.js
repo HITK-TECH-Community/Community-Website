@@ -1,8 +1,19 @@
 import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
-//state type
+let show = false;
+const toggleShow = () => {
+  if(show == false)
+  {
+    show = true;
+  }
+  else if(show == true)
+  {
+    show = false;
+  }
+};
 
+//state type
 type State = {
   username: "string",
   password: "string",
@@ -149,19 +160,19 @@ const Login = () => {
               <input
                 error={state.isError}
                 id="password"
-                type="password"
+                type= {(show==true) ? 'text':'password'}
                 required="required"
                 name="password"
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
               />
-              <i class="fa fa-eye-slash"></i>
+              <i class="fa fa-eye-slash" onClick={toggleShow}></i>
             </div>
             <div className="login-input">
               <button
                 id="btn"
-                className="login-btn"
+                className="login-btn main-btn main-btn-2"
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
               >

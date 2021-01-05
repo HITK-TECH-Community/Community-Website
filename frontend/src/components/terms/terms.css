@@ -9,7 +9,13 @@
     height: 50vh;
     opacity: 0.8;
 }
-
+.terms_space {
+    margin-left: 30vh;
+}
+.terms_space1 {
+    margin-left: 30vh;
+    margin-right: 30vh;
+}
 .agreement {
     padding: 60px 20px 60px 20px;
 }
@@ -32,4 +38,3 @@
     }
 
 }
-  

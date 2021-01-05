@@ -6,7 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./faqs.css";
-import img from './faq.png'
+import img from "./faq.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,107 +34,122 @@ export default function Faqs() {
 
   return (
     <div>
-       <div className="head"> Frequently Asked Questions </div>
-       <div className="faq" >
-           <img src={img} className="faq-image"/>
-           <div className="faq-block" >
-              <Accordion className="accord">
-                <AccordionSummary
-                style={{color:'white'}}
-                expandIcon={<ExpandMoreIcon style={{color:'white',fontSize:'27px'}} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                  <h3 className="faq-question">
-                  <i className="fa fa-question-circle" aria-hidden="true"></i>
-                  &nbsp; &nbsp;How to contact with customer service?
-                </h3>
-                </AccordionSummary>
-                <AccordionDetails>
-                   <Typography style={{color:'white'}}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                   </Typography>
-                </AccordionDetails>                     
-              </Accordion>
-              <Accordion className="accord">
-                 <AccordionSummary
-                style={{color:'white'}}
-                expandIcon={<ExpandMoreIcon style={{color:'white',fontSize:'27px'}} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                 <h3 className="faq-question">
-                  <i className="fa fa-question-circle" aria-hidden="true"></i>
-                  &nbsp; &nbsp;How to delete my account?
-                </h3>
-                </AccordionSummary>
-                <AccordionDetails>
-                   <Typography style={{color:'white'}}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                   </Typography>
-                </AccordionDetails>                     
-              </Accordion>
-              <Accordion className="accord" >
-                 <AccordionSummary
-                style={{color:'white'}}
-                expandIcon={<ExpandMoreIcon style={{color:'white',fontSize:'27px'}} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                 <h3 className="faq-question">
-                  <i className="fa fa-question-circle" aria-hidden="true"></i>
-                  &nbsp; &nbsp;Where is edit option on dashboard?
-                </h3>
-                </AccordionSummary>
-                <AccordionDetails>
-                   <Typography style={{color:'white'}}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                   </Typography>
-                </AccordionDetails>                     
-              </Accordion>
-              <Accordion className="accord">
-                 <AccordionSummary
-                style={{color:'white'}}
-                expandIcon={<ExpandMoreIcon style={{color:'white',fontSize:'27px'}} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                 <h3 className="faq-question">
-                  <i className="fa fa-question-circle" aria-hidden="true"></i>
-                  &nbsp; &nbsp;Is there any custom pricing system?
-                </h3>
-                </AccordionSummary>
-                <AccordionDetails>
-                   <Typography style={{color:'white'}}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                   </Typography>
-                </AccordionDetails>                     
-              </Accordion>
-              <Accordion className="accord">
-                 <AccordionSummary
-                style={{color:'white'}}
-                expandIcon={<ExpandMoreIcon style={{color:'white',fontSize:'27px'}} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                 <h3 className="faq-question">
-                  <i className="fa fa-question-circle" aria-hidden="true"></i>
-                  &nbsp; &nbsp;How to change my password?
-                </h3>
-                </AccordionSummary>
-                <AccordionDetails>
-                   <Typography style={{color:'white'}}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                   </Typography>
-                </AccordionDetails>                     
-              </Accordion>
-           </div>
-       </div>
-   </div>
+      <div className="head"> Frequently Asked Questions </div>
+      <div className="faq">
+        <img src={img} className="faq-image" />
+        <div className="faq-block">
+          <Accordion className="accord">
+            <AccordionSummary
+              style={{ color: "white" }}
+              expandIcon={
+                <ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <h3 className="faq-question">
+                <i className="fa fa-question-circle" aria-hidden="true"></i>
+                &nbsp; &nbsp;How to contact with customer service?
+              </h3>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{ color: "white" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className="accord">
+            <AccordionSummary
+              style={{ color: "white" }}
+              expandIcon={
+                <ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <h3 className="faq-question">
+                <i className="fa fa-question-circle" aria-hidden="true"></i>
+                &nbsp; &nbsp;How to delete my account?
+              </h3>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{ color: "white" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className="accord">
+            <AccordionSummary
+              style={{ color: "white" }}
+              expandIcon={
+                <ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <h3 className="faq-question">
+                <i className="fa fa-question-circle" aria-hidden="true"></i>
+                &nbsp; &nbsp;Where is edit option on dashboard?
+              </h3>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{ color: "white" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className="accord">
+            <AccordionSummary
+              style={{ color: "white" }}
+              expandIcon={
+                <ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <h3 className="faq-question">
+                <i className="fa fa-question-circle" aria-hidden="true"></i>
+                &nbsp; &nbsp;Is there any custom pricing system?
+              </h3>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{ color: "white" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion className="accord">
+            <AccordionSummary
+              style={{ color: "white" }}
+              expandIcon={
+                <ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <h3 className="faq-question">
+                <i className="fa fa-question-circle" aria-hidden="true"></i>
+                &nbsp; &nbsp;How to change my password?
+              </h3>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography style={{ color: "white" }}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        </div>
+      </div>
+    </div>
   );
 }

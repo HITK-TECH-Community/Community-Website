@@ -18,6 +18,9 @@ This project aims to build the official site for the community page so that any 
 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-expressJS-yellowgreen"> <img src="https://img.shields.io/badge/-ReactJS-%2300bfff%20">  <img src="https://img.shields.io/badge/-NodeJS-black?style=flat&logo=node.js"> 
  
+## How to contribute ? 
+- Follow Contributon Guidelines mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/CONTRIBUTING.md)
+
 ##  Getting Started 👨‍💻
 ### Setup the repository to your local environment.
 

@@ -4,11 +4,11 @@ This documentation contains a set of guidelines to help you during the contribut
 
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember, **no contribution is too small.** 
 
-- Each participant will be assigned **2 issues (max)** at a time to work.
-- Participants have **7 days** to complete issues. After that issues will be assigned to others.
-- Participants have to **comment** on issues they would like to work on, and mentors will assign you.
+- Each participant/contributor will be assigned **2 issues (max)** at a time to work.
+- Participants/contributors have **7 days** to complete issues. After that issues will be assigned to others.
+- Participants/contributors have to **comment** on issues they would like to work on, and mentors will assign you.
 - Issues will be assigned on a **first-come, first-serve basis**.
-- Participants can also **open their issues**, but it needs to be verified and labelled by a mentor.
+- Participants/contributors can also **open their issues**, but it needs to be verified and labelled by a mentor.
 - Before opening a new issue, please **check** if it is already created or not.
 - Pull requests will be merged after being **reviewed by a mentor**.
 - Create a pull request from a **branch** other than `main`.

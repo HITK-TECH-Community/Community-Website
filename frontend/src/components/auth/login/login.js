@@ -1,15 +1,13 @@
 import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
-let show = false;
 const toggleShow = () => {
-  if(show == false)
-  {
-    show = true;
+  var temp = document.getElementById("password"); 
+  if(temp.type == "password"){
+    temp.type = "text";
   }
-  else if(show == true)
-  {
-    show = false;
+  else{
+    temp.type = "password"
   }
 };
 
@@ -161,17 +159,17 @@ const Login = () => {
               <input
                 error={state.isError}
                 id="password"
-                type= {(show==true) ? 'text':'password'}
                 required="required"
                 name="password"
+                type="password"
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
                 class = "inputLogin"
               />
-              <i class="fa fa-eye-slash" onClick={toggleShow}></i>
+              <i class ="fa fa-eye-slash" onClick={toggleShow}/>
             </div>
-            <div className="login-input">
+            <div className="login-input" style={{ textAlign: "center" }}>
               <button
                 id="btn"
                 className="login-btn main-btn main-btn-2"

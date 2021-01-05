@@ -38,7 +38,9 @@ const Terms = () => {
                 quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur
                 at!
                 </p>
-                <Button2 className="terms_space1" label="Agree and Continue" type="submit" />
+                <div className="terms_space1">
+                <Button2  label="Agree and Continue" type="submit" />
+              </div>
               </div>
           </div>
       </div>

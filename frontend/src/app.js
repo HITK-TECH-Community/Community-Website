@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
+import BroadcastSecond from "./components/broadcast/broadcast_second";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
@@ -26,7 +27,11 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about-us" component={AboutUs} />
-            <Route exact path="/broadcasts" component={Broadcasts} />
+            <Route exact path="/Broadcasts" >
+             <Broadcasts/>
+             <BroadcastSecond/>
+            </Route>
+            
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />

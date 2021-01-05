@@ -65,9 +65,10 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-input:focus{
+.inputLogin:focus{
   box-shadow: inset 2px 2px 5px #1d1c1c, inset -2px -2px 5px #807f7f;
 }
+
 .login-btn{
   margin-bottom: 30px !important;
   width: 100%;

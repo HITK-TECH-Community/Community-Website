@@ -102,6 +102,7 @@ Thanks goes to these wonderful people ✨✨:
     <td align="center"><a href="https://github.com/musavveer"><img src="https://avatars2.githubusercontent.com/u/62888562?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Musavveer Rehaman</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=musavveer" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Shridhar-dev"><img src="https://avatars0.githubusercontent.com/u/52820662?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shridhar-dev</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Shridhar-dev" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/tejan-singh"><img src="https://avatars3.githubusercontent.com/u/50990883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejan Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=tejan-singh" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://shitiz-aggarwal.github.io/SA-portfolio/"><img src="https://avatars1.githubusercontent.com/u/53532851?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SHITIZ AGGARWAL</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=SHITIZ-AGGARWAL" title="Documentation">📖</a></td>
   </tr>
 </table>
 

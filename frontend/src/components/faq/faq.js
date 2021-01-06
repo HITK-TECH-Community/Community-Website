@@ -5,8 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./faqs.css";
-import img from "./faq.png";
+import "./faq.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +35,7 @@ export default function Faqs() {
     <div>
       <div className="head"> Frequently Asked Questions </div>
       <div className="faq">
-        <img src={img} className="faq-image" />
+        <img src="./images/faq.png" className="faq-image" />
         <div className="faq-block">
           <Accordion className="accord">
             <AccordionSummary

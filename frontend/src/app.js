@@ -8,7 +8,7 @@ import Broadcasts from "./components/broadcast/broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
-import Faqs from "./components/faq/faqs";
+import Faqs from "./components/faq/faq";
 import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
 import Navbar from "./components/navbar/navbar";

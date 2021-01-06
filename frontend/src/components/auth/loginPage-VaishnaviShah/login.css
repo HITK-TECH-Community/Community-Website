@@ -64,3 +64,64 @@
   margin-top: -1px;
   color: rgb(27,36,49);
 } 
+
+@media(max-width: 1070px) {
+  .image{
+    position: relative;
+    top: 8px;
+    left: 10px;
+  }
+  .img{
+    margin-left: 1%;
+    margin-top: 7%;
+    width: 50% !important;
+  }
+  .login{
+    width: fit-content;
+    position: relative !important ;
+    left: 200px;
+    top: -130px;
+    height: 400px;
+    margin-bottom: 100px;
+    margin-top: -50px;
+  }
+}
+
+@media(max-width: 800px) {
+  .image{
+    display: none;
+  }
+  .login{
+    width: 400px;
+    position: relative !important ;
+    left: -300px;
+    top: 300px;
+    height: 400px;
+    margin-bottom: 100px;
+    margin-top: -50px;
+  }
+}
+@media(max-width: 500px) {
+  .image{
+    display: none;
+  }
+  .login{
+    width: auto;
+    position: relative !important ;
+    left: -370px;
+    top: 300px;
+    height: 400px;
+    margin-bottom: 100px;
+    margin-top: -50px;
+  }
+}
+
+
+  /* .login-card {
+    width: 85%;
+    margin: 10% auto;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  } */

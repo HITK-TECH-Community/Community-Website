@@ -14,6 +14,7 @@ import NotFound from "./components/404/not_found";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
+import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 
 import "./app.css";
 
@@ -33,6 +34,7 @@ const App = () => {
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/terms" component={Terms}/>
+            <Route exact path="/privacy-policy" component={PrivacyPolicy}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

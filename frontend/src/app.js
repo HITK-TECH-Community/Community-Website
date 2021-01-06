@@ -27,17 +27,17 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about-us" component={AboutUs} />
-            <Route exact path="/Broadcasts" >
-             <Broadcasts/>
-             <BroadcastSecond/>
+            <Route exact path="/Broadcasts">
+              <Broadcasts />
+              <BroadcastSecond />
             </Route>
-            
+
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/terms" component={Terms}/>
+            <Route exact path="/terms" component={Terms} />
             <Route component={NotFound} />
           </Switch>
         </Router>

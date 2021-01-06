@@ -1,0 +1,123 @@
+.login-section {
+  display: flex;
+  background-color: #e7e7e7;
+}
+
+.login-image {
+  flex: 1;
+  background-color: var(--secondary-color);
+}
+
+.child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-image img {
+  max-width: 100%;
+}
+
+.login-form {
+  flex: 1;
+}
+
+.child2 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.login-card {
+  width: 75%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 20% auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.card-heading {
+  padding: 30px 0;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.inside-card {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.login-input {
+  position: relative;
+}
+
+.login-input input,
+.login-btn {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 10px;
+  padding: 0 25px;
+  color: #777777;
+  margin-bottom: 30px !important;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.login-input input::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.login-input input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.login-input input:focus {
+  border-color: #1863ff !important ;
+  background-color: #ffffff;
+}
+
+.login-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: #777777;
+}
+
+.login-btn {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 40px !important;
+  box-shadow: 3px 3px 8px #888888, -3px -3px 8px #ffffff;
+  transition: 0.5s;
+}
+
+.login-btn:hover {
+  background: #16316d;
+}
+
+.login-btn:active {
+  background: #0c1c3d;
+}
+
+@media screen and (max-width: 750px) {
+  .login-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login-card {
+    width: 85%;
+    margin: 10% auto;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  }
+}

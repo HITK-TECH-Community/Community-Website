@@ -1,128 +1,100 @@
-import React, { useReducer, useEffect } from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-
-import TextField from '@material-ui/core/TextField';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import CardHeader from '@material-ui/core/CardHeader';
-import Button from '@material-ui/core/Button';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      marginBottom: '100px',
-      margin: `${theme.spacing(0)} auto`
-    },
-    loginBtn: {
-      marginTop: theme.spacing(2),
-      flexGrow: 1
-    },
-    header: {
-      textAlign: 'center',
-      background: '#1B2431',
-      color: '#fff'
-    },
-    card: {
-      marginTop: theme.spacing(10),
-      width: '700px',
-      
-    }
-  })
-);
+import React, { useReducer, useEffect } from "react";
+import "./login.css";
 
 //state type
 
 type State = {
-  username: 'string',
-  password:  'string',
-  isButtonDisabled: 'boolean',
-  helperText: 'string',
-  isError: 'boolean'
+  username: "string",
+  password: "string",
+  isButtonDisabled: "boolean",
+  helperText: "string",
+  isError: "boolean",
 };
 
-const initialState:State = {
-  username: '',
-  password: '',
+const initialState: State = {
+  username: "",
+  password: "",
   isButtonDisabled: true,
-  helperText: '',
-  isError: false
+  helperText: "",
+  isError: false,
 };
 
-type Action = { type: 'setUsername', payload: string }
-  | { type: 'setPassword', payload: string }
-  | { type: 'setIsButtonDisabled', payload: boolean }
-  | { type: 'loginSuccess', payload: string }
-  | { type: 'loginFailed', payload: string }
-  | { type: 'setIsError', payload: boolean };
+type Action =
+  | { type: "setUsername", payload: string }
+  | { type: "setPassword", payload: string }
+  | { type: "setIsButtonDisabled", payload: boolean }
+  | { type: "loginSuccess", payload: string }
+  | { type: "loginFailed", payload: string }
+  | { type: "setIsError", payload: boolean };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case 'setUsername': 
+    case "setUsername":
       return {
         ...state,
-        username: action.payload
+        username: action.payload,
       };
-    case 'setPassword': 
+    case "setPassword":
       return {
         ...state,
-        password: action.payload
+        password: action.payload,
       };
-    case 'setIsButtonDisabled': 
+    case "setIsButtonDisabled":
       return {
         ...state,
-        isButtonDisabled: action.payload
+        isButtonDisabled: action.payload,
       };
-    case 'loginSuccess': 
+    case "loginSuccess":
       return {
         ...state,
         helperText: action.payload,
-        isError: false
+        isError: false,
       };
-    case 'loginFailed': 
+    case "loginFailed":
       return {
         ...state,
         helperText: action.payload,
-        isError: true
+        isError: true,
       };
-    case 'setIsError': 
+    case "setIsError":
       return {
         ...state,
-        isError: action.payload
+        isError: action.payload,
       };
   }
-}
+};
 
 const Login = () => {
-  const classes = useStyles();
+  //state for showing and hiding password
+  // const [showPass, setShowPass] = useState(false);
+
+  // const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (state.username.trim() && state.password.trim()) {
-     dispatch({
-       type: 'setIsButtonDisabled',
-       payload: false
-     });
+      dispatch({
+        type: "setIsButtonDisabled",
+        payload: false,
+      });
     } else {
       dispatch({
-        type: 'setIsButtonDisabled',
-        payload: true
+        type: "setIsButtonDisabled",
+        payload: true,
       });
     }
   }, [state.username, state.password]);
 
   const handleLogin = () => {
-    if (state.username === 'abc@email.com' && state.password === 'password') {
+    if (state.username === "abc@email.com" && state.password === "password") {
       dispatch({
-        type: 'loginSuccess',
-        payload: 'Login Successfully'
+        type: "loginSuccess",
+        payload: "Login Successfully",
       });
     } else {
       dispatch({
-        type: 'loginFailed',
-        payload: 'Incorrect username or password'
+        type: "loginFailed",
+        payload: "Incorrect username or password",
       });
     }
   };
@@ -133,67 +105,74 @@ const Login = () => {
     }
   };
 
-  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setUsername',
-        payload: event.target.value
-      });
-    };
+  const handleUsernameChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: "setUsername",
+      payload: event.target.value,
+    });
+  };
 
-  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> =
-    (event) => {
-      dispatch({
-        type: 'setPassword',
-        payload: event.target.value
-      });
-    }
+  const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    dispatch({
+      type: "setPassword",
+      payload: event.target.value,
+    });
+  };
   return (
-    <form className={classes.container} noValidate autoComplete="off">
-      <Card className={classes.card}>
-        <CardHeader className={classes.header} title="Login" />
-        <CardContent>
-          <div>
-            <TextField
-              error={state.isError}
-              fullWidth
-              id="username"
-              type="email"
-              label="Username"
-              placeholder="Username"
-              margin="normal"
-              onChange={handleUsernameChange}
-              onKeyPress={handleKeyPress}
-            />
-            <TextField
-              error={state.isError}
-              fullWidth
-              id="password"
-              type="password"
-              label="Password"
-              placeholder="Password"
-              margin="normal"
-              helperText={state.helperText}
-              onChange={handlePasswordChange}
-              onKeyPress={handleKeyPress}
-            />
+    <div className="login-section">
+      <div className="login-image child1">
+        <img src="./images/login-illustration.png" alt="login-illustration" />
+      </div>
+      <div className="login-form child2">
+        <div className="login-card">
+          <h1 className="card-heading">Welcome Back</h1>
+          <div className="inside-card">
+            <div className="login-input">
+              <input
+                autocomplete="off"
+                error={state.isError}
+                id="username"
+                type="email"
+                required="required"
+                name="username"
+                placeholder="Username"
+                onChange={handleUsernameChange}
+                onKeyPress={handleKeyPress}
+              />
+              <i className="fas fa-user"></i>
+            </div>
+            <div className="login-input">
+              <input
+                error={state.isError}
+                id="password"
+                type="password"
+                required="required"
+                name="password"
+                placeholder="Password"
+                onChange={handlePasswordChange}
+                onKeyPress={handleKeyPress}
+              />
+              <i class="fa fa-eye-slash"></i>
+            </div>
+            <div className="login-input">
+              <button
+                id="btn"
+                className="login-btn"
+                onClick={handleLogin}
+                disabled={state.isButtonDisabled}
+              >
+                Sign In
+              </button>
+            </div>
           </div>
-        </CardContent>
-        <CardActions>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            className={classes.loginBtn}
-            onClick={handleLogin}
-            disabled={state.isButtonDisabled}>
-            Login
-          </Button>
-        </CardActions>
-      </Card>
-    </form>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Login;
-

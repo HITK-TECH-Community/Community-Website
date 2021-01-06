@@ -8,15 +8,29 @@ const Footer = () => {
         <div className="footer__addr">
           <h1 className="footer__logo">HITK Tech Community</h1>
           <address>
-            <i className="fas fa-map-marker-alt"></i> 505 Simpson Square, 505 Simpson Square, 505 Simpson Square
-          <br />
+            <i className="fas fa-map-marker-alt"></i> 505 Simpson Square, 505
+            Simpson Square, 505 Simpson Square
+            <br />
           </address>
           <div className="newsletter">
             <h2 className="nav__title">Sign Up for our Newsletter</h2>
-            <p>Receive updates and news about various Job Opportunities, Internships, Webinars and Open Source Events.</p>
-            <form>
-              <input type="text" className="input-field-footer" placeholder="Email Id" required />
-              <button type="submit" className="submit-btn-footer">Sign Up</button>
+            <p>
+              Receive updates and news about various Job Opportunities,
+              Internships, Webinars and Open Source Events.
+            </p>
+            <form className="d-flex flex-column flex-md-row align-items-center mt-4">
+              <input
+                type="text"
+                className="input-field-footer py-2"
+                placeholder="Email Id"
+                required
+              />
+              <button
+                type="submit"
+                className="mt-3 mt-md-0 submit-btn-footer py-2 px-3 "
+              >
+                Sign Up
+              </button>
             </form>
           </div>
         </div>
@@ -52,15 +66,15 @@ const Footer = () => {
 
             <ul className="nav__ul">
               <li>
-                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/#">Privacy Policy</a>
               </li>
 
               <li>
-                <a href="#">Terms of Use</a>
+                <a href="/terms">Terms of Use</a>
               </li>
 
               <li>
-                <a href="#">Sitemap</a>
+                <a href="/#">Get Involved</a>
               </li>
             </ul>
           </li>
@@ -72,7 +86,11 @@ const Footer = () => {
             <div className="col">
               <ul className="social">
                 <li>
-                  <a href="https://www.linkedin.com/company/hitk-tech-community" target="_blank">
+                  <a
+                    href="https://www.linkedin.com/company/hitk-tech-community"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -81,7 +99,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw" target="_blank">
+                  <a
+                    href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -90,7 +112,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:hitktechcommunity@gmail.com" target="_blank">
+                  <a
+                    href="mailto:hitktechcommunity@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -99,7 +125,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/HITK-TECH-Community/" target="_blank">
+                  <a
+                    href="https://github.com/HITK-TECH-Community/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span></span>
                     <span></span>
                     <span></span>
@@ -115,14 +145,15 @@ const Footer = () => {
           <div className="footer-text">
             <p>
               Made with{" "}
-              <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by HITK
-            Tech Community
-          </p>
+              <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by
+              HITK Tech Community
+            </p>
           </div>
         </div>
       </footer>
-      <div className="cprt_text">
-        <p className="cprt">Copyright © 2020 HITK Tech Community</p>
+
+      <div className="cprt_text ">
+        <p className="cprt py-2">Copyright © 2020 HITK Tech Community</p>
       </div>
     </div>
   );

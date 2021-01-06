@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Futura LT Book';
-  src: url('./fonts/FuturaLT-Book.ttf');
-  src: local('Futura LT Book'),
-    url('./fonts/FuturaLT-Book.ttf') format('truetype');
-  src: url('./fonts/FuturaLT-Book.ttf') format('truetype');
+  font-family: "Futura LT Book";
+  src: url("./fonts/FuturaLT-Book.ttf");
+  src: local("Futura LT Book"),
+    url("./fonts/FuturaLT-Book.ttf") format("truetype");
+  src: url("./fonts/FuturaLT-Book.ttf") format("truetype");
 }
 
 html {

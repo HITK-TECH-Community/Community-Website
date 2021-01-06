@@ -32,7 +32,7 @@ const Motive = () => {
           <i className="fab fa-github"></i>
         </div>
         <div className="features-content text-left">
-          <h4 className="features-title"><a href="#">Great Speakers</a></h4>
+          <h4 className="features-title"><a href="/#">Great Speakers</a></h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
@@ -51,7 +51,7 @@ const Motive = () => {
           <i className="fab fa-github"></i>
         </div>
         <div className="features-content text-left">
-          <h4 className="features-title"><a href="#">New People</a></h4>
+          <h4 className="features-title"><a href="/#">New People</a></h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
@@ -70,7 +70,7 @@ const Motive = () => {
           <i className="fab fa-github"></i>
         </div>
         <div className="features-content text-left">
-          <h4 className="features-title"><a href="#">Global Event</a></h4>
+          <h4 className="features-title"><a href="/#">Global Event</a></h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
@@ -89,7 +89,7 @@ const Motive = () => {
           <i className="fab fa-github"></i>
         </div>
         <div className="features-content text-left">
-          <h4 className="features-title"><a href="#">Get Inspired</a></h4>
+          <h4 className="features-title"><a href="/#">Get Inspired</a></h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
@@ -109,7 +109,7 @@ const Motive = () => {
         </div>
         <div className="features-content text-left">
           <h4 className="features-title">
-            <a href="#">Networking Session</a>
+            <a href="/#">Networking Session</a>
           </h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -129,7 +129,7 @@ const Motive = () => {
           <i className="fab fa-github"></i>
         </div>
         <div className="features-content text-left">
-          <h4 className="features-title"><a href="#">Meet New Faces</a></h4>
+          <h4 className="features-title"><a href="/#">Meet New Faces</a></h4>
           <p className="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
             do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut

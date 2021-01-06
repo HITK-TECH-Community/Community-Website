@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
+import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
@@ -9,11 +8,12 @@ import Broadcasts from "./components/broadcast/broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
-import Faqs from "./components/faq/faqs";
+import Faqs from "./components/faq/faq";
 import Contact from "./components/contact/Design1";
-import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import NotFound from "./components/404/not_found";
-import "semantic-ui-css/semantic.min.css";
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
+import Terms from "./components/terms/terms";
 
 import "./app.css";
 
@@ -32,7 +32,7 @@ const App = () => {
             <Route exact path="/faqs" component={Faqs} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route exact path="/terms" component={Terms}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

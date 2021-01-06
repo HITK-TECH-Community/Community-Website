@@ -5,6 +5,36 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./carousel.css";
 import "../motive/motive.css";
 export class Owldemo1 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      options: {
+        loop: true,
+        margin: 45,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          500: {
+            items: 2,
+            margin: 20,
+          },
+          800: {
+            items: 2,
+            margin: 0,
+          },
+          1000: {
+            items: 2,
+            margin: 50,
+          },
+          1100: {
+            items: 3,
+          },
+        },
+      },
+    };
+  }
   render() {
     return (
       <div className="carousel-div">
@@ -13,12 +43,10 @@ export class Owldemo1 extends Component {
           <div className="dash"></div>
         </div>
         <OwlCarousel
-          items={3}
           className="owl-theme"
-          loop
-          nav
-          margin={10}
+          {...this.state.options}
           autoplay={true}
+          responsiveClass={true}
         >
           <div>
             <img className="owl-image" alt="" src="./images/help.png" />

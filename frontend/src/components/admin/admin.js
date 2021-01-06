@@ -1,5 +1,5 @@
 import React from 'react';
 import Login from '../auth/login/login';
-const Admin = () => <h1 className='admin'><Login /></h1>;
+const Admin = () =><Login />;
 
 export default Admin;

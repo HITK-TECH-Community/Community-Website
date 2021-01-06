@@ -65,51 +65,6 @@ All the backend code will go in the `backend` folder.
 
 Thanks goes to these wonderful people ✨✨:
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/kajol-kumari-73245b166/"><img src="https://avatars0.githubusercontent.com/u/44888949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kajol</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Code">💻</a> <a href="#eventOrganizing-Kajol-Kumari" title="Event Organizing">📋</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Kajol-Kumari" title="Documentation">📖</a> <a href="#content-Kajol-Kumari" title="Content">🖋</a> <a href="#ideas-Kajol-Kumari" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Kajol-Kumari" title="Maintenance">🚧</a> <a href="#projectManagement-Kajol-Kumari" title="Project Management">📆</a></td>
-    <td align="center"><a href="https://github.com/codewithvk"><img src="https://avatars1.githubusercontent.com/u/61119120?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vivek Javiya</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=codewithvk" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/sreechand2002"><img src="https://avatars1.githubusercontent.com/u/54146135?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SREECHAND</b></sub></a><br /><a href="#design-sreechand2002" title="Design">🎨</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=sreechand2002" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/NewCoderBoi"><img src="https://avatars1.githubusercontent.com/u/59294265?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Debatra Chatterjee</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=NewCoderBoi" title="Code">💻</a></td>
-    <td align="center"><a href="https://aaryan8751.github.io/"><img src="https://avatars3.githubusercontent.com/u/60098288?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aaryan Sharma</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Aaryan8751" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/headphone-rachit"><img src="https://avatars0.githubusercontent.com/u/65488082?v=4?s=100" width="100px;" alt=""/><br /><sub><b>headphone-rachit</b></sub></a><br /><a href="#design-headphone-rachit" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/Sapphire-Skies"><img src="https://avatars0.githubusercontent.com/u/55662582?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditi Moulik</b></sub></a><br /><a href="#design-Sapphire-Skies" title="Design">🎨</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://prakarsh7695.github.io/iPrakarsh.com/"><img src="https://avatars0.githubusercontent.com/u/65502337?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Prakarsh Sharma</b></sub></a><br /><a href="#design-prakarsh7695" title="Design">🎨</a></td>
-    <td align="center"><a href="https://www.stopstalk.com/user/profile/kenkirito123"><img src="https://avatars1.githubusercontent.com/u/68530218?v=4?s=100" width="100px;" alt=""/><br /><sub><b>lakshya Mishra</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kenkirito" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://reetpriye.netlify.app"><img src="https://avatars1.githubusercontent.com/u/55601795?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Reet Priye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=reetpriye" title="Code">💻</a></td>
-    <td align="center"><a href="https://abhiisshakee.netlify.app/"><img src="https://avatars2.githubusercontent.com/u/37222497?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Abhishek Mogaveera</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Abhishek971999" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/vedikaag99"><img src="https://avatars1.githubusercontent.com/u/67699840?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vedika Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=vedikaag99" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/jackfrost13"><img src="https://avatars3.githubusercontent.com/u/36669463?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rohit Agarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=jackfrost13" title="Code">💻</a> <a href="#eventOrganizing-jackfrost13" title="Event Organizing">📋</a> <a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=jackfrost13" title="Documentation">📖</a> <a href="#content-jackfrost13" title="Content">🖋</a> <a href="#ideas-jackfrost13" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-jackfrost13" title="Maintenance">🚧</a> <a href="#projectManagement-jackfrost13" title="Project Management">📆</a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/kanishka-aggarwal-255a51169/"><img src="https://avatars0.githubusercontent.com/u/71253790?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kanishka Aggarwal</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=kanishkaa24" title="Documentation">📖</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Sloth-Panda"><img src="https://avatars2.githubusercontent.com/u/70213384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Achyut Kumar Panda</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Sloth-Panda" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://aniketsingh98571.github.io/Web-Portfolio/"><img src="https://avatars3.githubusercontent.com/u/63097956?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aniket Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=aniketsingh98571" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/himanshu007-creator"><img src="https://avatars2.githubusercontent.com/u/65963997?v=4?s=100" width="100px;" alt=""/><br /><sub><b>himanshu007-creator</b></sub></a><br /><a href="#design-himanshu007-creator" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/SuNiL-Chau"><img src="https://avatars0.githubusercontent.com/u/46418190?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sunil Chaudhary</b></sub></a><br /><a href="#design-SuNiL-Chau" title="Design">🎨</a></td>
-    <td align="center"><a href="http://atharva-upadhye-01.github.io"><img src="https://avatars0.githubusercontent.com/u/70993547?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Atharva Upadhye</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=atharva-upadhye-01" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Sshivani-12"><img src="https://avatars0.githubusercontent.com/u/59923697?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivani Wakde</b></sub></a><br /><a href="#design-Sshivani-12" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/sakshikhachane"><img src="https://avatars1.githubusercontent.com/u/53635792?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sakshi Khachane</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=sakshikhachane" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Swastik1710"><img src="https://avatars3.githubusercontent.com/u/71871571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Swastik Raj Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Swastik1710" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/shraddha-1402"><img src="https://avatars2.githubusercontent.com/u/69422250?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shraddha Gupta</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=shraddha-1402" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/musavveer"><img src="https://avatars2.githubusercontent.com/u/62888562?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Musavveer Rehaman</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=musavveer" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Shridhar-dev"><img src="https://avatars0.githubusercontent.com/u/52820662?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shridhar-dev</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=Shridhar-dev" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/tejan-singh"><img src="https://avatars3.githubusercontent.com/u/50990883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tejan Singh</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=tejan-singh" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://shitiz-aggarwal.github.io/SA-portfolio/"><img src="https://avatars1.githubusercontent.com/u/53532851?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SHITIZ AGGARWAL</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=SHITIZ-AGGARWAL" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/amanprateek123"><img src="https://avatars1.githubusercontent.com/u/42955585?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aman Prateek</b></sub></a><br /><a href="https://github.com/HITK-TECH-Community/Community-Website/commits?author=amanprateek123" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+<a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" />
+</a>

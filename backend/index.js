@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const http = require('http');
 const bodyParser = require('body-parser');
 const responseTime = require('response-time');
-const routes = require('./app/routes');
+const routes = require('./app/routes/');
 const { errorHandler } = require('./helpers/error');
 require('colors');
 require('./helpers/dbConnection');

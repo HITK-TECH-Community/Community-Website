@@ -47,6 +47,22 @@ const useStyles = makeStyles((theme) => ({
       width: "138px",
       height: "15.5em",
     },
+    [theme.breakpoints.down("497")]: {
+      width: "98px",
+      height: "16.5em",
+    },
+    [theme.breakpoints.down("457")]: {
+      width: "68px",
+      height: "11.5em",
+    },
+    [theme.breakpoints.down("427")]: {
+      width: "48px",
+      height: "10.5em",
+    },
+    [theme.breakpoints.down("411")]: {
+      width: "10px",
+      height: "2.5em",
+    },
   },
   form: {
     display: "flex",
@@ -85,6 +101,21 @@ const useStyles = makeStyles((theme) => ({
       marginRight: "0px",
     },
   },
+  heading: {
+    fontSize: "19px",
+    color: "black",
+    marginLeft: "4px",
+    fontWeight: "bold",
+    [theme.breakpoints.down("457")]: {
+      fontSize: "10px",
+    },
+    [theme.breakpoints.down("427")]: {
+      fontSize: "8px",
+    },
+    [theme.breakpoints.down("411")]: {
+      fontSize: "1px",
+    },
+  }
 }));
 
 const styles = (theme) => ({
@@ -157,14 +188,7 @@ export default function OutlinedCard() {
           gutterBottom
           onClick={handleClickOpen}
         >
-          <span
-            style={{
-              fontSize: "19px",
-              color: "black",
-              marginLeft: "4px",
-              fontWeight: "bold",
-            }}
-          >
+          <span className={classes.heading}>
             Word of the Day
           </span>
           <p>

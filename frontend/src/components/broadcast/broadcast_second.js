@@ -11,25 +11,35 @@ export class Owldemo1 extends Component {
     this.state = {
       options: {
         loop: true,
-        margin: 45,
-        nav: true,
+        margin: 15,
+        
         responsive: {
           0: {
+            nav: false,
             items: 1,
           },
           500: {
+            nav: false,
+            items: 1.5,
+            margin:65,
+          },
+          641: {
+            nav: false,
             items: 2,
-            margin: 20,
+            margin:15,
           },
           800: {
+            nav: true,
             items: 3,
             margin: 0,
           },
           1000: {
+            nav: true,
             items: 4,
             margin: 50,
           },
           1100: {
+            nav: true,
             items: 5,
           },
         },

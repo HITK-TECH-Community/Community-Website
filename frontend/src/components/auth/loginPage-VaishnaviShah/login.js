@@ -17,24 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '500px',
       borderRadius: '50%',
     },
-    loginBtn: {
-      marginTop: theme.spacing(0),
-      flexGrow: 1,
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: '100px',
-      height: '50px',
-    },
-    header: {
-      textAlign: 'center',
-      position: 'relative',
-
-    },
-    card: {
-      marginTop: theme.spacing(10),
-      width: '700px',
-
-    }
   })
 );
 
@@ -166,7 +148,14 @@ const Login = () => {
             <label>Username</label>
             <div className="inputs">
 
-              <input type="text" >
+              <input
+                type="text"
+                autocomplete="off"
+                error={state.isError}
+                required="required"
+                onChange={handleUsernameChange}
+                onKeyPress={handleKeyPress}
+              >
 
               </input>
               <i className="fas fa-user"></i>
@@ -174,7 +163,12 @@ const Login = () => {
             </div>
             <label>Password</label>
             <div className="inputs">
-              <input type="password" >
+              <input type="password"
+                error={state.isError}
+                required="required"
+                onChange={handlePasswordChange}
+                onKeyPress={handleKeyPress}
+              >
               </input>
               <i className="fas fa-eye-slash"></i>
             </div>

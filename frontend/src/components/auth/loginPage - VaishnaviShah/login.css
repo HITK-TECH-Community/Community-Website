@@ -1,0 +1,61 @@
+.image{
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+.img{
+  margin-left: 2%;
+  margin-top: 13%;
+  width: 60%;
+}
+
+.login {
+  position: absolute;
+  top: 57%;
+  left: 77%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background:white;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.login h2 {
+  letter-spacing: 1px;
+  margin: 0 0 15px;
+  font-size: 40px;
+  color: rgb(27,36,49);
+  text-align: center;
+}
+
+.login .inputs {
+  position: relative;
+}
+.login .inputs i{
+  color: grey;
+  font-size: 15px;
+  margin-left: -33px;
+  margin-top: 15px;
+  position: absolute;
+}
+
+.login .inputs input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color:  rgb(27,36,49);
+  margin-left: 0px;
+  margin-bottom: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.login label {
+  letter-spacing: 2px;
+  font-size: large;
+  font-weight: bolder;
+  margin-left: 5px;
+  margin-top: -1px;
+  color: rgb(27,36,49);
+} 

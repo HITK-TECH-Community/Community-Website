@@ -9,7 +9,7 @@
 }
 .Bottom_bgbox {
   height: 365px;
-  background-color: #8ABAD3FF;
+  background-color: #00203FFF;
   margin: 40px 0px 120px 0px;
 }
 .owl-nav button {
@@ -23,14 +23,14 @@
   border-radius: 80px;
 }
 .owl-nav button.owl-prev {
-  background-color: #EDC2D8FF !important;
+  background-color: rgb(0, 0, 0) !important;
   color: #fff !important;
   padding: 0 15px !important;
   left: -10%;
 }
 
 .owl-nav button.owl-next {
-  background-color: #EDC2D8FF !important;
+  background-color: rgb(0, 0, 0) !important;
   color: #fff !important;
   padding: 0 15px !important;
   right: -10%;

@@ -3,6 +3,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./owl.css";
+import "./Text.css";
 import Card from "./card.js";
 
 export class Owldemo1 extends Component {

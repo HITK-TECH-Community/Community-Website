@@ -18,7 +18,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 180,
-    zIndex: '1',
+    boxShadow: '7px 0px 5px -3px rgba(47,47,47,0.5), 0px 8px 7px -3px rgba(47,47,47,0.5), -7px 0px 5px -3px rgba(47,47,47,0.5)'
+    
     
   },
   bullet: {
@@ -29,16 +30,14 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: 14,
   },
-  pos: {},
   Button_Font_size: {
     width: "1px",
   },
   Bottom_Boxes_paper2: {
-    height: "17.5em",
-    width: "200px",
-    zIndex: -1,
-    backgroundColor: "white",
-    borderradius: "4px",
+    height: '17.5em',
+    width: '200px',
+    backgroundColor: 'white',
+    borderradius: '4px',
     position: 'relative',
     [theme.breakpoints.down("md")]: {
       width: "168px",

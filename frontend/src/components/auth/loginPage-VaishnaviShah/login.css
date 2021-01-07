@@ -1,48 +1,39 @@
-.image{
-  position: relative;
-  top: 8px;
-  left: 16px;
-}
-.img{
-  margin-left: 1%;
-  margin-top: 7%;
-  width: 63%;
+.section{
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 
-.section {
-  display: inline-block;
+.image{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+.img{
+  width: 100%;
 }
 
 .login {
-  position: relative ;
-  top: 37%;
-  margin-top: -220px;
-  left: 85%;
-  width: 400px;
-  padding: 40px;
-  transform: translate(-50%, -50%);
+  margin-left: 70px;
+  width: 370px !important; 
+  padding: 60px;
   background:white;
   box-shadow: 0 15px 25px rgba(0,0,0,0.5);
-  border-radius: 10px;
+  border-radius: 20px; 
 }
 
 .login h2 {
   letter-spacing: 1px;
-  margin: 0 0 15px;
-  font-size: 40px;
+  margin: 0 0 25px;
+  font-size: 50px;
   color: rgb(27,36,49);
   text-align: center;
 }
 
-.login .inputs {
-  position: relative;
-}
+
 .login .inputs i{
   color: grey;
   font-size: 15px;
   margin-left: -33px;
   margin-top: 15px;
-  position: absolute;
 }
 
 .login .inputs input {
@@ -51,7 +42,7 @@
   font-size: 16px;
   color:  rgb(27,36,49);
   margin-left: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border: 1px solid lightgrey;
   border-radius: 10px;
 }
@@ -65,63 +56,12 @@
   color: rgb(27,36,49);
 } 
 
-@media(max-width: 1070px) {
-  .image{
-    position: relative;
-    top: 8px;
-    left: 10px;
-  }
-  .img{
-    margin-left: 1%;
-    margin-top: 7%;
-    width: 50% !important;
-  }
-  .login{
-    width: fit-content;
-    position: relative !important ;
-    left: 200px;
-    top: -130px;
-    height: 400px;
-    margin-bottom: 100px;
-    margin-top: -50px;
-  }
-}
-
-@media(max-width: 800px) {
-  .image{
-    display: none;
-  }
-  .login{
-    width: 400px;
-    position: relative !important ;
-    left: -300px;
-    top: 300px;
-    height: 400px;
-    margin-bottom: 100px;
-    margin-top: -50px;
-  }
-}
 @media(max-width: 500px) {
   .image{
-    display: none;
+  margin-left: 10px;
+  margin-bottom: 30px;
   }
   .login{
-    width: auto;
-    position: relative !important ;
-    left: -370px;
-    top: 300px;
-    height: 400px;
-    margin-bottom: 100px;
-    margin-top: -50px;
+    margin-left: 30px;
   }
-}
-
-
-  /* .login-card {
-    width: 85%;
-    margin: 10% auto;
-  }
-
-  .child1 {
-    padding: 0 0 10px;
-  } */
+} 

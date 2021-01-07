@@ -31,7 +31,6 @@ const App = () => {
               <Broadcasts />
               <BroadcastSecond />
             </Route>
-
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />

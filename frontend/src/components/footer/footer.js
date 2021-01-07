@@ -66,7 +66,7 @@ const Footer = () => {
 
             <ul className="nav__ul">
               <li>
-                <a href="/#">Privacy Policy</a>
+                <a href="/privacy-policy">Privacy Policy</a>
               </li>
 
               <li>

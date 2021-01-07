@@ -156,7 +156,7 @@ const Login = () => {
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
               />
-              <i class="fa fa-eye-slash"></i>
+              <i className="fa fa-eye-slash"></i>
             </div>
             <div className="login-input">
               <button

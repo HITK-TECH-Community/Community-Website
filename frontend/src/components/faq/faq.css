@@ -1,3 +1,7 @@
+.faq-container {
+  margin: 4% auto 8% auto;
+}
+
 .head {
   color: hsl(210, 64%, 9%);
   text-align: center;

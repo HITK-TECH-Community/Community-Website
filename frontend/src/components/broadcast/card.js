@@ -40,14 +40,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     borderradius: "4px",
     position: 'relative',
-    
-   
     [theme.breakpoints.down("md")]: {
       width: "168px",
     },
     [theme.breakpoints.down("sm")]: {
       width: "138px",
-      height: "15.5em",
+      
     },
     [theme.breakpoints.down("497")]: {
       width: "158px",

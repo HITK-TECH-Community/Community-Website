@@ -21,7 +21,7 @@ export class Owldemo1 extends Component {
             nav: false,
             items: 1,
           },
-          500: {
+          551: {
             nav: false,
             items: 3,
             margin:125,

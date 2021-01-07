@@ -35,8 +35,9 @@ const useStyles = makeStyles((theme) => ({
   },
   Bottom_Boxes_paper2: {
     height: '17.5em',
+    borderRadius: '10px',
     width: '200px',
-    backgroundColor: 'white',
+    backgroundColor: '#EDC2D8FF',
     borderradius: '4px',
     position: 'relative',
     [theme.breakpoints.down("md")]: {
@@ -111,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: "19px",
-    color: "black",
+    color: "white",
     marginLeft: "4px",
     fontWeight: "bold",
     [theme.breakpoints.down("457")]: {
@@ -199,7 +200,7 @@ export default function OutlinedCard() {
           <span className={classes.heading}>
             Word of the Day
           </span>
-          <p>
+          <p style={{color: 'white'}}>
             Word of the Day Word of the Day Word of the Day Word of the Day Word
             of the Day Word of the Day Word of the Day Word of the Day Word of
             the of the Day Word of the Day Word of the Day Word of the Day Word

@@ -9,13 +9,13 @@
 }
 .Bottom_bgbox {
   height: 365px;
-  background-color: #016795;
+  background-color: #8ABAD3FF;
   margin: 40px 0px 120px 0px;
 }
 .owl-nav button {
   position: absolute;
-  background-color: #1b2431;
-  color: #1b2431;
+  background-color: #EDC2D8FF;
+  color: #EDC2D8FF;
   margin: 0;
   transition: all 0.3s ease-in-out;
   width: 50px;
@@ -23,14 +23,14 @@
   border-radius: 80px;
 }
 .owl-nav button.owl-prev {
-  background-color: #1b2431 !important;
+  background-color: #EDC2D8FF !important;
   color: #fff !important;
   padding: 0 15px !important;
   left: -10%;
 }
 
 .owl-nav button.owl-next {
-  background-color: #1b2431 !important;
+  background-color: #EDC2D8FF !important;
   color: #fff !important;
   padding: 0 15px !important;
   right: -10%;

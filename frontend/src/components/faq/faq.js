@@ -32,10 +32,10 @@ export default function Faqs() {
   };
 
   return (
-    <div class="faq-container">
+    <div className="faq-container">
       <div className="head"> Frequently Asked Questions </div>
       <div className="faq">
-        <img src="./images/faq.png" className="faq-image" />
+        <img src="./images/faq.png" className="faq-image" alt="faq-icon"/>
         <div className="faq-block">
           <Accordion className="accord">
             <AccordionSummary

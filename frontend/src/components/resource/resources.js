@@ -1,18 +1,19 @@
 import React from "react";
 import {Button2} from "../util/button/button";
 import "./resources.css";
+
 const Resources = () => {
   return (
     <div className="resource-section ">
-      <div className="resource-child child1">
-        <img src="./images/resource.png" alt="" className="resource-image" />
+      <div className="resource-image child1">
+        <img src="./images/resource.png" alt="" />
       </div>
-      <div className="resource-child child2">
+      <div className="resource-form child2">
         <div className="resource-card">
           <h3 className="resource-header-text">Resource Sharing Form</h3>
           <div className="inside-resource">
             <div className="form-row">
-              <div className="form-group col-sm-6">
+              <div className="form-group">
                 <div className="resource-input">
                   <input
                     placeholder="Name"
@@ -142,8 +143,12 @@ const Resources = () => {
               ></textarea>
               {/* <i className="far fa-comment-alt"></i> */}
             </div>
-            <div style={{textAlign: "center"}}>
-              <Button2 className="submit-btn" label="Submit" type="submit" />
+            <div className="submit-btn">
+              <Button2
+                className="submit-btn-text"
+                label="Submit"
+                type="submit"
+              />
             </div>
           </div>
         </div>

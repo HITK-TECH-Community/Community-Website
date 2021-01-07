@@ -26,6 +26,7 @@ main {
     font-weight: bold;
     height: 1em;
     margin-top: 4rem;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
 #allCards{

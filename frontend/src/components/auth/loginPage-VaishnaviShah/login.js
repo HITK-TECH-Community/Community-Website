@@ -11,11 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       display: 'flex',
       flexWrap: 'wrap',
-<<<<<<< HEAD
       marginBottom: '40px',
-=======
-      marginBottom: '100px',
->>>>>>> main
       margin: theme.spacing(-1),
       marginLeft: theme.spacing(70),
       width: '500px',
@@ -140,7 +136,6 @@ const Login = () => {
       });
     }
   return (
-<<<<<<< HEAD
     <div className="section row">
       <div className="image col-md-6 col-xs-8">
         <img src={login} alt="login" className="img">
@@ -180,49 +175,6 @@ const Login = () => {
             <Button2 label="Submit" type="submit" />
           </div>
         </form>
-=======
-    <div className="section">
-      <div className="image">
-        <img src={login} alt="login" className="img">
-        </img>
-      </div>
-      <div className={classes.container}>
-        <div className="login">
-          <h2>Welcome!</h2>
-          <form>
-            <label>Username</label>
-            <div className="inputs">
-
-              <input
-                type="text"
-                autocomplete="off"
-                error={state.isError}
-                required="required"
-                onChange={handleUsernameChange}
-                onKeyPress={handleKeyPress}
-              >
-
-              </input>
-              <i className="fas fa-user"></i>
-
-            </div>
-            <label>Password</label>
-            <div className="inputs">
-              <input type="password"
-                error={state.isError}
-                required="required"
-                onChange={handlePasswordChange}
-                onKeyPress={handleKeyPress}
-              >
-              </input>
-              <i className="fas fa-eye-slash"></i>
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <Button2 label="Submit" type="submit" />
-            </div>
-          </form>
-        </div>
->>>>>>> main
       </div>
     </div>
   );

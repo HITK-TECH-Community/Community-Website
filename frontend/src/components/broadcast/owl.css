@@ -1,7 +1,7 @@
 .carousel-div {
-  padding: 10px 0px;
-  margin-left: 180px;
-  margin-right: 180px;
+  padding: 10px 0px;      
+  margin-left: 130px;
+  margin-right: 130px;
 }
 .Bottom_bgbox_first {
   height: 100px;
@@ -47,6 +47,7 @@
   display: inline-block;
   background: #ccc;
   margin: 0 3px;
+  
 }
 .owl-dots button.owl-dot.active {
   background-color: #000;

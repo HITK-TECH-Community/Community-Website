@@ -18,8 +18,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 180,
-    boxShadow:
-      "7px 0px 5px -3px rgba(47,47,47,0.5), 0px 8px 7px -3px rgba(47,47,47,0.5), -7px 0px 5px -3px rgba(47,47,47,0.5)",
+    zIndex: '1',
+    
   },
   bullet: {
     display: "inline-block",
@@ -36,10 +36,12 @@ const useStyles = makeStyles((theme) => ({
   Bottom_Boxes_paper2: {
     height: "17.5em",
     width: "200px",
+    zIndex: -1,
     backgroundColor: "white",
     borderradius: "4px",
-    boxShadow:
-      "7px 0px 5px -3px rgba(47,47,47,0.5), 0px 8px 7px -3px rgba(47,47,47,0.5), -7px 0px 5px -3px rgba(47,47,47,0.5)",
+    position: 'relative',
+    
+   
     [theme.breakpoints.down("md")]: {
       width: "168px",
     },
@@ -48,20 +50,28 @@ const useStyles = makeStyles((theme) => ({
       height: "15.5em",
     },
     [theme.breakpoints.down("497")]: {
-      width: "98px",
+      width: "158px",
       height: "16.5em",
     },
     [theme.breakpoints.down("457")]: {
-      width: "68px",
-      height: "11.5em",
+      width: "138px",
+      height: "16.5em",
     },
     [theme.breakpoints.down("427")]: {
-      width: "48px",
-      height: "10.5em",
+      width: "128px",
+      height: "16.5em",
     },
     [theme.breakpoints.down("411")]: {
-      width: "10px",
-      height: "2.5em",
+      width: "128px",
+      height: "16.5em",
+    },
+    [theme.breakpoints.down("385")]: {
+      width: "108px",
+      height: "13.5em",
+    },
+    [theme.breakpoints.down("366")]: {
+      width: "88px",
+      height: "13.5em",
     },
   },
   form: {
@@ -80,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: "black",
     color: "white",
+    
   },
   backDrop: {
     background: "rgba(255,255,255,0.2)",
@@ -93,8 +104,8 @@ const useStyles = makeStyles((theme) => ({
       marginRight: "100px",
     },
     [theme.breakpoints.down("sm")]: {
-      marginLeft: "200px",
-      marginRight: "10px",
+      marginLeft: "230px",
+      marginRight: "100px",
     },
     [theme.breakpoints.down("xs")]: {
       marginLeft: "180px",
@@ -113,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "8px",
     },
     [theme.breakpoints.down("411")]: {
-      fontSize: "1px",
+      fontSize: "10px",
     },
   }
 }));

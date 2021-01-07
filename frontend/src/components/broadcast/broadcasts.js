@@ -12,7 +12,6 @@ export class Owldemo extends Component {
       options: {
         loop: true,
         margin: 15,
-        responsiveClass:true,
         responsive: {
           0: {
             nav: false,
@@ -22,13 +21,13 @@ export class Owldemo extends Component {
             nav: false,
             items: 1,
           },
-          500: {
+          551: {
             nav: false,
-            items: 2,
+            items: 3,
             margin:125,
           },
           800: {
-            nav: true,
+            nav: false,
             items: 3,
             margin: 0,
           },
@@ -61,6 +60,7 @@ export class Owldemo extends Component {
             {...this.state.options}
             autoplay={true}
             responsiveClass={true}
+
           >
             <div>
               <Card />

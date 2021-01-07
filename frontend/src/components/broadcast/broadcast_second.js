@@ -12,24 +12,22 @@ export class Owldemo1 extends Component {
       options: {
         loop: true,
         margin: 15,
-        
         responsive: {
           0: {
             nav: false,
             items: 1,
           },
+          497: {
+            nav: false,
+            items: 1,
+          },
           500: {
             nav: false,
-            items: 1.5,
-            margin:65,
-          },
-          641: {
-            nav: false,
-            items: 2,
-            margin:15,
+            items: 3,
+            margin:125,
           },
           800: {
-            nav: true,
+            nav: false,
             items: 3,
             margin: 0,
           },
@@ -51,16 +49,18 @@ export class Owldemo1 extends Component {
       <div className="Bottom_bgbox">
         <div className="Bottom_bgbox_first">
           <div className="motive">
-            <h1 style={{ color: "#1B2431" }}>Previsely Broadcast</h1>
+            <h1 style={{ color: "#1B2431" }}>Recently Broadcast</h1>
             <div className="dash"></div>
           </div>
         </div>
+
         <div className="carousel-div">
           <OwlCarousel
             className="owl-theme"
             {...this.state.options}
             autoplay={true}
             responsiveClass={true}
+
           >
             <div>
               <Card />

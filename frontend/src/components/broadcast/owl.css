@@ -88,19 +88,7 @@ span {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s;
-  &:target {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  & > div {
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 2em;
-    background: #ffffff;
+  
   }
   header {
     font-weight: bold;
@@ -108,7 +96,6 @@ span {
   h1 {
     font-size: 150%;
     margin: 0 0 15px;
-  }
 }
 
 .modal-close {
@@ -121,8 +108,6 @@ span {
   top: 0;
   width: 70px;
   text-decoration: none;
-  &:hover {
-    color: black;
-  }
+ 
 }
 

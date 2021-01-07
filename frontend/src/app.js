@@ -15,6 +15,7 @@ import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
 import GetInvolved from "./components/involvement/get_involved";
+import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 
 import "./app.css";
 
@@ -35,6 +36,7 @@ const App = () => {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/terms" component={Terms}/>
             <Route exact path="/get-involved" component={GetInvolved}/>
+            <Route exact path="/privacy-policy" component={PrivacyPolicy}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

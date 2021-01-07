@@ -73,8 +73,12 @@
   font-size: 28px;
 }
 
+.in {
+  color: black !important;
+}
+
 .in:hover {
-  color: #0e76a8;
+  color: #0e76a8 !important;
 }
 
 .fa-github-square:hover {
@@ -82,7 +86,7 @@
 }
 
 .card {
-  
+
   width: 80% !important;
   margin: auto;
   margin-top: 34px;
@@ -92,7 +96,6 @@
 }
 
 .card:hover {
-  background: linear-gradient(45deg, transparent, grey);
   box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
 }
 

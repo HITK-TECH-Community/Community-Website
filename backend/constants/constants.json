@@ -6,5 +6,8 @@
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
     "USER": "User "
+  },
+  "PAGINATION_LIMIT": {
+    "GET_ADMINS": 3
   }
 }

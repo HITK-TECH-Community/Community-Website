@@ -3,32 +3,32 @@ const Admin = require('../../models/Admin');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
-const createPipeline = (adminType, page) => {
+const getAdminsAggregate = (adminType, page) => {
   const pipeline = [
     {
       $project: {
         _id: 0,
-        firstName: '$firstName',
-        lastName: '$lastName',
-        username: '$username',
-        email: '$email',
-        contact: '$contact',
+        firstName: 1,
+        lastName: 1,
+        username: 1,
+        email: 1,
+        contact: 1,
+        isSuperAdmin: 1,
       },
     },
   ];
-  if (adminType !== undefined) {
+  if (adminType === 'superAdmin' || adminType === 'admin') {
     pipeline.unshift({
       $match: {
         isSuperAdmin: adminType === 'superAdmin',
       },
     });
   }
-  if (page !== undefined) {
-    pipeline.push(
-      { $skip: constants.PAGINATION_LIMIT.GET_ADMINS * Number(page) },
-      { $limit: constants.PAGINATION_LIMIT.GET_ADMINS }
-    );
-  }
+  if (page === undefined) page = 1;
+  pipeline.push(
+    { $skip: constants.PAGINATION_LIMIT.GET_ADMINS * (Number(page) - 1) },
+    { $limit: constants.PAGINATION_LIMIT.GET_ADMINS }
+  );
   return pipeline;
 };
 
@@ -37,17 +37,16 @@ module.exports = async (req, res, next) => {
   const { page, type: adminType } = options;
 
   const [err, response] = await to(
-    Admin.aggregate(createPipeline(adminType, page))
+    Admin.aggregate(getAdminsAggregate(adminType, page))
   );
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-      statusCode: err.code,
-      message: err.message,
+      statusCode: '500',
+      message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
+      errorStack: err,
     });
     return next(error);
   }
-
-  // eslint-disable-next-line no-underscore-dangle
   res.status(200).send(response);
   return next();
 };

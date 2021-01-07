@@ -15,4 +15,14 @@ const postSuperAdminSchema = Joi.object({
   username: Joi.string().optional(),
 });
 
-module.exports = postSuperAdminSchema;
+const getAdminsSchema = Joi.object({
+  type: Joi.string()
+    .optional()
+    .pattern(/^(superAdmin|admin)$/),
+  page: Joi.number().optional(),
+});
+
+module.exports = {
+  postSuperAdminSchema,
+  getAdminsSchema,
+};

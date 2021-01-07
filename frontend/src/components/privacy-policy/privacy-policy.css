@@ -1,0 +1,76 @@
+.pp-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15% 3rem 15%;
+  color: white;
+}
+
+.pp-logo {
+  width: 45vw;
+  height: auto;
+}
+
+.pp-statement-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pp-heading-container {
+  background-color: var(--primary-color);
+  width: 100vw;
+  height: 8rem;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.pp-heading {
+  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  margin: 3.2rem 0;
+  font-weight: 900;
+  color: white;
+}
+
+.pp-statement {
+  padding-top: 20px;
+}
+
+.pp-statement .pp-subheading {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--secondary-color);
+}
+
+.pp-content {
+  color: black;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (orientation: portrait) {
+  .pp-section {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .pp-heading-container {
+    height: 5rem;
+    margin-bottom: 0rem;
+  }
+
+  .pp-heading {
+    font-size: 3rem;
+    margin: 1.8rem 0;
+  }
+
+  .pp-logo {
+    width: 85vw;
+  }
+
+  .pp-statement-container {
+    margin: 2rem 4vw;
+  }
+}

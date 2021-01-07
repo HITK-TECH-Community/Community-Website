@@ -13,10 +13,10 @@ const Terms = () => {
         </div>
       </div>
       <div className="agreement">
-          <div class="row">
-              <div class="col-lg-2">
+          <div className="row">
+              <div className="col-lg-2">
               </div>
-              <div class="col-lg-8">
+              <div className="col-lg-8">
                 <h3>Your Agreement</h3>
                 <p>By using this Site, you agree to be bound by, and to comply with, these Terms and Conditions. If you do not agree to these Terms and Conditions, please do not use this site.</p>
                 <p>PLEASE NOTE: We reserve the right, at our sole discretion, to change, modify or otherwise alter these Terms and Conditions at any time. Unless otherwise indicated, amendments will become effective immediately. Please review these Terms and Conditions periodically. Your continued use of the Site following the posting of changes and/or modifications will constitute your acceptance of the revised Terms and Conditions and the resonableness of these standards for notice of changes. For your information, this page was last updated as of the date at the top of these terms and conditions.</p>
@@ -40,7 +40,7 @@ const Terms = () => {
                 </p>
                 <Button2 label="Agree and Continue" type="submit" />
               </div>
-              <div class="col-lg-2">
+              <div className="col-lg-2">
               </div>
           </div>
       </div>
@@ -48,3 +48,4 @@ const Terms = () => {
     );
 };
 export default Terms;
+

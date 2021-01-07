@@ -1,3 +1,7 @@
-# BroadCast Page created by JLopezz3
+# BroadCast Page Ui Links
 
-# Figma Link here: https://www.figma.com/file/Hdxtv50E5vuzDoGGZMnfhC/BroadcastPage
+##  By JLopezz3 :
+### Figma Link : https://www.figma.com/file/Hdxtv50E5vuzDoGGZMnfhC/BroadcastPage
+
+## By Shitiz Aggarwal :
+### Figma Link : https://www.figma.com/file/gbwpSEiR5FW2G6Zjc0BgE6/Broadcasts?node-id=0%3A1

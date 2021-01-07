@@ -49,7 +49,7 @@ export class Owldemo extends Component {
       <div className="Bottom_bgbox">
         <div className="Bottom_bgbox_first">
           <div className="motive">
-            <h1 style={{ color: "#1B2431" }}>Recently Broadcast</h1>
+            <h1 style={{ color: "#1B2431" }}>Previously Broadcast</h1>
             <div className="dash"></div>
           </div>
         </div>

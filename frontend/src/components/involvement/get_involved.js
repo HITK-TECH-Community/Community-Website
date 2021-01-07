@@ -25,12 +25,7 @@ function GetInvolved() {
   return (
     <main>
       <div id="hero">
-        {/* <img
-          src={process.env.PUBLIC_URL + '/images/get-involved.png'}
-          alt="logo"
-        /> */}
         <div id="heading">
-          {/* <h3 id="s-title">Interested in our community?</h3> */}
           <h1 id="title">GET INVOLVED!</h1>
         </div>
       </div>

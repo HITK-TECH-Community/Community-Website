@@ -19,19 +19,6 @@ main {
     text-align: center;
 }
 
-img {
-    max-width: 50%;
-    padding: 5rem;
-}
-
-#s-title {
-    display: flex;
-    align-items: center;
-    font-size: 2em;
-    margin: 0.5em;
-    margin-top: 1em;
-}
-
 #title {
     display: flex;
     align-items: center;
@@ -106,7 +93,7 @@ img {
     img {
         max-width: 100vw;
     }
-    
+
     .card-item,.card-content {
         width: 100%;
         height: 100%;

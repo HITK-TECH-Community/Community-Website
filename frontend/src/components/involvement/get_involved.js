@@ -26,7 +26,7 @@ function GetInvolved() {
     <main>
       <div id="hero">
         <div id="heading">
-          <h1 id="title">GET INVOLVED!</h1>
+          <div id="title">GET INVOLVED!</div>
         </div>
       </div>
       <div id="allCards">

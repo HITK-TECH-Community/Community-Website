@@ -1,16 +1,21 @@
 import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
-const toggleShow = () => {
-  var temp = document.getElementById("password"); 
-  if(temp.type == "password"){
-    temp.type = "text";
-  }
-  else{
-    temp.type = "password"
-  }
-};
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
 
+// window.onload=function () {
+if (togglePassword) {
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    // if(password){
+    const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+    // }
+  });
+};
 //state type
 type State = {
   username: "string",
@@ -40,6 +45,7 @@ const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "setUsername":
       return {
+
         ...state,
         username: action.payload,
       };
@@ -151,7 +157,7 @@ const Login = () => {
                 placeholder="Username"
                 onChange={handleUsernameChange}
                 onKeyPress={handleKeyPress}
-                class = "inputLogin"
+                class="inputLogin"
               />
               <i className="fas fa-user"></i>
             </div>
@@ -165,9 +171,9 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
-                class = "inputLogin"
+                class="inputLogin"
               />
-              <i class ="fa fa-eye-slash" onClick={toggleShow}/>
+              <i className="far fa-eye" id="togglePassword"></i>
             </div>
             <div className="login-input" style={{ textAlign: "center" }}>
               <button
@@ -185,5 +191,31 @@ const Login = () => {
     </div>
   );
 };
+
+// const togglePassword = document.querySelector('#togglePassword');
+// const password = document.querySelector('#password');
+
+// // window.onload=function () {
+// if (togglePassword) {
+//   togglePassword.addEventListener('click', function (e) {
+//     // toggle the type attribute
+//     // if(password){
+//     const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
+//     password.setAttribute('type', type);
+//     // toggle the eye slash icon
+//     this.classList.toggle('fa-eye-slash');
+//     // }
+//   });
+// };
+// }
+
+// togglePassword.addEventListener('click', function (e) {
+//   // toggle the type attribute
+//   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+//   password.setAttribute('type', type);
+//   // toggle the eye slash icon
+//   this.classList.toggle('fa-eye-slash');
+// });
+
 
 export default Login;

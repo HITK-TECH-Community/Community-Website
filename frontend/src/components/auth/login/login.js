@@ -1,21 +1,24 @@
 import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
+// Show/Hide Functionality.
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
 
-// window.onload=function () {
-if (togglePassword) {
-  togglePassword.addEventListener('click', function (e) {
-    // toggle the type attribute
-    // if(password){
-    const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
-    password.setAttribute('type', type);
-    // toggle the eye slash icon
-    this.classList.toggle('fa-eye-slash');
-    // }
-  });
+window.onload = function () {
+  if (togglePassword) {
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      if (password) {
+        const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+      }
+    });
+  }
 };
+
 //state type
 type State = {
   username: "string",
@@ -191,31 +194,5 @@ const Login = () => {
     </div>
   );
 };
-
-// const togglePassword = document.querySelector('#togglePassword');
-// const password = document.querySelector('#password');
-
-// // window.onload=function () {
-// if (togglePassword) {
-//   togglePassword.addEventListener('click', function (e) {
-//     // toggle the type attribute
-//     // if(password){
-//     const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
-//     password.setAttribute('type', type);
-//     // toggle the eye slash icon
-//     this.classList.toggle('fa-eye-slash');
-//     // }
-//   });
-// };
-// }
-
-// togglePassword.addEventListener('click', function (e) {
-//   // toggle the type attribute
-//   const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-//   password.setAttribute('type', type);
-//   // toggle the eye slash icon
-//   this.classList.toggle('fa-eye-slash');
-// });
-
 
 export default Login;

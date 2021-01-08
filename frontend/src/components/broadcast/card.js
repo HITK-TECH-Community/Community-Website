@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
       height: "16.5em",
     },
     [theme.breakpoints.down("427")]: {
-      width: "128px",
+      width: "138px",
       height: "16.5em",
     },
     [theme.breakpoints.down("411")]: {
@@ -64,10 +64,11 @@ const useStyles = makeStyles((theme) => ({
       height: "16.5em",
     },
     [theme.breakpoints.down("385")]: {
-      width: "108px",
-      height: "13.5em",
+      width: "118px",
+      height: "16.5em",
     },
     [theme.breakpoints.down("366")]: {
+      marginTop:'15px',
       width: "88px",
       height: "13.5em",
     },

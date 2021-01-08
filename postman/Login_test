@@ -1,0 +1,14 @@
+{
+	"id": "fb811e90-46e9-4f6b-b14a-9e2c99125178",
+	"name": "todo-local-env",
+	"values": [
+		{
+			"key": "todo-local-env",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-01-08T08:34:09.839Z",
+	"_postman_exported_using": "Postman/7.36.1"
+}

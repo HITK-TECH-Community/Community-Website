@@ -2,10 +2,9 @@ import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
 // Show/Hide Functionality.
-const togglePassword = document.querySelector('#togglePassword');
-const password = document.querySelector('#password');
-
 window.onload = function () {
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
   if (togglePassword) {
     togglePassword.addEventListener('click', function (e) {
       // toggle the type attribute

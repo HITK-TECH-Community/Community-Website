@@ -1,6 +1,5 @@
 import React from 'react'
 import './get_involved.css';
-// import icon from 
 
 function GetInvolved() {
   const arrayCards = [
@@ -30,9 +29,9 @@ function GetInvolved() {
         </div>
       </div>
       <div id="allCards">
-        {arrayCards.map(element => {
+        {arrayCards.map((element, i) => {
           return (
-            <div className="card-item">
+            <div className="card-item" key={i}>
               <a href="/">
                 <div className="clickable-card">
                   <div

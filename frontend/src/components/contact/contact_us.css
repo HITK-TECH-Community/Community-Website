@@ -1,5 +1,5 @@
 .contact-section {
-  background: #e7e7e7;
+  background: #fff;
   padding: 0 20px;
 }
 
@@ -91,7 +91,13 @@
 
 .contact-input input:focus,
 .contact-input textarea:focus {
-  border-color: #1863ff;
+  outline:none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, rgba(255, 0, 90, 1),rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   background-color: #ffffff;
 }
 
@@ -107,6 +113,26 @@
   top: 15px;
   font-size: 16px;
   color: #777777;
+}
+
+.fa-envelope-open-text:hover{
+  cursor:pointer;
+  color: #c71610;
+}
+
+.fa-user:hover{
+  cursor:pointer;
+  color: #34B7F1;
+}
+
+.fa-pencil-alt:hover{
+  cursor:pointer;
+  color: #9400D3;
+}
+
+.fa-comment-dots:hover{
+  cursor:pointer;
+  color: #2ECC71;
 }
 
 @media screen and (max-width: 750px) {

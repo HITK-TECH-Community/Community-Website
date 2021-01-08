@@ -25,7 +25,6 @@
   padding-left: 1rem;
   padding-top: 16px;
 }
-
 .nav-item {
   display: flex;
   margin: 5px;
@@ -126,7 +125,7 @@ a.nav-links:hover {
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 150;
   }
 
   .nav-item {

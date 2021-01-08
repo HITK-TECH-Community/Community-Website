@@ -1,5 +1,6 @@
 const router = require('express').Router({ mergeParams: true });
 const validationMiddleware = require('../../../helpers/middlewares/validation');
+const {authMiddleware} = require('../../../helpers/middlewares/auth');
 const postSuperAdminSchema = require('./@validationSchema');
 const createSuperAdmin = require('./createSuperAdmin');
 const postSuperAdmin = require('./postSuperAdmin');
@@ -12,8 +13,9 @@ router.post(
   postSuperAdmin
 );
 router.post(
-  '/admin',
+  '/',
   validationMiddleware(postSuperAdminSchema),
+  authMiddleware,
   postAdmin
 );
 

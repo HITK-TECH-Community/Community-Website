@@ -1,0 +1,67 @@
+.section{
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+
+.image{
+  margin-top: 70px;
+  margin-left: 40px;
+}
+.img{
+  width: 100%;
+}
+
+.login {
+  margin-left: 70px;
+  width: 370px !important; 
+  padding: 60px;
+  background:white;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  border-radius: 20px; 
+}
+
+.login h2 {
+  letter-spacing: 1px;
+  margin: 0 0 25px;
+  font-size: 50px;
+  color: rgb(27,36,49);
+  text-align: center;
+}
+
+
+.login .inputs i{
+  color: grey;
+  font-size: 15px;
+  margin-left: -33px;
+  margin-top: 15px;
+}
+
+.login .inputs input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color:  rgb(27,36,49);
+  margin-left: 0px;
+  margin-bottom: 40px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.login label {
+  letter-spacing: 2px;
+  font-size: large;
+  font-weight: bolder;
+  margin-left: 5px;
+  margin-top: -1px;
+  color: rgb(27,36,49);
+} 
+
+@media(max-width: 500px) {
+  .image{
+  margin-left: 10px;
+  margin-bottom: 30px;
+  }
+  .login{
+    margin-left: 30px;
+  }
+} 

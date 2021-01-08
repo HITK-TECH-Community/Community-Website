@@ -14,7 +14,7 @@ import NotFound from "./components/404/not_found";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
-import GetInvolved from "./components/involvement/get_involved";
+import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 
 import "./app.css";

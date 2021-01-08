@@ -23,7 +23,6 @@ main {
   font-size: 4rem;
   line-height: 4rem;  
   font-weight: bold;
-  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
 #allCards{
@@ -35,8 +34,7 @@ main {
 }
 
 .card-item{
-  background: rgb(255, 0, 90);
-  background: var(--bs-dark);
+  background-color: #016795;
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1em;
@@ -60,6 +58,7 @@ main {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   line-height: 1.9rem;
+  font-weight: bold;
 }
 
 .card-content {
@@ -70,7 +69,7 @@ main {
 }
 
 .card-item:hover {
-  background-color: #016795;
+  background-color: #1B2431;
 }
 
 @media screen and (orientation: portrait) {

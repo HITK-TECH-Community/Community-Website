@@ -66,7 +66,7 @@
 }
 
 .inputLogin:focus{
-  box-shadow: inset 3px 2px 5px #050142, inset -3px -2px 5px #e005d5;
+  box-shadow: inset 2px 2px 5px #1E488F, inset -2px -2px 5px #1E488F;
 }
 
 .login-btn{
@@ -84,7 +84,6 @@
 }
 
 .login-input input:focus {
-  /* border-color: #1863ff !important ; */
   background-color: #ffffff;
 }
 
@@ -112,7 +111,6 @@
   box-shadow: 3px 3px 8px #888888, -3px -3px 8px #ffffff;
   transition: 0.5s;
 }
-
 .login-btn:hover {
   background: #16316d;
 } */

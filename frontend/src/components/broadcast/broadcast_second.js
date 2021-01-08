@@ -19,7 +19,7 @@ export class Owldemo1 extends Component {
           },
           497: {
             nav: false,
-            items: 1,
+            items: 2,
           },
           551: {
             nav: false,

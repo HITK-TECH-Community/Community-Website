@@ -13,7 +13,7 @@ const Resources = () => {
           <h3 className="resource-header-text">Resource Sharing Form</h3>
           <div className="inside-resource">
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group col-sm-6">
                 <div className="resource-input">
                   <input
                     placeholder="Name"
@@ -22,24 +22,9 @@ const Resources = () => {
                     Required="required"
                     name="name"
                   />
-                  {/* <i className="fas fa-user"></i> */}
                 </div>
               </div>
               <div className="form-group2 col-sm-6">
-                <div className="resource-input">
-                  <input
-                    placeholder="Email ID"
-                    id="txt_email"
-                    type="text"
-                    Required="required"
-                    name="email"
-                  />
-                  {/* <i className="fas fa-envelope-open-text"></i> */}
-                </div>
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="form-group col-sm-6">
                 <div className="resource-input">
                   <input
                     placeholder="Phone No."
@@ -48,22 +33,34 @@ const Resources = () => {
                     Required="required"
                     name="phone"
                   />
-                  {/* <i className="fas fa-phone-square-alt"></i> */}
-                </div>
-              </div>
-              <div className="form-group2 col-sm-6">
-                <div className="resource-input">
-                  <input
-                    placeholder="Resource URL"
-                    id="txt_link"
-                    type="text"
-                    Required="required"
-                    name="link"
-                  />
-                  {/* <i className="fas fa-link"></i> */}
                 </div>
               </div>
             </div>
+
+            <div className="form-group ">
+              <div className="resource-input">
+                <input
+                  placeholder="Email ID"
+                  id="txt_email"
+                  type="text"
+                  Required="required"
+                  name="email"
+                />
+              </div>
+            </div>
+
+            <div className="form-group ">
+              <div className="resource-input">
+                <input
+                  placeholder="Resource URL"
+                  id="txt_link"
+                  type="text"
+                  Required="required"
+                  name="link"
+                />
+              </div>
+            </div>
+
             <div className="resource-input">
               <textarea
                 placeholder="Resource Description"
@@ -73,7 +70,6 @@ const Resources = () => {
                 name="resourcedesc"
                 Required="required"
               ></textarea>
-              {/* <i className="fas fa-pen-square"></i> */}
             </div>
             <div className="resource-input1">
               <label>Trust Level of Resource</label>
@@ -141,7 +137,6 @@ const Resources = () => {
                 cols="20"
                 name="info"
               ></textarea>
-              {/* <i className="far fa-comment-alt"></i> */}
             </div>
             <div className="submit-btn">
               <Button2

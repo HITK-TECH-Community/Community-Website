@@ -9,11 +9,13 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .child1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
 .resource-image img {
   max-width: 100%;
 }
@@ -24,11 +26,13 @@
   justify-content: space-around;
   align-items: center;
 }
+
 .child2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+
 .resource-card {
   width: 75%;
   height: auto;
@@ -38,6 +42,7 @@
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
   padding-bottom: 2rem;
 }
+
 .resource-input {
   position: relative;
 }
@@ -55,6 +60,7 @@
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
+
 .resource-input input::placeholder,
 .resource-input textarea::placeholder {
   opacity: 1;
@@ -116,10 +122,12 @@
   padding-bottom: 30px;
   padding-left: 2rem;
 }
+
 .form-check {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .valid_until {
   padding-top: 1rem;
 }
@@ -129,9 +137,11 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .form-group {
   padding-right: 0.25em;
 }
+
 .resource-header-text {
   padding: 30px 0;
   font-size: 30px;
@@ -144,6 +154,7 @@
   display: flex;
   justify-content: center;
 }
+
 .submit-btn-text {
   display: flex;
   justify-content: center;
@@ -155,12 +166,15 @@
     flex-direction: column;
     width: 100%;
   }
+
   .form-group {
     width: 100%;
   }
+
   .form-group2 {
     width: 100%;
   }
+
   .resource-parent {
     width: 85%;
     margin: 10% auto;

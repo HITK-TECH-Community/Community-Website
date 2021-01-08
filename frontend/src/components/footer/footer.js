@@ -74,7 +74,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="/#">Get Involved</a>
+                <a href="/get-involved">Get Involved</a>
               </li>
             </ul>
           </li>

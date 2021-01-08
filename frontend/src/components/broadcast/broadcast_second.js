@@ -5,7 +5,7 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./owl.css";
 import Card from "./card.js";
 
-export class Owldemo extends Component {
+export class Owldemo1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -49,7 +49,7 @@ export class Owldemo extends Component {
       <div className="Bottom_bgbox">
         <div className="Bottom_bgbox_first">
           <div className="motive">
-            <h1 style={{ color: "#1B2431" }}>Previously Broadcast</h1>
+            <h1 style={{ color: "#1B2431" }}>Recently Broadcast</h1>
             <div className="dash"></div>
           </div>
         </div>
@@ -87,4 +87,4 @@ export class Owldemo extends Component {
   }
 }
 
-export default Owldemo;
+export default Owldemo1;

@@ -43,9 +43,11 @@ export default function Faqs() {
 
   return (
     <div className="faq-container">
-      <div className="head"> Frequently Asked Questions </div>
-      <div className="faq">
+      <div className="head">
         <img src="./images/faq.png" className="faq-image" alt="faq-icon" />
+        Frequently Asked Questions
+      </div>
+      <div className="faq">
         <div className="faq-block">
           <Accordion className={classes.accord}>
             <AccordionSummary

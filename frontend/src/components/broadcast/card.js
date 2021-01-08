@@ -60,17 +60,17 @@ const useStyles = makeStyles((theme) => ({
       height: "16.5em",
     },
     [theme.breakpoints.down("411")]: {
-      width: "128px",
+      width: "148px",
       height: "16.5em",
     },
     [theme.breakpoints.down("385")]: {
-      width: "118px",
+      width: "168px",
       height: "16.5em",
     },
     [theme.breakpoints.down("366")]: {
       marginTop:'15px',
-      width: "88px",
-      height: "13.5em",
+      width: "158px",
+      height: "15.5em",
     },
   },
   form: {

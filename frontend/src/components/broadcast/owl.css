@@ -1,7 +1,7 @@
 .carousel-div {
   padding: 10px 0px;      
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .Bottom_bgbox_first {
   height: 100px;
@@ -26,14 +26,14 @@
   background-color: rgb(0, 0, 0) !important;
   color: #fff !important;
   padding: 0 15px !important;
-  left: -10%;
+  left: -7%;
 }
 
 .owl-nav button.owl-next {
   background-color: rgb(0, 0, 0) !important;
   color: #fff !important;
   padding: 0 15px !important;
-  right: -10%;
+  right: -7%;
 }
 
 .owl-dots {
@@ -110,4 +110,10 @@ span {
   text-decoration: none;
  
 }
-
+@media only screen and (max-width: 551px) {
+  carousel-div {
+    padding: 10px 0px;      
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+}

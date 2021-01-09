@@ -1,5 +1,5 @@
 .contact-section {
-  background: #e7e7e7;
+  background: #fff;
   padding: 0 20px;
 }
 
@@ -101,6 +101,26 @@
   top: 15px;
   font-size: 16px;
   color: #777777;
+}
+
+.fa-envelope-open-text:hover{
+  cursor:pointer;
+  color: #c71610;
+}
+
+.fa-user:hover{
+  cursor:pointer;
+  color: #34B7F1;
+}
+
+.fa-pencil-alt:hover{
+  cursor:pointer;
+  color: #9400D3;
+}
+
+.fa-comment-dots:hover{
+  cursor:pointer;
+  color: #2ECC71;
 }
 
 @media screen and (max-width: 750px) {

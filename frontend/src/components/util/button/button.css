@@ -30,7 +30,9 @@
 .main-btn {
   display: inline-block;
   font-weight: 500;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -72,6 +74,8 @@
   background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
   background-size: 200% auto;
   color: #fff;
+  width: 37%;
+  font-size: 21px;
   background-position: left center;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);

@@ -2,7 +2,6 @@ import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import Button from "../util/button/button";
 import Dropdown from "../util/dropdown/dropdown";
 import "./navbar.css";
 

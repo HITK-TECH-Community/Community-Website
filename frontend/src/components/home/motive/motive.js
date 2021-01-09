@@ -71,65 +71,6 @@ const Motive = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 col-sm-8 my-3">
-            <div
-              className="single-features d-flex mt-30 wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="0.5s"
-            >
-              <div className="features-icon">
-                <i className="fab fa-github"></i>
-              </div>
-              <div className="features-content text-left">
-                <h4 className="features-title"><a href="/#">Get Inspired</a></h4>
-                <p className="">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam.
-          </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-8 my-3">
-            <div
-              className="single-features d-flex mt-30 wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="1s"
-            >
-              <div className="features-icon">
-                <i className="fab fa-github"></i>
-              </div>
-              <div className="features-content text-left">
-                <h4 className="features-title">
-                  <a href="/#">Networking Session</a>
-                </h4>
-                <p className="">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam.
-          </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-8 my-3">
-            <div
-              className="single-features d-flex mt-30 wow fadeIn"
-              data-wow-duration="1s"
-              data-wow-delay="1.5s"
-            >
-              <div className="features-icon">
-                <i className="fab fa-github"></i>
-              </div>
-              <div className="features-content text-left">
-                <h4 className="features-title"><a href="/#">Meet New Faces</a></h4>
-                <p className="">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor dunt ut labore et dolore magna aliqua. Ut
-                  enim ad minim veniam.
-          </p>
-              </div>
-            </div>
-          </div>
           <p className="text text-white my-3 text-center">
             All of the factor counts while making you better, and ultimately win is an asset. So go ahead and share the vision for a better future with technology!
         </p>

@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {Fragment} from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import Home from "./components/home/home";
@@ -8,6 +8,7 @@ import Broadcasts from "./components/broadcast/broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
+import Admin_Dashboard from "./components/Admin_Dashboard/admin-dashboard";
 import Faqs from "./components/faq/faqs";
 import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
@@ -30,9 +31,10 @@ const App = () => {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
+            <Route exact path="/admin-dashboard" component={Admin_Dashboard} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/terms" component={Terms}/>
+            <Route exact path="/terms" component={Terms} />
             <Route component={NotFound} />
           </Switch>
         </Router>

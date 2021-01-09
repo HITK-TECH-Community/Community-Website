@@ -1,7 +1,29 @@
 # Contributing Guidelines  
   
-This documentation contains a set of guidelines to help you during the contribution process.   
-We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember, **no contribution is too small.**  
+This documentation contains a set of guidelines to help you during the contribution process.
+
+We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember, **no contribution is too small.** 
+
+- Each participant/contributor will be assigned **2 issues (max)** at a time to work.
+- Participants/contributors have **7 days** to complete issues. After that issues will be assigned to others.
+- Participants/contributors have to **comment** on issues they would like to work on, and mentors will assign you.
+- Issues will be assigned on a **first-come, first-serve basis**.
+- Participants/contributors can also **open their issues**, but it needs to be verified and labelled by a mentor.
+- Before opening a new issue, please **check** if it is already created or not.
+- Pull requests will be merged after being **reviewed by a mentor**.
+- Create a pull request from a **branch** other than `main`.
+- It might take a day to review your pull request. Please have patience and be nice.
+- We all are here to learn. You are allowed to make mistakes. That's how you learn, right!
+
+- Pull Requests review criteria:
+  - Please fill the **PR template** properly while making a PR
+  - You must add your code file into the respective **folders**.
+  - Your work must be **original**, written by you not copied from other resources.
+  - You must **comment** on your code where necessary.
+  - For **frontend changes** kindly share screenshots and work samples of your work before sending a PR.
+  - Follow the proper [**style guides**](https://google.github.io/styleguide/) for your work.
+
+- For any queries or discussions, please drop a message in our **SWOC slack channel or DWOC discord server**
   
 # Submitting Contributions👩‍💻👨‍💻  
 Below you will find the process and workflow used to review and merge your changes.  

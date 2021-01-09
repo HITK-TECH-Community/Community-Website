@@ -1,8 +1,24 @@
 import React, { useReducer, useEffect } from "react";
 import "./login.css";
 
-//state type
+// Show/Hide Functionality.
+window.onload = function () {
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+  if (togglePassword) {
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      if (password) {
+        const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+      }
+    });
+  }
+};
 
+//state type
 type State = {
   username: "string",
   password: "string",
@@ -31,6 +47,7 @@ const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "setUsername":
       return {
+
         ...state,
         username: action.payload,
       };
@@ -142,6 +159,7 @@ const Login = () => {
                 placeholder="Username"
                 onChange={handleUsernameChange}
                 onKeyPress={handleKeyPress}
+                class="inputLogin"
               />
               <i className="fas fa-user"></i>
             </div>
@@ -149,19 +167,20 @@ const Login = () => {
               <input
                 error={state.isError}
                 id="password"
-                type="password"
                 required="required"
                 name="password"
+                type="password"
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
+                class="inputLogin"
               />
-              <i class="fa fa-eye-slash"></i>
+              <i className="far fa-eye" id="togglePassword"></i>
             </div>
-            <div className="login-input">
+            <div className="login-input" style={{ textAlign: "center" }}>
               <button
                 id="btn"
-                className="login-btn"
+                className="login-btn main-btn main-btn-2"
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
               >

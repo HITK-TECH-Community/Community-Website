@@ -31,7 +31,7 @@ const ContactUs = () => {
                   name="email"
                   placeholder="Your Email"
                 />
-                <i className="far fa-envelope"></i>
+                <i className="fas fa-envelope-open-text"></i>
               </div>
               <div className="contact-input">
                 <input
@@ -41,7 +41,7 @@ const ContactUs = () => {
                   name="subject"
                   placeholder="Your Subject"
                 />
-                <i className="fas fa-pen-square"></i>
+                <i className="fas fa-pencil-alt"></i>
               </div>
               <div className="contact-input">
                 <textarea
@@ -52,11 +52,15 @@ const ContactUs = () => {
                   Required="required"
                   placeholder="Your Message"
                 ></textarea>
-                <i className="far fa-comment-alt"></i>
+                <i className="fas fa-comment-dots"></i>
               </div>
-                <div style={{ textAlign: "center" }}>
-                  <Button2 label="Let's Talk!" type="submit" />
-                </div>
+                <div className="submit-btn">
+                <Button2
+                  className="submit-btn-text"
+                  label="Let's Talk!"
+                  type="submit"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
   width: 100%;
   height: 85vh;
   opacity: 0.8;
+  object-fit: cover;
 }
 
 .about-section {

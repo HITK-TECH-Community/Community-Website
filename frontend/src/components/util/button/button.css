@@ -86,3 +86,9 @@
   background-position: right center;
   color: #fff;
 }
+
+@media screen and (max-width: 750px) {
+  .main-btn.main-btn-2 {
+    font-size: 15px;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import {Button2} from "../util/button/button";
+import { Button2 } from "../util/button/button";
 import "./resources.css";
 
 const Resources = () => {
@@ -22,6 +22,7 @@ const Resources = () => {
                     Required="required"
                     name="name"
                   />
+                  <i className="fas fa-user"></i>
                 </div>
               </div>
               <div className="form-group2 col-sm-6">
@@ -33,6 +34,7 @@ const Resources = () => {
                     Required="required"
                     name="phone"
                   />
+                  <i class="fas fa-phone"></i>
                 </div>
               </div>
             </div>
@@ -46,6 +48,7 @@ const Resources = () => {
                   Required="required"
                   name="email"
                 />
+                <i className="far fa-envelope"></i>
               </div>
             </div>
 
@@ -58,6 +61,7 @@ const Resources = () => {
                   Required="required"
                   name="link"
                 />
+                <i class="fas fa-link"></i>
               </div>
             </div>
 
@@ -70,6 +74,7 @@ const Resources = () => {
                 name="resourcedesc"
                 Required="required"
               ></textarea>
+              <i className="fas fa-pen-square"></i>
             </div>
             <div className="resource-input1">
               <label>Trust Level of Resource</label>
@@ -137,6 +142,7 @@ const Resources = () => {
                 cols="20"
                 name="info"
               ></textarea>
+              <i className="fas fa-pen-square"></i>
             </div>
             <div className="submit-btn">
               <Button2

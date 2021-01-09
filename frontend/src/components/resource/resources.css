@@ -88,7 +88,9 @@
 .resource-input input:focus,
 .resource-input textarea:focus {
   border-color: #1863ff;
-  background-color: #eaf1ff;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 5px #1e488f, inset -2px -2px 5px #1e488f;
+  outline: none;
 }
 
 .resource-input textarea {
@@ -104,11 +106,14 @@
 .resource-input i {
   position: absolute;
   right: 25px;
-  top: 40px;
+  top: 15px;
   font-size: 16px;
   color: #000;
 }
 
+.resource-input i:hover {
+  color: black;
+}
 .inside-resource {
   width: 85%;
   margin: 0 auto;
@@ -126,6 +131,7 @@
 .form-check {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 0px;
 }
 
 .valid_until {
@@ -182,5 +188,13 @@
 
   .child1 {
     padding: 0 0 10px;
+  }
+
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
   }
 }

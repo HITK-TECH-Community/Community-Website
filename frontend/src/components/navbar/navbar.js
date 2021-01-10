@@ -110,6 +110,17 @@ const Navbar = () => {
               FAQs
             </NavLink>
           </li>
+          <li className="nav-item ">
+            <NavLink
+              to="/admin-dashboard"
+              className="nav-links"
+              onClick={closeMobileMenu}
+              activeClassName="active-link"
+              exact
+            >
+              DashBoard
+            </NavLink>
+          </li>
           <li className="nav-item">
             <Link
               to="/admin"

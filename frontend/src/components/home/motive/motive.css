@@ -191,6 +191,10 @@
   color: white;
 }
 
+.text{
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 823px) {
   .motive {
     flex-direction: column;

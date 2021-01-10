@@ -103,23 +103,6 @@
   cursor: pointer;
 }
 
-/* .login-btn {
-  background-color: var(--secondary-color);
-  color: #ffffff;
-  font-size: 25px;
-  margin-bottom: 40px !important;
-  box-shadow: 3px 3px 8px #888888, -3px -3px 8px #ffffff;
-  transition: 0.5s;
-}
-
-.login-btn:hover {
-  background: #16316d;
-} */
-/* 
-.login-btn:active {
-  background: #0c1c3d;
-} */
-
 @media screen and (max-width: 750px) {
   .login-section {
     flex-direction: column;

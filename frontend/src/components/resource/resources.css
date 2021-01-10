@@ -87,8 +87,14 @@
 
 .resource-input input:focus,
 .resource-input textarea:focus {
-  border-color: #1863ff;
-  background-color: #eaf1ff;
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
 }
 
 .resource-input textarea {
@@ -104,11 +110,27 @@
 .resource-input i {
   position: absolute;
   right: 25px;
-  top: 40px;
+  top: 15px;
   font-size: 16px;
-  color: #000;
+  color: rgb(134, 131, 131);
+  cursor: pointer;
 }
 
+.fa-user:hover {
+  color: #34b7f1;
+}
+.fa-phone:hover {
+  color: #32e25e;
+}
+.fa-envelope:hover {
+  color: #c71610;
+}
+.fa-link:hover {
+  color: #5214e0;
+}
+.fa-pen-square:hover {
+  color: #5c0572;
+}
 .inside-resource {
   width: 85%;
   margin: 0 auto;
@@ -126,6 +148,7 @@
 .form-check {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 0px;
 }
 
 .valid_until {
@@ -182,5 +205,13 @@
 
   .child1 {
     padding: 0 0 10px;
+  }
+
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
   }
 }

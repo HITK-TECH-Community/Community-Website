@@ -30,6 +30,7 @@
   font-family: "Futura LT Book";
   font-size: 60px;
 }
+
 .features-title {
   padding-left: 1rem;
 }
@@ -52,10 +53,12 @@
   text-align-last: center;
   padding-right: 1rem;
 }
+
 .offline {
   text-align: justify;
   text-align-last: center;
 }
+
 .welcome-section-activity h3 {
   display: inline-block;
   text-align: center;

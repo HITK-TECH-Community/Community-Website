@@ -87,10 +87,14 @@
 
 .resource-input input:focus,
 .resource-input textarea:focus {
-  border-color: #1863ff;
-  background-color: #ffffff;
-  box-shadow: inset 2px 2px 5px #1e488f, inset -2px -2px 5px #1e488f;
   outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
 }
 
 .resource-input textarea {
@@ -109,11 +113,23 @@
   top: 15px;
   font-size: 16px;
   color: rgb(134, 131, 131);
+  cursor: pointer;
 }
 
-.resource-input i:hover {
-  color: black;
-  cursor: pointer;
+.fa-user:hover {
+  color: #34b7f1;
+}
+.fa-phone:hover {
+  color: #32e25e;
+}
+.fa-envelope:hover {
+  color: #c71610;
+}
+.fa-link:hover {
+  color: #5214e0;
+}
+.fa-pen-square:hover {
+  color: #5c0572;
 }
 .inside-resource {
   width: 85%;

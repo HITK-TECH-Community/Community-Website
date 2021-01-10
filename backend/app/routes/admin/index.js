@@ -8,6 +8,7 @@ const {
 } = require('./@validationSchema');
 const createSuperAdmin = require('./createSuperAdmin');
 const postSuperAdmin = require('./postSuperAdmin');
+const postAdmin = require('./postAdmin');
 const getAdmins = require('./getAdmins');
 
 router.get(

@@ -39,13 +39,17 @@ const Dashboard = () => {
                 data-wow-delay="0s"
               >
                 <div className="features-icon">
-                  <i className="fa fa-tasks"></i>
+                  <i class="fa fa-bullhorn" aria-hidden="true"></i>
                 </div>
                 <div className="features-content text-left">
                   <h4 className="features-title">
-                    <a href="/#">Ongoing Challenges</a>
+                    <a href="/#">Broadcasts</a>
                   </h4>
-                  <h2 className="features-matter">36</h2>
+                  <p className="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam.
+                  </p>
                 </div>
               </div>
             </div>
@@ -56,13 +60,17 @@ const Dashboard = () => {
                 data-wow-delay="0.5s"
               >
                 <div className="features-icon">
-                  <i className="fas fa-globe"></i>
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
                 </div>
                 <div className="features-content text-left">
                   <h4 className="features-title">
-                    <a href="/#">My Host Team</a>
+                    <a href="/#">Admins</a>
                   </h4>
-                  <h2 className="features-matter">2</h2>
+                  <p className="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam.
+                  </p>
                 </div>
               </div>
             </div>
@@ -77,9 +85,13 @@ const Dashboard = () => {
                 </div>
                 <div className="features-content text-left">
                   <h4 className="features-title">
-                    <a href="/#">My Participants Team</a>
+                    <a href="/#">About Us</a>
                   </h4>
-                  <h2 className="features-matter">2</h2>
+                  <p className="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam.
+                  </p>
                 </div>
               </div>
             </div>

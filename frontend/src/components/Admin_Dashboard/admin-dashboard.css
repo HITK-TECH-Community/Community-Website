@@ -33,11 +33,7 @@
 .features-title {
   padding-left: 1rem;
 }
-.features-matter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .fa-circle {
   font-size: x-large;
   padding-right: 0.5rem;

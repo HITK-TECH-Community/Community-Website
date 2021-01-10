@@ -12,12 +12,12 @@ module.exports = async (req, res, next) => {
   adminData.passwordHash = await argon2.hash(adminData.password);
   delete adminData.password;
 
-  // checking whether the loggedin user is a SuperAdmin or not
-  const userLoggedIn = await Admin.findOne({ email: res.locals.decode.email });
-  if (!userLoggedIn.isSuperAdmin) {
+  // checking whether the logged in user is a SuperAdmin or not
+  const { isSuperAdmin } = res.locals.decode;
+  if (!isSuperAdmin) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
-      statusCode: 400,
-      message: 'Bad request: You are not a SuperAdmin',
+      statusCode: 401,
+      message: 'Unauthorized Request: Not a superAdmin',
       user: req.body.email,
     });
     return next(error);
@@ -30,6 +30,7 @@ module.exports = async (req, res, next) => {
         statusCode: 400,
         message: 'Bad request: User already exists',
         user: req.body.email,
+        errStack: err,
       });
       return next(error);
     }

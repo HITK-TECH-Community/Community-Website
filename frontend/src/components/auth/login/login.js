@@ -9,7 +9,7 @@ window.onload = function () {
     togglePassword.addEventListener('click', function (e) {
       // toggle the type attribute
       if (password) {
-        const type = password.getAttribute('type') == 'password' ? 'text' : 'password';
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
         password.setAttribute('type', type);
         // toggle the eye slash icon
         this.classList.toggle('fa-eye-slash');
@@ -47,7 +47,6 @@ const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "setUsername":
       return {
-
         ...state,
         username: action.payload,
       };
@@ -77,6 +76,11 @@ const reducer = (state: State, action: Action): State => {
       return {
         ...state,
         isError: action.payload,
+      };
+    default:
+      return {
+        ...state,
+        isError: true,
       };
   }
 };

@@ -35,11 +35,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Faqs() {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
 
   return (
     <div className="faq-container">

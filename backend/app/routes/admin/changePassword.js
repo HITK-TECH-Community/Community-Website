@@ -6,19 +6,32 @@ const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
   const { oldPassword, newPassword } = req.body;
+
   const userRecord = await Admin.findOne({
     email: res.locals.decode.email,
   });
+
   const isPasswordCorrect = await argon2.verify(
     userRecord.passwordHash,
     oldPassword
   );
+
   if (!isPasswordCorrect) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,
       message: 'Wrong old password',
       user: userRecord.email,
-      errStack: 'Auth Login',
+      errStack: 'Password change',
+    });
+    return next(error);
+  }
+
+  if (oldPassword === newPassword) {
+    const error = new ErrorHandler(constants.ERRORS.INPUT, {
+      statusCode: 400,
+      message: 'Old password cannot be same as new password.',
+      user: userRecord.email,
+      errStack: 'Password change',
     });
     return next(error);
   }
@@ -33,15 +46,6 @@ module.exports = async (req, res, next) => {
   );
 
   if (err) {
-    if (err.code === 11000) {
-      const error = new ErrorHandler(constants.ERRORS.INPUT, {
-        statusCode: 400,
-        message: 'Bad request: User already exists',
-        user: userRecord.email,
-        errStack: err,
-      });
-      return next(error);
-    }
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: 'Mongo Error: Insertion Failed',

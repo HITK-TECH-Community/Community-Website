@@ -74,7 +74,7 @@ const Motive = () => {
               </div>
               <div className="features-content text-left">
                 <h4 className="features-title">
-                  <a href="/#">A Lot of Learning</a>
+                  <a href="/#">Lots of Learning</a>
                 </h4>
                 <p className="motive-content">
                   Helping you accelerate your learning and bring you closer to

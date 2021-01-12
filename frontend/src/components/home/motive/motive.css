@@ -44,7 +44,7 @@
   position: relative;
   align-items: center;
   display: flex;
-  margin: 5px 10px 0 5px;
+  padding-right: 18px;
 }
 
 .single-features .features-icon i {

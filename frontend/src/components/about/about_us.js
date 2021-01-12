@@ -20,7 +20,8 @@ const useStyles = makeStyles(() => ({
     flex: '1 0 auto',
   },
   cover: {
-    width: '100%',
+    width: '60%',
+    height: '140px',
     borderRadius: '50%',
   },
 }));
@@ -30,7 +31,6 @@ const AboutUs = () => {
     <div>
       <div className="about-section">
         <img src="./images/about-us.jpg" alt="" className="aboutus-img" />
-        
       </div>
       <div className="about">
         <div className="row">
@@ -80,7 +80,7 @@ const AboutUs = () => {
       </div>
       <div className="team ">
         <div className="row ">
-          <div className="col-md-6">
+          <div className="col-lg-6">
             <div className="card1">
               <Card1 className={classes.root} >
                 <CardMedia
@@ -106,7 +106,7 @@ const AboutUs = () => {
               </Card1>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6">
           <div className="card1">
               <Card1 className={classes.root} >
                 <CardMedia
@@ -134,7 +134,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-lg-6">
           <div className="card1">
               <Card1 className={classes.root} >
                 <CardMedia
@@ -160,7 +160,7 @@ const AboutUs = () => {
               </Card1>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6">
           <div className="card1">
               <Card1 className={classes.root} >
                 <CardMedia

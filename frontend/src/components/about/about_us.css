@@ -96,7 +96,7 @@
 }
 
 .card1{
-  width:410px;
+  width:420px;
   margin-top: 24px;
   margin-bottom: 34px;
   background: transparent;
@@ -113,13 +113,23 @@
   box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 990px) {
   .aboutus-img {
-    height: 25vh;
+    height: 30vh;
   }
+
   .card1{
     margin:auto;
     margin-top: 24px;
     margin-bottom: 34px;
   }
+
+  .meet h1{
+    padding-top:40px;
+  }
+
+  .team-img{
+    display:none;
+  }
+
 }

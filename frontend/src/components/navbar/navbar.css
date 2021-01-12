@@ -25,6 +25,7 @@
   padding-left: 1rem;
   padding-top: 16px;
 }
+
 .nav-item {
   display: flex;
   margin: 5px;
@@ -79,7 +80,6 @@ a.nav-links:hover {
 .active-link {
   border-bottom: 2px;
   border-radius: 8px;
-  background: rgb(255, 0, 90);
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,

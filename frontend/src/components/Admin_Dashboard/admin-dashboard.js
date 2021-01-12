@@ -16,7 +16,6 @@ const Dashboard = () => {
           <div className="row">
             <div className="col-md-10">
               <h3 className="online">
-                {" "}
                 <i class="fas fa-circle"></i>12 Online
               </h3>
               <h3 className="offline">

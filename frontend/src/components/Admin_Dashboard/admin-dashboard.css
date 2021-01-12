@@ -1,6 +1,5 @@
 .welcome-section {
   position: relative;
-
   background-color: #f5f5f5;
   padding-top: 4rem;
   padding-bottom: 1rem;
@@ -68,4 +67,17 @@
 .welcome-section-activity h3 {
   display: inline-block;
   text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+  .welcome-section {
+    display: flex;
+    padding-left: 3rem;
+    justify-content: center;
+  }
+
+  .welcome-section h1 {
+    display: flex;
+    justify-content: center;
+  }
 }

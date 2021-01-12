@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, {Fragment, useState} from "react";
+import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import Dropdown from "../util/dropdown/dropdown";
 import "./navbar.css";
@@ -110,7 +110,7 @@ const Navbar = () => {
               FAQs
             </NavLink>
           </li>
-          {/* <li className="nav-item ">
+          <li className="nav-item ">
             <NavLink
               to="/admin-dashboard"
               className="nav-links"
@@ -120,7 +120,7 @@ const Navbar = () => {
             >
               DashBoard
             </NavLink>
-          </li> */}
+          </li>
           <li className="nav-item">
             <Link
               to="/admin"

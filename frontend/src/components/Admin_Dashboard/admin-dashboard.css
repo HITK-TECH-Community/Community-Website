@@ -1,5 +1,6 @@
 .welcome-section {
   position: relative;
+
   background-color: #f5f5f5;
   padding-top: 4rem;
   padding-bottom: 1rem;
@@ -33,6 +34,11 @@
 
 .features-title {
   padding-left: 1rem;
+}
+
+.features-matter {
+  display: flex;
+  justify-content: center;
 }
 
 .fa-circle {

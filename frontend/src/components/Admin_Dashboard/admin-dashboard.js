@@ -32,7 +32,7 @@ const Dashboard = () => {
         <div className="dash"></div>
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6 col-sm-8 my-3">
+            <div className="col-lg-3 col-md-6 col-sm-8 my-3">
               <div
                 className="single-features d-flex mt-30 wow fadeIn"
                 data-wow-duration="1s"
@@ -45,15 +45,11 @@ const Dashboard = () => {
                   <h4 className="features-title">
                     <a href="/#">Broadcasts</a>
                   </h4>
-                  <p className="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam.
-                  </p>
+                  <h3 className="features-matter">36</h3>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-8 my-3">
+            <div className="col-lg-3 col-md-6 col-sm-8 my-3">
               <div
                 className="single-features d-flex mt-30 wow fadeIn"
                 data-wow-duration="1s"
@@ -66,15 +62,11 @@ const Dashboard = () => {
                   <h4 className="features-title">
                     <a href="/#">Admins</a>
                   </h4>
-                  <p className="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam.
-                  </p>
+                  <h3 className="features-matter">2</h3>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-8 my-3">
+            <div className="col-lg-3 col-md-6 col-sm-8 my-3">
               <div
                 className="single-features d-flex mt-30 wow fadeIn"
                 data-wow-duration="1s"
@@ -87,11 +79,7 @@ const Dashboard = () => {
                   <h4 className="features-title">
                     <a href="/#">About Us</a>
                   </h4>
-                  <p className="text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor dunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam.
-                  </p>
+                  <h3 className="features-matter">2</h3>
                 </div>
               </div>
             </div>

@@ -75,8 +75,8 @@ span {
 
   .owl-carousel .owl-item img {
     height: auto;
-    width: 90%;
-    padding-left: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

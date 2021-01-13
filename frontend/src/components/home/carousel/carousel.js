@@ -43,12 +43,12 @@ export class Owldemo1 extends Component {
           <div className="dash"></div>
         </div>
         <OwlCarousel
-          className="owl-theme"
+          className="owl-theme pt-4"
           {...this.state.options}
           autoplay={true}
           responsiveClass={true}
         >
-          <div>
+          <div className="pb-3">
             <img className="owl-image" alt="" src="./images/help.png" />
           </div>
           <div>

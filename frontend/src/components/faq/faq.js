@@ -21,6 +21,16 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
   },
+  accord: {
+    background:
+      "linear-gradient(45deg, rgba(255, 0, 90, 1) 0%, rgba(10, 24, 61, 1) 90%)",
+    margin: "8px 0",
+    borderRadius: 10,
+    "&:hover": {
+      background: "#016795",
+      transition: "all 0.3s ease-in-out",
+    },
+  },
 }));
 
 export default function Faqs() {
@@ -32,12 +42,14 @@ export default function Faqs() {
   };
 
   return (
-    <div class="faq-container">
-      <div className="head"> Frequently Asked Questions </div>
+    <div className="faq-container">
+      <div className="head">
+        <img src="./images/faq.png" className="faq-image" alt="faq-icon" />
+        Frequently Asked Questions
+      </div>
       <div className="faq">
-        <img src="./images/faq.png" className="faq-image" />
         <div className="faq-block">
-          <Accordion className="accord">
+          <Accordion className={classes.accord}>
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -59,7 +71,7 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className="accord">
+          <Accordion className={classes.accord}>
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -81,7 +93,7 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className="accord">
+          <Accordion className={classes.accord}>
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -103,7 +115,7 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className="accord">
+          <Accordion className={classes.accord}>
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -125,7 +137,7 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className="accord">
+          <Accordion className={classes.accord}>
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={

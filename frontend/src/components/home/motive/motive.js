@@ -70,7 +70,7 @@ const Motive = () => {
               data-wow-delay="1s"
             >
               <div className="features-icon">
-                <i className="fas fa-globe"></i>
+                <i className="fas fa-user-graduate"></i>
               </div>
               <div className="features-content text-left">
                 <h4 className="features-title">

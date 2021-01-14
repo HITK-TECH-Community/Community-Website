@@ -37,6 +37,7 @@ export default function TransitionsModal(props) {
               <img
                 src="https://images-na.ssl-images-amazon.com/images/I/81A%2BqqYaYFL._SL1280_.jpg"
                 className="image"
+                alt="modal_img"
               />
               <div className="cont">
                 Hello Techies!👋 📢

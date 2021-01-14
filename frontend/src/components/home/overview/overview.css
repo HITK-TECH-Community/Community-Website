@@ -70,11 +70,21 @@
 
   .overview p {
     font-size: 1.3rem;
+    text-align: center;
   }
 
   .overview img {
     order: -1;
     min-width: auto;
     width: 180px;
+  }
+
+  .overview h1 {
+    text-align: center;
+  }
+
+  .overview .dash {
+    margin: auto;
+    margin-bottom: 10px;
   }
 }

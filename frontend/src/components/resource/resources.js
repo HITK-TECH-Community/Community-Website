@@ -74,57 +74,19 @@ const Resources = () => {
                 name="resourcedesc"
                 Required="required"
               ></textarea>
-              <i className="fas fa-pen-square"></i>
+              <i className="fas fa-comment-dots"></i>
             </div>
             <div className="resource-input1">
-              <label>Trust Level of Resource</label>
-              <br />
-              <div className="form-check">
-                <input
-                  id="trust1"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust1">1</label>
-                <input
-                  id="trust2"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust2">2</label>
-                <input
-                  id="trust3"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust3">3</label>
-                <input
-                  id="trust4"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust4">4</label>
-                <input
-                  id="trust5"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust5">5</label>
-              </div>
+              <select required>
+                <option id="" disabled selected hidden>Level Of Trust</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
             </div>
             <div className="resource-input">
-              <label>Valid Until</label>
-              <br />
               <div className="valid-until">
                 <input
                   id="validity"
@@ -132,6 +94,7 @@ const Resources = () => {
                   Required="required"
                   name="dob"
                 />
+                <label class="valid">Valid Until</label>
               </div>
             </div>
             <div className="resource-input">

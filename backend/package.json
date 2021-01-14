@@ -31,7 +31,9 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
+    "mailgen": "^2.0.14",
     "mongoose": "^5.11.8",
+    "nodemailer": "^6.4.17",
     "response-time": "^2.3.2"
   },
   "devDependencies": {

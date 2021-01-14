@@ -29,7 +29,7 @@ const Motive = () => {
               data-wow-delay="0s"
             >
               <div className="features-icon">
-                <i className="fas fa-microphone"></i>
+                <i class="fas fa-bullhorn"></i>
               </div>
               <div className="features-content text-left">
                 <h4 className="features-title">

@@ -12,6 +12,7 @@ import Admin from "./components/admin/admin";
 import Faqs from "./components/faq/faq";
 import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
+import Dashboard from "./components/admin/dashboard/dashboard";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
@@ -19,7 +20,6 @@ import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 
 import "./app.css";
-import Dashboard from "./components/admin/dashboard/dashboard";
 
 const App = () => {
   return (

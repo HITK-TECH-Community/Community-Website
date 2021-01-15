@@ -1,11 +1,9 @@
 import React from "react";
-import "./admin-dashboard.css";
+import "./dashboard.css";
 import {
   Card,
-  CardHeader,
   ImageHeader,
-  CardBody,
-  CardFooter,
+  CardBody
 } from "react-simple-card";
 const Dashboard = () => {
   return (

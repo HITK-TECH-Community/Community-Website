@@ -9,7 +9,6 @@ import BroadcastSecond from "./components/broadcast/broadcast_second";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
-import Admin_Dashboard from "./components/Admin_Dashboard/admin-dashboard";
 import Faqs from "./components/faq/faq";
 import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
@@ -20,6 +19,7 @@ import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 
 import "./app.css";
+import Dashboard from "./components/admin/dashboard/dashboard";
 
 const App = () => {
   return (
@@ -37,7 +37,7 @@ const App = () => {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
-            <Route exact path="/admin-dashboard" component={Admin_Dashboard} />
+            <Route exact path="/admin-dashboard" component={Dashboard} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/terms" component={Terms} />

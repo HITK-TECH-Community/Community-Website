@@ -1,5 +1,6 @@
 .aboutus-img {
   width: 100%;
+  object-fit: cover;
 }
 
 .about-section {
@@ -44,7 +45,7 @@
 }
 
 .team-img{
-  width:90%;
+  width:80%;
 }
 
 .team {
@@ -106,18 +107,65 @@
 }
 
 .team-social{
-  float: right;
+  display: none;
+  margin-top:-14px;
+}
+
+.makeStyles-root-1 {
+  padding-top: 2px !important;
+  padding-bottom: 5px !important;
 }
 
 .card1:hover {
   box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
 }
 
-@media only screen and (max-width: 990px) {
-  .aboutus-img {
-    height: 30vh;
-  }
+#founder:hover{
+  box-shadow: -1px 16px 40px 0px rgba(10, 24, 61, 1);
+}
 
+.card1:hover .team-social{
+  display: block;
+}
+
+.photo{
+  padding-left: 10px;
+}
+
+.MuiCardContent-root {
+  padding: 10px;
+}
+
+.badge{
+  color: #000;
+  margin-right:5px;
+  margin-top: 18px;
+  box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19) !important;
+}
+
+#founder .badge{
+  margin-bottom: 13px;
+  margin-top:19px;
+  padding:6px;
+}
+
+#default{
+  background-color: #2bbbad;
+}
+
+#primary{
+  background-color: #fb3;
+}
+
+#broadcast{
+  background-color: rgb(140, 134, 199);
+}
+
+#info{
+  background-color:#f8bbd0;
+}
+
+@media only screen and (max-width: 990px) {
   .card1{
     margin:auto;
     margin-top: 24px;

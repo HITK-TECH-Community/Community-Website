@@ -7,7 +7,7 @@
 }
 
 .pp-logo {
-  width: 45vw;
+  width: 100%;
   height: auto;
 }
 
@@ -46,8 +46,17 @@
 .pp-content {
   color: black;
   font-size: 1rem;
-  margin-top: 0.3rem;
+  margin:auto;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  margin-top: 0.5rem;
 }
 
 @media (orientation: portrait) {

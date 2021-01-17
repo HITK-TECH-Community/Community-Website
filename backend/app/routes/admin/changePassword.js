@@ -55,7 +55,6 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
 
-  //   eslint-disable-next-line no-underscore-dangle
   const response = userRecord.email;
   res.status(200).send(response);
   return next();

@@ -15,6 +15,8 @@ We are happy to welcome all the contributions from anyone willing to improve/add
 - It might take a day to review your pull request. Please have patience and be nice.
 - We all are here to learn. You are allowed to make mistakes. That's how you learn, right!
 
+- **MAKE SURE TO OPEN A DRAFT PR AS SOON AS YOU START WORKING ON AN ISSUE AND KEEP COMMITING TO IT SO THAT WE CAN KNOW THAT YOU ARE WORKING ON THAT PARTICULAR ISSUE**
+
 - Pull Requests review criteria:
   - Please fill the **PR template** properly while making a PR
   - You must add your code file into the respective **folders**.

@@ -27,39 +27,27 @@
 									"var jsonData = JSON.parse(responseBody);\r",
 									"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
 									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"body_test\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Contains a message property\", function() {\r",
-									"    let jsonData = pm.response.json();\r",
-									"    \r",
-									"});\r",
-									"\r",
 									"/*signup*/\r",
 									"pm.test(\"Response has a JSON body\", function () {\r",
 									"    pm.response.to.be.json;\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Response has a token property\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.token).to.be.a('string');\r",
+									"pm.expect(jsonData.token).to.match(/^[A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_.+/=]*$/);\r",
+									"\r",
+									"pm.test('Check for keys  email and password', () => {\r",
+									"    pm.expect(JSON.parse(pm.request.body.raw)).to.be.an('object').that.has.all.keys( 'email', 'password')\r",
+									"}) \r",
+									" \r",
+									"/*Response Time */\r",
+									"pm.test(\"Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
 									"});\r",
 									"\r",
-									"/*signin*/\r",
-									"pm.test(\"Response has a data property\", function () {\r",
-									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData).to.be.a('object');\r",
+									"/*testing headers */\r",
+									"pm.test(\"Content-Type header is present\", () => {\r",
+									"  pm.response.to.have.header(\"Content-Type\");\r",
 									"});\r",
 									"\r",
-									"\r",
-									"pm.test(\"400 invalid request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([400, 401]);\r",
-									"});\r",
 									"\r",
 									"\r",
 									""
@@ -70,14 +58,7 @@
 					],
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -111,26 +92,19 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"pm.test(\"Login Successful\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlciBndWVzdCIsImVtYWlsIjoidXNlcjNAZ21haWwuY29tIiwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjEwMjk3NDAxLCJleHAiOjE2MTAzMTkwMDF9.kbbCLxMCdQrnZqwIfEm6o7f9H-0lEfVQTZuRPzfEul0",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -139,12 +113,12 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "user3@gmail.com",
+									"value": "lakshya.mishra56@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "user1234",
+									"value": "1234",
 									"type": "text"
 								}
 							]

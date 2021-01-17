@@ -7,19 +7,19 @@ const constants = require('../../../constants');
 module.exports = async (req, res, next) => {
   const { oldPassword, newPassword } = req.body;
 
-  const userRecord = await Admin.findOne({
-    email: res.locals.decode.email,
-  });
-
   if (oldPassword === newPassword) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,
       message: 'New password cannot be identical to Old password',
-      user: userRecord.email,
+      user: res.locals.decode.email,
       errStack: 'Password change',
     });
     return next(error);
   }
+
+  const userRecord = await Admin.findOne({
+    email: res.locals.decode.email,
+  });
 
   const isPasswordCorrect = await argon2.verify(
     userRecord.passwordHash,

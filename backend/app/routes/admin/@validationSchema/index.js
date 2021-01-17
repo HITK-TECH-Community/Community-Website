@@ -22,13 +22,7 @@ const getAdminsSchema = Joi.object({
   page: Joi.number().optional(),
 });
 
-const passwordChangeSchema = Joi.object({
-  oldPassword: Joi.string().required(),
-  newPassword: Joi.string().required(),
-});
-
 module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
-  passwordChangeSchema,
 };

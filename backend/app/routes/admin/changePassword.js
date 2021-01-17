@@ -11,6 +11,16 @@ module.exports = async (req, res, next) => {
     email: res.locals.decode.email,
   });
 
+  if (oldPassword === newPassword) {
+    const error = new ErrorHandler(constants.ERRORS.INPUT, {
+      statusCode: 400,
+      message: 'New password cannot be identical to Old password',
+      user: userRecord.email,
+      errStack: 'Password change',
+    });
+    return next(error);
+  }
+
   const isPasswordCorrect = await argon2.verify(
     userRecord.passwordHash,
     oldPassword
@@ -26,23 +36,13 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
 
-  if (oldPassword === newPassword) {
-    const error = new ErrorHandler(constants.ERRORS.INPUT, {
-      statusCode: 400,
-      message: 'Old password cannot be same as new password.',
-      user: userRecord.email,
-      errStack: 'Password change',
-    });
-    return next(error);
-  }
-
   const hashedPassword = await argon2.hash(newPassword);
 
-  const [err, user] = await to(
-    Admin.findOne({ email: userRecord.email }, () => {
-      userRecord.passwordHash = hashedPassword;
-      userRecord.save();
-    })
+  const [err] = await to(
+    Admin.findOneAndUpdate(
+      { email: userRecord.email },
+      { $set: { passwordHash: hashedPassword } },
+    )
   );
 
   if (err) {
@@ -56,8 +56,7 @@ module.exports = async (req, res, next) => {
   }
 
   //   eslint-disable-next-line no-underscore-dangle
-  const response = { ...user._doc };
-  delete response.passwordHash;
+  const response = userRecord.email;
   res.status(200).send(response);
   return next();
 };

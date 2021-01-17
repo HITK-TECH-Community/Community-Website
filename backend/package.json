@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint '**/*.{js,ts,tsx}'",
+    "lint:fix": "npm run lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
@@ -16,7 +16,11 @@
     }
   },
   "lint-staged": {
-    "*.js": ["./node_modules/.bin/eslint --fix", "git add"]
+    "*.{js,ts,tsx}": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "repository": {
     "type": "git",

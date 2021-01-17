@@ -1,20 +1,44 @@
 import React from "react";
 import "./about_us.css";
-import { Card, ImageHeader, CardBody, CardFooter } from "react-simple-card";
+import { makeStyles } from '@material-ui/core/styles';
+import Card1 from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import { MDBBadge} from "mdbreact";
+const useStyles = makeStyles(() => ({
+  root: {
+    display: 'flex',
+    paddingTop:'23px',
+    paddingBottom: '10px',
+    paddingLeft: '10px',
+  },
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+    flex: '1 0 auto',
+  },
+  cover: {
+    width: '90%',
+    height: '130px',
+    borderRadius: '50%',
+  },
+}));
 const AboutUs = () => {
+  const classes = useStyles();
   return (
     <div>
       <div className="about-section">
-        <img src="./images/aboutback3.jpg" alt="" className="aboutus-img" />
-        <h1>ABOUT US</h1>
-        <h4>Collaborate, Create, Share! </h4>
+        <img src="./images/about-us.jpg" alt="" className="aboutus-img" />
       </div>
       <div className="about">
         <div className="row">
           <div className="col-lg-6">
             <h1>Who are we and what we do?</h1>
             <div className="dash"></div>
-            <h4 className="by-line text-left">By students, For students</h4>
+            <h4 className="by-line text-left">By Students, For Students</h4>
           </div>
           <div className="col-lg-6">
             <p>
@@ -38,117 +62,235 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="team container">
-        <h1>Meet The Team</h1>
-        <div className="dash"></div>
-        <h5 className="by-line">
-          “Individuals can and do make a difference, but it takes a team to
-          really mess things up.”
-        </h5>
+      <div className="meet">
         <div className="row">
-          <div className="col-lg-4">
-            <Card>
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
+          <div className="col-lg-6 text-center">
+            <h1>MEET THE CREW</h1>
+            <h5 >
+              “Individuals can and do make a difference, but it takes a team to
+              really mess things up.”
+            </h5>
           </div>
-          <div className="col-lg-4">
-            <Card>
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
+          <div className="col-sm-6">
+            <img src="./images/team.png" alt="" className="team-img"/>
           </div>
-          <div className="col-lg-4">
-            <Card className="card">
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
+        </div>
+      </div>
+      <div className="team ">
+        <div className="row ">
+          <div className="col-lg-6">
+            <div className="card1" id="founder">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <MDBBadge pill id="founder">FOUNDER</MDBBadge>
+                    <div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
+          </div>
+          <div className="col-lg-6">
+          <div className="card1" id="founder">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <MDBBadge pill id="founder">CO-FOUNDER</MDBBadge>
+                    <div>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
+          </div>
+        </div>
+        <div className="row ">
+          <div className="col-lg-6">
+            <div className="card1">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <div>
+                      <p style={{marginTop:'13px'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <MDBBadge pill id="default">Social Media</MDBBadge>
+                    <MDBBadge id="primary">Open Source</MDBBadge>
+                    <MDBBadge id="info">Core Team</MDBBadge>
+                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
+          </div>
+          <div className="col-lg-6">
+          <div className="card1">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <div>
+                      <p style={{marginTop:'13px'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <MDBBadge pill id="default">Social Media</MDBBadge>
+                    <MDBBadge id="primary">Open Source</MDBBadge>
+                    <MDBBadge id="info">Core Team</MDBBadge>
+                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-4">
-            <Card>
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
+          <div className="col-lg-6">
+          <div className="card1">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <div>
+                      <p style={{marginTop:'13px'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <MDBBadge pill id="default">Social Media</MDBBadge>
+                    <MDBBadge id="primary">Open Source</MDBBadge>
+                    <MDBBadge id="info">Core Team</MDBBadge>
+                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
           </div>
-          <div className="col-lg-4">
-            <Card>
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
-          </div>
-          <div className="col-lg-4">
-            <Card className="card">
-              <ImageHeader imageSrc="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" />
-              <CardBody>
-                <h4>Name</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-                  vero.
-                </p>
-              </CardBody>
-              <CardFooter>
-                <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                <i className="fab fa-github-square fa-2x card_footer"></i>
-              </CardFooter>
-            </Card>
+          <div className="col-lg-6">
+          <div className="card1">
+              <Card1 className={classes.root} >
+                <div className="col-4 photo">
+                  <div class="row">
+                    <CardMedia
+                      className={classes.cover}
+                      image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg" 
+                    />
+                  </div>
+                  <div class="row">
+                    <div className="team-social">
+                          <i className="fab fa-linkedin fa-2x card_footer in"></i>
+                          <i className="fab fa-twitter-square fa-2x card_footer"></i>
+                          <i className="fab fa-github-square fa-2x card_footer"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className={classes.details}>
+                  <CardContent className={classes.content}>
+                    <Typography component="h6" variant="h6">
+                      Name
+                    </Typography>
+                    <div>
+                      <p style={{marginTop:'13px'}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero.</p>
+                    </div>
+                    <MDBBadge pill id="default">Social Media</MDBBadge>
+                    <MDBBadge id="primary">Open Source</MDBBadge>
+                    <MDBBadge id="info">Core Team</MDBBadge>
+                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <br/>
+                </CardContent>
+                </div>
+              </Card1>
+            </div>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ export default function TransitionsModal(props) {
           <div className="modals">
             <h1 className="mod_head">{props.data.head}</h1>
             <div className="main-cont">
-              <img src={props.data.img} className="image" />
+              <img src={props.data.img} className="image" alt="dummy_img" />
               <div className="cont">{props.data.desc}</div>
             </div>
             <h1 className="mod_head">Link</h1>

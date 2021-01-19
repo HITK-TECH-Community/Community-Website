@@ -238,3 +238,40 @@ input[type="date"]:not(:valid):before {
     color: black;
   }
 }
+
+@media only screen and (max-width: 640px) and (min-width: 528px) {
+  .label {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [type="radio"] {
+    width: 19px;
+    height: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: sub;
+  }
+
+  .levelOfTrust {
+    margin-right: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 528px) {
+  .label {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [type="radio"] {
+    width: 13px;
+    height: 19px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .levelOfTrust {
+    margin-right: 0.5rem;
+  }
+}

@@ -77,23 +77,23 @@ const Resources = () => {
               <i className="fas fa-comment-dots"></i>
             </div>
             <div className="resource-input1">
-              <label class="mb-4 levelOfTrust">Level Of Trust</label>
+              <label className="mb-4 levelOfTrust">Level Of Trust</label>
               <input type="radio" name="one" />
-              <label className="mx-3">1</label>
+              <label className="mx-3 label">1</label>
               <input type="radio" name="one" />
-              <label className="mx-3">2</label>
+              <label className="mx-3 label">2</label>
               <input type="radio" name="one" />
-              <label className="mx-3">3</label>
+              <label className="mx-3 label">3</label>
               <input type="radio" name="one" />
-              <label className="mx-3">4</label>
+              <label className="mx-3 label">4</label>
               <input type="radio" name="one" />
-              <label className="mx-3">5</label>
+              <label className="mx-3 label">5</label>
             </div>
             <div className="resource-input">
               <div className="valid-until">
                 <input
                   required
-                  placeholder="Date"
+                  name="dob"
                   class="textbox-n"
                   type="date"
                   id="date"
@@ -109,7 +109,7 @@ const Resources = () => {
                 cols="20"
                 name="info"
               ></textarea>
-              <i className="fas fa-pen-square"></i>
+              <i className="fas fa-pencil-alt"></i>
             </div>
             <div className="submit-btn">
               <Button2

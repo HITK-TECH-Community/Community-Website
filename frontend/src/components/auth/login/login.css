@@ -1,6 +1,3 @@
-#root {
-  background-color: #fff;
-}
 .login-section {
   display: flex;
   background-color: #fff;
@@ -15,6 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: #fff;
 }
 
 .login-image img {

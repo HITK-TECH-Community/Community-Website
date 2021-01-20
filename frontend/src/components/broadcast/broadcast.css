@@ -1,0 +1,10 @@
+.head_broadcast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5em;
+}
+.re_head {
+  font-size: 35px;
+  color: #0a183d;
+}

@@ -15,4 +15,20 @@ const postSuperAdminSchema = Joi.object({
   username: Joi.string().optional(),
 });
 
-module.exports = postSuperAdminSchema;
+const getAdminsSchema = Joi.object({
+  type: Joi.string()
+    .optional()
+    .pattern(/^(superAdmin|admin)$/),
+  page: Joi.number().optional(),
+});
+
+const passwordChangeSchema = Joi.object({
+  oldPassword: Joi.string().required(),
+  newPassword: Joi.string().required(),
+});
+
+module.exports = {
+  postSuperAdminSchema,
+  getAdminsSchema,
+  passwordChangeSchema,
+};

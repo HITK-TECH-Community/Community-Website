@@ -30,7 +30,9 @@
 .main-btn {
   display: inline-block;
   font-weight: 500;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -52,6 +54,7 @@
   background-color: #fff;
   border: 0;
 }
+
 .main-btn:hover {
   background-color: #fff;
   color: #1863ff;
@@ -71,12 +74,33 @@
   background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
   background-size: 200% auto;
   color: #fff;
+  width: 37%;
+  font-size: 21px;
   background-position: left center;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
 }
+
 .main-btn.main-btn-2:hover {
   background-position: right center;
   color: #fff;
+}
+@media screen and (max-width: 1047px) {
+  .main-btn.main-btn-2 {
+    font-size: 14px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 515px) {
+  .main-btn.main-btn-2 {
+    font-size: 17.5px;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .main-btn.main-btn-2 {
+    font-size: 13px;
+    width: 48%;
+  }
 }

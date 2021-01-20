@@ -31,7 +31,7 @@
 .nav__title {
   font-weight: 600;
   font-size: 18px;
-  color:#fff;
+  color: #fff;
 }
 
 .footer address {
@@ -81,6 +81,10 @@
   color: #c2d6d7;
 }
 
+.nav__ul a:hover {
+  color: yellow;
+}
+
 .nav__ul--extra {
   column-count: 2;
   column-gap: 1.25em;
@@ -100,6 +104,7 @@
 .heart {
   color: #c2d6d7;
 }
+
 /*.fa-gitter,*/
 .fa-linkedin,
 .fa-slack,
@@ -107,8 +112,9 @@
 .fa-envelope,
 .fa-github {
   padding: 5px;
-  color: #fff;
+  color: white;
 }
+
 .fa-linkedin:hover {
   color: #0088cc;
 }
@@ -125,23 +131,24 @@
   color: #000;
 }
 
-.footer-dash{
-  text-align:center;
-  padding-top:2px;
+.footer-dash {
+  text-align: center;
+  padding-top: 2px;
   width: 90px;
-  height:2px;
+  height: 2px;
+  margin-top: -32px;
   margin-bottom: 12px;
   background: rgb(255, 0, 90);
-  background: /* gradient can be an image */
-  linear-gradient(
+  background: /* gradient can be an image */ linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
     purple 90%
   );
-  background-size:100% 5px ;/* if linear-gradient, we need to resize it */
+  background-size: 100% 5px; /* if linear-gradient, we need to resize it */
 }
+
 .footer-text {
-  padding-top:10px;
+  padding-top: 10px;
   text-align: center;
   font-size: 0.8rem;
   background: #121f3a;
@@ -150,6 +157,159 @@
 .nav__item {
   margin-bottom: 1.5rem;
 }
+
+/* Social Icons styles */
+.col ul li {
+  margin-bottom: 20px;
+}
+
+.col .social li a {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 50px;
+  margin-left: 0px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+  float: left;
+}
+
+.col .social li a span {
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+.col .social li a span:nth-child(1),
+.col .social li a span:nth-child(3) {
+  width: 100%;
+  height: 1px;
+  background-color: yellow;
+}
+
+.col .social li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.col .social li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.col .social li a span:nth-child(3) {
+  top: 50px;
+  bottom: 0;
+  right: 0;
+  transform-origin: left;
+}
+
+.col .social li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.col .social li a span:nth-child(2),
+.col .social li a span:nth-child(4) {
+  width: 1px;
+  height: 100%;
+  background-color: yellow;
+}
+
+.col .social li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.col .social li a:hover span:nth-child(2) {
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.col .social li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.col .social li a:hover span:nth-child(4) {
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.newsletter {
+  margin-top: 40px;
+}
+
+.newsletter h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.input-field-footer {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.input-field-footer:focus {
+  outline: none;
+  border: 2px double transparent;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  margin-right: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+.submit-btn-footer {
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #ee4d55;
+  transition: all 0.3s;
+}
+.submit-btn-footer:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #ee4d55;
+}
+
+.cprt {
+  padding: 4px;
+}
+
+.cprt_text {
+  width: 100%;
+  background-color: #016795;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  margin-top: -15px;
+}
+
 @media screen and (min-width: 24.375em) {
   .legal .legal__links {
     margin-left: auto;

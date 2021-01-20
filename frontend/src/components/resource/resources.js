@@ -78,16 +78,18 @@ const Resources = () => {
             </div>
             <div className="resource-input1">
               <label className="mb-4 levelOfTrust">Level Of Trust</label>
-              <input type="radio" name="one" />
-              <label className="mx-3 label">1</label>
-              <input type="radio" name="one" />
-              <label className="mx-3 label">2</label>
-              <input type="radio" name="one" />
-              <label className="mx-3 label">3</label>
-              <input type="radio" name="one" />
-              <label className="mx-3 label">4</label>
-              <input type="radio" name="one" />
-              <label className="mx-3 label">5</label>
+              <div className="radioButtons">
+                <input type="radio" name="one" />
+                <label className="mx-3 label">1</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">2</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">3</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">4</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">5</label>
+              </div>
             </div>
             <div className="resource-input">
               <div className="valid-until">

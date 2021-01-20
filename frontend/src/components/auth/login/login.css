@@ -1,6 +1,9 @@
+#root {
+  background-color: #fff;
+}
 .login-section {
   display: flex;
-  background-color: #e7e7e7;
+  background-color: #fff;
 }
 
 .login-image {
@@ -47,6 +50,7 @@
 .inside-card {
   width: 85%;
   margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .login-input {
@@ -65,11 +69,12 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.inputLogin:focus{
-  box-shadow: inset 2px 2px 5px #1E488F, inset -2px -2px 5px #1E488F;
+.inputLogin:focus {
+  box-shadow: inset 2px 2px 5px #1e488f, inset -2px -2px 5px #1e488f;
 }
 
-.login-btn{
+.login-btn {
+  margin: 0 auto;
   margin-bottom: 30px !important;
 }
 
@@ -87,7 +92,7 @@
   background-color: #ffffff;
 }
 
-.inputLogin{ 
+.inputLogin {
   outline: none;
 }
 
@@ -99,8 +104,12 @@
   color: #777777;
 }
 
-.fa-eye-slash, .fa-eye{
+.fa-eye-slash,
+.fa-eye {
   cursor: pointer;
+}
+.fa-eye:hover {
+  color: #00bfff;
 }
 
 @media screen and (max-width: 750px) {

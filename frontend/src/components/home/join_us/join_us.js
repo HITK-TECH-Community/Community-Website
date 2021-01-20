@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import "./join_us.css";
 
-const Test = () => {
+const JoinUs = () => {
   return (
     <Fragment>
       <div className="join-us">
@@ -25,4 +25,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default JoinUs;

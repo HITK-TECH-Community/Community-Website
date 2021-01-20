@@ -74,63 +74,32 @@ const Resources = () => {
                 name="resourcedesc"
                 Required="required"
               ></textarea>
-              <i className="fas fa-pen-square"></i>
+              <i className="fas fa-comment-dots"></i>
             </div>
             <div className="resource-input1">
-              <label>Trust Level of Resource</label>
-              <br />
-              <div className="form-check">
-                <input
-                  id="trust1"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust1">1</label>
-                <input
-                  id="trust2"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust2">2</label>
-                <input
-                  id="trust3"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust3">3</label>
-                <input
-                  id="trust4"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust4">4</label>
-                <input
-                  id="trust5"
-                  className="trust"
-                  type="checkbox"
-                  Required="required"
-                  name="trustlevel"
-                />
-                <label for="trust5">5</label>
+              <label className="mb-4 levelOfTrust">Level Of Trust</label>
+              <div className="radioButtons">
+                <input type="radio" name="one" />
+                <label className="mx-3 label">1</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">2</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">3</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">4</label>
+                <input type="radio" name="one" />
+                <label className="mx-3 label">5</label>
               </div>
             </div>
             <div className="resource-input">
-              <label>Valid Until</label>
-              <br />
               <div className="valid-until">
                 <input
-                  id="validity"
-                  type="date"
-                  Required="required"
+                  required
                   name="dob"
+                  class="textbox-n"
+                  type="date"
+                  id="date"
+                  placeholder="Valid Until:&nbsp;"
                 />
               </div>
             </div>
@@ -142,7 +111,7 @@ const Resources = () => {
                 cols="20"
                 name="info"
               ></textarea>
-              <i className="fas fa-pen-square"></i>
+              <i className="fas fa-pencil-alt"></i>
             </div>
             <div className="submit-btn">
               <Button2

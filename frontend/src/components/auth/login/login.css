@@ -68,7 +68,14 @@
 }
 
 .inputLogin:focus {
-  box-shadow: inset 2px 2px 5px #1e488f, inset -2px -2px 5px #1e488f;
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
 }
 
 .login-btn {

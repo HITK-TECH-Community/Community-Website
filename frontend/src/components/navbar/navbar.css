@@ -42,7 +42,7 @@
   padding: 8px 20px;
   border-radius: 4px;
   outline: none;
-  border: none;
+  border: 2px solid #fc0254;
   font-size: 18px;
   color: #fff;
   cursor: pointer;

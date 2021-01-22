@@ -3,9 +3,9 @@ const sendEmail = require('../../../helpers/mailer');
 module.exports = {
     sendVerificationEmail
 }
-async function sendVerificationEmail(email) {
-    console.log("Workin!", email)
+async function sendVerificationEmail(fromEmail, toEmail) {
     await sendEmail({
-        to: email
+        from : fromEmail,
+        to: toEmail
     });
 }

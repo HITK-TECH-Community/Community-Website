@@ -1,0 +1,169 @@
+.resource-section {
+  background: #fff;
+  padding: 0 30px;
+}
+
+.resource-parent {
+  display: flex;
+  padding: 80px 0;
+}
+
+.child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.resource-child {
+  flex: 1;
+}
+
+.valid-until{
+    width: 40%;
+}
+
+
+.resource-image {
+  max-width: 100%;
+}
+
+.child2 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.resource-form {
+  width: 90%;
+  margin: 0 auto;
+}
+.resource-input {
+  position: relative;
+}
+
+.resource-input-new {
+    margin-bottom: 1.5rem;
+  }
+
+.resource-input input,
+.resource-input textarea,
+.resource-input-new select {
+  width: 90%;
+  height: 40px;
+  border: 1px solid #bbbaba;
+  border-radius: 5px;
+  padding: 0 25px;
+  color: #777777;
+  margin-bottom: 20px;
+}
+
+.resource-input input::placeholder,
+.resource-input textarea::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.resource-input input::-moz-placeholder,
+.resource-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.resource-input input::-moz-placeholder,
+.resource-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+    filter: invert(60%) sepia(50%) saturate(10000%) hue-rotate(0deg);
+    cursor: pointer;
+  }
+
+.resource-input input::-webkit-input-placeholder,
+.resource-input textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.resource-input input:focus,
+.resource-input textarea:focus {
+  border-color: #1863ff;
+  background-color: #eaf1ff;
+}
+
+.resource-input textarea {
+  padding-top: 12px;
+  height: 90px;
+  resize: none;
+}
+
+
+.resource-input i {
+  position: absolute;
+  right: 74px;
+  top: 11px;
+  font-size: 16px;
+  color: #777777;
+}
+
+
+.valid_until {
+    padding-top: 1rem;
+  }
+
+[type="radio"] {
+    width: 24px;
+    height: 20px;
+    vertical-align: text-bottom;
+  }
+  
+  input[type="date"]:not(:valid):before {
+    content: attr(placeholder);
+  }
+  .levelOfTrust {
+    margin-right: 1rem;
+    display: inline;
+  }
+
+  .radioButtons {
+    display: inline;
+    margin-bottom: 1rem;
+  }
+
+.star-required {
+  font-size: 15px;
+  text-transform: lowercase;
+  color: rgb(197, 56, 56);
+  text-align: center;
+}
+
+.resource-header-text {
+  font-size: 30px;
+  text-transform: capitalize;
+  color: #121f3a;
+  text-align: center !important;
+}
+@media screen and (max-width: 991px) {
+  .resource-parent {
+    display: block;
+    width: 100%;
+  }
+  [type="radio"] {
+    width: 29px;
+    height: 19px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  }
+
+  .resource-header-text {
+    padding-left: 0;
+    text-align: center !important;
+  }
+}

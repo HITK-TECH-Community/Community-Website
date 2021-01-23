@@ -148,7 +148,7 @@ const Login = () => {
     <div className="login-section">
       <div className="login-image child1">
         <img
-          src="https://raw.githubusercontent.com/HITK-TECH-Community/Community-Website/main/frontend/src/components/auth/loginPage-VaishnaviShah/student-login.png"
+          src="./images/login.png"
           alt="login-illustration"
         />
       </div>

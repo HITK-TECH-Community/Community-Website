@@ -15,6 +15,20 @@ const postSuperAdminSchema = Joi.object({
   username: Joi.string().optional(),
 });
 
+
+const putAdminSchema = Joi.object({
+  firstName: Joi.string()
+    .optional()
+    .pattern(/[a-zA-z]+$/, 'aplha'),
+  lastName: Joi.string()
+    .optional()
+    .pattern(/[a-zA-z]+$/, 'aplha'),
+  contact: Joi.string()
+    .optional()
+    .regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
+  username: Joi.string().optional(),
+});
+
 const getAdminsSchema = Joi.object({
   type: Joi.string()
     .optional()
@@ -31,4 +45,5 @@ module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,
+  putAdminSchema
 };

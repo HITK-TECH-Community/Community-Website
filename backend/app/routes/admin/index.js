@@ -6,13 +6,14 @@ const {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,
+  putAdminSchema
 } = require('./@validationSchema');
 const createSuperAdmin = require('./createSuperAdmin');
 const postSuperAdmin = require('./postSuperAdmin');
 const postAdmin = require('./postAdmin');
 const getAdmins = require('./getAdmins');
 const changePassword = require('./changePassword');
-
+const putAdmin = require('./putAdmin')
 router.get(
   '/',
   validationMiddleware(getAdminsSchema, 'query'),
@@ -37,6 +38,13 @@ router.put(
   validationMiddleware(passwordChangeSchema),
   authMiddleware,
   changePassword
+);
+
+router.put(
+  '/',
+  validationMiddleware(putAdminSchema),
+  authMiddleware,
+  putAdmin
 );
 
 module.exports = router;

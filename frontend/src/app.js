@@ -16,7 +16,7 @@ import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
-import Admins from "./components/adminpage/admin-dasboard";
+import Admins from "./components/admin/adminpage/admin-dasboard";
 import "./app.css";
 
 const App = () => {

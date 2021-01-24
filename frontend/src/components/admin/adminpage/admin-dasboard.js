@@ -1,6 +1,5 @@
 import React from "react";
 import "./admin.css";
-import { Button2 } from "../util/button/button";
 import { Card, ImageHeader, CardBody } from "react-simple-card";
 const AdminDashboard = () => {
   return (
@@ -109,13 +108,6 @@ const AdminDashboard = () => {
                       name="email"
                     />
                     <i className="far fa-envelope"></i>
-                    <div className="submit-btn">
-                      <Button2
-                        className="submit-btn-text"
-                        label="Submit"
-                        type="submit"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>

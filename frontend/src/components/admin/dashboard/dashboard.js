@@ -88,7 +88,7 @@ const Dashboard = () => {
 
                 <div className="features-content text-left">
                   <h4 className="features-title">
-                    <a href="/adminLOgIn">Settings</a>
+                    <a href="/admin-setting">Settings</a>
                   </h4>
                 </div>
               </div>

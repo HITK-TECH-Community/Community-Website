@@ -27,7 +27,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/adminLOgIn" component={Admins} />
+            <Route exact path="/admin-setting" component={Admins} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/Broadcasts">
               <Broadcasts />

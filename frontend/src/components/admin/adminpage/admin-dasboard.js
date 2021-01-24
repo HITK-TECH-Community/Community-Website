@@ -111,6 +111,9 @@ const AdminDashboard = () => {
                   </div>
                 </div>
               </div>
+              <div class="wrap">
+                <button class="button">Submit</button>
+              </div>
             </div>
           </div>
         </div>

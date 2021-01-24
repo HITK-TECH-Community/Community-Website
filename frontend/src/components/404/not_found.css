@@ -43,13 +43,12 @@ color:white !important;
 }
 
 @media screen and (max-width: 750px) {
-.error{
-  margin: 0 5% 3rem 5%;
-}
+  .error{
+    margin: 0 5% 3rem 5%;
+  }
 
-.back{
-  font-size: 14px;
-  padding:10px;
-}
-
+  .back{
+    font-size: 14px;
+    padding:10px;
+  }
 }

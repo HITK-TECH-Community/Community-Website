@@ -35,11 +35,11 @@
 }
 
 .back:hover{
-color:white;
+  color:white;
 }
 
 .fa-arrow-left{
-color:white !important;
+  color:white !important;
 }
 
 @media screen and (max-width: 750px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./admin.css";
+import "./setting.css";
 import { Card, ImageHeader, CardBody } from "react-simple-card";
 const AdminDashboard = () => {
   return (

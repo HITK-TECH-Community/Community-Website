@@ -133,9 +133,8 @@ a.nav-links:hover {
 
   .nav-links {
     text-align: center;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 55%;
+    margin-left: 22%;
   }
 
   .nav-links:hover {
@@ -170,7 +169,7 @@ a.nav-links:hover {
     padding: 1.5rem;
     margin: 2rem auto;
     border-radius: 8px;
-    width: 80%;
+    width: 55%;
     background: #1888ff;
     text-decoration: none;
     color: #fff;

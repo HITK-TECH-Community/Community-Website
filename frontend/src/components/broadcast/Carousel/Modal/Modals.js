@@ -32,27 +32,10 @@ export default function TransitionsModal(props) {
       >
         <Fade in={props.open}>
           <div className="modals">
-            <h1 className="mod_head">Crio Winter Of Doing</h1>
+            <h1 className="mod_head">{props.data.head}</h1>
             <div className="main-cont">
-              <img
-                src="https://images-na.ssl-images-amazon.com/images/I/81A%2BqqYaYFL._SL1280_.jpg"
-                className="image"
-                alt="modal_img"
-              />
-              <div className="cont">
-                Hello Techies!👋 📢
-                <br />
-                Crio Winter of Doing is here!!🤩🤩 India's top startups are
-                lining up their tech challenges for you!! Join India's largest
-                tech externship program for developers. ✅Work on challenging
-                tech projects (externships) from exciting startups ✅ Interact
-                with the biggest names in India's tech industry ✅ Participate
-                in engaging Masterclass sessions from top engineers in the
-                country ✅Get discovered by Crio's hiring partners Apply now ❗
-                👇 https://www.crio.do/crio-winter-of-doing/ Limited slots are
-                available ❗❗ Thank you, With regards, HITK Tech Community👩‍💻👨‍💻
-                (By HITK students,For HITK students)
-              </div>
+              <img src={props.data.img} className="image" alt="dummy_img" />
+              <div className="cont">{props.data.desc}</div>
             </div>
             <h1 className="mod_head">Link</h1>
           </div>

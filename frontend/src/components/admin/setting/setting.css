@@ -104,11 +104,17 @@
     min-width: 200px;
     font-size: 14px;
   }
+  .admin-card {
+    width: 90%;
+  }
 }
 
 @media only screen and (max-width: 640px) {
   .button {
-    min-width: 150px;
-    font-size: 14px;
+    min-width: 140px;
+    font-size: 12px;
+  }
+  .admin-card {
+    width: 90%;
   }
 }

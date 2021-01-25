@@ -57,12 +57,6 @@
   margin: 0 auto;
 }
 
-.form-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .admin-header-text {
   padding: 30px 0;
   font-size: 30px;

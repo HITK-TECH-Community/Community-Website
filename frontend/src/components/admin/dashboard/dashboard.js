@@ -1,10 +1,6 @@
 import React from "react";
 import "./dashboard.css";
-import {
-  Card,
-  ImageHeader,
-  CardBody
-} from "react-simple-card";
+import { Card, ImageHeader, CardBody } from "react-simple-card";
 const Dashboard = () => {
   return (
     <div>
@@ -80,8 +76,26 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+            <div className="col-lg-3 col-md-6 col-sm-8 my-3">
+              <div
+                className="single-features d-flex mt-30 wow fadeIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.5s"
+              >
+                <div className="features-icon">
+                  <i class="fa fa-wrench" aria-hidden="true"></i>
+                </div>
+
+                <div className="features-content text-left">
+                  <h4 className="features-title">
+                    <a href="/setting">Settings</a>
+                  </h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div className="team container">
           <h1>Admins</h1>
           <div className="dash"></div>

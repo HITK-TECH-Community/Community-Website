@@ -16,7 +16,7 @@ import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
-
+import Admins from "./components/admin/setting/setting";
 import "./app.css";
 
 const App = () => {
@@ -27,6 +27,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/setting" component={Admins} />
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/Broadcasts">
               <Broadcasts />

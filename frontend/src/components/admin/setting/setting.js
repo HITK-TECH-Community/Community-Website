@@ -1,6 +1,6 @@
 import React from "react";
 import "./setting.css";
-const AdminSetting = () => {
+const Setting = () => {
   return (
     <div>
       <div className="team container">
@@ -31,4 +31,4 @@ const AdminSetting = () => {
     </div>
   );
 };
-export default AdminSetting;
+export default Setting;

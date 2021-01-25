@@ -1,6 +1,6 @@
 .resource-section {
   display: flex;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 .resource-image {
@@ -362,5 +362,31 @@ input[type="date"]:not(:valid):before {
       rgba(10, 24, 61, 1)
     );
     border: 3px solid whitesmoke;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .label {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [type="radio"] {
+    width: 29px;
+    height: 19px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .levelOfTrust {
+    display: block;
+  }
+
+  .radioButtons {
+    margin-bottom: 1rem;
+  }
+
+  .resource-input1 {
+    text-align: center;
   }
 }

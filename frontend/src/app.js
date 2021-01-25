@@ -5,12 +5,10 @@ import "semantic-ui-css/semantic.min.css";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
-import BroadcastSecond from "./components/broadcast/broadcast_second";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
 import Faqs from "./components/faq/faq";
-import Contact from "./components/contact/Design1";
 import NotFound from "./components/404/not_found";
 import Dashboard from "./components/admin/dashboard/dashboard";
 import Navbar from "./components/navbar/navbar";
@@ -32,14 +30,12 @@ const App = () => {
             <Route exact path="/about-us" component={AboutUs} />
             <Route exact path="/Broadcasts">
               <Broadcasts />
-              <BroadcastSecond />
             </Route>
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
             <Route exact path="/admin-dashboard" component={Dashboard} />
             <Route exact path="/admin" component={Admin} />
-            <Route exact path="/contact" component={Contact} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />

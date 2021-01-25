@@ -89,6 +89,19 @@
   color: #777777;
 }
 
+.contact-input input:focus,
+.contact-input textarea:focus {
+  border-color: #1863ff;
+  outline:none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, rgba(255, 0, 90, 1),rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
 .contact-input textarea {
   padding-top: 15px;
   height: 180px;

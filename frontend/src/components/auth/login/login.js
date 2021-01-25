@@ -147,7 +147,7 @@ const Login = () => {
   return (
     <div className="login-section">
       <div className="login-image child1">
-        <img src="./images/login.png" alt="login-illustration" />
+        <img src="./images/login-illustration.png" alt="login-illustration" />
       </div>
       <div className="login-form child2">
         <div className="login-card">

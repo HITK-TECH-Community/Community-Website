@@ -57,16 +57,6 @@
   margin: 0 auto;
 }
 
-.form-check {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 0px;
-}
-
-.valid_until {
-  padding-top: 1rem;
-}
-
 .form-row {
   display: flex;
   flex-direction: row;

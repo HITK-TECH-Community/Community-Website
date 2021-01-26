@@ -8,3 +8,19 @@
   font-size: 35px;
   color: #0a183d;
 }
+.myb {
+  background: rgba(10, 24, 61, 1);
+  padding: 15px;
+  color: white;
+  border-radius: 20px;
+  font-size: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.myb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}

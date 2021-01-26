@@ -1,0 +1,120 @@
+.admin-card {
+  width: 70%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+  padding-bottom: 2rem;
+}
+
+.admin-input {
+  position: relative;
+}
+
+.admin-input input,
+.admin-input textarea,
+.admin-input1 select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 5px;
+  padding: 0 25px;
+  color: #777777;
+  margin-bottom: 20px;
+  margin-bottom: 30px !important;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+.admin-input input:focus,
+.admin-input textarea:focus,
+.admin-input1 select:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+.admin-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: rgb(134, 131, 131);
+  cursor: pointer;
+}
+
+.fa-envelope:hover {
+  color: #c71610;
+}
+
+.inside-admin {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.admin-header-text {
+  padding: 30px 0;
+  font-size: 30px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: "Nunito", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #162f66;
+  background: linear-gradient(90deg, #121f3a 0%, #162f66 100%);
+  border: none;
+  border-radius: 1000px;
+
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+.button:hover,
+.button:focus {
+  color: #ffffff;
+  transform: translateY(-6px);
+}
+
+@media screen and (max-width: 750px) {
+  .button {
+    min-width: 200px;
+    font-size: 14px;
+  }
+  .admin-card {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .button {
+    min-width: 140px;
+    font-size: 12px;
+  }
+  .admin-card {
+    width: 90%;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./allbroadcast.css";
+import { Button, Header, Icon, Modal } from "semantic-ui-react";
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
                 Developing a passion for learning will never cease to grow 
@@ -40,6 +41,7 @@ function AllBroadcasts() {
     ["Private AI Series", str2],
     ["Crio Winter Of Doing ", str1],
   ];
+  const [open, setOpen] = React.useState(false);
   return (
     <main>
       <div id="hero">
@@ -52,18 +54,12 @@ function AllBroadcasts() {
         {arrayCards.map((element, i) => {
           return (
             <div className="card-item" key={i}>
-              <a
-                href="https://github.com/HITK-TECH-Community/Community-Website"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="clickable-card">
-                  <div className="card-title">{element[0]}</div>
-                  <div className="card-content">
-                    {element[1].substring(0, 500)}...
-                  </div>
+              <div className="clickable-card">
+                <div className="card-title">{element[0]}</div>
+                <div className="card-content">
+                  {element[1].substring(0, 500)}...
                 </div>
-              </a>
+              </div>
             </div>
           );
         })}

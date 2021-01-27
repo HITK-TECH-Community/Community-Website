@@ -13,12 +13,7 @@ const Broadcasts = () => {
       </div>
       <Link to="/all-broadcasts">
         <div className="submit-btn">
-          <button
-            class="myb"
-            style={{ marginBottom: "30px", textAlign: "center" }}
-          >
-            All Broadcasts
-          </button>
+          <button className="myb">All Broadcasts</button>
         </div>
       </Link>
     </div>

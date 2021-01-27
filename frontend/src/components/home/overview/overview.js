@@ -3,7 +3,7 @@ import "./overview.css";
 
 const Overview = () => {
   return (
-    <div className="content">
+    <div className="content container">
       <div className="overview">
         <div>
           <h1>HITK Tech Community</h1>

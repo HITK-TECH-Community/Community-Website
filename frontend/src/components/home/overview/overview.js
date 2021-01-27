@@ -6,7 +6,7 @@ const Overview = () => {
     <div className="content">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-10">
+          <div className="col-12">
             <div className="overview">
               <div>
                 <h1>HITK Tech Community</h1>

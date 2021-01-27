@@ -4,10 +4,6 @@
   align-items: center;
 }
 
-.overview > div {
-  padding-right: 2rem;
-}
-
 .overview img {
   min-width: 0;
   width: 80%;

@@ -5,7 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
-import AllBroadcasts from "./components/broadcast/allbroadcast/allbroadcasts";
+import AllBroadcasts from "./components/broadcast/all_broadcast/all_broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";

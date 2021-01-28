@@ -1,5 +1,5 @@
 import React from "react";
-import "./allbroadcast.css";
+import "./all_broadcast.css";
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
                 Developing a passion for learning will never cease to grow 

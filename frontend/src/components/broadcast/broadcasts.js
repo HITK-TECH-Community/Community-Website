@@ -21,3 +21,9 @@ const Broadcasts = () => {
 };
 
 export default Broadcasts;
+/*<div class="wrap">
+        <button class="button">
+          <a href="/all_broadcast" style={{ color: "white" }}>
+            View
+          </a>
+        </button>*/

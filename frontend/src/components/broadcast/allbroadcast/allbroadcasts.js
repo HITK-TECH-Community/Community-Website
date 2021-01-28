@@ -1,6 +1,5 @@
 import React from "react";
 import "./allbroadcast.css";
-import { Button, Header, Icon, Modal } from "semantic-ui-react";
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
                 Developing a passion for learning will never cease to grow 
@@ -41,7 +40,6 @@ function AllBroadcasts() {
     ["Private AI Series", str2],
     ["Crio Winter Of Doing ", str1],
   ];
-  const [open, setOpen] = React.useState(false);
   return (
     <main>
       <div id="hero">

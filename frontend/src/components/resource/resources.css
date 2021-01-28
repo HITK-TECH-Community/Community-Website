@@ -159,13 +159,12 @@
 
 [type="radio"] {
   width: 24px;
-  height: 20px;
+  height: 18px;
   vertical-align: text-bottom;
 }
 
 .levelOfTrust {
-  margin-right: 1rem;
-  display: inline;
+  display: block;
 }
 
 .radioButtons {
@@ -187,6 +186,7 @@
 .radio-item label {
   color: black;
   font-weight: normal;
+  vertical-align: middle;
 }
 
 .radio-item label:before {
@@ -203,7 +203,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 1px;
+  top: 0px;
   left: 8px;
   content: " ";
   display: block;
@@ -325,7 +325,7 @@ input[type="date"]:not(:valid):before {
 
   [type="radio"] {
     width: 29px;
-    height: 19px;
+    height: 18px;
   }
 
   .levelOfTrust {
@@ -334,10 +334,6 @@ input[type="date"]:not(:valid):before {
 
   .radioButtons {
     margin-bottom: 1rem;
-  }
-
-  .resource-input1 {
-    text-align: center;
   }
 
   .radio-item {

@@ -63,7 +63,9 @@ const Resources = () => {
               <i className="fas fa-comment-dots"></i>
             </div>
             <div className="resource-input1">
-              <label className="mb-4 levelOfTrust">Level Of Trust</label>
+              <div>
+                <label className="mb-3 levelOfTrust">Level Of Trust</label>
+              </div>
               <div className="radioButtons">
                 <div class="radio-item">
                   <input type="radio" id="ritema" name="one" />

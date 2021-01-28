@@ -3,16 +3,17 @@ import "./login.css";
 
 // Show/Hide Functionality.
 window.onload = function () {
-  const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('#password');
+  const togglePassword = document.querySelector("#togglePassword");
+  const password = document.querySelector("#password");
   if (togglePassword) {
-    togglePassword.addEventListener('click', function (e) {
+    togglePassword.addEventListener("click", function (e) {
       // toggle the type attribute
       if (password) {
-        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-        password.setAttribute('type', type);
+        const type =
+          password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
         // toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle("fa-eye-slash");
       }
     });
   }
@@ -146,7 +147,10 @@ const Login = () => {
   return (
     <div className="login-section">
       <div className="login-image child1">
-        <img src="./images/login-illustration.png" alt="login-illustration" />
+        <img
+          src="./images/login.png"
+          alt="login-illustration"
+        />
       </div>
       <div className="login-form child2">
         <div className="login-card">

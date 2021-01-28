@@ -1,15 +1,54 @@
+.not_found{
+  background-color:#f7f7f7;
+}
+
 .error {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+  margin: 0 15% 3rem 15%;
 }
 
-.error-type {
-  font-size: 4rem;
+.error-logo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.error-content {
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .error-text {
   font-size: 2rem;
+  font-weight: 900;
+  color: var(--secondary-color);
+}
+
+.main-btn.main-btn-2 {
+  width:100%;
+  font-size: 16px;
+}
+
+.back:hover{
+  color:white;
+}
+
+.fa-arrow-left{
+  color:white !important;
+}
+
+@media screen and (max-width: 750px) {
+  .error{
+    margin: 0 5% 3rem 5%;
+  }
+
+  .back{
+    font-size: 14px;
+    padding:10px;
+  }
 }

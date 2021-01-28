@@ -18,7 +18,7 @@ import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import "./app.css";
 import Setting from "./components/admin/setting/setting";
-import AllBroadcast from "./components/broadcast/all_broadcast/All-Broadcast";
+import AllBroadcast from "./components/broadcast/All-broadcast/All-Broadcast";
 
 const App = () => {
   return (

@@ -1,0 +1,84 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hero {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+#heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+#title {
+  display: flex;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+#allCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 95vw;
+  margin: 0.5em;
+}
+
+.card-item {
+  background-color: #016795;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 1em;
+  box-shadow: 0.3em 0.3em 0.4em grey;
+  height: auto;
+  width: 15em;
+  margin: 1em;
+  background-position: left center;
+  transition: background 0.3s ease-out;
+}
+
+.clickable-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  color: var(--bs-light);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+}
+
+.card-content {
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.card-item:hover {
+  background-color: #1b2431;
+}
+
+@media screen and (orientation: portrait) {
+  #hero {
+    flex-direction: column;
+  }
+
+  img {
+    max-width: 100vw;
+  }
+}

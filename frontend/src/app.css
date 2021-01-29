@@ -1,5 +1,5 @@
 /* Golbal CSS File */
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 :root {
   --primary-color: #081624;
   --secondary-color: #0a183d;
@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   /* font-family: 'Futura LT Book', sans-serif; */
   font-size: 1rem;
   background-color: whitesmoke;
@@ -23,7 +23,7 @@ body {
 .content {
   margin: auto;
   overflow: hidden;
-  padding: 1.5rem 7rem;
+  padding: 1.5rem 0;
 }
 
 /* Temproary CSS [for dummy text] */
@@ -33,7 +33,7 @@ body {
 .contact-us,
 .faqs,
 .admin {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   display: flex;
   height: 90vh;
   align-items: center;

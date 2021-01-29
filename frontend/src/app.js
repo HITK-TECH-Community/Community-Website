@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
+import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
@@ -16,8 +17,8 @@ import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
-import "./app.css";
 import Setting from "./components/admin/setting/setting";
+import "./app.css";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
             <Route exact path="/Broadcasts">
               <Broadcasts />
             </Route>
+            <Route exact path="/all-broadcasts" component={AllBroadcasts} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />

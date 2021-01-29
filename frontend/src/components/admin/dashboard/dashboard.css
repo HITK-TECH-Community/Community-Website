@@ -1,84 +1,219 @@
 .welcome-section {
   position: relative;
-  background-color: #f5f5f5;
-  padding-top: 4rem;
-  padding-bottom: 1rem;
-  height: 55vh;
-}
-
-.welcome-section h1 {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  cursor: pointer;
+  padding: 1rem;
+  height: auto;
+  margin-bottom: 1em;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
-  top: 90px;
-  right: 80px;
-  color: #040404;
-  font-weight: 900;
-  font-family: "Futura LT Book";
-  font-size: 60px;
-}
-
-.welcome-section-activity {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  top: 90px;
-  right: 80px;
-  color: #040404;
-  font-weight: 900;
-  font-family: "Futura LT Book";
-  font-size: 60px;
+  min-height: 10em;
+  border-radius: 20px;
+  flex-direction: column;
 }
 
-.features-title {
-  padding-left: 1rem;
+.img_admin {
+  width: 50%;
+  margin: 1em;
 }
 
-.features-matter {
-  display: flex;
-  justify-content: center;
-}
-
-.fa-circle {
-  font-size: x-large;
-  padding-right: 0.5rem;
-}
-
-.fas {
-  color: #016795;
-}
-
-.row {
-  padding-top: 1rem;
-}
-
-.online {
-  text-align: justify;
-  text-align-last: center;
-  padding-right: 1rem;
-}
-
-.offline {
-  text-align: justify;
-  text-align-last: center;
-}
-
-.welcome-section-activity h3 {
-  display: inline-block;
+.h1 {
+  font-size: 20px !important;
+  color: white !important;
+  font-weight: bold;
   text-align: center;
 }
 
-@media screen and (max-width: 750px) {
-  .welcome-section {
-    display: flex;
-    padding-left: 3rem;
-    justify-content: center;
+.dashing {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.left {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  min-height: 25em;
+  margin-top: 2em;
+  background-color: white;
+  padding: 1em;
+  border-radius: 12px;
+}
+
+.right {
+  width: 75%;
+  margin: 2em 2em 0 2em;
+  background-color: white;
+  padding: 1em;
+  border-radius: 12px;
+}
+
+.span {
+  font-size: 17px;
+  font-weight: bold;
+  margin-left: 1em;
+}
+
+.features-icons {
+  cursor: pointer;
+  padding: 0.75em;
+  border-radius: 20px;
+  color: white;
+  margin-top: 0.5em;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.features-icons1 {
+  padding: 0.75em;
+  cursor: pointer;
+  margin-top: 0.5em;
+  border-radius: 20px;
+  background: transparent;
+  color: black;
+}
+
+.user_name {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.photos {
+  width: 22.5%;
+  border-radius: 12px;
+}
+
+.name {
+  margin-left: 2em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.edits > h4 {
+  font-size: 25px;
+}
+
+.account {
+  margin: 2em 0;
+  width: 100%;
+}
+
+.edits {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail {
+  margin: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.conts {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 1em 0;
+  align-items: center;
+}
+
+.inp {
+  width: 50%;
+  padding: 0.75em;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+.dash_board {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1.5em;
+  margin: 2em;
+}
+
+.crd {
+  min-height: 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  color: black;
+  border-radius: 20px;
+}
+
+.crd:hover {
+  color: white;
+  background: #1b2431;
+}
+
+.crd > .head1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+.crd > .head1 > h4 {
+  margin: 0 1em;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.count {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+@media (max-width: 600px) {
+  .dashing {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    margin: 1em auto;
+  }
+
+  .dash_board {
+    grid-template-columns: auto;
+    margin: 1em 0;
+  }
+
+  .edits {
+    width: 100%;
+  }
+
+  .edits > h4 {
     font-size: 20px;
   }
 
-  .welcome-section h1 {
-    display: flex;
-    justify-content: center;
+  .conts {
+    width: 90%;
+  }
+
+  .inp {
+    width: 60%;
+    padding: 0.5em;
   }
 }

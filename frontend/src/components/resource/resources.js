@@ -12,30 +12,16 @@ const Resources = () => {
         <div className="resource-card">
           <h3 className="resource-header-text">Resource Sharing Form</h3>
           <div className="inside-resource">
-            <div className="form-row">
-              <div className="form-group col-sm-6">
-                <div className="resource-input">
-                  <input
-                    placeholder="Name"
-                    id="txt_name"
-                    type="text"
-                    Required="required"
-                    name="name"
-                  />
-                  <i className="fas fa-user"></i>
-                </div>
-              </div>
-              <div className="form-group2 col-sm-6">
-                <div className="resource-input">
-                  <input
-                    placeholder="Phone No."
-                    id="phone"
-                    type="tel"
-                    Required="required"
-                    name="phone"
-                  />
-                  <i class="fas fa-phone"></i>
-                </div>
+            <div className="form-group">
+              <div className="resource-input">
+                <input
+                  placeholder="Name"
+                  id="txt_name"
+                  type="text"
+                  Required="required"
+                  name="name"
+                />
+                <i className="fas fa-user"></i>
               </div>
             </div>
 
@@ -77,18 +63,40 @@ const Resources = () => {
               <i className="fas fa-comment-dots"></i>
             </div>
             <div className="resource-input1">
-              <label className="mb-4 levelOfTrust">Level Of Trust</label>
+              <div>
+                <label className="mb-3 levelOfTrust">Level Of Trust</label>
+              </div>
               <div className="radioButtons">
-                <input type="radio" name="one" />
-                <label className="mx-3 label">1</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">2</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">3</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">4</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">5</label>
+                <div class="radio-item">
+                  <input type="radio" id="ritema" name="one" />
+                  <label className="mx-3 label" for="ritema">
+                    1
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ritemb" name="one" />
+                  <label className="mx-3 label" for="ritemb">
+                    2
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ritemc" name="one" />
+                  <label className="mx-3 label" for="ritemc">
+                    3
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="ritemd" name="one" />
+                  <label className="mx-3 label" for="ritemd">
+                    4
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="riteme" name="one" />
+                  <label className="mx-3 label" for="riteme">
+                    5
+                  </label>
+                </div>
               </div>
             </div>
             <div className="resource-input">

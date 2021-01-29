@@ -30,6 +30,10 @@
   align-items: center;
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.4);
+}
+
 ::-webkit-calendar-picker-indicator:hover {
   filter: invert(60%) sepia(50%) saturate(10000%) hue-rotate(0deg);
   cursor: pointer;
@@ -155,18 +159,60 @@
 
 [type="radio"] {
   width: 24px;
-  height: 20px;
+  height: 18px;
   vertical-align: text-bottom;
 }
 
 .levelOfTrust {
-  margin-right: 1rem;
-  display: inline;
+  display: block;
 }
 
 .radioButtons {
   display: inline;
   margin-bottom: 1rem;
+}
+
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+}
+
+.radio-item input[type="radio"] {
+  display: inline-block;
+}
+
+.radio-item label {
+  color: black;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.radio-item label:before {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  border-radius: 11px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+.radio-item input[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  content: " ";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1),
+    rgba(10, 24, 61, 1)
+  );
+  border: 4px solid whitesmoke;
 }
 
 .resource-input1 {
@@ -247,6 +293,28 @@ input[type="date"]:not(:valid):before {
     font-size: x-small;
     color: black;
   }
+
+  .radio-item input[type="radio"]:checked + label:after {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 8px;
+    content: " ";
+    display: block;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 90, 1),
+      rgba(10, 24, 61, 1)
+    );
+    border: 3px solid whitesmoke;
+  }
+
+  .label {
+    margin-left: 0.6rem !important;
+    margin-right: 0.6rem !important;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -257,9 +325,7 @@ input[type="date"]:not(:valid):before {
 
   [type="radio"] {
     width: 29px;
-    height: 19px;
-    margin-left: 2%;
-    margin-right: 2%;
+    height: 18px;
   }
 
   .levelOfTrust {
@@ -270,7 +336,27 @@ input[type="date"]:not(:valid):before {
     margin-bottom: 1rem;
   }
 
-  .resource-input1 {
-    text-align: center;
+  .radio-item {
+    display: inherit;
+    position: relative;
+    padding: 0 6px;
+    margin: 10px 0 0;
+  }
+
+  .radio-item input[type="radio"]:checked + label:after {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: 11px;
+    content: " ";
+    display: block;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 90, 1),
+      rgba(10, 24, 61, 1)
+    );
+    border: 3px solid whitesmoke;
   }
 }

@@ -57,6 +57,13 @@
   border: 2px solid #fc0254;
 }
 
+.button-div{
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid #fc0254;
+}
+
 a.nav-links:hover {
   background-color: #125181;
   border-radius: 8px;
@@ -192,8 +199,7 @@ a.nav-links:hover {
   }
 
   .nav-links-mobile:hover {
-    background: #fff;
-    color: #1888ff;
+    color: #fff;
     transition: 250ms;
   }
 

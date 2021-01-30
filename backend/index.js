@@ -22,6 +22,9 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+//middleware
+app.use(express.json({ extended: false }));
+
 // Response time
 app.use(responseTime({ suffix: false }));
 

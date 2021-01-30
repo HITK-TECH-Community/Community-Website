@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
-import ScrollTop from "./components/scrolltop/scrolltop";
+import ScrollTop from "./components/util/scroll-to-top/scrolltop";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";

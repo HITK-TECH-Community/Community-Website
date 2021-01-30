@@ -1,7 +1,6 @@
 import React, {Fragment, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {Link} from "react-router-dom";
-
 import Dropdown from "../util/dropdown/dropdown";
 import "./navbar.css";
 
@@ -132,9 +131,9 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <Link to="/admin">
-          <button className="nav-admin-button">admin ?</button>
-        </Link>
+        <NavLink to="/admin" activeClassName="button-div" className="nav-admin-button" exact>
+          admin ?
+        </NavLink>
       </nav>
     </Fragment>
   );

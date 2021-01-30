@@ -18,6 +18,7 @@ import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import "./app.css";
 import Setting from "./components/admin/setting/setting";
+import Scroll from "./components/util/Scroll_Top/Scroll_top";
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
             <Route component={NotFound} />
           </Switch>
         </Router>
+        <Scroll />
       </div>
       <Footer className="Footer" />
     </Fragment>

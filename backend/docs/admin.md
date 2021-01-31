@@ -33,6 +33,7 @@ Before executing every route function validation middleware gets executed which 
 
     - ![diagram](images/postsuperadmin.jpg)
 <br>
+
 - <code> <b> /admin/password </b> </code>
     - method : <b>PUT</b>
     - request body : 

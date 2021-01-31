@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
-import ScrollTop from "./components/util/scroll-to-top/scrolltop";
+import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
 import Home from "./components/home/home";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
@@ -19,7 +19,6 @@ import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import Setting from "./components/admin/setting/setting";
-import Scroll from "./components/util/Scroll_Top/Scroll_top";
 import "./app.css";
 
 const App = () => {
@@ -47,7 +46,6 @@ const App = () => {
             <Route component={NotFound} />
           </Switch>
         </Router>
-        <Scroll />
       </div>
       <ScrollTop />
       <Footer className="Footer" />

@@ -4,6 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
 import Home from "./components/home/home";
+import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
@@ -43,6 +44,7 @@ const App = () => {
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route exact path="/join_us_form" component={JoinUsForm}/>
             <Route component={NotFound} />
           </Switch>
         </Router>

@@ -19,6 +19,7 @@ import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import Setting from "./components/admin/setting/setting";
+import Scroll from "./components/util/Scroll_Top/Scroll_top";
 import "./app.css";
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
             <Route component={NotFound} />
           </Switch>
         </Router>
+        <Scroll />
       </div>
       <ScrollTop />
       <Footer className="Footer" />

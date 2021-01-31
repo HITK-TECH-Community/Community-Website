@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "11fabf49-19ca-4bf1-b9e5-71251c8be131",
+		"name": "API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Creating a short link 1",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"url\", \"http://localhost:3500/shorten\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"test1\",function(){\r",
+							"    var testdata=pm.response.json();\r",
+							"    pm.globals.set(\"shortUrl\",testdata.shortUrl)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"longUrl\":\"https://github.com/HITK-TECH-Community/Community-Website/issues/81\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching the longUrl 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shortUrl}}",
+					"host": [
+						"{{shortUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creating a shortlink 2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"url\", \"http://localhost:3500/shorten\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"test1\",function(){\r",
+							"    var testdata=pm.response.json();\r",
+							"    pm.globals.set(\"shortUrl\",testdata.shortUrl)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"longUrl\":\"https://www.youtube.com/watch?v=c425kGSsBfo&list=PL8VbCbavWfeEvyUo5qCEw96LNjPR5rR2k&index=8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching longUrl 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{shortUrl}}",
+					"host": [
+						"{{shortUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure test when port wrong",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.globals.set(\"url\", \"http://localhost:4500/shorten\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"test1\",function(){\r",
+							"    var testdata=pm.response.json();\r",
+							"    pm.globals.set(\"shortUrl\",testdata.shortUrl)\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"longUrl\":\"https://github.com/HITK-TECH-Community/Community-Website/issues/81\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,14 +1,10 @@
 const validurl = require('valid-url');
 const shortid = require('shortid');
-const url = require('url');
 const config = require('../../../config');
 const Url = require('../../models/Url');
 module.exports = async (req, res) => {
-  console.log(req);
   const { longUrl } = req.body;
   const baseUrl = config.baseUrl;
-  console.log(longUrl);
-  console.log(baseUrl);
   // Check base url
   if (!validurl.isUri(baseUrl)) {
     return res.status(401).json('Invalid base url');

@@ -81,6 +81,7 @@
 .login-btn {
   margin: 0 auto;
   margin-bottom: 30px !important;
+  width: 40% !important;
 }
 
 .login-input input::placeholder {

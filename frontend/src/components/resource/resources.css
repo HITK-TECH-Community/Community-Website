@@ -255,6 +255,8 @@ input[type="date"]:not(:valid):before {
 .submit-btn {
   display: flex;
   justify-content: center;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .submit-btn-text {

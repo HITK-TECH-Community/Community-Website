@@ -3,9 +3,9 @@ import "./form.css";
 import { Button2 } from "../../../util/button/button";
 const JoinUsForm = () => {
     return (
-        <div className="joinusform-section ">
+    <div className="joinusform-section">
       <div className="joinusform-image child1">
-        <img src="./images/joinus.jpg" alt="" />
+        <img src="./images/joinus.jpg" alt=""/>
       </div>
       <div className="joinus-form child2">
         <div className="joinusform-card">
@@ -61,7 +61,6 @@ const JoinUsForm = () => {
                 <i class="fas fa-link"></i>
               </div>
             </div>
-
             <div className="joinusform-input">
               <textarea
                 placeholder="How can you contribute to help the community?"

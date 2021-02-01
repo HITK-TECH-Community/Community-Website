@@ -185,7 +185,6 @@
     
     input[type="date"]:not(:valid):before {
         content: attr(placeholder);
-        /* style it like it is a real placeholder */
     }
     
     .form-check {

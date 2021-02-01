@@ -19,6 +19,8 @@ We are happy to welcome all the contributions from anyone willing to improve/add
 
 - Pull Requests review criteria:
   - Please fill the **PR template** properly while making a PR
+  - Example of the **PR template**
+  ![prTemp](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/prTemp.png)  
   - You must add your code file into the respective **folders**.
   - Your work must be **original**, written by you not copied from other resources.
   - You must **comment** on your code where necessary.
@@ -34,7 +36,7 @@ Below you will find the process and workflow used to review and merge your chang
 - Take a look at the Existing Issues or create your **own** Issues!  
 - Wait for the Issue to be assigned to you after which you can start working on it.  
 - Note : Every change in this project should/must have an associated issue.   
-![issue](https://github.com/kanishkaa24/Community-Website/blob/main/1.png)  
+![issue](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/issue.png)  
   
 ## Step 1 : Fork the Project 🍴
 - Fork this Repository. This will create a Local Copy of this Repository on your Github Profile. Keep a reference to the original project in `upstream` remote.  
@@ -43,7 +45,7 @@ $ git clone https://github.com/<your-username>/Community-Website
 $ cd <repo-name>  
 $ git remote add upstream https://github.com/HITK-TECH-Community/Community-Website 
 ```  
-![fork](https://github.com/kanishkaa24/Community-Website/blob/main/2.png)  
+![fork](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/fork.png)  
   
 - Update your forked repo before working.  
 ```  
@@ -57,6 +59,7 @@ Create a new branch. Use its name to identify the issue you are addressing.
 # It will create a new branch with name Branch_Name and switch to that branch 
 $ git checkout -b branch_name  
 ```  
+![createBr](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/createBr.png)
 ## Step 3 : Work on the issue assigned  📕
 - Work on the issue(s) assigned to you.   
 - Add all the files/folders needed.  
@@ -109,11 +112,15 @@ A good rule of thumb for the commit message is to have a present tense verb, fol
 $ git push -u origin <branch_name>  
 ```  
 - Here is how your branch will look.  
-![br](https://github.com/kanishkaa24/Community-Website/blob/main/3.png)  
+![br](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/br.png)  
   
 ## Step 6 : Pull Request  🎣
-- Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution.  
-![pullrequest](https://github.com/kanishkaa24/Community-Website/blob/main/4.png) 
+- Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution. 
+- Compare
+
+![compare](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/compare.png)
+- Create pull request
+![pullrequest](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/pr.png) 
 - Voila! Your Pull Request has been submitted and will be reviewed by the moderators and merged.🥳  
   
 ## Need more help?🤔  

@@ -67,7 +67,7 @@ $ git checkout -b branch_name
 ## Step 3 : Work on the issue assigned  📕
 - Work on the issue(s) assigned to you.   
 - Add all the files/folders needed.  
-- After you've made changes or made your contribution to the project add changes to the branch you've just created by:  
+- After you've made changes or made your contribution to the project add changes to the branch you've just created by using terminal:  
 ```  
 # To add all new files to branch Branch_Name  
 $ git add .  
@@ -75,13 +75,19 @@ $ git add .
 # To add only a few files to Branch_Name
 $ git add <some files>
 ```
+- Using GitHub:
+
+![addFiles](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/addFile.png)  
   
 ## Step 4 : Commit  
-- To commit give a descriptive message for the convenience of reviewer by:  
+- To commit give a descriptive message for the convenience of reviewer by using terminal:  
 ```
 # This message get associated with all files you have changed  
 $ git commit -m "message"  
 ```
+- Using GitHub
+
+![commit](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/commit.png)  
 
 ### Commit message guidelines
 - Each commit message consists of a header, a body and a footer. The header has a special format that includes a type, a scope and a subject:

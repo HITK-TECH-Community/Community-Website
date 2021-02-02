@@ -19,7 +19,6 @@
 
 .main-btn.main-btn-2 {
   width: auto !important;
-  outline: none;
 }
 
 @media screen and (max-width: 600px) {

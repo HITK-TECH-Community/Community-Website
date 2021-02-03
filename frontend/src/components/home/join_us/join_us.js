@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-
+import { Button2 } from "../../util/button/button";
 import "./join_us.css";
 
 const JoinUs = () => {
@@ -7,19 +7,13 @@ const JoinUs = () => {
     <Fragment>
       <div className="join-us">
         <h1 className="title">Join Us</h1>
+        <div className="dash"></div>
         <h2 className="subtitle">
-          Connect with hundreds of other Tech Enthusiasts to stay updated of
-          every opportunities.
+        Join us in the mission of reducing the knowledge gap in students.
         </h2>
-        <button className="join-us-btn">
-          <a
-            href="https://www.linkedin.com/company/hitk-tech-community"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Follow us on Linked<i className="fab fa-linkedin"></i>
-          </a>
-        </button>
+        <a href="/join_us_form">
+          <Button2 label="Join Us!" type="submit" />
+        </a>
       </div>
     </Fragment>
   );

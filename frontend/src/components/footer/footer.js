@@ -91,11 +91,15 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <i className="fab fa-linkedin  fa-2x"></i>
+                    <div className="outer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className="inner">
+                        <i className="fab fa-linkedin  fa-2x"></i>
+                      </div>
+                    </div>
                   </a>
                 </li>
                 <li>
@@ -104,11 +108,15 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <i className="fab fa-slack  fa-2x"></i>
+                    <div className="outer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className="inner">
+                        <i className="fab fa-slack  fa-2x"></i>
+                      </div>
+                    </div>
                   </a>
                 </li>
                 <li>
@@ -117,11 +125,15 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <i className="fas fa-envelope  fa-2x"></i>
+                    <div className="outer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className="inner">
+                        <i className="fas fa-envelope  fa-2x"></i>
+                      </div>
+                    </div>
                   </a>
                 </li>
                 <li>
@@ -130,11 +142,15 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <i className="fab fa-github  fa-2x"></i>
+                    <div className="outer">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className="inner">
+                        <i className="fab fa-github  fa-2x"></i>
+                      </div>
+                    </div>
                   </a>
                 </li>
               </ul>

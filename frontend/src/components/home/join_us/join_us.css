@@ -3,55 +3,22 @@
   flex-direction: column;
   overflow: hidden;
   padding: 4rem 7rem;
+  align-items: center;
+  justify-content: center;
   background-image: linear-gradient(141deg, #ff551f, #fabf67 60%, #ff8f6c);
 }
 
 .join-us h1 {
   font-size: 3.6rem;
-  color: #fff;
+  color: rgb(18, 31, 58);
 }
 
 .subtitle {
   color: #2f4052;
 }
 
-/* For Button */
-
-.join-us-btn {
-  max-width: fit-content;
-  margin-top: 1rem;
-  font-family: "Futura LT Book", sans-serif;
-  padding: 8px 20px;
-  border-radius: 4px;
-  outline: none;
-  border: none;
-  font-size: 18px;
-  color: #fff;
-  cursor: pointer;
-  background-color: #2196f3;
-}
-
-.join-us-btn a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.join-us-btn:hover {
-  padding: 6px 18px;
-  transition: all 0.3s ease-out;
-  background-color: #2196f3;
-  color: #fff;
-  border-radius: 4px;
-  border: 2px solid #081624;
-}
-
-.join-us-btn .fa-linkedin {
-  font-size: 1.4rem;
-  padding-left: 0.1rem;
-}
-
-.join-us-btn .fa-linkedin:hover {
-  color: #f5edf0;
+.main-btn.main-btn-2 {
+  width: auto !important;
 }
 
 @media screen and (max-width: 600px) {

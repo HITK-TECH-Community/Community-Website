@@ -1,7 +1,6 @@
 import React, {Fragment, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {Link} from "react-router-dom";
-import Dropdown from "../util/dropdown/dropdown";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -13,7 +12,7 @@ const Navbar = () => {
     <Fragment>
       <nav className="navbar-div">
         <NavLink to="/" className="navbar-logo">
-          HITK
+          <img src="./community-logo.png" alt="logo" width="40px" height="40px"/>
         </NavLink>
         <div className="menu-icon" onClick={toggleNav}>
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>

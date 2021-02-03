@@ -338,6 +338,11 @@ a > span {
   transition: all 0.3s;
 }
 
+.submit-btn-footer:focus {
+  outline: none;
+  border: none;
+}
+
 .submit-btn-footer:hover {
   background-color: transparent;
   color: #fff;

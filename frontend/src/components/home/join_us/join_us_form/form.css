@@ -1,282 +1,307 @@
-    .joinusform-section {
-        display: flex;
-        background-color: #fff;
-    }
-    
-    .joinusform-image {
-        flex: 1;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 100%;
-    }
-    
-    .child1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin: 0;
-    }
-    
-    .joinusform-image img {
-        max-width: 100%;
-        margin-top: 160px;
-    }
-    
-    .joinus-form {
-        flex: 1;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .child2 {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    .joinusform-card {
-        width: 75%;
-        height: auto;
-        background-color: #e7e7e7;
-        margin: 30px auto;
-        border-radius: 10px;
-        box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
-        padding-bottom: 2rem;
-    }
-    
-    .joinusform-input {
-        position: relative;
-    }
-    
-    .joinusform-input input,
-    .joinusform-input textarea,
-    .joinusform-input select,
-    .joinusform-input1 select {
-        width: 100%;
-        height: 50px;
-        border: 1px solid #bbbaba;
-        border-radius: 5px;
-        padding: 0 25px;
-        color: #777777;
-        margin-bottom: 20px;
-        margin-bottom: 30px !important;
-        background-color: #f1f1f1;
-        box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
-    }
-    
-    .joinusform-input input::placeholder,
-    .joinusform-input textarea::placeholder {
-        opacity: 1;
-        color: #777777;
-    }
-    
-    .joinusform-input input::-moz-placeholder,
-    .joinusform-input textarea::-moz-placeholder {
-        opacity: 1;
-        color: #777777;
-    }
-    
-    .joinusform-input input::-moz-placeholder,
-    .joinusform-input textarea::-moz-placeholder {
-        opacity: 1;
-        color: #777777;
-    }
-    
-    .joinusform-input input::-webkit-input-placeholder,
-    .joinusform-input textarea::-webkit-input-placeholder {
-        opacity: 1;
-        color: #777777;
-    }
-    
-    .joinusform-input input:focus,
-    .joinusform-input textarea:focus,
-    .joinusform-input select:focus,
-    .joinusform-input1 select:focus {
-        outline: none;
-        border: double 2px transparent;
-        border-radius: 10px;
-        background-image: linear-gradient(white, white),
-        linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        background-color: #ffffff;
-    }
-    
-    .joinusform-input textarea {
-        padding-top: 15px;
-        resize: none;
-        height: 100px;
-    }
-    
-    .valid {
-        display: flex;
-        justify-content: center;
-        margin-top: -5%;
-        margin-bottom: 25px;
-    }
-    
-    .joinusform-input > textarea#txt_desc {
-        height: 150px !important;
-    }
-    
-    .joinusform-input i {
-        position: absolute;
-        right: 25px;
-        top: 15px;
-        font-size: 16px;
-        color: rgb(134, 131, 131);
-        cursor: pointer;
-    }
-    
-    .fa-user:hover {
-        color: #34b7f1;
-    }
-
-    .fa-phone:hover {
-        color: #32e25e;
-    }
-
-    .fa-envelope:hover {
-        color: #c71610;
-    }
-
-    .fa-link:hover {
-        color: #5214e0;
-    }
-
-    .fa-pen-square:hover {
-        color: #5c0572;
-    }
-
-    .fa-graduation-cap:hover{
-        color:#000;
-    }
-
-    .fa-building:hover{
-        color:rgb(138, 95, 17);
-    }
-
-    .inside-joinusform {
-        width: 85%;
-        margin: 0 auto;
-    }
-    
-    [type="radio"] {
-        width: 24px;
-        height: 20px;
-        vertical-align: text-bottom;
-    }
-    
-    .YearOfStudy{
-        margin-right: 1rem;
-        display: inline;
-    }
-    
-    .radioButtons {
-        display: inline;
-        margin-bottom: 1rem;
-    }
-    
-    .joinusform-input1 {
-        margin-bottom: 1.5rem;
-    }
-    
-    input[type="date"]:not(:valid):before {
-        content: attr(placeholder);
-    }
-    
-    .form-check {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 0px;
-    }
-    
-    .form-row {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .form-group {
-        padding-right: 0.25em;
-    }
-    
-    .joinusform-header-text {
-        padding: 30px 0;
-        font-size: 30px;
-        text-align: center;
-        color: var(--secondary-color);
-        text-transform: capitalize;
-    }
-    
-    .submit-btn {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .submit-btn-text {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-  @media screen and (max-width: 750px) {
-    .joinusform-section {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .form-group {
-      width: 100%;
-    }
-  
-    .form-group2 {
-      width: 100%;
-    }
-  
-    .joinusform-parent {
-      width: 85%;
-      margin: 10% auto;
-    }
-  
-    .child1 {
-      padding: 0 0 10px;
-    }
-  
-    .submit-btn-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: x-small;
-      color: black;
-    }
-  }
-  
-@media only screen and (max-width: 640px) {
-    .label {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-  
-    [type="radio"] {
-      width: 29px;
-      height: 19px;
-      margin-left: 2%;
-      margin-right: 2%;
-    }
-  
-    .YearOfStudy {
-      display: block;
-    }
-  
-    .radioButtons {
-      margin-bottom: 1rem;
-    }
-  
-    .joinusform-input1 {
-      text-align: center;
-    }
+.joinusform-section {
+  display: flex;
+  background-color: #fff;
 }
-  
+
+.joinusform-image {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.joinusform-image img {
+  max-width: 100%;
+  margin-top: 160px;
+}
+
+.joinus-form {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.child2 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.joinusform-card {
+  width: 75%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+  padding-bottom: 2rem;
+}
+
+.joinusform-input {
+  position: relative;
+}
+
+.joinusform-input input,
+.joinusform-input textarea,
+.joinusform-input select,
+.joinusform-input1 select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 5px;
+  padding: 0 25px;
+  color: #777777;
+  margin-bottom: 20px;
+  margin-bottom: 30px !important;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.joinusform-input input::placeholder,
+.joinusform-input textarea::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.joinusform-input input::-moz-placeholder,
+.joinusform-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.joinusform-input input::-moz-placeholder,
+.joinusform-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.joinusform-input input::-webkit-input-placeholder,
+.joinusform-input textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.joinusform-input input:focus,
+.joinusform-input textarea:focus,
+.joinusform-input select:focus,
+.joinusform-input1 select:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+.joinusform-input textarea {
+  padding-top: 15px;
+  resize: none;
+  height: 100px;
+}
+
+.valid {
+  display: flex;
+  justify-content: center;
+  margin-top: -5%;
+  margin-bottom: 25px;
+}
+
+.joinusform-input > textarea#txt_desc {
+  height: 150px !important;
+}
+
+.joinusform-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: rgb(134, 131, 131);
+  cursor: pointer;
+}
+
+.fa-user:hover {
+  color: #34b7f1;
+}
+
+.fa-phone:hover {
+  color: #32e25e;
+}
+
+.fa-envelope:hover {
+  color: #c71610;
+}
+
+.fa-link:hover {
+  color: #5214e0;
+}
+
+.fa-pen-square:hover {
+  color: #5c0572;
+}
+
+.fa-graduation-cap:hover {
+  color: #000;
+}
+
+.fa-building:hover {
+  color: rgb(138, 95, 17);
+}
+
+.inside-joinusform {
+  width: 85%;
+  margin: 0 auto;
+}
+
+[type="radio"] {
+  width: 24px;
+  height: 20px;
+  vertical-align: text-bottom;
+}
+
+.radio-item label:before {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  border-radius: 11px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+.radio-item input[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  content: " ";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1),
+    rgba(10, 24, 61, 1)
+  );
+  border: 4px solid whitesmoke;
+}
+
+.YearOfStudy {
+  margin-right: 1rem;
+  display: inline;
+}
+
+.radioButtons {
+  display: inline;
+  margin-bottom: 1rem;
+}
+
+.joinusform-input1 {
+  margin-bottom: 1.5rem;
+}
+
+input[type="date"]:not(:valid):before {
+  content: attr(placeholder);
+}
+
+.form-check {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  padding-right: 0.25em;
+}
+
+.joinusform-header-text {
+  padding: 30px 0;
+  font-size: 30px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .joinusform-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group2 {
+    width: 100%;
+  }
+
+  .joinusform-parent {
+    width: 85%;
+    margin: 10% auto;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  }
+
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .label {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [type="radio"] {
+    width: 29px;
+    height: 19px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .YearOfStudy {
+    display: block;
+  }
+
+  .radioButtons {
+    margin-bottom: 1rem;
+  }
+
+  .joinusform-input1 {
+    text-align: center;
+  }
+}

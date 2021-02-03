@@ -1,38 +1,18 @@
 import React, {Fragment, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {Link} from "react-router-dom";
-import Dropdown from "../util/dropdown/dropdown";
 import "./navbar.css";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-
   const toggleNav = () => setIsNavOpen(!isNavOpen);
-
   const closeMobileMenu = () => setIsNavOpen(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
 
   return (
     <Fragment>
       <nav className="navbar-div">
         <NavLink to="/" className="navbar-logo">
-          HITK
+          <img src="./community-logo.png" alt="logo" width="40px" height="40px"/>
         </NavLink>
         <div className="menu-icon" onClick={toggleNav}>
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
@@ -71,11 +51,7 @@ const Navbar = () => {
               Resources
             </NavLink>
           </li>
-          <li
-            className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
+          <li className="nav-item">
             <NavLink
               activeClassName="active-link"
               to="/broadcasts"
@@ -83,9 +59,8 @@ const Navbar = () => {
               onClick={closeMobileMenu}
               exact
             >
-              Broadcasts <i className="fas fa-caret-down"></i>
+              Broadcasts
             </NavLink>
-            {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
             <NavLink

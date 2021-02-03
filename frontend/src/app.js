@@ -2,7 +2,9 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
+import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
 import Home from "./components/home/home";
+import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
@@ -11,7 +13,7 @@ import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
 import Faqs from "./components/faq/faq";
 import NotFound from "./components/404/not_found";
-import Dashboard from "./components/admin/dashboard/dashboard";
+import Login from "./components/auth/login/login";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
@@ -36,16 +38,18 @@ const App = () => {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/admin" component={Login} />
+            <Route exact path="/dashboard" component={Admin} />
             <Route exact path="/setting" component={Setting} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route exact path="/join_us_form" component={JoinUsForm}/>
             <Route component={NotFound} />
           </Switch>
         </Router>
       </div>
+      <ScrollTop />
       <Footer className="Footer" />
     </Fragment>
   );

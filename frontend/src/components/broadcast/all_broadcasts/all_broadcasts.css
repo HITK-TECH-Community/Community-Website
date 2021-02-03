@@ -4,12 +4,40 @@ main {
   align-items: center;
 }
 
+.appbar {
+  background: #aee1e1;
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0px;
+}
+
+.filters {
+  display: flex;
+  margin: 15px 10px 15px auto;
+}
+
+@media (max-width: 640px) {
+  .appbar {
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    margin: 15px auto;
+  }
+}
+
 #hero {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   width: 100vw;
 }
+
 #heading {
   display: flex;
   flex-direction: column;

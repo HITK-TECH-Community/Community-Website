@@ -1,5 +1,46 @@
 import React from "react";
 import "./all_broadcasts.css";
+import { makeStyles, InputBase, fade } from "@material-ui/core";
+import { Search } from "@material-ui/icons";
+import Dropmenu from "./../../dropmenu/DropMenu";
+
+const useStyles = makeStyles((theme) => ({
+  search: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.45),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.65),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: "235px",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3),
+      width: "auto",
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
+    },
+  },
+}));
+
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
                 Developing a passion for learning will never cease to grow 
@@ -40,8 +81,46 @@ function AllBroadcasts() {
     ["Private AI Series", str2],
     ["Crio Winter Of Doing ", str1],
   ];
+  const classes = useStyles();
   return (
     <main>
+      <div className="appbar">
+        <div className={classes.search}>
+          <div className={classes.searchIcon}>
+            <Search />
+          </div>
+          <InputBase
+            placeholder="Find a Broadcast…"
+            classes={{
+              input: classes.inputInput,
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
+        </div>
+        <div className="filters">
+          <Dropmenu
+            ListName="Filter by Month"
+            ListItems={[
+              "January",
+              "Febuary",
+              "March",
+              "April",
+              "May",
+              "June",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ]}
+          />
+          <Dropmenu
+            ListName="Filter by Year"
+            ListItems={["2020", "2019", "2018"]}
+          />
+        </div>
+      </div>
+
       <div id="hero">
         <div className="motive">
           <h1 className="carousel-head">Broadcasts</h1>

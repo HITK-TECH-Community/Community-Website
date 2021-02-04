@@ -8,7 +8,6 @@ function Card({ project }) {
     setFlipped(!flipped);
   };
   const [open, setOpen] = useState(false);
-
   const [data, setData] = useState({});
   const handleOpen = (s, h, i) => {
     setOpen(true);
@@ -44,7 +43,7 @@ function Card({ project }) {
               onClick={() =>
                 handleOpen(
                   project[1],
-                  "Crio Winter Of Doing",
+                  project[0],
                   "https://i.pinimg.com/originals/4c/52/f9/4c52f9eb7ff10b55e35ab24634db6a57.jpg"
                 )
               }

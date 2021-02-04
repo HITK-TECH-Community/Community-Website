@@ -13,7 +13,7 @@ import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
 import Faqs from "./components/faq/faq";
 import NotFound from "./components/404/not_found";
-import Dashboard from "./components/admin/dashboard/dashboard";
+import Login from "./components/auth/login/login";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
@@ -38,8 +38,8 @@ const App = () => {
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
             <Route exact path="/faqs" component={Faqs} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/admin" component={Login} />
+            <Route exact path="/dashboard" component={Admin} />
             <Route exact path="/setting" component={Setting} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/get-involved" component={GetInvolved} />

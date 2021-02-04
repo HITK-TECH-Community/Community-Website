@@ -40,7 +40,6 @@ export default function Faqs() {
     <div className="faq-container">
       <div className="head">
         <img src="./images/faq.png" className="faq-image" alt="faq-icon" />
-        Frequently Asked Questions
       </div>
       <div className="faq">
         <div className="faq-block">

@@ -4,6 +4,7 @@ import "./all_broadcasts.css";
 import { makeStyles, InputBase, fade } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import Dropmenu from "./../../dropmenu/DropMenu";
+import Card from "./card/card";
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -44,8 +45,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-import Card from "./card/card";
 
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️

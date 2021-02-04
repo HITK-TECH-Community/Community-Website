@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuList: {
     minWidth: 115,
+    zIndex: 3,
   },
   menuListItem: {
     color: "#24385B",

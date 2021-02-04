@@ -1,5 +1,6 @@
 import React from "react";
 import "./all_broadcasts.css";
+
 import { makeStyles, InputBase, fade } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import Dropmenu from "./../../dropmenu/DropMenu";
@@ -43,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+import Card from "./card/card";
 
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
@@ -133,16 +136,7 @@ function AllBroadcasts() {
       </div>
       <div id="allCards">
         {arrayCards.map((element, i) => {
-          return (
-            <div className="card-item" key={i}>
-              <div className="clickable-card">
-                <div className="card-title">{element[0]}</div>
-                <div className="card-content">
-                  {element[1].substring(0, 500)}...
-                </div>
-              </div>
-            </div>
-          );
+          return <Card project={element} key={`card-${i}`} />;
         })}
       </div>
     </main>

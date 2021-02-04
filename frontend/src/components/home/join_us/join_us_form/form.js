@@ -2,10 +2,10 @@ import React from "react";
 import "./form.css";
 import { Button2 } from "../../../util/button/button";
 const JoinUsForm = () => {
-    return (
+  return (
     <div className="joinusform-section">
       <div className="joinusform-image child1">
-        <img src="./images/joinus.jpg" alt=""/>
+        <img src="./images/joinus.jpg" alt="" />
       </div>
       <div className="joinus-form child2">
         <div className="joinusform-card">
@@ -72,21 +72,21 @@ const JoinUsForm = () => {
               ></textarea>
               <i className="fas fa-comment-dots"></i>
             </div>
-                <div className="joinusform-input">
-                    <label className="mb-2">Interested Domain</label>
-                    <select >
-                        <option value="android">Android</option>
-                        <option value="web">Web</option>
-                        <option value="iot">IoT</option>
-                        <option value="ai">AI</option>
-                        <option value="ml">ML</option>
-                        <option value="poster">Poster Designing</option>
-                        <option value="video">Video Editing</option>
-                        <option value="content">Content Writing</option>
-                        <option value="social">Social Media Handling</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+            <div className="joinusform-input">
+              <label className="mb-2">Interested Domain</label>
+              <select>
+                <option value="android">Android</option>
+                <option value="web">Web</option>
+                <option value="iot">IoT</option>
+                <option value="ai">AI</option>
+                <option value="ml">ML</option>
+                <option value="poster">Poster Designing</option>
+                <option value="video">Video Editing</option>
+                <option value="content">Content Writing</option>
+                <option value="social">Social Media Handling</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
             <div className="form-group ">
               <div className="joinusform-input">
                 <input
@@ -114,14 +114,22 @@ const JoinUsForm = () => {
             <div className="joinusform-input1">
               <label className="mb-4 YearOfStudy">Year of Study</label>
               <div className="radioButtons">
-                <input type="radio" name="one" />
-                <label className="mx-3 label">1st</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">2nd</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">3rd</label>
-                <input type="radio" name="one" />
-                <label className="mx-3 label">4th</label>
+                <div class="radio-item">
+                  <input type="radio" name="one" />
+                  <label className="mx-3 label">1st</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="one" />
+                  <label className="mx-3 label">2nd</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="one" />
+                  <label className="mx-3 label">3rd</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="one" />
+                  <label className="mx-3 label">4th</label>
+                </div>
               </div>
             </div>
             <div className="form-group ">
@@ -147,6 +155,6 @@ const JoinUsForm = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 export default JoinUsForm;

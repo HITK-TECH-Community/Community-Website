@@ -28,8 +28,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    color: "#4A80DB",
-    padding: "6px 8px",
+    fontFamily: '"Futura LT Book", sans-serif',
+    padding: "8px 20px",
+    borderRadius: "4px",
+    outline: "none",
+    border: "none",
+    fontSize: "18px",
+    color: "#fff",
+    cursor: "pointer",
+    backgroundColor: "#fc0254",
+    "&:hover": {
+      backgroundColor: "#fc0254b3",
+    },
     "&:focus": {
       outline: "none !important",
     },
@@ -81,6 +91,7 @@ export default function MenuListComposition(props) {
   return (
     <div className={classes.root}>
       <Button
+        text={props.ListName}
         ref={anchorRef}
         aria-controls={open ? "menu-list-grow" : undefined}
         aria-haspopup="true"

@@ -15,7 +15,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0px;
 }
 @media (min-width: 380px) {
   .appbar {

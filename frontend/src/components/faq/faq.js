@@ -35,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Faqs() {
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <div className="faq-container">
@@ -43,7 +48,11 @@ export default function Faqs() {
       </div>
       <div className="faq">
         <div className="faq-block">
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -65,7 +74,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel2"}
+            onChange={handleChange("panel2")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -87,7 +100,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel3"}
+            onChange={handleChange("panel3")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -109,7 +126,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -131,7 +152,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel5"}
+            onChange={handleChange("panel5")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={

@@ -7,14 +7,14 @@ import Dropmenu from "./../../dropmenu/DropMenu";
 const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.45),
+    borderRadius: 15,
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.65),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: "235px",
+    width: 228,
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
       width: "auto",
@@ -31,7 +31,10 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+    boxShadow: "inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff",
+    borderRadius: 12,
+    height: 21,
+    border: "1px solid #eeeeee",
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -84,47 +87,48 @@ function AllBroadcasts() {
   const classes = useStyles();
   return (
     <main>
-      <div className="appbar">
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <Search />
-          </div>
-          <InputBase
-            placeholder="Find a Broadcast…"
-            classes={{
-              input: classes.inputInput,
-            }}
-            inputProps={{ "aria-label": "search" }}
-          />
-        </div>
-        <div className="filters">
-          <Dropmenu
-            ListName="Filter by Month"
-            ListItems={[
-              "January",
-              "Febuary",
-              "March",
-              "April",
-              "May",
-              "June",
-              "August",
-              "September",
-              "October",
-              "November",
-              "December",
-            ]}
-          />
-          <Dropmenu
-            ListName="Filter by Year"
-            ListItems={["2020", "2019", "2018"]}
-          />
-        </div>
-      </div>
-
       <div id="hero">
         <div className="motive">
           <h1 className="carousel-head">Broadcasts</h1>
           <div className="dash"></div>
+        </div>
+      </div>
+      <div className="appbarWrap">
+        <div className="appbar">
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <Search />
+            </div>
+            <InputBase
+              placeholder="Find a Broadcast…"
+              classes={{
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+          <div className="filters">
+            <Dropmenu
+              ListName="Filter by Month"
+              ListItems={[
+                "January",
+                "Febuary",
+                "March",
+                "April",
+                "May",
+                "June",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+              ]}
+            />
+            <Dropmenu
+              ListName="Filter by Year"
+              ListItems={["2020", "2019", "2018"]}
+            />
+          </div>
         </div>
       </div>
       <div id="allCards">

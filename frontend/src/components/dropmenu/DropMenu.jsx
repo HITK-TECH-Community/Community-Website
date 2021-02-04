@@ -23,16 +23,27 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "16px !important",
       top: 0,
     },
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 0.1)",
-    },
     "&:focus": {
       outline: "none !important",
     },
   },
   button: {
+    color: "#4A80DB",
+    padding: "6px 8px",
     "&:focus": {
       outline: "none !important",
+    },
+  },
+  menuList: {
+    minWidth: 115,
+  },
+  menuListItem: {
+    color: "#24385B",
+    margin: "2px 7px",
+    borderRadius: 8,
+    "&:hover": {
+      backgroundColor: "#D8E6FF",
+      color: "#4A80DB",
     },
   },
 }));
@@ -98,10 +109,15 @@ export default function MenuListComposition(props) {
                 <MenuList
                   autoFocusItem={open}
                   id="menu-list-grow"
+                  className={classes.menuList}
                   onKeyDown={handleListKeyDown}
                 >
                   {props.ListItems.map((listItem, index) => (
-                    <MenuItem key={index} onClick={handleClose}>
+                    <MenuItem
+                      key={index}
+                      onClick={handleClose}
+                      className={classes.menuListItem}
+                    >
                       {listItem}
                     </MenuItem>
                   ))}

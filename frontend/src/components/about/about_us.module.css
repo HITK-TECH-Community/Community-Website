@@ -1,9 +1,9 @@
-.aboutus-img {
+.aboutusImg {
   width: 100%;
   object-fit: cover;
 }
 
-.about-section {
+.aboutSection {
   position: relative;
 }
 
@@ -20,7 +20,7 @@
   );
 }
 
-.by-line {
+.byLine {
   color: grey;
 }
 
@@ -30,22 +30,22 @@
   padding: 60px 60px 60px 60px;
 }
 
-.meet{
+.meet {
   padding: 30px 60px 30px 60px;
   background-color: #1165af;
 }
 
-.meet h1{
+.meet h1 {
   font-weight: 900;
   font-family: "Futura LT Book";
   font-size: 40px;
-  color:white;
+  color: white;
   text-shadow: 2px 2px black;
-  padding-top:120px;
+  padding-top: 120px;
 }
 
-.team-img{
-  width:80%;
+.teamImg {
+  width: 80%;
 }
 
 .team {
@@ -63,11 +63,11 @@
 
 .fa-twitter-square:hover {
   color: #1e5475;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.fa-twitter-square{
-  color:#1da1f2;
+.fa-twitter-square {
+  color: #1da1f2;
 }
 
 .sl {
@@ -79,36 +79,36 @@
 }
 
 .in {
-  color:  #0e76a8 !important;
+  color: #0e76a8 !important;
 }
 
 .in:hover {
-  cursor:pointer;
+  cursor: pointer;
   color: #133646 !important;
 }
 
 .fa-github-square:hover {
   color: indigo;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.fa-github-square{
-  color:rgb(153, 96, 201);
+.fa-github-square {
+  color: rgb(153, 96, 201);
 }
 
-.card1{
-  width:420px;
+.card1 {
+  width: 420px;
   margin-top: 24px;
   margin-bottom: 34px;
   background: transparent;
   transition: 0.5s;
   margin-left: 34px;
-  margin-right:34px;
+  margin-right: 34px;
 }
 
-.team-social{
+.teamSocial {
   display: none;
-  margin-top:-14px;
+  margin-top: -14px;
 }
 
 .makeStyles-root-1 {
@@ -117,18 +117,18 @@
 }
 
 .card1:hover {
-  box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
+  box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19);
 }
 
-#founder:hover{
+#founder:hover {
   box-shadow: -1px 16px 40px 0px rgba(10, 24, 61, 1);
 }
 
-.card1:hover .team-social{
+.card1:hover .teamSocial {
   display: block;
 }
 
-.photo{
+.photo {
   padding-left: 10px;
 }
 
@@ -136,48 +136,47 @@
   padding: 10px;
 }
 
-.badge{
+.badge {
   color: #000;
-  margin-right:5px;
+  margin-right: 5px;
   margin-top: 18px;
-  box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19) !important;
+  box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19) !important;
 }
 
-#founder .badge{
+#founder .badge {
   margin-bottom: 13px;
-  margin-top:19px;
-  padding:6px;
+  margin-top: 19px;
+  padding: 6px;
 }
 
-#default{
+#default {
   background-color: #2bbbad;
 }
 
-#primary{
+#primary {
   background-color: #fb3;
 }
 
-#broadcast{
+#broadcast {
   background-color: rgb(140, 134, 199);
 }
 
-#info{
-  background-color:#f8bbd0;
+#info {
+  background-color: #f8bbd0;
 }
 
 @media only screen and (max-width: 990px) {
-  .card1{
-    margin:auto;
+  .card1 {
+    margin: auto;
     margin-top: 24px;
     margin-bottom: 34px;
   }
 
-  .meet h1{
-    padding-top:40px;
+  .meet h1 {
+    padding-top: 40px;
   }
 
-  .team-img{
-    display:none;
+  .teamImg {
+    display: none;
   }
-
 }

@@ -8,12 +8,14 @@
 }
 
 .navbar-logo {
-  color: #ff005a;
   justify-self: start;
   margin-left: 10px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 2rem;
+}
+
+.navbar-logo img:hover{
+  filter:hue-rotate(130deg) contrast(180%);
 }
 
 .nav-menu {

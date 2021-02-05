@@ -33,6 +33,17 @@ it generates a JSON Web Token which takes { payload , SECRET_KEY , expiresIn par
   - Status Code: <code>401</code>
   - Content: JWT authentication failed
 
+  ### Custom Error class
+  For throwing errors we have made our own custom <b>ErrorHandler</b> class which inherits the properties from inbuilt <b>Error</b> class 
+ <br>
+  ![diagram](images/error.png)
+
+- <b>errorType</b> - describes the type of error whether - it is internal server error , database error etc.
+- <b>statusCode</b> - used for assigning the status code for the error eg:- 400,401,500 etc
+- <b>message</b> - used for sending the custom error messages.
+- <b>User</b> - the current user logged in
+- <b>errStack</b> -  describes the point in the code at which the Error was instantiated.
+
 
 
 

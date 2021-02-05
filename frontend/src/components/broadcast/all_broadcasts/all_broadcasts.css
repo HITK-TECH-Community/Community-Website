@@ -19,7 +19,7 @@ main {
 }
 @media (min-width: 380px) {
   .appbar {
-    width: 90vw;
+    width: 80vw;
   }
 }
 .filters {

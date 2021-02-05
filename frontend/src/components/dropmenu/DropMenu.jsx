@@ -9,24 +9,8 @@ import {
   MenuItem,
   MenuList,
 } from "@material-ui/core";
-
+import styles from "./dropmenu.module.css";
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.04)",
-    borderRadius: 8,
-    margin: "0 10px",
-    outline: "none !important",
-    "& span": {
-      fontSize: "16px !important",
-      top: 0,
-    },
-    "&:focus": {
-      outline: "none !important",
-    },
-  },
   button: {
     fontFamily: '"Futura LT Book", sans-serif',
     padding: "8px 20px",
@@ -90,7 +74,7 @@ export default function MenuListComposition(props) {
   }, [open]);
 
   return (
-    <div className={classes.root}>
+    <div className={styles.root}>
       <Button
         text={props.ListName}
         ref={anchorRef}

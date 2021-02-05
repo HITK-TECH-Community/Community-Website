@@ -126,10 +126,7 @@ function AllBroadcasts() {
                 "December",
               ]}
             />
-            <Dropmenu
-              ListName="Filter by Year"
-              ListItems={["2020", "2019", "2018"]}
-            />
+            <Dropmenu ListName="Filter by Year" ListItems={["2021", "2020"]} />
           </div>
         </div>
       </div>

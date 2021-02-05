@@ -16,12 +16,12 @@
   margin: 0em auto 1em auto;
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 33rem;
   align-items: center;
 }
 
 .faq-image {
-  width: 42%;
+  width: 95%;
 }
 
 .faq-block {
@@ -35,6 +35,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  position: absolute;
 }
 
 .faq-question {
@@ -66,5 +67,9 @@
 
   .faq-question {
     font-size: 0.85em;
+  }
+
+  .faq {
+    height: 40rem;
   }
 }

@@ -1,4 +1,4 @@
-.welcome-section {
+.welcome_section {
   position: relative;
   background: linear-gradient(
     45deg,
@@ -60,11 +60,13 @@
   margin-left: 1em;
 }
 
-.features-icons {
+.features_icons {
   cursor: pointer;
   padding: 0.75em;
   border-radius: 20px;
   color: white;
+  display: flex;
+  align-items: center;
   margin-top: 0.5em;
   background: linear-gradient(
     45deg,
@@ -73,13 +75,15 @@
   );
 }
 
-.features-icons1 {
+.features_icons1 {
   padding: 0.75em;
   cursor: pointer;
   margin-top: 0.5em;
   border-radius: 20px;
   background: transparent;
   color: black;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 600px) {

@@ -1,9 +1,9 @@
-.joinusform-section {
+.joinusformSection {
   display: flex;
   background-color: #fff;
 }
 
-.joinusform-image {
+.joinusformImage {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -18,12 +18,12 @@
   margin: 0;
 }
 
-.joinusform-image img {
+.joinusformImage img {
   max-width: 100%;
   margin-top: 160px;
 }
 
-.joinus-form {
+.joinusForm {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.joinusform-card {
+.joinusformCard {
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
@@ -46,14 +46,14 @@
   padding-bottom: 2rem;
 }
 
-.joinusform-input {
+.joinusformInput {
   position: relative;
 }
 
-.joinusform-input input,
-.joinusform-input textarea,
-.joinusform-input select,
-.joinusform-input1 select {
+.joinusformInput input,
+.joinusformInput textarea,
+.joinusformInput select,
+.joinusformInput1 select {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -66,34 +66,34 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.joinusform-input input::placeholder,
-.joinusform-input textarea::placeholder {
+.joinusformInput input::placeholder,
+.joinusformInput textarea::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusform-input input::-moz-placeholder,
-.joinusform-input textarea::-moz-placeholder {
+.joinusformInput input::-moz-placeholder,
+.joinusformInput textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusform-input input::-moz-placeholder,
-.joinusform-input textarea::-moz-placeholder {
+.joinusformInput input::-moz-placeholder,
+.joinusformInput textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusform-input input::-webkit-input-placeholder,
-.joinusform-input textarea::-webkit-input-placeholder {
+.joinusformInput input::-webkit-input-placeholder,
+.joinusformInput textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusform-input input:focus,
-.joinusform-input textarea:focus,
-.joinusform-input select:focus,
-.joinusform-input1 select:focus {
+.joinusformInput input:focus,
+.joinusformInput textarea:focus,
+.joinusformInput select:focus,
+.joinusformInput1 select:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -104,7 +104,7 @@
   background-color: #ffffff;
 }
 
-.joinusform-input textarea {
+.joinusformInput textarea {
   padding-top: 15px;
   resize: none;
   height: 100px;
@@ -117,11 +117,11 @@
   margin-bottom: 25px;
 }
 
-.joinusform-input > textarea#txt_desc {
+.joinusformInput > textarea#txt_desc {
   height: 150px !important;
 }
 
-.joinusform-input i {
+.joinusformInput i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -158,7 +158,7 @@
   color: rgb(138, 95, 17);
 }
 
-.inside-joinusform {
+.insideJoinusform {
   width: 85%;
   margin: 0 auto;
 }
@@ -205,7 +205,7 @@
   margin-bottom: 1rem;
 }
 
-.joinusform-input1 {
+.joinusformInput1 {
   margin-bottom: 1.5rem;
 }
 
@@ -219,17 +219,17 @@ input[type="date"]:not(:valid):before {
   padding-left: 0px;
 }
 
-.form-row {
+.formRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.form-group {
+.formGroup {
   padding-right: 0.25em;
 }
 
-.joinusform-header-text {
+.joinusformHeaderText {
   padding: 30px 0;
   font-size: 30px;
   text-align: center;
@@ -237,28 +237,28 @@ input[type="date"]:not(:valid):before {
   text-transform: capitalize;
 }
 
-.submit-btn {
+.submitBtn {
   display: flex;
   justify-content: center;
 }
 
-.submit-btn-text {
+.submitBtnText {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 750px) {
-  .joinusform-section {
+  .joinusformSection {
     flex-direction: column;
     width: 100%;
   }
 
-  .form-group {
+  .formGroup {
     width: 100%;
   }
 
-  .form-group2 {
+  .formGroup2 {
     width: 100%;
   }
 
@@ -271,7 +271,7 @@ input[type="date"]:not(:valid):before {
     padding: 0 0 10px;
   }
 
-  .submit-btn-text {
+  .submitBtnText {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -301,7 +301,7 @@ input[type="date"]:not(:valid):before {
     margin-bottom: 1rem;
   }
 
-  .joinusform-input1 {
+  .joinusformInput1 {
     text-align: center;
   }
 }

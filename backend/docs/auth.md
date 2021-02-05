@@ -37,7 +37,7 @@ it generates a JSON Web Token which takes { payload , SECRET_KEY , expiresIn par
   For throwing errors we have made our own custom <b>ErrorHandler</b> class which inherits the properties from inbuilt <b>Error</b> class 
  <br>
 
-  ![diagram](images/error.png)
+  ![diagram](images/error.jpg)
 <br>
 - <b>errorType</b> - describes the type of error whether - it is internal server error , database error etc.
 - <b>statusCode</b> - used for assigning the status code for the error eg:- 400,401,500 etc

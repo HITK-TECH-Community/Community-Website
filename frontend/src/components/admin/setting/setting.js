@@ -1,18 +1,18 @@
 import React from "react";
-import "./setting.css";
+import style from "./setting.module.css";
 const Setting = () => {
   return (
     <div>
       <div className="team container">
         <h1>Invite Admins</h1>
-        <div className="dash"></div>
+        <div className={style.dash}></div>
       </div>
-      <div className="admin-section ">
-        <div className="admin-card">
-          <h3 className="admin-header-text"> </h3>
-          <div className="inside-admin">
-            <div className="form-row"></div>
-            <div className="admin-input">
+      <div className={style.admin_section}>
+        <div className={style.admin_card}>
+          <h3 className={style.admin_header_text}> </h3>
+          <div className={style.inside_admin}>
+            <div className={style.form_row}></div>
+            <div className={style.admin_input}>
               <input
                 placeholder="Email ID"
                 id="txt_email"
@@ -23,8 +23,8 @@ const Setting = () => {
               <i className="far fa-envelope"></i>
             </div>
           </div>
-          <div class="wrap">
-            <button class="button">Submit</button>
+          <div className={style.wrap}>
+            <button className={style.button}>Submit</button>
           </div>
         </div>
       </div>

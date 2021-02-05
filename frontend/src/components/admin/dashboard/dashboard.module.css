@@ -1,3 +1,7 @@
+.head {
+  text-align: center;
+}
+
 .dash_board {
   display: grid;
   grid-template-columns: auto auto;

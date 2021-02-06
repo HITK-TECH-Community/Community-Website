@@ -1,84 +1,91 @@
-import React, {Fragment, useState} from "react";
-import {NavLink} from "react-router-dom";
-import {Link} from "react-router-dom";
-import "./navbar.css";
+import React, { Fragment, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import styles from "./navbar.module.css";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeMobileMenu = () => setIsNavOpen(false);
-
+  const completedClass = isNavOpen ? styles.active : "";
+  const i = isNavOpen ? styles.fatimes : styles.fabars;
+  const icon = isNavOpen ? "fa-times" : "fa-bars";
   return (
     <Fragment>
-      <nav className="navbar-div">
-        <NavLink to="/" className="navbar-logo">
-          <img src="./community-logo.png" alt="logo" width="45px" height="45px"/>
+      <nav className={styles.navbardiv}>
+        <NavLink to="/" className={styles.navbarlogo}>
+          <img
+            src="./community-logo.png"
+            alt="logo"
+            width="45px"
+            height="45px"
+          />
         </NavLink>
-        <div className="menu-icon" onClick={toggleNav}>
-          <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
+        <div className={styles.menuicon} onClick={toggleNav}>
+          <i className={`${i} fas ${icon}`}></i>
         </div>
-        <ul className={isNavOpen ? "nav-menu active" : "nav-menu"}>
-          <li className="nav-item">
+        <ul className={`${styles.navmenu} ${completedClass}`}>
+          <li className={styles.navitem}>
             <NavLink
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               to="/"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
               exact
             >
               Home
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className={styles.navitem}>
             <NavLink
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               to="/about-us"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
               exact
             >
               About Us
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className={styles.navitem}>
             <NavLink
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               to="/resources"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
               exact
             >
               Resources
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className={styles.navitem}>
             <NavLink
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               to="/broadcasts"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
               exact
             >
               Broadcasts
             </NavLink>
           </li>
-          <li className="nav-item">
+          <li className={styles.navitem}>
             <NavLink
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               to="/contact-us"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
               exact
             >
               Contact Us
             </NavLink>
           </li>
-          <li className="nav-item ">
+          <li className={styles.navitem}>
             <NavLink
               to="/faqs"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               exact
             >
               FAQs
@@ -87,18 +94,18 @@ const Navbar = () => {
           {/* <li className="nav-item ">
             <NavLink
               to="/admin-dashboard"
-              className="nav-links"
+              className={styles.navlinks}
               onClick={closeMobileMenu}
-              activeClassName="active-link"
+              activeClassName={styles.activelink}
               exact
             >
               DashBoard
             </NavLink>
           </li> */}
-          <li className="nav-item">
+          <li className={styles.navitem}>
             <Link
               to="/admin"
-              className="nav-links-mobile"
+              className={styles.navlinksmobile}
               onClick={closeMobileMenu}
               exact
             >
@@ -106,7 +113,12 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <NavLink to="/admin" activeClassName="button-div" className="nav-admin-button" exact>
+        <NavLink
+          to="/admin"
+          activeClassName={styles.buttondiv}
+          className={styles.navadminbutton}
+          exact
+        >
           admin ?
         </NavLink>
       </nav>

@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
-import "./button.css";
+import styles from "./button.module.css";
 
 const Button = (props) => {
   const { text, path } = props;
 
   return (
     <Link to={path}>
-      <button className="btn">
+      <button className={styles.btn}>
         {text}
         <span>?</span>
       </button>
@@ -26,7 +25,7 @@ export default Button;
 
 export const Button1 = (props) => {
   return (
-    <button type={props?.type || "button"} className="main-btn">
+    <button type={props?.type || "button"} className={styles.mainbtn}>
       {props?.label}
     </button>
   );
@@ -34,7 +33,10 @@ export const Button1 = (props) => {
 
 export const Button2 = (props) => {
   return (
-    <button type={props?.type || "button"} className="main-btn main-btn-2">
+    <button
+      type={props?.type || "button"}
+      className={`${styles.mainbtn} ${styles.mainbtn2}`}
+    >
       {props?.label}
     </button>
   );

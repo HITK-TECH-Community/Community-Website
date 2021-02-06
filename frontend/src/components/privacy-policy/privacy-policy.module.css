@@ -1,4 +1,4 @@
-.pp-section {
+.ppsection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,17 +6,17 @@
   color: white;
 }
 
-.pp-logo {
+.pplogo {
   width: 100%;
   height: auto;
 }
 
-.pp-statement-container {
+.ppstatementcontainer {
   display: flex;
   flex-direction: column;
 }
 
-.pp-heading-container {
+.ppheadingcontainer {
   background-color: var(--primary-color);
   width: 100vw;
   height: 8rem;
@@ -25,7 +25,7 @@
   margin-bottom: 3rem;
 }
 
-.pp-heading {
+.ppheading {
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 4rem;
   margin: 3.2rem 0;
@@ -33,53 +33,53 @@
   color: white;
 }
 
-.pp-statement {
+.ppstatement {
   padding-top: 20px;
 }
 
-.pp-statement .pp-subheading {
+.ppstatement .ppsubheading {
   font-size: 1.4rem;
   font-weight: 900;
   color: var(--secondary-color);
 }
 
-.pp-content {
+.ppcontent {
   color: black;
   font-size: 1rem;
-  margin:auto;
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-li{
+li {
   margin-top: 0.5rem;
 }
 
 @media (orientation: portrait) {
-  .pp-section {
+  .ppsection {
     flex-direction: column;
     margin: 0;
   }
 
-  .pp-heading-container {
+  .ppheadingcontainer {
     height: 5rem;
     margin-bottom: 0rem;
   }
 
-  .pp-heading {
+  .ppheading {
     font-size: 3rem;
     margin: 1.8rem 0;
   }
 
-  .pp-logo {
+  .pplogo {
     width: 85vw;
   }
 
-  .pp-statement-container {
+  .ppstatementcontainer {
     margin: 2rem 4vw;
   }
 }

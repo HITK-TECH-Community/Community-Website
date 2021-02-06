@@ -1,9 +1,9 @@
-.resource-section {
+.resourceSection {
   display: flex;
   background-color: #fff;
 }
 
-.resource-image {
+.resourceImage {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -18,12 +18,12 @@
   margin: 0;
 }
 
-.resource-image img {
+.resourceImage img {
   max-width: 100%;
   margin-top: 30px;
 }
 
-.resource-form {
+.resourceForm {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-.resource-card {
+.resourceCard {
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
@@ -55,13 +55,13 @@
   padding-bottom: 2rem;
 }
 
-.resource-input {
+.resourceInput {
   position: relative;
 }
 
-.resource-input input,
-.resource-input textarea,
-.resource-input1 select {
+.resourceInput input,
+.resourceInput textarea,
+.resourceInput1 select {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -74,33 +74,33 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.resource-input input::placeholder,
-.resource-input textarea::placeholder {
+.resourceInput input::placeholder,
+.resourceInput textarea::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.resource-input input::-moz-placeholder,
-.resource-input textarea::-moz-placeholder {
+.resourceInput input::-moz-placeholder,
+.resourceInput textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.resource-input input::-moz-placeholder,
-.resource-input textarea::-moz-placeholder {
+.resourceInput input::-moz-placeholder,
+.resourceInput textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.resource-input input::-webkit-input-placeholder,
-.resource-input textarea::-webkit-input-placeholder {
+.resourceInput input::-webkit-input-placeholder,
+.resourceInput textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.resource-input input:focus,
-.resource-input textarea:focus,
-.resource-input1 select:focus {
+.resourceInput input:focus,
+.resourceInput textarea:focus,
+.resourceInput1 select:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -111,7 +111,7 @@
   background-color: #ffffff;
 }
 
-.resource-input textarea {
+.resourceInput textarea {
   padding-top: 15px;
   resize: none;
   height: 100px;
@@ -124,11 +124,11 @@
   margin-bottom: 25px;
 }
 
-.resource-input > textarea#txt_desc {
+.resourceInput > textarea#txt_desc {
   height: 150px !important;
 }
 
-.resource-input i {
+.resourceInput i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -152,7 +152,7 @@
 .fa-pen-square:hover {
   color: #5c0572;
 }
-.inside-resource {
+.insideResource {
   width: 85%;
   margin: 0 auto;
 }
@@ -172,24 +172,24 @@
   margin-bottom: 1rem;
 }
 
-.radio-item {
+.radioItem {
   display: inline-block;
   position: relative;
   padding: 0 6px;
   margin: 10px 0 0;
 }
 
-.radio-item input[type="radio"] {
+.radioItem input[type="radio"] {
   display: inline-block;
 }
 
-.radio-item label {
+.radioItem label {
   color: black;
   font-weight: normal;
   vertical-align: middle;
 }
 
-.radio-item label:before {
+.radioItem label:before {
   display: inline-block;
   position: relative;
   top: 5px;
@@ -198,7 +198,7 @@
   background-color: transparent;
 }
 
-.radio-item input[type="radio"]:checked + label:after {
+.radioItem input[type="radio"]:checked + label:after {
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -215,7 +215,7 @@
   border: 4px solid whitesmoke;
 }
 
-.resource-input1 {
+.resourceInput1 {
   margin-bottom: 1.5rem;
 }
 
@@ -224,27 +224,27 @@ input[type="date"]:not(:valid):before {
   /* style it like it is a real placeholder */
 }
 
-.form-check {
+.formCheck {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0px;
 }
 
-.valid_until {
+.validUntil {
   padding-top: 1rem;
 }
 
-.form-row {
+.formRow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.form-group {
+.formGroup {
   padding-right: 0.25em;
 }
 
-.resource-header-text {
+.resourceHeaderText {
   padding: 30px 0;
   font-size: 30px;
   text-align: center;
@@ -252,34 +252,34 @@ input[type="date"]:not(:valid):before {
   text-transform: capitalize;
 }
 
-.submit-btn {
+.submitBtn {
   display: flex;
   justify-content: center;
   width: 40%;
   margin: 0 auto;
 }
 
-.submit-btn-text {
+.submitBtnText {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 750px) {
-  .resource-section {
+  .resourceSection {
     flex-direction: column;
     width: 100%;
   }
 
-  .form-group {
+  .formGroup {
     width: 100%;
   }
 
-  .form-group2 {
+  .formGroup2 {
     width: 100%;
   }
 
-  .resource-parent {
+  .resourceParent {
     width: 85%;
     margin: 10% auto;
   }
@@ -288,7 +288,7 @@ input[type="date"]:not(:valid):before {
     padding: 0 0 10px;
   }
 
-  .submit-btn-text {
+  .submitBtnText {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -296,12 +296,12 @@ input[type="date"]:not(:valid):before {
     color: black;
   }
 
-  .submit-btn {
+  .submitBtn {
     width: 60% !important;
     margin: 0 auto;
   }
 
-  .radio-item input[type="radio"]:checked + label:after {
+  .radioItem input[type="radio"]:checked + label:after {
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -343,14 +343,14 @@ input[type="date"]:not(:valid):before {
     margin-bottom: 1rem;
   }
 
-  .radio-item {
+  .radioItem {
     display: inherit;
     position: relative;
     padding: 0 6px;
     margin: 10px 0 0;
   }
 
-  .radio-item input[type="radio"]:checked + label:after {
+  .radioItem input[type="radio"]:checked + label:after {
     border-radius: 50%;
     width: 20px;
     height: 20px;

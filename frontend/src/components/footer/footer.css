@@ -327,6 +327,10 @@ a > span {
   background-color: #ffffff;
 }
 
+.validation {
+  color: red;
+}
+
 .submit-btn-footer {
   outline: none;
   border: 2px solid transparent;

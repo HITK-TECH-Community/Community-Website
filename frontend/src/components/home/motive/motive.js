@@ -1,17 +1,17 @@
-import "./motive.css";
+import style from "./motive.module.css";
 
 const Motive = () => {
   return (
-    <div className="motive-div">
+    <div className={style.motiveDiv}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="section-title text-center pb-20">
-              <div className="motive">
+              <div className={style.motive}>
                 <h1>
                   <i className="fas fa-crosshairs"></i>ur Motive
                 </h1>
-                <div className="dash"></div>
+                <div className={style.dash}></div>
               </div>
               <p className="text text-white my-3">
                 At HITK Tech Community, we believe there is no limit to
@@ -24,18 +24,18 @@ const Motive = () => {
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className="single-features d-flex mt-30 wow fadeIn"
+              className={`${style.singleFeatures} d-flex mt-30 wow fadeIn`}
               data-wow-duration="1s"
               data-wow-delay="0s"
             >
-              <div className="features-icon">
+              <div className={style.featuresIcon}>
                 <i class="fas fa-bullhorn"></i>
               </div>
-              <div className="features-content text-left">
-                <h4 className="features-title">
+              <div className={`${style.featuresContent} text-left`}>
+                <h4 className={style.featuresTitle}>
                   <a href="/#">Increase Awareness</a>
                 </h4>
-                <p className="motive-content">
+                <p className={style.motiveContent}>
                   Towards plethora of opportunities such as internships,
                   competitions, openings for collaboration in projects, job
                   openings and contribution in open source projects.
@@ -45,18 +45,18 @@ const Motive = () => {
           </div>
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className="single-features d-flex mt-30 wow fadeIn"
+              className={`${style.singleFeatures} d-flex mt-30 wow fadeIn`}
               data-wow-duration="1s"
               data-wow-delay="0.5s"
             >
-              <div className="features-icon">
+              <div className={style.featuresIcon}>
                 <i className="fa fa-users"></i>
               </div>
-              <div className="features-content text-left">
-                <h4 className="features-title">
+              <div className={`${style.featuresContent} text-left`}>
+                <h4 className={style.featuresTitle}>
                   <a href="/#">Tech Community</a>
                 </h4>
-                <p className="motive-content">
+                <p className={style.motiveContent}>
                   Forming a global tech community where developers can converse
                   together, share information and learn from each other.
                 </p>
@@ -65,18 +65,18 @@ const Motive = () => {
           </div>
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className="single-features d-flex mt-30 wow fadeIn"
+              className={`${style.singleFeatures} d-flex mt-30 wow fadeIn`}
               data-wow-duration="1s"
               data-wow-delay="1s"
             >
-              <div className="features-icon">
+              <div className={style.featuresIcon}>
                 <i className="fas fa-user-graduate"></i>
               </div>
-              <div className="features-content text-left">
-                <h4 className="features-title">
+              <div className={`${style.featuresContent} text-left`}>
+                <h4 className={style.featuresTitle}>
                   <a href="/#">Lots of Learning</a>
                 </h4>
-                <p className="motive-content">
+                <p className={style.motiveContent}>
                   Helping you accelerate your learning and bring you closer to
                   like – minded individuals. Ultimately, there will always be a
                   helping hand at your side.

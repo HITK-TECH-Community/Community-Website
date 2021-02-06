@@ -11,24 +11,24 @@
   flex: 1 100%;
 }
 
-.footer__addr {
+.footerAddr {
   margin-right: 1.25em;
   margin-bottom: 2em;
 }
 
-.footer__logo {
+.footerLogo {
   font-weight: 600;
   font-size: 1.5rem;
   color: #fff;
 }
 
-.footer__addr h2 {
+.footerAddr h2 {
   margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
 }
 
-.nav__title {
+.navTitle {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
@@ -39,7 +39,7 @@
   color: #c2d6d7;
 }
 
-.footer__btn {
+.footerBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,25 +67,25 @@
   text-decoration: none;
 }
 
-.footer__nav {
+.footerNav {
   display: flex;
   flex-flow: row wrap;
 }
 
-.footer__nav > * {
+.footerNav > * {
   flex: 1 50%;
   margin-right: 1.25em;
 }
 
-.nav__ul a {
+.navUl a {
   color: #c2d6d7;
 }
 
-.nav__ul a:hover {
+.navUl a:hover {
   color: yellow;
 }
 
-.nav__ul--extra {
+.navUlExtra {
   column-count: 2;
   column-gap: 1.25em;
 }
@@ -96,7 +96,7 @@
   color: #c2d6d7;
 }
 
-.legal__links {
+.legalLinks {
   display: flex;
   align-items: center;
 }
@@ -105,21 +105,25 @@
   color: #c2d6d7;
 }
 
-/*.fa-gitter,*/
 .fa-linkedin,
 .fa-slack,
-/*.fa-facebook,*/
 .fa-envelope,
-.fa-github {
+.fa-github,
+.faGithub,
+.faEnvelope,
+.faSlack,
+.faLinkedin {
   padding: 5px;
   color: white;
 }
 
-.fa-linkedin:hover {
+.fa-linkedin:hover,
+.faLinkedin:hover {
   color: #0088cc;
 }
 
-.fa-slack:hover {
+.fa-slack:hover,
+.faSlack:hover {
   color: #dd2a7b;
 }
 
@@ -127,11 +131,12 @@
   color: #c71610;
 }
 
-.fa-github:hover {
+.fa-github:hover,
+.faGithub:hover {
   color: #000;
 }
 
-.footer-dash {
+.footerDash {
   text-align: center;
   padding-top: 2px;
   width: 90px;
@@ -147,14 +152,14 @@
   background-size: 100% 5px; /* if linear-gradient, we need to resize it */
 }
 
-.footer-text {
+.footerText {
   padding-top: 10px;
   text-align: center;
   font-size: 0.8rem;
   background: #121f3a;
 }
 
-.nav__item {
+.navItem {
   margin-bottom: 1.5rem;
 }
 
@@ -305,7 +310,7 @@ a > span {
   font-weight: 600;
 }
 
-.input-field-footer {
+.inputFieldFooter {
   border: 2px solid transparent;
   border-radius: 8px;
   width: 250px;
@@ -313,7 +318,7 @@ a > span {
   margin-right: 10px;
 }
 
-.input-field-footer:focus {
+.inputFieldFooter:focus {
   outline: none;
   border: 2px double transparent;
   border-radius: 8px;
@@ -327,7 +332,7 @@ a > span {
   background-color: #ffffff;
 }
 
-.submit-btn-footer {
+.submitBtnFooter {
   outline: none;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -338,12 +343,12 @@ a > span {
   transition: all 0.3s;
 }
 
-.submit-btn-footer:focus {
+.submitBtnFooter:focus {
   outline: none;
   border: none;
 }
 
-.submit-btn-footer:hover {
+.submitBtnFooter:hover {
   background-color: transparent;
   color: #fff;
   border: 2px solid #ee4d55;
@@ -353,7 +358,7 @@ a > span {
   padding: 4px;
 }
 
-.cprt_text {
+.cprtText {
   width: 100%;
   background-color: #016795;
   color: white;
@@ -365,25 +370,25 @@ a > span {
 }
 
 @media screen and (min-width: 24.375em) {
-  .legal .legal__links {
+  .legal .legalLinks {
     margin-left: auto;
   }
 }
 
 @media screen and (min-width: 40.375em) {
-  .footer__nav > * {
+  .footerNav > * {
     flex: 1;
   }
 
-  .nav__item--extra {
+  .navItemExtra {
     flex-grow: 2;
   }
 
-  .footer__addr {
+  .footerAddr {
     flex: 1 0px;
   }
 
-  .footer__nav {
+  .footerNav {
     flex: 2 0px;
   }
 }

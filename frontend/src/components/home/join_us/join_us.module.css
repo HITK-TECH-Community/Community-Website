@@ -1,4 +1,4 @@
-.join-us {
+.joinUs {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -8,7 +8,7 @@
   background-image: linear-gradient(141deg, #ff551f, #fabf67 60%, #ff8f6c);
 }
 
-.join-us h1 {
+.joinUs h1 {
   font-size: 3.6rem;
   color: rgb(18, 31, 58);
 }
@@ -22,7 +22,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .join-us {
+  .joinUs {
     padding: 1rem 1.2rem;
   }
 }

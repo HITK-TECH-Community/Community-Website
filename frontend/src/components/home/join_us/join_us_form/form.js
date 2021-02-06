@@ -65,27 +65,107 @@ const JoinUsForm = () => {
               <textarea
                 placeholder="How can you contribute to help the community?"
                 id="txt_desc"
-                rows="6"
+                rows="2"
                 cols="20"
                 name="desc"
                 Required="required"
               ></textarea>
               <i className="fas fa-comment-dots"></i>
             </div>
-            <div className={styles.joinusformInput}>
-              <label className="mb-2">Interested Domain</label>
-              <select>
-                <option value="android">Android</option>
-                <option value="web">Web</option>
-                <option value="iot">IoT</option>
-                <option value="ai">AI</option>
-                <option value="ml">ML</option>
-                <option value="poster">Poster Designing</option>
-                <option value="video">Video Editing</option>
-                <option value="content">Content Writing</option>
-                <option value="social">Social Media Handling</option>
-                <option value="other">Other</option>
-              </select>
+            <div className={styles.joinusformInput1}>
+              <label className={`mb-4 ${styles.ID}`}>Interested Domains</label>
+              <div className={styles.checkbuttons}>
+                <div className="checkbox-item">
+                  <input
+                      name="ml"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    ML
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="ai"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    AI
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="android"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                      Android
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="web"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Web
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="iot"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    IoT
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="video"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Video Editing
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="social"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Social Media Handling
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="content"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Content Writing
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="poster"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Poster Designing
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                      name="other"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Other
+                  </label>
+                </div>
+              </div>
             </div>
             <div className={styles.formGroup}>
               <div className={styles.joinusformInput}>

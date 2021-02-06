@@ -3,7 +3,7 @@ import React from "react";
 export default function Broadcast() {
   return (
     <div>
-      <h1 className="heads"> Broadcasts </h1>
+      <h1 style={{ textAlign: "center" }}> Broadcasts </h1>
     </div>
   );
 }

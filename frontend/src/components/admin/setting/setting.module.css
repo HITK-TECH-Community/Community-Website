@@ -1,4 +1,4 @@
-.admin-card {
+.admin_card {
   width: 70%;
   height: auto;
   background-color: #e7e7e7;
@@ -8,13 +8,17 @@
   padding-bottom: 2rem;
 }
 
-.admin-input {
+.admin_input {
   position: relative;
 }
 
-.admin-input input,
-.admin-input textarea,
-.admin-input1 select {
+.team > h1 {
+  text-align: center;
+}
+
+.admin_input input,
+.admin_input textarea,
+.admin_input1 select {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -26,9 +30,9 @@
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
-.admin-input input:focus,
-.admin-input textarea:focus,
-.admin-input1 select:focus {
+.admin_input input:focus,
+.admin_input textarea:focus,
+.admin_input1 select:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -39,7 +43,7 @@
   background-color: #ffffff;
 }
 
-.admin-input i {
+.admin_input i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -52,12 +56,12 @@
   color: #c71610;
 }
 
-.inside-admin {
+.inside_admin {
   width: 85%;
   margin: 0 auto;
 }
 
-.admin-header-text {
+.admin_header_text {
   padding: 30px 0;
   font-size: 30px;
   text-align: center;
@@ -104,7 +108,7 @@
     min-width: 200px;
     font-size: 14px;
   }
-  .admin-card {
+  .admin_card {
     width: 90%;
   }
 }
@@ -114,7 +118,7 @@
     min-width: 140px;
     font-size: 12px;
   }
-  .admin-card {
+  .admin_card {
     width: 90%;
   }
 }

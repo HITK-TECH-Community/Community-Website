@@ -183,8 +183,8 @@
 }
 
 .col .social li a .outer {
-  height: calc(50px + 2 * var(--w));
-  width: calc(50px + 2 * var(--w));
+  height: calc(40px + 2 * var(--w));
+  width: calc(40px + 2 * var(--w));
   overflow: hidden;
   border-radius: 10px;
   position: relative;
@@ -192,8 +192,8 @@
 
 .col .social li a .inner {
   z-index: 1;
-  width: calc(50px + var(--w));
-  height: calc(50px + var(--w));
+  width: calc(40px + var(--w));
+  height: calc(40px + var(--w));
   border-radius: 10px;
   position: absolute;
   background: #121f3a;

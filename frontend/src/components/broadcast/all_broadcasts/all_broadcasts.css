@@ -4,12 +4,47 @@ main {
   align-items: center;
 }
 
+.appbarWrap {
+  width: 100%;
+  z-index: 2;
+}
+
+.appbar {
+  margin: auto;
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 380px) {
+  .appbar {
+    width: 80vw;
+  }
+}
+.filters {
+  display: flex;
+  margin: 15px 10px 15px auto;
+}
+
+@media (max-width: 780px) {
+  .appbar {
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    margin: 15px auto;
+  }
+}
+
 #hero {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   width: 100vw;
 }
+
 #heading {
   display: flex;
   flex-direction: column;
@@ -28,49 +63,9 @@ main {
 
 #allCards {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   width: 95vw;
   margin: 0.5em;
-}
-
-.card-item {
-  background-color: #016795;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 1em;
-  box-shadow: 0.3em 0.3em 0.4em grey;
-  height: auto;
-  width: 15em;
-  margin: 1em;
-  background-position: left center;
-  transition: background 0.3s ease-out;
-}
-
-.clickable-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5em;
-  color: var(--bs-light);
-}
-
-.card-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.9rem;
-  font-weight: bold;
-}
-
-.card-content {
-  font-weight: normal;
-  text-align: center;
-  font-size: 1.2rem;
-  width: 100%;
-}
-
-.card-item:hover {
-  background-color: #1b2431;
 }
 
 @media screen and (orientation: portrait) {

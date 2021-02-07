@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  margin: 0 10px;
+  outline: none !important;
+}
+.root span {
+  font-size: 16px !important;
+  top: 0;
+}
+.root:focus {
+  outline: none !important;
+}

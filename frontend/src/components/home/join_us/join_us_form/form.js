@@ -1,6 +1,5 @@
 import React from "react";
 import "./form.css";
-import { Button2 } from "../../../util/button/button";
 const JoinUsForm = () => {
   return (
     <div className="joinusform-section">

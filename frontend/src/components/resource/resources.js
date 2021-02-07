@@ -12,7 +12,7 @@ const Resources = () => {
         <div className={style.resourceCard}>
           <h3 className={style.resourceHeaderText}>Resource Sharing Form</h3>
           <div className={style.insideResource}>
-            <div className="form-group">
+            <div className={`form-group ${style.formGroup}`}>
               <div className={style.resourceInput}>
                 <input
                   placeholder="Name"
@@ -25,7 +25,7 @@ const Resources = () => {
               </div>
             </div>
 
-            <div className="form-group">
+            <div className={`form-group ${style.formGroup}`}>
               <div className={style.resourceInput}>
                 <input
                   placeholder="Email ID"
@@ -38,7 +38,7 @@ const Resources = () => {
               </div>
             </div>
 
-            <div className="form-group">
+            <div className={`form-group ${style.formGroup}`}>
               <div className={style.resourceInput}>
                 <input
                   placeholder="Resource URL"
@@ -54,7 +54,7 @@ const Resources = () => {
             <div className={style.resourceInput}>
               <textarea
                 placeholder="Resource Description"
-                id="txt_desc"
+                id={style.txt_desc}
                 rows="6"
                 cols="20"
                 name="resourcedesc"
@@ -121,7 +121,7 @@ const Resources = () => {
                 cols="20"
                 name="info"
               ></textarea>
-              <i className="fas style.fa-pencil-alt"></i>
+              <i className="fas fa-pencil-alt"></i>
             </div>
             <div className={style.submitBtn}>
               <Button2

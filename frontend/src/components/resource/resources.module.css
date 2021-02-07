@@ -356,7 +356,7 @@ input[type="date"]:not(:valid):before {
     height: 20px;
     position: absolute;
     top: 0px;
-    left: 11px;
+    left: 18px;
     content: " ";
     display: block;
     background-image: linear-gradient(

@@ -5,14 +5,13 @@
 This module is responsible for all the activities related to authentication.
 
 ### API description
-- <code> <b> /auth/login </b> </code>
+-  [ <b>POST</b> ] : <code> <b> /auth/login </b> </code>
     - For login
-    - method : <b>POST</b>
-    - response body : 
-        | Parameter   | 
-        | ----------- | 
-        | email       |
-        | password    |
+    - request body : 
+        | Parameter   | Description|
+        | ----------- | -----------|
+        | email       | string,required|
+        | password    | string ,required|
 
     - ![diagram](images/loginroute.jpg)
     <br>
@@ -21,8 +20,11 @@ This module is responsible for all the activities related to authentication.
 
 ![diagram](images/jwt.jpg)
 <br>
-The user submits the login data which is collected by the server and using these data.
-it generates a JSON Web Token which takes { payload , SECRET_KEY , expiresIn parameters . This token is then passed to the client side where it is used every time the client makes any kind of request to the server . The server validates the token , if it matches then the client gets the response otherwise error is thrown.
+JWT consists of three parts headers , payload and signature.
+<b>Header</b> - This contains the type of token and the algorith used for signing.
+<b>Payload</b> - This contains different types of claims like registerd , private and public claims. We should avoid putting any sensitive information in the header and payload part unless it is encrypted.
+<b>Signature</b> - For creating signature we need encoded header , encoded payload and a secret .
+The user submits the login data which is collected by the server and using these data it generates a JSON Web Token. This token is then passed to the client side at every subsequent request made to protected route . The server validates the token , if it matches then the client gets the access otherwise error is thrown.
 
 ###### ERROR RESPONSE 
 - If header is invalid or missing:
@@ -41,10 +43,10 @@ it generates a JSON Web Token which takes { payload , SECRET_KEY , expiresIn par
   ![diagram](images/error.jpg)
 <br>
 - <b>errorType</b> - describes the type of error whether - it is internal server error , database error etc.
-- <b>statusCode</b> - used for assigning the status code for the error eg:- 400,401,500 etc
+- <b>statusCode</b> -HTTP response code eg:- 400,401,500 etc
 - <b>message</b> - used for sending the custom error messages.
-- <b>User</b> - the current user logged in
-- <b>errStack</b> -  describes the point in the code at which the Error was instantiated.
+- <b>User</b> - the user for which error is thrown
+- <b>errStack</b> -  provides the stack trace of the error
 
 
 

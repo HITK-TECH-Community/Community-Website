@@ -120,7 +120,7 @@
   box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19);
 }
 
-#founder:hover {
+.founder:hover {
   box-shadow: -1px 16px 40px 0px rgba(10, 24, 61, 1);
 }
 
@@ -143,25 +143,25 @@
   box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19) !important;
 }
 
-#founder .badge {
+.founder .badge {
   margin-bottom: 13px;
   margin-top: 19px;
   padding: 6px;
 }
 
-#default {
+.default {
   background-color: #2bbbad;
 }
 
-#primary {
+.primary {
   background-color: #fb3;
 }
 
-#broadcast {
+.broadcast {
   background-color: rgb(140, 134, 199);
 }
 
-#info {
+.info {
   background-color: #f8bbd0;
 }
 

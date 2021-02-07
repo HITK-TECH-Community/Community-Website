@@ -31,20 +31,20 @@ const useStyles = makeStyles(() => ({
 const AboutUs = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={styles.root}>
       <div className={styles.aboutSection}>
         <img src="./images/about-us.jpg" alt="" className={styles.aboutusImg} />
       </div>
       <div className={styles.about}>
         <div className={styles.row}>
-          <div className={`col-lg-6`}>
+          <div className="col-lg-6">
             <h1>Who are we and what we do?</h1>
             <div className={styles.dash}></div>
             <h4 className={`${styles.byLine} text-left`}>
               By Students, For Students
             </h4>
           </div>
-          <div className={`col-lg-6`}>
+          <div className="col-lg-6">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
               dicta minus molestiae vel beatae natus eveniet ratione temporibus
@@ -68,7 +68,7 @@ const AboutUs = () => {
       </div>
       <div className={styles.meet}>
         <div className={styles.row}>
-          <div className={`${`col-lg-6`} text-center`}>
+          <div className={`$"col-lg-6" text-center`}>
             <h1>MEET THE CREW</h1>
             <h5>
               “Individuals can and do make a difference, but it takes a team to
@@ -82,8 +82,8 @@ const AboutUs = () => {
       </div>
       <div className={styles.team}>
         <div className={styles.row}>
-          <div className={`col-lg-6`}>
-            <div className={styles.card1} id="founder">
+          <div className="col-lg-6">
+            <div className={`${styles.card1} ${styles.founder}`}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
                   <div class="row">
@@ -105,7 +105,7 @@ const AboutUs = () => {
                     <Typography component="h6" variant="h6">
                       Name
                     </Typography>
-                    <MDBBadge pill id="founder">
+                    <MDBBadge pill className={styles.founder}>
                       FOUNDER
                     </MDBBadge>
                     <div>
@@ -120,8 +120,8 @@ const AboutUs = () => {
               </Card1>
             </div>
           </div>
-          <div className={`col-lg-6`}>
-            <div className={styles.card1} id="founder">
+          <div className="col-lg-6">
+            <div className={`${styles.card1} ${styles.founder}`}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
                   <div class="row">
@@ -147,7 +147,7 @@ const AboutUs = () => {
                     <Typography component="h6" variant="h6">
                       Name
                     </Typography>
-                    <MDBBadge pill id="founder">
+                    <MDBBadge pill className={styles.founder}>
                       CO-FOUNDER
                     </MDBBadge>
                     <div>
@@ -164,7 +164,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className={styles.row}>
-          <div className={`col-lg-6`}>
+          <div className="col-lg-6">
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
@@ -197,19 +197,19 @@ const AboutUs = () => {
                         elit. Nam vero.
                       </p>
                     </div>
-                    <MDBBadge pill id="default">
+                    <MDBBadge pill className={styles.default}>
                       Social Media
                     </MDBBadge>
-                    <MDBBadge id="primary">Open Source</MDBBadge>
-                    <MDBBadge id="info">Core Team</MDBBadge>
-                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <MDBBadge className={styles.primary}>Open Source</MDBBadge>
+                    <MDBBadge className={styles.info}>Core Team</MDBBadge>
+                    <MDBBadge className={styles.broadcast}>Broadcast</MDBBadge>
                     <br />
                   </CardContent>
                 </div>
               </Card1>
             </div>
           </div>
-          <div className={`col-lg-6`}>
+          <div className="col-lg-6">
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}}`}>
@@ -238,12 +238,12 @@ const AboutUs = () => {
                         elit. Nam vero.
                       </p>
                     </div>
-                    <MDBBadge pill id="default">
+                    <MDBBadge pill className={styles.default}>
                       Social Media
                     </MDBBadge>
-                    <MDBBadge id="primary">Open Source</MDBBadge>
-                    <MDBBadge id="info">Core Team</MDBBadge>
-                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <MDBBadge className={styles.primary}>Open Source</MDBBadge>
+                    <MDBBadge className={styles.info}>Core Team</MDBBadge>
+                    <MDBBadge className={styles.broadcast}>Broadcast</MDBBadge>
                     <br />
                   </CardContent>
                 </div>
@@ -281,19 +281,19 @@ const AboutUs = () => {
                         elit. Nam vero.
                       </p>
                     </div>
-                    <MDBBadge pill id="default">
+                    <MDBBadge pill className={styles.default}>
                       Social Media
                     </MDBBadge>
-                    <MDBBadge id="primary">Open Source</MDBBadge>
-                    <MDBBadge id="info">Core Team</MDBBadge>
-                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <MDBBadge className={styles.primary}>Open Source</MDBBadge>
+                    <MDBBadge className={styles.info}>Core Team</MDBBadge>
+                    <MDBBadge className={styles.broadcast}>Broadcast</MDBBadge>
                     <br />
                   </CardContent>
                 </div>
               </Card1>
             </div>
           </div>
-          <div className={`col-lg-6`}>
+          <div className="col-lg-6">
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}}`}>
@@ -322,12 +322,12 @@ const AboutUs = () => {
                         elit. Nam vero.
                       </p>
                     </div>
-                    <MDBBadge pill id="default">
+                    <MDBBadge pill className={styles.default}>
                       Social Media
                     </MDBBadge>
-                    <MDBBadge id="primary">Open Source</MDBBadge>
-                    <MDBBadge id="info">Core Team</MDBBadge>
-                    <MDBBadge id="broadcast">Broadcast</MDBBadge>
+                    <MDBBadge className={styles.primary}>Open Source</MDBBadge>
+                    <MDBBadge className={styles.info}>Core Team</MDBBadge>
+                    <MDBBadge className={styles.broadcast}>Broadcast</MDBBadge>
                     <br />
                   </CardContent>
                 </div>

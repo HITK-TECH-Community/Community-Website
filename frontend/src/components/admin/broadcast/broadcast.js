@@ -36,7 +36,7 @@ export default function Broadcast() {
           <div className="clickable-card">
             <div className="card-title">
               MANAGE BROADCASTS
-              <AiFillEdit className="edit" />
+              <AiFillEdit className="editt" />
             </div>
             <div className="card-content">
               <button className="main-btn" type="submit">

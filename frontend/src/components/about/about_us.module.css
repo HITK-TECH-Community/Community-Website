@@ -61,41 +61,6 @@
   padding: 5px;
 }
 
-.fa-twitter-square:hover {
-  color: #1e5475;
-  cursor: pointer;
-}
-
-.fa-twitter-square {
-  color: #1da1f2;
-}
-
-.sl {
-  color: #ecb22e;
-}
-
-.fa-3x {
-  font-size: 28px;
-}
-
-.in {
-  color: #0e76a8 !important;
-}
-
-.in:hover {
-  cursor: pointer;
-  color: #133646 !important;
-}
-
-.fa-github-square:hover {
-  color: indigo;
-  cursor: pointer;
-}
-
-.fa-github-square {
-  color: rgb(153, 96, 201);
-}
-
 .card1 {
   width: 420px;
   margin-top: 24px;
@@ -120,10 +85,6 @@
   box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19);
 }
 
-.founder:hover {
-  box-shadow: -1px 16px 40px 0px rgba(10, 24, 61, 1);
-}
-
 .card1:hover .teamSocial {
   display: block;
 }
@@ -134,19 +95,6 @@
 
 .MuiCardContent-root {
   padding: 10px;
-}
-
-.badge {
-  color: #000;
-  margin-right: 5px;
-  margin-top: 18px;
-  box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19) !important;
-}
-
-.founder .badge {
-  margin-bottom: 13px;
-  margin-top: 19px;
-  padding: 6px;
 }
 
 .default {

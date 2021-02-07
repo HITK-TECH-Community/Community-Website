@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { MDBBadge } from "mdbreact";
 
 import styles from "./about_us.module.css";
+import "./about_us.css";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -36,7 +37,7 @@ const AboutUs = () => {
         <img src="./images/about-us.jpg" alt="" className={styles.aboutusImg} />
       </div>
       <div className={styles.about}>
-        <div className={styles.row}>
+        <div className="row">
           <div className="col-lg-6">
             <h1>Who are we and what we do?</h1>
             <div className={styles.dash}></div>
@@ -67,8 +68,8 @@ const AboutUs = () => {
         </div>
       </div>
       <div className={styles.meet}>
-        <div className={styles.row}>
-          <div className={`$"col-lg-6" text-center`}>
+        <div className="row">
+          <div className={`col-lg-6 text-center`}>
             <h1>MEET THE CREW</h1>
             <h5>
               “Individuals can and do make a difference, but it takes a team to
@@ -81,9 +82,9 @@ const AboutUs = () => {
         </div>
       </div>
       <div className={styles.team}>
-        <div className={styles.row}>
+        <div className="row">
           <div className="col-lg-6">
-            <div className={`${styles.card1} ${styles.founder}`}>
+            <div className={`${styles.card1} `} id="founder">
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
                   <div class="row">
@@ -94,9 +95,15 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                      <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                      <i className="fab fa-github-square fa-2x card_footer"></i>
+                      <i
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
+                      ></i>
+                      <i
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
+                      ></i>
                     </div>
                   </div>
                 </div>
@@ -105,7 +112,7 @@ const AboutUs = () => {
                     <Typography component="h6" variant="h6">
                       Name
                     </Typography>
-                    <MDBBadge pill className={styles.founder}>
+                    <MDBBadge pill id="founder">
                       FOUNDER
                     </MDBBadge>
                     <div>
@@ -121,7 +128,7 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className={`${styles.card1} ${styles.founder}`}>
+            <div className={`${styles.card1} `} id="founder">
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
                   <div class="row">
@@ -132,12 +139,14 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className={`fab fa-linkedin fa-2x card_footer in`}></i>
                       <i
-                        className={`fab fa-twitter-square fa-2x card_footer`}
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
                       ></i>
                       <i
-                        className={`fab fa-github-square fa-2x card_footer`}
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
                       ></i>
                     </div>
                   </div>
@@ -147,7 +156,7 @@ const AboutUs = () => {
                     <Typography component="h6" variant="h6">
                       Name
                     </Typography>
-                    <MDBBadge pill className={styles.founder}>
+                    <MDBBadge pill id="founder">
                       CO-FOUNDER
                     </MDBBadge>
                     <div>
@@ -163,7 +172,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className={styles.row}>
+        <div className="row">
           <div className="col-lg-6">
             <div className={styles.card1}>
               <Card1 className={classes.root}>
@@ -176,12 +185,14 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className={`fab fa-linkedin fa-2x card_footer in`}></i>
                       <i
-                        className={`fab fa-twitter-square fa-2x card_footer`}
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
                       ></i>
                       <i
-                        className={`fab fa-github-square fa-2x card_footer`}
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
                       ></i>
                     </div>
                   </div>
@@ -221,9 +232,15 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                      <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                      <i className="fab fa-github-square fa-2x card_footer"></i>
+                      <i
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
+                      ></i>
+                      <i
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
+                      ></i>
                     </div>
                   </div>
                 </div>
@@ -251,11 +268,11 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className={styles.row}>
-          <div className={`col-4 ${styles.photo}}`}>
+        <div className="row">
+          <div className="col-lg-6">
             <div className={styles.card1}>
               <Card1 className={classes.root}>
-                <div className={`col-4 ${styles.photo}}`}>
+                <div className={`col-4 ${styles.photo}`}>
                   <div class="row">
                     <CardMedia
                       className={classes.cover}
@@ -264,9 +281,15 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                      <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                      <i className="fab fa-github-square fa-2x card_footer"></i>
+                      <i
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
+                      ></i>
+                      <i
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
+                      ></i>
                     </div>
                   </div>
                 </div>
@@ -305,9 +328,15 @@ const AboutUs = () => {
                   </div>
                   <div class="row">
                     <div className={styles.teamSocial}>
-                      <i className="fab fa-linkedin fa-2x card_footer in"></i>
-                      <i className="fab fa-twitter-square fa-2x card_footer"></i>
-                      <i className="fab fa-github-square fa-2x card_footer"></i>
+                      <i
+                        className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
+                      ></i>
+                      <i
+                        className={`fab fa-twitter-square fa-2x ${styles.card_footer}`}
+                      ></i>
+                      <i
+                        className={`fab fa-github-square fa-2x ${styles.card_footer}`}
+                      ></i>
                     </div>
                   </div>
                 </div>

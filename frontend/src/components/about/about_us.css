@@ -1,0 +1,51 @@
+.fa-twitter-square {
+  color: #1da1f2 !important;
+}
+
+.fa-twitter-square:hover {
+  color: #1e5475 !important;
+  cursor: pointer;
+}
+
+.sl {
+  color: #ecb22e !important;
+}
+
+.fa-3x {
+  font-size: 28px;
+}
+
+.in {
+  color: #0e76a8 !important;
+}
+
+.in:hover {
+  cursor: pointer;
+  color: #133646 !important;
+}
+
+.fa-github-square {
+  color: rgb(153, 96, 201) !important;
+}
+
+.fa-github-square:hover {
+  color: indigo !important;
+  cursor: pointer;
+}
+
+#founder .badge {
+  margin-bottom: 13px;
+  margin-top: 19px;
+  padding: 6px;
+}
+
+#founder:hover {
+  box-shadow: -1px 16px 40px 0px rgba(10, 24, 61, 1);
+}
+
+.badge {
+  color: #000;
+  margin-right: 5px;
+  margin-top: 18px;
+  box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19) !important;
+}

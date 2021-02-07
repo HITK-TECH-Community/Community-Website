@@ -29,15 +29,14 @@
   align-items: center;
 }
 
-.contact-card{
+.contact-card {
   width: 75%;
   height: auto;
-  background-color:#e7e7e7;
+  background-color: #e7e7e7;
   margin: 0% auto;
   padding-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px #888888,
-              -5px -5px 15px #ffffff;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
 }
 
 .contact-header-text {
@@ -67,8 +66,7 @@
   color: #777777;
   margin-bottom: 20px;
   background-color: #f1f1f1;
-  box-shadow: inset 2px 2px 5px #888888,
-              inset -2px -2px 5px #ffffff;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
 .contact-input input::placeholder,
@@ -92,11 +90,11 @@
 .contact-input input:focus,
 .contact-input textarea:focus {
   border-color: #1863ff;
-  outline:none;
+  outline: none;
   border: double 2px transparent;
   border-radius: 10px;
-  background-image: linear-gradient(white, white), 
-                    linear-gradient(to right, rgba(255, 0, 90, 1),rgba(10, 24, 61, 1));
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: #ffffff;
@@ -116,24 +114,24 @@
   color: #777777;
 }
 
-.fa-envelope-open-text:hover{
-  cursor:pointer;
+.fa-envelope-open-text:hover {
+  cursor: pointer;
   color: #c71610;
 }
 
-.fa-user:hover{
-  cursor:pointer;
-  color: #34B7F1;
+.fa-user:hover {
+  cursor: pointer;
+  color: #34b7f1;
 }
 
-.fa-pencil-alt:hover{
-  cursor:pointer;
-  color: #9400D3;
+.fa-pencil-alt:hover {
+  cursor: pointer;
+  color: #9400d3;
 }
 
-.fa-comment-dots:hover{
-  cursor:pointer;
-  color: #2ECC71;
+.fa-comment-dots:hover {
+  cursor: pointer;
+  color: #2ecc71;
 }
 
 @media screen and (max-width: 750px) {
@@ -141,21 +139,129 @@
     display: block;
     width: 100%;
   }
-  
+
   .child1 {
     padding: 0 0 10px;
   }
-  
-  .contact-card{
+
+  .contact-card {
     width: 95%;
     margin: 10% auto;
   }
-  
-  .contact-input input, .contact-btn{
+
+  .contact-input input,
+  .contact-btn {
     height: 40px;
   }
 
-  .contact-btn{
+  .contact-btn {
     font-size: 20px;
+  }
+}
+:root {
+  --primary: #fc0254;
+}
+
+.btn {
+  font-family: "Futura LT Book", sans-serif;
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: var(--primary);
+}
+
+.btn span {
+  font-family: sans-serif;
+}
+
+.btn:hover {
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid var(--primary);
+}
+
+.mainbtn {
+  display: inline-block;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 40px;
+  font-size: 16px;
+  line-height: 48px;
+  border-radius: 50px;
+  color: #1863ff;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  background-color: #fff;
+  border: 0;
+}
+
+.mainbtn:hover {
+  background-color: #fff;
+  color: #1863ff;
+  -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mainbtn.mainbtn2 {
+  background: -webkit-linear-gradient(
+    left,
+    #121f3a 0%,
+    #2a4886 50%,
+    #162f66 100%
+  );
+  background: -o-linear-gradient(left, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background-size: 200% auto;
+  color: #fff;
+  width: 37%;
+  font-size: 21px;
+  outline: none;
+  background-position: left center;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+}
+
+.mainbtn.mainbtn2:hover {
+  background-position: right center;
+  color: #fff;
+}
+@media screen and (max-width: 1047px) {
+  .mainbtn.mainbtn2 {
+    font-size: 14px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 515px) {
+  .mainbtn.mainbtn2 {
+    font-size: 17.5px;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .mainbtn.mainbtn2 {
+    font-size: 13px;
+    width: 48%;
   }
 }

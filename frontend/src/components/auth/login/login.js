@@ -147,10 +147,7 @@ const Login = () => {
   return (
     <div className="login-section">
       <div className="login-image child1">
-        <img
-          src="./images/login.png"
-          alt="login-illustration"
-        />
+        <img src="./images/login.png" alt="login-illustration" />
       </div>
       <div className="login-form child2">
         <div className="login-card">
@@ -188,7 +185,7 @@ const Login = () => {
             <div className="login-input" style={{ textAlign: "center" }}>
               <button
                 id="btn"
-                className="login-btn main-btn main-btn-2"
+                className="login-btn mainbtn mainbtn2"
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
               >

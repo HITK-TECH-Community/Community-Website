@@ -1,12 +1,15 @@
 import React from "react";
-import { Button2 } from "../util/button/button";
 import "./contact_us.css";
 const ContactUs = () => {
   return (
     <div className="contact-section">
       <div className="contact-parent">
         <div className="contact-child child1">
-          <img src="./images/contact-us-image.png" alt="" className="contact-image" />
+          <img
+            src="./images/contact-us-image.png"
+            alt=""
+            className="contact-image"
+          />
         </div>
 
         <div className="contact-child child2">
@@ -54,12 +57,13 @@ const ContactUs = () => {
                 ></textarea>
                 <i className="fas fa-comment-dots"></i>
               </div>
-                <div className="submit-btn">
-                <Button2
-                  className="submit-btn-text"
-                  label="Let's Talk!"
+              <div className="submit-btn">
+                <button
                   type="submit"
-                />
+                  className="submit-btn-text mainbtn mainbtn2"
+                >
+                  Let's Talk!
+                </button>
               </div>
             </div>
           </div>

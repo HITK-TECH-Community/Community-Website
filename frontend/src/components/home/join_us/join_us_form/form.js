@@ -145,11 +145,12 @@ const JoinUsForm = () => {
               </div>
             </div>
             <div className="submit-btn">
-              <Button2
-                className="submit-btn-text"
-                label="Submit"
+              <button
                 type="submit"
-              />
+                className="submit-btn-text mainbtn mainbtn2"
+              >
+                Submit
+              </button>
             </div>
           </div>
         </div>

@@ -6,12 +6,12 @@ This module is responsible for all the activities related to authentication.
 
 ### API description
 -  [ <b>POST</b> ] : <code> <b> /auth/login </b> </code>
-    - For login
+    - Login for existing users
     - request body : 
         | Parameter   | Description|
         | ----------- | -----------|
-        | email       | string,required|
-        | password    | string ,required|
+        | email       | string , required|
+        | password    | string , required|
 
     - ![diagram](images/loginroute.jpg)
     <br>
@@ -43,7 +43,7 @@ The user submits the login data which is collected by the server and using these
   ![diagram](images/error.jpg)
 <br>
 - <b>errorType</b> - describes the type of error whether - it is internal server error , database error etc.
-- <b>statusCode</b> -HTTP response code eg:- 400,401,500 etc
+- <b>statusCode</b> -HTTP response code eg:- 400, 401, 500 etc
 - <b>message</b> - used for sending the custom error messages.
 - <b>User</b> - the user for which error is thrown
 - <b>errStack</b> -  provides the stack trace of the error

@@ -38,7 +38,7 @@ export class Owldemo1 extends Component {
   render() {
     return (
       <div className="carousel-div">
-        <div className={style.motive}>
+        <div className={`motive ${style.motive}`}>
           <h1 style={{ color: "#121f3a" }}>Curious to know More about Us?</h1>
           <div className={style.dash}></div>
         </div>

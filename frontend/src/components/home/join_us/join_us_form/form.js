@@ -75,7 +75,7 @@ const JoinUsForm = () => {
             <div className={styles.joinusformInput1}>
               <label className={`mb-4 ${styles.ID}`}>Interested Domains</label>
               <div className={styles.checkbuttons}>
-                <div className="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="ml"
                       type="checkbox"
@@ -84,7 +84,7 @@ const JoinUsForm = () => {
                     ML
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="ai"
                       type="checkbox"
@@ -93,7 +93,7 @@ const JoinUsForm = () => {
                     AI
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="android"
                       type="checkbox"
@@ -102,7 +102,7 @@ const JoinUsForm = () => {
                       Android
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="web"
                       type="checkbox"
@@ -111,7 +111,7 @@ const JoinUsForm = () => {
                     Web
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="iot"
                       type="checkbox"
@@ -120,7 +120,7 @@ const JoinUsForm = () => {
                     IoT
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="video"
                       type="checkbox"
@@ -129,25 +129,7 @@ const JoinUsForm = () => {
                     Video Editing
                   </label>
                 </div>
-                <div class="checkbox-item">
-                  <input
-                      name="social"
-                      type="checkbox"
-                    />
-                  <label className={`mx-3 ${styles.label}`}>
-                    Social Media Handling
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                      name="content"
-                      type="checkbox"
-                    />
-                  <label className={`mx-3 ${styles.label}`}>
-                    Content Writing
-                  </label>
-                </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="poster"
                       type="checkbox"
@@ -156,7 +138,25 @@ const JoinUsForm = () => {
                     Poster Designing
                   </label>
                 </div>
-                <div class="checkbox-item">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="social"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Social Media Handling
+                  </label>
+                </div>
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="content"
+                      type="checkbox"
+                    />
+                  <label className={`mx-3 ${styles.label}`}>
+                    Content Writing
+                  </label>
+                </div>
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
                   <input
                       name="other"
                       type="checkbox"

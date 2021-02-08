@@ -9,7 +9,6 @@ const Invite = () => {
       </div>
       <div className={style.admin_section}>
         <div className={style.admin_card}>
-          <h3 className={style.admin_header_text}>Enter the email Id: </h3>
           <div className={style.inside_admin}>
             <div className={style.form_row}></div>
             <div className={style.admin_input}>

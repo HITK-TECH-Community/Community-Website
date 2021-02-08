@@ -189,7 +189,7 @@
   background-color: transparent;
 }
 
-.check_box input[type="checkbox"]:checked + label:after {
+.checkbox_item input[type="checkbox"]:checked + label:after {
   width: 20px;
   height: 20px;
   position: absolute;

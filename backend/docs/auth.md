@@ -13,8 +13,9 @@ This module is responsible for all the activities related to authentication.
         | email       | string, required|
         | password    | string, required|
 
-    - ![diagram](images/loginroute.jpg)
-    <br>
+  ![diagram](images/loginroute.jpg)
+
+  <br>
 
 ##### The auth middleware uses JWT method for verification.
 <br>

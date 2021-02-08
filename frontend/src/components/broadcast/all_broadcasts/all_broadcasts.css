@@ -82,6 +82,7 @@ main {
   background-color: rgb(255, 255, 255, 0.2);
   border-radius: 15px;
   margin-right: 16px;
+  margin-left: 25px;
   position: relative;
   width: 228px;
 }

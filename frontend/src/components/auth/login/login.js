@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from "react";
-import "./login.css";
+import styles from "./login.module.css";
 
 // Show/Hide Functionality.
 window.onload = function () {
@@ -145,18 +145,15 @@ const Login = () => {
     });
   };
   return (
-    <div className="login-section">
-      <div className="login-image child1">
-        <img
-          src="./images/login.png"
-          alt="login-illustration"
-        />
+    <div className={styles.loginSection}>
+      <div className={`${styles.loginImage} ${styles.child1}`}>
+        <img src="./images/login.png" alt="login-illustration" />
       </div>
-      <div className="login-form child2">
-        <div className="login-card">
-          <h1 className="card-heading">Welcome Back</h1>
-          <div className="inside-card">
-            <div className="login-input">
+      <div className={`${styles.loginForm} ${styles.child2}`}>
+        <div className={styles.loginCard}>
+          <h1 className={styles.cardHeading}>Welcome Back</h1>
+          <div className={styles.insideCard}>
+            <div className={styles.loginInput}>
               <input
                 autocomplete="off"
                 error={state.isError}
@@ -171,7 +168,7 @@ const Login = () => {
               />
               <i className="fas fa-user"></i>
             </div>
-            <div className="login-input">
+            <div className={styles.loginInput}>
               <input
                 error={state.isError}
                 id="password"
@@ -185,10 +182,10 @@ const Login = () => {
               />
               <i className="far fa-eye" id="togglePassword"></i>
             </div>
-            <div className="login-input" style={{ textAlign: "center" }}>
+            <div className={styles.loginInput} style={{ textAlign: "center" }}>
               <button
                 id="btn"
-                className="login-btn main-btn main-btn-2"
+                className={`${styles.loginBtn} main-btn main-btn-2`}
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
               >

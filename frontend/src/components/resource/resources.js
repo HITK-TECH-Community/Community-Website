@@ -1,19 +1,19 @@
 import React from "react";
+import style from "./resources.module.css";
 import { Button2 } from "../util/button/button";
-import "./resources.css";
 
 const Resources = () => {
   return (
-    <div className="resource-section ">
-      <div className="resource-image child1">
+    <div className={style.resourceSection}>
+      <div className={`${style.resourceImage} ${style.child1}`}>
         <img src="./images/resource.png" alt="" />
       </div>
-      <div className="resource-form child2">
-        <div className="resource-card">
-          <h3 className="resource-header-text">Resource Sharing Form</h3>
-          <div className="inside-resource">
-            <div className="form-group">
-              <div className="resource-input">
+      <div className={`${style.resourceForm} ${style.child2}`}>
+        <div className={style.resourceCard}>
+          <h3 className={style.resourceHeaderText}>Resource Sharing Form</h3>
+          <div className={style.insideResource}>
+            <div className={`form-group ${style.formGroup}`}>
+              <div className={style.resourceInput}>
                 <input
                   placeholder="Name"
                   id="txt_name"
@@ -25,8 +25,8 @@ const Resources = () => {
               </div>
             </div>
 
-            <div className="form-group ">
-              <div className="resource-input">
+            <div className={`form-group ${style.formGroup}`}>
+              <div className={style.resourceInput}>
                 <input
                   placeholder="Email ID"
                   id="txt_email"
@@ -34,12 +34,12 @@ const Resources = () => {
                   Required="required"
                   name="email"
                 />
-                <i className="far fa-envelope"></i>
+                <i className="fas fa-envelope"></i>
               </div>
             </div>
 
-            <div className="form-group ">
-              <div className="resource-input">
+            <div className={`form-group ${style.formGroup}`}>
+              <div className={style.resourceInput}>
                 <input
                   placeholder="Resource URL"
                   id="txt_link"
@@ -51,10 +51,10 @@ const Resources = () => {
               </div>
             </div>
 
-            <div className="resource-input">
+            <div className={style.resourceInput}>
               <textarea
                 placeholder="Resource Description"
-                id="txt_desc"
+                id={style.txt_desc}
                 rows="6"
                 cols="20"
                 name="resourcedesc"
@@ -62,56 +62,58 @@ const Resources = () => {
               ></textarea>
               <i className="fas fa-comment-dots"></i>
             </div>
-            <div className="resource-input1">
+            <div className={style.resourceInput1}>
               <div>
-                <label className="mb-3 levelOfTrust">Level Of Trust</label>
+                <label className={`mb-3 ${style.levelOfTrust}`}>
+                  Level Of Trust
+                </label>
               </div>
-              <div className="radioButtons">
-                <div class="radio-item">
+              <div className={style.radioButtons}>
+                <div class={style.radioItem}>
                   <input type="radio" id="ritema" name="one" />
-                  <label className="mx-3 label" for="ritema">
+                  <label className={`mx-3 ${style.label}`} for="ritema">
                     1
                   </label>
                 </div>
-                <div class="radio-item">
+                <div class={style.radioItem}>
                   <input type="radio" id="ritemb" name="one" />
-                  <label className="mx-3 label" for="ritemb">
+                  <label className={`mx-3 ${style.label}`} for="ritemb">
                     2
                   </label>
                 </div>
-                <div class="radio-item">
+                <div class={style.radioItem}>
                   <input type="radio" id="ritemc" name="one" />
-                  <label className="mx-3 label" for="ritemc">
+                  <label className={`mx-3 ${style.label}`} for="ritemc">
                     3
                   </label>
                 </div>
-                <div class="radio-item">
+                <div class={style.radioItem}>
                   <input type="radio" id="ritemd" name="one" />
-                  <label className="mx-3 label" for="ritemd">
+                  <label className={`mx-3 ${style.label}`} for="ritemd">
                     4
                   </label>
                 </div>
-                <div class="radio-item">
+                <div class={style.radioItem}>
                   <input type="radio" id="riteme" name="one" />
-                  <label className="mx-3 label" for="riteme">
+                  <label className={`mx-3 ${style.label}`} for="riteme">
                     5
                   </label>
                 </div>
               </div>
             </div>
-            <div className="resource-input">
-              <div className="valid-until">
+            <div className={style.resourceInput}>
+              <div className={style.validUntil}>
                 <input
                   required
                   name="dob"
-                  class="textbox-n"
+                  class={style.textboxN}
                   type="date"
                   id="date"
                   placeholder="Valid Until:&nbsp;"
                 />
               </div>
             </div>
-            <div className="resource-input">
+            <div className={style.resourceInput}>
               <textarea
                 placeholder="Additional Info (Optional)"
                 id="txt_info"
@@ -121,9 +123,9 @@ const Resources = () => {
               ></textarea>
               <i className="fas fa-pencil-alt"></i>
             </div>
-            <div className="submit-btn">
+            <div className={style.submitBtn}>
               <Button2
-                className="submit-btn-text"
+                className={style.submitBtnText}
                 label="Submit"
                 type="submit"
               />

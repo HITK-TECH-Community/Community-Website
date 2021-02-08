@@ -1,5 +1,4 @@
 # Community-Website
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-bot-orange.svg?style=flat-square)](#contributors-)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
@@ -24,9 +23,9 @@ This project aims to build the official site for the community page so that any 
 ##  Getting Started 👨‍💻
 ### Setup the repository to your local environment.
 
-1. `fork` the repository ,     Creates a replica of repository to your local environment.
-2. `git clone https://github.com/YOUR-USERNAME/Community-Website`   Downloads all repo files to your machine.
-3. `cd Community-Website`  Takes you to the root directory of the project.
+1. `fork` the repository  - Creates a replica of repository to your local environment.
+2. Clone the repository using `git clone https://github.com/YOUR-USERNAME/Community-Website`  - Downloads all repo files to your machine.
+3. `cd Community-Website`  - Takes you to the root directory of the project.
 
 ## Frontend ⚛️
 
@@ -50,7 +49,7 @@ All the backend code will go in the `backend` folder.
 
 ## Related Repositories 📂
 
-- [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community): The repository containing all the broadcasts done by HITK-TECH-Community
+- [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community) : The repository containing all the broadcasts done by HITK-TECH-Community
 
 ## Community 👥
 

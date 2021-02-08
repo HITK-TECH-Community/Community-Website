@@ -21,7 +21,7 @@ Before executing every route function validation middleware gets executed which 
     <br>
 
 - [ <b>POST</b> ] :<code> <b> /admin </b> </code>
-    - For creating admin account
+    - Create a new admin account
 
     - request body : 
         | Parameter   | description |
@@ -36,7 +36,7 @@ Before executing every route function validation middleware gets executed which 
 <br>
 
 - [ <b>PUT</b> ] :<code> <b> /admin/password </b> </code>
-    - To change the existing user's password
+    - Change the existing admin's Password
     - request body : 
         | Parameter   | desciption |
         | ----------- | -----------

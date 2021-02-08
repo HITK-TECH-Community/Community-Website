@@ -4,7 +4,7 @@
   padding: 40px 40px 40px 40px;
 }
 
-.terms-img {
+.termsImg {
   width: 100%;
   height: 50vh;
   opacity: 0.8;
@@ -27,7 +27,7 @@
   margin: 0 auto;
 }
 @media only screen and (max-width: 600px) {
-  .terms-img {
+  .termsImg {
     height: 35vh;
   }
 

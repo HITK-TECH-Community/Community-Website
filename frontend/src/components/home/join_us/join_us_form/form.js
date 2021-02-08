@@ -196,19 +196,19 @@ const JoinUsForm = () => {
                 Year of Study
               </label>
               <div className={styles.radioButtons}>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>1st</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>2nd</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>3rd</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>4th</label>
                 </div>

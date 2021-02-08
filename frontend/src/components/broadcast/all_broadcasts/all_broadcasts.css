@@ -77,3 +77,48 @@ main {
     max-width: 100vw;
   }
 }
+
+.search {
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 15px;
+  margin-right: 16px;
+  position: relative;
+  width: 228px;
+}
+
+.search:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    width: auto;
+  }
+}
+
+.searchIcon {
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputInput {
+  padding: 8px 8px 8px 0;
+  box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
+  border-radius: 12px;
+  height: 3em;
+  border: 1px solid #eeeeee;
+  padding-left: calc(1em + 32px);
+  width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  .inputInput {
+    width: 40ch;
+  }
+}

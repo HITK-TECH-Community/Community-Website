@@ -21,7 +21,7 @@
   transition: background 0.3s ease-out;
 }
 
-.clickable-card {
+.clickablecard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,16 +31,16 @@
   height: 380px;
 }
 
-.card-title {
+.cardtitle {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   line-height: 1.9rem;
   font-weight: bold;
 }
-.card-title:hover {
+.cardtitle:hover {
   cursor: pointer;
 }
-.card-content {
+.cardcontent {
   font-weight: normal;
   text-align: center;
   font-size: 1.2rem;
@@ -59,7 +59,7 @@
   margin-left: 5px;
   margin-bottom: 6px;
 }
-.main-btn {
+.mainbtn {
   font-family: "Futura LT Book";
   display: inline-block;
   font-weight: 500;
@@ -88,7 +88,7 @@
   border: 0;
 }
 
-.main-btn:hover {
+.mainbtn:hover {
   background-color: #fff;
   color: #1863ff;
   -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
@@ -99,7 +99,7 @@
   .carditem {
     width: 90%;
   }
-  .main-btn {
+  .mainbtn {
     text-align: center;
   }
 }

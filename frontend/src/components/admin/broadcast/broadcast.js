@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./broadcast.css";
 import { AiFillEdit } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -14,18 +14,18 @@ export default function Broadcast() {
         <div className="carditem">
           <div className="clickable-card">
             <div className="card-title">
-              <Link to="/editor" style={{ color: "white" }}>
+              <Link to="/add_broadcast" style={{ color: "white" }}>
                 ADD BROADCAST
               </Link>
               <AiOutlinePlus className="add" />
             </div>
             <div className="card-content">
-              <p>To add a new broadcast</p>
+              <p style={{ textAlign: "left" }}>To add a new broadcast</p>
               <p
                 // onClick={openEditor}
-                style={{ color: "red", cursor: "pointer" }}
+                style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
-                <Link to="/editor" style={{ color: "red" }}>
+                <Link to="/add_broadcast" style={{ color: "red" }}>
                   CLICK HERE
                 </Link>
               </p>

@@ -11,7 +11,7 @@ import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts"
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
-import Editor from "./components/admin/editor/editor";
+import AddBroadcasts from "./components/admin/add_broadcasts/add_broadcasts";
 import Faqs from "./components/faq/faq";
 import NotFound from "./components/404/not_found";
 import Login from "./components/auth/login/login";
@@ -46,7 +46,7 @@ const App = () => {
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route exact path="/join_us_form" component={JoinUsForm} />
-            <Route exact path="/editor" component={Editor} />
+            <Route exact path="/add_broadcast" component={AddBroadcasts} />
             <Route component={NotFound} />
           </Switch>
         </Router>

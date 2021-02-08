@@ -29,11 +29,6 @@
   color: var(--secondary-color);
 }
 
-.main-btn.main-btn-2 {
-  width: 100%;
-  font-size: 16px;
-}
-
 .back:hover {
   color: white;
 }

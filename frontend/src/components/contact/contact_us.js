@@ -1,5 +1,5 @@
 import React from "react";
-import { Button2 } from "../util/button/button";
+import { Button3 } from "../util/button/button";
 import styles from "./contact_us.module.css";
 const ContactUs = () => {
   return (
@@ -59,7 +59,7 @@ const ContactUs = () => {
                 <i className="fas fa-comment-dots"></i>
               </div>
               <div className={styles.submitBtn}>
-                <Button2
+                <Button3
                   className={styles.submitBtnText}
                   label="Let's Talk!"
                   type="submit"

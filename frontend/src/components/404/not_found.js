@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./not_found.module.css";
-import { Button2 } from "../util/button/button";
+import { Button3 } from "../util/button/button";
 
 const NotFound = () => {
   return (
@@ -18,7 +18,7 @@ const NotFound = () => {
           The page you are looking for is not available.
         </div>
         <a href="/">
-          <Button2 label="Go Home!" type="submit" />
+          <Button3 label="Go Home!" type="submit" />
         </a>
       </div>
     </div>

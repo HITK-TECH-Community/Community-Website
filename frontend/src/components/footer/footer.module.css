@@ -337,7 +337,7 @@ a > span {
   margin-top: 0;
 }
 
-.submit-btn-footer {
+.submitBtnFooter {
   outline: none;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -359,7 +359,7 @@ a > span {
   border: 2px solid #ee4d55;
 }
 
-.validation-new {
+.validationNew {
   color: red;
   margin-bottom: 25px;
 }
@@ -383,7 +383,7 @@ a > span {
   .legal .legalLinks {
     margin-left: auto;
   }
-  .validation-new {
+  .validationNew {
     display: none;
   }
 }
@@ -405,19 +405,19 @@ a > span {
     flex: 2 0px;
   }
 
-  .validation-new {
+  .validationNew {
     display: none;
   }
 }
 
 @media screen and(max-width:571px) {
-  .validation-new {
+  .validationNew {
     display: none;
   }
 }
 
 @media screen and (max-width: 390px) {
-  .validation-new {
+  .validationNew {
     display: none;
   }
 }

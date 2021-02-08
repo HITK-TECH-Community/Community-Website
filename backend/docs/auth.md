@@ -5,7 +5,8 @@
 This module is responsible for all the activities related to authentication.
 
 ### API description
--    <code> <b> /auth/login </b> </code> [ <b>POST</b> ]
+-  <code> <b> /auth/login </b> </code> [<b>POST</b> ]
+<br>
     - Login for existing users
     - request body : 
         | Parameter   | Description|
@@ -13,9 +14,11 @@ This module is responsible for all the activities related to authentication.
         | email       | string, required|
         | password    | string, required|
 
-  ![diagram](images/loginroute.jpg)
+<br>
 
-  <br>
+  - ![diagram](images/loginroute.jpg)
+
+<br>
 
 ##### The auth middleware uses JWT method for verification.
 <br>

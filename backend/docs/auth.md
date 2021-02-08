@@ -6,7 +6,6 @@ This module is responsible for all the activities related to authentication.
 
 ### API description
 -  <code> <b> /auth/login </b> </code> [<b>POST</b> ]
-<br>
     - Login for existing users
     - request body : 
         | Parameter   | Description|

@@ -15,6 +15,7 @@ This module is responsible for all the activities related to authentication.
 
     - ![diagram](images/loginroute.jpg)
     <br>
+
 ##### The auth middleware uses JWT method for verification.
 <br>
 
@@ -47,6 +48,7 @@ The user submits the login data which is collected by the server and using these
   ![diagram](images/error.jpg)
 
 <br>
+
 - <b>errorType</b> - describes the type of error whether - it is internal server error, database error etc.
 - <b>statusCode</b> -HTTP response code eg:- 400, 401, 500 etc
 - <b>message</b> - used for sending the custom error messages.

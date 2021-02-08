@@ -327,6 +327,11 @@ a > span {
   background-color: #ffffff;
 }
 
+.validation {
+  color: red;
+  margin-top: 0;
+}
+
 .submit-btn-footer {
   outline: none;
   border: 2px solid transparent;
@@ -349,6 +354,11 @@ a > span {
   border: 2px solid #ee4d55;
 }
 
+.validation-new {
+  color: red;
+  margin-bottom: 25px;
+}
+
 .cprt {
   padding: 4px;
 }
@@ -368,6 +378,9 @@ a > span {
   .legal .legal__links {
     margin-left: auto;
   }
+  .validation-new {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 40.375em) {
@@ -385,5 +398,21 @@ a > span {
 
   .footer__nav {
     flex: 2 0px;
+  }
+
+  .validation-new {
+    display: none;
+  }
+}
+
+@media screen and(max-width:571px) {
+  .validation-new {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .validation-new {
+    display: none;
   }
 }

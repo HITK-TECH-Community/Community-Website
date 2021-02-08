@@ -290,7 +290,6 @@ input[type="date"]:not(:valid):before {
 .submitBtn {
   display: flex;
   justify-content: center;
-  align-items: center;
   width:40%;
   margin: 0 auto;
 }

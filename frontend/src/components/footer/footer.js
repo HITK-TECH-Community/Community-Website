@@ -85,6 +85,10 @@ class Footer extends React.Component {
                   onChange={this.handleChange.bind(this, "email")}
                   value={this.state.fields["email"]}
                 />
+                <br />
+                <div className="validation d-sm-block d-md-none">
+                  <div>{this.state.errors["email"]}</div>
+                </div>
                 <button
                   type="submit"
                   className="mt-3 mt-md-0 submit-btn-footer py-2 px-3 "
@@ -92,7 +96,7 @@ class Footer extends React.Component {
                   Sign Up
                 </button>
               </form>
-              <div className="row validation">
+              <div className="validation-new d-sm-none d-md-block">
                 <div>{this.state.errors["email"]}</div>
               </div>
             </div>

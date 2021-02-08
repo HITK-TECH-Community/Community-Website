@@ -329,7 +329,7 @@ a > span {
 
 .validation {
   color: red;
-  margin-bottom: 25px;
+  margin-top: 0;
 }
 
 .submit-btn-footer {
@@ -354,6 +354,11 @@ a > span {
   border: 2px solid #ee4d55;
 }
 
+.validation-new {
+  color: red;
+  margin-bottom: 25px;
+}
+
 .cprt {
   padding: 4px;
 }
@@ -373,6 +378,9 @@ a > span {
   .legal .legal__links {
     margin-left: auto;
   }
+  .validation-new {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 40.375em) {
@@ -390,5 +398,21 @@ a > span {
 
   .footer__nav {
     flex: 2 0px;
+  }
+
+  .validation-new {
+    display: none;
+  }
+}
+
+@media screen and(max-width:571px) {
+  .validation-new {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .validation-new {
+    display: none;
   }
 }

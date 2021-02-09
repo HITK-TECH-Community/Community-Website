@@ -13,16 +13,24 @@ import styles from "./dropmenu.module.css";
 const useStyles = makeStyles((theme) => ({
   button: {
     fontFamily: '"Futura LT Book", sans-serif',
+    textAlign: "center",
+    transition: "0.5s",
+    backgroundSize: "200% auto",
+    color: "white",
+    boxShadow: "0 0 20px #eee",
+    borderRadius: "10px",
     padding: "8px 20px",
-    borderRadius: "4px",
     outline: "none",
     border: "none",
     fontSize: "18px",
-    color: "#fff",
     cursor: "pointer",
-    backgroundColor: "#fc0254",
+    backgroundImage:
+      "linear-gradient(to right, #FF7052, #FDAB48, #FCC006)",
     "&:hover": {
-      backgroundColor: "#fc0254b3",
+      backgroundPosition: "right center",
+      color: "#fff",
+      transform: "scale(1.1)",
+      textDecoration: "none",
     },
     "&:focus": {
       outline: "none !important",

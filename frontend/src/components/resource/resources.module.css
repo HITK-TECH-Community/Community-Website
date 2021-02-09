@@ -140,18 +140,23 @@
 .fa-user:hover {
   color: #34b7f1;
 }
+
 .fa-phone:hover {
   color: #32e25e;
 }
+
 .fa-envelope:hover {
   color: #c71610;
 }
+
 .fa-link:hover {
   color: #5214e0;
 }
+
 .fa-pen-square:hover {
   color: #5c0572;
 }
+
 .insideResource {
   width: 85%;
   margin: 0 auto;

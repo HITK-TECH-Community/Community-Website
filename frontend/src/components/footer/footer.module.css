@@ -346,6 +346,7 @@ a > span {
   cursor: pointer;
   background-color: #ee4d55;
   transition: all 0.3s;
+  line-height: 1.75em;
 }
 
 .submitBtnFooter:focus {

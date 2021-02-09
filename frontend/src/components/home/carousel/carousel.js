@@ -3,7 +3,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./carousel.css";
-import "../motive/motive.css";
+import style from "../motive/motive.module.css";
 export class Owldemo1 extends Component {
   constructor(props) {
     super(props);
@@ -38,9 +38,9 @@ export class Owldemo1 extends Component {
   render() {
     return (
       <div className="carousel-div">
-        <div className="motive">
+        <div className={`motive ${style.motive}`}>
           <h1 style={{ color: "#121f3a" }}>Curious to know More about Us?</h1>
-          <div className="dash"></div>
+          <div className={style.dash}></div>
         </div>
         <div className="container">
           <OwlCarousel

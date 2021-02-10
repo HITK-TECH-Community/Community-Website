@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import { Button2 } from "../../util/button/button";
+
+import { Button3 } from "../../util/button/button";
 import styles from "./join_us.module.css";
 
 const JoinUs = () => {
@@ -12,7 +13,7 @@ const JoinUs = () => {
           Join us in the mission of reducing the knowledge gap in students.
         </h2>
         <a href="/join_us_form">
-          <Button2 label="Join Us!" type="submit" />
+          <Button3 label="Join Us!" type="submit" />
         </a>
       </div>
     </Fragment>

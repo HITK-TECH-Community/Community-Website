@@ -39,3 +39,14 @@ export const Button2 = (props) => {
     </button>
   );
 };
+
+export const Button3 = (props) => {
+  return (
+    <button
+      type={props?.type || "button"}
+      className="main-btn main-btn-2 main-btn-3"
+    >
+      {props?.label}
+    </button>
+  );
+};

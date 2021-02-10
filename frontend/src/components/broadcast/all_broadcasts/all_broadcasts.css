@@ -17,25 +17,10 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-@media (min-width: 380px) {
-  .appbar {
-    width: 80vw;
-  }
-}
+
 .filters {
   display: flex;
   margin: 15px 10px 15px auto;
-}
-
-@media (max-width: 780px) {
-  .appbar {
-    justify-content: center;
-  }
-
-  .filters {
-    display: flex;
-    margin: 15px auto;
-  }
 }
 
 #hero {
@@ -68,6 +53,57 @@ main {
   margin: 0.5em;
 }
 
+.searchIcon {
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputInput {
+  padding: 8px 8px 8px 0;
+  box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
+  border-radius: 12px;
+  height: 3em;
+  border: 1px solid #eeeeee;
+  padding-left: calc(1em + 32px);
+  width: 100%;
+}
+
+.search {
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 15px;
+  margin-right: 16px;
+  margin-left: 25px;
+  position: relative;
+  width: 228px;
+}
+
+.search:hover {
+  background-color: rgb(255, 255, 255, 0.8);
+}
+
+@media (min-width: 380px) {
+  .appbar {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .appbar {
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    margin: 15px auto;
+  }
+}
+
 @media screen and (orientation: portrait) {
   #hero {
     flex-direction: column;
@@ -75,5 +111,17 @@ main {
 
   img {
     max-width: 100vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .inputInput {
+    width: 40ch;
   }
 }

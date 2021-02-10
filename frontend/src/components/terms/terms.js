@@ -1,18 +1,18 @@
 import React from "react";
 import { Button2 } from "../util/button/button";
-import "./terms.css";
+import style from "./terms.module.css";
 const Terms = () => {
   return (
     <div>
-      <div className="terms-section">
-        <img src="./images/terms.png" alt="" className="terms-img" />
+      <div className={style.termsSection}>
+        <img src="./images/terms.png" alt="" className={style.termsImg} />
       </div>
-      <div className="terms">
+      <div className={style.terms}>
         <div className="row text-center">
           <h1>Terms Of Use</h1>
         </div>
       </div>
-      <div className="agreement">
+      <div className={style.agreement}>
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
@@ -52,7 +52,7 @@ const Terms = () => {
               quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur
               at!
             </p>
-            <div className="agree">
+            <div className={style.agree}>
               <Button2 label="Agree and Continue" type="submit" />
             </div>
           </div>

@@ -1,50 +1,10 @@
 import React from "react";
 import "./all_broadcasts.css";
 
-import { makeStyles, InputBase, fade } from "@material-ui/core";
+import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import Dropmenu from "./../../dropmenu/DropMenu";
 import Card from "./card/card";
-
-const useStyles = makeStyles((theme) => ({
-  search: {
-    position: "relative",
-    backgroundColor: fade(theme.palette.common.white, 0.45),
-    borderRadius: 15,
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.65),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: 228,
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    boxShadow: "inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff",
-    borderRadius: 12,
-    height: 21,
-    border: "1px solid #eeeeee",
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
 
 function AllBroadcasts() {
   let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
@@ -86,26 +46,24 @@ function AllBroadcasts() {
     ["Private AI Series", str2],
     ["Crio Winter Of Doing ", str1],
   ];
-  const classes = useStyles();
+
   return (
     <main>
       <div id="hero">
         <div className="motive">
-          <h1 className="carousel-head">Broadcasts</h1>
+          <h1 className="carousel-head">All Broadcasts</h1>
           <div className="dash"></div>
         </div>
       </div>
       <div className="appbarWrap">
         <div className="appbar">
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
+          <div className="search">
+            <div className="searchIcon">
               <Search />
             </div>
             <InputBase
               placeholder="Find a Broadcast…"
-              classes={{
-                input: classes.inputInput,
-              }}
+              className="inputInput"
               inputProps={{ "aria-label": "search" }}
             />
           </div>

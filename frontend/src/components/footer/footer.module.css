@@ -316,6 +316,7 @@ a > span {
   width: 250px;
   text-align: center;
   margin-right: 10px;
+  height: 35px;
 }
 
 .inputFieldFooter:focus {
@@ -346,7 +347,7 @@ a > span {
   cursor: pointer;
   background-color: #ee4d55;
   transition: all 0.3s;
-  line-height: 1.75em;
+  height: 35px;
 }
 
 .submitBtnFooter:focus {

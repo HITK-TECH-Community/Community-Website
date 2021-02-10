@@ -181,6 +181,11 @@
   margin-right: auto;
 }
 
+.mx_3 {
+  margin-right: 0px!important;
+  margin-left: 1rem!important;
+}
+
 .radio_item label:before {
   display: inline-block;
   position: relative;

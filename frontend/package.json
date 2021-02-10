@@ -26,6 +26,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
     "styled-components": "^5.2.1",
+    "suneditor-react": "^2.15.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

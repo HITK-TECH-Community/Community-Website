@@ -1,19 +1,19 @@
 import React from "react";
-import "./form.css";
+import styles from "./form.module.css";
 import { Button2 } from "../../../util/button/button";
 const JoinUsForm = () => {
   return (
-    <div className="joinusform-section">
-      <div className="joinusform-image child1">
+    <div className={styles.joinusformSection}>
+      <div className={`${styles.joinusformImage} ${styles.child1}`}>
         <img src="./images/joinus.jpg" alt="" />
       </div>
-      <div className="joinus-form child2">
-        <div className="joinusform-card">
-          <h3 className="joinusform-header-text">Join Us Form</h3>
-          <div className="inside-joinusform">
-            <div className="form-row">
-              <div className="form-group col-sm-6">
-                <div className="joinusform-input">
+      <div className={`${styles.joinusForm} ${styles.child2}`}>
+        <div className={styles.joinusformCard}>
+          <h3 className={styles.joinusformHeaderText}>Join Us Form</h3>
+          <div className={styles.insideJoinusform}>
+            <div className={styles.formRow}>
+              <div className={`${styles.formGroup} col-sm-6`}>
+                <div className={styles.joinusformInput}>
                   <input
                     placeholder="Name"
                     id="txt_name"
@@ -24,8 +24,8 @@ const JoinUsForm = () => {
                   <i className="fas fa-user"></i>
                 </div>
               </div>
-              <div className="form-group2 col-sm-6">
-                <div className="joinusform-input">
+              <div className={`${styles.formGroup2} col-sm-6`}>
+                <div className={styles.joinusformInput}>
                   <input
                     placeholder="Contact No."
                     id="phone"
@@ -37,8 +37,8 @@ const JoinUsForm = () => {
                 </div>
               </div>
             </div>
-            <div className="form-group ">
-              <div className="joinusform-input">
+            <div className={styles.formGroup}>
+              <div className={styles.joinusformInput}>
                 <input
                   placeholder="Email ID"
                   id="txt_email"
@@ -49,8 +49,8 @@ const JoinUsForm = () => {
                 <i className="fas fa-envelope-open-text"></i>
               </div>
             </div>
-            <div className="form-group ">
-              <div className="joinusform-input">
+            <div className={styles.formGroup}>
+              <div className={styles.joinusformInput}>
                 <input
                   placeholder="Linkedin Profile URL"
                   id="txt_link"
@@ -61,7 +61,7 @@ const JoinUsForm = () => {
                 <i class="fas fa-link"></i>
               </div>
             </div>
-            <div className="joinusform-input">
+            <div className={styles.joinusformInput}>
               <textarea
                 placeholder="How can you contribute to help the community?"
                 id="txt_desc"
@@ -72,7 +72,7 @@ const JoinUsForm = () => {
               ></textarea>
               <i className="fas fa-comment-dots"></i>
             </div>
-            <div className="joinusform-input">
+            <div className={styles.joinusformInput}>
               <label className="mb-2">Interested Domain</label>
               <select>
                 <option value="android">Android</option>
@@ -87,8 +87,8 @@ const JoinUsForm = () => {
                 <option value="other">Other</option>
               </select>
             </div>
-            <div className="form-group ">
-              <div className="joinusform-input">
+            <div className={styles.formGroup}>
+              <div className={styles.joinusformInput}>
                 <input
                   placeholder="Other - if the domain is not listed above"
                   id="txt_other"
@@ -99,8 +99,8 @@ const JoinUsForm = () => {
                 <i class="fas fa-pencil-alt"></i>
               </div>
             </div>
-            <div className="form-group ">
-              <div className="joinusform-input">
+            <div className={styles.formGroup}>
+              <div className={styles.joinusformInput}>
                 <input
                   placeholder="Department"
                   id="txt_dept"
@@ -111,29 +111,31 @@ const JoinUsForm = () => {
                 <i class="fas fa-building"></i>
               </div>
             </div>
-            <div className="joinusform-input1">
-              <label className="mb-4 YearOfStudy">Year of Study</label>
-              <div className="radioButtons">
+            <div className={styles.joinusformInput1}>
+              <label className={`mb-4 ${styles.YearOfStudy}`}>
+                Year of Study
+              </label>
+              <div className={styles.radioButtons}>
                 <div class="radio-item">
                   <input type="radio" name="one" />
-                  <label className="mx-3 label">1st</label>
+                  <label className={`mx-3 ${styles.label}`}>1st</label>
                 </div>
                 <div class="radio-item">
                   <input type="radio" name="one" />
-                  <label className="mx-3 label">2nd</label>
+                  <label className={`mx-3 ${styles.label}`}>2nd</label>
                 </div>
                 <div class="radio-item">
                   <input type="radio" name="one" />
-                  <label className="mx-3 label">3rd</label>
+                  <label className={`mx-3 ${styles.label}`}>3rd</label>
                 </div>
                 <div class="radio-item">
                   <input type="radio" name="one" />
-                  <label className="mx-3 label">4th</label>
+                  <label className={`mx-3 ${styles.label}`}>4th</label>
                 </div>
               </div>
             </div>
-            <div className="form-group ">
-              <div className="joinusform-input">
+            <div className={styles.formGroup}>
+              <div className={styles.joinusformInput}>
                 <input
                   placeholder="College Name"
                   id="txt_college"
@@ -144,9 +146,9 @@ const JoinUsForm = () => {
                 <i class="fas fa-graduation-cap"></i>
               </div>
             </div>
-            <div className="submit-btn">
+            <div className={styles.submitBtn}>
               <Button2
-                className="submit-btn-text"
+                className={styles.submitBtnText}
                 label="Submit"
                 type="submit"
               />

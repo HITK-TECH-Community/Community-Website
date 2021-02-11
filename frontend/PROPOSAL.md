@@ -72,12 +72,16 @@ export class Header extends Components{
 
 **The following convention should strictly be followed.**
 
+<br />
+
 ### File names
 
 DO NOT use `camelCase`, or `PascalCase` to name the CSS/SCSS files. <br />
 **Strictly use `Kebab-case`**
 
 Example - `codeOfConduct.module.scss` will not be accepted. The right way is `code-of-conduct.module.scss`
+
+<br />
 
 ### Variable names
 

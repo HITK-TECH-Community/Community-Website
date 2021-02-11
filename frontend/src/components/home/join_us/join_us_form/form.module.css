@@ -370,4 +370,9 @@ input[type="date"]:not(:valid):before {
   .joinusformInput1 {
     text-align: center;
   }
+
+  .checkbuttons {
+    text-align: left;
+  }
 }
+

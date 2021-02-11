@@ -1,19 +1,23 @@
 import React from "react";
-import { Button2 } from "../util/button/button";
-import "./contact_us.css";
+import { Button3 } from "../util/button/button";
+import styles from "./contact_us.module.css";
 const ContactUs = () => {
   return (
-    <div className="contact-section">
-      <div className="contact-parent">
-        <div className="contact-child child1">
-          <img src="./images/contact-us-image.png" alt="" className="contact-image" />
+    <div className={styles.contactSection}>
+      <div className={styles.contactParent}>
+        <div className={`${styles.contactChild} ${styles.child1}`}>
+          <img
+            src="./images/contact-us-image.png"
+            alt=""
+            className={styles.contactImage}
+          />
         </div>
 
-        <div className="contact-child child2">
-          <div className="contact-card">
-            <h1 className="contact-header-text">Get in touch</h1>
-            <div className="inside-contact">
-              <div className="contact-input">
+        <div className={`${styles.contactChild} ${styles.child2}`}>
+          <div className={styles.contactCard}>
+            <h1 className={styles.contactHeaderText}>Get in touch</h1>
+            <div className={styles.insideContact}>
+              <div className={styles.contactInput}>
                 <input
                   id="txt_name"
                   type="text"
@@ -23,7 +27,7 @@ const ContactUs = () => {
                 />
                 <i className="fas fa-user"></i>
               </div>
-              <div className="contact-input">
+              <div className={styles.contactInput}>
                 <input
                   id="txt_email"
                   type="text"
@@ -33,7 +37,7 @@ const ContactUs = () => {
                 />
                 <i className="fas fa-envelope-open-text"></i>
               </div>
-              <div className="contact-input">
+              <div className={styles.contactInput}>
                 <input
                   id="txt_subject"
                   type="text"
@@ -43,7 +47,7 @@ const ContactUs = () => {
                 />
                 <i className="fas fa-pencil-alt"></i>
               </div>
-              <div className="contact-input">
+              <div className={styles.contactInput}>
                 <textarea
                   id="txt_message"
                   rows="4"
@@ -54,9 +58,9 @@ const ContactUs = () => {
                 ></textarea>
                 <i className="fas fa-comment-dots"></i>
               </div>
-                <div className="submit-btn">
-                <Button2
-                  className="submit-btn-text"
+              <div className={styles.submitBtn}>
+                <Button3
+                  className={styles.submitBtnText}
                   label="Let's Talk!"
                   type="submit"
                 />

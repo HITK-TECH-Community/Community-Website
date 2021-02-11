@@ -1,34 +1,29 @@
 import React from "react";
-import "./setting.css";
-const Setting = () => {
+import style from "./setting.module.css";
+
+export default function setting(props) {
   return (
-    <div>
-      <div className="team container">
-        <h1>Invite Admins</h1>
-        <div className="dash"></div>
-      </div>
-      <div className="admin-section ">
-        <div className="admin-card">
-          <h3 className="admin-header-text"> </h3>
-          <div className="inside-admin">
-            <div className="form-row"></div>
-            <div className="admin-input">
-              <input
-                placeholder="Email ID"
-                id="txt_email"
-                type="text"
-                Required="required"
-                name="email"
-              />
-              <i className="far fa-envelope"></i>
-            </div>
+    <React.Fragment>
+      <h1 className={style.h1}>Setting</h1>
+      <div className={style.container}>
+        <div className={style.contain}>
+          <div className={style.card}>
+            <p className={style.para} onClick={() => props.setTab(0)}>
+              My Profile
+            </p>
           </div>
-          <div class="wrap">
-            <button class="button">Submit</button>
+          <div className={style.card}>
+            <p className={style.para} onClick={() => props.setTab(7)}>
+              Invite Admin
+            </p>
+          </div>
+          <div className={style.card}>
+            <p className={style.para} onClick={() => props.setTab(8)}>
+              Manage Admins
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
-};
-export default Setting;
+}

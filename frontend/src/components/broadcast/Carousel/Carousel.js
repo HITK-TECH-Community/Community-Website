@@ -3,7 +3,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./Carousel.css";
-import "../../home/motive/motive.css";
+import style from "../../home/motive/motive.module.css";
 import Modals from "./Modal/Modals";
 
 export default function Owl(props) {
@@ -82,9 +82,9 @@ export default function Owl(props) {
     <React.Fragment>
       <Modals open={open} handleClose={handleClose} data={data} />
       <div className="slider-div">
-        <div className="motive">
+        <div className={style.motive}>
           <h1 className="carousel-head">{props.head}</h1>
-          <div className="dash"></div>
+          <div className={style.dash}></div>
         </div>
         <OwlCarousel
           className="owl-theme slide "

@@ -5,7 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import "./faq.css";
+import styles from "./faq.module.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,16 +35,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Faqs() {
   const classes = useStyles();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
-    <div className="faq-container">
-      <div className="head">
-        <img src="./images/faq.png" className="faq-image" alt="faq-icon" />
-        Frequently Asked Questions
+    <div className={styles.faqContainer}>
+      <div className={styles.head}>
+        <img
+          src="./images/faq.png"
+          className={styles.faqImage}
+          alt="faq-icon"
+        />
       </div>
-      <div className="faq">
-        <div className="faq-block">
-          <Accordion className={classes.accord}>
+      <div className={styles.faq}>
+        <div className={styles.faqBlock}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel1"}
+            onChange={handleChange("panel1")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -53,7 +65,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className="faq-question">
+              <h3 className={styles.faqQuestion}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to contact with customer service?
               </h3>
@@ -66,7 +78,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel2"}
+            onChange={handleChange("panel2")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -75,7 +91,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className="faq-question">
+              <h3 className={styles.faqQuestion}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to delete my account?
               </h3>
@@ -88,7 +104,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel3"}
+            onChange={handleChange("panel3")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -97,7 +117,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className="faq-question">
+              <h3 className={styles.faqQuestion}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;Where is edit option on dashboard?
               </h3>
@@ -110,7 +130,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel4"}
+            onChange={handleChange("panel4")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -119,7 +143,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className="faq-question">
+              <h3 className={styles.faqQuestion}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;Is there any custom pricing system?
               </h3>
@@ -132,7 +156,11 @@ export default function Faqs() {
               </Typography>
             </AccordionDetails>
           </Accordion>
-          <Accordion className={classes.accord}>
+          <Accordion
+            className={classes.accord}
+            expanded={expanded === "panel5"}
+            onChange={handleChange("panel5")}
+          >
             <AccordionSummary
               style={{ color: "white" }}
               expandIcon={
@@ -141,7 +169,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className="faq-question">
+              <h3 className={styles.faqQuestion}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to change my password?
               </h3>

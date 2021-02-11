@@ -14,7 +14,9 @@
     "mdbreact": "^5.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "react-card-flip": "^1.0.11",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
     "react-owl-carousel": "^2.3.1",
     "react-popper": "^2.2.4",
     "react-router-dom": "^5.2.0",
@@ -24,6 +26,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
     "styled-components": "^5.2.1",
+    "suneditor-react": "^2.15.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

@@ -21,7 +21,7 @@ const JoinUsForm = () => {
                     Required="required"
                     name="name"
                   />
-                  <i className="fas fa-user"></i>
+                  <i className={`fas fa-user ${styles.user}`}></i>
                 </div>
               </div>
               <div className={`${styles.formGroup2} col-sm-6`}>
@@ -33,7 +33,7 @@ const JoinUsForm = () => {
                     Required="required"
                     name="phone"
                   />
-                  <i class="fas fa-phone"></i>
+                  <i className={`fas fa-phone ${styles.phone}`}></i>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@ const JoinUsForm = () => {
                   Required="required"
                   name="email"
                 />
-                <i className="fas fa-envelope-open-text"></i>
+                <i className={`fas fa-envelope-open-text ${styles.envelope}`}></i>
               </div>
             </div>
             <div className={styles.formGroup}>
@@ -58,34 +58,144 @@ const JoinUsForm = () => {
                   Required="required"
                   name="link"
                 />
-                <i class="fas fa-link"></i>
+                <i className={`fas fa-link ${styles.link}`}></i>
               </div>
             </div>
             <div className={styles.joinusformInput}>
               <textarea
                 placeholder="How can you contribute to help the community?"
                 id="txt_desc"
-                rows="6"
+                rows="2"
                 cols="20"
                 name="desc"
                 Required="required"
               ></textarea>
-              <i className="fas fa-comment-dots"></i>
+              <i className={`fas fa-comment-dots ${styles.comments}`}></i>
             </div>
-            <div className={styles.joinusformInput}>
-              <label className="mb-2">Interested Domain</label>
-              <select>
-                <option value="android">Android</option>
-                <option value="web">Web</option>
-                <option value="iot">IoT</option>
-                <option value="ai">AI</option>
-                <option value="ml">ML</option>
-                <option value="poster">Poster Designing</option>
-                <option value="video">Video Editing</option>
-                <option value="content">Content Writing</option>
-                <option value="social">Social Media Handling</option>
-                <option value="other">Other</option>
-              </select>
+            <div className={styles.joinusformInput1}>
+              <label className={`mb-4 ${styles.ID}`}>Interested Domains</label>
+              <div className={styles.checkbuttons}>
+              <div class="row">
+              <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="ml"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Machine Learning
+                  </label>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="ai"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Artificial Intelligence
+                  </label>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="android"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                      Android
+                  </label>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="web"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Web Development
+                  </label>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-xl-6">
+              <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="poster"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Poster Designing
+                  </label>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="video"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Video Editing
+                  </label>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="social"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Social Media Handler
+                  </label>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                    <input
+                        name="iot"
+                        type="checkbox"
+                      />
+                    <label className={`${styles.mx_3} ${styles.label}`}>
+                      IoT
+                    </label>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="content"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Content Writing
+                  </label>
+                </div>
+                </div>
+                <div class="col-xl-6">
+                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
+                  <input
+                      name="other"
+                      type="checkbox"
+                    />
+                  <label className={`${styles.mx_3} ${styles.label}`}>
+                    Other
+                  </label>
+                </div>
+                </div>
+              </div>
+              </div>
             </div>
             <div className={styles.formGroup}>
               <div className={styles.joinusformInput}>
@@ -96,7 +206,7 @@ const JoinUsForm = () => {
                   Required="required"
                   name="other"
                 />
-                <i class="fas fa-pencil-alt"></i>
+                <i className={`fas fa-pencil-alt ${styles.pencil}`}></i>
               </div>
             </div>
             <div className={styles.formGroup}>
@@ -108,7 +218,7 @@ const JoinUsForm = () => {
                   Required="required"
                   name="dept"
                 />
-                <i class="fas fa-building"></i>
+                <i className={`fas fa-building ${styles.building}`}></i>
               </div>
             </div>
             <div className={styles.joinusformInput1}>
@@ -116,19 +226,19 @@ const JoinUsForm = () => {
                 Year of Study
               </label>
               <div className={styles.radioButtons}>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>1st</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>2nd</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>3rd</label>
                 </div>
-                <div class="radio-item">
+                <div className={styles.radio_item}>
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles.label}`}>4th</label>
                 </div>
@@ -143,7 +253,7 @@ const JoinUsForm = () => {
                   Required="required"
                   name="college"
                 />
-                <i class="fas fa-graduation-cap"></i>
+                <i className={`fas fa-graduation-cap ${styles.graduation}`}></i>
               </div>
             </div>
             <div className={styles.submitBtn}>

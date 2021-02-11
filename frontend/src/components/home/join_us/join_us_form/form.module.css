@@ -59,6 +59,8 @@
   border: 1px solid #bbbaba;
   border-radius: 5px;
   padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
   color: #777777;
   margin-bottom: 20px;
   margin-bottom: 30px !important;
@@ -107,7 +109,7 @@
 .joinusformInput textarea {
   padding-top: 15px;
   resize: none;
-  height: 100px;
+  height: 80px;
 }
 
 .valid {
@@ -115,10 +117,6 @@
   justify-content: center;
   margin-top: -5%;
   margin-bottom: 25px;
-}
-
-.joinusformInput > textarea#txt_desc {
-  height: 150px !important;
 }
 
 .joinusformInput i {
@@ -130,32 +128,36 @@
   cursor: pointer;
 }
 
-.fa-user:hover {
+.user:hover {
   color: #34b7f1;
 }
 
-.fa-phone:hover {
+.phone:hover {
   color: #32e25e;
 }
 
-.fa-envelope:hover {
+.envelope:hover {
   color: #c71610;
 }
 
-.fa-link:hover {
+.link:hover {
   color: #5214e0;
 }
 
-.fa-pen-square:hover {
+.pencil:hover {
   color: #5c0572;
 }
 
-.fa-graduation-cap:hover {
+.graduation:hover {
   color: #000;
 }
 
-.fa-building:hover {
+.building:hover {
   color: rgb(138, 95, 17);
+}
+
+.comments:hover {
+  color: pink;
 }
 
 .insideJoinusform {
@@ -167,9 +169,24 @@
   width: 24px;
   height: 20px;
   vertical-align: text-bottom;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.radio-item label:before {
+[type="checkbox"] {
+  width: 20px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx_3 {
+  margin-right: 0px!important;
+  margin-left: 1rem!important;
+}
+
+.radio_item label:before {
   display: inline-block;
   position: relative;
   top: 5px;
@@ -178,7 +195,39 @@
   background-color: transparent;
 }
 
-.radio-item input[type="radio"]:checked + label:after {
+.checkbox_item label:before {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  border-radius: 11px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+.checkbox_item input[type="checkbox"]:checked + label:after {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  content: " ";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1),
+    rgba(10, 24, 61, 1) 
+  );
+  border: 4px solid whitesmoke;
+}
+
+.radio_item {
+  display: inline-block;
+  position: relative;
+  padding:0 6px;
+  margin-bottom: 10px;
+}
+
+.radio_item input[type="radio"]:checked + label:after {
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -195,12 +244,28 @@
   border: 4px solid whitesmoke;
 }
 
+.form_check {
+  padding-top: 0px !important;
+  padding-bottom: 1rem;
+  padding-left: 0px;
+}
+
 .YearOfStudy {
   margin-right: 1rem;
-  display: inline;
+  display: block;
+}
+
+.ID {
+  margin-right: 1rem;
+  display: block;
 }
 
 .radioButtons {
+  display: inline;
+  margin-bottom: 1rem;
+}
+
+.checkbuttons {
   display: inline;
   margin-bottom: 1rem;
 }
@@ -213,7 +278,7 @@ input[type="date"]:not(:valid):before {
   content: attr(placeholder);
 }
 
-.form-check {
+.form_check {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0px;
@@ -240,6 +305,8 @@ input[type="date"]:not(:valid):before {
 .submitBtn {
   display: flex;
   justify-content: center;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .submitBtnText {
@@ -260,11 +327,6 @@ input[type="date"]:not(:valid):before {
 
   .formGroup2 {
     width: 100%;
-  }
-
-  .joinusform-parent {
-    width: 85%;
-    margin: 10% auto;
   }
 
   .child1 {
@@ -297,6 +359,10 @@ input[type="date"]:not(:valid):before {
     display: block;
   }
 
+  .ID {
+    display: block;
+  }
+
   .radioButtons {
     margin-bottom: 1rem;
   }
@@ -304,4 +370,9 @@ input[type="date"]:not(:valid):before {
   .joinusformInput1 {
     text-align: center;
   }
+
+  .checkbuttons {
+    text-align: left;
+  }
 }
+

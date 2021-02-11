@@ -2,9 +2,9 @@
 
 **Index**
 
-1. [Folder Structure](##-folder-structure)
-2. [React Component Conventions](##-react-component-conventions)
-3. [CSS Conventions](##-css-conventions)
+1. [Folder Structure](#folder-structure)
+2. [React Component Conventions](#react-component-conventions)
+3. [CSS Conventions](#css-conventions)
 
 ## Folder Structure
 
@@ -53,7 +53,7 @@ frontend
 
 **Rules to follow**
 
-1. Do not use defualt exports. Instead, use [named exports](https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import/36796281#36796281) throughout the project.
+1. Do not use default exports. Instead, use [named exports](https://stackoverflow.com/questions/36795819/when-should-i-use-curly-braces-for-es6-import/36796281#36796281) throughout the project.
 
 ```
 export class Header extends Components{

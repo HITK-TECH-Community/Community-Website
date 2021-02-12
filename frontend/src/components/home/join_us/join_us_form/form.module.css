@@ -182,8 +182,8 @@
 }
 
 .mx_3 {
-  margin-right: 0px!important;
-  margin-left: 1rem!important;
+  margin-right: 0px !important;
+  margin-left: 1rem !important;
 }
 
 .radio_item label:before {
@@ -215,7 +215,7 @@
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 90, 1),
-    rgba(10, 24, 61, 1) 
+    rgba(10, 24, 61, 1)
   );
   border: 4px solid whitesmoke;
 }
@@ -223,7 +223,7 @@
 .radio_item {
   display: inline-block;
   position: relative;
-  padding:0 6px;
+  padding: 0 6px;
   margin-bottom: 10px;
 }
 
@@ -375,4 +375,3 @@ input[type="date"]:not(:valid):before {
     text-align: left;
   }
 }
-

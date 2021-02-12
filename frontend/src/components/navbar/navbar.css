@@ -14,8 +14,8 @@
   text-decoration: none;
 }
 
-.navbar-logo img:hover{
-  filter:hue-rotate(130deg) contrast(180%);
+.navbar-logo img:hover {
+  filter: hue-rotate(130deg) contrast(180%);
 }
 
 .nav-menu {
@@ -59,7 +59,7 @@
   border: 2px solid #fc0254;
 }
 
-.button-div{
+.button-div {
   background-color: transparent;
   color: #fff;
   border-radius: 4px;

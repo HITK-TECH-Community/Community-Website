@@ -25,9 +25,6 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 // Response time
 app.use(responseTime({ suffix: false }));
 
-//middleware
-app.use(express.json({ extended: false }));
-
 // Use routes
 app.use('/', routes);
 

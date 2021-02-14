@@ -4,7 +4,7 @@ import style from "./setting.module.css";
 export default function setting(props) {
   return (
     <React.Fragment>
-      <h1 className={style.h1}>Setting</h1>
+      <h1 className={style.h1}>Settings</h1>
       <div className={style.container}>
         <div className={style.contain}>
           <div className={style.card}>

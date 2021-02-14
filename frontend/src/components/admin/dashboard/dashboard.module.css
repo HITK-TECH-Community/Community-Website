@@ -9,6 +9,10 @@
   margin: 2em;
 }
 
+.content {
+  font-size: 16px;
+}
+
 .crd {
   min-height: 10em;
   display: flex;
@@ -39,12 +43,6 @@
   margin: 0 1em;
   font-size: 20px;
   font-weight: bold;
-}
-
-.count {
-  font-size: 35px;
-  font-weight: bold;
-  margin: 1em 0;
 }
 
 @media (max-width: 600px) {

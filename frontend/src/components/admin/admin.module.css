@@ -32,7 +32,7 @@
 .dashing {
   width: 80%;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 .left {

@@ -1,6 +1,6 @@
-import React, {Fragment, useState} from "react";
-import {NavLink} from "react-router-dom";
-import {Link} from "react-router-dom";
+import React, { Fragment, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -12,7 +12,12 @@ const Navbar = () => {
     <Fragment>
       <nav className="navbar-div">
         <NavLink to="/" className="navbar-logo">
-          <img src="./community-logo.png" alt="logo" width="45px" height="45px"/>
+          <img
+            src="./community-logo.png"
+            alt="logo"
+            width="45px"
+            height="45px"
+          />
         </NavLink>
         <div className="menu-icon" onClick={toggleNav}>
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
@@ -106,7 +111,12 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <NavLink to="/admin" activeClassName="button-div" className="nav-admin-button" exact>
+        <NavLink
+          to="/admin"
+          activeClassName="button-div"
+          className="nav-admin-button"
+          exact
+        >
           admin ?
         </NavLink>
       </nav>

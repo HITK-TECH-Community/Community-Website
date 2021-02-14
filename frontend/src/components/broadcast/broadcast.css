@@ -9,11 +9,13 @@
   font-size: 35px;
   color: #0a183d;
 }
+
 .submit-btn {
   position: relative;
   display: flex;
   justify-content: center;
 }
+
 .myb {
   background: rgba(10, 24, 61, 1);
   padding: 12px 22px;

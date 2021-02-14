@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     fontSize: "18px",
     cursor: "pointer",
-    backgroundImage:
-      "linear-gradient(to right, #FF7052, #FDAB48, #FCC006)",
+    backgroundImage: "linear-gradient(to right, #FF7052, #FDAB48, #FCC006)",
     "&:hover": {
       backgroundPosition: "right center",
       color: "#fff",

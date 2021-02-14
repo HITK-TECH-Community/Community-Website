@@ -1,24 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 import styles from "./login.module.css";
 
-// Show/Hide Functionality.
-window.onload = function () {
-  const togglePassword = document.querySelector("#togglePassword");
-  const password = document.querySelector("#password");
-  if (togglePassword) {
-    togglePassword.addEventListener("click", function (e) {
-      // toggle the type attribute
-      if (password) {
-        const type =
-          password.getAttribute("type") === "password" ? "text" : "password";
-        password.setAttribute("type", type);
-        // toggle the eye slash icon
-        this.classList.toggle("fa-eye-slash");
-      }
-    });
-  }
-};
-
 //state type
 type State = {
   username: "string",
@@ -94,6 +76,22 @@ const Login = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    // Show/Hide Functionality.
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+    if (togglePassword) {
+      togglePassword.addEventListener("click", function (e) {
+        // toggle the type attribute
+        if (password) {
+          const type =
+            password.getAttribute("type") === "password" ? "text" : "password";
+          password.setAttribute("type", type);
+          // toggle the eye slash icon
+          this.classList.toggle("fa-eye-slash");
+        }
+      });
+    }
+
     if (state.username.trim() && state.password.trim()) {
       dispatch({
         type: "setIsButtonDisabled",

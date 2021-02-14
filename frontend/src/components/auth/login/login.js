@@ -162,7 +162,7 @@ const Login = () => {
                 placeholder="Username"
                 onChange={handleUsernameChange}
                 onKeyPress={handleKeyPress}
-                class="inputLogin"
+                className="inputLogin"
               />
               <i className="fas fa-user"></i>
             </div>
@@ -176,7 +176,7 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
-                class="inputLogin"
+                className="inputLogin"
               />
               <i className="far fa-eye" id="togglePassword"></i>
             </div>

@@ -21,7 +21,7 @@ const ContactUs = () => {
                 <input
                   id="txt_name"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="name"
                   placeholder="Your Name"
                 />
@@ -31,7 +31,7 @@ const ContactUs = () => {
                 <input
                   id="txt_email"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="email"
                   placeholder="Your Email"
                 />
@@ -41,7 +41,7 @@ const ContactUs = () => {
                 <input
                   id="txt_subject"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="subject"
                   placeholder="Your Subject"
                 />
@@ -53,7 +53,7 @@ const ContactUs = () => {
                   rows="4"
                   cols="20"
                   name="message"
-                  Required="required"
+                  required="required"
                   placeholder="Your Message"
                 ></textarea>
                 <i className="fas fa-comment-dots"></i>

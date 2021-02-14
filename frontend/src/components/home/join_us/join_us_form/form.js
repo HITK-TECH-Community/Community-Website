@@ -18,7 +18,7 @@ const JoinUsForm = () => {
                     placeholder="Name"
                     id="txt_name"
                     type="text"
-                    Required="required"
+                    required="required"
                     name="name"
                   />
                   <i className={`fas fa-user ${styles.user}`}></i>
@@ -30,7 +30,7 @@ const JoinUsForm = () => {
                     placeholder="Contact No."
                     id="phone"
                     type="tel"
-                    Required="required"
+                    required="required"
                     name="phone"
                   />
                   <i className={`fas fa-phone ${styles.phone}`}></i>
@@ -43,7 +43,7 @@ const JoinUsForm = () => {
                   placeholder="Email ID"
                   id="txt_email"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="email"
                 />
                 <i
@@ -57,7 +57,7 @@ const JoinUsForm = () => {
                   placeholder="Linkedin Profile URL"
                   id="txt_link"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="link"
                 />
                 <i className={`fas fa-link ${styles.link}`}></i>
@@ -70,15 +70,15 @@ const JoinUsForm = () => {
                 rows="2"
                 cols="20"
                 name="desc"
-                Required="required"
+                required="required"
               ></textarea>
               <i className={`fas fa-comment-dots ${styles.comments}`}></i>
             </div>
             <div className={styles.joinusformInput1}>
               <label className={`mb-4 ${styles.ID}`}>Interested Domains</label>
               <div className={styles.checkbuttons}>
-                <div class="row">
-                  <div class="col-xl-6">
+                <div className="row">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -88,7 +88,7 @@ const JoinUsForm = () => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -99,8 +99,8 @@ const JoinUsForm = () => {
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-6">
+                <div className="row">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -110,7 +110,7 @@ const JoinUsForm = () => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -121,8 +121,8 @@ const JoinUsForm = () => {
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-6">
+                <div className="row">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -132,7 +132,7 @@ const JoinUsForm = () => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -143,8 +143,8 @@ const JoinUsForm = () => {
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-6">
+                <div className="row">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -154,7 +154,7 @@ const JoinUsForm = () => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -165,8 +165,8 @@ const JoinUsForm = () => {
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-xl-6">
+                <div className="row">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -176,7 +176,7 @@ const JoinUsForm = () => {
                       </label>
                     </div>
                   </div>
-                  <div class="col-xl-6">
+                  <div className="col-xl-6">
                     <div
                       className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
                     >
@@ -195,7 +195,7 @@ const JoinUsForm = () => {
                   placeholder="Other - if the domain is not listed above"
                   id="txt_other"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="other"
                 />
                 <i className={`fas fa-pencil-alt ${styles.pencil}`}></i>
@@ -207,7 +207,7 @@ const JoinUsForm = () => {
                   placeholder="Department"
                   id="txt_dept"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="dept"
                 />
                 <i className={`fas fa-building ${styles.building}`}></i>
@@ -242,7 +242,7 @@ const JoinUsForm = () => {
                   placeholder="College Name"
                   id="txt_college"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="college"
                 />
                 <i className={`fas fa-graduation-cap ${styles.graduation}`}></i>

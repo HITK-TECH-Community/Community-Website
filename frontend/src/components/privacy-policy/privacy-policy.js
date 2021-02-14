@@ -24,21 +24,21 @@ const PrivacyPolicy = () => {
           <div className="pp-content">
           We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
           <ul>
-            <li><i class="far fa-hand-point-right"></i> To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.</li>
-            <li><i class="far fa-hand-point-right"></i> To improve our website in order to better serve you.</li>
-            <li><i class="far fa-hand-point-right"></i> To allow us to better service you in responding to your customer service requests.</li>
-            <li><i class="far fa-hand-point-right"></i> To ask for ratings and reviews of services or products.</li>
+            <li><i className="far fa-hand-point-right"></i> To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.</li>
+            <li><i className="far fa-hand-point-right"></i> To improve our website in order to better serve you.</li>
+            <li><i className="far fa-hand-point-right"></i> To allow us to better service you in responding to your customer service requests.</li>
+            <li><i className="far fa-hand-point-right"></i> To ask for ratings and reviews of services or products.</li>
           </ul>
           </div>
           <div className="pp-subheading">How do we protect your information?</div>
           <div className="pp-content">
           <ul>
-            <li><i class="fas fa-check-circle"></i> We do not use vulnerability scanning and/or scanning to PCI standards.</li>
-            <li><i class="fas fa-check-circle"></i> We only provide articles and information. We never ask for credit card numbers.</li>
-            <li><i class="fas fa-check-circle"></i> We do not use Malware Scanning.</li>
-            <li><i class="fas fa-check-circle"></i> Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Secure Socket Layer (SSL) technology.</li>
-            <li><i class="fas fa-check-circle"></i> We implement a variety of security measures when a user enters, submits, or accesses their information to maintain the safety of your personal information.</li>
-            <li><i class="fas fa-check-circle"></i> All transactions are processed through a gateway provider and are not stored or processed on our servers.</li>
+            <li><i className="fas fa-check-circle"></i> We do not use vulnerability scanning and/or scanning to PCI standards.</li>
+            <li><i className="fas fa-check-circle"></i> We only provide articles and information. We never ask for credit card numbers.</li>
+            <li><i className="fas fa-check-circle"></i> We do not use Malware Scanning.</li>
+            <li><i className="fas fa-check-circle"></i> Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Secure Socket Layer (SSL) technology.</li>
+            <li><i className="fas fa-check-circle"></i> We implement a variety of security measures when a user enters, submits, or accesses their information to maintain the safety of your personal information.</li>
+            <li><i className="fas fa-check-circle"></i> All transactions are processed through a gateway provider and are not stored or processed on our servers.</li>
           </ul>
           </div>
           <div className="pp-subheading">Third-party disclosure</div>
@@ -62,7 +62,7 @@ const PrivacyPolicy = () => {
           If there are any questions regarding this privacy policy, you may contact us using the information below.
           <p style={{marginTop:'20px'}}><h5>HITK Tech Community</h5></p>
           <p><a href="mailto:hitktechcommunity@gmail.com">hitktechcommunity@gmail.com</a></p>
-          <p class="by-line">Last Edited on 2021-01-15</p>
+          <p className="by-line">Last Edited on 2021-01-15</p>
           </div>
         </div>
       </div>

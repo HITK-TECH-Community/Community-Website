@@ -29,7 +29,7 @@ const Motive = () => {
               data-wow-delay="0s"
             >
               <div className={style.featuresIcon}>
-                <i class="fas fa-bullhorn"></i>
+                <i className="fas fa-bullhorn"></i>
               </div>
               <div className={`${style.featuresContent} text-left`}>
                 <h4 className={style.featuresTitle}>

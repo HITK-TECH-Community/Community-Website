@@ -12,6 +12,7 @@
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
     "mdbreact": "^5.0.1",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-card-flip": "^1.0.11",

@@ -5,40 +5,14 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./Carousel.css";
 import style from "../../home/motive/motive.module.css";
 import Modals from "./Modal/Modals";
-
-export default function Owl(props) {
-  let str2 = `Hola learners🙋🏻‍♀️🙋🏻‍♂️
-                Developing a passion for learning will never cease to grow 
-                and so we have brought another opportunity for you. 🔥
-                OpenMined is providing you the private AI series, which will
-                 be free of cost. In this series of courses,
-                you'll learn how privacy is impacting every industry and 
-                how to build real-world products with privacy-preserving AI technology.
-                Wondering how will you be mentored?🤔 You will get to learn
-                 from the best minds in the industry and throughout the journey, 
-                you will get to hear from a number of interviewed guests. 😇✨
-                📚The Courses include :
-                ▪️Privacy and Society [Beginner] 
-                ▪️Foundations of private computation [Intermediate] 
-                ▪️Federated learning across enterprises [Intermediate] 
-                ▪️Federated learning on mobile [Intermediate] 
-                What are you waiting for?
- 
-               🔖Signup for private AI Series: https://courses.openmined.org/
-               🔖Subscribe to the private AI series YouTube channel:
-               https://youtu.be/-b0CQFr6xyA
-             🗓️The course will start form January 2021`;
-
-  let str1 = `Crio Winter of Doing is here!!🤩🤩 India's top startups are
-                lining up their tech challenges for you!! Join India's largest
-                tech externship program for developers. ✅Work on challenging
-                tech projects (externships) from exciting startups ✅ Interact
-                with the biggest names in India's tech industry ✅ Participate
-                in engaging Masterclass sessions from top engineers in the
-                country ✅Get discovered by Crio's hiring partners Apply now ❗
-                👇 https://www.crio.do/crio-winter-of-doing/ Limited slots are
-                available ❗❗ Thank you, With regards, HITK Tech Community👩‍💻👨‍💻
-                (By HITK students,For HITK students)`;
+import dataa from "../../../test_data/broadcast_text.json";
+export default function Owl({ head }) {
+  let title1 = dataa[0].title;
+  let desc1 = dataa[0].desc;
+  let link1 = dataa[0].link;
+  let title2 = dataa[1].title;
+  let desc2 = dataa[1].desc;
+  let link2 = dataa[1].link;
 
   const [open, setOpen] = useState(false);
 
@@ -83,7 +57,7 @@ export default function Owl(props) {
       <Modals open={open} handleClose={handleClose} data={data} />
       <div className="slider-div">
         <div className={style.motive}>
-          <h1 className="carousel-head">{props.head}</h1>
+          <h1 className="carousel-head">{head}</h1>
           <div className={style.dash}></div>
         </div>
         <OwlCarousel
@@ -95,81 +69,45 @@ export default function Owl(props) {
         >
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str1,
-                "Crio Winter Of Doing",
-                "https://i.pinimg.com/originals/4c/52/f9/4c52f9eb7ff10b55e35ab24634db6a57.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc1, title1, link1)}
           >
-            <h3 className="card-head"> Crio Winter Of Doing </h3>
-            <div className="card-text">{str1.substring(0, 600)}...</div>
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str2,
-                "Private AI Series",
-                "https://images-na.ssl-images-amazon.com/images/I/81A%2BqqYaYFL._SL1280_.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc2, title2, link2)}
           >
-            <h3 className="card-head"> Private AI Series </h3>
-            <div className="card-text">{str2.substring(0, 600)}...</div>
+            <h3 className="card-head">{title2}</h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str1,
-                "Crio Winter Of Doing",
-                "https://i.pinimg.com/originals/4c/52/f9/4c52f9eb7ff10b55e35ab24634db6a57.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc1, title1, link1)}
           >
-            <h3 className="card-head"> Crio Winter Of Doing </h3>
-            <div className="card-text">{str1.substring(0, 600)}...</div>
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str2,
-                "Private AI Series",
-                "https://images-na.ssl-images-amazon.com/images/I/81A%2BqqYaYFL._SL1280_.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc2, title2, link2)}
           >
-            <h3 className="card-head"> Private AI Series </h3>
-            <div className="card-text">{str2.substring(0, 600)}...</div>
+            <h3 className="card-head">{title2}</h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str1,
-                "Crio Winter Of Doing",
-                "https://i.pinimg.com/originals/4c/52/f9/4c52f9eb7ff10b55e35ab24634db6a57.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc1, title1, link1)}
           >
-            <h3 className="card-head"> Crio Winter Of Doing </h3>
-            <div className="card-text">{str1.substring(0, 600)}...</div>
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
           <div
             className="slide-card"
-            onClick={() =>
-              handleOpen(
-                str2,
-                "Private AI Series",
-                "https://images-na.ssl-images-amazon.com/images/I/81A%2BqqYaYFL._SL1280_.jpg"
-              )
-            }
+            onClick={() => handleOpen(desc2, title2, link2)}
           >
-            <h3 className="card-head"> Private AI Series </h3>
-            <div className="card-text">{str2.substring(0, 600)}...</div>
+            <h3 className="card-head">{title2} </h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
         </OwlCarousel>
       </div>

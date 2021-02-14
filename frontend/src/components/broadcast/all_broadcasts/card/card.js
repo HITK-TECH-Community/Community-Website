@@ -26,7 +26,7 @@ function Card({ project }) {
           <div className="clickable-card">
             <div className="card-title">{project[0]}</div>
             <div className="card-content">
-              {project[1].substring(0, 500)}...
+              {project[1].substring(0, 400)}...
             </div>
           </div>
         </div>
@@ -40,13 +40,7 @@ function Card({ project }) {
               {project[0]}
             </div>
             <button
-              onClick={() =>
-                handleOpen(
-                  project[1],
-                  project[0],
-                  "https://i.pinimg.com/originals/4c/52/f9/4c52f9eb7ff10b55e35ab24634db6a57.jpg"
-                )
-              }
+              onClick={() => handleOpen(project[1], project[0], project[2])}
               className="but"
             >
               View Details

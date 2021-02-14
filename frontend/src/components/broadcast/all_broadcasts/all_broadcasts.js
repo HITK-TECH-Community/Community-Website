@@ -1,6 +1,6 @@
 import React from "react";
 import "./all_broadcasts.css";
-import { dataa } from "../../../test_data/broadcasttext";
+import dataa from "../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import Dropmenu from "./../../dropmenu/DropMenu";

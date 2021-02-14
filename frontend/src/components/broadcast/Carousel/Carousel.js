@@ -5,14 +5,14 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./Carousel.css";
 import style from "../../home/motive/motive.module.css";
 import Modals from "./Modal/Modals";
-import { dataa } from "../../../test_data/broadcasttext";
-export default function Owl({ head, cards }) {
-  let s1t = dataa[0].title;
-  let s1d = dataa[0].desc;
-  let s1l = dataa[0].link;
-  let s2t = dataa[1].title;
-  let s2d = dataa[1].desc;
-  let s2l = dataa[1].link;
+import dataa from "../../../test_data/broadcast_text.json";
+export default function Owl({ head }) {
+  let title1 = dataa[0].title;
+  let desc1 = dataa[0].desc;
+  let link1 = dataa[0].link;
+  let title2 = dataa[1].title;
+  let desc2 = dataa[1].desc;
+  let link2 = dataa[1].link;
 
   const [open, setOpen] = useState(false);
 
@@ -67,29 +67,47 @@ export default function Owl({ head, cards }) {
           responsiveClass={true}
           nav={false}
         >
-          <div className="slide-card" onClick={() => handleOpen(s1d, s1t, s1l)}>
-            <h3 className="card-head">{s1t}</h3>
-            <div className="card-text">{s1d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc1, title1, link1)}
+          >
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
-          <div className="slide-card" onClick={() => handleOpen(s2d, s2t, s2l)}>
-            <h3 className="card-head">{s2t}</h3>
-            <div className="card-text">{s2d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc2, title2, link2)}
+          >
+            <h3 className="card-head">{title2}</h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
-          <div className="slide-card" onClick={() => handleOpen(s1d, s1t, s1l)}>
-            <h3 className="card-head">{s1t}</h3>
-            <div className="card-text">{s1d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc1, title1, link1)}
+          >
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
-          <div className="slide-card" onClick={() => handleOpen(s2d, s2t, s2l)}>
-            <h3 className="card-head">{s2t}</h3>
-            <div className="card-text">{s2d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc2, title2, link2)}
+          >
+            <h3 className="card-head">{title2}</h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
-          <div className="slide-card" onClick={() => handleOpen(s1d, s1t, s1l)}>
-            <h3 className="card-head">{s1t}</h3>
-            <div className="card-text">{s1d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc1, title1, link1)}
+          >
+            <h3 className="card-head">{title1}</h3>
+            <div className="card-text">{desc1.substring(0, 600)}...</div>
           </div>
-          <div className="slide-card" onClick={() => handleOpen(s2d, s2t, s2l)}>
-            <h3 className="card-head">{s2t} </h3>
-            <div className="card-text">{s2d.substring(0, 600)}...</div>
+          <div
+            className="slide-card"
+            onClick={() => handleOpen(desc2, title2, link2)}
+          >
+            <h3 className="card-head">{title2} </h3>
+            <div className="card-text">{desc2.substring(0, 600)}...</div>
           </div>
         </OwlCarousel>
       </div>

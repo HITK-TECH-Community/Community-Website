@@ -8,6 +8,8 @@ import Contact from "./contact/contact";
 import About from "./about/about";
 import FAQ from "./faq/faq";
 import Setting from "./setting/setting";
+import Invite from "./setting/Invite/Invite";
+import Manage from "./setting/Manage/Manage";
 
 const Admin = () => {
   const [tab, setTab] = useState(1);
@@ -80,7 +82,11 @@ const Admin = () => {
           ) : tab === 5 ? (
             <FAQ />
           ) : tab === 6 ? (
-            <Setting />
+            <Setting setTab={setTab} />
+          ) : tab === 7 ? (
+            <Invite />
+          ) : tab === 8 ? (
+            <Manage />
           ) : null}
         </div>
       </div>

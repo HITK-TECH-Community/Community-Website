@@ -1,5 +1,5 @@
-.not_found{
-  background-color:#f7f7f7;
+.not_found {
+  background-color: #f7f7f7;
 }
 
 .error {
@@ -11,44 +11,39 @@
   margin: 0 15% 3rem 15%;
 }
 
-.error-logo {
+.errorLogo {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.error-content {
+.errorContent {
   color: black;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-.error-text {
+.errorText {
   font-size: 2rem;
   font-weight: 900;
   color: var(--secondary-color);
 }
 
-.main-btn.main-btn-2 {
-  width:100%;
-  font-size: 16px;
+.back:hover {
+  color: white;
 }
 
-.back:hover{
-  color:white;
-}
-
-.fa-arrow-left{
-  color:white !important;
+.fa-arrow-left {
+  color: white !important;
 }
 
 @media screen and (max-width: 750px) {
-  .error{
+  .error {
     margin: 0 5% 3rem 5%;
   }
 
-  .back{
+  .back {
     font-size: 14px;
-    padding:10px;
+    padding: 10px;
   }
 }

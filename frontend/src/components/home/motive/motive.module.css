@@ -1,9 +1,9 @@
-.motive-div {
+.motiveDiv {
   background-color: hsl(210, 64%, 9%);
   padding: 60px 0px;
 }
 
-.single-features {
+.singleFeatures {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
@@ -17,7 +17,7 @@
   height: 100%;
 }
 
-.single-features::before {
+.singleFeatures::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -40,14 +40,14 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.single-features .features-icon {
+.singleFeatures .featuresIcon {
   position: relative;
   align-items: center;
   display: flex;
   padding-right: 18px;
 }
 
-.single-features .features-icon i {
+.singleFeatures .featuresIcon i {
   font-size: 40px;
   background: -webkit-linear-gradient(
     45deg,
@@ -78,13 +78,13 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.single-features:hover .features-icon i {
+.singleFeatures:hover .featuresIcon i {
   background: white;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.single-features .features-icon span {
+.singleFeatures .featuresIcon span {
   font-size: 60px;
   color: #1b273d;
   line-height: 100px;
@@ -97,13 +97,13 @@
   font-weight: 600;
 }
 
-.single-features .features-content {
+.singleFeatures .featuresContent {
   padding-top: 5px;
   position: relative;
   z-index: 9;
 }
 
-.single-features .features-content .features-title a {
+.singleFeatures .featuresContent .featuresTitle a {
   font-size: 24px;
   color: #0e182c;
   text-decoration: none;
@@ -114,7 +114,7 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.single-features .features-content .text {
+.singleFeatures .featuresContent .text {
   margin-top: 12px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -123,25 +123,25 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.single-features:hover::before {
+.singleFeatures:hover::before {
   opacity: 1;
 }
 
-.single-features:hover .features-icon i,
-.single-features:hover .features-icon span {
+.singleFeatures:hover .featuresIcon i,
+.singleFeatures:hover .featuresIcon span {
   color: #fff;
 }
 
-.single-features:hover .features-content .features-title a {
+.singleFeatures:hover .featuresContent .featuresTitle a {
   color: #fff;
   text-decoration: none;
 }
 
-.single-features:hover .features-content .text {
+.singleFeatures:hover .featuresContent .text {
   color: #fff;
 }
 
-.single-features:hover .motive-content {
+.singleFeatures:hover .motiveContent {
   color: #fff;
 }
 

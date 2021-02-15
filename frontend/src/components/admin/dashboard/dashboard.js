@@ -9,7 +9,7 @@ const Dashboard = (props) => {
     {
       name: "Broadcasts",
       count: 2,
-      icon: <i class="fa fa-bullhorn" aria-hidden="true"></i>,
+      icon: <i className="fa fa-bullhorn" aria-hidden="true"></i>,
       tab: 2,
     },
     {
@@ -21,7 +21,7 @@ const Dashboard = (props) => {
     {
       name: "About Us",
       count: 5,
-      icon: <i class="fa fa-users" aria-hidden="true"></i>,
+      icon: <i className="fa fa-users" aria-hidden="true"></i>,
       tab: 4,
     },
     {

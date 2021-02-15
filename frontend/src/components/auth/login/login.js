@@ -1,23 +1,6 @@
 import React, { useReducer, useEffect } from "react";
-import "./login.css";
-
-// Show/Hide Functionality.
-window.onload = function () {
-  const togglePassword = document.querySelector("#togglePassword");
-  const password = document.querySelector("#password");
-  if (togglePassword) {
-    togglePassword.addEventListener("click", function (e) {
-      // toggle the type attribute
-      if (password) {
-        const type =
-          password.getAttribute("type") === "password" ? "text" : "password";
-        password.setAttribute("type", type);
-        // toggle the eye slash icon
-        this.classList.toggle("fa-eye-slash");
-      }
-    });
-  }
-};
+import { Button2 } from "../../util/button/button";
+import styles from "./login.module.css";
 
 //state type
 type State = {
@@ -94,6 +77,22 @@ const Login = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    // Show/Hide Functionality.
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+    if (togglePassword) {
+      togglePassword.addEventListener("click", function (e) {
+        // toggle the type attribute
+        if (password) {
+          const type =
+            password.getAttribute("type") === "password" ? "text" : "password";
+          password.setAttribute("type", type);
+          // toggle the eye slash icon
+          this.classList.toggle("fa-eye-slash");
+        }
+      });
+    }
+
     if (state.username.trim() && state.password.trim()) {
       dispatch({
         type: "setIsButtonDisabled",
@@ -145,18 +144,15 @@ const Login = () => {
     });
   };
   return (
-    <div className="login-section">
-      <div className="login-image child1">
-        <img
-          src="./images/login.png"
-          alt="login-illustration"
-        />
+    <div className={styles.loginSection}>
+      <div className={`${styles.loginImage} ${styles.child1}`}>
+        <img src="./images/login.png" alt="login-illustration" />
       </div>
-      <div className="login-form child2">
-        <div className="login-card">
-          <h1 className="card-heading">Welcome Back</h1>
-          <div className="inside-card">
-            <div className="login-input">
+      <div className={`${styles.loginForm} ${styles.child2}`}>
+        <div className={styles.loginCard}>
+          <h1 className={styles.cardHeading}>Welcome Back</h1>
+          <div className={styles.insideCard}>
+            <div className={styles.loginInput}>
               <input
                 autocomplete="off"
                 error={state.isError}
@@ -167,11 +163,11 @@ const Login = () => {
                 placeholder="Username"
                 onChange={handleUsernameChange}
                 onKeyPress={handleKeyPress}
-                class="inputLogin"
+                className="inputLogin"
               />
               <i className="fas fa-user"></i>
             </div>
-            <div className="login-input">
+            <div className={styles.loginInput}>
               <input
                 error={state.isError}
                 id="password"
@@ -181,19 +177,19 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
-                class="inputLogin"
+                className="inputLogin"
               />
               <i className="far fa-eye" id="togglePassword"></i>
             </div>
-            <div className="login-input" style={{ textAlign: "center" }}>
-              <button
+            <div className={styles.submitBtn}>
+              <Button2
                 id="btn"
-                className="login-btn main-btn main-btn-2"
+                label="Sign In"
+                type="submit"
+                className={styles.submitBtnText}
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
-              >
-                Sign In
-              </button>
+              />
             </div>
           </div>
         </div>

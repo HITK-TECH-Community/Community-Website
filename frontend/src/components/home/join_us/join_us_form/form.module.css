@@ -305,7 +305,7 @@ input[type="date"]:not(:valid):before {
 .submitBtn {
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -340,6 +340,12 @@ input[type="date"]:not(:valid):before {
     font-size: x-small;
     color: black;
   }
+
+  .submitBtn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+  
 }
 
 @media only screen and (max-width: 640px) {

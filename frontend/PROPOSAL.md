@@ -5,6 +5,7 @@
 1. [Folder Structure](#folder-structure)
 2. [React Component Conventions](#react-component-conventions)
 3. [CSS Conventions](#css-conventions)
+4. [Steps to refactor the codebase](#refactor)
 
 ## Folder Structure
 
@@ -15,35 +16,35 @@ frontend
     │    ├── Header
     │    │    ├── Header.jsx
     │    │    ├── index.js
-    │    │    └── header.modules.scss
+    │    │    └── header.module.scss
     │    └── Footer
     │         ├── Footer.jsx
     │         ├── index.js
-    │         └── footer.modules.scss
+    │         └── footer.module.scss
     │
     ├── pages (for pages)
     │    ├── Homepage
     │    │    ├── Homepage.jsx
     │    │    ├── index.js
-    │    │    └── homepage.modules.scss
+    │    │    └── homepage.module.scss
     │    ├── About
     │    │    ├── About.jsx
     │    │    ├── index.js
-    │    │    ├── about.modules.scss
+    │    │    ├── about.module.scss
     │    │    │
     │    │    └── Components (for page specific component)
     │    │         ├── TeamCard
     │    │         │    ├── TeamCard.jsx
     │    │         │    ├── index.js
-    │    │         │    └── team-card.modules.scss
+    │    │         │    └── team-card.module.scss
     │    │         └── CustomCarousel
     │    │              ├── CustomCarousel.jsx
     │    │              ├── index.js
-    │    │              └── custom-carousel.modules.scss
+    │    │              └── custom-carousel.module.scss
     │    └── Login
     │          ├── Login.jsx
     │          ├── index.js
-    │          └── login.modules.scss
+    │          └── login.module.scss
     └── App.js
 ```
 
@@ -63,8 +64,9 @@ export class Header extends Components{
 {/* For named exports, 'export' keyword should be used as shown above. There won't be any default export line anywhere in the code. */}
 ```
 
-2. Import CSS module file as **style** in all the pages and components. Example, `import style from 'header.module.scss'`
-3. **Strictly** follow [PascalCase](https://techterms.com/definition/pascalcase) naming convention for naming React Components.
+2. **Strictly** follow [PascalCase](https://techterms.com/definition/pascalcase) naming convention for naming React Components.
+3. Import CSS module file as **style** in all the pages and components. Example, `import style from 'header.module.scss'`
+4. Change all the class names. `<p className={style["class-name"]}>Some content...</p>`. **Note** - Keep the bootstrap classes like `row`, `col-`, `container`, etc, as they are.
 
 <br /><br />
 
@@ -111,3 +113,16 @@ For example
   ...;
 }
 ```
+
+<br /><br />
+
+## Refactor
+
+1. Install node-sass `npm install node-sass@4.14.1`
+2. Make a folder with the component name.
+   If it is a page, make a folder inside `frontend/pages` folder.
+   If it is a global component (like header, footer, navbar), component that is used in multiple pages, then make a folder inside `frontend/components` folder.
+3. Strictly follow the [React rules](#react-component-conventions) mentioned above.
+4. Refer to the **Navbar** folder if you get stuck.
+5. Follow the [CSS rules](#css-conventions) and edit all the classnames accoridingly. Note that bootstrap classes (row, col-, container) should be left as they are.
+6. Do not worry about BEM Nomenclature for now.

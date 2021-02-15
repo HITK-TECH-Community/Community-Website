@@ -47,8 +47,9 @@ main {
 }
 
 .card-item2 {
-  height: 16em;
+  height: 10em;
 }
+
 .clickable-card {
   display: flex;
   flex-direction: column;

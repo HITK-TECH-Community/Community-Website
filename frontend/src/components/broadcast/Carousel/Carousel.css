@@ -15,7 +15,7 @@
 }
 
 .slide-card {
-  min-height: 25em;
+  max-height: 26em;
   border-radius: 20px;
   background-color: #016795;
   color: white;

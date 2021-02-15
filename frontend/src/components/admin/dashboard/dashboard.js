@@ -8,22 +8,22 @@ const Dashboard = (props) => {
   const data = [
     {
       name: "Broadcasts",
-      icon: <i className="fa fa-bullhorn fa-fw fa-sm" aria-hidden="true"></i>,
+      icon: <i className="fa fa-bullhorn fa-lg" aria-hidden="true"></i>,
       tab: 2,
     },
     {
       name: "Contact Us",
-      icon: <PermContactCalendarIcon style={{ fontSize: 16 }} />,
+      icon: <PermContactCalendarIcon style={{ fontSize: 23 }} />,
       tab: 3,
     },
     {
       name: "About Us",
-      icon: <i className="fa fa-users fa-fw fa-sm" aria-hidden="true"></i>,
+      icon: <i className="fa fa-users fa-lg" aria-hidden="true"></i>,
       tab: 4,
     },
     {
       name: "FAQ",
-      icon: <LiveHelpIcon style={{ fontSize: 16 }} />,
+      icon: <LiveHelpIcon style={{ fontSize: 23 }} />,
       tab: 5,
     },
   ];

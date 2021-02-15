@@ -136,6 +136,19 @@
   color: #2ecc71;
 }
 
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.submitBtnText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 750px) {
   .contactParent {
     display: block;
@@ -159,8 +172,18 @@
   .contactBtn {
     font-size: 20px;
   }
-}
 
-.insideContact > .submitBtn > button {
-  width: 100% !important;
+  .submitBtn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .submitBtnText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+
 }

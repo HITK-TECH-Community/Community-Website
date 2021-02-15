@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from "react";
+import { Button2 } from "../../util/button/button";
 import styles from "./login.module.css";
 
 //state type
@@ -180,15 +181,15 @@ const Login = () => {
               />
               <i className="far fa-eye" id="togglePassword"></i>
             </div>
-            <div className={styles.loginInput} style={{ textAlign: "center" }}>
-              <button
+            <div className={styles.submitBtn}>
+              <Button2
                 id="btn"
-                className={`${styles.loginBtn} main-btn main-btn-2`}
+                label="Sign In"
+                type="submit"
+                className={styles.submitBtnText}
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
-              >
-                Sign In
-              </button>
+              />
             </div>
           </div>
         </div>

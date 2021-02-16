@@ -33,7 +33,7 @@ main {
   margin: 0.5em;
 }
 
-.card-item {
+.card_item {
   background-color: #016795;
   text-align: center;
   font-size: 1.5rem;
@@ -46,11 +46,11 @@ main {
   transition: background 0.3s ease-out;
 }
 
-.card-item2 {
+.card_item2 {
   height: 10em;
 }
 
-.clickable-card {
+.clickable_card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,21 +58,21 @@ main {
   color: var(--bs-light);
 }
 
-.card-title {
+.card_title {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   line-height: 1.9rem;
   font-weight: bold;
 }
 
-.card-content {
+.card_content {
   font-weight: normal;
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
 }
 
-.card-item:hover {
+.card_item:hover {
   background-color: #1b2431;
 }
 

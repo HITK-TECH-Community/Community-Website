@@ -72,42 +72,42 @@ export default function Owl({ head }) {
             onClick={() => handleOpen(desc1, title1, link1)}
           >
             <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 600)}...</div>
+            <div className="card-text">{desc1.substring(0, 500)}...</div>
           </div>
           <div
             className="slide-card"
             onClick={() => handleOpen(desc2, title2, link2)}
           >
             <h3 className="card-head">{title2}</h3>
-            <div className="card-text">{desc2.substring(0, 600)}...</div>
+            <div className="card-text">{desc2.substring(0, 500)}...</div>
           </div>
           <div
             className="slide-card"
             onClick={() => handleOpen(desc1, title1, link1)}
           >
             <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 600)}...</div>
+            <div className="card-text">{desc1.substring(0, 500)}...</div>
           </div>
           <div
             className="slide-card"
             onClick={() => handleOpen(desc2, title2, link2)}
           >
             <h3 className="card-head">{title2}</h3>
-            <div className="card-text">{desc2.substring(0, 600)}...</div>
+            <div className="card-text">{desc2.substring(0, 500)}...</div>
           </div>
           <div
             className="slide-card"
             onClick={() => handleOpen(desc1, title1, link1)}
           >
             <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 600)}...</div>
+            <div className="card-text">{desc1.substring(0, 500)}...</div>
           </div>
           <div
             className="slide-card"
             onClick={() => handleOpen(desc2, title2, link2)}
           >
             <h3 className="card-head">{title2} </h3>
-            <div className="card-text">{desc2.substring(0, 600)}...</div>
+            <div className="card-text">{desc2.substring(0, 500)}...</div>
           </div>
         </OwlCarousel>
       </div>

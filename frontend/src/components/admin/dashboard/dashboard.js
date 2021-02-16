@@ -42,7 +42,7 @@ const Dashboard = (props) => {
               {d.icon}
               <h4> {d.name} </h4>
             </div>
-            <div className="content">
+            <div className={style.content}>
               {" "}
               Get all your {d.name} related details here!{" "}
             </div>

@@ -9,8 +9,17 @@
   margin: 2em;
 }
 
+.content {
+  margin: auto;
+  overflow: hidden;
+  padding: 10px 20px;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .crd {
-  max-width: 300px;
+  min-width: 100px;
   min-height: 10em;
   display: flex;
   flex-direction: column;
@@ -33,7 +42,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  margin: 1em;
+  margin: 1.5em auto 0;
 }
 
 .crd > .head1 > h4 {
@@ -58,5 +67,19 @@
 
   .conts {
     width: 90%;
+  }
+
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
   }
 }

@@ -21,12 +21,9 @@ body {
 }
 
 .content {
-  margin: 0 auto;
+  margin: auto;
   overflow: hidden;
-  padding: 0.5rem 3rem;
-  font-size: 20px;
-  line-height: 1.2;
-  text-align: center;
+  padding: 1.5rem 0;
 }
 
 /* Temproary CSS [for dummy text] */

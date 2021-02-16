@@ -71,9 +71,6 @@ const reducer = (state: State, action: Action): State => {
 
 const Login = () => {
   //state for showing and hiding password
-  // const [showPass, setShowPass] = useState(false);
-
-  // const classes = useStyles();
   const [state, dispatch] = useReducer(reducer, initialState);
   const [hidePassword, setHidePassword] = useState(false);
   const passwordInput = useRef("password");

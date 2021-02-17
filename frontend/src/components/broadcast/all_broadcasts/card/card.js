@@ -1,9 +1,33 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import Modals from "../../Carousel/Modal/Modals";
-import EditIcon from "@material-ui/icons/Edit";
+import { Delete, Edit } from "@material-ui/icons";
+import { IconButton, makeStyles } from "@material-ui/core";
+
 import "./card.css";
+
+const useStyles = makeStyles({
+  iconButton: {
+    background: "rgba(255,255,255,0.05)",
+    margin: 5,
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255, 0.1)",
+    },
+    "&:focus": {
+      outline: "none",
+    },
+    "& > span": {
+      color: "white",
+    },
+  },
+});
+function deleteCard(id) {
+  const cardElement = document.getElementById(id);
+  cardElement.classList.add("gonnaRemove");
+  setTimeout(() => cardElement.remove(), 1000);
+}
 function Card(props) {
+  const styles = useStyles();
   const [flipped, setFlipped] = useState(false);
   const handleClick = () => {
     setFlipped(!flipped);
@@ -20,7 +44,7 @@ function Card(props) {
     setData({});
   };
   return (
-    <>
+    <div id={props.id} className={`cardContainer`}>
       <Modals open={open} handleClose={handleClose} data={data} />
       <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
         <div className="card-item" onMouseEnter={handleClick}>
@@ -35,11 +59,19 @@ function Card(props) {
         <div className="card-item" onMouseLeave={handleClick}>
           <div className="clickable-card">
             {props.admin ? (
-              <div className="editor">
-                <EditIcon
-                  style={{ cursor: "pointer" }}
+              <div className="admin-controls">
+                <IconButton
+                  className={styles.iconButton}
                   onClick={props.handler}
-                />
+                >
+                  <Edit />
+                </IconButton>
+                <IconButton
+                  className={styles.iconButton}
+                  onClick={() => deleteCard(props.id)}
+                >
+                  <Delete />
+                </IconButton>
               </div>
             ) : null}
             <div
@@ -63,7 +95,7 @@ function Card(props) {
           </div>
         </div>
       </ReactCardFlip>
-    </>
+    </div>
   );
 }
 

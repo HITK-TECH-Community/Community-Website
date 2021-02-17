@@ -8,26 +8,22 @@ const Dashboard = (props) => {
   const data = [
     {
       name: "Broadcasts",
-      count: 2,
-      icon: <i className="fa fa-bullhorn" aria-hidden="true"></i>,
+      icon: <i className="fa fa-bullhorn fa-lg" aria-hidden="true"></i>,
       tab: 2,
     },
     {
       name: "Contact Us",
-      count: 4,
-      icon: <PermContactCalendarIcon />,
+      icon: <PermContactCalendarIcon style={{ fontSize: 23 }} />,
       tab: 3,
     },
     {
       name: "About Us",
-      count: 5,
-      icon: <i className="fa fa-users" aria-hidden="true"></i>,
+      icon: <i className="fa fa-users fa-lg" aria-hidden="true"></i>,
       tab: 4,
     },
     {
       name: "FAQ",
-      count: 2,
-      icon: <LiveHelpIcon />,
+      icon: <LiveHelpIcon style={{ fontSize: 23 }} />,
       tab: 5,
     },
   ];
@@ -46,8 +42,10 @@ const Dashboard = (props) => {
               {d.icon}
               <h4> {d.name} </h4>
             </div>
-            <div> Get all your {d.name} related details here! </div>
-            <div className={style.count}> {d.count} </div>
+            <div className={style.content}>
+              {" "}
+              Get all your {d.name} related details here!{" "}
+            </div>
           </div>
         ))}
       </div>

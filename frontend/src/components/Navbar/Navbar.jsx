@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import style from "./navbar.module.scss";
+import style from "./navbar.module.css";
 
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,7 +20,7 @@ export const Navbar = () => {
           />
         </NavLink>
         <div className={style["menu-icon"]} onClick={toggleNav}>
-          <i className={style[isNavOpen ? "fas fa-times" : "fas fa-bars"]}></i>
+          <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
         <ul className={style[isNavOpen ? "nav-menu active" : "nav-menu"]}>
           <li className={style["nav-item"]}>

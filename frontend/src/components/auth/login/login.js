@@ -131,6 +131,7 @@ const Login = () => {
       payload: event.target.value,
     });
   };
+
   return (
     <div className={styles.loginSection}>
       <div className={`${styles.loginImage} ${styles.child1}`}>

@@ -13,7 +13,7 @@
   margin: auto;
   overflow: hidden;
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
   text-align: center;
 }
@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   background-color: #016795;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(141, 113, 113, 0.24) 0px 3px 8px;
   cursor: pointer;
   color: white;
   border-radius: 20px;
@@ -47,7 +47,7 @@
 
 .crd > .head1 > h4 {
   margin: 0 1em;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./get_involved.css";
+import styles from "./get_involved.module.css";
 
 function GetInvolved() {
   const arrayCards = [
@@ -26,23 +26,23 @@ function GetInvolved() {
   ];
   return (
     <main>
-      <div id="hero">
-        <div id="heading">
-          <div id="title">Get Involved!</div>
+      <div id={styles.hero}>
+        <div id={styles.heading}>
+          <div id={styles.title}>Get Involved!</div>
         </div>
       </div>
-      <div id="allCards">
+      <div id={styles.allCards}>
         {arrayCards.map((element, i) => {
           return (
-            <div className="card-item card-item2" key={i}>
+            <div className={`${styles.card_item} ${styles.card_item2} key={i}`}>
               <a
                 href="https://github.com/HITK-TECH-Community/Community-Website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="clickable-card">
-                  <div className="card-title">{element[0]}</div>
-                  <div className="card-content">{element[1]}</div>
+                <div className={styles.clickable_card}>
+                  <div className={styles.card_title}>{element[0]}</div>
+                  <div className={styles.card_content}>{element[1]}</div>
                 </div>
               </a>
             </div>

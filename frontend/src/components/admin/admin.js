@@ -23,7 +23,7 @@ const Admin = () => {
               className={style.img_admin}
               alt="admin_img"
             />
-            <h1 className={style.h1}>Good Morning Admin</h1>
+            <h1 className={style.h1}>Welcome Admin!</h1>
           </div>
           <div
             className={tab === 1 ? style.features_icons : style.features_icons1}

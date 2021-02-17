@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import "./Carousel.css";
+import styles from "./Carousel.module.css";
 import style from "../../home/motive/motive.module.css";
+import "./customOwlCarouselStyle.css";
 import Modals from "./Modal/Modals";
 import dataa from "../../../test_data/broadcast_text.json";
 
@@ -50,23 +51,23 @@ export default function Owl({ head }) {
   return (
     <React.Fragment>
       <Modals open={open} handleClose={handleClose} data={data} />
-      <div className="slider-div">
+      <div className={styles.sliderDiv}>
         <div className={style.motive}>
-          <h1 className="carousel-head">{head}</h1>
+          <h1 className={styles.carouselHead}>{head}</h1>
           <div className={style.dash}></div>
         </div>
         <OwlCarousel
-          className="owl-theme slide "
+          className={`owl-theme ${styles.slide} `}
           {...state.options}
           autoplay={true}
           responsiveClass={true}
           nav={false}
         >
           {dataa.map((item, i) => (
-            <div className="slide-card">
-              <h3 className="card-head">{item.title}</h3>
+            <div className={styles.slideCard}>
+              <h3 className={styles.cardHead}>{item.title}</h3>
               <div
-                className="card-text"
+                className={styles.cardText}
                 onClick={() => handleOpen(item.desc, item.title, item.link)}
               >
                 {item.desc.substring(0, 600)}...

@@ -10,23 +10,22 @@
 }
 
 .content {
-  margin: auto;
   overflow: hidden;
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.2;
   text-align: center;
 }
 
 .crd {
   min-width: 100px;
-  min-height: 10em;
+  min-height: 12em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #016795;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(141, 113, 113, 0.24) 0px 3px 8px;
   cursor: pointer;
   color: white;
   border-radius: 20px;
@@ -42,12 +41,12 @@
   justify-content: center;
   align-items: center;
   font-size: 1em;
-  margin: 1.5em auto 0;
+  margin: 0.5em;
 }
 
 .crd > .head1 > h4 {
   margin: 0 1em;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -70,7 +69,6 @@
   }
 
   .content {
-    margin: auto;
     overflow: hidden;
     padding: 1rem 1.2rem;
   }
@@ -78,7 +76,6 @@
 
 @media screen and (min-width: 600px) and (max-width: 1050px) {
   .content {
-    margin: auto;
     overflow: hidden;
     padding: 1.5rem 3.5rem;
   }

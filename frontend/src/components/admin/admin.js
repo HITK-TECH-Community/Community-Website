@@ -29,43 +29,46 @@ const Admin = () => {
             className={tab === 1 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(1)}
           >
-            <DashboardIcon />
+            <DashboardIcon style={{ fontSize: 23.32 }} />
             <div className={style.span}>Dashboard</div>
           </div>
           <div
             className={tab === 2 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(2)}
           >
-            <i className="fa fa-bullhorn" aria-hidden="true"></i>
+            <i className="fas fa-bullhorn fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style.span}>Broadcasts</div>
           </div>
           <div
             className={tab === 3 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(3)}
           >
-            <i className="fa fa-user-circle" aria-hidden="true"></i>
+            <i
+              className="fas fa-user-circle fa-fw fa-lg"
+              aria-hidden="true"
+            ></i>
             <div className={style.span}>Contact Us</div>
           </div>
           <div
             className={tab === 4 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(4)}
           >
-            <i className="fa fa-users" aria-hidden="true"></i>
+            <i className="fas fa-users fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style.span}>About Us</div>
           </div>
           <div
             className={tab === 5 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(5)}
           >
-            <i className="fa fa-question" aria-hidden="true"></i>
+            <i className="fas fa-question fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style.span}>Manage FAQs</div>
           </div>
           <div
             className={tab === 6 ? style.features_icons : style.features_icons1}
             onClick={() => setTab(6)}
           >
-            <i className="fa fa-cog" aria-hidden="true"></i>
-            <div className={style.span}>Setting</div>
+            <i className="fas fa-cog fa-fw fa-lg" aria-hidden="true"></i>
+            <div className={style.span}>Settings</div>
           </div>
         </div>
         <div className={style.right}>

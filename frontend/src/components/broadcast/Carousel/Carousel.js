@@ -6,14 +6,8 @@ import "./Carousel.css";
 import style from "../../home/motive/motive.module.css";
 import Modals from "./Modal/Modals";
 import dataa from "../../../test_data/broadcast_text.json";
-export default function Owl({ head }) {
-  let title1 = dataa[0].title;
-  let desc1 = dataa[0].desc;
-  let link1 = dataa[0].link;
-  let title2 = dataa[1].title;
-  let desc2 = dataa[1].desc;
-  let link2 = dataa[1].link;
 
+export default function Owl({ head }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = (s, h, i) => {
@@ -52,6 +46,7 @@ export default function Owl({ head }) {
       },
     },
   };
+
   return (
     <React.Fragment>
       <Modals open={open} handleClose={handleClose} data={data} />
@@ -67,48 +62,17 @@ export default function Owl({ head }) {
           responsiveClass={true}
           nav={false}
         >
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc1, title1, link1)}
-          >
-            <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 500)}...</div>
-          </div>
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc2, title2, link2)}
-          >
-            <h3 className="card-head">{title2}</h3>
-            <div className="card-text">{desc2.substring(0, 500)}...</div>
-          </div>
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc1, title1, link1)}
-          >
-            <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 500)}...</div>
-          </div>
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc2, title2, link2)}
-          >
-            <h3 className="card-head">{title2}</h3>
-            <div className="card-text">{desc2.substring(0, 500)}...</div>
-          </div>
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc1, title1, link1)}
-          >
-            <h3 className="card-head">{title1}</h3>
-            <div className="card-text">{desc1.substring(0, 500)}...</div>
-          </div>
-          <div
-            className="slide-card"
-            onClick={() => handleOpen(desc2, title2, link2)}
-          >
-            <h3 className="card-head">{title2} </h3>
-            <div className="card-text">{desc2.substring(0, 500)}...</div>
-          </div>
+          {dataa.map((item, i) => (
+            <div className="slide-card">
+              <h3 className="card-head">{item.title}</h3>
+              <div
+                className="card-text"
+                onClick={() => handleOpen(item.desc, item.title, item.link)}
+              >
+                {item.desc.substring(0, 600)}...
+              </div>
+            </div>
+          ))}
         </OwlCarousel>
       </div>
     </React.Fragment>

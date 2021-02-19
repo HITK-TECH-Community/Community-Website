@@ -24,6 +24,7 @@ import "./app.css";
 
 // Component
 import { Navbar } from "./components/Navbar/index";
+import AddFaq from "./components/admin/add_faq/add_faq";
 
 // Pages
 
@@ -51,6 +52,7 @@ const App = () => {
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route exact path="/join_us_form" component={JoinUsForm} />
             <Route exact path="/add_broadcast" component={AddBroadcasts} />
+            <Route exact path="/add_faq" component={AddFaq} />
             <Route component={NotFound} />
           </Switch>
         </Router>

@@ -18,7 +18,7 @@ const JoinUsForm = () => {
                     placeholder="Name"
                     id="txt_name"
                     type="text"
-                    Required="required"
+                    required="required"
                     name="name"
                   />
                   <i className={`fas fa-user ${styles.user}`}></i>
@@ -30,7 +30,7 @@ const JoinUsForm = () => {
                     placeholder="Contact No."
                     id="phone"
                     type="tel"
-                    Required="required"
+                    required="required"
                     name="phone"
                   />
                   <i className={`fas fa-phone ${styles.phone}`}></i>
@@ -43,10 +43,12 @@ const JoinUsForm = () => {
                   placeholder="Email ID"
                   id="txt_email"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="email"
                 />
-                <i className={`fas fa-envelope-open-text ${styles.envelope}`}></i>
+                <i
+                  className={`fas fa-envelope-open-text ${styles.envelope}`}
+                ></i>
               </div>
             </div>
             <div className={styles.formGroup}>
@@ -55,7 +57,7 @@ const JoinUsForm = () => {
                   placeholder="Linkedin Profile URL"
                   id="txt_link"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="link"
                 />
                 <i className={`fas fa-link ${styles.link}`}></i>
@@ -68,133 +70,123 @@ const JoinUsForm = () => {
                 rows="2"
                 cols="20"
                 name="desc"
-                Required="required"
+                required="required"
               ></textarea>
               <i className={`fas fa-comment-dots ${styles.comments}`}></i>
             </div>
             <div className={styles.joinusformInput1}>
               <label className={`mb-4 ${styles.ID}`}>Interested Domains</label>
               <div className={styles.checkbuttons}>
-              <div class="row">
-              <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="ml"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Machine Learning
-                  </label>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="ml" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Machine Learning
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="ai" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Artificial Intelligence
+                      </label>
+                    </div>
+                  </div>
                 </div>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="android" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Android
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="web" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Web Development
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="ai"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Artificial Intelligence
-                  </label>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="poster" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Poster Designing
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="video" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Video Editing
+                      </label>
+                    </div>
+                  </div>
                 </div>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="social" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Social Media Handler
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="iot" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        IoT
+                      </label>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="android"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                      Android
-                  </label>
+                <div className="row">
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="content" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Content Writing
+                      </label>
+                    </div>
+                  </div>
+                  <div className="col-xl-6">
+                    <div
+                      className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}
+                    >
+                      <input name="other" type="checkbox" />
+                      <label className={`${styles.mx_3} ${styles.label}`}>
+                        Other
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                </div>
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="web"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Web Development
-                  </label>
-                </div>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-xl-6">
-              <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="poster"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Poster Designing
-                  </label>
-                </div>
-                </div>
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="video"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Video Editing
-                  </label>
-                </div>
-                </div>
-              </div>
-              <div class="row">
-              <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="social"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Social Media Handler
-                  </label>
-                </div>
-                </div>
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                    <input
-                        name="iot"
-                        type="checkbox"
-                      />
-                    <label className={`${styles.mx_3} ${styles.label}`}>
-                      IoT
-                    </label>
-                </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="content"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Content Writing
-                  </label>
-                </div>
-                </div>
-                <div class="col-xl-6">
-                <div className={`${styles.form_check} form-check-inline ${styles.checkbox_item}`}>
-                  <input
-                      name="other"
-                      type="checkbox"
-                    />
-                  <label className={`${styles.mx_3} ${styles.label}`}>
-                    Other
-                  </label>
-                </div>
-                </div>
-              </div>
               </div>
             </div>
             <div className={styles.formGroup}>
@@ -203,7 +195,7 @@ const JoinUsForm = () => {
                   placeholder="Other - if the domain is not listed above"
                   id="txt_other"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="other"
                 />
                 <i className={`fas fa-pencil-alt ${styles.pencil}`}></i>
@@ -215,7 +207,7 @@ const JoinUsForm = () => {
                   placeholder="Department"
                   id="txt_dept"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="dept"
                 />
                 <i className={`fas fa-building ${styles.building}`}></i>
@@ -250,7 +242,7 @@ const JoinUsForm = () => {
                   placeholder="College Name"
                   id="txt_college"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="college"
                 />
                 <i className={`fas fa-graduation-cap ${styles.graduation}`}></i>

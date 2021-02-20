@@ -30,9 +30,9 @@ export default function Manage() {
             />
             <h3 className={style.h3}>{item}</h3>
             <div>
-              <i class="fab fa-linkedin fa-2x card_footer in"></i>
-              <i class="fab fa-twitter-square fa-2x card_footer"></i>
-              <i class="fab fa-github-square fa-2x card_footer"></i>
+              <i className="fab fa-linkedin fa-2x card_footer in"></i>
+              <i className="fab fa-twitter-square fa-2x card_footer"></i>
+              <i className="fab fa-github-square fa-2x card_footer"></i>
             </div>
             <div className={style.icon} onClick={() => handler(i)}>
               <DeleteIcon />

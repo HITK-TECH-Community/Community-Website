@@ -16,7 +16,7 @@ const Invite = () => {
                 placeholder="Email ID"
                 id="txt_email"
                 type="text"
-                Required="required"
+                required="required"
                 name="email"
               />
               <i className="far fa-envelope"></i>

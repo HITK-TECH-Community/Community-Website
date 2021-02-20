@@ -92,12 +92,6 @@
   background-color: #ffffff;
 }
 
-.loginBtn {
-  margin: 0 auto;
-  margin-bottom: 30px !important;
-  width: 40% !important;
-}
-
 .loginInput input::placeholder {
   opacity: 1;
   color: #777777;
@@ -124,13 +118,23 @@
   color: #777777;
 }
 
-.fa-eye-slash,
-.fa-eye {
+.loginInput:nth-child(2) i:hover {
   cursor: pointer;
+  color: rgb(17, 133, 17);
 }
 
-.fa-eye:hover {
-  color: rgb(17, 133, 17);
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 30px !important;
+}
+
+.submitBtnText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 750px) {
@@ -148,7 +152,16 @@
     padding: 0 0 10px;
   }
 
-  .loginBtn {
+  .submitBtn {
     width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .submitBtnText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
   }
 }

@@ -18,7 +18,7 @@ const Resources = () => {
                   placeholder="Name"
                   id="txt_name"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="name"
                 />
                 <i className="fas fa-user"></i>
@@ -31,7 +31,7 @@ const Resources = () => {
                   placeholder="Email ID"
                   id="txt_email"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="email"
                 />
                 <i className="fas fa-envelope"></i>
@@ -44,10 +44,10 @@ const Resources = () => {
                   placeholder="Resource URL"
                   id="txt_link"
                   type="text"
-                  Required="required"
+                  required="required"
                   name="link"
                 />
-                <i class="fas fa-link"></i>
+                <i className="fas fa-link"></i>
               </div>
             </div>
 
@@ -58,7 +58,7 @@ const Resources = () => {
                 rows="6"
                 cols="20"
                 name="resourcedesc"
-                Required="required"
+                required="required"
               ></textarea>
               <i className="fas fa-comment-dots"></i>
             </div>
@@ -69,31 +69,31 @@ const Resources = () => {
                 </label>
               </div>
               <div className={style.radioButtons}>
-                <div class={style.radioItem}>
+                <div className={style.radioItem}>
                   <input type="radio" id="ritema" name="one" />
                   <label className={`mx-3 ${style.label}`} for="ritema">
                     1
                   </label>
                 </div>
-                <div class={style.radioItem}>
+                <div className={style.radioItem}>
                   <input type="radio" id="ritemb" name="one" />
                   <label className={`mx-3 ${style.label}`} for="ritemb">
                     2
                   </label>
                 </div>
-                <div class={style.radioItem}>
+                <div className={style.radioItem}>
                   <input type="radio" id="ritemc" name="one" />
                   <label className={`mx-3 ${style.label}`} for="ritemc">
                     3
                   </label>
                 </div>
-                <div class={style.radioItem}>
+                <div className={style.radioItem}>
                   <input type="radio" id="ritemd" name="one" />
                   <label className={`mx-3 ${style.label}`} for="ritemd">
                     4
                   </label>
                 </div>
-                <div class={style.radioItem}>
+                <div className={style.radioItem}>
                   <input type="radio" id="riteme" name="one" />
                   <label className={`mx-3 ${style.label}`} for="riteme">
                     5
@@ -106,7 +106,7 @@ const Resources = () => {
                 <input
                   required
                   name="dob"
-                  class={style.textboxN}
+                  className={style.textboxN}
                   type="date"
                   id="date"
                   placeholder="Valid Until:&nbsp;"

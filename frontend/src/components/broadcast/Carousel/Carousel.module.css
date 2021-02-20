@@ -1,4 +1,4 @@
-.slider-div {
+.sliderDiv {
   padding: 2em 0;
 }
 
@@ -9,12 +9,12 @@
   padding-top: 2em !important;
 }
 
-.carousel-head {
+.carouselHead {
   color: #121f3a !important;
   font-size: 35px !important;
 }
 
-.slide-card {
+.slideCard {
   min-height: 25em;
   border-radius: 20px;
   background-color: #016795;
@@ -23,7 +23,7 @@
   padding: 1em;
 }
 
-.slide-card:hover {
+.slideCard:hover {
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
@@ -33,17 +33,14 @@
   cursor: pointer;
 }
 
-.card-head {
+.cardHead {
   text-align: center;
+  width: 100%;
 }
 
-.card-text {
+.cardText {
   margin: 1.5em 0;
   line-height: 1.5;
   text-align: center;
   font-size: 15px;
-}
-
-.owl-dots button.owl-dot.active {
-  background-color: rgba(255, 0, 90, 1) !important;
 }

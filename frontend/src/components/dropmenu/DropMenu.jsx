@@ -10,6 +10,7 @@ import {
   MenuList,
 } from "@material-ui/core";
 import styles from "./dropmenu.module.css";
+
 const useStyles = makeStyles((theme) => ({
   button: {
     fontFamily: '"Futura LT Book", sans-serif',
@@ -24,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     fontSize: "18px",
     cursor: "pointer",
-    backgroundImage:
-      "linear-gradient(to right, #FF7052, #FDAB48, #FCC006)",
+    backgroundImage: "linear-gradient(to right, #FF7052, #FDAB48, #FCC006)",
     "&:hover": {
       backgroundPosition: "right center",
       color: "#fff",

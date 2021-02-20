@@ -87,13 +87,13 @@ const AboutUs = () => {
             <div className={`${styles.card1} `} id="founder">
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
@@ -131,13 +131,13 @@ const AboutUs = () => {
             <div className={`${styles.card1} `} id="founder">
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
@@ -177,13 +177,13 @@ const AboutUs = () => {
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
@@ -224,13 +224,13 @@ const AboutUs = () => {
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
@@ -273,13 +273,13 @@ const AboutUs = () => {
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}
@@ -320,13 +320,13 @@ const AboutUs = () => {
             <div className={styles.card1}>
               <Card1 className={classes.root}>
                 <div className={`col-4 ${styles.photo}}`}>
-                  <div class="row">
+                  <div className="row">
                     <CardMedia
                       className={classes.cover}
                       image="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
                     />
                   </div>
-                  <div class="row">
+                  <div className="row">
                     <div className={styles.teamSocial}>
                       <i
                         className={`fab fa-linkedin fa-2x ${styles.card_footer} in`}

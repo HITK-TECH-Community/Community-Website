@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
-const shortLinksSchema = new Schema({
+const tinyURLSchema = new Schema({
   urlCode: {
     type: String,
   },
-  longUrl: {
+  longURL: {
     type: String,
   },
-  shortUrl: {
+  shortURL: {
     type: String,
   },
   date: {
@@ -16,4 +17,4 @@ const shortLinksSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Url', shortLinksSchema);
+module.exports = mongoose.model('tinyURL', tinyURLSchema);

@@ -6,7 +6,6 @@ const { generateJWT } = require('../../../helpers/middlewares/auth');
 
 module.exports = async (req, res, next) => {
   const { email, password } = req.body;
-  console.log(email, password);
   const userRecord = await Admin.findOne({ email });
   if (!userRecord) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {

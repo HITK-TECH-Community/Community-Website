@@ -1,9 +1,10 @@
-const Url = require('../../models/Url');
 const to = require('await-to-js').default;
+const tinyURL = require('../../models/tinyURL');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
+
 module.exports = async (req, res, next) => {
-  const [err, url] = await to(Url.findOne({ urlCode: req.params.code }));
+  const [err, url] = await to(tinyURL.findOne({ urlCode: req.params.code }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: '500',
@@ -13,9 +14,6 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  if (url) {
-    return res.status(200).redirect(url.longUrl);
-  }
   if (!url) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 404,
@@ -24,4 +22,5 @@ module.exports = async (req, res, next) => {
     next(error);
     return false;
   }
+  return res.status(200).redirect(url.longURL);
 };

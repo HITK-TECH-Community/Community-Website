@@ -1,5 +1,6 @@
 .editor {
   padding: 30px;
+  overflow-x: hidden;
 }
 
 .heading {
@@ -57,5 +58,34 @@ input:focus {
 @media screen and (max-width: 600px) {
   input {
     margin-left: 0;
+  }
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30%;
+}
+
+.submitBtnText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .submitBtnText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+
+  .submitBtn {
+    width: 60% !important;
+    margin: 0 auto;
   }
 }

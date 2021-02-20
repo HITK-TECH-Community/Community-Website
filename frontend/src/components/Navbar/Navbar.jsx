@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
-import style from "./navbar.module.css";
+import style from "./navbar.module.scss";
 
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);

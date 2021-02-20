@@ -27,7 +27,7 @@ This module is responsible for all the activities related to authentication.
 <br>
 
 JWT consists of three parts headers, payload and signature.
-<b>Header</b> - This contains the type of token and the algorithm used for signing.
+<b>Header</b> - This contains the type of token and the algorith used for signing.
 
 <b>Payload</b> - This contains different types of claims like registerd, private and public claims. In our project we have passed {name, email and isSuperAdmin} all these are <b>private claims</b>.We can also pass <b>registered claims</b> like <b>iss</b> (issuer), <b>exp</b> (expiration time), <b>sub</b> (subject), <b>aud</b> (audience) etc.
 

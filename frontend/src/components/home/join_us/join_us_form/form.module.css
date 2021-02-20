@@ -345,7 +345,6 @@ input[type="date"]:not(:valid):before {
     width: 60% !important;
     margin: 0 auto;
   }
-  
 }
 
 @media only screen and (max-width: 640px) {

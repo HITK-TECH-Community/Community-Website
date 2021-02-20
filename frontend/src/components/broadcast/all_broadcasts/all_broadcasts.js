@@ -78,6 +78,7 @@ function AllBroadcasts() {
             <Card
               project={element}
               key={`card-${i}`}
+              id={`card-${i}`}
               handler={() => handler(i)}
               admin={isAdmin}
             />

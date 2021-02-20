@@ -30,6 +30,7 @@ export default function Edit(props) {
               type="text"
               name="title"
               placeholder="Title"
+              multiline
               value={props.data.title}
               className={style.input}
               onChange={props.handleChange}
@@ -40,6 +41,7 @@ export default function Edit(props) {
             <TextField
               type="text"
               name="desc"
+              multiline
               placeholder="Description"
               value={props.data.desc}
               className={style.input}
@@ -55,6 +57,7 @@ export default function Edit(props) {
               className={style.input}
               onChange={props.handleChange}
               value={props.data.link}
+              multiline
             />
           </div>
           <button

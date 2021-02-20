@@ -2,7 +2,7 @@
 name: Component refactor
 about: Refactor the existing components as the per the proposed folder structure.
 title: 'Refactoring <component-name> component'
-labels: 'level-5, frontend'
+labels: 'Level-5, frontend, refactor'
 assignees: ''
 
 ---

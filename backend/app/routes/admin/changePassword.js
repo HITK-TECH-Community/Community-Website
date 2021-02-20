@@ -41,7 +41,7 @@ module.exports = async (req, res, next) => {
   const [err] = await to(
     Admin.findOneAndUpdate(
       { email: userRecord.email },
-      { $set: { passwordHash: hashedPassword } },
+      { $set: { passwordHash: hashedPassword } }
     )
   );
 

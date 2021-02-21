@@ -1,28 +1,23 @@
 import React, { Fragment } from "react";
 
-import "./join_us.css";
+import { Button3 } from "../../util/button/button";
+import styles from "./join_us.module.css";
 
-const Test = () => {
+const JoinUs = () => {
   return (
     <Fragment>
-      <div className="join-us">
-        <h1 className="title">Join Us</h1>
-        <h2 className="subtitle">
-          Connect with hundreds of other Tech Enthusiasts to stay updated of
-          every opportunities.
+      <div className={styles.joinUs}>
+        <h1 className={styles.title}>Join Us</h1>
+        <div className={styles.dash}></div>
+        <h2 className={styles.subtitle}>
+          Join us in the mission of reducing the knowledge gap in students.
         </h2>
-        <button className="join-us-btn">
-          <a
-            href="https://www.linkedin.com/company/hitk-tech-community"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Follow us on Linked<i className="fab fa-linkedin"></i>
-          </a>
-        </button>
+        <a href="/join_us_form">
+          <Button3 label="Join Us!" type="submit" />
+        </a>
       </div>
     </Fragment>
   );
 };
 
-export default Test;
+export default JoinUs;

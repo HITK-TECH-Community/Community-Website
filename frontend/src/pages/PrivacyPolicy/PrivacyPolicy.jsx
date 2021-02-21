@@ -1,19 +1,19 @@
 import React from "react";
-import styles from "./privacy-policy.module.css";
+import style from "./privacy-policy.module.scss";
 
-const PrivacyPolicy = () => {
+export const PrivacyPolicy = () => {
   return (
-    <div className={styles.ppSection}>
-      <div className={styles.ppLogoContainer}>
+    <div className={style["pp-section"]}>
+      <div className={style["pp-logo-container"]}>
         <img
-          className={styles.ppLogo}
+          className={style["pp-logo"]}
           src="./images/privacy.png"
           alt="privacy-icon"
         />
       </div>
-      <div className={styles.ppStatementContainer}>
-        <div className={styles.ppStatement}>
-          <div className={styles.ppContent}>
+      <div className={style["pp-statement-container"]}>
+        <div className={style["pp-statement"]}>
+          <div className={style["pp-content"]}>
             This privacy policy has been compiled to better serve those who are
             concerned with how their 'Personally Identifiable Information' (PII)
             is being used online. PII, as described in US privacy law and
@@ -24,27 +24,27 @@ const PrivacyPolicy = () => {
             collect, use, protect or otherwise handle your Personally
             Identifiable Information in accordance with our website.
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             What personal information do we collect from the people that visit
             our website?
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             When ordering or registering on our site, as appropriate, you may be
             asked to enter your name, email address, mailing address or other
             details to help you with your experience.
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             When do we collect information?
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             We collect information from you when you register on our site,
             subscribe to a newsletter, fill out a form or enter information on
             our site.
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             How do we use your information?
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             We may use the information we collect from you when you register,
             make a purchase, sign up for our newsletter, respond to a survey or
             marketing communication, surf the website, or use certain other site
@@ -70,10 +70,10 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             How do we protect your information?
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             <ul>
               <li>
                 <i className="fas fa-check-circle"></i> We do not use
@@ -109,29 +109,29 @@ const PrivacyPolicy = () => {
               </li>
             </ul>
           </div>
-          <div className={styles.ppSubheading}>Third-party disclosure</div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-subheading"]}>Third-party disclosure</div>
+          <div className={style["pp-content"]}>
             We do not sell, trade, or otherwise transfer to outside parties your
             Personally Identifiable Information.
           </div>
-          <div className={styles.ppSubheading}>CAN SPAM Act</div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-subheading"]}>CAN SPAM Act</div>
+          <div className={style["pp-content"]}>
             The CAN-SPAM Act is a law that sets the rules for commercial email,
             establishes requirements for commercial messages, gives recipients
             the right to have emails stopped from being sent to them, and spells
             out tough penalties for violations.
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             We collect your email address in order to:
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             Send information, respond to inquiries, and/or other requests or
             questions.
           </div>
-          <div className={styles.ppSubheading}>
+          <div className={style["pp-subheading"]}>
             To be in accordance with CANSPAM, we agree to the following:
           </div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-content"]}>
             If at any time you would like to unsubscribe from receiving future
             emails, you can email us at{" "}
             <a href="mailto:hitktechcommunity@gmail.com">
@@ -139,8 +139,8 @@ const PrivacyPolicy = () => {
             </a>{" "}
             and we will promptly remove you from ALL correspondence.
           </div>
-          <div className={styles.ppSubheading}>Contacting Us</div>
-          <div className={styles.ppContent}>
+          <div className={style["pp-subheading"]}>Contacting Us</div>
+          <div className={style["pp-content"]}>
             If there are any questions regarding this privacy policy, you may
             contact us using the information below.
             <p style={{ marginTop: "20px" }}>
@@ -151,12 +151,10 @@ const PrivacyPolicy = () => {
                 hitktechcommunity@gmail.com
               </a>
             </p>
-            <p className={styles.byLine}>Last Edited on 2021-01-15</p>
+            <p className={style["by-line"]}>Last Edited on 2021-01-15</p>
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default PrivacyPolicy;

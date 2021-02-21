@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import styles from "./add_faq.module.css";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import Profile from "../profile/profile";
-import Dashboard from "../dashboard/dashboard";
-import Contact from "../contact/contact";
-import About from "../about/about";
-import FAQ from "../faq/faq";
-import Setting from "../setting/setting";
-import Invite from "../setting/Invite/Invite";
-import Manage from "../setting/Manage/Manage";
-import style from "../admin.module.css";
-import Broadcast from "../broadcast/broadcast";
-import { Button2 } from "../../util/button/button";
+import Profile from "../../profile/profile";
+import Dashboard from "../../dashboard/dashboard";
+import Contact from "../../contact/contact";
+import About from "../../about/about";
+import Setting from "../../setting/setting";
+import Invite from "../../setting/Invite/Invite";
+import Manage from "../../setting/Manage/Manage";
+import style from "../../admin.module.css";
+import Broadcast from "../../broadcast/broadcast";
+import { Button2 } from "../../../util/button/button";
 
 function AddFaq() {
   const [tab, setTab] = useState(1);

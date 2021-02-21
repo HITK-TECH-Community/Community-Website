@@ -20,7 +20,6 @@ export default function faq() {
             <div className={styles.cardcontent}>
               <p style={{ textAlign: "left" }}>To add a new faq</p>
               <p
-                // onClick={openEditor}
                 style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
                 <Link to="/add_faq" style={{ color: "red" }}>

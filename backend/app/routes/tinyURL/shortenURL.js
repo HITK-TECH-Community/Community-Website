@@ -29,11 +29,7 @@ module.exports = async (req, res, next) => {
     date: new Date(),
   };
   const [err, url] = await to(
-    Url.findOneAndUpdate(
-      { longURL },
-      { $setOnInsert: setData },
-      { new: true, upsert: true }
-    )
+    Url.findOneAndUpdate({ longURL }, { $setOnInsert: setData }, { new: true, upsert: true })
   );
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {

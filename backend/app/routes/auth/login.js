@@ -17,10 +17,7 @@ module.exports = async (req, res, next) => {
     next(error);
     return false;
   }
-  const isPasswordCorrect = await argon2.verify(
-    userRecord.passwordHash,
-    password
-  );
+  const isPasswordCorrect = await argon2.verify(userRecord.passwordHash, password);
   if (!isPasswordCorrect) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,

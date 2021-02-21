@@ -87,7 +87,44 @@ function AddFaq() {
           </div>
           <div className={style.right}>
             {tab === 0 ? (
-              <Profile />
+              <div className={styles.faqSection}>
+                <div className={styles.faqParent}>
+                  <div className={`${styles.faqChild} ${styles.child1}`}>
+                    <div className={styles.faqCard}>
+                      <h1 className={styles.faqHeaderText}>FAQ</h1>
+                      <div className={styles.insideFaq}>
+                        <div className={styles.faqInput}>
+                          <input
+                            id="txt_name"
+                            type="text"
+                            required="required"
+                            name="question"
+                            placeholder="Question"
+                          />
+                          <i className="fas fa-question-circle"></i>
+                        </div>
+                        <div className={styles.faqInput}>
+                          <input
+                            id="txt_email"
+                            type="text"
+                            required="required"
+                            name="answer"
+                            placeholder="Answer"
+                          />
+                          <i className="fas fa-comment-dots"></i>
+                        </div>
+                        <div className={styles.submitBtn}>
+                          <Button2
+                            className={styles.submitBtnText}
+                            label="Submit"
+                            type="submit"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : tab === 1 ? (
               <Dashboard setTab={setTab} />
             ) : tab === 2 ? (

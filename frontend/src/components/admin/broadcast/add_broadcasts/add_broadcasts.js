@@ -3,16 +3,16 @@ import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 import styles from "./add_broadcasts.module.css";
 import DashboardIcon from "@material-ui/icons/Dashboard";
-import Profile from "../profile/profile";
-import Dashboard from "../dashboard/dashboard";
-import Contact from "../contact/contact";
-import About from "../about/about";
-import FAQ from "../faq/faq";
-import Setting from "../setting/setting";
-import Invite from "../setting/Invite/Invite";
-import Manage from "../setting/Manage/Manage";
-import style from "../admin.module.css";
-import { Button2 } from "../../util/button/button";
+import Profile from "../../profile/profile";
+import Dashboard from "../../dashboard/dashboard";
+import Contact from "../../contact/contact";
+import About from "../../about/about";
+import FAQ from "../../faq/faq";
+import Setting from "../../setting/setting";
+import Invite from "../../setting/Invite/Invite";
+import Manage from "../../setting/Manage/Manage";
+import style from "../../admin.module.css";
+import { Button2 } from "../../../util/button/button";
 
 function AddBroadcasts() {
   const [tab, setTab] = useState(1);

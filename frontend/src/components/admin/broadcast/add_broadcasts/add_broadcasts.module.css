@@ -46,9 +46,12 @@
 
 input {
   border: none;
-  height: 45px;
   flex: 1;
   border-radius: 10px;
+  height: 38px;
+  font-size: large;
+  margin-left: 10px;
+  padding: 5px;
 }
 
 input:focus {
@@ -65,7 +68,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   width: 30%;
 }
 

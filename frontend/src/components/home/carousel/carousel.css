@@ -58,11 +58,16 @@
   display: none !important;
 }
 
-span {
+.owl-prev,
+.owl-next {
+  font-size: 70px !important;
+}
+
+/* span {
   font-size: 70px;
   position: relative;
   top: 5px;
-}
+} */
 
 .owl-nav button:focus {
   outline: none;

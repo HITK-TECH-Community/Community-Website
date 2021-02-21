@@ -43,10 +43,7 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 3500;
 server.listen(
   PORT,
-  console.log(
-    `Server running in ${process.env.ENV || 'development'} mode on port ${PORT}`
-      .brightYellow.underline.bold
-  )
+  console.log(`Server running in ${process.env.ENV || 'development'} mode on port ${PORT}`.brightYellow.underline.bold)
 );
 
 // handle the error safely

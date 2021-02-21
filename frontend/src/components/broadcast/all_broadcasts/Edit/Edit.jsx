@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./Edit.module.scss";
 import { TextField } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 export default function Edit(props) {
-  console.log(props.data);
+  const [a, seta] = useState();
+  function scrolls() {
+    let b = window.scrollY;
+    seta(b);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", scrolls);
+  }, []);
+
   return props.visible ? (
-    <div className={style.popup}>
+    <div className={style.popup} style={{ top: a }}>
       <div className={style.div}>
         <h1>
           Edit modal
@@ -22,6 +30,7 @@ export default function Edit(props) {
               type="text"
               name="title"
               placeholder="Title"
+              multiline
               value={props.data.title}
               className={style.input}
               onChange={props.handleChange}
@@ -32,6 +41,7 @@ export default function Edit(props) {
             <TextField
               type="text"
               name="desc"
+              multiline
               placeholder="Description"
               value={props.data.desc}
               className={style.input}
@@ -47,6 +57,7 @@ export default function Edit(props) {
               className={style.input}
               onChange={props.handleChange}
               value={props.data.link}
+              multiline
             />
           </div>
           <button

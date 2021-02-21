@@ -9,18 +9,11 @@ module.exports = async (req, res, next) => {
     firstName: 'Root',
     lastName: 'Admin',
     email: 'hitktechcommunity@gmail.com',
-    passwordHash:
-      '$argon2i$v=19$m=16,t=2,p=1$U0p1dUpISnpsb2I1YzBNNQ$cKpl7z7aH0VjOozCmqc4eA',
+    passwordHash: '$argon2i$v=19$m=16,t=2,p=1$U0p1dUpISnpsb2I1YzBNNQ$cKpl7z7aH0VjOozCmqc4eA',
     contact: '+919046500031',
     isSuperAdmin: true,
   };
-  const [err, user] = await to(
-    Admin.findOneAndUpdate(
-      { email: 'hitktechcommunity@gmail.com' },
-      adminData,
-      options
-    )
-  );
+  const [err, user] = await to(Admin.findOneAndUpdate({ email: 'hitktechcommunity@gmail.com' }, adminData, options));
   if (err) {
     console.log(err);
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

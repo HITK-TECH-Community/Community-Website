@@ -24,7 +24,7 @@ import "./app.css";
 
 // Component
 import { Navbar } from "./components/Navbar/index";
-import AddFaq from "./components/admin/add_faq/add_faq";
+import AddFaq from "./components/admin/faq/add_faq/add_faq";
 
 // Pages
 

@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --format table",
+    "lint:fix": "eslint . --fix --format table",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "await-to-js": "^2.1.1",
     "body-parser": "^1.19.0",
     "colors": "^1.4.0",
+    "config": "^3.3.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
@@ -32,17 +33,36 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.8",
-    "response-time": "^2.3.2"
+    "nanoid": "^3.1.20",
+    "response-time": "^2.3.2",
+    "url-exists": "^1.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint . --fix --format table ",
+      "git add"
+    ]
   },
   "devDependencies": {
-    "eslint": "^7.16.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "prettier": "2.2.1"
   }
 }

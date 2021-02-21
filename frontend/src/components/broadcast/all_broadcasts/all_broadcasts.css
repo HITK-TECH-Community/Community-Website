@@ -23,6 +23,19 @@ main {
   margin: 15px 10px 15px auto;
 }
 
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
 #hero {
   margin-top: 30px;
   display: flex;
@@ -51,6 +64,7 @@ main {
   flex-wrap: wrap;
   width: 95vw;
   margin: 0.5em;
+  justify-content: center;
 }
 
 .searchIcon {

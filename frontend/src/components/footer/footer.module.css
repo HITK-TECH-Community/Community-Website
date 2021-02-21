@@ -127,7 +127,8 @@
   color: #dd2a7b;
 }
 
-.fa-envelope:hover {
+.fa-envelope:hover,
+.faEnvelope:hover {
   color: #c71610;
 }
 

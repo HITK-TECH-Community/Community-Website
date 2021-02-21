@@ -118,12 +118,8 @@
   color: #777777;
 }
 
-.fa-eye-slash,
-.fa-eye {
+.loginInput:nth-child(2) i:hover {
   cursor: pointer;
-}
-
-.fa-eye:hover {
   color: rgb(17, 133, 17);
 }
 

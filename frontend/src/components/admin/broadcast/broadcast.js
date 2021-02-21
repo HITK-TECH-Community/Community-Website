@@ -36,9 +36,13 @@ export default function Broadcast() {
               <AiFillEdit className={styles.editt} />
             </div>
             <div className={styles.cardcontent}>
-              <button className={styles.mainbtn} type="submit">
+              <Link
+                to="/all-broadcasts"
+                className={styles.mainbtn}
+                type="submit"
+              >
                 Manage here
-              </button>
+              </Link>
             </div>
           </div>
         </div>

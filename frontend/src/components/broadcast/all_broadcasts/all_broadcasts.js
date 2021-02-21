@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./all_broadcasts.css";
 import dataa from "../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import Dropmenu from "./../../dropmenu/DropMenu";
 import Card from "./card/card";
+import Edit from "./Edit/Edit";
 
 function AllBroadcasts() {
-  const arrayCards = [
-    [dataa[0].title, dataa[0].desc, dataa[0].link],
-    [dataa[1].title, dataa[1].desc, dataa[1].link],
-    [dataa[0].title, dataa[0].desc, dataa[0].link],
-    [dataa[1].title, dataa[1].desc, dataa[1].link],
-    [dataa[0].title, dataa[0].desc, dataa[0].link],
-  ];
+  const [array, setArray] = useState([...dataa]);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  const [isAdmin] = useState(true);
+
+  const handler = (i) => {
+    setIndex(i);
+    setVisible(true);
+  };
+  const handleChange = (e) => {
+    let a = [...array];
+    let o = { ...a[index], [e.target.name]: e.target.value };
+    a[index] = o;
+    setArray(a);
+  };
 
   return (
     <main>
+      <Edit
+        visible={visible}
+        setVisible={setVisible}
+        handleChange={handleChange}
+        data={array[index]}
+      />
       <div id="hero">
         <div className="motive">
           <h1 className="carousel-head">All Broadcasts</h1>
@@ -57,8 +73,16 @@ function AllBroadcasts() {
         </div>
       </div>
       <div id="allCards">
-        {arrayCards.map((element, i) => {
-          return <Card project={element} key={`card-${i}`} />;
+        {array.map((element, i) => {
+          return (
+            <Card
+              project={element}
+              key={`card-${i}`}
+              id={`card-${i}`}
+              handler={() => handler(i)}
+              admin={isAdmin}
+            />
+          );
         })}
       </div>
     </main>

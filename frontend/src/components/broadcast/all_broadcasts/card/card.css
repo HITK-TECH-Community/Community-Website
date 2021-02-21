@@ -37,6 +37,7 @@
 .card-item:hover {
   background-color: #1b2431;
 }
+
 .but {
   background: white;
   padding: 12px 22px;
@@ -48,6 +49,7 @@
   transition: all 0.3s ease-out;
   margin-bottom: 20px;
 }
+
 .but:hover {
   background: linear-gradient(
     45deg,
@@ -58,4 +60,23 @@
   border-radius: 4px;
   border: 2px solid
     linear-gradient(45deg, rgba(255, 0, 90, 1) 0%, rgba(10, 24, 61, 1) 90%);
+}
+
+.admin-controls {
+  width: 100%;
+  color: white;
+  text-align: right;
+  margin-top: -0.5em;
+  margin-right: -0.5em;
+}
+
+.cardContainer {
+  opacity: 1;
+  width: 357px;
+  transition: width 1s ease-out, opacity 300ms ease-out;
+}
+
+.gonnaRemove {
+  opacity: 0;
+  width: 0;
 }

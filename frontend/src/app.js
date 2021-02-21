@@ -5,7 +5,6 @@ import "semantic-ui-css/semantic.min.css";
 import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
 import Home from "./components/home/home";
 import JoinUsForm from "./components/home/join_us/join_us_form/form";
-import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
 import Resources from "./components/resource/resources";
@@ -13,7 +12,6 @@ import ContactUs from "./components/contact/contact_us";
 import Admin from "./components/admin/admin";
 import AddBroadcasts from "./components/admin/add_broadcasts/add_broadcasts";
 import Faqs from "./components/faq/faq";
-import NotFound from "./components/404/not_found";
 import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
@@ -27,6 +25,8 @@ import { Navbar } from "./components/Navbar/index";
 import AddFaq from "./components/admin/faq/add_faq/add_faq";
 
 // Pages
+import { About } from "./pages/About";
+import { NotFound } from "./pages/404";
 
 const App = () => {
   return (
@@ -36,7 +36,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/about-us" component={About} />
             <Route exact path="/Broadcasts">
               <Broadcasts />
             </Route>

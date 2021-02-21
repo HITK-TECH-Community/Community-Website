@@ -1,0 +1,26 @@
+.carousel-div {
+  padding: 50px 0px;
+}
+
+.motive h1 {
+  text-align: center;
+  line-height: 0.9;
+}
+
+@media (max-width: 500px) {
+  .motive {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 800px) {
+  .motive {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .motive {
+    padding-bottom: 40px;
+  }
+}

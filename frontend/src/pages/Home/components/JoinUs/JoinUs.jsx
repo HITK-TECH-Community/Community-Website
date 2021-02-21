@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 
 import { Button3 } from "../../util/button/button";
-import styles from "./join_us.module.css";
+import styles from "./join-us.module.scss";
 
-const JoinUs = () => {
+export const joinUs = () => {
   return (
     <Fragment>
-      <div className={styles.joinUs}>
-        <h1 className={styles.title}>Join Us</h1>
-        <div className={styles.dash}></div>
-        <h2 className={styles.subtitle}>
+      <div className={styles["join-us"]}>
+        <h1 className={styles["title"]}>Join Us</h1>
+        <div className={styles["dash"]}></div>
+        <h2 className={styles["subtitle"]}>
           Join us in the mission of reducing the knowledge gap in students.
         </h2>
         <a href="/join_us_form">
@@ -19,5 +19,3 @@ const JoinUs = () => {
     </Fragment>
   );
 };
-
-export default JoinUs;

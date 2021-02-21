@@ -1,9 +1,9 @@
-.joinusformSection {
+.join-us-form-section {
   display: flex;
   background-color: #fff;
 }
 
-.joinusformImage {
+.join-us-form-image {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -18,12 +18,12 @@
   margin: 0;
 }
 
-.joinusformImage img {
+.join-us-form-image img {
   max-width: 100%;
   margin-top: 160px;
 }
 
-.joinusForm {
+.join-us-form {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.joinusformCard {
+.join-us-form-card {
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
@@ -46,14 +46,14 @@
   padding-bottom: 2rem;
 }
 
-.joinusformInput {
+.join-us-form-input {
   position: relative;
 }
 
-.joinusformInput input,
-.joinusformInput textarea,
-.joinusformInput select,
-.joinusformInput1 select {
+.join-us-form-input input,
+.join-us-form-input textarea,
+.join-us-form-input select,
+.join-us-form-input1 select {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -68,34 +68,34 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.joinusformInput input::placeholder,
-.joinusformInput textarea::placeholder {
+.join-us-form-input input::placeholder,
+.join-us-form-input textarea::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusformInput input::-moz-placeholder,
-.joinusformInput textarea::-moz-placeholder {
+.join-us-form-input input::-moz-placeholder,
+.join-us-form-input textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusformInput input::-moz-placeholder,
-.joinusformInput textarea::-moz-placeholder {
+.join-us-form-input input::-moz-placeholder,
+.join-us-form-input textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusformInput input::-webkit-input-placeholder,
-.joinusformInput textarea::-webkit-input-placeholder {
+.join-us-form-input input::-webkit-input-placeholder,
+.join-us-form-input textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.joinusformInput input:focus,
-.joinusformInput textarea:focus,
-.joinusformInput select:focus,
-.joinusformInput1 select:focus {
+.join-us-form-input input:focus,
+.join-us-form-input textarea:focus,
+.join-us-form-input select:focus,
+.join-us-form-input1 select:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -106,7 +106,7 @@
   background-color: #ffffff;
 }
 
-.joinusformInput textarea {
+.join-us-form-input textarea {
   padding-top: 15px;
   resize: none;
   height: 80px;
@@ -119,7 +119,7 @@
   margin-bottom: 25px;
 }
 
-.joinusformInput i {
+.join-us-form-input i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -160,7 +160,7 @@
   color: pink;
 }
 
-.insideJoinusform {
+.inside-join-us-form {
   width: 85%;
   margin: 0 auto;
 }
@@ -181,12 +181,12 @@
   margin-right: auto;
 }
 
-.mx_3 {
+.mx-3 {
   margin-right: 0px !important;
   margin-left: 1rem !important;
 }
 
-.radio_item label:before {
+.radio-item label:before {
   display: inline-block;
   position: relative;
   top: 5px;
@@ -195,7 +195,7 @@
   background-color: transparent;
 }
 
-.checkbox_item label:before {
+.checkbox-item label:before {
   display: inline-block;
   position: relative;
   top: 5px;
@@ -204,7 +204,7 @@
   background-color: transparent;
 }
 
-.checkbox_item input[type="checkbox"]:checked + label:after {
+.checkbox-item input[type="checkbox"]:checked + label:after {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -220,14 +220,14 @@
   border: 4px solid whitesmoke;
 }
 
-.radio_item {
+.radio-item {
   display: inline-block;
   position: relative;
   padding: 0 6px;
   margin-bottom: 10px;
 }
 
-.radio_item input[type="radio"]:checked + label:after {
+.radio-item input[type="radio"]:checked + label:after {
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -244,13 +244,13 @@
   border: 4px solid whitesmoke;
 }
 
-.form_check {
+.form-check {
   padding-top: 0px !important;
   padding-bottom: 1rem;
   padding-left: 0px;
 }
 
-.YearOfStudy {
+.year-of-study {
   margin-right: 1rem;
   display: block;
 }
@@ -260,17 +260,17 @@
   display: block;
 }
 
-.radioButtons {
+.radio-buttons {
   display: inline;
   margin-bottom: 1rem;
 }
 
-.checkbuttons {
+.check-buttons {
   display: inline;
   margin-bottom: 1rem;
 }
 
-.joinusformInput1 {
+.join-us-form-input1 {
   margin-bottom: 1.5rem;
 }
 
@@ -278,23 +278,23 @@ input[type="date"]:not(:valid):before {
   content: attr(placeholder);
 }
 
-.form_check {
+.form-check {
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0px;
 }
 
-.formRow {
+.form-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.formGroup {
+.form-group {
   padding-right: 0.25em;
 }
 
-.joinusformHeaderText {
+.join-us-form-header-text {
   padding: 30px 0;
   font-size: 30px;
   text-align: center;
@@ -302,30 +302,30 @@ input[type="date"]:not(:valid):before {
   text-transform: capitalize;
 }
 
-.submitBtn {
+.submit-btn {
   display: flex;
   justify-content: center;
   width: 40%;
   margin: 0 auto;
 }
 
-.submitBtnText {
+.submit-btn-text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 750px) {
-  .joinusformSection {
+  .join-us-form-section {
     flex-direction: column;
     width: 100%;
   }
 
-  .formGroup {
+  .form-group {
     width: 100%;
   }
 
-  .formGroup2 {
+  .form-group2 {
     width: 100%;
   }
 
@@ -333,7 +333,7 @@ input[type="date"]:not(:valid):before {
     padding: 0 0 10px;
   }
 
-  .submitBtnText {
+  .submit-btn-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -341,7 +341,7 @@ input[type="date"]:not(:valid):before {
     color: black;
   }
 
-  .submitBtn {
+  .submit-btn {
     width: 60% !important;
     margin: 0 auto;
   }
@@ -360,7 +360,7 @@ input[type="date"]:not(:valid):before {
     margin-right: 2%;
   }
 
-  .YearOfStudy {
+  .year-of-study {
     display: block;
   }
 
@@ -368,15 +368,15 @@ input[type="date"]:not(:valid):before {
     display: block;
   }
 
-  .radioButtons {
+  .radio-buttons {
     margin-bottom: 1rem;
   }
 
-  .joinusformInput1 {
+  .join-us-form-input1 {
     text-align: center;
   }
 
-  .checkbuttons {
+  .check-buttons {
     text-align: left;
   }
 }

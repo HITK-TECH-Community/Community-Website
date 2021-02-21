@@ -1,9 +1,9 @@
-.motiveDiv {
+.motive-div {
   background-color: hsl(210, 64%, 9%);
   padding: 60px 0px;
 }
 
-.singleFeatures {
+.single-features {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
@@ -17,7 +17,7 @@
   height: 100%;
 }
 
-.singleFeatures::before {
+.single-features::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -40,14 +40,14 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.singleFeatures .featuresIcon {
+.single-features .features-icon {
   position: relative;
   align-items: center;
   display: flex;
   padding-right: 18px;
 }
 
-.singleFeatures .featuresIcon i {
+.single-features .features-icon i {
   font-size: 40px;
   background: -webkit-linear-gradient(
     45deg,
@@ -70,6 +70,7 @@
     rgba(10, 24, 61, 1) 90%
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -78,13 +79,14 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.singleFeatures:hover .featuresIcon i {
+.single-features:hover .features-icon i {
   background: white;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.singleFeatures .featuresIcon span {
+.single-features .features-icon span {
   font-size: 60px;
   color: #1b273d;
   line-height: 100px;
@@ -97,13 +99,13 @@
   font-weight: 600;
 }
 
-.singleFeatures .featuresContent {
+.single-features .features-content {
   padding-top: 5px;
   position: relative;
   z-index: 9;
 }
 
-.singleFeatures .featuresContent .featuresTitle a {
+.single-features .features-content .features-title a {
   font-size: 24px;
   color: #0e182c;
   text-decoration: none;
@@ -114,7 +116,7 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.singleFeatures .featuresContent .text {
+.single-features .features-content .text {
   margin-top: 12px;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -123,25 +125,25 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.singleFeatures:hover::before {
+.single-features:hover::before {
   opacity: 1;
 }
 
-.singleFeatures:hover .featuresIcon i,
-.singleFeatures:hover .featuresIcon span {
+.single-features:hover .features-icon i,
+.single-features:hover .features-icon span {
   color: #fff;
 }
 
-.singleFeatures:hover .featuresContent .featuresTitle a {
+.single-features:hover .features-content .features-title a {
   color: #fff;
   text-decoration: none;
 }
 
-.singleFeatures:hover .featuresContent .text {
+.single-features:hover .features-content .text {
   color: #fff;
 }
 
-.singleFeatures:hover .motiveContent {
+.single-features:hover .motive-content {
   color: #fff;
 }
 
@@ -187,6 +189,7 @@
     rgba(10, 24, 61, 1)
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
-import Home from "./components/home/home";
-import JoinUsForm from "./components/home/join_us/join_us_form/form";
+
 import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
@@ -23,10 +22,12 @@ import Setting from "./components/admin/setting/setting";
 import "./app.css";
 
 // Component
+import { JoinUsForm } from "./pages/Home/components/JoinUsForm/index";
 import { Navbar } from "./components/Navbar/index";
 import AddFaq from "./components/admin/faq/add_faq/add_faq";
 
 // Pages
+import { Home } from "./pages/Home/index";
 
 const App = () => {
   return (

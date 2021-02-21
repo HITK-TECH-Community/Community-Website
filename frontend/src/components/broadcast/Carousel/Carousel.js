@@ -3,7 +3,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import styles from "./Carousel.module.css";
-import style from "../../home/motive/motive.module.css";
+import style from "../../../pages/Home/components/Motive/motive.module.scss";
 import "./customOwlCarouselStyle.css";
 import Modals from "./Modal/Modals";
 import dataa from "../../../test_data/broadcast_text.json";

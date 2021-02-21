@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import "../../../pages/Home/components/Carousel/node_modules/owl.carousel/dist/assets/owl.carousel.css";
+import "../../../pages/Home/components/Carousel/node_modules/owl.carousel/dist/assets/owl.theme.default.css";
 import "./carousel.css";
-import style from "../motive/motive.module.css";
+import style from "../motive/motive.module.scss";
 export class Owldemo1 extends Component {
   constructor(props) {
     super(props);

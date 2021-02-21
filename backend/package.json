@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --format table",
+    "lint:fix": "eslint . --fix --format table",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -41,7 +41,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "eslint --fix",
+      "eslint . --fix --format table ",
       "git add"
     ]
   },

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import "./button.css";
 
-const Button = (props) => {
+export const Button = (props) => {
   const { text, path } = props;
 
   return (
@@ -21,8 +21,6 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
 };
-
-export default Button;
 
 export const Button1 = (props) => {
   return (

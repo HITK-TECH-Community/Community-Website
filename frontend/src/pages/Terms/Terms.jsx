@@ -1,7 +1,8 @@
 import React from "react";
-import { Button2 } from "../util/button/button";
+import { Button2 } from "../util/Button/Button";
 import style from "./terms.module.css";
-const Terms = () => {
+
+export const Terms = () => {
   return (
     <div>
       <div className={style.termsSection}>
@@ -62,4 +63,3 @@ const Terms = () => {
     </div>
   );
 };
-export default Terms;

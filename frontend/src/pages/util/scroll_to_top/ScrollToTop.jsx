@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 import "./scroll_to_top.css";
 
-const ScrollTop = () => {
+export const ScrollTop = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -32,5 +32,3 @@ const ScrollTop = () => {
     />
   );
 };
-
-export default ScrollTop;

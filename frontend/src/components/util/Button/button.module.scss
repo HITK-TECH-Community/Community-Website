@@ -1,6 +1,4 @@
-:root {
-  --primary: #fc0254;
-}
+$primary: #fc0254;
 
 .btn {
   font-family: "Futura LT Book", sans-serif;
@@ -11,7 +9,7 @@
   font-size: 18px;
   color: #fff;
   cursor: pointer;
-  background-color: var(--primary);
+  background-color: $primary;
 }
 
 .btn span {
@@ -24,7 +22,7 @@
   background-color: transparent;
   color: #fff;
   border-radius: 4px;
-  border: 2px solid var(--primary);
+  border: 2px solid $primary;
 }
 
 .main-btn {

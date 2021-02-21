@@ -1,19 +1,19 @@
 import React from "react";
-import { Button2 } from "../util/Button/Button";
+import { Button2 } from "./../../components/util/Button/index";
 import style from "./terms.module.css";
 
 export const Terms = () => {
   return (
     <div>
-      <div className={style.termsSection}>
-        <img src="./images/terms.png" alt="" className={style.termsImg} />
+      <div className={style["terms-section"]}>
+        <img src="./images/terms.png" alt="" className={style["terms-img"]} />
       </div>
-      <div className={style.terms}>
+      <div className={style["terms"]}>
         <div className="row text-center">
           <h1>Terms Of Use</h1>
         </div>
       </div>
-      <div className={style.agreement}>
+      <div className={style["agreement"]}>
         <div className="row">
           <div className="col-lg-2"></div>
           <div className="col-lg-8">
@@ -53,7 +53,7 @@ export const Terms = () => {
               quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur
               at!
             </p>
-            <div className={style.agree}>
+            <div className={style["agree"]}>
               <Button2 label="Agree and Continue" type="submit" />
             </div>
           </div>

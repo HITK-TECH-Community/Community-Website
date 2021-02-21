@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
 
-import "./dropdown.css";
+import style from "./dropdown.module.scss";
 
 export const Dropdown = () => {
   const [click, setClick] = useState(false);
@@ -13,7 +13,11 @@ export const Dropdown = () => {
     <Fragment>
       <ul
         onClick={handleClick}
-        className={click ? "dropdown-menu clicked" : "dropdown-menu"}
+        className={
+          click
+            ? `${style["dropdown-menu"]} ${style["clicked"]}`
+            : style["dropdown-menu"]
+        }
       >
         {MenuItems.map((item, index) => {
           return (

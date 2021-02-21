@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState, useRef } from "react";
-import { Button2 } from "../../util/button/button";
+import { Button2 } from "../../util/Button/index";
 import styles from "./login.module.css";
 
 //state type

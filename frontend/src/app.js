@@ -24,6 +24,8 @@ import { Navbar } from "./components/Navbar/index";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
 import { Admin } from "./pages/Admin";
+import { AddBroadcasts } from "./pages/Admin/Components/Broadcast/AddBroadcasts";
+import { AddFaq } from "./pages/Admin/Components/Faq/AddFaq";
 import { Setting } from "./pages/Admin/Components/Setting";
 
 const App = () => {
@@ -49,6 +51,8 @@ const App = () => {
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route exact path="/join_us_form" component={JoinUsForm} />
+            <Route exact path="/add_broadcast" component={AddBroadcasts} />
+            <Route exact path="/add_faq" component={AddFaq} />
             <Route component={NotFound} />
           </Switch>
         </Router>

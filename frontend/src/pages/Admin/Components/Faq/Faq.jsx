@@ -4,7 +4,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export function Faq(props) {
+export function Faq() {
   return (
     <div className={style["faq"]}>
       <h1 style={{ textAlign: "center" }}> FAQS </h1>
@@ -12,7 +12,7 @@ export function Faq(props) {
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              <Link onClick={() => props.setTab(10)} style={{ color: "white" }}>
+              <Link to="/add_faq" style={{ color: "white" }}>
                 ADD FAQ
               </Link>
               <AiOutlinePlus className={style["add"]} />
@@ -20,7 +20,7 @@ export function Faq(props) {
             <div className={style["card-content"]}>
               <p style={{ textAlign: "left" }}>To add a new faq</p>
               <p style={{ color: "red", cursor: "pointer", textAlign: "left" }}>
-                <Link onClick={() => props.setTab(10)} style={{ color: "red" }}>
+                <Link to="/add_faq" style={{ color: "red" }}>
                   CLICK HERE
                 </Link>
               </p>

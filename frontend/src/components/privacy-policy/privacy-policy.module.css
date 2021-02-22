@@ -1,4 +1,4 @@
-.pp-section {
+.ppSection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,17 +6,17 @@
   color: white;
 }
 
-.pp-logo {
+.ppLogo {
   width: 100%;
   height: auto;
 }
 
-.pp-statement-container {
+.ppStatementContainer {
   display: flex;
   flex-direction: column;
 }
 
-.pp-heading-container {
+.ppHeadingContainer {
   background-color: var(--primary-color);
   width: 100vw;
   height: 8rem;
@@ -25,7 +25,7 @@
   margin-bottom: 3rem;
 }
 
-.pp-heading {
+.ppHeading {
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 4rem;
   margin: 3.2rem 0;
@@ -33,53 +33,53 @@
   color: white;
 }
 
-.pp-statement {
+.ppStatement {
   padding-top: 20px;
 }
 
-.pp-statement .pp-subheading {
+.ppStatement .ppSubheading {
   font-size: 1.4rem;
   font-weight: 900;
   color: var(--secondary-color);
 }
 
-.pp-content {
+.ppContent {
   color: black;
   font-size: 1rem;
-  margin:auto;
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-li{
+li {
   margin-top: 0.5rem;
 }
 
 @media (orientation: portrait) {
-  .pp-section {
+  .ppSection {
     flex-direction: column;
     margin: 0;
   }
 
-  .pp-heading-container {
+  .ppHeadingContainer {
     height: 5rem;
     margin-bottom: 0rem;
   }
 
-  .pp-heading {
+  .ppHeading {
     font-size: 3rem;
     margin: 1.8rem 0;
   }
 
-  .pp-logo {
+  .ppLogo {
     width: 85vw;
   }
 
-  .pp-statement-container {
+  .ppStatementContainer {
     margin: 2rem 4vw;
   }
 }

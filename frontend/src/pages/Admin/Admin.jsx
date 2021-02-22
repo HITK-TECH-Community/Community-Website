@@ -10,6 +10,8 @@ import { Faq } from "./Components/Faq";
 import { Setting } from "./Components/Setting";
 import { Invite } from "./Components/Setting/Invite";
 import { Manage } from "./Components/Setting/Manage";
+import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
+import { AddFaq } from "./Components/Faq/AddFaq";
 
 export const Admin = () => {
   const [tab, setTab] = useState(1);
@@ -89,19 +91,23 @@ export const Admin = () => {
           ) : tab === 1 ? (
             <Dashboard setTab={setTab} />
           ) : tab === 2 ? (
-            <Broadcast />
+            <Broadcast setTab={setTab} />
           ) : tab === 3 ? (
             <Contact />
           ) : tab === 4 ? (
             <About />
           ) : tab === 5 ? (
-            <Faq />
+            <Faq setTab={setTab} />
           ) : tab === 6 ? (
             <Setting setTab={setTab} />
           ) : tab === 7 ? (
             <Invite />
           ) : tab === 8 ? (
             <Manage />
+          ) : tab === 9 ? (
+            <AddBroadcasts />
+          ) : tab === 10 ? (
+            <AddFaq />
           ) : null}
         </div>
       </div>

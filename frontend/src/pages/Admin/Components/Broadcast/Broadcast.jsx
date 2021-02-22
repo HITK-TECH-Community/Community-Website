@@ -4,7 +4,7 @@ import { AiFillEdit } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-export function Broadcast() {
+export function Broadcast(props) {
   return (
     <div className={style["broadcast"]}>
       <h1 style={{ textAlign: "center" }}> Broadcasts </h1>
@@ -12,7 +12,7 @@ export function Broadcast() {
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              <Link to="/add_broadcast" style={{ color: "white" }}>
+              <Link onClick={() => props.setTab(9)} style={{ color: "white" }}>
                 ADD BROADCAST
               </Link>
               <AiOutlinePlus className={style["add"]} />
@@ -23,7 +23,7 @@ export function Broadcast() {
                 // onClick={openEditor}
                 style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
-                <Link to="/add_broadcast" style={{ color: "red" }}>
+                <Link onClick={() => props.setTab(9)} style={{ color: "red" }}>
                   CLICK HERE
                 </Link>
               </p>

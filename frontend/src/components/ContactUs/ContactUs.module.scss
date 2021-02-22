@@ -1,18 +1,18 @@
-.contactSection {
+.contact-section {
   background: #fff;
   padding: 0 20px;
 }
 
-.contactParent {
+.contact-parent {
   display: flex;
   padding: 30px 0;
 }
 
-.contactImage {
+.contact-image {
   max-width: 100%;
 }
 
-.contactChild {
+.contact-child {
   flex: 1;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
 }
 
-.contactCard {
+.contact-card {
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
@@ -39,7 +39,7 @@
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
 }
 
-.contactHeaderText {
+.contact-header-text {
   padding: 15px 0;
   margin-bottom: 0px;
   text-transform: capitalize;
@@ -47,17 +47,17 @@
   text-align: center !important;
 }
 
-.insideContact {
+.inside-contact {
   width: 85%;
   margin: 0 auto;
 }
 
-.contactInput {
+.contact-input {
   position: relative;
 }
 
-.contactInput input,
-.contactInput textarea {
+.contact-input input,
+.contact-input textarea {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -71,26 +71,26 @@
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.contactInput input::placeholder,
-.contactInput textarea::placeholder {
+.contact-input input::placeholder,
+.contact-input textarea::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input::-moz-placeholder,
-.contactInput textarea::-moz-placeholder {
+.contact-input input::-moz-placeholder,
+.contact-input textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input::-webkit-input-placeholder,
-.contactInput textarea::-webkit-input-placeholder {
+.contact-input input::-webkit-input-placeholder,
+.contact-input textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input:focus,
-.contactInput textarea:focus {
+.contact-input input:focus,
+.contact-input textarea:focus {
   border-color: #1863ff;
   outline: none;
   border: double 2px transparent;
@@ -102,13 +102,13 @@
   background-color: #ffffff;
 }
 
-.contactInput textarea {
+.contact-input textarea {
   padding-top: 15px;
   height: 180px;
   resize: none;
 }
 
-.contactInput i {
+.contact-input i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -136,21 +136,21 @@
   color: #2ecc71;
 }
 
-.submitBtn {
+.submit-btn {
   display: flex;
   justify-content: center;
   width: 40%;
   margin: 0 auto;
 }
 
-.submitBtnText {
+.submit-btn-text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 750px) {
-  .contactParent {
+  .contact-parent {
     display: block;
     width: 100%;
   }
@@ -159,26 +159,26 @@
     padding: 0 0 10px;
   }
 
-  .contactCard {
+  .contact-card {
     width: 95%;
     margin: 10% auto;
   }
 
-  .contactInput input,
-  .contactBtn {
+  .contact-input input,
+  .contact-btn {
     height: 40px;
   }
 
-  .contactBtn {
+  .contact-btn {
     font-size: 20px;
   }
 
-  .submitBtn {
+  .submit-btn {
     width: 60% !important;
     margin: 0 auto;
   }
 
-  .submitBtnText {
+  .submit-btn-text {
     display: flex;
     justify-content: center;
     align-items: center;

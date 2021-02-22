@@ -11,6 +11,7 @@ import Manage from "../../setting/Manage/Manage";
 import style from "../../admin.module.css";
 import Broadcast from "../../broadcast/broadcast";
 import { Button2 } from "../../../util/button/button";
+import { Redirect } from "react-router-dom";
 
 function AddFaq() {
   const [tab, setTab] = useState(5);
@@ -89,7 +90,7 @@ function AddFaq() {
             {tab === 0 ? (
               <Profile />
             ) : tab === 1 ? (
-              <Dashboard setTab={setTab} />
+              <Redirect to="/dashboard" />
             ) : tab === 2 ? (
               <Broadcast />
             ) : tab === 3 ? (

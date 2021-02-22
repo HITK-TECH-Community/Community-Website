@@ -13,6 +13,7 @@ import Invite from "../../setting/Invite/Invite";
 import Manage from "../../setting/Manage/Manage";
 import style from "../../admin.module.css";
 import { Button2 } from "../../../util/button/button";
+import { Redirect } from "react-router-dom";
 
 function AddBroadcasts() {
   const [tab, setTab] = useState(2);
@@ -91,7 +92,7 @@ function AddBroadcasts() {
             {tab === 0 ? (
               <Profile />
             ) : tab === 1 ? (
-              <Dashboard setTab={setTab} />
+              <Redirect to="/dashboard" />
             ) : tab === 2 ? (
               <div className={styles.editor}>
                 <div className={styles.motive}>

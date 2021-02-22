@@ -10,9 +10,6 @@ import dataa from "../../../test_data/broadcast_text.json";
 
 export default function Owl({ head }) {
   const [open, setOpen] = useState(false);
-  const [array, setArray] = useState([...dataa]);
-  const [index, setIndex] = useState();
-  const [visible, setVisible] = useState(false);
 
   const handleOpen = (s, h, i) => {
     setOpen(true);
@@ -22,12 +19,6 @@ export default function Owl({ head }) {
   const handleClose = () => {
     setOpen(false);
     setData({});
-  };
-  const [isAdmin] = useState(true);
-
-  const handler = (i) => {
-    setIndex(i);
-    setVisible(true);
   };
 
   const [data, setData] = useState({});
@@ -59,12 +50,6 @@ export default function Owl({ head }) {
 
   return (
     <React.Fragment>
-      <Edit
-        visible={visible}
-        setVisible={setVisible}
-        handleChange={handleChange}
-        data={array[index]}
-      />
       <Modals open={open} handleClose={handleClose} data={data} />
       <div className={styles.sliderDiv}>
         <div className={style.motive}>

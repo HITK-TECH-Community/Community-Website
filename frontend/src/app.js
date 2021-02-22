@@ -8,11 +8,11 @@ import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
 import Resources from "./components/resource/resources";
-import ContactUs from "./components/contact/contact_us";
+// import ContactUs from "./components/Contact/contact_us";
 import Admin from "./components/admin/admin";
 import AddBroadcasts from "./components/admin/broadcast/add_broadcasts/add_broadcasts";
 import Faqs from "./components/faq/faq";
-import Login from "./components/auth/login/login";
+// import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
 import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
@@ -23,10 +23,12 @@ import "./app.css";
 // Component
 import { Navbar } from "./components/Navbar/index";
 import AddFaq from "./components/admin/faq/add_faq/add_faq";
+import { ContactUs } from "./components/ContactUs/index";
 
 // Pages
 import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
+import { Login } from "./pages/Login/index";
 
 const App = () => {
   return (

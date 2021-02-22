@@ -30,9 +30,7 @@ function connect() {
   // If the Node process ends, close the Mongoose and Redis connection
   process.on('SIGINT', () => {
     mongoose.connection.close(() => {
-      console.log(
-        'Mongoose default connection disconnected through app termination'
-      );
+      console.log('Mongoose default connection disconnected through app termination');
       // eslint-disable-next-line no-process-exit
       process.exit();
     });

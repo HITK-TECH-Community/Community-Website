@@ -15,7 +15,7 @@ import style from "../../admin.module.css";
 import { Button2 } from "../../../util/button/button";
 
 function AddBroadcasts() {
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(2);
   return (
     <div>
       <div style={{ minHeight: "100vh" }}>

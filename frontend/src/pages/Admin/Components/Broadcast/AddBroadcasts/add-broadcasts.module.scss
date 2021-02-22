@@ -1,0 +1,94 @@
+.editor {
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+.heading {
+  text-align: center;
+}
+
+.motive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.edit {
+  padding: 20px;
+}
+
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.header {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headingg {
+  padding: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.inputs {
+  border: none;
+  flex: 1;
+  border-radius: 10px;
+  height: 38px;
+  font-size: large;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.inputs:focus {
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    margin-left: 0;
+  }
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  width: 30%;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+
+  .submit-btn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+}

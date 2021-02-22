@@ -13,7 +13,7 @@ import Broadcast from "../../broadcast/broadcast";
 import { Button2 } from "../../../util/button/button";
 
 function AddFaq() {
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(5);
   return (
     <div>
       <div style={{ minHeight: "100vh" }}>

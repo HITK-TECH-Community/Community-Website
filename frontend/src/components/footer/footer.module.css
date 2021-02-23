@@ -318,6 +318,7 @@ a > span {
   text-align: center;
   margin-right: 10px;
   height: 35px;
+  font-size: 14px;
 }
 
 .inputFieldFooter:focus {

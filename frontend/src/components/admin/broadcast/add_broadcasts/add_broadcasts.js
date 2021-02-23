@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import styles from "./add_faq.module.css";
+import SunEditor from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css";
+import styles from "./add_broadcasts.module.css";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Profile from "../../profile/profile";
 import Dashboard from "../../dashboard/dashboard";
 import Contact from "../../contact/contact";
 import About from "../../about/about";
+import FAQ from "../../faq/faq";
 import Setting from "../../setting/setting";
 import Invite from "../../setting/Invite/Invite";
 import Manage from "../../setting/Manage/Manage";
 import style from "../../admin.module.css";
-import Broadcast from "../../broadcast/broadcast";
-import { Button2 } from "./../../../util/Button/index";
+import { Button2 } from "../../../util/button/button";
 
-function AddFaq() {
-  const [tab, setTab] = useState(5);
+function AddBroadcasts() {
+  const [tab, setTab] = useState(2);
   return (
     <div>
       <div style={{ minHeight: "100vh" }}>
@@ -91,50 +93,40 @@ function AddFaq() {
             ) : tab === 1 ? (
               <Dashboard setTab={setTab} />
             ) : tab === 2 ? (
-              <Broadcast />
+              <div className={styles.editor}>
+                <div className={styles.motive}>
+                  <h1 className={styles.heading}>ADD BROADCAST</h1>
+                  <div className={styles.dash}></div>
+                </div>
+                <div className={styles.header}>
+                  <p className={styles.headingg}>Broadcast heading</p>
+                  <input type="text" placeholder="Type here..."></input>
+                </div>
+                <div>
+                  <p className={styles.headingg}>
+                    Enter the Broadcast content here...
+                  </p>
+                  <SunEditor
+                    lang="en"
+                    placeholder="Please type here..."
+                    height="500px"
+                    className={styles.edit}
+                  />
+                  <div className={styles.submitBtn}>
+                    <Button2
+                      className={styles.submitBtnText}
+                      label="Submit"
+                      type="submit"
+                    />
+                  </div>
+                </div>
+              </div>
             ) : tab === 3 ? (
               <Contact />
             ) : tab === 4 ? (
               <About />
             ) : tab === 5 ? (
-              <div className={styles.faqSection}>
-                <div className={styles.faqParent}>
-                  <div className={`${styles.faqChild} ${styles.child1}`}>
-                    <div className={styles.faqCard}>
-                      <h1 className={styles.faqHeaderText}>FAQ</h1>
-                      <div className={styles.insideFaq}>
-                        <div className={styles.faqInput}>
-                          <input
-                            id="txt_name"
-                            type="text"
-                            required="required"
-                            name="question"
-                            placeholder="Question"
-                          />
-                          <i className="fas fa-question-circle"></i>
-                        </div>
-                        <div className={styles.faqInput}>
-                          <input
-                            id="txt_email"
-                            type="text"
-                            required="required"
-                            name="answer"
-                            placeholder="Answer"
-                          />
-                          <i className="fas fa-comment-dots"></i>
-                        </div>
-                        <div className={styles.submitBtn}>
-                          <Button2
-                            className={styles.submitBtnText}
-                            label="Submit"
-                            type="submit"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <FAQ />
             ) : tab === 6 ? (
               <Setting setTab={setTab} />
             ) : tab === 7 ? (
@@ -149,4 +141,4 @@ function AddFaq() {
   );
 }
 
-export default AddFaq;
+export default AddBroadcasts;

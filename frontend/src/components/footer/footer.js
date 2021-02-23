@@ -63,8 +63,8 @@ class Footer extends React.Component {
           <div className={style.footerAddr}>
             <h1 className={style.footerLogo}>HITK Tech Community</h1>
             <address>
-              <i className="fas fa-map-marker-alt"></i> 505 Simpson Square, 505
-              Simpson Square, 505 Simpson Square
+              <i className="fas fa-map-marker-alt"></i> Heritage Institute of
+              Technology, Chowbaga Road, Kolkata, West Bengal - 700107
               <br />
             </address>
             <div className={style.newsletter}>

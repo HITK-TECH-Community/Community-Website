@@ -1,4 +1,4 @@
-.not_found {
+.not-found {
   background-color: #f7f7f7;
 }
 
@@ -11,19 +11,19 @@
   margin: 0 15% 3rem 15%;
 }
 
-.errorLogo {
+.error-logo {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.errorContent {
+.error-content {
   color: black;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-.errorText {
+.error-text {
   font-size: 2rem;
   font-weight: 900;
   color: var(--secondary-color);

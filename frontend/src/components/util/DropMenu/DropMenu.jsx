@@ -9,7 +9,7 @@ import {
   MenuItem,
   MenuList,
 } from "@material-ui/core";
-import styles from "./dropmenu.module.css";
+import style from "./drop-menu.module.scss";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuListComposition(props) {
+export function DropMenu(props) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
@@ -82,7 +82,7 @@ export default function MenuListComposition(props) {
   }, [open]);
 
   return (
-    <div className={styles.root}>
+    <div className={style["root"]}>
       <Button
         text={props.ListName}
         ref={anchorRef}

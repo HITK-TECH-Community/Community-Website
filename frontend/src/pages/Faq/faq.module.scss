@@ -20,11 +20,11 @@
   align-items: center;
 }
 
-.faqImage {
+.faq-image {
   width: 95%;
 }
 
-.faqBlock {
+.faq-block {
   margin-left: 2%;
   width: 60vw;
   background-color: hsl(210, 64%, 9%);
@@ -38,7 +38,7 @@
   position: absolute;
 }
 
-.faqQuestion {
+.faq-question {
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -56,16 +56,16 @@
     height: auto;
   }
 
-  .faqImage {
+  .faq-image {
     width: 90%;
   }
 
-  .faqBlock {
+  .faq-block {
     width: 90%;
     margin: 1em 0 2em;
   }
 
-  .faqQuestion {
+  .faq-question {
     font-size: 0.85em;
   }
 

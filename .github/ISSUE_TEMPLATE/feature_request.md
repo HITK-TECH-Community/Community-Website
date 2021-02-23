@@ -1,8 +1,8 @@
 ---
-name: Feature request
+name: 🚀 Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
+labels: 'feature'
 assignees: ''
 
 ---
@@ -18,3 +18,6 @@ A clear and concise description of any alternative solutions or features you've 
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
+
+**Have you read the [Code of Conduct](https://github.com/HITK-TECH-Community/Community-Website/blob/main/code_of_conduct.md)?**
+Write your answer here.

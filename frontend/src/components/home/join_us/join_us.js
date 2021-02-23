@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import { Button3 } from "../../util/button/button";
+import { Button3 } from "../../util/Button/index";
 import styles from "./join_us.module.css";
 
 const JoinUs = () => {

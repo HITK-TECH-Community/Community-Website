@@ -6,13 +6,12 @@ import Home from "./components/home/home";
 import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
 import Faqs from "./components/faq/faq";
 import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
-import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
+
 import "./app.css";
 
 // Component
@@ -25,6 +24,8 @@ import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
 import { Admin } from "./pages/Admin";
 import { Setting } from "./pages/Admin/Components/Setting";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
+import { Resources } from "./pages/Resources/index";
 
 const App = () => {
   return (

@@ -1,0 +1,39 @@
+.resource-section {
+  display: flex;
+  background-color: #fff;
+}
+
+.resource-image {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+}
+
+.resource-image img {
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.resource-image img .child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .child1 {
+    padding: 0 0 10px;
+  }
+  .resource-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .resource-parent {
+    width: 85%;
+    margin: 10% auto;
+  }
+}

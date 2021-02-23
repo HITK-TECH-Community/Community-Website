@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
-import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
 import Home from "./components/home/home";
 import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import Broadcasts from "./components/broadcast/broadcasts";
@@ -12,15 +11,16 @@ import ContactUs from "./components/contact/contact_us";
 import Faqs from "./components/faq/faq";
 import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
-import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
 import "./app.css";
 
 // Component
 import { Navbar } from "./components/Navbar/index";
+import { ScrollTop } from "./components/util/ScrollToTop/index";
 
 // Pages
+import { Terms } from "./pages/Terms/index";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
 import { Admin } from "./pages/Admin";

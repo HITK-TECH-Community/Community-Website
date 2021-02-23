@@ -1,10 +1,10 @@
 import React, { useState, Fragment } from "react";
-import { MenuItems } from "./menu_items";
+import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
 
-import "./dropdown.css";
+import style from "./dropdown.module.scss";
 
-const Dropdown = () => {
+export const Dropdown = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -13,7 +13,11 @@ const Dropdown = () => {
     <Fragment>
       <ul
         onClick={handleClick}
-        className={click ? "dropdown-menu clicked" : "dropdown-menu"}
+        className={
+          click
+            ? `${style["dropdown-menu"]} ${style["clicked"]}`
+            : style["dropdown-menu"]
+        }
       >
         {MenuItems.map((item, index) => {
           return (
@@ -32,5 +36,3 @@ const Dropdown = () => {
     </Fragment>
   );
 };
-
-export default Dropdown;

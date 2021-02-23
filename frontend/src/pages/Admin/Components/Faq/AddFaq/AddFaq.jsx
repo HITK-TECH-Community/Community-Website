@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./add-faq.module.scss";
-import { Button2 } from "../../../../../components/util/button/button";
+import { Button2 } from "../../../../../components/util/Button/index";
 
 export function AddFaq() {
   return (

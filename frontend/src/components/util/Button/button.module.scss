@@ -1,6 +1,4 @@
-:root {
-  --primary: #fc0254;
-}
+$primary: #fc0254;
 
 .btn {
   font-family: "Futura LT Book", sans-serif;
@@ -11,7 +9,7 @@
   font-size: 18px;
   color: #fff;
   cursor: pointer;
-  background-color: var(--primary);
+  background-color: $primary;
 }
 
 .btn span {
@@ -24,10 +22,10 @@
   background-color: transparent;
   color: #fff;
   border-radius: 4px;
-  border: 2px solid var(--primary);
+  border: 2px solid$primary;
 }
 
-.mainBtn {
+.main-btn {
   display: inline-block;
   font-weight: 500;
   display: flex;
@@ -55,7 +53,7 @@
   border: 0;
 }
 
-.mainBtn:hover {
+.main-btn:hover {
   background-color: #fff;
   color: #1863ff;
   -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
@@ -63,7 +61,7 @@
   box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
 }
 
-.mainBtn.mainBtn2 {
+.main-btn.main-btn-2 {
   background: -webkit-linear-gradient(
     left,
     #121f3a 0%,
@@ -83,29 +81,29 @@
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
 }
 
-.mainBtn.mainBtn2:hover {
+.main-btn.main-btn-2:hover {
   background-position: right center;
   color: #fff;
 }
 @media screen and (max-width: 1047px) {
-  .mainBtn.mainBtn2 {
+  .main-btn.main-btn-2 {
     font-size: 14px;
     width: 40%;
   }
 }
 @media screen and (max-width: 515px) {
-  .mainBtn.mainBtn2 {
+  .main-btn.main-btn-2 {
     font-size: 17.5px;
     width: 48%;
   }
 }
 @media screen and (max-width: 360px) {
-  .mainBtn.mainBtn2 {
+  .main-btn.main-btn-2 {
     font-size: 13px;
     width: 48%;
   }
 }
 
-.mainBtn.mainBtn2.mainBtn3 {
+.main-btn.main-btn-2.main-btn-3 {
   font-size: 16px;
 }

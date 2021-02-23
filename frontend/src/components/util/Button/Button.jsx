@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import styles from "./button.module.css";
+import style from "./button.module.scss";
 
-const Button = (props) => {
+export const Button = (props) => {
   const { text, path } = props;
-
   return (
     <Link to={path}>
-      <button className="btn">
+      <button className={style["btn"]}>
         {text}
         <span>?</span>
       </button>
@@ -22,11 +21,9 @@ Button.propTypes = {
   path: PropTypes.string.isRequired,
 };
 
-export default Button;
-
 export const Button1 = (props) => {
   return (
-    <button type={props?.type || "button"} className={styles.mainBtn}>
+    <button type={props?.type || "button"} className={style["main-btn"]}>
       {props?.label}
     </button>
   );
@@ -36,7 +33,7 @@ export const Button2 = (props) => {
   return (
     <button
       type={props?.type || "button"}
-      className={`${styles.mainBtn} ${styles.mainBtn2}`}
+      className={`${style["main-btn"]} ${style["main-btn-2"]}`}
     >
       {props?.label}
     </button>
@@ -47,7 +44,7 @@ export const Button3 = (props) => {
   return (
     <button
       type={props?.type || "button"}
-      className={`${styles.mainBtn} ${styles.mainBtn2} ${styles.mainBtn3}`}
+      className={`${style["main-btn"]} ${style["main-btn-2"]} ${style["main-btn-3"]}`}
     >
       {props?.label}
     </button>

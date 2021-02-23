@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
-import styles from "./scroll_to_top.module.css";
+import style from "./scroll-to-top.module.scss";
 
-const ScrollTop = () => {
+export const ScrollTop = () => {
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -21,7 +21,7 @@ const ScrollTop = () => {
 
   return (
     <FaArrowCircleUp
-      className={styles.scrollTop}
+      className={style["scroll-top"]}
       onClick={scrollTop}
       size={70}
       style={{
@@ -32,5 +32,3 @@ const ScrollTop = () => {
     />
   );
 };
-
-export default ScrollTop;

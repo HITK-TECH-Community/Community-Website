@@ -6,9 +6,6 @@ import Home from "./components/home/home";
 import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Resources from "./components/resource/resources";
-import Admin from "./components/admin/admin";
-import AddBroadcasts from "./components/admin/broadcast/add_broadcasts/add_broadcasts";
 import Faqs from "./components/faq/faq";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
@@ -17,7 +14,7 @@ import "./app.css";
 
 // Component
 import { Navbar } from "./components/Navbar/index";
-import AddFaq from "./components/admin/faq/add_faq/add_faq";
+// import AddFaq from "./components/admin/faq/add_faq/add_faq";
 import { ScrollTop } from "./components/util/ScrollToTop/index";
 
 // Pages

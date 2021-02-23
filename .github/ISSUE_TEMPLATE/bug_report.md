@@ -1,8 +1,8 @@
 ---
-name: Bug report
+name: 🐛 Bug report
 about: Create a report to help us improve
 title: ''
-labels: ''
+labels: 'bug'
 assignees: ''
 
 ---
@@ -36,3 +36,6 @@ If applicable, add screenshots to help explain your problem.
 
 **Additional context**
 Add any other context about the problem here.
+
+**Have you read the [Code of Conduct](https://github.com/HITK-TECH-Community/Community-Website/blob/main/code_of_conduct.md)?**
+Write your answer here.

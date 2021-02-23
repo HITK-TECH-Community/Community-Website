@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-import { Button3 } from "../../util/button/button";
 import styles from "./join-us.module.scss";
+import { Button3 } from "../../util/button/index";
 
-export const joinUs = () => {
+export const JoinUs = () => {
   return (
     <Fragment>
       <div className={styles["join-us"]}>

@@ -1,0 +1,109 @@
+$primary: #fc0254;
+
+.btn {
+  font-family: "Futura LT Book", sans-serif;
+  padding: 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: $primary;
+}
+
+.btn span {
+  font-family: sans-serif;
+}
+
+.btn:hover {
+  padding: 6px 18px;
+  transition: all 0.3s ease-out;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid$primary;
+}
+
+.main-btn {
+  display: inline-block;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 40px;
+  font-size: 16px;
+  line-height: 48px;
+  border-radius: 50px;
+  color: #1863ff;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  background-color: #fff;
+  border: 0;
+}
+
+.main-btn:hover {
+  background-color: #fff;
+  color: #1863ff;
+  -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+}
+
+.main-btn.main-btn-2 {
+  background: -webkit-linear-gradient(
+    left,
+    #121f3a 0%,
+    #2a4886 50%,
+    #162f66 100%
+  );
+  background: -o-linear-gradient(left, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background-size: 200% auto;
+  color: #fff;
+  width: 100%;
+  font-size: 21px;
+  outline: none;
+  background-position: left center;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+}
+
+.main-btn.main-btn-2:hover {
+  background-position: right center;
+  color: #fff;
+}
+@media screen and (max-width: 1047px) {
+  .main-btn.main-btn-2 {
+    font-size: 14px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 515px) {
+  .main-btn.main-btn-2 {
+    font-size: 17.5px;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .main-btn.main-btn-2 {
+    font-size: 13px;
+    width: 48%;
+  }
+}
+
+.main-btn.main-btn-2.main-btn-3 {
+  font-size: 16px;
+}

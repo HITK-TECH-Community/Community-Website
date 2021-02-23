@@ -2,32 +2,29 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
-import ScrollTop from "./components/util/scroll_to_top/scroll_to_top";
-
-import AboutUs from "./components/about/about_us";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
 import Resources from "./components/resource/resources";
 import ContactUs from "./components/contact/contact_us";
-import Admin from "./components/admin/admin";
-import AddBroadcasts from "./components/admin/add_broadcasts/add_broadcasts";
 import Faqs from "./components/faq/faq";
-import NotFound from "./components/404/not_found";
 import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
-import Terms from "./components/terms/terms";
 import GetInvolved from "./components/get_involved/get_involved";
 import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
-import Setting from "./components/admin/setting/setting";
 import "./app.css";
 
 // Component
 import { JoinUsForm } from "./pages/Home/components/JoinUsForm/index";
 import { Navbar } from "./components/Navbar/index";
-import AddFaq from "./components/admin/faq/add_faq/add_faq";
+import { ScrollTop } from "./components/util/ScrollToTop/index";
 
 // Pages
 import { Home } from "./pages/Home/index";
+import { Terms } from "./pages/Terms/index";
+import { About } from "./pages/About";
+import { NotFound } from "./pages/404";
+import { Admin } from "./pages/Admin";
+import { Setting } from "./pages/Admin/Components/Setting";
 
 const App = () => {
   return (
@@ -37,7 +34,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/about-us" component={About} />
             <Route exact path="/Broadcasts">
               <Broadcasts />
             </Route>
@@ -52,8 +49,6 @@ const App = () => {
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
             <Route exact path="/join_us_form" component={JoinUsForm} />
-            <Route exact path="/add_broadcast" component={AddBroadcasts} />
-            <Route exact path="/add_faq" component={AddFaq} />
             <Route component={NotFound} />
           </Switch>
         </Router>

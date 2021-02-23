@@ -1,0 +1,78 @@
+.heads {
+  width: 100%;
+  text-align: center;
+}
+.user-name {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.photos {
+  width: 22.5%;
+  border-radius: 12px;
+}
+
+.name {
+  margin-left: 2em;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.edits > h4 {
+  font-size: 25px;
+}
+
+.account {
+  margin: 2em 0;
+  width: 100%;
+}
+
+.edits {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail {
+  margin: 1em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.conts {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 1em 0;
+  align-items: center;
+}
+
+.inp {
+  width: 50%;
+  padding: 0.75em;
+  border: 2px solid black;
+  border-radius: 12px;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .edits {
+    width: 100%;
+  }
+
+  .edits > h4 {
+    font-size: 20px;
+  }
+
+  .conts {
+    width: 90%;
+  }
+
+  .inp {
+    width: 60%;
+    padding: 0.5em;
+  }
+}

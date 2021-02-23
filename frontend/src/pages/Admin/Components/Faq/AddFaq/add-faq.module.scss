@@ -1,45 +1,36 @@
-.contactSection {
+.faq-section {
   background: #fff;
   padding: 0 20px;
 }
 
-.contactParent {
+.faq-parent {
   display: flex;
   padding: 30px 0;
 }
 
-.contactImage {
-  max-width: 100%;
-}
-
-.contactChild {
+.faq-child {
   flex: 1;
 }
 
 .child1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: #fff;
-}
-
-.child2 {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.contactCard {
+.faq-card {
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
-  margin: 0% auto;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
 }
 
-.contactHeaderText {
+.faq-header-text {
   padding: 15px 0;
   margin-bottom: 0px;
   text-transform: capitalize;
@@ -47,17 +38,17 @@
   text-align: center !important;
 }
 
-.insideContact {
+.inside-faq {
   width: 85%;
   margin: 0 auto;
 }
 
-.contactInput {
+.faq-input {
   position: relative;
 }
 
-.contactInput input,
-.contactInput textarea {
+.faq-input input,
+.faq-input textarea {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -65,33 +56,32 @@
   padding: 0 25px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 14px;
   color: #777777;
   margin-bottom: 20px;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.contactInput input::placeholder,
-.contactInput textarea::placeholder {
+.faq-input input::placeholder,
+.faq-input textarea::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input::-moz-placeholder,
-.contactInput textarea::-moz-placeholder {
+.faq-input input::-moz-placeholder,
+.faq-input textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input::-webkit-input-placeholder,
-.contactInput textarea::-webkit-input-placeholder {
+.faq-input input::-webkit-input-placeholder,
+.contact-input textarea::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.contactInput input:focus,
-.contactInput textarea:focus {
+.faq-input input:focus,
+.faq-input textarea:focus {
   border-color: #1863ff;
   outline: none;
   border: double 2px transparent;
@@ -103,13 +93,13 @@
   background-color: #ffffff;
 }
 
-.contactInput textarea {
+.faq-input textarea {
   padding-top: 15px;
   height: 180px;
   resize: none;
 }
 
-.contactInput i {
+.faq-input i {
   position: absolute;
   right: 25px;
   top: 15px;
@@ -117,69 +107,45 @@
   color: #777777;
 }
 
-.fa-envelope-open-text:hover {
-  cursor: pointer;
-  color: #c71610;
-}
-
-.fa-user:hover {
-  cursor: pointer;
-  color: #34b7f1;
-}
-
-.fa-pencil-alt:hover {
-  cursor: pointer;
-  color: #9400d3;
-}
-
-.fa-comment-dots:hover {
-  cursor: pointer;
-  color: #2ecc71;
-}
-
-.submitBtn {
+.submit-btn {
   display: flex;
   justify-content: center;
   width: 40%;
   margin: 0 auto;
 }
 
-.submitBtnText {
+.submit-btn-text {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media screen and (max-width: 750px) {
-  .contactParent {
+  .faq-parent {
     display: block;
     width: 100%;
   }
 
-  .child1 {
-    padding: 0 0 10px;
-  }
-
-  .contactCard {
+  .faq-card {
     width: 95%;
     margin: 10% auto;
   }
 
-  .contactInput input,
-  .contactBtn {
+  .faq-input input,
+  .faqBtn {
     height: 40px;
   }
 
-  .contactBtn {
+  .faq-btn {
     font-size: 20px;
   }
 
-  .submitBtn {
+  .submit-btn {
     width: 60% !important;
     margin: 0 auto;
   }
 
-  .submitBtnText {
+  .submit-btn-text {
     display: flex;
     justify-content: center;
     align-items: center;

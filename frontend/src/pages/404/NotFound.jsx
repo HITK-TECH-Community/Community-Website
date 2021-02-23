@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./not-found.module.scss";
-import { Button3 } from "../../components/util/button/button";
+import { Button3 } from "../../components/util/Button/index";
 
 export const NotFound = () => {
   return (

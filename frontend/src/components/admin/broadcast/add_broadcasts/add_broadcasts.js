@@ -12,7 +12,7 @@ import Setting from "../../setting/setting";
 import Invite from "../../setting/Invite/Invite";
 import Manage from "../../setting/Manage/Manage";
 import style from "../../admin.module.css";
-import { Button2 } from "../../../util/button/button";
+import { Button2 } from "../../../util/Button/index";
 
 function AddBroadcasts() {
   const [tab, setTab] = useState(2);

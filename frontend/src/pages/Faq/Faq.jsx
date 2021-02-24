@@ -5,7 +5,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import styles from "./faq.module.css";
+import style from "./faq.module.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Faqs() {
+export function Faq() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,16 +42,16 @@ export default function Faqs() {
   };
 
   return (
-    <div className={styles.faqContainer}>
-      <div className={styles.head}>
+    <div className={style["faq-container"]}>
+      <div className={style["head"]}>
         <img
           src="./images/faq.png"
-          className={styles.faqImage}
+          className={style["faq-image"]}
           alt="faq-icon"
         />
       </div>
-      <div className={styles.faq}>
-        <div className={styles.faqBlock}>
+      <div className={style["faq"]}>
+        <div className={style["faq-block"]}>
           <Accordion
             className={classes.accord}
             expanded={expanded === "panel1"}
@@ -65,7 +65,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className={styles.faqQuestion}>
+              <h3 className={style["faq-question"]}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to contact with customer service?
               </h3>
@@ -91,7 +91,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className={styles.faqQuestion}>
+              <h3 className={style["faq-question"]}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to delete my account?
               </h3>
@@ -117,7 +117,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className={styles.faqQuestion}>
+              <h3 className={style["faq-question"]}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;Where is edit option on dashboard?
               </h3>
@@ -143,7 +143,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className={styles.faqQuestion}>
+              <h3 className={style["faq-question"]}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;Is there any custom pricing system?
               </h3>
@@ -169,7 +169,7 @@ export default function Faqs() {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <h3 className={styles.faqQuestion}>
+              <h3 className={style["faq-question"]}>
                 <i className="fa fa-question-circle" aria-hidden="true"></i>
                 &nbsp; &nbsp;How to change my password?
               </h3>

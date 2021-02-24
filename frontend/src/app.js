@@ -4,7 +4,6 @@ import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Faqs from "./components/faq/faq";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
 
@@ -27,6 +26,7 @@ import { Admin } from "./pages/Admin";
 import { Setting } from "./pages/Admin/Components/Setting";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
 import { Resources } from "./pages/Resources/index";
+import { Faq } from "./pages/Faq";
 
 const App = () => {
   return (
@@ -43,7 +43,7 @@ const App = () => {
             <Route exact path="/all-broadcasts" component={AllBroadcasts} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
-            <Route exact path="/faqs" component={Faqs} />
+            <Route exact path="/faqs" component={Faq} />
             <Route exact path="/admin" component={Login} />
             <Route exact path="/dashboard" component={Admin} />
             <Route exact path="/setting" component={Setting} />

@@ -3,7 +3,7 @@ import style from "./all-broadcasts.module.css";
 import dataa from "../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import Dropmenu from "./../../dropmenu/DropMenu";
+import { DropMenu } from "../../util/DropMenu";
 import Card from "./card/card";
 import Edit from "./Edit/Edit";
 
@@ -52,7 +52,7 @@ function AllBroadcasts() {
             />
           </div>
           <div className={style.filters}>
-            <Dropmenu
+            <DropMenu
               ListName="Filter by Month"
               ListItems={[
                 "January",
@@ -68,7 +68,7 @@ function AllBroadcasts() {
                 "December",
               ]}
             />
-            <Dropmenu ListName="Filter by Year" ListItems={["2021", "2020"]} />
+            <DropMenu ListName="Filter by Year" ListItems={["2021", "2020"]} />
           </div>
         </div>
       </div>

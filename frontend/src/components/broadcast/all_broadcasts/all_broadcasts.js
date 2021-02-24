@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./all_broadcasts.css";
+import style from "./all-broadcasts.module.css";
 import dataa from "../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
@@ -33,25 +33,25 @@ function AllBroadcasts() {
         handleChange={handleChange}
         data={array[index]}
       />
-      <div id="hero">
-        <div className="motive">
-          <h1 className="carousel-head">All Broadcasts</h1>
-          <div className="dash"></div>
+      <div className={style.hero}>
+        <div className={style.motive}>
+          <h1 className={style.carouselHead}>All Broadcasts</h1>
+          <div className={style.dash}></div>
         </div>
       </div>
-      <div className="appbarWrap">
-        <div className="appbar">
-          <div className="search">
-            <div className="searchIcon">
+      <div className={style.appbarWrap}>
+        <div className={style.appbar}>
+          <div className={style.search}>
+            <div className={style.searchIcon}>
               <Search />
             </div>
             <InputBase
               placeholder="Find a Broadcast…"
-              className="inputInput"
+              className={style.inputInput}
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className="filters">
+          <div className={style.filters}>
             <Dropmenu
               ListName="Filter by Month"
               ListItems={[
@@ -72,7 +72,7 @@ function AllBroadcasts() {
           </div>
         </div>
       </div>
-      <div id="allCards">
+      <div className={style.allCards}>
         {array.map((element, i) => {
           return (
             <Card

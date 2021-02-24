@@ -41,7 +41,7 @@ router.put(
 );
 
 router.put(
-  '/',
+  '/admin',
   validationMiddleware(putAdminSchema),
   authMiddleware,
   putAdmin

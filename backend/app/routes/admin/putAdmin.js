@@ -4,24 +4,37 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
+ 
+    const { firstName, lastName, contact, username } = req.body;
 
-    const admin = new Admin(req.body)
-    const updates = Object.keys(req.body)
-    const allowedUpdates = ['firstName', 'lastName', 'contact', 'username']
-    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+    const userRecord = await Admin.findOne({
+        email: res.locals.decode.email,
+      });
 
-    if(!isValidOperation){
-        return res.status(400).send({error: 'Invalid update!'})
-    }
-
-    try{
-        updates.forEach((update) => req.admin[update] = req.body[update])
-
-        await req.admin.save()
-        res.send(req.admin)
-        return next()
-    }
-    catch(e){
-    res.status(400).send(e)
-    }
+      try{
+        await to(
+            Admin.findOneAndUpdate(
+              { email: userRecord.email },
+              { $set: { firstName,
+                        lastName,
+                        contact,
+                        username
+                     } },
+            )
+          );
+          const response = await Admin.findOne({
+            email: res.locals.decode.email,
+          });
+          res.status(201).send(response);
+          return next();
+      }catch(err){
+        const error = new ErrorHandler(constants.ERRORS.DATABASE, {
+            statusCode: 500,
+            message: 'Mongo Error: Updation Failed',
+            errStack: err,
+            user: userRecord.email,
+          });
+          return next(error);
+      }
+    
 }

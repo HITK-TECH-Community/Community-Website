@@ -140,7 +140,7 @@ export const Login = () => {
       <div className={`${style["login-form"]} ${style["child2"]}`}>
         <div className={style["login-card"]}>
           <h1 className={style["card-heading"]}>Welcome Back</h1>
-          <div className={style["inside-card "]}>
+          <div className={style["inside-card"]}>
             <div className={style["login-input"]}>
               <input
                 autocomplete="off"

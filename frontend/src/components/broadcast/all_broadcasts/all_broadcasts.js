@@ -52,7 +52,7 @@ function AllBroadcasts() {
             />
           </div>
           <div className={style.filters}>
-            <Dropmenu
+            <DropMenu
               ListName="Filter by Month"
               ListItems={[
                 "January",

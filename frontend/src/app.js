@@ -6,9 +6,6 @@ import Home from "./components/home/home";
 import JoinUsForm from "./components/home/join_us/join_us_form/form";
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Resources from "./components/resource/resources";
-import ContactUs from "./components/contact/contact_us";
-import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
 

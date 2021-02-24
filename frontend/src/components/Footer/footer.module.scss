@@ -6,46 +6,39 @@
   background-color: #121f3a;
   border-top: 1px solid #e5e5e5;
 }
-
 .footer > * {
   flex: 1 100%;
 }
-
-.footerAddr {
+.footer-addr {
   margin-right: 1.25em;
   margin-bottom: 2em;
 }
-
-.footerLogo {
+.footer-logo {
   font-weight: 600;
   font-size: 1.5rem;
   color: #fff;
 }
-
-.footerAddr h2 {
+.footer-addr h2 {
   margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
 }
-
-.navTitle {
+.nav-title {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
 }
-
 .footer address {
   font-style: normal;
   color: #c2d6d7;
 }
-
-.footerBtn {
+.footer-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 36px;
   max-width: max-content;
-  background-color: rgb(33, 33, 33, 0.07);
+  background-color: rgba(33, 33, 33, 0.07);
   border-radius: 100px;
   color: #c2d6d7;
   line-height: 0;
@@ -53,91 +46,74 @@
   font-size: 1rem;
   padding: 0 1.3em;
 }
-
 .footer ul {
   list-style: none;
   padding-left: 0;
 }
-
 .footer li {
   line-height: 2em;
 }
-
 .footer a {
   text-decoration: none;
 }
-
-.footerNav {
+.footer-nav {
   display: flex;
   flex-flow: row wrap;
 }
-
-.footerNav > * {
+.footer-nav > * {
   flex: 1 50%;
   margin-right: 1.25em;
 }
-
-.navUl a {
+.nav-ul a {
   color: #c2d6d7;
 }
-
-.navUl a:hover {
+.nav-ul a:hover {
   color: yellow;
 }
-
-.navUlExtra {
+.nav-ul-extra {
   column-count: 2;
   column-gap: 1.25em;
 }
-
 .legal {
   display: flex;
   flex-wrap: wrap;
   color: #c2d6d7;
 }
-
-.legalLinks {
+.legal-links {
   display: flex;
   align-items: center;
 }
-
 .heart {
   color: #c2d6d7;
 }
-
 .fa-linkedin,
 .fa-slack,
 .fa-envelope,
 .fa-github,
-.faGithub,
-.faEnvelope,
-.faSlack,
-.faLinkedin {
+.fa-github-own,
+.fa-envelope-own,
+.fa-slack-own,
+.fa-linkedin-own {
   padding: 5px;
   color: white;
 }
-
 .fa-linkedin:hover,
-.faLinkedin:hover {
+.fa-linkedin-own:hover {
   color: #0088cc;
 }
-
 .fa-slack:hover,
-.faSlack:hover {
+.fa-slack-own:hover {
   color: #dd2a7b;
 }
-
 .fa-envelope:hover,
-.faEnvelope:hover {
+.fa-envelope-own:hover {
   color: #c71610;
 }
-
 .fa-github:hover,
-.faGithub:hover {
+.fa-github-own:hover {
   color: #000;
 }
-
-.footerDash {
+.footer-dash {
   text-align: center;
   padding-top: 2px;
   width: 90px;
@@ -145,36 +121,34 @@
   margin-top: -32px;
   margin-bottom: 12px;
   background: rgb(255, 0, 90);
-  background: /* gradient can be an image */ linear-gradient(
+  background: 
+   /* gradient can be an image */ linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
     purple 90%
   );
-  background-size: 100% 5px; /* if linear-gradient, we need to resize it */
+  background-size: 100% 5px;
+  /* if linear-gradient, we need to resize it */
 }
-
-.footerText {
+.footer-text {
   padding-top: 10px;
   text-align: center;
   font-size: 0.8rem;
   background: #121f3a;
 }
-
-.navItem {
+.nav-item {
   margin-bottom: 1.5rem;
 }
-
 /* Social Icons styles */
-
 :root {
-  --r: 12px; /* corner radius */
-  --w: 4px; /* width of the border */
+  --r: 12px;
+  /* corner radius */
+  --w: 4px;
+  /* width of the border */
 }
-
 .col .social li {
   color: #ffffff00;
 }
-
 .col .social li a {
   position: relative;
   line-height: 50px;
@@ -187,7 +161,6 @@
   transition: 0.5s;
   float: left;
 }
-
 .col .social li a .outer {
   height: calc(40px + 2 * var(--w));
   width: calc(40px + 2 * var(--w));
@@ -195,7 +168,6 @@
   border-radius: 10px;
   position: relative;
 }
-
 .col .social li a .inner {
   z-index: 1;
   width: calc(40px + var(--w));
@@ -206,27 +178,22 @@
   top: calc(var(--w) / 2);
   left: calc(var(--w) / 2);
 }
-
 a > span {
   z-index: -1;
 }
-
 .col .social li a span {
   position: absolute;
   transition: transform 0.5s;
 }
-
 .col .social li a span:hover {
   transition: transform 0.5s;
 }
-
 .col .social li a span:nth-child(1),
 .col .social li a span:nth-child(3) {
   width: 50px;
   height: var(--r);
   background-color: yellow;
 }
-
 .col .social li a span:nth-child(1) {
   top: 0;
   left: 0;
@@ -235,13 +202,11 @@ a > span {
   border-radius: var(--r) var(--r) 0 0;
   border-bottom: none;
 }
-
 .col .social li a:hover span:nth-child(1) {
   transform: scaleX(0.279);
   transform-origin: left;
   transition: transform 0.5s;
 }
-
 .col .social li a span:nth-child(3) {
   bottom: 0;
   top: unset;
@@ -251,27 +216,23 @@ a > span {
   border-radius: 0 0 var(--r) var(--r);
   border-top: none;
 }
-
 .col .social li a:hover span:nth-child(3) {
   transform: scaleX(0.275);
   transform-origin: right;
   transition: transform 0.5s;
 }
-
 .col .social li a span:nth-child(2),
 .col .social li a span:nth-child(4) {
   width: var(--r);
   height: 50px;
   background-color: yellow;
 }
-
 .col .social li a span:nth-child(2) {
   bottom: 0;
   left: 0;
   transform: scaleY(0.26);
   transform-origin: bottom;
 }
-
 .col .social li a:hover span:nth-child(2) {
   transform: scaleY(1);
   transform-origin: top;
@@ -280,14 +241,12 @@ a > span {
   border-radius: var(--r) 0 0 var(--r);
   border-right: none;
 }
-
 .col .social li a span:nth-child(4) {
   top: 0;
   right: 0px;
   transform: scaleY(0.3);
   transform-origin: top;
 }
-
 .col .social li a:hover span:nth-child(4) {
   transform: scaleY(1);
   transform-origin: bottom;
@@ -296,22 +255,18 @@ a > span {
   border-radius: 0 var(--r) var(--r) 0;
   border-left: none;
 }
-
 .col .social,
 .col .social * {
   box-sizing: content-box;
 }
-
 .newsletter {
   margin-top: 40px;
 }
-
 .newsletter h2 {
   font-size: 18px;
   font-weight: 600;
 }
-
-.inputFieldFooter {
+.input-field-footer {
   border: 2px solid transparent;
   border-radius: 8px;
   width: 250px;
@@ -320,8 +275,7 @@ a > span {
   height: 35px;
   font-size: 14px;
 }
-
-.inputFieldFooter:focus {
+.input-field-footer:focus {
   outline: none;
   border: 2px double transparent;
   border-radius: 8px;
@@ -334,13 +288,11 @@ a > span {
   background-clip: padding-box, border-box;
   background-color: #ffffff;
 }
-
 .validation {
   color: red;
   margin-top: 0;
 }
-
-.submitBtnFooter {
+.submit-btn-footer {
   outline: none;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -351,28 +303,23 @@ a > span {
   transition: all 0.3s;
   height: 35px;
 }
-
-.submitBtnFooter:focus {
+.submit-btn-footer:focus {
   outline: none;
   border: none;
 }
-
-.submitBtnFooter:hover {
+.submit-btn-footer:hover {
   background-color: transparent;
   color: #fff;
   border: 2px solid #ee4d55;
 }
-
-.validationNew {
+.validation-new {
   color: red;
   margin-bottom: 25px;
 }
-
 .cprt {
   padding: 4px;
 }
-
-.cprtText {
+.cprt-text {
   width: 100%;
   background-color: #016795;
   color: white;
@@ -382,46 +329,38 @@ a > span {
   margin-bottom: 0px;
   margin-top: -15px;
 }
-
 @media screen and (min-width: 24.375em) {
-  .legal .legalLinks {
+  .legal .legal-links {
     margin-left: auto;
   }
-  .validationNew {
+  .validation-new {
     display: none;
   }
 }
-
 @media screen and (min-width: 40.375em) {
-  .footerNav > * {
+  .footer-nav > * {
     flex: 1;
   }
-
-  .navItemExtra {
+  .nav-item-extra {
     flex-grow: 2;
   }
-
-  .footerAddr {
+  .footer-addr {
     flex: 1 0px;
   }
-
-  .footerNav {
+  .footer-nav {
     flex: 2 0px;
   }
-
-  .validationNew {
+  .validation-new {
     display: none;
   }
 }
-
 @media screen and(max-width:571px) {
-  .validationNew {
+  .validation-new {
     display: none;
   }
 }
-
 @media screen and (max-width: 390px) {
-  .validationNew {
+  .validation-new {
     display: none;
   }
 }

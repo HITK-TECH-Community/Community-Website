@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./footer.module.css";
+import style from "./footer.module.scss";
 
-class Footer extends React.Component {
+export class Footer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -59,16 +59,16 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-        <footer className={style.footer}>
-          <div className={style.footerAddr}>
-            <h1 className={style.footerLogo}>HITK Tech Community</h1>
+        <footer className={style["footer"]}>
+          <div className={style["footer-addr"]}>
+            <h1 className={style["footer-logo"]}>HITK Tech Community</h1>
             <address>
               <i className="fas fa-map-marker-alt"></i> Heritage Institute of
               Technology, Chowbaga Road, Kolkata, West Bengal - 700107
               <br />
             </address>
-            <div className={style.newsletter}>
-              <h2 className={style.navTitle}>Sign Up for our Newsletter</h2>
+            <div className={style["newsletter"]}>
+              <h2 className={style["nav-title"]}>Sign Up for our Newsletter</h2>
               <p>
                 Receive updates and news about various Job Opportunities,
                 Internships, Webinars and Open Source Events.
@@ -80,34 +80,34 @@ class Footer extends React.Component {
               >
                 <input
                   type="text"
-                  className={`${style.inputFieldFooter} py-2`}
+                  className={`${style["input-field-footer"]} py-2`}
                   placeholder="Email Id"
                   onChange={this.handleChange.bind(this, "email")}
                   value={this.state.fields["email"]}
                 />
                 <br />
-                <div className={`${style.validation} d-sm-block d-md-none`}>
+                <div className={`${style["validation"]} d-sm-block d-md-none`}>
                   <div>{this.state.errors["email"]}</div>
                 </div>
                 <button
                   type="submit"
-                  className={`mt-3 mt-md-0 ${style.submitBtnFooter} py-2 px-3 `}
+                  className={`mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 `}
                 >
                   Sign Up
                 </button>
               </form>
               <div
-                className={`${style.validationNew} validation-new d-sm-none d-md-block`}
+                className={`${style["validation-new"]} validation-new d-sm-none d-md-block`}
               >
                 <div>{this.state.errors["email"]}</div>
               </div>
             </div>
           </div>
-          <ul className={style.footerNav}>
-            <li className={style.navItem}>
-              <h2 className={style.navTitle}>Navigation</h2>
+          <ul className={style["footer-nav"]}>
+            <li className={style["nav-item"]}>
+              <h2 className={style["nav-title"]}>Navigation</h2>
 
-              <ul className={style.navUl}>
+              <ul className={style["nav-ul"]}>
                 <li>
                   <a href="/about-us">About</a>
                 </li>
@@ -130,10 +130,10 @@ class Footer extends React.Component {
               </ul>
             </li>
 
-            <li className={style.navItem}>
-              <h2 className={style.navTitle}>Other</h2>
+            <li className={style["nav-item"]}>
+              <h2 className={style["nav-title"]}>Other</h2>
 
-              <ul className={style.navUl}>
+              <ul className={style["nav-ul"]}>
                 <li>
                   <a href="/privacy-policy">Privacy Policy</a>
                 </li>
@@ -148,26 +148,26 @@ class Footer extends React.Component {
               </ul>
             </li>
             <li>
-              <h2 className={style.navTitle}>Social</h2>
-              <ul className={style.navUl}>
+              <h2 className={style["nav-title"]}>Social</h2>
+              <ul className={style["nav-ul"]}>
                 <li>Be sure to give us a follow on the below social links</li>
               </ul>
-              <div className={`col ${style.col}`}>
-                <ul className={style.social}>
+              <div className={`col ${style["col"]}`}>
+                <ul className={style["social"]}>
                   <li>
                     <a
                       href="https://www.linkedin.com/company/hitk-tech-community"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className={style.outer}>
+                      <div className={style["outer"]}>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <div className={style.inner}>
+                        <div className={style["inner"]}>
                           <i
-                            className={`fab fa-linkedin fa-lg ${style.faLinkedin}`}
+                            className={`fab fa-linkedin fa-lg ${style["fa-linkedin-own"]}`}
                           ></i>
                         </div>
                       </div>
@@ -179,14 +179,14 @@ class Footer extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className={style.outer}>
+                      <div className={style["outer"]}>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <div className={style.inner}>
+                        <div className={style["inner"]}>
                           <i
-                            className={`fab fa-slack fa-lg ${style.faSlack}`}
+                            className={`fab fa-slack fa-lg ${style["fa-slack-own"]}`}
                           ></i>
                         </div>
                       </div>
@@ -198,14 +198,14 @@ class Footer extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className={style.outer}>
+                      <div className={style["outer"]}>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <div className={style.inner}>
+                        <div className={style["inner"]}>
                           <i
-                            className={`fas fa-envelope fa-lg ${style.faEnvelope}`}
+                            className={`fas fa-envelope fa-lg ${style["fa-envelope-own"]}`}
                           ></i>
                         </div>
                       </div>
@@ -217,14 +217,14 @@ class Footer extends React.Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <div className={style.outer}>
+                      <div className={style["outer"]}>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span>
-                        <div className={style.inner}>
+                        <div className={style["inner"]}>
                           <i
-                            className={`fab fa-github fa-lg ${style.faGithub}`}
+                            className={`fab fa-github fa-lg ${style["fa-github-own"]}`}
                           ></i>
                         </div>
                       </div>
@@ -234,8 +234,8 @@ class Footer extends React.Component {
               </div>
             </li>
           </ul>
-          <div className={style.footerDash}>
-            <div className={style.footerText}>
+          <div className={style["footer-dash"]}>
+            <div className={style["footer-text"]}>
               <p>
                 Made with{" "}
                 <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by
@@ -245,8 +245,8 @@ class Footer extends React.Component {
           </div>
         </footer>
 
-        <div className={style.cprtText}>
-          <p className={`${style.cprt} py-2`}>
+        <div className={style["cprt-text"]}>
+          <p className={`${style["cprt"]} py-2`}>
             Copyright © 2020 HITK Tech Community
           </p>
         </div>
@@ -254,5 +254,3 @@ class Footer extends React.Component {
     );
   }
 }
-
-export default Footer;

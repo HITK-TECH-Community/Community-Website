@@ -1,25 +1,30 @@
 import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-// Pages Import
-import ScrollTop from "./components/util/scroll-to-top/scrolltop";
-import Home from "./components/home/home";
-import AboutUs from "./components/about/about_us";
-import Broadcasts from "./components/broadcast/broadcasts";
-import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Resources from "./components/resource/resources";
-import ContactUs from "./components/contact/contact_us";
-import Admin from "./components/admin/admin";
-import Faqs from "./components/faq/faq";
-import NotFound from "./components/404/not_found";
-import Dashboard from "./components/admin/dashboard/dashboard";
-import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
-import Terms from "./components/terms/terms";
-import GetInvolved from "./components/get_involved/get_involved";
-import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
-import Setting from "./components/admin/setting/setting";
 import "./app.css";
+
+// Component
+import { JoinUsForm } from "./pages/Home/components/JoinUsForm/index";
+import { Navbar } from "./components/Navbar/index";
+import { Footer } from "./components/Footer";
+// import AddFaq from "./components/admin/faq/add_faq/add_faq";
+import { ScrollTop } from "./components/util/ScrollToTop/index";
+
+// Pages
+import { Home } from "./pages/Home/index";
+import { Terms } from "./pages/Terms/index";
+import { About } from "./pages/About";
+import { NotFound } from "./pages/404";
+import { Login } from "./pages/Login/index";
+import { ContactUs } from "./pages/ContactUs/index";
+import { Admin } from "./pages/Admin";
+import { Setting } from "./pages/Admin/Components/Setting";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
+import { Resources } from "./pages/Resources/index";
+import { Faq } from "./pages/Faq";
+import { Broadcast } from "./pages/Broadcast/index";
+import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
+import { GetInvolved } from "./pages/GetInvolved";
 
 const App = () => {
   return (
@@ -29,20 +34,21 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/about-us" component={About} />
             <Route exact path="/Broadcasts">
-              <Broadcasts />
+              <Broadcast />
             </Route>
             <Route exact path="/all-broadcasts" component={AllBroadcasts} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/contact-us" component={ContactUs} />
-            <Route exact path="/faqs" component={Faqs} />
-            <Route exact path="/admin" component={Admin} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/faqs" component={Faq} />
+            <Route exact path="/admin" component={Login} />
+            <Route exact path="/dashboard" component={Admin} />
             <Route exact path="/setting" component={Setting} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/get-involved" component={GetInvolved} />
             <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route exact path="/join_us_form" component={JoinUsForm} />
             <Route component={NotFound} />
           </Switch>
         </Router>

@@ -21,10 +21,7 @@ module.exports = async (req, res, next) => {
     email: res.locals.decode.email,
   });
 
-  const isPasswordCorrect = await argon2.verify(
-    userRecord.passwordHash,
-    oldPassword
-  );
+  const isPasswordCorrect = await argon2.verify(userRecord.passwordHash, oldPassword);
 
   if (!isPasswordCorrect) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
@@ -39,10 +36,7 @@ module.exports = async (req, res, next) => {
   const hashedPassword = await argon2.hash(newPassword);
 
   const [err] = await to(
-    Admin.findOneAndUpdate(
-      { email: userRecord.email },
-      { $set: { passwordHash: hashedPassword } },
-    )
+    Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { passwordHash: hashedPassword } })
   );
 
   if (err) {

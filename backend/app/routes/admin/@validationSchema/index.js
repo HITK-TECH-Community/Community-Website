@@ -15,7 +15,6 @@ const postSuperAdminSchema = Joi.object({
   username: Joi.string().optional(),
 });
 
-
 const putAdminSchema = Joi.object({
   firstName: Joi.string()
     .optional()
@@ -45,5 +44,5 @@ module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,
-  putAdminSchema
+  putAdminSchema,
 };

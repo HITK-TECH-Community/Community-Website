@@ -18,7 +18,7 @@ import { Home } from "./pages/Home/index";
 import { Terms } from "./pages/Terms/index";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
-import { Login } from "./pages/Login/index";
+import  Login from "./pages/Login/index";
 import { ContactUs } from "./pages/ContactUs/index";
 import { Admin } from "./pages/Admin";
 import { Setting } from "./pages/Admin/Components/Setting";
@@ -28,7 +28,15 @@ import { Faq } from "./pages/Faq";
 import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 
+import useToken from './useToken';
+
 const App = () => {
+  const [token, setToken] = useToken();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+
   return (
     <Fragment>
       <div className="Container">

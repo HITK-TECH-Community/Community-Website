@@ -1,6 +1,7 @@
 import React, { useReducer, useEffect, useState, useRef } from "react";
 import { Button2 } from "../../components/util/Button/index";
 import style from "./login.module.scss";
+import PropTypes from 'prop-types';
 
 //state type
 type State = {
@@ -69,7 +70,18 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-export const Login = () => {
+async function loginUser(credentials) {
+  return fetch('http://localhost:3500/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
+
+export default function Login({setToken})  {
   //state for showing and hiding password
   const [state, dispatch] = useReducer(reducer, initialState);
   const [hidePassword, setHidePassword] = useState(false);
@@ -108,6 +120,15 @@ export const Login = () => {
     }
   };
 
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await loginUser({
+      username,
+      password
+    });
+    setToken(token);
+  }
+
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.keyCode === 13 || event.which === 13) {
       state.isButtonDisabled || handleLogin();
@@ -140,6 +161,7 @@ export const Login = () => {
       <div className={`${style["login-form"]} ${style["child2"]}`}>
         <div className={style["login-card"]}>
           <h1 className={style["card-heading"]}>Welcome Back</h1>
+          <form onSubmit={handleSubmit}>
           <div className={style["inside-card "]}>
             <div className={style["login-input"]}>
               <input
@@ -184,8 +206,13 @@ export const Login = () => {
               />
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>
   );
 };
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
+}

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import styles from "./join-us.module.scss";
-import { Button3 } from "../../util/Button/index";
+import { Button3 } from "../../../../components/util/Button";
 
 export const JoinUs = () => {
   return (

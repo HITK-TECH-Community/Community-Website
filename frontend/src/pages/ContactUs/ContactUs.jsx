@@ -1,5 +1,5 @@
 import React from "react";
-import { Button2 } from "../../components/util/Button/Button";
+import { Button2 } from "../../components/util/Button/index";
 import style from "./ContactUs.module.scss";
 
 export const ContactUs = () => {

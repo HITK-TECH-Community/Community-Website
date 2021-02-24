@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./get_involved.module.css";
+import style from "./get-involved.module.scss";
 
-function GetInvolved() {
+export const GetInvolved = () => {
   const arrayCards = [
     [
       "Report Issues",
@@ -26,23 +26,25 @@ function GetInvolved() {
   ];
   return (
     <main>
-      <div id={styles.hero}>
-        <div id={styles.heading}>
-          <div id={styles.title}>Get Involved!</div>
+      <div id={style["hero"]}>
+        <div id={style["heading"]}>
+          <div id={style["title"]}>Get Involved!</div>
         </div>
       </div>
-      <div id={styles.allCards}>
+      <div id={style["all-cards"]}>
         {arrayCards.map((element, i) => {
           return (
-            <div className={`${styles.card_item} ${styles.card_item2} key={i}`}>
+            <div
+              className={`${style["card-item"]} ${style["card-item2"]} key={${i}}`}
+            >
               <a
                 href="https://github.com/HITK-TECH-Community/Community-Website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className={styles.clickable_card}>
-                  <div className={styles.card_title}>{element[0]}</div>
-                  <div className={styles.card_content}>{element[1]}</div>
+                <div className={style["clickable-card"]}>
+                  <div className={style["card-title"]}>{element[0]}</div>
+                  <div className={style["card-content"]}>{element[1]}</div>
                 </div>
               </a>
             </div>
@@ -51,6 +53,4 @@ function GetInvolved() {
       </div>
     </main>
   );
-}
-
-export default GetInvolved;
+};

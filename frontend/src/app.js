@@ -1,15 +1,12 @@
 import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
-// Pages Import
-import Footer from "./components/footer/footer";
-import GetInvolved from "./components/get_involved/get_involved";
-
 import "./app.css";
 
 // Component
 import { JoinUsForm } from "./pages/Home/components/JoinUsForm/index";
 import { Navbar } from "./components/Navbar/index";
+import { Footer } from "./components/Footer";
 // import AddFaq from "./components/admin/faq/add_faq/add_faq";
 import { ScrollTop } from "./components/util/ScrollToTop/index";
 
@@ -27,6 +24,7 @@ import { Resources } from "./pages/Resources/index";
 import { Faq } from "./pages/Faq";
 import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
+import { GetInvolved } from "./pages/GetInvolved";
 
 const App = () => {
   return (

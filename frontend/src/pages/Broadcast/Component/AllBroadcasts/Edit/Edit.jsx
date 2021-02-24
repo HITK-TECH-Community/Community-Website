@@ -1,13 +1,21 @@
-import React from "react";
-import style from "./Edit.module.scss";
+import React, { useEffect, useState } from "react";
+import style from "./edit.module.scss";
 import { TextField } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
-export default function Edit(props) {
-  console.log(props.data);
+export function Edit(props) {
+  const [a, seta] = useState();
+  function scrolls() {
+    let b = window.scrollY;
+    seta(b);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", scrolls);
+  }, []);
+
   return props.visible ? (
-    <div className={style.popup}>
-      <div className={style.div}>
+    <div className={style["popup"]} style={{ top: a }}>
+      <div className={style["div"]}>
         <h1>
           Edit modal
           <CloseIcon
@@ -16,14 +24,15 @@ export default function Edit(props) {
           />
         </h1>
         <form>
-          <div className={style.form}>
+          <div className={style["form"]}>
             <h5>Title:</h5>
             <TextField
               type="text"
               name="title"
               placeholder="Title"
+              multiline
               value={props.data.title}
-              className={style.input}
+              className={style["input"]}
               onChange={props.handleChange}
             />
           </div>
@@ -32,9 +41,10 @@ export default function Edit(props) {
             <TextField
               type="text"
               name="desc"
+              multiline
               placeholder="Description"
               value={props.data.desc}
-              className={style.input}
+              className={style["input"]}
               onChange={props.handleChange}
             />
           </div>
@@ -44,13 +54,14 @@ export default function Edit(props) {
               type="text"
               name="link"
               placeholder="Link"
-              className={style.input}
+              className={style["input"]}
               onChange={props.handleChange}
               value={props.data.link}
+              multiline
             />
           </div>
           <button
-            className={style.btns1}
+            className={style["btns1"]}
             onClick={() => props.setVisible(false)}
           >
             Edit

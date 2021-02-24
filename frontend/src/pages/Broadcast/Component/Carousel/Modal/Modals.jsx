@@ -1,27 +1,16 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import style from "./modal.module.css";
+import style from "./modals.module.scss";
 
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-}));
-
-export default function TransitionsModal(props) {
-  const classes = useStyles();
-
+export function Modals(props) {
   return (
     <div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        className={style["modal"]}
         open={props.open}
         onClose={props.handleClose}
         closeAfterTransition
@@ -31,17 +20,17 @@ export default function TransitionsModal(props) {
         }}
       >
         <Fade in={props.open}>
-          <div className={style.modals}>
-            <h1 className={style.modHead}>{props.data.head}</h1>
-            <div className={style.mainCont}>
+          <div className={style["modals"]}>
+            <h1 className={style["mod_head"]}>{props.data.head}</h1>
+            <div className={style["main-cont"]}>
               <img
                 src={props.data.img}
-                className={style.image}
+                className={style["image"]}
                 alt="dummy_img"
               />
-              <div className={style.cont}>{props.data.desc}</div>
+              <div className={style["cont"]}>{props.data.desc}</div>
             </div>
-            <h1 className={style.modHead}>Link</h1>
+            <h1 className={style["mod_head"]}>Link</h1>
           </div>
         </Fade>
       </Modal>

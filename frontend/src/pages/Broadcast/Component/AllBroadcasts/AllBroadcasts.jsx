@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import style from "./all-broadcasts.module.css";
-import dataa from "../../../test_data/broadcast_text.json";
+import style from "./all-broadcasts.module.scss";
+import dataa from "../../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import { DropMenu } from "../../util/DropMenu";
-import Card from "./card/card";
-import Edit from "./Edit/Edit";
+import { DropMenu } from "../../../../components/util/DropMenu/index.js";
+import { Card } from "./Card/index.js";
+import { Edit } from "./Edit/index.js";
 
-function AllBroadcasts() {
+export function AllBroadcasts() {
   const [array, setArray] = useState([...dataa]);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
-
   const [isAdmin] = useState(true);
 
   const handler = (i) => {
@@ -26,32 +25,34 @@ function AllBroadcasts() {
   };
 
   return (
-    <main>
+    <main className={style["main"]}>
       <Edit
         visible={visible}
         setVisible={setVisible}
         handleChange={handleChange}
         data={array[index]}
       />
-      <div className={style.hero}>
-        <div className={style.motive}>
-          <h1 className={style.carouselHead}>All Broadcasts</h1>
-          <div className={style.dash}></div>
+      <div id={style["hero"]}>
+        <div className={style["motive"]}>
+          <h1 className={style["carousel-head"]} id={style["heading"]}>
+            All Broadcasts
+          </h1>
+          <div className={style["dash"]}></div>
         </div>
       </div>
-      <div className={style.appbarWrap}>
-        <div className={style.appbar}>
-          <div className={style.search}>
-            <div className={style.searchIcon}>
+      <div className={style["appbar-wrap"]}>
+        <div className={style["appbar"]}>
+          <div className={style["search"]}>
+            <div className={style["search-icon"]}>
               <Search />
             </div>
             <InputBase
               placeholder="Find a Broadcast…"
-              className={style.inputInput}
+              className={style["input-input"]}
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className={style.filters}>
+          <div className={style["filters"]}>
             <DropMenu
               ListName="Filter by Month"
               ListItems={[
@@ -72,7 +73,7 @@ function AllBroadcasts() {
           </div>
         </div>
       </div>
-      <div className={style.allCards}>
+      <div id={style["all-cards"]}>
         {array.map((element, i) => {
           return (
             <Card
@@ -88,5 +89,3 @@ function AllBroadcasts() {
     </main>
   );
 }
-
-export default AllBroadcasts;

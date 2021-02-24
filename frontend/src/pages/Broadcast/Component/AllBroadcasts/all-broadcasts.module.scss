@@ -1,10 +1,10 @@
-main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.appbarWrap {
+.appbar-wrap {
   width: 100%;
   z-index: 2;
 }
@@ -36,7 +36,7 @@ main {
   );
 }
 
-.hero {
+#hero {
   margin-top: 30px;
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@ main {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 4rem 0 2rem 0;
+  margin: 0 0 1rem 0;
   text-align: center;
 }
 
@@ -59,7 +59,7 @@ main {
   font-weight: bold;
 }
 
-.allCards {
+#all-cards {
   display: flex;
   flex-wrap: wrap;
   width: 95vw;
@@ -67,7 +67,7 @@ main {
   justify-content: center;
 }
 
-.searchIcon {
+.search-icon {
   padding-left: 16px;
   padding-right: 16px;
   height: 100%;
@@ -78,7 +78,7 @@ main {
   justify-content: center;
 }
 
-.inputInput {
+.input-input {
   padding: 8px 8px 8px 0;
   box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
   border-radius: 12px;
@@ -89,7 +89,7 @@ main {
 }
 
 .search {
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: rgba(124, 117, 117, 0.2);
   border-radius: 15px;
   margin-right: 16px;
   margin-left: 25px;
@@ -98,7 +98,7 @@ main {
 }
 
 .search:hover {
-  background-color: rgb(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 @media (min-width: 380px) {
@@ -119,7 +119,7 @@ main {
 }
 
 @media screen and (orientation: portrait) {
-  .hero {
+  #hero {
     flex-direction: column;
   }
 
@@ -135,7 +135,7 @@ main {
 }
 
 @media screen and (min-width: 960px) {
-  .inputInput {
+  .input-input {
     width: 40ch;
   }
 }

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import styles from "./Carousel.module.css";
-import style from "../../../pages/Home/components/Motive/motive.module.scss";
-import "./customOwlCarouselStyle.css";
-import Modals from "./Modal/Modals";
-import dataa from "../../../test_data/broadcast_text.json";
+import style from "./carousel.module.scss";
+import styles from "../../../Home/components/Motive/motive.module.scss";
+import "./custom-owl-carousel-style.scss";
+import { Modals } from "./Modal/index.js";
+import dataa from "../../../../test_data/broadcast_text.json";
 
-export default function Owl({ head }) {
+export function Carousel({ head }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = (s, h, i) => {
@@ -51,23 +51,23 @@ export default function Owl({ head }) {
   return (
     <React.Fragment>
       <Modals open={open} handleClose={handleClose} data={data} />
-      <div className={styles.sliderDiv}>
-        <div className={style.motive}>
-          <h1 className={styles.carouselHead}>{head}</h1>
-          <div className={style.dash}></div>
+      <div className={style["slider-div"]}>
+        <div className={styles["motive"]}>
+          <h1 className={style["carousel-head"]}>{head}</h1>
+          <div className={styles["dash"]}></div>
         </div>
         <OwlCarousel
-          className={`owl-theme ${styles.slide} `}
+          className={`${style["slide"]} owl-theme `}
           {...state.options}
           autoplay={true}
           responsiveClass={true}
           nav={false}
         >
           {dataa.map((item, i) => (
-            <div className={styles.slideCard}>
-              <h3 className={styles.cardHead}>{item.title}</h3>
+            <div className={style["slide-card"]}>
+              <h3 className={style["card-head"]}>{item.title}</h3>
               <div
-                className={styles.cardText}
+                className={style["card-text"]}
                 onClick={() => handleOpen(item.desc, item.title, item.link)}
               >
                 {item.desc.substring(0, 600)}...

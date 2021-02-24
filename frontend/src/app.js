@@ -2,8 +2,6 @@ import { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 // Pages Import
-import Broadcasts from "./components/broadcast/broadcasts";
-import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
 
@@ -27,6 +25,8 @@ import { Setting } from "./pages/Admin/Components/Setting";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
 import { Resources } from "./pages/Resources/index";
 import { Faq } from "./pages/Faq";
+import { Broadcast } from "./pages/Broadcast/index";
+import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/about-us" component={About} />
             <Route exact path="/Broadcasts">
-              <Broadcasts />
+              <Broadcast />
             </Route>
             <Route exact path="/all-broadcasts" component={AllBroadcasts} />
             <Route exact path="/resources" component={Resources} />

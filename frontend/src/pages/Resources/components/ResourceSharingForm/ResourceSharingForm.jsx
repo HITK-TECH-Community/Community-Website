@@ -1,5 +1,5 @@
 import React from "react";
-import { Button2 } from "../../../../components/util/button/index";
+import { Button2 } from "../../../../components/util/Button/index";
 import style from "./resource-sharing-form.module.scss";
 
 export function ResourceSharingForm() {

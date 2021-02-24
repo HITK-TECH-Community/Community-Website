@@ -2,7 +2,7 @@ import React from "react";
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
 import styles from "./add-broadcasts.module.scss";
-import { Button2 } from "../../../../../components/util/button/index";
+import { Button2 } from "../../../../../components/util/Button/index";
 
 export function AddBroadcasts() {
   return (

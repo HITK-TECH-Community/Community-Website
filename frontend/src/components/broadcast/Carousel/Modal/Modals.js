@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import "./Modal.css";
+import style from "./modal.module.css";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -31,13 +31,17 @@ export default function TransitionsModal(props) {
         }}
       >
         <Fade in={props.open}>
-          <div className="modals">
-            <h1 className="mod_head">{props.data.head}</h1>
-            <div className="main-cont">
-              <img src={props.data.img} className="image" alt="dummy_img" />
-              <div className="cont">{props.data.desc}</div>
+          <div className={style.modals}>
+            <h1 className={style.modHead}>{props.data.head}</h1>
+            <div className={style.mainCont}>
+              <img
+                src={props.data.img}
+                className={style.image}
+                alt="dummy_img"
+              />
+              <div className={style.cont}>{props.data.desc}</div>
             </div>
-            <h1 className="mod_head">Link</h1>
+            <h1 className={style.modHead}>Link</h1>
           </div>
         </Fade>
       </Modal>

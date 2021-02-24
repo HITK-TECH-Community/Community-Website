@@ -4,18 +4,16 @@ import "semantic-ui-css/semantic.min.css";
 // Pages Import
 import Broadcasts from "./components/broadcast/broadcasts";
 import AllBroadcasts from "./components/broadcast/all_broadcasts/all_broadcasts";
-import Resources from "./components/resource/resources";
-import ContactUs from "./components/contact/contact_us";
 import Faqs from "./components/faq/faq";
-import Login from "./components/auth/login/login";
 import Footer from "./components/footer/footer";
 import GetInvolved from "./components/get_involved/get_involved";
-import PrivacyPolicy from "./components/privacy-policy/privacy-policy";
+
 import "./app.css";
 
 // Component
 import { JoinUsForm } from "./pages/Home/components/JoinUsForm/index";
 import { Navbar } from "./components/Navbar/index";
+// import AddFaq from "./components/admin/faq/add_faq/add_faq";
 import { ScrollTop } from "./components/util/ScrollToTop/index";
 
 // Pages
@@ -23,8 +21,12 @@ import { Home } from "./pages/Home/index";
 import { Terms } from "./pages/Terms/index";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/404";
+import { Login } from "./pages/Login/index";
+import { ContactUs } from "./pages/ContactUs/index";
 import { Admin } from "./pages/Admin";
 import { Setting } from "./pages/Admin/Components/Setting";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
+import { Resources } from "./pages/Resources/index";
 
 const App = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./resources.module.css";
-import { Button2 } from "./../util/button/index";
+import { Button2 } from "./../util/Button/index";
 
 const Resources = () => {
   return (

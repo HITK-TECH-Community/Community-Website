@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect, useState, useRef } from "react";
-import { Button2 } from "../../util/button/index";
-import styles from "./login.module.css";
+import { Button2 } from "../../components/util/Button/index";
+import style from "./login.module.scss";
 
 //state type
 type State = {
@@ -69,7 +69,7 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const Login = () => {
+export const Login = () => {
   //state for showing and hiding password
   const [state, dispatch] = useReducer(reducer, initialState);
   const [hidePassword, setHidePassword] = useState(false);
@@ -133,15 +133,15 @@ const Login = () => {
   };
 
   return (
-    <div className={styles.loginSection}>
-      <div className={`${styles.loginImage} ${styles.child1}`}>
+    <div className={style["login-section"]}>
+      <div className={`${style["login-image"]} ${style["child1"]}`}>
         <img src="./images/login.png" alt="login-illustration" />
       </div>
-      <div className={`${styles.loginForm} ${styles.child2}`}>
-        <div className={styles.loginCard}>
-          <h1 className={styles.cardHeading}>Welcome Back</h1>
-          <div className={styles.insideCard}>
-            <div className={styles.loginInput}>
+      <div className={`${style["login-form"]} ${style["child2"]}`}>
+        <div className={style["login-card"]}>
+          <h1 className={style["card-heading"]}>Welcome Back</h1>
+          <div className={style["inside-card "]}>
+            <div className={style["login-input"]}>
               <input
                 autocomplete="off"
                 error={state.isError}
@@ -152,11 +152,11 @@ const Login = () => {
                 placeholder="Username"
                 onChange={handleUsernameChange}
                 onKeyPress={handleKeyPress}
-                className="inputLogin"
+                className={style["input-login"]}
               />
               <i className="fas fa-user"></i>
             </div>
-            <div className={styles.loginInput}>
+            <div className={style["login-input"]}>
               <input
                 error={state.isError}
                 id="password"
@@ -165,7 +165,7 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 onKeyPress={handleKeyPress}
-                className="inputLogin"
+                className={style["input-login"]}
                 type={passwordInput.current}
               />
               <i
@@ -173,12 +173,12 @@ const Login = () => {
                 onClick={() => setHidePassword(!hidePassword)}
               ></i>
             </div>
-            <div className={styles.submitBtn}>
+            <div className={style["submit-btn"]}>
               <Button2
                 id="btn"
                 label="Sign In"
                 type="submit"
-                className={styles.submitBtnText}
+                className={style["submit-btn-text"]}
                 onClick={handleLogin}
                 disabled={state.isButtonDisabled}
               />
@@ -189,5 +189,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;

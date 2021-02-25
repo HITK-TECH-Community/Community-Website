@@ -1,4 +1,4 @@
-## Run THe Backend Server Locally
+## Run The Backend Server Locally
 
 
 1. Fork This Repository.

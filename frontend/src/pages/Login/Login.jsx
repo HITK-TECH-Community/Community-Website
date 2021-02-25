@@ -2,27 +2,17 @@ import React, { useState, useRef } from "react";
 import { Button2 } from "../../components/util/Button/index";
 import style from "./login.module.scss";
 
-//state type
-
-export function Login({ setToken }) {
-  //state for showing and hiding password
+export function Login() {
   const [hidePassword, setHidePassword] = useState(false);
   const passwordInput = useRef("password");
-
-  // const handleKeyPress = (event: React.KeyboardEvent) => {
-  //   if (event.keyCode === 13 || event.which === 13) {
-  //     state.isButtonDisabled || handleLogin();
-  //   }
-  // };
-
   const schema = { email: "", password: "" };
   const [credential, setCredential] = useState(schema);
-
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     setCredential({ ...credential, [e.target.name]: e.target.value });
   };
+
   function loginUser(e) {
     e.preventDefault();
     return fetch("http://localhost:3500/auth/login", {
@@ -46,6 +36,7 @@ export function Login({ setToken }) {
   hidePassword
     ? (passwordInput.current = "text")
     : (passwordInput.current = "password");
+
   return (
     <div className={style["login-section"]}>
       <div className={`${style["login-image"]} ${style["child1"]}`}>
@@ -55,7 +46,7 @@ export function Login({ setToken }) {
         <div className={style["login-card"]}>
           <h1 className={style["card-heading"]}>Welcome Back</h1>
           <form onSubmit={loginUser}>
-            <div className={style["inside-card "]}>
+            <div className={style["inside-card"]}>
               <div className={style["login-input"]}>
                 <input
                   autocomplete="off"

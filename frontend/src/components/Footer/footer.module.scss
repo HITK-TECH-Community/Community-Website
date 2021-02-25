@@ -302,6 +302,7 @@ a > span {
   background-color: #ee4d55;
   transition: all 0.3s;
   height: 35px;
+  white-space: nowrap;
 }
 .submit-btn-footer:focus {
   outline: none;
@@ -362,5 +363,13 @@ a > span {
 @media screen and (max-width: 390px) {
   .validation-new {
     display: none;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .col .social {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: fit-content;
   }
 }

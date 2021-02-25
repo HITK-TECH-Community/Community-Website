@@ -21,6 +21,11 @@
   width: auto !important;
 }
 
+.join-us a {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 600px) {
   .join-us {
     padding: 1rem 1.2rem;

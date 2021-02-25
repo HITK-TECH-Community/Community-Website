@@ -19,22 +19,22 @@ export function Manage() {
   console.log(data);
   return (
     <div>
-      <h1 className={style.h1}>Manage Admins</h1>
-      <div className={style.container}>
+      <h1 className={style["h1"]}>Manage Admins</h1>
+      <div className={`${style["container"]} container`}>
         {data.map((item, i) => (
-          <div className={style.card} key={item + i}>
+          <div className={`${style["card"]} card`} key={item + i}>
             <img
               src="https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg"
               alt="pic"
-              className={style.img}
+              className={style["img"]}
             />
-            <h3 className={style.h3}>{item}</h3>
+            <h3 className={style["h3"]}>{item}</h3>
             <div>
               <i className="fab fa-linkedin fa-2x card_footer in"></i>
               <i className="fab fa-twitter-square fa-2x card_footer"></i>
               <i className="fab fa-github-square fa-2x card_footer"></i>
             </div>
-            <div className={style.icon} onClick={() => handler(i)}>
+            <div className={style["icon"]} onClick={() => handler(i)}>
               <DeleteIcon />
             </div>
           </div>

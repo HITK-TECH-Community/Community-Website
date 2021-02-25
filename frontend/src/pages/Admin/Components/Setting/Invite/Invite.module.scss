@@ -31,13 +31,7 @@
   position: relative;
 }
 
-.team > h1 {
-  text-align: center;
-}
-
-.admin_input input,
-.admin_input textarea,
-.admin_input1 select {
+.admin_input input {
   width: 100%;
   height: 50px;
   border: 1px solid #bbbaba;
@@ -49,9 +43,8 @@
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
-.admin_input input:focus,
-.admin_input textarea:focus,
-.admin_input1 select:focus {
+
+.admin_input input:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -78,16 +71,6 @@
 .inside_admin {
   width: 85%;
   margin: 2em auto;
-}
-
-.admin_header_text {
-  padding: 15px 0;
-  width: 85%;
-  margin: 0 auto;
-  font-size: 20px;
-  text-align: left;
-  color: var(--secondary-color);
-  text-transform: capitalize;
 }
 
 .wrap {
@@ -135,9 +118,5 @@
   }
   .admin_card {
     width: 90%;
-  }
-
-  .admin_header_text {
-    font-size: 16px;
   }
 }

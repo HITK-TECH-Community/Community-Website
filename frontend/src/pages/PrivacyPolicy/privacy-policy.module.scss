@@ -42,23 +42,6 @@ li {
   color: var(--secondary-color);
 }
 
-.pp-heading-container {
-  background-color: var(--primary-color);
-  width: 100vw;
-  height: 8rem;
-  text-align: center;
-  align-items: center;
-  margin-bottom: 3rem;
-}
-
-.pp-heading {
-  font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
-  font-size: 4rem;
-  margin: 3.2rem 0;
-  font-weight: 900;
-  color: white;
-}
-
 @media (orientation: portrait) {
   .pp-section {
     flex-direction: column;
@@ -71,15 +54,5 @@ li {
 
   .pp-statement-container {
     margin: 2rem 4vw;
-  }
-
-  .pp-heading-container {
-    height: 5rem;
-    margin-bottom: 0rem;
-  }
-
-  .pp-heading {
-    font-size: 3rem;
-    margin: 1.8rem 0;
   }
 }

@@ -29,21 +29,8 @@
   color: var(--secondary-color);
 }
 
-.back:hover {
-  color: white;
-}
-
-.fa-arrow-left {
-  color: white !important;
-}
-
 @media screen and (max-width: 750px) {
   .error {
     margin: 0 5% 3rem 5%;
-  }
-
-  .back {
-    font-size: 14px;
-    padding: 10px;
   }
 }

@@ -22,7 +22,13 @@ export const Navbar = () => {
         <div className={style["menu-icon"]} onClick={toggleNav}>
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
-        <ul className={style[isNavOpen ? "nav-menu active" : "nav-menu"]}>
+        <ul
+          className={
+            isNavOpen
+              ? `${style["nav-menu"]} ${style["active"]}`
+              : style["nav-menu"]
+          }
+        >
           <li className={style["nav-item"]}>
             <NavLink
               activeClassName={style["active-link"]}

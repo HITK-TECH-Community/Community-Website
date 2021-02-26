@@ -26,7 +26,7 @@ export const ScrollTop = () => {
       size={70}
       style={{
         height: 40,
-        color: "red",
+        color: "#FDDC5C",
         display: showScroll ? "flex" : "none",
       }}
     />

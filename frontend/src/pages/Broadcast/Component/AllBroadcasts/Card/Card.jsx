@@ -3,6 +3,7 @@ import ReactCardFlip from "react-card-flip";
 import { Modals } from "../../Carousel/Modal/index.js";
 import { Delete, Edit } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
+import { useSelector } from "react-redux";
 
 import style from "./card.module.scss";
 
@@ -27,6 +28,8 @@ export function Card(props) {
     setOpen(false);
     setData({});
   };
+  const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
+
   return (
     <div id={props.id} className={style["card-container"]}>
       <Modals open={open} handleClose={handleClose} data={data} />
@@ -42,7 +45,7 @@ export function Card(props) {
 
         <div className={style["card-item"]} onMouseLeave={handleClick}>
           <div className={style["clickable-card"]}>
-            {props.admin ? (
+            {isSuperAdmin ? (
               <div className={style["admin-controls"]}>
                 <IconButton
                   className={style["icon-button"]}

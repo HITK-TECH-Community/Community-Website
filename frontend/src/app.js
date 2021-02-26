@@ -26,7 +26,11 @@ import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
 
+import { useSelector } from "react-redux";
+
 const App = () => {
+  const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
+
   return (
     <Fragment>
       <div className="Container">
@@ -45,7 +49,9 @@ const App = () => {
             <Route exact={true} path="/contact-us" component={ContactUs} />
             <Route exact={true} path="/faqs" component={Faq} />
             <Route exact={true} path="/admin" component={Login} />
-            <Route exact={true} path="/dashboard" component={Admin} />
+            {isSuperAdmin ? (
+              <Route exact={true} path="/dashboard" component={Admin} />
+            ) : null}
             <Route exact={true} path="/setting" component={Setting} />
             <Route exact={true} path="/terms" component={Terms} />
             <Route exact={true} path="/get-involved" component={GetInvolved} />

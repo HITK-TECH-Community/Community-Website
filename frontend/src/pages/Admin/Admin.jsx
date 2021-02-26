@@ -12,9 +12,13 @@ import { Invite } from "./Components/Setting/Invite";
 import { Manage } from "./Components/Setting/Manage";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
+import { logout } from "../../store/actions/auth";
+
+import { useDispatch } from "react-redux";
 
 export const Admin = () => {
   const [tab, setTab] = useState(1);
+  const dispatch = useDispatch();
   return (
     <div style={{ minHeight: "100vh" }}>
       <div className={style["dashing"]}>
@@ -83,6 +87,16 @@ export const Admin = () => {
           >
             <i className="fas fa-cog fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style["span"]}>Settings</div>
+          </div>
+          <div
+            className={style["features-icons1"]}
+            onClick={() => logout(dispatch)}
+          >
+            <i
+              className="fas fa-sign-out-alt fa-fw fa-lg"
+              aria-hidden="true"
+            ></i>
+            <div className={style["span"]}>Logout</div>
           </div>
         </div>
         <div className={style["right"]}>

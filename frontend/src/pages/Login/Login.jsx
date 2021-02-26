@@ -29,12 +29,7 @@ export function Login() {
       response.json().then((res) => {
         if (response.status === 200) {
           localStorage.setItem("token", res.token);
-          localStorage.setItem("isSuperAdmin", res.isSuperAdmin);
-          dispatch({
-            type: actions.LOG_IN,
-            token: res.token,
-            super: res.isSuperAdmin,
-          });
+          dispatch({ type: actions.LOG_IN, token: res.token });
           window.location = "/dashboard";
         } else {
           setStatus("Unauthorised");

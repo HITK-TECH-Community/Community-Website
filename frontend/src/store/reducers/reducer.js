@@ -3,7 +3,6 @@ import * as actions from "../actions/actions";
 let initialState = {
   //auth
   token: localStorage.getItem("token") || null,
-  isSuperAdmin: localStorage.getItem("isSuperAdmin") || false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,7 +20,6 @@ function authSuccess(state, action) {
   return {
     ...state,
     token: action.token,
-    isSuperAdmin: action.super,
   };
 }
 
@@ -29,7 +27,6 @@ function logOut(state, action) {
   return {
     ...state,
     token: null,
-    isSuperAdmin: false,
   };
 }
 

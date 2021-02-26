@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Button2 } from "../../components/util/Button/index";
 import style from "./login.module.scss";
+import { useDispatch } from "react-redux";
+import * as actions from "../../store/actions/actions";
 
 export function Login() {
   const [hidePassword, setHidePassword] = useState(false);
@@ -12,6 +14,8 @@ export function Login() {
   const handleChange = (e) => {
     setCredential({ ...credential, [e.target.name]: e.target.value });
   };
+
+  const dispatch = useDispatch();
 
   function loginUser(e) {
     e.preventDefault();
@@ -25,6 +29,7 @@ export function Login() {
       response.json().then((res) => {
         if (response.status === 200) {
           localStorage.setItem("token", res.token);
+          dispatch({ type: actions.LOG_IN, token: res.token });
           window.location = "/dashboard";
         } else {
           setStatus("Unauthorised");

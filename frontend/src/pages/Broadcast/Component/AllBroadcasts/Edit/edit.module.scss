@@ -1,0 +1,53 @@
+.popup {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  .div {
+    width: 40%;
+    border-radius: 8px;
+    background: white;
+    padding: 1em;
+    @media (max-width: 600px) {
+      width: 95%;
+    }
+    h1 {
+      width: 100%;
+      font-size: 17px;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    margin: 0.5em 0;
+  }
+  h5 {
+    margin: 0;
+    width: 20%;
+  }
+  .input {
+    width: 75% !important;
+  }
+}
+
+.btns1 {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: white !important;
+  background-color: blue !important;
+  padding: 0.5em;
+}

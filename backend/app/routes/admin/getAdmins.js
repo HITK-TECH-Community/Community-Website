@@ -32,14 +32,11 @@ module.exports = async (req, res, next) => {
       isSuperAdmin: adminType === 'superAdmin',
     };
   }
-  const [err, response] = await to(
-    Admin.aggregate(getAdminsAggregate(match, page))
-  );
+  const [err, response] = await to(Admin.aggregate(getAdminsAggregate(match, page)));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: '500',
-      message:
-        'The server encountered an unexpected condition which prevented it from fulfilling the request.',
+      message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
       errorStack: err,
     });
     return next(error);

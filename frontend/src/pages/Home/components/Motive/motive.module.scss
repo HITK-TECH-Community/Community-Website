@@ -1,0 +1,216 @@
+.motive-div {
+  background-color: hsl(210, 64%, 9%);
+  padding: 60px 0px;
+}
+
+.single-features {
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+}
+
+.single-features::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  cursor: pointer;
+  left: 0;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.single-features .features-icon {
+  position: relative;
+  align-items: center;
+  display: flex;
+  padding-right: 18px;
+}
+
+.single-features .features-icon i {
+  font-size: 40px;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.single-features:hover .features-icon i {
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.single-features .features-icon span {
+  font-size: 60px;
+  color: #1b273d;
+  line-height: 100px;
+  opacity: 0.08;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  font-weight: 600;
+}
+
+.single-features .features-content {
+  padding-top: 5px;
+  position: relative;
+  z-index: 9;
+}
+
+.single-features .features-content .features-title a {
+  font-size: 24px;
+  color: #0e182c;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.single-features .features-content .text {
+  margin-top: 12px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.single-features:hover::before {
+  opacity: 1;
+}
+
+.single-features:hover .features-icon i,
+.single-features:hover .features-icon span {
+  color: #fff;
+}
+
+.single-features:hover .features-content .features-title a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.single-features:hover .features-content .text {
+  color: #fff;
+}
+
+.single-features:hover .motive-content {
+  color: #fff;
+}
+
+.motive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.motive .dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.fa-crosshairs {
+  font-size: 3.4rem;
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: -o-linear-gradient(
+    right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: -moz-linear-gradient(
+    right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.motive h1 {
+  font-size: 3.2rem;
+  color: white;
+}
+
+@media screen and (max-width: 823px) {
+  .motive {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8rem 0;
+    width: 100%;
+  }
+
+  .motive > div {
+    padding-left: 0;
+  }
+
+  .motive h1 {
+    font-size: 2.8rem;
+  }
+}

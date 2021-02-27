@@ -1,0 +1,130 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appbar-wrap {
+  width: 100%;
+  z-index: 2;
+}
+
+.appbar {
+  margin: auto;
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  margin: 15px 10px 15px auto;
+}
+
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+#hero {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+#heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+#all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95vw;
+  margin: 0.5em;
+  justify-content: center;
+}
+
+.search-icon {
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-input {
+  padding: 8px 8px 8px 0;
+  box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
+  border-radius: 12px;
+  height: 3em;
+  border: 1px solid #eeeeee;
+  padding-left: calc(1em + 32px);
+  width: 100%;
+}
+
+.search {
+  background-color: rgba(124, 117, 117, 0.2);
+  border-radius: 15px;
+  margin-right: 16px;
+  margin-left: 25px;
+  position: relative;
+  width: 228px;
+}
+
+.search:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width: 380px) {
+  .appbar {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .appbar {
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    margin: 15px auto;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #hero {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .input-input {
+    width: 40ch;
+  }
+}

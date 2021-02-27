@@ -1,0 +1,350 @@
+.join-us-form-section {
+  display: flex;
+  background-color: #fff;
+}
+
+.join-us-form-image {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.join-us-form-image img {
+  max-width: 100%;
+  margin-top: 160px;
+}
+
+.join-us-form {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.child2 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.join-us-form-card {
+  width: 75%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+  padding-bottom: 2rem;
+}
+
+.join-us-form-input {
+  position: relative;
+}
+
+.join-us-form-input input,
+.join-us-form-input textarea,
+.join-us-form-input select,
+.join-us-form-input1 select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 5px;
+  padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 20px;
+  margin-bottom: 30px !important;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.join-us-form-input input::placeholder,
+.join-us-form-input textarea::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.join-us-form-input input::-moz-placeholder,
+.join-us-form-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.join-us-form-input input::-moz-placeholder,
+.join-us-form-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.join-us-form-input input::-webkit-input-placeholder,
+.join-us-form-input textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.join-us-form-input input:focus,
+.join-us-form-input textarea:focus,
+.join-us-form-input select:focus,
+.join-us-form-input1 select:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+.join-us-form-input textarea {
+  padding-top: 15px;
+  resize: none;
+  height: 80px;
+}
+
+.valid {
+  display: flex;
+  justify-content: center;
+  margin-top: -5%;
+  margin-bottom: 25px;
+}
+
+.join-us-form-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: rgb(134, 131, 131);
+}
+
+.inside-join-us-form {
+  width: 85%;
+  margin: 0 auto;
+}
+
+[type="radio"] {
+  width: 24px;
+  height: 20px;
+  vertical-align: text-bottom;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[type="checkbox"] {
+  width: 20px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-3 {
+  margin-right: 0px !important;
+  margin-left: 1rem !important;
+}
+
+.radio-item label:before {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  border-radius: 11px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+.checkbox-item label:before {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  border-radius: 11px;
+  border: 2px solid grey;
+  background-color: transparent;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label:after {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  content: " ";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1),
+    rgba(10, 24, 61, 1)
+  );
+  border: 4px solid whitesmoke;
+}
+
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin-bottom: 10px;
+}
+
+.radio-item input[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  content: " ";
+  display: block;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 90, 1),
+    rgba(10, 24, 61, 1)
+  );
+  border: 4px solid whitesmoke;
+}
+
+.form-check {
+  padding-top: 0px !important;
+  padding-bottom: 1rem;
+  padding-left: 0px;
+}
+
+.year-of-study {
+  margin-right: 1rem;
+  display: block;
+}
+
+.ID {
+  margin-right: 1rem;
+  display: block;
+}
+
+.radio-buttons {
+  display: inline;
+  margin-bottom: 1rem;
+}
+
+.check-buttons {
+  display: inline;
+  margin-bottom: 1rem;
+}
+
+.join-us-form-input1 {
+  margin-bottom: 1.5rem;
+}
+
+input[type="date"]:not(:valid):before {
+  content: attr(placeholder);
+}
+
+.form-check {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  padding-right: 0.25em;
+}
+
+.join-us-form-header-text {
+  padding: 30px 0;
+  font-size: 30px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .join-us-form-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-group2 {
+    width: 100%;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  }
+
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+
+  .submit-btn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .label {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  [type="radio"] {
+    width: 29px;
+    height: 19px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .year-of-study {
+    display: block;
+  }
+
+  .ID {
+    display: block;
+  }
+
+  .radio-buttons {
+    margin-bottom: 1rem;
+  }
+
+  .join-us-form-input1 {
+    text-align: center;
+  }
+
+  .check-buttons {
+    text-align: left;
+  }
+}

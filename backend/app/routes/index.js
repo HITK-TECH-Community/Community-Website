@@ -6,5 +6,11 @@ const emailtest = require('./emailtest/control')
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.use('/emailtest',emailtest);
+const tinyURL = require('./tinyURL');
+
+router.use('/admin', admin);
+router.use('/auth', auth);
+router.use('/', tinyURL);
+main
 
 module.exports = router;

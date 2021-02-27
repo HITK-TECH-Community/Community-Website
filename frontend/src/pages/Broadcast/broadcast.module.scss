@@ -1,0 +1,30 @@
+.submit-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.myb {
+  background: rgba(10, 24, 61, 1);
+  padding: 12px 22px;
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid rgba(10, 24, 61, 1);
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  margin-bottom: 20px;
+}
+
+.myb:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  color: #fff;
+  border-radius: 4px;
+  border: 2px solid
+    linear-gradient(45deg, rgba(255, 0, 90, 1) 0%, rgba(10, 24, 61, 1) 90%);
+}

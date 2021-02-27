@@ -1,0 +1,46 @@
+.slider-div {
+  padding: 2em 0;
+}
+
+.slide {
+  background-color: #121f3a;
+  width: 100%;
+  margin: 1em auto;
+  padding-top: 2em !important;
+}
+
+.carousel-head {
+  color: #121f3a !important;
+  font-size: 35px !important;
+}
+
+.slide-card {
+  min-height: 25em;
+  border-radius: 20px;
+  background-color: #016795;
+  color: white;
+  margin: 0.8em 1.5em 0;
+  padding: 1em;
+}
+
+.slide-card:hover {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  color: white;
+  cursor: pointer;
+}
+
+.card-head {
+  text-align: center;
+  width: 100%;
+}
+
+.card-text {
+  margin: 1.5em 0;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 15px;
+}

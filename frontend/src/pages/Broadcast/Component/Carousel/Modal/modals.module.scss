@@ -1,0 +1,67 @@
+.modals {
+  width: 75%;
+  background-color: white !important;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mod_head {
+  background-color: #016795;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 1em 0;
+}
+
+.main-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  overflow-y: scroll;
+  height: auto;
+  max-height: 70%;
+}
+
+.image {
+  width: 48%;
+  border-radius: 20px;
+}
+
+.cont {
+  width: 48%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 2;
+}
+
+@media (max-width: 600px) {
+  .modals {
+    width: 95%;
+    height: 90%;
+  }
+
+  .main-cont {
+    flex-direction: column;
+    padding: 0.75em 0;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 70%;
+  }
+
+  .image {
+    width: 95%;
+  }
+
+  .cont {
+    margin: 1em 0;
+    width: 95%;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}

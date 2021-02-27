@@ -1,0 +1,50 @@
+.popup {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  .div {
+    width: 40%;
+    background: white;
+    padding: 1em;
+    h1 {
+      width: 100%;
+      font-size: 17px;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    margin: 0.5em 0;
+  }
+  h5 {
+    margin: 0;
+    width: 20%;
+  }
+  .input {
+    width: 75% !important;
+  }
+}
+
+.btns1 {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: white !important;
+  background-color: blue !important;
+  padding: 0.5em;
+}

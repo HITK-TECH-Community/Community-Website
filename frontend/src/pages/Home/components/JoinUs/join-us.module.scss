@@ -1,0 +1,33 @@
+.join-us {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 4rem 7rem;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(141deg, #ff551f, #fabf67 60%, #ff8f6c);
+}
+
+.join-us h1 {
+  font-size: 3.6rem;
+  color: rgb(18, 31, 58);
+}
+
+.subtitle {
+  color: #2f4052;
+}
+
+.main-btn.main-btn-2 {
+  width: auto !important;
+}
+
+.join-us a {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .join-us {
+    padding: 1rem 1.2rem;
+  }
+}

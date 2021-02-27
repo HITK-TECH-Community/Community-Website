@@ -9,14 +9,15 @@ module.exports = async (req, res, next) => {
     email: res.locals.decode.email,
   });
 
-  try {
-    await to(Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { firstName, lastName, contact, username } }));
-    const response = await Admin.findOne({
-      email: res.locals.decode.email,
-    });
-    res.status(201).send(response);
-    return next();
-  } catch (err) {
+  if (username === userRecord.username) {
+    return res.status(400).send({ error: 'Username already exists' });
+  }
+
+  const [err] = await to(
+    Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { firstName, lastName, contact, username } })
+  );
+
+  if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: 'Mongo Error: Updation Failed',
@@ -25,4 +26,11 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
+
+  const response = {
+    email: userRecord.email,
+    ...req.body,
+  };
+  res.status(201).send(response);
+  return next();
 };

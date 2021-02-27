@@ -13,12 +13,21 @@ import { Manage } from "./Components/Setting/Manage";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
+import { SimpleToast } from "../../components/util/Toast/index.js";
 
 import { useDispatch } from "react-redux";
 
 export const Admin = () => {
   const [tab, setTab] = useState(1);
   const dispatch = useDispatch();
+  const [open, setOpenToast] = React.useState(false);
+
+  const handleCloseToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenToast(false);
+  };
   return (
     <div style={{ minHeight: "100vh" }}>
       <div className={style["dashing"]}>
@@ -90,7 +99,12 @@ export const Admin = () => {
           </div>
           <div
             className={style["features-icons1"]}
-            onClick={() => logout(dispatch)}
+            onClick={() => {
+              setOpenToast(true);
+              setTimeout(() => {
+                logout(dispatch);
+              }, 3000);
+            }}
           >
             <i
               className="fas fa-sign-out-alt fa-fw fa-lg"
@@ -125,6 +139,11 @@ export const Admin = () => {
           ) : null}
         </div>
       </div>
+      <SimpleToast
+        open={open}
+        message="Successfully Logged Out!"
+        handleCloseToast={handleCloseToast}
+      />
     </div>
   );
 };

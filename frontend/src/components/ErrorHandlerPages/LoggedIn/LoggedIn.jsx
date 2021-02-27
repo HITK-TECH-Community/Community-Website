@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./not-found.module.scss";
-import { Button3 } from "../../components/util/Button/Button";
+import style from "./logged-in.module.scss";
+import { Button3 } from "../../util/Button/Button";
 
-export const NotFound = () => {
+export const LoggedIn = () => {
   return (
     <div className={style["not-found"]}>
       <div className={style["error"]}>
@@ -13,12 +13,12 @@ export const NotFound = () => {
             alt="404"
           />
         </div>
-        <p className={style["error-text"]}>Looks like you're lost!</p>
+        <p className={style["error-text"]}>You are already Logged In!</p>
         <div className={style["error-content"]}>
-          The page you are looking for is not available.
+          Please visit here to access your Dashboard.
         </div>
-        <a href="/">
-          <Button3 label="Go Home!" type="submit" />
+        <a href="/dashboard">
+          <Button3 label="Go to Dashboard!" type="submit" />
         </a>
       </div>
     </div>

@@ -14,7 +14,8 @@ import { ScrollTop } from "./components/util/ScrollToTop/index";
 import { Home } from "./pages/Home/index";
 import { Terms } from "./pages/Terms/index";
 import { About } from "./pages/About";
-import { NotFound } from "./pages/404";
+import { NotFound } from "./components/ErrorHandlerPages/404";
+import { LoggedIn } from "./components/ErrorHandlerPages/LoggedIn";
 import { Login } from "./pages/Login/index";
 import { ContactUs } from "./pages/ContactUs/index";
 import { Admin } from "./pages/Admin";
@@ -48,7 +49,11 @@ const App = () => {
             <Route exact={true} path="/resources" component={Resources} />
             <Route exact={true} path="/contact-us" component={ContactUs} />
             <Route exact={true} path="/faqs" component={Faq} />
-            <Route exact={true} path="/admin" component={Login} />
+            <Route
+              exact={true}
+              path="/admin"
+              component={isSuperAdmin ? LoggedIn : Login}
+            />
             {isSuperAdmin ? (
               <Route exact={true} path="/dashboard" component={Admin} />
             ) : null}

@@ -11,6 +11,7 @@ export function Login() {
   const schema = { email: "", password: "" };
   const [credential, setCredential] = useState(schema);
   const [status, setStatus] = useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setCredential({ ...credential, [e.target.name]: e.target.value });
@@ -27,10 +28,12 @@ export function Login() {
   };
 
   useEffect(() => {
-    if (logout) setOpenToast(true);
-  }, [logout]);
-
-  const dispatch = useDispatch();
+    if (logout) {
+      setOpenToast(true);
+      localStorage.removeItem("log");
+      dispatch({ type: actions.LOG_OUT });
+    }
+  }, []);
 
   function loginUser(e) {
     e.preventDefault();

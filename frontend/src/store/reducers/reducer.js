@@ -29,8 +29,7 @@ function authSuccess(state, action) {
 function logOut(state, action) {
   return {
     ...state,
-    token: null,
-    isSuperAdmin: false,
+    logout: false,
   };
 }
 

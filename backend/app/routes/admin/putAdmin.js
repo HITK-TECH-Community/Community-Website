@@ -5,32 +5,37 @@ const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
   const { firstName, lastName, contact, username } = req.body;
-  const userRecord = await Admin.findOne({
-    email: res.locals.decode.email,
-  });
 
-  if (username === userRecord.username) {
-    return res.status(400).send({ error: 'Username already exists' });
-  }
+  Admin.findOne({ username }, async (error, userInfo) => {
+    if (error) throw error;
 
-  const [err] = await to(
-    Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { firstName, lastName, contact, username } })
-  );
-
-  if (err) {
-    const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-      statusCode: 500,
-      message: 'Mongo Error: Updation Failed',
-      errStack: err,
-      user: userRecord.email,
+    if (userInfo) {
+      return res.status(400).send({ errorMessage: 'Username already exists' });
+    }
+    const userRecord = await Admin.findOne({
+      email: res.locals.decode.email,
     });
-    return next(error);
-  }
 
-  const response = {
-    email: userRecord.email,
-    ...req.body,
-  };
-  res.status(201).send(response);
-  return next();
+    const [err] = await to(
+      Admin.updateOne({ email: userRecord.email }, { $set: { firstName, lastName, contact, username } })
+    );
+
+    if (err) {
+      const erro = new ErrorHandler(constants.ERRORS.DATABASE, {
+        statusCode: 500,
+        message: 'Mongo Error: Updation Failed',
+        errStack: err,
+        user: userRecord.email,
+      });
+      return next(erro);
+    }
+
+    const response = {
+      email: userRecord.email,
+      ...req.body,
+    };
+
+    res.status(201).send(response);
+    return next();
+  });
 };

@@ -26,29 +26,41 @@ import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
 
+import { useSelector } from "react-redux";
+
 const App = () => {
+  const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
+
   return (
     <Fragment>
       <div className="Container">
         <Router>
           <Navbar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about-us" component={About} />
-            <Route exact path="/Broadcasts">
-              <Broadcast />
-            </Route>
-            <Route exact path="/all-broadcasts" component={AllBroadcasts} />
-            <Route exact path="/resources" component={Resources} />
-            <Route exact path="/contact-us" component={ContactUs} />
-            <Route exact path="/faqs" component={Faq} />
-            <Route exact path="/admin" component={Login} />
-            <Route exact path="/dashboard" component={Admin} />
-            <Route exact path="/setting" component={Setting} />
-            <Route exact path="/terms" component={Terms} />
-            <Route exact path="/get-involved" component={GetInvolved} />
-            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-            <Route exact path="/join_us_form" component={JoinUsForm} />
+            <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/about-us" component={About} />
+            <Route exact={true} path="/Broadcasts" component={Broadcast} />
+            <Route
+              exact={true}
+              path="/all-broadcasts"
+              component={AllBroadcasts}
+            />
+            <Route exact={true} path="/resources" component={Resources} />
+            <Route exact={true} path="/contact-us" component={ContactUs} />
+            <Route exact={true} path="/faqs" component={Faq} />
+            <Route exact={true} path="/admin" component={Login} />
+            {isSuperAdmin ? (
+              <Route exact={true} path="/dashboard" component={Admin} />
+            ) : null}
+            <Route exact={true} path="/setting" component={Setting} />
+            <Route exact={true} path="/terms" component={Terms} />
+            <Route exact={true} path="/get-involved" component={GetInvolved} />
+            <Route
+              exact={true}
+              path="/privacy-policy"
+              component={PrivacyPolicy}
+            />
+            <Route exact={true} path="/join_us_form" component={JoinUsForm} />
             <Route component={NotFound} />
           </Switch>
         </Router>

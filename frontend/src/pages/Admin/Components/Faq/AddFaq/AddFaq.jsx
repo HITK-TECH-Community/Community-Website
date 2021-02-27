@@ -8,7 +8,7 @@ export function AddFaq() {
       <div className={styles["faq-parent"]}>
         <div className={styles["faq-child"] + " " + styles["child1"]}>
           <div className={styles["faq-card"]}>
-            <h1 className={styles["faq-header-text"]}>FAQ</h1>
+            <h1 className={styles["faq-header-text"]}>Add &nbsp; Faq</h1>
             <div className={styles["inside-faq"]}>
               <div className={styles["faq-input"]}>
                 <input

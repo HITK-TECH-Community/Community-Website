@@ -52,13 +52,6 @@
   text-align: center;
 }
 
-#title {
-  display: flex;
-  font-size: 4rem;
-  line-height: 4rem;
-  font-weight: bold;
-}
-
 #all-cards {
   display: flex;
   flex-wrap: wrap;
@@ -121,10 +114,6 @@
 @media screen and (orientation: portrait) {
   #hero {
     flex-direction: column;
-  }
-
-  img {
-    max-width: 100vw;
   }
 }
 

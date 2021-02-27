@@ -143,9 +143,9 @@ export const PrivacyPolicy = () => {
           <div className={style["pp-content"]}>
             If there are any questions regarding this privacy policy, you may
             contact us using the information below.
-            <p style={{ marginTop: "20px" }}>
+            <span style={{ marginTop: "20px" }}>
               <h5>HITK Tech Community</h5>
-            </p>
+            </span>
             <p>
               <a href="mailto:hitktechcommunity@gmail.com">
                 hitktechcommunity@gmail.com

@@ -67,31 +67,31 @@ export function ResourceSharingForm() {
             <div className={style["radio-buttons"]}>
               <div className={style["radio-item"]}>
                 <input type="radio" id="ritema" name="one" />
-                <label className={`mx-3 ${style["label"]}`} for="ritema">
+                <label className={`mx-3 ${style["label"]}`} htmlFor="ritema">
                   1
                 </label>
               </div>
               <div className={style["radio-item"]}>
                 <input type="radio" id="ritemb" name="one" />
-                <label className={`mx-3 ${style["label"]}`} for="ritemb">
+                <label className={`mx-3 ${style["label"]}`} htmlFor="ritemb">
                   2
                 </label>
               </div>
               <div className={style["radio-item"]}>
                 <input type="radio" id="ritemc" name="one" />
-                <label className={`mx-3 ${style["label"]}`} for="ritemc">
+                <label className={`mx-3 ${style["label"]}`} htmlFor="ritemc">
                   3
                 </label>
               </div>
               <div className={style["radio-item"]}>
                 <input type="radio" id="ritemd" name="one" />
-                <label className={`mx-3 ${style["label"]}`} for="ritemd">
+                <label className={`mx-3 ${style["label"]}`} htmlFor="ritemd">
                   4
                 </label>
               </div>
               <div className={style["radio-item"]}>
                 <input type="radio" id="riteme" name="one" />
-                <label className={`mx-3 ${style["label"]}`} for="riteme">
+                <label className={`mx-3 ${style["label"]}`} htmlFor="riteme">
                   5
                 </label>
               </div>

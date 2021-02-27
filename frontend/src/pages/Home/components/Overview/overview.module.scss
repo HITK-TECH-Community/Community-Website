@@ -39,7 +39,15 @@
   );
 }
 
-@media screen and (min-width: 392px) and (max-width: 600px) {
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  .overview img {
+    min-width: auto;
+    width: 200px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 800px) {
   .overview {
     padding: 1.8rem 0;
   }
@@ -55,10 +63,11 @@
   .overview img {
     min-width: auto;
     width: 180px;
+    margin-left: 11px;
   }
 }
 
-@media screen and (max-width: 392px) {
+@media screen and (max-width: 550px) {
   .overview {
     flex-direction: column;
     padding: 1.8rem 0;

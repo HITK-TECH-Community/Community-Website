@@ -22,14 +22,20 @@ export const Navbar = () => {
         <div className={style["menu-icon"]} onClick={toggleNav}>
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
-        <ul className={style[isNavOpen ? "nav-menu active" : "nav-menu"]}>
+        <ul
+          className={
+            isNavOpen
+              ? `${style["nav-menu"]} ${style["active"]}`
+              : style["nav-menu"]
+          }
+        >
           <li className={style["nav-item"]}>
             <NavLink
               activeClassName={style["active-link"]}
               to="/"
               className={style["nav-links"]}
               onClick={closeMobileMenu}
-              exact
+              exact={true}
             >
               Home
             </NavLink>
@@ -40,7 +46,6 @@ export const Navbar = () => {
               to="/about-us"
               className={style["nav-links"]}
               onClick={closeMobileMenu}
-              exact
             >
               About Us
             </NavLink>
@@ -51,7 +56,6 @@ export const Navbar = () => {
               to="/resources"
               className={style["nav-links"]}
               onClick={closeMobileMenu}
-              exact
             >
               Resources
             </NavLink>
@@ -62,7 +66,6 @@ export const Navbar = () => {
               to="/broadcasts"
               className={style["nav-links"]}
               onClick={closeMobileMenu}
-              exact
             >
               Broadcasts
             </NavLink>
@@ -73,7 +76,6 @@ export const Navbar = () => {
               to="/contact-us"
               className={style["nav-links"]}
               onClick={closeMobileMenu}
-              exact
             >
               Contact Us
             </NavLink>
@@ -84,28 +86,15 @@ export const Navbar = () => {
               className={style["nav-links"]}
               onClick={closeMobileMenu}
               activeClassName={style["active-link"]}
-              exact
             >
               FAQs
             </NavLink>
           </li>
-          {/* <li className="nav-item ">
-            <NavLink
-              to="/admin-dashboard"
-              className="nav-links"
-              onClick={closeMobileMenu}
-              activeClassName="active-link"
-              exact
-            >
-              DashBoard
-            </NavLink>
-          </li> */}
           <li className={style["nav-item"]}>
             <Link
               to="/admin"
               className={style["nav-links-mobile"]}
               onClick={closeMobileMenu}
-              exact
             >
               admin ?
             </Link>
@@ -115,7 +104,6 @@ export const Navbar = () => {
           to="/admin"
           activeClassName={style["button-div"]}
           className={style["nav-admin-button"]}
-          exact
         >
           admin ?
         </NavLink>

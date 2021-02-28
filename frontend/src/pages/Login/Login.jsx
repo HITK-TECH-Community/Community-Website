@@ -3,6 +3,7 @@ import { Button2 } from "../../components/util/Button/index";
 import style from "./login.module.scss";
 import { useDispatch } from "react-redux";
 import * as actions from "../../store/actions/actions";
+import { AUTH_LOGIN } from "../../config/api";
 
 export function Login() {
   const [hidePassword, setHidePassword] = useState(false);
@@ -19,7 +20,7 @@ export function Login() {
 
   function loginUser(e) {
     e.preventDefault();
-    return fetch("http://localhost:3500/auth/login", {
+    return fetch(AUTH_LOGIN, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

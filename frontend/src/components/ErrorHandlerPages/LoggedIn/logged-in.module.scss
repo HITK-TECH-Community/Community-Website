@@ -2,19 +2,30 @@
   background-color: #f7f7f7;
 }
 
-.error {
+.error1 {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 90vh;
   margin: 0 15% 3rem 15%;
 }
 
-.error-logo {
+.img_1 {
+  width: 40%;
+  margin: 0 5%;
+}
+
+.img_2 {
+  width: 40%;
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-logo1 {
   width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 .error-content {

@@ -36,12 +36,12 @@ const App = () => {
     <Fragment>
       <div className="Container">
         <Router>
-          <Navbar />
           <Switch>
             {isSuperAdmin ? (
-              <Route exact={true} path="/dashboard" component={LoggedIn} />
+              <Route exact={true} path="/admin" component={LoggedIn} />
             ) : null}
             <div>
+              <Navbar />
               <Route exact={true} path="/" component={Home} />
               <Route exact={true} path="/about-us" component={About} />
               <Route exact={true} path="/Broadcasts" component={Broadcast} />

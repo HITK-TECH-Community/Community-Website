@@ -4,6 +4,7 @@ let initialState = {
   //auth
   token: localStorage.getItem("token") || null,
   isSuperAdmin: localStorage.getItem("isSuperAdmin") || false,
+  logout: localStorage.getItem("log") || false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,8 +29,7 @@ function authSuccess(state, action) {
 function logOut(state, action) {
   return {
     ...state,
-    token: null,
-    isSuperAdmin: false,
+    logout: false,
   };
 }
 

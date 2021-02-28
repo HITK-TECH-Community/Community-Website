@@ -3,7 +3,7 @@ import { Button2 } from "../../components/util/Button/index";
 import style from "./login.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/actions";
-import { AUTH_LOGIN } from "../../config/api";
+import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast";
 
 export function Login() {
@@ -38,7 +38,7 @@ export function Login() {
 
   function loginUser(e) {
     e.preventDefault();
-    return fetch(AUTH_LOGIN, {
+    return fetch(`${END_POINT}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Manage.module.scss";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useSelector } from "react-redux";
-import { ADMIN } from "../../../../../config/api";
+import { END_POINT } from "../../../../../config/api";
 
 export function Manage() {
   const token = useSelector((state) => state.token);
@@ -10,7 +10,7 @@ export function Manage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(ADMIN, {
+    fetch(`${END_POINT}/admin`, {
       headers: {
         Authorization: "Bearer " + token,
       },

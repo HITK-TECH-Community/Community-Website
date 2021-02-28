@@ -46,6 +46,12 @@
   display: block;
 }
 
+.socio {
+  i {
+    margin: 0 0.1em;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;

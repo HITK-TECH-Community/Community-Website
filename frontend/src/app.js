@@ -14,7 +14,8 @@ import { ScrollTop } from "./components/util/ScrollToTop/index";
 import { Home } from "./pages/Home/index";
 import { Terms } from "./pages/Terms/index";
 import { About } from "./pages/About";
-import { NotFound } from "./pages/404";
+import { NotFound } from "./components/ErrorHandlerPages/404";
+import { LoggedIn } from "./components/ErrorHandlerPages/LoggedIn";
 import { Login } from "./pages/Login/index";
 import { ContactUs } from "./pages/ContactUs/index";
 import { Admin } from "./pages/Admin";
@@ -35,33 +36,42 @@ const App = () => {
     <Fragment>
       <div className="Container">
         <Router>
-          <Navbar />
           <Switch>
-            <Route exact={true} path="/" component={Home} />
-            <Route exact={true} path="/about-us" component={About} />
-            <Route exact={true} path="/Broadcasts" component={Broadcast} />
-            <Route
-              exact={true}
-              path="/all-broadcasts"
-              component={AllBroadcasts}
-            />
-            <Route exact={true} path="/resources" component={Resources} />
-            <Route exact={true} path="/contact-us" component={ContactUs} />
-            <Route exact={true} path="/faqs" component={Faq} />
-            <Route exact={true} path="/admin" component={Login} />
             {isSuperAdmin ? (
-              <Route exact={true} path="/dashboard" component={Admin} />
+              <Route exact={true} path="/admin" component={LoggedIn} />
             ) : null}
-            <Route exact={true} path="/setting" component={Setting} />
-            <Route exact={true} path="/terms" component={Terms} />
-            <Route exact={true} path="/get-involved" component={GetInvolved} />
-            <Route
-              exact={true}
-              path="/privacy-policy"
-              component={PrivacyPolicy}
-            />
-            <Route exact={true} path="/join_us_form" component={JoinUsForm} />
-            <Route component={NotFound} />
+            <div>
+              <Navbar />
+              <Route exact={true} path="/" component={Home} />
+              <Route exact={true} path="/about-us" component={About} />
+              <Route exact={true} path="/Broadcasts" component={Broadcast} />
+              <Route
+                exact={true}
+                path="/all-broadcasts"
+                component={AllBroadcasts}
+              />
+              <Route exact={true} path="/resources" component={Resources} />
+              <Route exact={true} path="/contact-us" component={ContactUs} />
+              <Route exact={true} path="/faqs" component={Faq} />
+              <Route exact={true} path="/admin" component={Login} />
+              {isSuperAdmin ? (
+                <Route exact={true} path="/dashboard" component={Admin} />
+              ) : null}
+              <Route exact={true} path="/setting" component={Setting} />
+              <Route exact={true} path="/terms" component={Terms} />
+              <Route
+                exact={true}
+                path="/get-involved"
+                component={GetInvolved}
+              />
+              <Route
+                exact={true}
+                path="/privacy-policy"
+                component={PrivacyPolicy}
+              />
+              <Route exact={true} path="/join_us_form" component={JoinUsForm} />
+              <Route component={NotFound} />
+            </div>
           </Switch>
         </Router>
       </div>

@@ -1,0 +1,110 @@
+{
+  "founder": [
+    {
+      "name": "mehumehu mehudawn1",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": []
+    }
+  ],
+  "co-founder": [
+    {
+      "name": "mehumehu mehudawn2",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": []
+    }
+  ],
+  "member": [
+    {
+      "name": "mehumehu mehudawn11",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    },
+    {
+      "name": "mehumehu mehudawn22",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    },
+    {
+      "name": "mehumehu mehudawn33",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    },
+    {
+      "name": "mehumehu mehudawn44",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    },
+    {
+      "name": "mehumehu mehudawn55",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    },
+    {
+      "name": "mehumehu mehudawn66",
+      "profile_pic": "https://cdn.mos.cms.futurecdn.net/3kZ3hc2YMB6LXiPohtyfKa.jpg",
+      "linkedin": "asd",
+      "twitter": "asdfsd",
+      "github": "asdfasdfs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam vero",
+      "tags": [
+        "Social Media",
+        "Open Source",
+        "Core Team",
+        "Broadcast"
+      ]
+    }
+  ]
+}

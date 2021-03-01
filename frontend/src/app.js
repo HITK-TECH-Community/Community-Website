@@ -40,6 +40,10 @@ const App = () => {
             {isSuperAdmin ? (
               <Route exact={true} path="/admin" component={LoggedIn} />
             ) : null}
+
+            {isSuperAdmin ? (
+              <Route exact={true} path="/dashboard" component={Admin} />
+            ) : null}
             <div>
               <Navbar />
               <Switch>
@@ -55,9 +59,6 @@ const App = () => {
                 <Route exact={true} path="/contact-us" component={ContactUs} />
                 <Route exact={true} path="/faqs" component={Faq} />
                 <Route exact={true} path="/admin" component={Login} />
-                {isSuperAdmin ? (
-                  <Route exact={true} path="/dashboard" component={Admin} />
-                ) : null}
                 <Route exact={true} path="/setting" component={Setting} />
                 <Route exact={true} path="/terms" component={Terms} />
                 <Route

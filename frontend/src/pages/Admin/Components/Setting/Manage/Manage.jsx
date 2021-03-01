@@ -56,6 +56,12 @@ export function Manage() {
             ))
           : null}
       </div>
+      {data.length === 0 ? 
+        <div className={style["no-admin"]}>
+          <img src="./images/admin.png" width="20%" alt=""/>
+              No Admin Found!
+        </div> 
+      : null}
     </div>
   );
 }

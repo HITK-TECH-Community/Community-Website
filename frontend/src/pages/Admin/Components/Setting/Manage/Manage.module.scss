@@ -52,6 +52,16 @@
   }
 }
 
+.no-admin {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 4% 10%;
+  padding: 4%;
+  color: white;
+  border-radius: 8px;
+  background-color: rgb(223, 153, 63);
+}
+
 @media (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;

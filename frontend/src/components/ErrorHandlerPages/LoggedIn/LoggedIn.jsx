@@ -10,7 +10,7 @@ export const LoggedIn = () => {
           <img
             className={style["error-logo1"]}
             src="./images/admin.png"
-            alt="404"
+            alt="Admin"
           />
         </div>
         <div className={style["img_2"]}>

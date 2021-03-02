@@ -27,24 +27,28 @@ export const About = () => {
       </div>
       <div className={style["about"]}>
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <h1>Who are we and what we do?</h1>
             <div className={style["dash"]}></div>
             <h4 className={style["by-line"] + "text-left"}>By Students, For Students</h4>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-7">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus
-              eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos
-              cupiditate dolore doloribus!
+            HITK Tech Community is a platform built by the students and for the students with the main intent of increasing awareness towards plethora of opportunities and internships in tech all around/over the year. 
+            This will not only give practical work experience/exposure to students, but will also help everyone to know and grab their required opportunities in time!
             </p>
             <p>
-              Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla
-              eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!
+            In HITK Tech Community, we will have mentors from almost all domains and members of the community can just put up their queries and any member having the answer or insight to get the solution will respond to it. Along with addressing the students' queries, all mentors will be sharing the valuable event opportunities like:
+            <br /> <br />
+            🍁 Internships &nbsp;
+            🍁 Competitions &nbsp;
+            🍁 Webinars &nbsp;
+            🍁 Job openings <br />
+            🍁 Openings for collaborations in projects<br />
+            🍁 Contribution in open source projects
             </p>
             <p>
-              Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam
-              beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!
+            This community is going to help accelerate students' learning, and bring them closer to like-minded individuals, who could all be a valuable asset in their journey towards a better future in technology.
             </p>
           </div>
         </div>

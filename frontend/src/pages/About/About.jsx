@@ -23,7 +23,7 @@ export const About = () => {
   return (
     <div className={style["root"]}>
       <div className={style["about-section"]}>
-        <img src="./images/about-us.jpg" alt="" className={style["aboutus-img"]} />
+        <img src="./images/about_us.png" alt="" className={style["aboutus-img"]} />
       </div>
       <div className={style["about"]}>
         <div className="row">
@@ -60,7 +60,6 @@ export const About = () => {
           {Object.keys(teamData).map(role => {
             if (role !== "member") {
               return teamData[role].map(roleObject => {
-                console.log(roleObject.name);
                 return (
                   <div className={style["card1"]}>
                     <div className={style["photo"]}>

@@ -34,7 +34,7 @@ export function Login() {
       localStorage.removeItem("log");
       dispatch({ type: actions.LOG_OUT });
     }
-  }, []);
+  }, [logout, dispatch]);
 
   function loginUser(e) {
     e.preventDefault();

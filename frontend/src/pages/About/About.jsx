@@ -107,7 +107,6 @@ export const About = () => {
           {Object.keys(teamData).map(role => {
             if (role === "member") {
               return teamData[role].map(roleObject => {
-                console.log(roleObject.name);
                 return (
                   <div className={style["card1"]}>
                     <div className={style["photo"]}>
@@ -137,7 +136,6 @@ export const About = () => {
                         </div>
                         <div className={style["badge-container"]}>
                           {roleObject.tags.map(badge => {
-                            console.log(badge);
                             return (
                               <MDBBadge
                                 className={

@@ -21,14 +21,11 @@ export function Manage() {
     );
   }, [token]);
 
-  console.log(data);
-
   const handler = (i) => {
     let a = [...data];
     a.splice(i, 1);
     setData(a);
   };
-  console.log(data);
   return (
     <div>
       <h1 className={style["h1"]}>Manage Admins</h1>

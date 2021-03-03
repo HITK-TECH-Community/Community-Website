@@ -4,7 +4,6 @@ import { TextField } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 export function Edit(props) {
-  console.log(props.data);
   return props.visible ? (
     <div className={style["popup"]}>
       <div className={style["div"]}>

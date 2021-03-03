@@ -22,10 +22,10 @@
   text-shadow: 2px 2px grey;
 }
 
-.agree {
-  width: 40%;
-  margin: 0 auto;
+.contact-info {
+  color: rgb(63, 61, 61);
 }
+
 @media only screen and (max-width: 600px) {
   .terms-img {
     height: 35vh;
@@ -35,8 +35,4 @@
     font-size: 45px;
   }
 
-  .agree {
-    width: 60%;
-    margin: 0 auto;
-  }
 }

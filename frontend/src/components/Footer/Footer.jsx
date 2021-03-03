@@ -64,7 +64,7 @@ export class Footer extends React.Component {
             <h1 className={style["footer-logo"]}>HITK Tech Community</h1>
             <address>
               <i className="fas fa-map-marker-alt"></i> Heritage Institute of
-              Technology, Chowbaga Road, Kolkata, West Bengal - 700107
+              Technology, Chowbaga Road, Kolkata, West Bengal - 700107, India
               <br />
             </address>
             <div className={style["newsletter"]}>

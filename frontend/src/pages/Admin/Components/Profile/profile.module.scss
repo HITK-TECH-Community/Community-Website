@@ -1,8 +1,21 @@
+.profile-container {
+  margin: 2rem;
+}
+
+.profile-card {
+  margin: 2rem;
+  padding: 4rem 2rem;
+  background-color: #016795;
+  color: white;
+  border-radius: 8px;
+}
+
 .heads {
-  width: 100%;
   text-align: center;
 }
-.user-name {
+
+.user-details {
+  margin: auto 8rem;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -13,19 +26,23 @@
   border-radius: 12px;
 }
 
-.name {
-  margin-left: 2em;
-  padding: 0.5em;
+.details {
+  padding: 2em 3rem;
   width: 100%;
 }
 
 .edits > h4 {
-  font-size: 25px;
+  font-size: 16px;
+  font-weight: 200;
 }
 
 .account {
-  margin: 2em 0;
+  margin: 4rem 0;
   width: 100%;
+}
+
+.account > h2 {
+  text-align: center;
 }
 
 .edits {
@@ -36,7 +53,7 @@
 }
 
 .detail {
-  margin: 1em;
+  margin: 2rem 8rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -64,7 +81,28 @@
   }
 
   .edits > h4 {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .profile-card {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .details {
+    margin: 0rem;
+  }
+
+  .detail {
+    margin: 1rem;
+  }
+
+  .user-details {
+    margin: 2rem;
+  }
+
+  .profile-container {
+    margin: 0rem;
   }
 
   .conts {

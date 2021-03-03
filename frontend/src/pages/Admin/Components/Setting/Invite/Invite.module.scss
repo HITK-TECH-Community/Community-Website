@@ -24,7 +24,11 @@
 }
 
 .h1 {
-  text-align: center;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  text-align: center !important;
+  padding: 15px 0;
+  margin-bottom: 0px;
 }
 
 .admin_input {
@@ -61,23 +65,24 @@
   top: 15px;
   font-size: 16px;
   color: rgb(134, 131, 131);
-  cursor: pointer;
-}
-
-.fa-envelope:hover {
-  color: #c71610;
 }
 
 .inside_admin {
   width: 85%;
-  margin: 2em auto;
+  margin: 1em auto;
 }
 
-.wrap {
-  height: 100%;
+.submit-btn {
   display: flex;
-  align-items: center;
   justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {

@@ -5,6 +5,7 @@ This documentation contains a set of guidelines to help you during the contribut
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember, **no contribution is too small.** 
 
 - Each participant/contributor will be assigned **2 issues (max)** at a time to work.
+- Participants are expected to follow project guidelines and coding style. Structured code is one of our top priority.
 - Participants/contributors have **7 days** to complete issues. After that issues will be assigned to others.
 - Participants/contributors have to **comment** on issues they would like to work on, and mentors will assign you.
 - Issues will be assigned on a **first-come, first-serve basis**.

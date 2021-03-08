@@ -39,6 +39,8 @@ Following are the steps to run the frontend of the community-website on your loc
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The wesite is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
+
 
 ## Backend 💻
 

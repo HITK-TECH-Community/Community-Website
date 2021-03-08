@@ -8,6 +8,7 @@ const routes = require('./app/routes');
 const { errorHandler } = require('./helpers/error');
 require('colors');
 require('./helpers/dbConnection');
+require('dotenv').config();
 
 const app = express();
 const server = http.Server(app);
@@ -33,7 +34,7 @@ app.use('/', routes);
 
 // Home route
 app.get('/', (_req, res) => {
-  res.status(200).json({ message: 'Hello World Test' });
+  res.status(200).json({ message: 'Hello There!! You are at Community-website Backend' });
 });
 
 // Error handling middleware

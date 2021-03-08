@@ -27,6 +27,7 @@
     "colors": "^1.4.0",
     "config": "^3.3.3",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
     "joi": "^17.3.0",
@@ -44,8 +45,7 @@
   },
   "lint-staged": {
     "**/*.js": [
-      "eslint . --fix --format table ",
-      "git add"
+      "eslint . --fix --format table "
     ]
   },
   "devDependencies": {

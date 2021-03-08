@@ -17,8 +17,10 @@ This project aims to build the official site for the community page so that any 
 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-ExpressJS-grey?style=flat&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/ReactJS%20-%2320232a.svg?logo=react" >   <img src="https://img.shields.io/badge/-NodeJS%20-%2320232a?style=flat&logo=node.js"> 
  
+
 ## How to contribute ? 
 - Follow Contributon Guidelines mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/CONTRIBUTING.md)
+
 
 ##  Getting Started 👨‍💻
 ### Setup the repository to your local environment.
@@ -27,29 +29,33 @@ This project aims to build the official site for the community page so that any 
 2. Clone the repository using `git clone https://github.com/YOUR-USERNAME/Community-Website`  - Downloads all repo files to your machine.
 3. `cd Community-Website`  - Takes you to the root directory of the project.
 
+
 ## Frontend ⚛️
 
-Following are the steps to run the frontend of the community-website. All the frontend code will go in the `frontend` directory. 
-
+Following are the steps to run the frontend of the community-website on your local. All the frontend code will go in the `frontend` directory. 
 
 1. Navigate to `frontend` folder using `cd frontend`.
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm start` to run the server.
 4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+
 ## Backend 💻
 
-All the backend code will go in the `backend` folder.
-
+Following are the steps to run the backend of the community-website on your local. All the backend code will go in the `backend` folder.
 
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.
 3. Run `npm run dev` to run the server in dev mode.
 4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
+The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
+
+
 ## Related Repositories 📂
 
 - [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community) : The repository containing all the broadcasts done by HITK-TECH-Community
+
 
 ## Community 👥
 
@@ -59,6 +65,7 @@ All the backend code will go in the `backend` folder.
 <a href="https://kwoc.kossiitkgp.org/" target="_blank"><img src="assets/KWoC.png" width="180px" height="180px"></a>
 <a href="https://swoc.tech/index.html" target="_blank"><img src="assets/SWoC.png" width="180px" height="180px"></a>
 <a href="https://devscript.tech/woc/" target="_blank"><img src="assets/DWoC.png" width="180px" height="180px"></a>
+
 
 ## Contributors 🌟
 

@@ -11,4 +11,6 @@
 - `npm install`
 - `npm start`
 
-Your backend server will start running at [http://localhost:3500](http://localhost:3500)
+#### Your backend server will start running at [http://localhost:3500](http://localhost:3500)
+
+#### You can also check the backend live server at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)

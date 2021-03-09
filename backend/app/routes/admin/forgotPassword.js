@@ -29,7 +29,7 @@ module.exports = async (req, res, next) => {
 
   // Sending the reset password URL as a response (http://localhost:3500/:token)
   res.status(200).send({
-    resetPasswordURL: `${config.LOCAL_DEV_ENV}${token}`,
+    resetPasswordURL: `${config.LOCAL_DEV_ENV}admin/forgotpassword/${token}`,
   });
   return next();
 };

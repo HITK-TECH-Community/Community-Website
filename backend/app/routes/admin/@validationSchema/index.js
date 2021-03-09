@@ -27,8 +27,13 @@ const passwordChangeSchema = Joi.object({
   newPassword: Joi.string().required(),
 });
 
+const forgotPasswordSchema = Joi.object({
+  email: Joi.string().email().required(),
+});
+
 module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,
+  forgotPasswordSchema,
 };

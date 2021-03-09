@@ -6,6 +6,8 @@ import { Dashboard } from "./Components/Dashboard";
 import { Broadcast } from "./Components/Broadcast";
 import { Contact } from "./Components/Contact";
 import { About } from "./Components/About";
+import { JoinUs } from "./Components/JoinUs";
+import { Resource } from "./Components/Resource";
 import { Faq } from "./Components/Faq";
 import { Setting } from "./Components/Setting";
 import { Invite } from "./Components/Setting/Invite";
@@ -70,6 +72,32 @@ export const Admin = () => {
             <i className="fas fa-users fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style["span"]}>About Us</div>
           </div>
+
+          <div
+            className={
+              tab === 11 ? style["features-icons"] : style["features-icons1"]
+            }
+            onClick={() => setTab(11)}
+          >
+            <i
+              className="fas fa-handshake fa-fw fa-lg"
+              aria-hidden="true"
+            ></i>
+            <div className={style["span"]}>Join Us</div>
+          </div>
+
+          <div
+            className={
+              tab === 12 ? style["features-icons"] : style["features-icons1"]
+            }
+            onClick={() => setTab(12)}
+          >
+            <i
+              className="fas fa-book fa-fw fa-lg"
+              aria-hidden="true"
+            ></i>
+            <div className={style["span"]}>Resources</div>
+          </div>
           <div
             className={
               tab === 5 ? style["features-icons"] : style["features-icons1"]
@@ -77,7 +105,7 @@ export const Admin = () => {
             onClick={() => setTab(5)}
           >
             <i className="fas fa-question fa-fw fa-lg" aria-hidden="true"></i>
-            <div className={style["span"]}>Manage FAQs</div>
+            <div className={style["span"]}>FAQs</div>
           </div>
           <div
             className={
@@ -110,6 +138,10 @@ export const Admin = () => {
             <Contact />
           ) : tab === 4 ? (
             <About />
+          ) : tab === 11 ? (
+            <JoinUs />
+          ) : tab === 12 ? (
+            <Resource />
           ) : tab === 5 ? (
             <Faq setTab={setTab} />
           ) : tab === 6 ? (

@@ -67,7 +67,7 @@ export function ForgotPassword() {
                         <Button1
                           id="login-btn"
                           label="Login"
-                          className={style["back-button"]}
+                          className={`${style["back-button"]} ${style["no-border"]}`}
                         />
                         {console.log(style["back-button"])}
                       </Link>
@@ -91,6 +91,8 @@ export function ForgotPassword() {
                         placeholder="Email"
                         onChange={handleChange}
                         className={style["input-forgot-password"]}
+                        onInvalid={(e)=>{ e.target.setCustomValidity("Enter a valid Email Id") }}
+                        onInput={(e)=>{ e.target.value?.match(new RegExp(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) && e.target.setCustomValidity("") }}
                       />
                       <i className="fas fa-at"></i>
                     </div>

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/actions";
 import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast";
+import { Link } from "react-router-dom";
 
 export function Login() {
   const [hidePassword, setHidePassword] = useState(false);
@@ -108,6 +109,11 @@ export function Login() {
                     className={style["submit-btn-text"]}
                   />
                 </div>
+                <Link to="/forgot-password">
+                  <h5 style={{textAlign:'center'}}>
+                    Forgot your password?
+                  </h5>
+                </Link>
               </div>
             </form>
             <div

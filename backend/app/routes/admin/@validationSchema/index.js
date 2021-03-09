@@ -35,9 +35,14 @@ const inviteAdminSchema = Joi.object({
   }),
 });
 
+const forgotPasswordSchema = Joi.object({
+  email: Joi.string().email().required(),
+});
+
 module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,
   inviteAdminSchema,
+  forgotPasswordSchema,
 };

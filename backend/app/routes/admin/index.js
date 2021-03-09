@@ -7,6 +7,7 @@ const {
   getAdminsSchema,
   passwordChangeSchema,
   inviteAdminSchema,
+  forgotPasswordSchema,
 } = require('./@validationSchema');
 const createSuperAdmin = require('./createSuperAdmin');
 const postSuperAdmin = require('./postSuperAdmin');
@@ -14,12 +15,16 @@ const postAdmin = require('./postAdmin');
 const getAdmins = require('./getAdmins');
 const inviteAdmin = require('./inviteAdmin');
 const changePassword = require('./changePassword');
+const forgotPassword = require('./forgotPassword');
 
 router.get('/', validationMiddleware(getAdminsSchema, 'query'), authMiddleware, getAdmins);
 router.get('/createSuperAdmin', createSuperAdmin);
+
 router.post('/superAdmin', validationMiddleware(postSuperAdminSchema), postSuperAdmin);
 router.post('/', validationMiddleware(postSuperAdminSchema), authMiddleware, postAdmin);
 router.post('/inviteAdmin', validationMiddleware(inviteAdminSchema), authMiddleware, inviteAdmin);
+router.post('/forgotpassword', validationMiddleware(forgotPasswordSchema), forgotPassword);
+
 router.put('/password', validationMiddleware(passwordChangeSchema), authMiddleware, changePassword);
 
 module.exports = router;

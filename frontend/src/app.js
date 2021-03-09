@@ -73,7 +73,7 @@ const App = () => {
                 />
                 <Route
                   exact={true}
-                  path="/join_us_form"
+                  path="/join-us-form"
                   component={JoinUsForm}
                 />
                 <Route component={NotFound} />

@@ -55,7 +55,7 @@ export function Carousel(props) {
             <img className="owl-image" alt="" src="./images/outcome.png" />
           </div>
           <div>
-            <img className="owl-image" alt="" src="./images/about.png" />
+            <img className="owl-image" alt="" src="./images/guidelines.png" />
           </div>
         </OwlCarousel>
       </div>

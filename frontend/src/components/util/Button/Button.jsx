@@ -23,7 +23,7 @@ Button.propTypes = {
 
 export const Button1 = (props) => {
   return (
-    <button type={props?.type || "button"} className={style["main-btn"]}>
+    <button type={props?.type || "button"} className={`${style["main-btn"]} ${props.className}`}>
       {props?.label}
     </button>
   );
@@ -33,7 +33,7 @@ export const Button2 = (props) => {
   return (
     <button
       type={props?.type || "button"}
-      className={`${style["main-btn"]} ${style["main-btn-2"]}`}
+      className={`${style["main-btn"]} ${style["main-btn-2"]} ${props.className}`}
     >
       {props?.label}
     </button>

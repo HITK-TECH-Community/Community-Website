@@ -17,6 +17,7 @@ import { About } from "./pages/About";
 import { NotFound } from "./components/ErrorHandlerPages/404";
 import { LoggedIn } from "./components/ErrorHandlerPages/LoggedIn";
 import { Login } from "./pages/Login/index";
+import { ForgotPassword } from "./pages/ForgotPassword/index";
 import { ContactUs } from "./pages/ContactUs/index";
 import { Admin } from "./pages/Admin";
 import { Setting } from "./pages/Admin/Components/Setting";
@@ -59,6 +60,7 @@ const App = () => {
                 <Route exact={true} path="/contact-us" component={ContactUs} />
                 <Route exact={true} path="/faqs" component={Faq} />
                 <Route exact={true} path="/admin" component={Login} />
+                <Route exact={true} path="/forgot-password" component={ForgotPassword} />
                 <Route exact={true} path="/setting" component={Setting} />
                 <Route exact={true} path="/terms" component={Terms} />
                 <Route

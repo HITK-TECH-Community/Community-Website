@@ -6,7 +6,7 @@ const constants = require('../../../constants');
 module.exports.emailTest = async (req, res, next) => {
   const { email, data, type } = req.body;
 
-  const [err] = await to(sendEmail(email, data, type));
+  const [err, response] = await to(sendEmail(email, data, type));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.UNEXPECTED, {
       statusCode: '500',
@@ -15,6 +15,6 @@ module.exports.emailTest = async (req, res, next) => {
     });
     return next(error);
   }
-  res.status(200).send({ message: 'Email Succesfully sent!' });
+  res.status(200).send(response);
   return next();
 };

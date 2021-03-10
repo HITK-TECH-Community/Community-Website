@@ -3,8 +3,8 @@
   "JWT_SECRET_KEY": "VUtpHgSWgrc00g3irHUlwgWYgyLduVtkrAUjRvM5v71H9oHuES7Q94nvDi6YzUT",
   "JWT_EXPIRES_IN" : "6h",
   "baseURL" : "https://community-website-backend.herokuapp.com",
-  "EMAIL_USER":"<ENTER EMAIL ID HERE>",
-   "EMAIL_PASS":"<ENTER PASSWORD>",
+  "EMAIL_USER":"<EMAIL HERE>",
+   "EMAIL_PASS":"<PASSWORD HERE>",
 	"EMAIL_HOST":"smtp.gmail.com",
-	"SENDER_EMAIL":"<AgAIN ENTER EMAIL ID>"
+	"SENDER_EMAIL":"<SENDER_EMAIL HERE>"
 }

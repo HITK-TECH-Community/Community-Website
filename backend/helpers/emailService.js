@@ -1,6 +1,9 @@
 const nodemailer = require('nodemailer');
+const to = require('await-to-js').default;
 
-const { EMAIL_USER, EMAIL_PASS, EMAIL_HOST, SENDER_EMAIL } = require('../config/index');
+const { ErrorHandler } = require('./error');
+const constants = require('../constants');
+const { EMAIL_USER, EMAIL_PASS, EMAIL_HOST } = require('../config/index');
 const { getMailTemplate } = require('../utility/emailTemplates');
 
 const transporter = nodemailer.createTransport({
@@ -15,17 +18,22 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports.sendEmail = async (email, type) => {
-  const { subject, text } = getMailTemplate(type);
+module.exports.sendEmail = async (email, data, type) => {
+  const { subject, text } = getMailTemplate(type, data);
   const mailOptions = {
-    from: SENDER_EMAIL,
+    from: EMAIL_USER,
     to: email,
     subject,
     text,
   };
-  try {
-    await transporter.sendMail(mailOptions);
-  } catch (err) {
-    console.log(err);
+  const [err, response] = await to(transporter.sendMail(mailOptions));
+  if (err) {
+    const error = new ErrorHandler(constants.ERRORS.UNEXPECTED, {
+      statusCode: '500',
+      message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
+      errorStack: err,
+    });
+    return error;
   }
+  return response;
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./footer.module.scss";
 
 export class Footer extends React.Component {
@@ -109,23 +110,23 @@ export class Footer extends React.Component {
 
               <ul className={style["nav-ul"]}>
                 <li>
-                  <a href="/about-us">About</a>
+                  <Link to="/about-us">About</Link>
                 </li>
 
                 <li>
-                  <a href="/broadcasts">Broadcasts</a>
+                  <Link to="/broadcasts">Broadcasts</Link>
                 </li>
 
                 <li>
-                  <a href="/resources">Resources</a>
+                  <Link to="/resources">Resources</Link>
                 </li>
 
                 <li>
-                  <a href="/contact-us">Contact</a>
+                  <Link to="/contact-us">Contact</Link>
                 </li>
 
                 <li>
-                  <a href="/faqs">FAQs</a>
+                  <Link to="/faqs">FAQs</Link>
                 </li>
               </ul>
             </li>
@@ -135,15 +136,15 @@ export class Footer extends React.Component {
 
               <ul className={style["nav-ul"]}>
                 <li>
-                  <a href="/privacy-policy">Privacy Policy</a>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
                 </li>
 
                 <li>
-                  <a href="/terms">Terms of Use</a>
+                  <Link to="/terms">Terms of Use</Link>
                 </li>
 
                 <li>
-                  <a href="/get-involved">Get Involved</a>
+                  <Link to="/get-involved">Get Involved</Link>
                 </li>
               </ul>
             </li>

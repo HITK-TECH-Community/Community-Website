@@ -19,7 +19,7 @@ router.get('/', validationMiddleware(getAdminsSchema, 'query'), authMiddleware, 
 router.get('/createSuperAdmin', createSuperAdmin);
 router.post('/superAdmin', validationMiddleware(postSuperAdminSchema), postSuperAdmin);
 router.post('/', validationMiddleware(postSuperAdminSchema), authMiddleware, postAdmin);
-router.put('/updateAdmin', validationMiddleware(updateAdminSchema), authMiddleware, updateAdmin);
+router.put('/', validationMiddleware(updateAdminSchema), authMiddleware, updateAdmin);
 
 router.put('/password', validationMiddleware(passwordChangeSchema), authMiddleware, changePassword);
 

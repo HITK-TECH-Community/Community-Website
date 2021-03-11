@@ -8,11 +8,13 @@ const postSuperAdmin = require('./postSuperAdmin');
 const postAdmin = require('./postAdmin');
 const getAdmins = require('./getAdmins');
 const changePassword = require('./changePassword');
+const updateAdmin = require('./updateAdmin');
 
 router.get('/', validationMiddleware(getAdminsSchema, 'query'), authMiddleware, getAdmins);
 router.get('/createSuperAdmin', createSuperAdmin);
 router.post('/superAdmin', validationMiddleware(postSuperAdminSchema), postSuperAdmin);
 router.post('/', validationMiddleware(postSuperAdminSchema), authMiddleware, postAdmin);
+router.put('/updateAdmin', authMiddleware, updateAdmin);
 
 router.put('/password', validationMiddleware(passwordChangeSchema), authMiddleware, changePassword);
 

@@ -12,7 +12,7 @@ export const JoinUs = () => {
         <h2 className={styles["subtitle"]}>
           Join us in the mission of reducing the knowledge gap in students.
         </h2>
-        <a href="/join_us_form">
+        <a href="/join-us-form">
           <Button3 label="Join Us!" type="submit" />
         </a>
       </div>

@@ -101,7 +101,7 @@ export const About = () => {
           })}
         </div>
 
-        <Typography variant="h4">Core Members</Typography>
+        <Typography variant="h4">Board Members</Typography>
         <div className={style["dash"]}></div>
         <div className={style["row2"]}>
           {Object.keys(teamData).map(role => {

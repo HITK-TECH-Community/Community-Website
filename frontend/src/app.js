@@ -60,7 +60,11 @@ const App = () => {
                 <Route exact={true} path="/contact-us" component={ContactUs} />
                 <Route exact={true} path="/faqs" component={Faq} />
                 <Route exact={true} path="/admin" component={Login} />
-                <Route exact={true} path="/forgot-password" component={ForgotPassword} />
+                <Route
+                  exact={true}
+                  path="/forgot-password"
+                  component={ForgotPassword}
+                />
                 <Route exact={true} path="/setting" component={Setting} />
                 <Route exact={true} path="/terms" component={Terms} />
                 <Route
@@ -75,17 +79,17 @@ const App = () => {
                 />
                 <Route
                   exact={true}
-                  path="/join_us_form"
+                  path="/join-us-form"
                   component={JoinUsForm}
                 />
                 <Route component={NotFound} />
               </Switch>
             </div>
           </Switch>
+          <ScrollTop />
+          <Footer className="Footer" />
         </Router>
       </div>
-      <ScrollTop />
-      <Footer className="Footer" />
     </Fragment>
   );
 };

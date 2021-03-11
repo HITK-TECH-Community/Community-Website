@@ -34,13 +34,16 @@ export function AddTeamMember() {
   const changePic= () =>{
     return document.getElementById("profile-pic-input")?.click();
   }
+  const onSubmit= () =>{
+    return pic;
+  }
   return (
     <div className={styles["add-team-member-section"]}>
       <div className={styles["add-team-member-parent"]}>
         <div className={styles["add-team-member-child"] + " " + styles["child1"]}>
           <div className={styles["add-team-member-card"]}>
             <h1 className={styles["add-team-member-header-text"]}>Add Team Member</h1>
-            <form className={styles["inside-add-team-member"]}>
+            <form className={styles["inside-add-team-member"]} onSubmit={onSubmit}>
               <Grid container>
                 <Grid xs={12} sm={2} md={3}/>
                 <Grid xs={12} sm={8} md={6}>

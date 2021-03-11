@@ -5,6 +5,8 @@ import { Profile } from "./Components/Profile";
 import { Dashboard } from "./Components/Dashboard";
 import { Broadcast } from "./Components/Broadcast";
 import { Contact } from "./Components/Contact";
+import { ManageTeams } from "./Components/MangeTeams";
+import { AddTeamMember } from "./Components/AddTeamMember";
 import { About } from "./Components/About";
 import { Faq } from "./Components/Faq";
 import { Setting } from "./Components/Setting";
@@ -109,7 +111,7 @@ export const Admin = () => {
           ) : tab === 3 ? (
             <Contact />
           ) : tab === 4 ? (
-            <About />
+            <About setTab={setTab} />
           ) : tab === 5 ? (
             <Faq setTab={setTab} />
           ) : tab === 6 ? (
@@ -122,6 +124,10 @@ export const Admin = () => {
             <AddBroadcasts />
           ) : tab === 10 ? (
             <AddFaq />
+          ) : tab === 11 ? (
+            <ManageTeams />
+          ) : tab === 12 ? (
+            <AddTeamMember />
           ) : null}
         </div>
       </div>

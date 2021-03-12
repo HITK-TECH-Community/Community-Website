@@ -5,6 +5,5 @@
   "baseURL" : "https://community-website-backend.herokuapp.com",
   "EMAIL_USER":"<EMAIL HERE>",
    "EMAIL_PASS":"<PASSWORD HERE>",
-	"EMAIL_HOST":"smtp.gmail.com",
-	"SENDER_EMAIL":"<SENDER_EMAIL HERE>"
+	"EMAIL_HOST":"smtp.gmail.com"
 }

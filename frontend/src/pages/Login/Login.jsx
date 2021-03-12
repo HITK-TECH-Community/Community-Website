@@ -19,7 +19,7 @@ export function Login() {
   };
 
   const logout = useSelector(state => state.logout);
-  const [openSuccess, setOpenSuccessToast] = React.useState(false);
+  const [openLogoutSuccess, setOpenLogoutSuccessToast] = React.useState(false);
   const [openError1, setOpenError1Toast] = React.useState(false); //backend error
   const [openError2, setOpenError2Toast] = React.useState(false); //unauthorized
   const [openError3, setOpenError3Toast] = React.useState(false); //unknown Error
@@ -28,7 +28,7 @@ export function Login() {
     if (reason === "clickaway") {
       return;
     }
-    setOpenSuccessToast(false);
+    setOpenLogoutSuccessToast(false);
     setOpenError1Toast(false);
     setOpenError2Toast(false);
     setOpenError3Toast(false);
@@ -36,7 +36,7 @@ export function Login() {
 
   useEffect(() => {
     if (logout) {
-      setOpenSuccessToast(true);
+      setOpenLogoutSuccessToast(true);
       localStorage.removeItem("log");
       dispatch({ type: actions.LOG_OUT });
     }
@@ -58,7 +58,7 @@ export function Login() {
             if (response.status === 200) {
               localStorage.setItem("token", res.token);
               localStorage.setItem("isSuperAdmin", res.isSuperAdmin);
-              window.location = "/dashboard";
+              window.location = "/dashboard?loggedin";
             } else if (response.status === 400) {
               setOpenError2Toast(true);
             } else {
@@ -127,7 +127,7 @@ export function Login() {
         </div>
       </div>
       <SimpleToast
-        open={openSuccess}
+        open={openLogoutSuccess}
         message="Successfully Logged Out!"
         handleCloseToast={handleCloseToast}
         severity="success"

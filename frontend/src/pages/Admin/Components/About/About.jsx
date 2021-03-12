@@ -5,21 +5,6 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export function About(props) {
-  const cards = [
-    {
-      name: "Manage Teams",
-      icon: <i className='fas fa-users-cog fa-lg'></i>,
-      description:"You can manage your dynamic teams here.",
-      tab: 13,
-    },
-    {
-      name: "Add Team Member",
-      icon: <i class="fas fa-user-plus fa-lg"></i>,
-      description:"You can add your dynamic team members here.",
-      tab: 14,
-      btn_txt: "Click Here to " 
-    },
-  ];
   return (
     <div>
       <h1 className={style["head"]}>About Us</h1>

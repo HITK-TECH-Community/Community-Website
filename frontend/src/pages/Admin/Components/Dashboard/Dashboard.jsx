@@ -73,7 +73,7 @@ export const Dashboard = (props) => {
       </div>
       <SimpleToast
         open={openLoginSuccess}
-        message="You're Logged in!"
+        message="Successfully Logged In!"
         handleCloseToast={handleCloseToast}
         severity="success"
       />

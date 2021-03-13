@@ -50,7 +50,7 @@ export function SimpleToast(props) {
         autoHideDuration={6000}
         onClose={props.handleCloseToast}
       >
-        <Alert onClose={props.handleCloseToast}>{props.message}</Alert>
+        <Alert severity={props.severity || 'info'} onClose={props.handleCloseToast}>{props.message}</Alert>
       </Snackbar>
     </div>
   );

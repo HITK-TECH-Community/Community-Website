@@ -5,6 +5,8 @@ import { Profile } from "./Components/Profile";
 import { Dashboard } from "./Components/Dashboard";
 import { Broadcast } from "./Components/Broadcast";
 import { Contact } from "./Components/Contact";
+import { ManageTeams } from "./Components/MangeTeams";
+import { AddTeamMember } from "./Components/AddTeamMember";
 import { About } from "./Components/About";
 import { JoinUs } from "./Components/JoinUs";
 import { Resource } from "./Components/Resource";
@@ -137,7 +139,7 @@ export const Admin = () => {
           ) : tab === 3 ? (
             <Contact />
           ) : tab === 4 ? (
-            <About />
+            <About setTab={setTab} />
           ) : tab === 11 ? (
             <JoinUs />
           ) : tab === 12 ? (
@@ -154,6 +156,10 @@ export const Admin = () => {
             <AddBroadcasts />
           ) : tab === 10 ? (
             <AddFaq />
+          ) : tab === 13 ? (
+            <ManageTeams />
+          ) : tab === 14 ? (
+            <AddTeamMember />
           ) : null}
         </div>
       </div>

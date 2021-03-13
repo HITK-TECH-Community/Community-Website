@@ -248,7 +248,7 @@ export class Footer extends React.Component {
 
         <div className={style["cprt-text"]}>
           <p className={`${style["cprt"]} py-2`}>
-            Copyright © 2020 HITK Tech Community
+            Copyright © 2021 HITK Tech Community
           </p>
         </div>
       </div>

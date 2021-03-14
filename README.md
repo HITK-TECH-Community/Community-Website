@@ -67,6 +67,7 @@ The backend is live at [https://community-website-backend.herokuapp.com/](https:
 <a href="https://kwoc.kossiitkgp.org/" target="_blank"><img src="assets/KWoC.png" width="180px" height="180px"></a>
 <a href="https://swoc.tech/index.html" target="_blank"><img src="assets/SWoC.png" width="180px" height="180px"></a>
 <a href="https://devscript.tech/woc/" target="_blank"><img src="assets/DWoC.png" width="180px" height="180px"></a>
+<a href="https://gssoc.girlscript.tech/" target="_blank"><img src="assets/GSSoC.png" width="180px" height="180px"></a>
 
 
 ## Contributors 🌟

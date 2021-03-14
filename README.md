@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
 [![license](https://img.shields.io/github/license/HITK-TECH-Community/Community-Website)](#license)
-[![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
+[![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-njgae7ki-Xn1y4Nmc_bwqwU~tN52vrg)
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>
 <p align="center" width="400px"> <font size="5"> <b> HITK Tech Community 👩🏻‍💻👨🏻‍💻 </b></font></p> <br />

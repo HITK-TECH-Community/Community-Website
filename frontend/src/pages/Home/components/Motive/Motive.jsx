@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./motive.module.scss";
 
 export const Motive = () => {
@@ -33,7 +34,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Increase Awareness</a>
+                  <Link to="/#">Increase Awareness</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Towards plethora of opportunities such as internships,
@@ -54,7 +55,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Tech Community</a>
+                  <Link to="/#">Tech Community</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Forming a global tech community where developers can converse
@@ -74,7 +75,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Lots of Learning</a>
+                  <Link to="/#">Lots of Learning</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Helping you accelerate your learning and bring you closer to

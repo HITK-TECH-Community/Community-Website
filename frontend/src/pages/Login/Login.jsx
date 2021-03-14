@@ -50,7 +50,7 @@ export function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(credential),
-    })
+  })
       .then(response =>
         response
           .json()

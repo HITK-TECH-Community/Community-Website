@@ -1,6 +1,7 @@
 import React from "react";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
+import { makeStyles } from "@material-ui/core/styles";
 
 import style from "./toast.module.scss";
 
@@ -42,15 +43,23 @@ function Alert(props) {
  * @param {handleCloseToast} props (function): closes the toast
  */
 
+  const useStyles = makeStyles(theme => ({
+    root: {
+      "& button": {
+        outline : 'none',
+      },
+    },
+  }));
+
 export function SimpleToast(props) {
+  const classes = useStyles();
+
   return (
-    <div className={style["root"]}>
-      <Snackbar
-        open={props.open}
-        autoHideDuration={6000}
-        onClose={props.handleCloseToast}
-      >
-        <Alert onClose={props.handleCloseToast}>{props.message}</Alert>
+    <div className={`${style["root"]} ${classes.root}`}>
+      <Snackbar open={props.open} autoHideDuration={3000} onClose={props.handleCloseToast}>
+        <Alert severity={props.severity || "info"} onClose={props.handleCloseToast}>
+          {props.message}
+        </Alert>
       </Snackbar>
     </div>
   );

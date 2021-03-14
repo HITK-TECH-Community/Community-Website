@@ -328,3 +328,8 @@ input[type="date"]:not(:valid):before {
     border: 3px solid whitesmoke;
   }
 }
+
+.validation {
+  color: red;
+  margin-top: 0;
+}

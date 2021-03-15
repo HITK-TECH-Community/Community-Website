@@ -95,11 +95,11 @@ export function ResourceSharingForm() {
                   onChange={handleChange}
                 />
                 <i className="fas fa-user"></i>
-              </div>
-              <div
-                className={`${style["validation"]} validation d-sm-none d-md-block`}
-              >
-                {formerrors["name"] && <div>* {formerrors["name"]}</div>}
+                <div
+                  className={`${style["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {formerrors["name"] && <div>* {formerrors["name"]}</div>}
+                </div>
               </div>
             </div>
 
@@ -131,11 +131,11 @@ export function ResourceSharingForm() {
                   onChange={handleChange}
                 />
                 <i className="fas fa-link"></i>
-              </div>
-              <div
-                className={`${style["validation"]} validation d-sm-none d-md-block`}
-              >
-                {formerrors["link"] && <div>* {formerrors["link"]}</div>}
+                <div
+                  className={`${style["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {formerrors["link"] && <div>* {formerrors["link"]}</div>}
+                </div>
               </div>
             </div>
 
@@ -149,13 +149,13 @@ export function ResourceSharingForm() {
                 onChange={handleChange}
               ></textarea>
               <i className="fas fa-comment-dots"></i>
-            </div>
-            <div
-              className={`${style["validation"]} validation d-sm-none d-md-block`}
-            >
-              {formerrors["description"] && (
-                <div>* {formerrors["description"]}</div>
-              )}
+              <div
+                className={`${style["validation"]} validation d-sm-none d-md-block`}
+              >
+                {formerrors["description"] && (
+                  <div>* {formerrors["description"]}</div>
+                )}
+              </div>
             </div>
             <div className={style["resource-input1"]}>
               <div>
@@ -224,11 +224,11 @@ export function ResourceSharingForm() {
                     5
                   </label>
                 </div>
-              </div>
-              <div
-                className={`${style["validation"]} validation d-sm-none d-md-block`}
-              >
-                {formerrors["trust"] && <div>* {formerrors["trust"]}</div>}
+                <div
+                  className={`${style["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {formerrors["trust"] && <div>* {formerrors["trust"]}</div>}
+                </div>
               </div>
             </div>
             <div className={style["resource-input"]}>
@@ -241,11 +241,11 @@ export function ResourceSharingForm() {
                   placeholder="Valid Until:&nbsp;"
                   onChange={handleChange}
                 />
-              </div>
-              <div
-                className={`${style["validation"]} validation d-sm-none d-md-block`}
-              >
-                {formerrors["dob"] && <div>* {formerrors["dob"]}</div>}
+                <div
+                  className={`${style["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {formerrors["dob"] && <div>* {formerrors["dob"]}</div>}
+                </div>
               </div>
             </div>
             <div className={style["resource-input"]}>

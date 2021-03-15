@@ -2,7 +2,8 @@
     "env": {
         "commonjs": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": [
         "airbnb-base",
@@ -20,7 +21,8 @@
         "prettier/prettier": [
             "error",
             {
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "varsIgnorePattern": "should|expect"
             }
         ],
         "no-console": "off",
@@ -31,4 +33,6 @@
             }
         ]
     }
+   
+    
 }

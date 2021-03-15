@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^1.3.5",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
@@ -18,6 +19,7 @@
     "react": "^17.0.1",
     "react-card-flip": "^1.0.11",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^6.15.4",
     "react-icons": "^4.1.0",
     "react-multi-select-component": "^3.1.5",
     "react-owl-carousel": "^2.3.3",
@@ -33,7 +35,8 @@
     "semantic-ui-react": "^2.0.1",
     "styled-components": "^5.2.1",
     "suneditor-react": "^2.15.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",

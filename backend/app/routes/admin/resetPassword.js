@@ -35,7 +35,7 @@ module.exports = async (req, res, next) => {
 
     // Updating the new password and saving it to the database
     userRecord.set({ passwordHash: hashedPassword });
-    userRecord.save();
+    await userRecord.save();
 
     // Returning success response
     return res.status(200).send({ message: 'Reset Password Successful' });

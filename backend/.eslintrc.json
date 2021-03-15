@@ -21,7 +21,8 @@
         "prettier/prettier": [
             "error",
             {
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "varsIgnorePattern": "should|expect"
             }
         ],
         "no-console": "off",
@@ -32,4 +33,6 @@
             }
         ]
     }
+   
+    
 }

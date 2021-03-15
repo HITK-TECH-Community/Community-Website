@@ -8,6 +8,24 @@
   padding: 30px 0;
 }
 
+//contact-us form & submission card styling
+.validation {
+  color: #ff2929;
+}
+.card-heading {
+  font-size: 1.6rem;
+  letter-spacing: 0.7px;
+  padding: 30px 0;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+.inside-card {
+  width: 85%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
 .contact-image {
   max-width: 100%;
 }
@@ -56,6 +74,8 @@
   position: relative;
 }
 
+//contact-input margin-bottom changed to 7.3px
+//to show errors properly
 .contact-input input,
 .contact-input textarea {
   width: 100%;
@@ -67,7 +87,7 @@
   margin-right: auto;
   font-size: 14px;
   color: #777777;
-  margin-bottom: 20px;
+  margin-bottom: 7.3px;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }

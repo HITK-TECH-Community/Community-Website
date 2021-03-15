@@ -10,7 +10,7 @@ export function ResourceSharingForm() {
     link: "",
     description: "",
     trust: null,
-    dob: "",
+    dov: "",
     info: "",
   });
 
@@ -19,7 +19,7 @@ export function ResourceSharingForm() {
   const schema = {
     name: Joi.string().required(),
     email: Joi.string().email().required(),
-    dob: Joi.date().required(),
+    dov: Joi.date().required(),
     link: Joi.string().uri().required(),
     description: Joi.string(),
     trust: Joi.required(),
@@ -234,7 +234,7 @@ export function ResourceSharingForm() {
             <div className={style["resource-input"]}>
               <div className={style["valid-until"]}>
                 <input
-                  name="dob"
+                  name="dov"
                   className={style["textbox-n"]}
                   type="date"
                   id="date"
@@ -244,7 +244,7 @@ export function ResourceSharingForm() {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["dob"] && <div>* {formerrors["dob"]}</div>}
+                  {formerrors["dov"] && <div>* {formerrors["dov"]}</div>}
                 </div>
               </div>
             </div>

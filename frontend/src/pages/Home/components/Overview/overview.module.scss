@@ -16,7 +16,13 @@
 
 .overview h1 {
   font-size: 3.2rem;
+}
+
+.overview-light h1 {
   color: #0a183d;
+}
+.overview-dark h1 {
+  color: #69a9dd;
 }
 
 .overview p {
@@ -31,12 +37,20 @@
   height: 5px;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.dash-light {
   background: rgb(255, 0, 90);
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
     rgba(10, 24, 61, 1) 90%
   );
+}
+
+.dash-dark {
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
 }
 
 @media screen and (min-width: 800px) and (max-width: 1000px) {
@@ -96,4 +110,9 @@
     margin: auto;
     margin-bottom: 10px;
   }
+}
+
+.dark {
+  background-color: #171717;
+  color: whitesmoke;
 }

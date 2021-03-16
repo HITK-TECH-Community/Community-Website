@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import "./app.css";
@@ -33,56 +33,110 @@ import { useSelector } from "react-redux";
 const App = () => {
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
 
+  const [theme, setTheme] = useState(false);
+
+  function toggleTheme() {
+    setTheme((prevTheme) => !prevTheme);
+  }
+
+  useEffect(() => {
+    console.log("You have changed the theme");
+  }, [theme]);
+
   return (
     <Fragment>
       <div className="Container">
         <Router>
           <Switch>
             {isSuperAdmin ? (
-              <Route exact={true} path="/admin" component={LoggedIn} />
+              <Route
+                exact={true}
+                path="/admin"
+                render={() => <LoggedIn theme={theme} />}
+              />
             ) : null}
 
             {isSuperAdmin ? (
-              <Route exact={true} path="/dashboard" component={Admin} />
+              <Route
+                exact={true}
+                path="/dashboard"
+                render={() => <Admin theme={theme} />}
+              />
             ) : null}
             <div>
-              <Navbar />
+              <Navbar handleClick={toggleTheme} />
               <Switch>
-                <Route exact={true} path="/" component={Home} />
-                <Route exact={true} path="/about-us" component={About} />
-                <Route exact={true} path="/Broadcasts" component={Broadcast} />
+                <Route
+                  exact={true}
+                  path="/"
+                  render={() => <Home theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/about-us"
+                  render={() => <About theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/Broadcasts"
+                  render={() => <Broadcast theme={theme} />}
+                />
                 <Route
                   exact={true}
                   path="/all-broadcasts"
-                  component={AllBroadcasts}
+                  render={() => <AllBroadcasts theme={theme} />}
                 />
-                <Route exact={true} path="/resources" component={Resources} />
-                <Route exact={true} path="/contact-us" component={ContactUs} />
-                <Route exact={true} path="/faqs" component={Faq} />
-                <Route exact={true} path="/admin" component={Login} />
+                <Route
+                  exact={true}
+                  path="/resources"
+                  render={() => <Resources theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/contact-us"
+                  render={() => <ContactUs theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/faqs"
+                  render={() => <Faq theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/admin"
+                  render={() => <Login theme={theme} />}
+                />
                 <Route
                   exact={true}
                   path="/forgot-password"
                   component={ForgotPassword}
                 />
-                <Route exact={true} path="/setting" component={Setting} />
-                <Route exact={true} path="/terms" component={Terms} />
+                <Route
+                  exact={true}
+                  path="/setting"
+                  render={() => <Setting theme={theme} />}
+                />
+                <Route
+                  exact={true}
+                  path="/terms"
+                  render={() => <Terms theme={theme} />}
+                />
                 <Route
                   exact={true}
                   path="/get-involved"
-                  component={GetInvolved}
+                  render={() => <GetInvolved theme={theme} />}
                 />
                 <Route
                   exact={true}
                   path="/privacy-policy"
-                  component={PrivacyPolicy}
+                  render={() => <PrivacyPolicy theme={theme} />}
                 />
                 <Route
                   exact={true}
                   path="/join-us-form"
-                  component={JoinUsForm}
+                  render={() => <JoinUsForm theme={theme} />}
                 />
-                <Route component={NotFound} />
+                <Route render={() => <NotFound theme={theme} />} />
               </Switch>
             </div>
           </Switch>

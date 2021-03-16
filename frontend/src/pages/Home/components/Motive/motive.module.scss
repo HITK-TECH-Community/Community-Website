@@ -7,7 +7,6 @@
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   position: relative;
@@ -17,7 +16,16 @@
   height: 100%;
 }
 
-.single-features::before {
+.single-features-dark {
+  background-color: #171717;
+  color: whitesmoke;
+}
+
+.single-features-light {
+  background-color: white;
+}
+
+.single-features-light::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -25,12 +33,6 @@
   top: 0;
   cursor: pointer;
   left: 0;
-  background: rgb(255, 0, 90);
-  background: linear-gradient(
-    45deg,
-    rgba(255, 0, 90, 1) 0%,
-    rgba(10, 24, 61, 1) 90%
-  );
   z-index: -1;
   opacity: 0;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -38,6 +40,31 @@
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.single-features-dark::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  cursor: pointer;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
 }
 
 .single-features .features-icon {
@@ -47,7 +74,23 @@
   padding-right: 18px;
 }
 
-.single-features .features-icon i {
+.single-features-dark .features-icon i {
+  font-size: 40px;
+  background: -webkit-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: -o-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: -moz-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+.single-features-light .features-icon i {
   font-size: 40px;
   background: -webkit-linear-gradient(
     45deg,
@@ -79,16 +122,22 @@
   transition: all 0.3s ease-out 0s;
 }
 
-.single-features:hover .features-icon i {
+.single-features-light:hover .features-icon i {
   background: white;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.single-features .features-icon span {
+.single-features-dark:hover .features-icon i {
+  background: #171717;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.single-features-light .features-icon span {
   font-size: 60px;
-  color: #1b273d;
   line-height: 100px;
   opacity: 0.08;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -97,6 +146,20 @@
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   font-weight: 600;
+  color: #1b273d;
+}
+
+.single-features-dark .features-icon span {
+  font-size: 60px;
+  line-height: 100px;
+  opacity: 0.08;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  font-weight: 600;
+  color: #69a9dd;
 }
 
 .single-features .features-content {
@@ -107,13 +170,20 @@
 
 .single-features .features-content .features-title a {
   font-size: 24px;
-  color: #0e182c;
   text-decoration: none;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
+}
+
+.single-features-light .features-content .features-title a {
+  color: #0e182c;
+}
+
+.single-features-dark .features-content .features-title a {
+  color: #69a9dd;
 }
 
 .single-features .features-content .text {
@@ -129,9 +199,14 @@
   opacity: 1;
 }
 
-.single-features:hover .features-icon i,
-.single-features:hover .features-icon span {
+.single-features-light:hover .features-icon i,
+.single-features-light:hover .features-icon span {
   color: #fff;
+}
+
+.single-features-dark:hover .features-icon i,
+.single-features-dark:hover .features-icon span {
+  color: #171717;
 }
 
 .single-features:hover .features-content .features-title a {
@@ -166,7 +241,21 @@
   );
 }
 
-.fa-crosshairs {
+.motive-light .dash-light {
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.motive-dark .dash-dark {
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+}
+
+.fa-crosshairs-light {
   font-size: 3.4rem;
   background: -webkit-linear-gradient(
     left,
@@ -193,9 +282,27 @@
   -webkit-text-fill-color: transparent;
 }
 
+.fa-crosshairs-dark {
+  font-size: 3.4rem;
+  background: -webkit-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: -o-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: -moz-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .motive h1 {
   font-size: 3.2rem;
+}
+
+.motive-light h1 {
   color: white;
+}
+
+.motive-dark h1 {
+  color: #69a9dd;
 }
 
 @media screen and (max-width: 823px) {
@@ -213,4 +320,14 @@
   .motive h1 {
     font-size: 2.8rem;
   }
+}
+
+.dark {
+  color: whitesmoke;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }

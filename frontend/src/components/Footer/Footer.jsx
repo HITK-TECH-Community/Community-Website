@@ -106,6 +106,7 @@ export const Footer = () => {
               );
             })}
           </div>
+
         </div>
         <ul className={style["footer-nav"]}>
           <li className={style["nav-item"]}>
@@ -128,6 +129,7 @@ export const Footer = () => {
                 <Link to="/contact-us">Contact</Link>
               </li>
 
+
               <li>
                 <Link to="/faqs">FAQs</Link>
               </li>
@@ -136,6 +138,8 @@ export const Footer = () => {
 
           <li className={style["nav-item"]}>
             <h2 className={style["nav-title"]}>Other</h2>
+
+               
 
             <ul className={style["nav-ul"]}>
               <li>

@@ -9,7 +9,6 @@ export function Invite() {
   });
   const [formerrors, setFormErrors] = useState({});
   const schema = {
-    name: Joi.string().required(),
     email: Joi.string().email().required(),
   };
   const validate = () => {

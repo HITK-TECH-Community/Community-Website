@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button2 } from "../../../../../components/util/Button";
 import style from "./Invite.module.scss";
-export const Invite = () => {
-  const [email, setEmail] = useState("");
+import Joi from "joi-browser";
+export function Invite() {
+  /*const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState({});
   const onSubmit = (e) => {
     e.preventDefault();
@@ -42,6 +43,65 @@ export const Invite = () => {
     setEmailError(emailError);
     return isValid;
   };
+  */
+  const [formdata, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+  const [formerrors, setFormErrors] = useState({});
+  const schema = {
+    name: Joi.string().required(),
+    email: Joi.string().email().required(),
+  };
+  const validate = () => {
+    const result = Joi.validate(formdata, schema, { abortEarly: false });
+    if (!result.error) return null;
+    const errors = {};
+    for (let item of result.error.details) {
+      errors[item.path[0]] = item.message;
+    }
+    return errors;
+  };
+  const validateProperty = (input) => {
+    const { name, value } = input;
+    const obj = { [name]: value };
+    const obj_schema = { [name]: schema[name] };
+    const result = Joi.validate(obj, obj_schema);
+    return result.error ? result.error.details[0].message : null;
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validate();
+    Object.keys(formdata).map((key) => {
+      if (formdata[key] === "" || formdata[key] === null) {
+        errors[key] = `${key} is not allowed to be empty`;
+      }
+    });
+    if (errors["info"]) {
+      delete errors["info"];
+    }
+    if (Object.keys(errors).length !== 0) {
+      setFormErrors(errors);
+    }
+    if (Object.keys(errors).length !== 0) {
+      console.log(errors);
+    } else {
+      //Call the Server
+      console.log("Submitted");
+    }
+  };
+  const handleChange = (e) => {
+    const { currentTarget: input } = e;
+    const errors = { ...formerrors };
+    const errorMessage = validateProperty(input);
+    if (errorMessage) errors[input.name] = errorMessage;
+    else delete errors[input.name];
+
+    const data = { ...formdata };
+    data[input.name] = input.value;
+    setFormData({ ...data, [input.name]: input.value });
+    setFormErrors(errors);
+  };
 
   return (
     <div className={style["cont"]}>
@@ -51,35 +111,36 @@ export const Invite = () => {
       <div className={style["admin_section"]}>
         <div className={style["admin_card"]}>
           <h1 className={style["h1"]}>Invite Admins</h1>
-          <div className={style["inside_admin"]}>
-            <div className={style["form_row"]}></div>
-            <div className={style["admin_input"]}>
-              <input
-                placeholder="Email ID"
-                id="txt_email"
-                type="text"
-                required="required"
-                name="Email"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              <i className="far fa-envelope"></i>
+          <form onSubmit={handleSubmit}>
+            <div className={style["inside_admin"]}>
+              <div className={style["form_row"]}></div>
+              <div className={style["admin_input"]}>
+                <input
+                  placeholder="Email ID"
+                  id="txt_email"
+                  type="email"
+                  name="email"
+                  onChange={handleChange}
+                />
+                <i className="far fa-envelope"></i>
+                <div
+                  className={`${style["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {formerrors["link"] && <div>* {formerrors["link"]}</div>}
+                </div>
+              </div>
+
+              <div className={style["submit-btn"]}>
+                <Button2
+                  className={style["submit-btn-text"]}
+                  label="Submit"
+                  type="submit"
+                />
+              </div>
             </div>
-            {Object.keys(emailError).map((key) => {
-              return <div style={{ color: "red" }}>{emailError[key]}</div>;
-            })}
-            <div className={style["submit-btn"]}>
-              <Button2
-                className={style["submit-btn-text"]}
-                label="Submit"
-                type="submit"
-              />
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   );
-};
+}

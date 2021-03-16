@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./terms.module.css";
 
 export const Terms = () => {
@@ -257,9 +258,9 @@ export const Terms = () => {
             </p>
 
             <p>
-              <a href="/privacy-policy" alt="privacy-policy">
+              <Link to="/privacy-policy" alt="privacy-policy">
                 Your Privacy: Please read our Privacy Policy.{" "}
-              </a>{" "}
+              </Link>{" "}
               <br /> <br />
               Copyright/Trademark Information. Copyright ©. All rights reserved.
               All trademarks, logos and service marks displayed on the Site are
@@ -269,9 +270,16 @@ export const Terms = () => {
             </p>
 
             <p className={style["contact-info"]}>
-              <b>Contact Information:</b><br />
-              Address: Heritage Institute of Technology, Chowbaga Roard, Kolkata, West Bengal - 700107, India <br />
-              Email: <a href="mailto:hitktechcommunity@gmail.com" alt="hitk-email"> hitktechcommunity@gmail.com </a><br />
+              <b>Contact Information:</b>
+              <br />
+              Address: Heritage Institute of Technology, Chowbaga Roard,
+              Kolkata, West Bengal - 700107, India <br />
+              Email:{" "}
+              <a href="mailto:hitktechcommunity@gmail.com" alt="hitk-email">
+                {" "}
+                hitktechcommunity@gmail.com{" "}
+              </a>
+              <br />
             </p>
           </div>
         </div>

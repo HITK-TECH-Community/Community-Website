@@ -1,0 +1,252 @@
+.head {
+  text-align: center;
+}
+
+.content {
+  overflow: hidden;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.upload-section {
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+  cursor: pointer;
+  padding: 1rem;
+  height: auto;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10em;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+.img-admin {
+  width: 50%;
+  margin: 1em;
+}
+
+.crd {
+  min-width: 100px;
+  min-height: 12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #016795;
+  box-shadow: rgba(141, 113, 113, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+}
+
+.crd:hover {
+  color: white;
+  background: #1b2431;
+}
+
+.crd > .head1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.crd > .head1 > h4 {
+  margin: 0 1em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .manage-teams {
+    grid-template-columns: auto;
+    margin: 1em 0;
+  }
+
+  .conts {
+    width: 90%;
+  }
+
+  .content {
+    overflow: hidden;
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+  .content {
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
+  }
+}
+.add-team-member-section {
+  background: #fff;
+  padding: 0 20px;
+}
+
+.add-team-member-parent {
+  display: flex;
+  padding: 30px 0;
+}
+
+.add-team-member-child {
+  flex: 1;
+}
+
+.child1 {
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-team-member-card {
+  width: 75%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.add-team-member-header-text {
+  padding: 15px 0;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  text-align: center !important;
+}
+.add-team-member-label-text {
+  padding: 0px 0px 15px 0px;
+  margin-bottom: 0px;
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: medium;
+  color: gray;
+}
+
+.inside-add-team-member {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.add-team-member-input {
+  position: relative;
+}
+
+.add-team-member-input input,
+.add-team-member-input textarea {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 10px;
+  padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #777777;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.add-team-member-input input::placeholder,
+.add-team-member-input textarea::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.add-team-member-input input::-moz-placeholder,
+.add-team-member-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.add-team-member-input input::-webkit-input-placeholder,
+.contact-input textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.add-team-member-input input:focus,
+.add-team-member-input textarea:focus {
+  border-color: #1863ff;
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+.add-team-member-input textarea {
+  padding-top: 15px;
+  height: 180px;
+  resize: none;
+}
+
+.add-team-member-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: #777777;
+}
+
+.submit-btn {
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .add-team-member-parent {
+    display: block;
+    width: 100%;
+  }
+
+  .add-team-member-card {
+    width: 95%;
+    margin: 10% auto;
+  }
+
+  .add-team-member-input input,
+  .faqBtn {
+    height: 40px;
+  }
+
+  .add-team-member-btn {
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .submit-btn-text {
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+}

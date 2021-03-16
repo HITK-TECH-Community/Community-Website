@@ -1,0 +1,174 @@
+.head {
+  text-align: center;
+}
+
+.about-us {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1.5em;
+  margin: 2em;
+}
+
+.crd {
+  min-width: 100px;
+  min-height: 12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #016795;
+  box-shadow: rgba(141, 113, 113, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+}
+
+.crd:hover {
+  color: white;
+  background: #1b2431;
+}
+
+.crd > .head1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.crd > .head1 > h4 {
+  margin: 0 1em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .about-us {
+    grid-template-columns: auto;
+    margin: 1em 0;
+  }
+
+  .conts {
+    width: 90%;
+  }
+
+  .content {
+    overflow: hidden;
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+  .content {
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-item {
+  background-color: #016795;
+  font-size: 1.5rem;
+  border-radius: 1em;
+  box-shadow: 0.3em 0.3em 0.4em grey;
+  width: 40%;
+  margin: 1em;
+  transition: background 0.3s ease-out;
+}
+
+.clickable-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em;
+  color: var(--bs-light);
+  height: 380px;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+}
+
+.card-title:hover {
+  cursor: pointer;
+}
+
+.card-content {
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.card-item:hover {
+  background-color: #1b2431;
+}
+
+.editt {
+  margin-left: 8px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+.add {
+  margin-left: 5px;
+  margin-bottom: 6px;
+}
+
+.main-btn {
+  font-family: "Futura LT Book";
+  display: inline-block;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 40px;
+  font-size: 16px;
+  line-height: 48px;
+  border-radius: 50px;
+  color: black;
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  background-color: #fff;
+  border: 0;
+}
+
+.main-btn:hover {
+  background-color: #fff;
+  color: #1863ff;
+  -webkit-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 29px 0px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 768px) {
+  .card-item {
+    width: 90%;
+  }
+
+  .main-btn {
+    text-align: center;
+  }
+}
+

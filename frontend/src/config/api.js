@@ -1,1 +1,1 @@
-export const END_POINT = "https://community-website-backend.herokuapp.com";
+export const END_POINT = process.env.REACT_APP_API;

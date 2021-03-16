@@ -55,10 +55,10 @@ export function ResourceSharingForm() {
     if (errors["info"]) {
       delete errors["info"];
     }
-    if (Object.keys(errors).length != 0) {
+    if (Object.keys(errors).length !== 0) {
       setFormErrors(errors);
     }
-    if (Object.keys(errors).length != 0) {
+    if (Object.keys(errors).length !== 0) {
       console.log(errors);
     } else {
       //Call the Server

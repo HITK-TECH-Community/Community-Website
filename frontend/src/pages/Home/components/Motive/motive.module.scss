@@ -16,6 +16,7 @@
   height: 100%;
 }
 
+// For Dark Theme
 .single-features-dark {
   background-color: #171717;
   color: whitesmoke;
@@ -74,6 +75,7 @@
   padding-right: 18px;
 }
 
+// For Dark Theme
 .single-features-dark .features-icon i {
   font-size: 40px;
   background: -webkit-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
@@ -129,6 +131,7 @@
   -webkit-text-fill-color: transparent;
 }
 
+// For Dark Theme
 .single-features-dark:hover .features-icon i {
   background: #171717;
   -webkit-background-clip: text;
@@ -149,6 +152,7 @@
   color: #1b273d;
 }
 
+// For Dark Theme
 .single-features-dark .features-icon span {
   font-size: 60px;
   line-height: 100px;
@@ -182,6 +186,7 @@
   color: #0e182c;
 }
 
+// For Dark Theme
 .single-features-dark .features-content .features-title a {
   color: #69a9dd;
 }
@@ -204,6 +209,7 @@
   color: #fff;
 }
 
+// For Dark Theme
 .single-features-dark:hover .features-icon i,
 .single-features-dark:hover .features-icon span {
   color: #171717;
@@ -250,6 +256,7 @@
   );
 }
 
+// For Dark Theme
 .motive-dark .dash-dark {
   background: #2b5876;
   background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
@@ -282,6 +289,7 @@
   -webkit-text-fill-color: transparent;
 }
 
+// For Dark Theme
 .fa-crosshairs-dark {
   font-size: 3.4rem;
   background: -webkit-linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
@@ -301,6 +309,7 @@
   color: white;
 }
 
+// For Dark Theme
 .motive-dark h1 {
   color: #69a9dd;
 }
@@ -322,6 +331,7 @@
   }
 }
 
+// For Dark Theme
 .dark {
   color: whitesmoke;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),

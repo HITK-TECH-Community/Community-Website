@@ -21,6 +21,8 @@
 .overview-light h1 {
   color: #0a183d;
 }
+
+// For Dark Theme
 .overview-dark h1 {
   color: #69a9dd;
 }
@@ -48,6 +50,7 @@
   );
 }
 
+// For Dark Theme
 .dash-dark {
   background: #2b5876;
   background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
@@ -112,6 +115,7 @@
   }
 }
 
+// For Dark Theme
 .dark {
   background-color: #171717;
   color: whitesmoke;

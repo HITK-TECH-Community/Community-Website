@@ -1,5 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "semantic-ui-css/semantic.min.css";
 import "./app.css";
 
@@ -37,15 +39,31 @@ const App = () => {
 
   function toggleTheme() {
     setTheme((prevTheme) => !prevTheme);
+    changeOfTheme();
+  }
+
+  function changeOfTheme() {
+    toast.dismiss();
+    console.log("I am called");
+    if (theme) {
+      toast("You have changed the theme", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    } else {
+      toast.dark("You have changed the theme", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
   }
 
   useEffect(() => {
-    console.log("You have changed the theme");
+    console.log("Theme changed");
   }, [theme]);
 
   return (
     <Fragment>
       <div className="Container">
+        <ToastContainer limit={1} />
         <Router>
           <Switch>
             {isSuperAdmin ? (

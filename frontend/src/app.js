@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { SimpleToast } from "../src/components/util/Toast/index";
 import "react-toastify/dist/ReactToastify.css";
 import "semantic-ui-css/semantic.min.css";
 import "./app.css";
@@ -36,34 +36,24 @@ const App = () => {
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
 
   const [theme, setTheme] = useState(false);
+  const [toast, setToast] = useState(false);
 
   function toggleTheme() {
     setTheme((prevTheme) => !prevTheme);
-    changeOfTheme();
-  }
-
-  function changeOfTheme() {
-    toast.dismiss();
-    console.log("I am called");
-    if (theme) {
-      toast("You have changed the theme", {
-        position: toast.POSITION.TOP_CENTER,
-      });
-    } else {
-      toast.dark("You have changed the theme", {
-        position: toast.POSITION.TOP_CENTER,
-      });
-    }
+    setToast(true);
+    setTimeout(() => {
+      setToast(false);
+    }, 3000);
   }
 
   useEffect(() => {
     console.log("Theme changed");
-  }, [theme]);
+  }, [theme, toast]);
 
   return (
     <Fragment>
       <div className="Container">
-        <ToastContainer limit={1} />
+        <SimpleToast open={toast} message={"You have changed the theme"} />
         <Router>
           <Switch>
             {isSuperAdmin ? (

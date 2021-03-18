@@ -4,12 +4,35 @@
   border-radius: 10px;
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+  .modals {
+    height: 90%;
+  }
+
+  .main-cont {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 100%;
+  }
+
+  .image {
+    width: 95%;
+  }
+
+  .cont {
+    width: 95%;
+    font-size: 15px;
+  }
+}
+
 .modal {
   display: flex;
   align-items: center;
   justify-content: center;
   align-items: center;
 }
+
 .link {
   background-color: #016795;
   font-size: 25px;
@@ -18,6 +41,7 @@
   font-weight: bold;
   padding: 1em 0;
 }
+
 .link:hover {
   cursor: pointer;
   color: #121f3a;
@@ -32,10 +56,12 @@
   padding: 1em 0;
   align-items: center;
 }
+
 .close-btn {
   float: right;
   padding-right: 25px;
 }
+
 .close-btn:hover {
   color: #121f3a;
   cursor: pointer;

@@ -109,7 +109,7 @@ export const Navbar = (props) => {
           admin ?
         </NavLink>
 
-        <Toggle handleClick={props.handleClick} />
+        <Toggle handleClick={props.handleClick} theme={props.theme} />
       </nav>
     </Fragment>
   );

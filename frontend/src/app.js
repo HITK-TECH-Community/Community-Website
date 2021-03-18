@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SimpleToast } from "../src/components/util/Toast/index";
-import "react-toastify/dist/ReactToastify.css";
 import "semantic-ui-css/semantic.min.css";
 import "./app.css";
 
@@ -35,15 +34,21 @@ import { useSelector } from "react-redux";
 const App = () => {
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
 
-  const [theme, setTheme] = useState(false);
+  function getTheme() {
+    return JSON.parse(localStorage.getItem("dark")) || false;
+  }
+  const [theme, setTheme] = useState(getTheme());
   const [toast, setToast] = useState(false);
 
   function toggleTheme() {
     setTheme((prevTheme) => !prevTheme);
     setToast(true);
+
     setTimeout(() => {
       setToast(false);
     }, 3000);
+
+    localStorage.setItem("dark", !theme);
   }
 
   useEffect(() => {
@@ -72,7 +77,7 @@ const App = () => {
               />
             ) : null}
             <div>
-              <Navbar handleClick={toggleTheme} />
+              <Navbar handleClick={toggleTheme} theme={theme} />
               <Switch>
                 <Route
                   exact={true}

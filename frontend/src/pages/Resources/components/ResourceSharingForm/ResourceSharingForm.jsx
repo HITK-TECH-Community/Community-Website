@@ -3,7 +3,9 @@ import Joi from "joi-browser";
 import { Button2 } from "../../../../components/util/Button/index";
 import style from "./resource-sharing-form.module.scss";
 
-export function ResourceSharingForm() {
+export function ResourceSharingForm(props) {
+  let dark = props.theme;
+
   const [formdata, setFormData] = useState({
     name: "",
     email: "",
@@ -80,13 +82,39 @@ export function ResourceSharingForm() {
   };
 
   return (
-    <div className={`${style["resource-form"]} ${style["child2"]}`}>
-      <div className={style["resource-card"]}>
-        <h3 className={style["resource-header-text"]}>Resource Sharing Form</h3>
+    <div
+      className={
+        dark
+          ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
+          : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
+      }
+    >
+      <div
+        className={
+          dark
+            ? `${style["resource-card"]} ${style["resource-card-dark"]} `
+            : `${style["resource-card"]} ${style["resource-card-light"]}`
+        }
+      >
+        <h3
+          className={
+            dark
+              ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+              : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
+          }
+        >
+          Resource Sharing Form
+        </h3>
         <form onSubmit={handleSubmit}>
           <div className={style["inside-resource"]}>
             <div className={`form-group ${style["form-group"]}`}>
-              <div className={style["resource-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                    : `${style["resource-input"]} ${style["resource-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Name"
                   id="txt_name"
@@ -104,7 +132,13 @@ export function ResourceSharingForm() {
             </div>
 
             <div className={`form-group ${style["form-group"]}`}>
-              <div className={style["resource-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                    : `${style["resource-input"]} ${style["resource-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Email ID"
                   id="txt_email"
@@ -122,7 +156,13 @@ export function ResourceSharingForm() {
             </div>
 
             <div className={`form-group ${style["form-group"]}`}>
-              <div className={style["resource-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                    : `${style["resource-input"]} ${style["resource-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Resource URL"
                   id="txt_link"
@@ -139,7 +179,13 @@ export function ResourceSharingForm() {
               </div>
             </div>
 
-            <div className={style["resource-input"]}>
+            <div
+              className={
+                dark
+                  ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                  : `${style["resource-input"]} ${style["resource-input-light"]}`
+              }
+            >
               <textarea
                 placeholder="Resource Description"
                 id={style["txt-desc"]}
@@ -157,14 +203,32 @@ export function ResourceSharingForm() {
                 )}
               </div>
             </div>
-            <div className={style["resource-input1"]}>
+            <div
+              className={
+                dark
+                  ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
+                  : `${style["resource-input1"]} ${style["resource-input1-light"]}`
+              }
+            >
               <div>
-                <label className={`mb-3 ${style["level-of-trust"]}`}>
+                <label
+                  className={
+                    dark
+                      ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                      : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                  }
+                >
                   Level Of Trust
                 </label>
               </div>
               <div className={style["radio-buttons"]}>
-                <div className={style["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["radio-item"]} ${style["radio-item-dark"]}`
+                      : `${style["radio-item"]} ${style["radio-item-light"]}`
+                  }
+                >
                   <input
                     type="radio"
                     id="ritema"
@@ -172,11 +236,24 @@ export function ResourceSharingForm() {
                     value={1}
                     onChange={handleChange}
                   />
-                  <label className={`mx-3 ${style["label"]}`} htmlFor="ritema">
+                  <label
+                    className={
+                      dark
+                        ? `mx-3 ${style["label"]} ${style["label-dark"]}`
+                        : `mx-3 ${style["label"]}`
+                    }
+                    htmlFor="ritema"
+                  >
                     1
                   </label>
                 </div>
-                <div className={style["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["radio-item"]} ${style["radio-item-dark"]}`
+                      : `${style["radio-item"]} ${style["radio-item-light"]}`
+                  }
+                >
                   <input
                     type="radio"
                     id="ritemb"
@@ -184,11 +261,24 @@ export function ResourceSharingForm() {
                     value={2}
                     onChange={handleChange}
                   />
-                  <label className={`mx-3 ${style["label"]}`} htmlFor="ritemb">
+                  <label
+                    className={
+                      dark
+                        ? `mx-3 ${style["label"]} ${style["label-dark"]}`
+                        : `mx-3 ${style["label"]}`
+                    }
+                    htmlFor="ritemb"
+                  >
                     2
                   </label>
                 </div>
-                <div className={style["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["radio-item"]} ${style["radio-item-dark"]}`
+                      : `${style["radio-item"]} ${style["radio-item-light"]}`
+                  }
+                >
                   <input
                     type="radio"
                     id="ritemc"
@@ -196,11 +286,24 @@ export function ResourceSharingForm() {
                     value={3}
                     onChange={handleChange}
                   />
-                  <label className={`mx-3 ${style["label"]}`} htmlFor="ritemc">
+                  <label
+                    className={
+                      dark
+                        ? `mx-3 ${style["label"]} ${style["label-dark"]}`
+                        : `mx-3 ${style["label"]}`
+                    }
+                    htmlFor="ritemc"
+                  >
                     3
                   </label>
                 </div>
-                <div className={style["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["radio-item"]} ${style["radio-item-dark"]}`
+                      : `${style["radio-item"]} ${style["radio-item-light"]}`
+                  }
+                >
                   <input
                     type="radio"
                     id="ritemd"
@@ -208,11 +311,24 @@ export function ResourceSharingForm() {
                     value={4}
                     onChange={handleChange}
                   />
-                  <label className={`mx-3 ${style["label"]}`} htmlFor="ritemd">
+                  <label
+                    className={
+                      dark
+                        ? `mx-3 ${style["label"]} ${style["label-dark"]}`
+                        : `mx-3 ${style["label"]}`
+                    }
+                    htmlFor="ritemd"
+                  >
                     4
                   </label>
                 </div>
-                <div className={style["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["radio-item"]} ${style["radio-item-dark"]}`
+                      : `${style["radio-item"]} ${style["radio-item-light"]}`
+                  }
+                >
                   <input
                     type="radio"
                     id="riteme"
@@ -220,7 +336,14 @@ export function ResourceSharingForm() {
                     value={5}
                     onChange={handleChange}
                   />
-                  <label className={`mx-3 ${style["label"]}`} htmlFor="riteme">
+                  <label
+                    className={
+                      dark
+                        ? `mx-3 ${style["label"]} ${style["label-dark"]}`
+                        : `mx-3 ${style["label"]}`
+                    }
+                    htmlFor="riteme"
+                  >
                     5
                   </label>
                 </div>
@@ -231,7 +354,13 @@ export function ResourceSharingForm() {
                 </div>
               </div>
             </div>
-            <div className={style["resource-input"]}>
+            <div
+              className={
+                dark
+                  ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                  : `${style["resource-input"]} ${style["resource-input-light"]}`
+              }
+            >
               <div className={style["valid-until"]}>
                 <input
                   name="dov"
@@ -248,7 +377,13 @@ export function ResourceSharingForm() {
                 </div>
               </div>
             </div>
-            <div className={style["resource-input"]}>
+            <div
+              className={
+                dark
+                  ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                  : `${style["resource-input"]} ${style["resource-input-light"]}`
+              }
+            >
               <textarea
                 placeholder="Additional Info (Optional)"
                 id="txt_info"

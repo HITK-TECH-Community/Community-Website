@@ -4,9 +4,13 @@
   border-radius: 10px;
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1400px) {
   .modals {
-    height: 90%;
+    position: fixed;
+    height: 73%;
+  }
+
+  .link {
   }
 
   .main-cont {
@@ -28,9 +32,11 @@
 
 .modal {
   display: flex;
+  position: fixed;
   align-items: center;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .link {
@@ -89,10 +95,14 @@
   line-height: 2;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .modals {
     width: 95%;
-    height: 90%;
+    height: 68%;
+  }
+
+  .link {
+    height: auto;
   }
 
   .main-cont {

@@ -54,6 +54,18 @@ Following are the steps to run the backend of the community-website on your loca
 The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
 
 
+## Testing Credentials
+
+The admin credentials to login to the admin dashboard are given below -
+
+```
+{
+    "email" : "admin@gmail.com",
+    "password" : "check"
+}
+```
+
+
 ## Related Repositories 📂
 
 - [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community) : The repository containing all the broadcasts done by HITK-TECH-Community

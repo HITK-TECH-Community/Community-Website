@@ -123,13 +123,13 @@ const App = () => {
                 <Route
                   exact={true}
                   path="/forgot-password"
-                  component={ForgotPassword}
+                  component={ForgotPasswordRecovery}
                 />
-                <Route
+                {/* <Route
                   exact={true}
                   path="/forgot-password/:id"
                   component={ForgotPasswordRecovery}
-                />
+                /> */}
                 <Route
                   exact={true}
                   path="/setting"

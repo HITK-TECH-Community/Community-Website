@@ -56,7 +56,7 @@ The backend is live at [https://community-website-backend.herokuapp.com/](https:
 
 ## Testing Credentials
 
-The admin credentials to login to the admin dashboard are given below -
+The dummy admin credentials to login to the admin dashboard are given below -
 
 ```
 {

@@ -21,7 +21,12 @@ export function Modals(props) {
       >
         <Fade in={props.open}>
           <div className={style["modals"]}>
-            <h1 className={style["mod_head"]}>{props.data.head}</h1>
+            <h1 className={style["mod_head"]}>
+              <span className={style["heading"]}>{props.data.head}</span>
+              <span onClick={props.handleClose} className={style["close-btn"]}>
+                <i class="fas fa-times"></i>
+              </span>
+            </h1>
             <div className={style["main-cont"]}>
               <img
                 src={props.data.img}
@@ -30,7 +35,7 @@ export function Modals(props) {
               />
               <div className={style["cont"]}>{props.data.desc}</div>
             </div>
-            <h1 className={style["mod_head"]}>Link</h1>
+            <h1 className={style["link"]}>Link</h1>
           </div>
         </Fade>
       </Modal>

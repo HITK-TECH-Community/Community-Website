@@ -7,6 +7,7 @@
   width: 100%;
   margin: 1em auto;
   padding-top: 2em !important;
+  padding-bottom: 2em !important;
 }
 
 .carousel-head {
@@ -23,6 +24,22 @@
   padding: 1em;
 }
 
+.card-head {
+  font-size: 25px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+.card-text {
+  padding: 0 0.5em 2em 0.5em !important;
+  height: 50px !important;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 14px;
+  word-spacing: 1px;
+}
 .slide-card:hover {
   background: linear-gradient(
     45deg,
@@ -31,16 +48,4 @@
   );
   color: white;
   cursor: pointer;
-}
-
-.card-head {
-  text-align: center;
-  width: 100%;
-}
-
-.card-text {
-  margin: 1.5em 0;
-  line-height: 1.5;
-  text-align: center;
-  font-size: 15px;
 }

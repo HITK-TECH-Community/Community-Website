@@ -1,12 +1,26 @@
 .modals {
   width: 75%;
   background-color: white !important;
+  border-radius: 10px;
 }
 
 .modal {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-items: center;
+}
+.link {
+  background-color: #016795;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 1em 0;
+}
+.link:hover {
+  cursor: pointer;
+  color: #121f3a;
 }
 
 .mod_head {
@@ -16,6 +30,15 @@
   color: white;
   font-weight: bold;
   padding: 1em 0;
+  align-items: center;
+}
+.close-btn {
+  float: right;
+  padding-right: 25px;
+}
+.close-btn:hover {
+  color: #121f3a;
+  cursor: pointer;
 }
 
 .main-cont {

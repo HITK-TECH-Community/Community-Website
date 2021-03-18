@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "./all-broadcasts.module.scss";
+import styles from "../../../Home/components/Motive/motive.module.scss";
 import dataa from "../../../../test_data/broadcast_text.json";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
@@ -33,11 +34,11 @@ export function AllBroadcasts() {
         data={array[index]}
       />
       <div id={style["hero"]}>
-        <div className={style["motive"]}>
+        <div className={styles["motive"]}>
           <h1 className={style["carousel-head"]} id={style["heading"]}>
             All Broadcasts
           </h1>
-          <div className={style["dash"]}></div>
+          <div className={styles["dash"]}></div>
         </div>
       </div>
       <div className={style["appbar-wrap"]}>

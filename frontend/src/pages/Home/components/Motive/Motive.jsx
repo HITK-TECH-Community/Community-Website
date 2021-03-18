@@ -1,17 +1,38 @@
+import { Link } from "react-router-dom";
 import style from "./motive.module.scss";
 
-export const Motive = () => {
+export const Motive = (props) => {
+  let dark = props.theme;
+
   return (
-    <div className={style["motive-div"]}>
+    <div
+      className={
+        dark
+          ? `${style["motive-div"]} ${style["dark"]}`
+          : `${style["motive-div"]} ${style["light"]}`
+      }
+    >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="section-title text-center pb-20">
-              <div className={style["motive"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["motive"]} ${style["motive-dark"]}`
+                    : `${style["motive"]} ${style["motive-light"]}`
+                }
+              >
                 <h1>
                   <i className="fas fa-crosshairs"></i>ur Motive
                 </h1>
-                <div className={style["dash"]}></div>
+                <div
+                  className={
+                    dark
+                      ? `${style["dash"]} ${style["dash-dark"]}`
+                      : `${style["dash"]} ${style["dash-light"]}`
+                  }
+                ></div>
               </div>
               <p className="text text-white my-3">
                 At HITK Tech Community, we believe there is no limit to
@@ -24,7 +45,11 @@ export const Motive = () => {
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className={`${style["single-features"]} d-flex mt-30 wow fadeIn`}
+              className={
+                dark
+                  ? `${style["single-features"]} ${style["single-features-dark"]} d-flex mt-30 wow fadeIn`
+                  : `${style["single-features"]} ${style["single-features-light"]} d-flex mt-30 wow fadeIn`
+              }
               data-wow-duration="1s"
               data-wow-delay="0s"
             >
@@ -33,7 +58,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Increase Awareness</a>
+                  <Link to="/#">Increase Awareness</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Towards plethora of opportunities such as internships,
@@ -45,7 +70,11 @@ export const Motive = () => {
           </div>
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className={`${style["single-features"]} d-flex mt-30 wow fadeIn`}
+              className={
+                dark
+                  ? `${style["single-features"]} ${style["single-features-dark"]} d-flex mt-30 wow fadeIn`
+                  : `${style["single-features"]} ${style["single-features-light"]} d-flex mt-30 wow fadeIn`
+              }
               data-wow-duration="1s"
               data-wow-delay="0.5s"
             >
@@ -54,7 +83,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Tech Community</a>
+                  <Link to="/#">Tech Community</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Forming a global tech community where developers can converse
@@ -65,7 +94,11 @@ export const Motive = () => {
           </div>
           <div className="col-lg-4 col-md-6 col-sm-8 my-3">
             <div
-              className={`${style["single-features"]} d-flex mt-30 wow fadeIn`}
+              className={
+                dark
+                  ? `${style["single-features"]} ${style["single-features-dark"]} d-flex mt-30 wow fadeIn`
+                  : `${style["single-features"]} ${style["single-features-light"]} d-flex mt-30 wow fadeIn`
+              }
               data-wow-duration="1s"
               data-wow-delay="1s"
             >
@@ -74,7 +107,7 @@ export const Motive = () => {
               </div>
               <div className={`${style["features-content"]} text-left`}>
                 <h4 className={style["features-title"]}>
-                  <a href="/#">Lots of Learning</a>
+                  <Link to="/#">Lots of Learning</Link>
                 </h4>
                 <p className={style["motive-content"]}>
                   Helping you accelerate your learning and bring you closer to

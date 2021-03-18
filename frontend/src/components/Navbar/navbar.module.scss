@@ -5,6 +5,10 @@
   justify-content: center;
   align-items: center;
   font-size: 1rem;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .navbar-logo {

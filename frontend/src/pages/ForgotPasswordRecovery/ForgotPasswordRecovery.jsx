@@ -111,7 +111,7 @@ export function ForgotPasswordRecovery() {
                     <div className={style["submit-btn"]}>
                       <Button2
                         type="submit"
-                        label="Submit"
+                        label="login"
                         className={style["submit-btn-text"]}
                       />
                     </div>

@@ -1,12 +1,56 @@
 .modals {
   width: 75%;
   background-color: white !important;
+  border-radius: 10px;
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .modals {
+    position: fixed;
+    height: 73%;
+  }
+
+  .link {
+  }
+
+  .main-cont {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 100%;
+  }
+
+  .image {
+    width: 95%;
+  }
+
+  .cont {
+    width: 95%;
+    font-size: 15px;
+  }
 }
 
 .modal {
   display: flex;
+  position: fixed;
   align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.link {
+  background-color: #016795;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 1em 0;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #121f3a;
 }
 
 .mod_head {
@@ -16,6 +60,17 @@
   color: white;
   font-weight: bold;
   padding: 1em 0;
+  align-items: center;
+}
+
+.close-btn {
+  float: right;
+  padding-right: 25px;
+}
+
+.close-btn:hover {
+  color: #121f3a;
+  cursor: pointer;
 }
 
 .main-cont {
@@ -40,10 +95,14 @@
   line-height: 2;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 991px) {
   .modals {
     width: 95%;
-    height: 90%;
+    height: 68%;
+  }
+
+  .link {
+    height: auto;
   }
 
   .main-cont {

@@ -107,7 +107,6 @@ export class Footer extends React.Component {
           <ul className={style["footer-nav"]}>
             <li className={style["nav-item"]}>
               <h2 className={style["nav-title"]}>Navigation</h2>
-
               <ul className={style["nav-ul"]}>
                 <li>
                   <Link to="/about-us">About</Link>
@@ -130,7 +129,6 @@ export class Footer extends React.Component {
                 </li>
               </ul>
             </li>
-
             <li className={style["nav-item"]}>
               <h2 className={style["nav-title"]}>Other</h2>
 
@@ -248,7 +246,7 @@ export class Footer extends React.Component {
 
         <div className={style["cprt-text"]}>
           <p className={`${style["cprt"]} py-2`}>
-            Copyright © 2020 HITK Tech Community
+            Copyright © 2021 HITK Tech Community
           </p>
         </div>
       </div>

@@ -2,9 +2,16 @@ import React from "react";
 import { Button2 } from "../../components/util/Button/index";
 import style from "./ContactUs.module.scss";
 
-export const ContactUs = () => {
+export const ContactUs = (props) => {
+  let dark = props.theme;
   return (
-    <div className={style["contact-section"]}>
+    <div
+      className={
+        dark
+          ? `${style["contact-section"]} ${style["contact-section-dark"]}`
+          : `${style["contact-section"]} ${style["contact-section-light"]}`
+      }
+    >
       <div className={style["contact-parent"]}>
         <div className={`${style["contact-child"]} ${style["child1"]}`}>
           <img
@@ -15,10 +22,30 @@ export const ContactUs = () => {
         </div>
 
         <div className={`${style["contact-child"]} ${style["child2"]}`}>
-          <div className={style["contact-card"]}>
-            <h1 className={style["contact-header-text"]}>Get in touch</h1>
+          <div
+            className={
+              dark
+                ? `${style["contact-card"]} ${style["contact-card-dark"]}`
+                : `${style["contact-card"]} ${style["contact-card-light"]}`
+            }
+          >
+            <h1
+              className={
+                dark
+                  ? `${style["contact-header-text"]} ${style["contact-header-text-dark"]}`
+                  : `${style["contact-header-text"]} ${style["contact-header-text-light"]}`
+              }
+            >
+              Get in touch
+            </h1>
             <div className={style["inside-contact"]}>
-              <div className={style["contact-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["contact-input"]} ${style["contact-input-dark"]}`
+                    : `${style["contact-input"]} ${style["contact-input-light"]}`
+                }
+              >
                 <input
                   id="txt_name"
                   type="text"
@@ -28,7 +55,13 @@ export const ContactUs = () => {
                 />
                 <i className="fas fa-user"></i>
               </div>
-              <div className={style["contact-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["contact-input"]} ${style["contact-input-dark"]}`
+                    : `${style["contact-input"]} ${style["contact-input-light"]}`
+                }
+              >
                 <input
                   id="txt_email"
                   type="text"
@@ -38,7 +71,13 @@ export const ContactUs = () => {
                 />
                 <i className="fas fa-envelope-open-text"></i>
               </div>
-              <div className={style["contact-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["contact-input"]} ${style["contact-input-dark"]}`
+                    : `${style["contact-input"]} ${style["contact-input-light"]}`
+                }
+              >
                 <input
                   id="txt_subject"
                   type="text"
@@ -48,7 +87,13 @@ export const ContactUs = () => {
                 />
                 <i className="fas fa-pencil-alt"></i>
               </div>
-              <div className={style["contact-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["contact-input"]} ${style["contact-input-dark"]}`
+                    : `${style["contact-input"]} ${style["contact-input-light"]}`
+                }
+              >
                 <textarea
                   id="txt_message"
                   rows="4"

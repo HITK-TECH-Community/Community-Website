@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
 [![license](https://img.shields.io/github/license/HITK-TECH-Community/Community-Website)](#license)
-[![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw)
+[![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-njgae7ki-Xn1y4Nmc_bwqwU~tN52vrg)
 
 <p align="center" width="400px"><img src="assets/HITK_tech_comm_logo.png" width="200"></p>
 <p align="center" width="400px"> <font size="5"> <b> HITK Tech Community 👩🏻‍💻👨🏻‍💻 </b></font></p> <br />
@@ -48,10 +48,22 @@ Following are the steps to run the backend of the community-website on your loca
 
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm run dev` to run the server in dev mode.
+3. Run `npm start` to run the server in dev mode.
 4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
 The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
+
+
+## Testing Credentials
+
+The dummy admin credentials to login to the admin dashboard are given below -
+
+```
+{
+    "email" : "admin@gmail.com",
+    "password" : "check"
+}
+```
 
 
 ## Related Repositories 📂
@@ -67,6 +79,7 @@ The backend is live at [https://community-website-backend.herokuapp.com/](https:
 <a href="https://kwoc.kossiitkgp.org/" target="_blank"><img src="assets/KWoC.png" width="180px" height="180px"></a>
 <a href="https://swoc.tech/index.html" target="_blank"><img src="assets/SWoC.png" width="180px" height="180px"></a>
 <a href="https://devscript.tech/woc/" target="_blank"><img src="assets/DWoC.png" width="180px" height="180px"></a>
+<a href="https://gssoc.girlscript.tech/" target="_blank"><img src="assets/GSSoC.png" width="180px" height="180px"></a>
 
 
 ## Contributors 🌟

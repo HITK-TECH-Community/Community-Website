@@ -28,6 +28,7 @@ import { Faq } from "./pages/Faq";
 import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
+import { ForgotPasswordRecovery } from "./pages/ForgotPasswordRecovery/index";
 
 import { useSelector } from "react-redux";
 
@@ -123,6 +124,11 @@ const App = () => {
                   exact={true}
                   path="/forgot-password"
                   component={ForgotPassword}
+                />
+                <Route
+                  exact={true}
+                  path="/forgot-password/:id"
+                  component={ForgotPasswordRecovery}
                 />
                 <Route
                   exact={true}

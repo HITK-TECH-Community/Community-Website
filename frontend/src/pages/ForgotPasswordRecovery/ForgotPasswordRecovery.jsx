@@ -63,7 +63,7 @@ export function ForgotPasswordRecovery() {
                         <div className={style["submit-btn"]}>
                           <Button2
                             id="btn"
-                            label="Submit"
+                            label="Login"
                             type="submit"
                             className={style["submit-btn-text"]}
                           />
@@ -111,7 +111,7 @@ export function ForgotPasswordRecovery() {
                     <div className={style["submit-btn"]}>
                       <Button2
                         type="submit"
-                        label="login"
+                        label="Submit"
                         className={style["submit-btn-text"]}
                       />
                     </div>

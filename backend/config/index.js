@@ -1,4 +1,3 @@
-// const config = require('./variables.json');
 require('dotenv').config();
 
 const config = {

@@ -3,10 +3,18 @@ import { Link } from "react-router-dom";
 import styles from "./join-us.module.scss";
 import { Button3 } from "../../../../components/util/Button";
 
-export const JoinUs = () => {
+export const JoinUs = (props) => {
+  let dark = props.theme;
+
   return (
     <Fragment>
-      <div className={styles["join-us"]}>
+      <div
+        className={
+          dark
+            ? `${styles["join-us"]} ${styles["join-us-dark"]}`
+            : `${styles["join-us"]} ${styles["join-us-light"]}`
+        }
+      >
         <h1 className={styles["title"]}>Join Us</h1>
         <div className={styles["dash"]}></div>
         <h2 className={styles["subtitle"]}>

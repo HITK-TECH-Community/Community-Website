@@ -75,7 +75,6 @@ export function Invite() {
                 <input
                   placeholder="Email ID"
                   id="txt_email"
-                  type="email"
                   name="email"
                   onChange={handleChange}
                 />

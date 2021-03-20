@@ -107,7 +107,6 @@ export class Footer extends React.Component {
           <ul className={style["footer-nav"]}>
             <li className={style["nav-item"]}>
               <h2 className={style["nav-title"]}>Navigation</h2>
-
               <ul className={style["nav-ul"]}>
                 <li>
                   <Link to="/about-us">About</Link>
@@ -130,7 +129,6 @@ export class Footer extends React.Component {
                 </li>
               </ul>
             </li>
-
             <li className={style["nav-item"]}>
               <h2 className={style["nav-title"]}>Other</h2>
 

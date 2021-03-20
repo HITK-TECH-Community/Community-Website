@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.3",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
+    "joi-browser": "^13.4.0",
     "mdbreact": "^5.0.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",

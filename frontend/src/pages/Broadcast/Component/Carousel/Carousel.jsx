@@ -70,7 +70,7 @@ export function Carousel({ head }) {
                 className={style["card-text"]}
                 onClick={() => handleOpen(item.desc, item.title, item.link)}
               >
-                {item.desc.substring(0, 600)}...
+                {item.desc.substring(0, 450)}...
               </div>
             </div>
           ))}

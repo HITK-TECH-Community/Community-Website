@@ -7,6 +7,8 @@ import style from "../Motive/motive.module.scss";
 import style2 from "./carousel.module.scss";
 
 export function Carousel(props) {
+  let dark = props.theme;
+
   const options = {
     loop: true,
     margin: 45,
@@ -34,9 +36,21 @@ export function Carousel(props) {
   };
   return (
     <div className={style2["carousel-div"]}>
-      <div className={`motive ${style2["motive"]} ${style["motive"]}`}>
-        <h1 style={{ color: "#121f3a" }}>Curious to know More about Us?</h1>
-        <div className={style.dash}></div>
+      <div
+        className={
+          dark
+            ? `motive ${style["motive"]} ${style2["motive"]} ${style["motive-dark"]}`
+            : `motive ${style["motive"]} ${style2["motive"]}`
+        }
+      >
+        <h1>Curious to know More about Us?</h1>
+        <div
+          className={
+            dark
+              ? `${style2["dash"]} ${style2["dash-dark"]}`
+              : `${style2["dash"]} ${style2["dash-light"]}`
+          }
+        ></div>
       </div>
       <div className="container">
         <OwlCarousel

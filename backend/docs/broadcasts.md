@@ -12,10 +12,10 @@ Before executing every route function validation middleware gets executed which 
         | ----------- | ------------
         | title       | string, required |
         | content     | string, required |
-        | link        | string(uri), required, unique |
-        | isExpired   | boolean, required, unique     |
-        | imageUrl    | string(uri), required         |
-        | category    | string, required  |
+        | link        | string(uri), required |
+        | isExpired   | boolean, required     |
+        | imageUrl    | string(uri), required |
+        | category    | string, required |
   
     - ![diagram](images/addBroadcast.jpg)
     <br>

@@ -4,7 +4,6 @@ import style from "./Invite.module.scss";
 import Joi from "joi-browser";
 export function Invite() {
   const [formdata, setFormData] = useState({
-    name: "",
     email: "",
   });
   const [formerrors, setFormErrors] = useState({});

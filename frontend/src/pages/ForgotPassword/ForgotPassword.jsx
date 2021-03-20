@@ -158,9 +158,20 @@ export function ForgotPassword() {
                           name="email"
                           placeholder="Email"
                           onChange={handleChange}
+                          required="required"
                           className={style["input-forgot-password"]}
-                          // onInvalid={(e)=>{ e.target.setCustomValidity("Enter a valid Email Id") }}
-                          // onInput={(e)=>{ e.target.value?.match(new RegExp(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)) && e.target.setCustomValidity("") }}
+                          onInvalid={(e) => {
+                            e.target.setCustomValidity(
+                              "Enter a valid Email Id"
+                            );
+                          }}
+                          onInput={(e) => {
+                            e.target.value?.match(
+                              new RegExp(
+                                /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+                              )
+                            ) && e.target.setCustomValidity("");
+                          }}
                         />
                         <i className="fas fa-at"></i>
                         <div

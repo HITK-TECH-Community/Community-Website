@@ -1,6 +1,14 @@
 .resource-section {
   display: flex;
+}
+
+.resource-section-light {
   background-color: #fff;
+}
+
+// for dark theme
+.resource-section-dark {
+  background: #171717;
 }
 
 .resource-image {

@@ -48,10 +48,22 @@ Following are the steps to run the backend of the community-website on your loca
 
 1. Navigate to `backend` folder using `cd backend`
 2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm run dev` to run the server in dev mode.
+3. Run `npm start` to run the server in dev mode.
 4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
 
 The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
+
+
+## Testing Credentials
+
+The dummy admin credentials to login to the admin dashboard are given below -
+
+```
+{
+    "email" : "admin@gmail.com",
+    "password" : "check"
+}
+```
 
 
 ## Related Repositories 📂

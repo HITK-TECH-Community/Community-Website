@@ -27,7 +27,7 @@ export const About = (props) => {
     <div className={dark ? `${style["dark"]}` : ``}>
       <div className={style["about-section"]}>
         <img
-          src="./images/about_us.png"
+          src="./images/about_us_cover.png"
           alt=""
           className={style["aboutus-img"]}
         />

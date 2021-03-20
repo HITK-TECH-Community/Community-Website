@@ -132,7 +132,6 @@ export function Login() {
                     autocomplete="off"
                     id="username"
                     type="email"
-                    // required="required"
                     name="email"
                     placeholder="Username"
                     onChange={handleChange}
@@ -148,7 +147,6 @@ export function Login() {
                 <div className={style["login-input"]}>
                   <input
                     id="password"
-                    // required="required"
                     name="password"
                     placeholder="Password"
                     className={style["input-login"]}

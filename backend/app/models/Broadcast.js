@@ -16,7 +16,7 @@ const broadcastSchema = new Schema(
       type: Boolean,
     },
     imageUrl: {
-      type: String,
+      type: Array,
     },
     category: {
       type: String,

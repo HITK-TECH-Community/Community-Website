@@ -3,7 +3,7 @@ const Broadcast = require('../../models/Broadcast');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
-module.exports = async (req, res) => {
+module.exports = async (req, res, next) => {
   const broadcastData = {
     ...req.body,
   };
@@ -15,10 +15,10 @@ module.exports = async (req, res) => {
       message: 'Mongo Error: Insertion Failed',
       errStack: err,
     });
-    res.status(500).send(error);
-    return;
+    return next(error);
   }
   res.status(200).send({
     message: 'Broadcast added successfully',
   });
+  return next();
 };

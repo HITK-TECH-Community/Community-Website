@@ -51,10 +51,14 @@ export function AllBroadcasts() {
               placeholder="Find a Broadcast…"
               className={style["input-input"]}
               inputProps={{ "aria-label": "search" }}
+              name="search-box"
+              onfocus="this.style.background = '#fff'"
+              onblur="this.style.background = 'white'"
             />
           </div>
           <div className={style["filters"]}>
             <DropMenu
+              className={style["filter-btn"]}
               ListName="Filter by Month"
               ListItems={[
                 "January",
@@ -70,7 +74,11 @@ export function AllBroadcasts() {
                 "December",
               ]}
             />
-            <DropMenu ListName="Filter by Year" ListItems={["2021", "2020"]} />
+            <DropMenu
+              className={style["filter-btn"]}
+              ListName="Filter by Year"
+              ListItems={["2021", "2020"]}
+            />
           </div>
         </div>
       </div>

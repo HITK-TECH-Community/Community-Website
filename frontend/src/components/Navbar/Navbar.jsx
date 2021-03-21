@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Toggle } from "../util/Toggle/index";
 import style from "./navbar.module.scss";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeMobileMenu = () => setIsNavOpen(false);
@@ -107,6 +108,8 @@ export const Navbar = () => {
         >
           admin ?
         </NavLink>
+
+        <Toggle handleClick={props.handleClick} theme={props.theme} />
       </nav>
     </Fragment>
   );

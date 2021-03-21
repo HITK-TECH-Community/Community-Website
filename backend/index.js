@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const http = require('http');
-const bodyParser = require('body-parser');
 const responseTime = require('response-time');
 const routes = require('./app/routes');
 const { errorHandler } = require('./helpers/error');
@@ -20,8 +19,8 @@ app.use(helmet());
 app.use(cors());
 
 // Body Parser
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Response time
 app.use(responseTime({ suffix: false }));

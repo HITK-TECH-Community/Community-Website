@@ -209,51 +209,15 @@
 .g-recaptcha {
   display: inline-block;
 
-// for dark theme
-.contact-input-dark i {
-  color: whitesmoke;
-
-}
-
-.submit-btn {
-  display: flex;
-  justify-content: center;
-  width: 40%;
-  margin: 0 auto;
-}
-
-.submit-btn-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 750px) {
-  .contact-parent {
-    display: block;
-    width: 100%;
-  }
-
-  .child1 {
-    padding: 0 0 10px;
-  }
-
-  .contact-card {
-    width: 95%;
-    margin: 10% auto;
-  }
-
-  .contact-input input,
-  .contact-btn {
-    height: 40px;
-  }
-
-  .contact-btn {
-    font-size: 20px;
+  // for dark theme
+  .contact-input-dark i {
+    color: whitesmoke;
   }
 
   .submit-btn {
-    width: 60% !important;
+    display: flex;
+    justify-content: center;
+    width: 40%;
     margin: 0 auto;
   }
 
@@ -261,9 +225,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: x-small;
-    color: black;
   }
-}
-}
+
+  @media screen and (max-width: 750px) {
+    .contact-parent {
+      display: block;
+      width: 100%;
+    }
+
+    .child1 {
+      padding: 0 0 10px;
+    }
+
+    .contact-card {
+      width: 95%;
+      margin: 10% auto;
+    }
+
+    .contact-input input,
+    .contact-btn {
+      height: 40px;
+    }
+
+    .contact-btn {
+      font-size: 20px;
+    }
+
+    .submit-btn {
+      width: 60% !important;
+      margin: 0 auto;
+    }
+
+    .submit-btn-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: x-small;
+      color: black;
+    }
+  }
 }

@@ -1,19 +1,19 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button2 } from "../../components/util/Button/index";
 import Recaptcha from "react-recaptcha";
 import style from "./ContactUs.module.scss";
 
 export const ContactUs = (props) => {
-  const[isverfied, verified]=useState(false)
-  const recaptchaLoaded= () =>{
-      console.log("Recaptcha loaded");
-  }
+  const [isverfied, verified] = useState(false);
+  const recaptchaLoaded = () => {
+    console.log("Recaptcha loaded");
+  };
 
-  const verifyCallback=(response)=> {
+  const verifyCallback = (response) => {
     if (response) {
-      verified(true)
+      verified(true);
     }
-  }
+  };
   let dark = props.theme;
   return (
     <div
@@ -116,17 +116,14 @@ export const ContactUs = (props) => {
                 <i className="fas fa-comment-dots"></i>
               </div>
               <div class={style["text-xs-center"]}>
-                  <div
-                    class={style["g-recaptcha"]}
-                    data-sitekey="my-public-key"
-                  >
-                    <Recaptcha
-                      sitekey="6LfBC4QaAAAAAHoFhHxXordvHQd9tLOUic8WFllR"
-                      render="explicit"
-                      onloadCallback={recaptchaLoaded}
-                      verifyCallback={verifyCallback}
-                    />
-                  </div>
+                <div class={style["g-recaptcha"]} data-sitekey="my-public-key">
+                  <Recaptcha
+                    sitekey="6LfBC4QaAAAAAHoFhHxXordvHQd9tLOUic8WFllR"
+                    render="explicit"
+                    onloadCallback={recaptchaLoaded}
+                    verifyCallback={verifyCallback}
+                  />
+                </div>
               </div>
               <br></br>
               <div className={style["submit-btn"]}>
@@ -140,6 +137,6 @@ export const ContactUs = (props) => {
           </div>
         </div>
       </div>
-    );
-  
-}
+    </div>
+  );
+};

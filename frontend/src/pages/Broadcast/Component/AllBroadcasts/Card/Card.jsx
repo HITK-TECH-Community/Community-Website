@@ -34,7 +34,7 @@ export function Card(props) {
     <div id={props.id} className={style["card-container"]}>
       <Modals open={open} handleClose={handleClose} data={data} />
       <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
-        <div className={style["card-item"]} onMouseEnter={handleClick}>
+        <div className={style["card-item"]} onClick={handleClick}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>{props.project.head}</div>
             <div className={style["card-content"]}>
@@ -43,7 +43,7 @@ export function Card(props) {
           </div>
         </div>
 
-        <div className={style["card-item"]} onMouseLeave={handleClick}>
+        <div className={style["card-item"]} onClick={handleClick}>
           <div className={style["clickable-card"]}>
             {isSuperAdmin ? (
               <div className={style["admin-controls"]}>

@@ -31,7 +31,7 @@ const forgotPasswordSchema = Joi.object({
   email: Joi.string().email().required(),
 });
 
-const postResetPassword = Joi.object({
+const resetPasswordSchema = Joi.object({
   newPassword: Joi.string().required(),
 });
 
@@ -40,5 +40,5 @@ module.exports = {
   getAdminsSchema,
   passwordChangeSchema,
   forgotPasswordSchema,
-  postResetPassword,
+  resetPasswordSchema,
 };

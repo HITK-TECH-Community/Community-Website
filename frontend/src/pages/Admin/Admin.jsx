@@ -29,16 +29,11 @@ export const Admin = () => {
     const token = localStorage.getItem("token");
     try {
       const { exp } = decode(token);
-      // console.log("Decoded token: ", decode(token));
-      // console.log("exp: ", exp);
-      // console.log("curr_time: ", Date.now() / 1000);
-      // console.log(Date.now() - exp * 1000);
       if (Date.now() >= exp * 1000) {
-        console.log("Key expired");
-        logout(dispatch);
+        localStorage.setItem("expired", true);
+        logout(dispatch); //Key expired
       }
     } catch (err) {
-      console.log("Key expired or invalid");
       logout(dispatch);
     }
     return true;

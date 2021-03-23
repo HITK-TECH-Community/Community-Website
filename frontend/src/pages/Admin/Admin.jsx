@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./admin.module.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import { Profile } from "./Components/Profile";
@@ -17,12 +17,28 @@ import { Manage } from "./Components/Setting/Manage";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
+import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
 
 export const Admin = () => {
   const [tab, setTab] = useState(1);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    try {
+      const { exp } = decode(token);
+      if (Date.now() >= exp * 1000) {
+        localStorage.setItem("expired", true);
+        logout(dispatch); //Key expired
+      }
+    } catch (err) {
+      logout(dispatch);
+    }
+    return true;
+  }, []);
+
   return (
     <div style={{ minHeight: "100vh" }}>
       <div className={style["dashing"]}>
@@ -81,10 +97,7 @@ export const Admin = () => {
             }
             onClick={() => setTab(11)}
           >
-            <i
-              className="fas fa-handshake fa-fw fa-lg"
-              aria-hidden="true"
-            ></i>
+            <i className="fas fa-handshake fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style["span"]}>Join Us</div>
           </div>
 
@@ -94,10 +107,7 @@ export const Admin = () => {
             }
             onClick={() => setTab(12)}
           >
-            <i
-              className="fas fa-book fa-fw fa-lg"
-              aria-hidden="true"
-            ></i>
+            <i className="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
             <div className={style["span"]}>Resources</div>
           </div>
           <div

@@ -73,10 +73,8 @@
 
 .input-input {
   padding: 8px 8px 8px 0;
-  box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
   border-radius: 12px;
   height: 3em;
-  border: 1px solid #eeeeee;
   padding-left: calc(1em + 32px);
   width: 100%;
 }
@@ -88,10 +86,13 @@
   margin-left: 25px;
   position: relative;
   width: 228px;
+  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+  // border: 3px solid #1B2431;
 }
 
-.search:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.search:hover,
+.search:focus-within {
+  background-color: white !important;
 }
 
 .carousel-head {
@@ -114,6 +115,10 @@
     display: flex;
     margin: 15px auto;
   }
+
+  .filters > * {
+    background-color: #121f3a !important;
+  }
 }
 
 @media screen and (orientation: portrait) {
@@ -132,4 +137,8 @@
   .input-input {
     width: 40ch;
   }
+}
+
+.filter-btn {
+  background-color: #121f3a !important;
 }

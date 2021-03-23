@@ -53,6 +53,7 @@
 
 .login-input {
   position: relative;
+  margin-bottom: 30px !important;
 }
 
 .login-input input {
@@ -65,7 +66,6 @@
   margin-right: auto;
   font-size: 14px;
   color: #777777;
-  margin-bottom: 30px !important;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
@@ -122,6 +122,11 @@
 .login-input:nth-child(2) i:hover {
   cursor: pointer;
   color: rgb(17, 133, 17);
+}
+
+.validation {
+  color: red;
+  margin-top: 0;
 }
 
 .submit-btn {

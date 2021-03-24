@@ -15,7 +15,6 @@ export function Login() {
   const [credential, setCredential] = useState(schema);
   const dispatch = useDispatch();
 
-
   const [errorObj, setErrorObj] = useState({});
 
   const validationSchema = {
@@ -86,7 +85,7 @@ export function Login() {
       localStorage.removeItem("log");
       dispatch({ type: actions.LOG_OUT });
     }
-  }, [logout, dispatch]);
+  }, [logout, dispatch, expired]);
 
   function loginUser(e) {
     e.preventDefault();

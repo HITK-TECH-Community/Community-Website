@@ -37,7 +37,7 @@ export const Admin = () => {
       logout(dispatch);
     }
     return true;
-  }, []);
+  }, [dispatch]);
 
   return (
     <div style={{ minHeight: "100vh" }}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./admin.module.scss";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import { Profile } from "./Components/Profile";
@@ -17,6 +17,7 @@ import { Manage } from "./Components/Setting/Manage";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
+import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
 
@@ -26,6 +27,20 @@ export const Admin = () => {
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
   const closeMobileMenu = () => setIsMenuOpen(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    try {
+      const { exp } = decode(token);
+      if (Date.now() >= exp * 1000) {
+        localStorage.setItem("expired", true);
+        logout(dispatch); //Key expired
+      }
+    } catch (err) {
+      logout(dispatch);
+    }
+    return true;
+  }, [dispatch]);
 
   return (
     <div style={{ minHeight: "100vh" }}>

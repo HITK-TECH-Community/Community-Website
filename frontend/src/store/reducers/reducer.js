@@ -5,6 +5,7 @@ let initialState = {
   token: localStorage.getItem("token") || null,
   isSuperAdmin: localStorage.getItem("isSuperAdmin") || false,
   logout: localStorage.getItem("log") || false,
+  expired: localStorage.getItem("expired") || false,
 };
 
 const reducer = (state = initialState, action) => {

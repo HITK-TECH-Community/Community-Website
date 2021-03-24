@@ -56,10 +56,12 @@ export function Login() {
   };
 
   const logout = useSelector((state) => state.logout);
+  const expired = useSelector((state) => state.expired);
   const [openLogoutSuccess, setOpenLogoutSuccessToast] = React.useState(false);
   const [openError1, setOpenError1Toast] = React.useState(false); //backend error
   const [openError2, setOpenError2Toast] = React.useState(false); //unauthorized
   const [openError3, setOpenError3Toast] = React.useState(false); //unknown Error
+  const [openError4, setOpenError4Toast] = React.useState(false); //Key Expired
 
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
@@ -69,15 +71,21 @@ export function Login() {
     setOpenError1Toast(false);
     setOpenError2Toast(false);
     setOpenError3Toast(false);
+    setOpenError4Toast(false);
   };
 
   useEffect(() => {
     if (logout) {
-      setOpenLogoutSuccessToast(true);
+      if (expired) {
+        setOpenError4Toast(true);
+        localStorage.removeItem("expired");
+      } else {
+        setOpenLogoutSuccessToast(true);
+      }
       localStorage.removeItem("log");
       dispatch({ type: actions.LOG_OUT });
     }
-  }, [logout, dispatch]);
+  }, [logout, dispatch, expired]);
 
   function loginUser(e) {
     e.preventDefault();
@@ -205,6 +213,12 @@ export function Login() {
         message="Invalid Username or Password! Try again."
         handleCloseToast={handleCloseToast}
         severity="error"
+      />
+      <SimpleToast
+        open={openError4}
+        message="Please login again"
+        handleCloseToast={handleCloseToast}
+        severity="info"
       />
     </>
   );

@@ -77,7 +77,7 @@ body {
 	}
 }
 
-/* scroll-bar styles */
+/* scroll--bar styles */
 ::-webkit-scrollbar {
 	width: 15px;
 	height: 4px;

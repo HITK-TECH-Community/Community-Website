@@ -1,4 +1,4 @@
-# Proposal for refactoring the project (frontend)
+# Conventions to be followed while working on the project (frontend)
 
 **Index**
 
@@ -116,13 +116,11 @@ For example
 
 <br /><br />
 
-## Refactor
+## Summary
 
-1. Install node-sass `npm install node-sass@4.14.1`
-2. Make a folder with the component name.
+1. Make a folder with the component name.
    If it is a page, make a folder inside `frontend/pages` folder.
    If it is a global component (like header, footer, navbar), component that is used in multiple pages, then make a folder inside `frontend/components` folder.
-3. Strictly follow the [React rules](#react-component-conventions) mentioned above.
-4. Refer to the **Navbar** folder if you get stuck.
-5. Follow the [CSS rules](#css-conventions) and edit all the classnames accoridingly. Note that bootstrap classes (row, col-, container) should be left as they are.
-6. Do not worry about BEM Nomenclature for now.
+2. Strictly follow the [React rules](#react-component-conventions) mentioned above.
+3. Follow the [CSS rules](#css-conventions) and edit all the classnames accoridingly. Note that bootstrap classes (row, col-, container) should be left as they are.
+4. Do not worry about BEM Nomenclature for now.

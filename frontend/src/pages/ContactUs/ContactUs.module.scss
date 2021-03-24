@@ -15,11 +15,14 @@
 	display: flex;
 	padding: 30px 0;
 }
+
+//err msg styles
 .validation {
 	color: #ff2929;
 	margin-top: -1%;
 	margin-bottom: 13px;
 }
+
 .card-heading {
 	padding-top: 12px;
 	margin-bottom: 8px;
@@ -27,6 +30,7 @@
 	color: var(--secondary-color);
 	text-transform: capitalize;
 }
+
 .inside-card {
 	width: 75%;
 	margin: 0 auto;
@@ -61,6 +65,7 @@
 	padding-bottom: 20px;
 	border-radius: 10px;
 }
+
 .goodbye-card {
 	width: 60%;
 	height: auto;
@@ -109,11 +114,13 @@
 	width: 85%;
 	margin: 0 auto;
 }
+
 .inside-card p {
 	padding: 10px 5px;
 	font-size: 1.5rem;
 	font-weight: 580;
 }
+
 .contact-input {
 	position: relative;
 	margin-bottom: 8px;
@@ -271,17 +278,23 @@
 	.contact-btn {
 		height: 40px;
 	}
+
 	.goodbye-card {
 		width: 85%;
+		padding-top: 5px;
 	}
+
 	.card-heading {
 		font-size: 1.6rem;
 		margin-bottom: 3px;
-		padding: 7px 0;
+		padding: 9px 0;
 	}
+
 	.inside-card p {
+		padding: 0px;
 		font-size: 1.3rem;
 	}
+
 	.contact-btn {
 		font-size: 20px;
 	}

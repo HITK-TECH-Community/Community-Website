@@ -100,6 +100,13 @@ export const Navbar = (props) => {
               admin ?
             </Link>
           </li>
+          <li className={style["nav-item"]}>
+            <Toggle
+              class={style["mobile-toggle"]}
+              handleClick={props.handleClick}
+              theme={props.theme}
+            />
+          </li>
         </ul>
         <NavLink
           to="/admin"
@@ -109,7 +116,11 @@ export const Navbar = (props) => {
           admin ?
         </NavLink>
 
-        <Toggle handleClick={props.handleClick} theme={props.theme} />
+        <Toggle
+          class={style["nav-toggle"]}
+          handleClick={props.handleClick}
+          theme={props.theme}
+        />
       </nav>
     </Fragment>
   );

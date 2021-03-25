@@ -33,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Faq() {
+export function Faq(props) {
+  let dark = props.theme;
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,18 +43,36 @@ export function Faq() {
   };
 
   return (
-    <div className={style["faq-container"]}>
-      <div className={style["head"]}>
+    <div
+      className={
+        dark
+          ? `${style["faq-container"]} ${style["dark"]}`
+          : `${style["faq-container"]}`
+      }
+    >
+      <div
+        className={
+          dark
+            ? `${style["head"]} ${style["head-dark"]}`
+            : `${style["head"]} ${style["head-dark"]}`
+        }
+      >
         <img
-          src="./images/faq.png"
+          src="./images/FAQ2.png"
           className={style["faq-image"]}
           alt="faq-icon"
         />
       </div>
       <div className={style["faq"]}>
-        <div className={style["faq-block"]}>
+        <div
+          className={
+            dark
+              ? `${style["faq-block"]} ${style["faq-block-dark"]}`
+              : `${style["faq-block"]} ${style["faq-block-light"]}`
+          }
+        >
           <Accordion
-            className={classes.accord}
+            className={dark ? `${style["accord-dark"]}` : `${classes.accord}`}
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
           >
@@ -79,7 +98,7 @@ export function Faq() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className={classes.accord}
+            className={dark ? `${style["accord-dark"]}` : `${classes.accord}`}
             expanded={expanded === "panel2"}
             onChange={handleChange("panel2")}
           >
@@ -105,7 +124,7 @@ export function Faq() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className={classes.accord}
+            className={dark ? `${style["accord-dark"]}` : `${classes.accord}`}
             expanded={expanded === "panel3"}
             onChange={handleChange("panel3")}
           >
@@ -131,7 +150,7 @@ export function Faq() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className={classes.accord}
+            className={dark ? `${style["accord-dark"]}` : `${classes.accord}`}
             expanded={expanded === "panel4"}
             onChange={handleChange("panel4")}
           >
@@ -157,7 +176,7 @@ export function Faq() {
             </AccordionDetails>
           </Accordion>
           <Accordion
-            className={classes.accord}
+            className={dark ? `${style["accord-dark"]}` : `${classes.accord}`}
             expanded={expanded === "panel5"}
             onChange={handleChange("panel5")}
           >

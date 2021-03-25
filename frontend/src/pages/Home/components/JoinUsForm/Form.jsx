@@ -1,19 +1,53 @@
 import React from "react";
 import styles from "./form.module.scss";
 import { Button2 } from "../../../../components/util/Button/index";
-export const JoinUsForm = () => {
+export const JoinUsForm = (props) => {
+  let dark = props.theme;
+
   return (
-    <div className={styles["join-us-form-section"]}>
+    <div
+      className={
+        dark
+          ? `${styles["join-us-form-section"]} ${styles["join-us-form-section-dark"]}`
+          : `${styles["join-us-form-section"]} ${styles["join-us-form-section-light"]}`
+      }
+    >
       <div className={`${styles["join-us-form-image"]} ${styles["child1"]}`}>
-        <img src="./images/joinus.jpg" alt="" />
+        <img src="./images/joinus2.png" alt="" />
       </div>
-      <div className={`${styles["join-us-form"]} ${styles["child2"]}`}>
-        <div className={styles["join-us-form-card"]}>
-          <h3 className={styles["join-us-form-header-text"]}>Join Us Form</h3>
+      <div
+        className={
+          dark
+            ? `${styles["join-us-form"]} ${styles["join-us-form-dark"]}`
+            : `${styles["join-us-form"]} ${styles["join-us-form-light"]}`
+        }
+      >
+        <div
+          className={
+            dark
+              ? `${styles["join-us-form-card"]} ${styles["join-us-form-card-dark"]}`
+              : `${styles["join-us-form-card"]} ${styles["join-us-form-card-light"]}`
+          }
+        >
+          <h3
+            className={
+              dark
+                ? `${styles["join-us-form-header-text"]} ${styles["join-us-form-header-text-dark"]}`
+                : `${styles["join-us-form-header-text"]} ${styles["join-us-form-header-text-light"]}`
+            }
+          >
+            Join Us Form
+          </h3>
           <div className={styles["inside-join-us-form"]}>
             <div className={styles["form-row"]}>
               <div className={`${styles["form-group"]} col-sm-6`}>
-                <div className={styles["join-us-form-input"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                      : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                  }
+                >
                   <input
                     placeholder="Name"
                     id="txt_name"
@@ -25,7 +59,13 @@ export const JoinUsForm = () => {
                 </div>
               </div>
               <div className={`${styles["form-group2"]} col-sm-6`}>
-                <div className={styles["join-us-form-input"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                      : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                  }
+                >
                   <input
                     placeholder="Contact No."
                     id="phone"
@@ -38,7 +78,13 @@ export const JoinUsForm = () => {
               </div>
             </div>
             <div className={styles["form-group"]}>
-              <div className={styles["join-us-form-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                    : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Email ID"
                   id="txt_email"
@@ -52,7 +98,13 @@ export const JoinUsForm = () => {
               </div>
             </div>
             <div className={styles["form-group"]}>
-              <div className={styles["join-us-form-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                    : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Linkedin Profile URL"
                   id="txt_link"
@@ -63,7 +115,13 @@ export const JoinUsForm = () => {
                 <i className={`fas fa-link ${styles["link"]}`}></i>
               </div>
             </div>
-            <div className={styles["join-us-form-input"]}>
+            <div
+              className={
+                dark
+                  ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                  : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+              }
+            >
               <textarea
                 placeholder="How can you contribute to help the community?"
                 id="txt_desc"
@@ -74,7 +132,13 @@ export const JoinUsForm = () => {
               ></textarea>
               <i className={`fas fa-comment-dots ${styles["comments"]}`}></i>
             </div>
-            <div className={styles["join-us-form-input1"]}>
+            <div
+              className={
+                dark
+                  ? `${styles["join-us-form-input1"]} ${styles["join-us-form-input1-dark"]}`
+                  : `${styles["join-us-form-input1"]} ${styles["join-us-form-input1-light"]}`
+              }
+            >
               <label className={`mb-4 ${styles["ID"]}`}>
                 Interested Domains
               </label>
@@ -192,7 +256,13 @@ export const JoinUsForm = () => {
               </div>
             </div>
             <div className={styles["form-group"]}>
-              <div className={styles["join-us-form-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                    : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Other - if the domain is not listed above"
                   id="txt_other"
@@ -204,7 +274,13 @@ export const JoinUsForm = () => {
               </div>
             </div>
             <div className={styles["form-group"]}>
-              <div className={styles["join-us-form-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                    : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                }
+              >
                 <input
                   placeholder="Department"
                   id="txt_dept"
@@ -215,31 +291,67 @@ export const JoinUsForm = () => {
                 <i className={`fas fa-building ${styles["building"]}`}></i>
               </div>
             </div>
-            <div className={styles["join-us-form-input1"]}>
+            <div
+              className={
+                dark
+                  ? `${styles["join-us-form-input1"]} ${styles["join-us-form-input1-dark"]}`
+                  : `${styles["join-us-form-input1"]} ${styles["join-us-form-input1-light"]}`
+              }
+            >
               <label className={`mb-4 ${styles["year-of-study"]}`}>
                 Year of Study
               </label>
               <div className={styles["radioButtons"]}>
-                <div className={styles["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["radio-item"]} ${styles["radio-item-dark"]}`
+                      : `${styles["radio-item"]} ${styles["radio-item-light"]}`
+                  }
+                >
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles["label"]}`}>1st</label>
                 </div>
-                <div className={styles["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["radio-item"]} ${styles["radio-item-dark"]}`
+                      : `${styles["radio-item"]} ${styles["radio-item-light"]}`
+                  }
+                >
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles["label"]}`}>2nd</label>
                 </div>
-                <div className={styles["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["radio-item"]} ${styles["radio-item-dark"]}`
+                      : `${styles["radio-item"]} ${styles["radio-item-light"]}`
+                  }
+                >
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles["label"]}`}>3rd</label>
                 </div>
-                <div className={styles["radio-item"]}>
+                <div
+                  className={
+                    dark
+                      ? `${styles["radio-item"]} ${styles["radio-item-dark"]}`
+                      : `${styles["radio-item"]} ${styles["radio-item-light"]}`
+                  }
+                >
                   <input type="radio" name="one" />
                   <label className={`mx-3 ${styles["label"]}`}>4th</label>
                 </div>
               </div>
             </div>
             <div className={styles["form-group"]}>
-              <div className={styles["join-us-form-input"]}>
+              <div
+                className={
+                  dark
+                    ? `${styles["join-us-form-input"]} ${styles["join-us-form-input-dark"]}`
+                    : `${styles["join-us-form-input"]} ${styles["join-us-form-input-light"]}`
+                }
+              >
                 <input
                   placeholder="College Name"
                   id="txt_college"

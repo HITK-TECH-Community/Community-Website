@@ -18,15 +18,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports.sendEmail = async (email, bcc, data, type) => {
+module.exports.sendEmail = async (email, data, type) => {
   const template = getMailTemplate(type);
   const { subject } = template;
   let { text } = template;
   text = ejs.render(text, data);
   const mailOptions = {
     from: EMAIL_USER,
-    to: email,
-    bcc,
+    bcc: email,
     subject,
     text,
   };

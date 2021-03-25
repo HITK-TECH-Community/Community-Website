@@ -11,6 +11,14 @@
   z-index: 10;
 }
 
+.mobile-toggle {
+  display: none;
+}
+
+.nav-toggle {
+  display: block;
+}
+
 .navbar-logo {
   justify-self: start;
   margin-left: 10px;
@@ -115,6 +123,17 @@ a.nav-links:hover {
   }
 
   .nav-admin-button {
+    display: none;
+  }
+
+  .mobile-toggle {
+    text-align: center;
+    padding: 1.5rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .nav-toggle {
     display: none;
   }
 

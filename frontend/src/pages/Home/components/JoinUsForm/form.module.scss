@@ -1,6 +1,13 @@
 .join-us-form-section {
   display: flex;
+}
+
+.join-us-form-section-light {
   background-color: #fff;
+}
+
+.join-us-form-section-dark {
+  background-color: #171717;
 }
 
 .join-us-form-image {
@@ -39,11 +46,26 @@
 .join-us-form-card {
   width: 75%;
   height: auto;
-  background-color: #e7e7e7;
   margin: 30px auto;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
   padding-bottom: 2rem;
+}
+
+.join-us-form-card-light {
+  background-color: #e7e7e7;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+// for dark theme
+.join-us-form-card-dark {
+  color: whitesmoke;
+  background-color: #282c35;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .join-us-form-input {
@@ -67,6 +89,28 @@
   margin-bottom: 30px !important;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.join-us-form-input-light input,
+.join-us-form-input-light textarea,
+.join-us-form-input-light select,
+.join-us-form-input1-light select {
+  border: 1px solid #bbbaba;
+  color: #777777;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+// for dark theme
+.join-us-form-input-dark input,
+.join-us-form-input-dark textarea,
+.join-us-form-input-dark select,
+.join-us-form-input1-dark select {
+  border: 1px solid #414a4c;
+  color: whitesmoke;
+  background-color: #333333;
+  box-shadow: inset 2px 2px 5px rgba(72, 127, 255, 0.1),
+    inset -2px -2px 5px rgba(72, 127, 255, 0.4);
 }
 
 .join-us-form-input input::placeholder,
@@ -93,10 +137,32 @@
   color: #777777;
 }
 
-.join-us-form-input input:focus,
-.join-us-form-input textarea:focus,
-.join-us-form-input select:focus,
-.join-us-form-input1 select:focus {
+// for dark theme
+.join-us-form-input-dark input::placeholder,
+.join-us-form-input-dark textarea::placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.join-us-form-input-dark input::-moz-placeholder,
+.join-us-form-input-dark textarea::-moz-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.join-us-form-input-dark input::-webkit-input-placeholder,
+.join-us-form-input-dark textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+.join-us-form-input-light input:focus,
+.join-us-form-input-light textarea:focus,
+.join-us-form-input-light select:focus,
+.join-us-form-input1-light select:focus {
+  border-color: #1863ff;
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -105,6 +171,20 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: #ffffff;
+}
+
+// for dark theme
+.join-us-form-input-dark input:focus,
+.join-us-form-input-dark textarea:focus,
+.join-us-form-input-dark select:focus,
+.join-us-form-input1-dark select:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
 }
 
 .join-us-form-input textarea {
@@ -126,6 +206,15 @@
   top: 15px;
   font-size: 16px;
   color: rgb(134, 131, 131);
+}
+
+.join-us-form-input-light i {
+  color: #777777;
+}
+
+// for dark theme
+.join-us-form-input-dark i {
+  color: whitesmoke;
 }
 
 .inside-join-us-form {
@@ -204,18 +293,30 @@
   left: 8px;
   content: " ";
   display: block;
+  border: 4px solid whitesmoke;
+}
+
+.radio-item-light input[type="radio"]:checked + label:after {
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 90, 1),
     rgba(10, 24, 61, 1)
   );
-  border: 4px solid whitesmoke;
+}
+
+// for dark theme
+.radio-item-dark input[type="radio"]:checked + label:after {
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
 }
 
 .form-check {
   padding-top: 0px !important;
   padding-bottom: 1rem;
   padding-left: 0px;
+}
+
+.form-check-dark {
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
 }
 
 .year-of-study {
@@ -268,6 +369,10 @@ input[type="date"]:not(:valid):before {
   text-align: center;
   color: var(--secondary-color);
   text-transform: capitalize;
+}
+
+.join-us-form-header-text-dark {
+  color: #69a9dd;
 }
 
 .submit-btn {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./ForgotPasswordRecovery.module.scss";
-import { Button2, Button3 } from "../../components/util/Button/index";
+import { Button2 } from "../../components/util/Button/index";
 import { SimpleToast } from "../../components/util/Toast";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";

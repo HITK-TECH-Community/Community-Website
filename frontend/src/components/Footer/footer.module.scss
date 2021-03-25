@@ -6,32 +6,39 @@
   background-color: #121f3a;
   border-top: 1px solid #e5e5e5;
 }
+
 .footer > * {
   flex: 1 100%;
 }
+
 .footer-addr {
   margin-right: 1.25em;
   margin-bottom: 2em;
 }
+
 .footer-logo {
   font-weight: 600;
   font-size: 1.5rem;
   color: #fff;
 }
+
 .footer-addr h2 {
   margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
 }
+
 .nav-title {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
 }
+
 .footer address {
   font-style: normal;
   color: #c2d6d7;
 }
+
 .footer-btn {
   display: flex;
   align-items: center;
@@ -46,20 +53,25 @@
   font-size: 1rem;
   padding: 0 1.3em;
 }
+
 .footer ul {
   list-style: none;
   padding-left: 0;
 }
+
 .footer li {
   line-height: 2em;
 }
+
 .footer a {
   text-decoration: none;
 }
+
 .footer-nav {
   display: flex;
   flex-flow: row wrap;
 }
+
 .footer-nav > * {
   flex: 1 50%;
   margin-right: 1.25em;
@@ -67,25 +79,31 @@
 .nav-ul a {
   color: #c2d6d7;
 }
+
 .nav-ul a:hover {
   color: yellow;
 }
+
 .nav-ul-extra {
   column-count: 2;
   column-gap: 1.25em;
 }
+
 .legal {
   display: flex;
   flex-wrap: wrap;
   color: #c2d6d7;
 }
+
 .legal-links {
   display: flex;
   align-items: center;
 }
+
 .heart {
   color: #c2d6d7;
 }
+
 .fa-linkedin,
 .fa-slack,
 .fa-envelope,
@@ -97,22 +115,27 @@
   padding: 5px;
   color: white;
 }
+
 .fa-linkedin:hover,
 .fa-linkedin-own:hover {
   color: #0088cc;
 }
+
 .fa-slack:hover,
 .fa-slack-own:hover {
   color: #dd2a7b;
 }
+
 .fa-envelope:hover,
 .fa-envelope-own:hover {
   color: #c71610;
 }
+
 .fa-github:hover,
 .fa-github-own:hover {
-  color: #000;
+  color: #7af7cd;
 }
+
 .footer-dash {
   text-align: center;
   padding-top: 2px;
@@ -130,15 +153,18 @@
   background-size: 100% 5px;
   /* if linear-gradient, we need to resize it */
 }
+
 .footer-text {
   padding-top: 10px;
   text-align: center;
   font-size: 0.8rem;
   background: #121f3a;
 }
+
 .nav-item {
   margin-bottom: 1.5rem;
 }
+
 /* Social Icons styles */
 :root {
   --r: 12px;
@@ -146,9 +172,11 @@
   --w: 4px;
   /* width of the border */
 }
+
 .col .social li {
   color: #ffffff00;
 }
+
 .col .social li a {
   position: relative;
   line-height: 50px;
@@ -161,6 +189,7 @@
   transition: 0.5s;
   float: left;
 }
+
 .col .social li a .outer {
   height: calc(40px + 2 * var(--w));
   width: calc(40px + 2 * var(--w));
@@ -168,6 +197,7 @@
   border-radius: 10px;
   position: relative;
 }
+
 .col .social li a .inner {
   z-index: 1;
   width: calc(40px + var(--w));
@@ -178,22 +208,27 @@
   top: calc(var(--w) / 2);
   left: calc(var(--w) / 2);
 }
+
 a > span {
   z-index: -1;
 }
+
 .col .social li a span {
   position: absolute;
   transition: transform 0.5s;
 }
+
 .col .social li a span:hover {
   transition: transform 0.5s;
 }
+
 .col .social li a span:nth-child(1),
 .col .social li a span:nth-child(3) {
   width: 50px;
   height: var(--r);
   background-color: yellow;
 }
+
 .col .social li a span:nth-child(1) {
   top: 0;
   left: 0;
@@ -202,11 +237,13 @@ a > span {
   border-radius: var(--r) var(--r) 0 0;
   border-bottom: none;
 }
+
 .col .social li a:hover span:nth-child(1) {
   transform: scaleX(0.279);
   transform-origin: left;
   transition: transform 0.5s;
 }
+
 .col .social li a span:nth-child(3) {
   bottom: 0;
   top: unset;
@@ -216,23 +253,27 @@ a > span {
   border-radius: 0 0 var(--r) var(--r);
   border-top: none;
 }
+
 .col .social li a:hover span:nth-child(3) {
   transform: scaleX(0.275);
   transform-origin: right;
   transition: transform 0.5s;
 }
+
 .col .social li a span:nth-child(2),
 .col .social li a span:nth-child(4) {
   width: var(--r);
   height: 50px;
   background-color: yellow;
 }
+
 .col .social li a span:nth-child(2) {
   bottom: 0;
   left: 0;
   transform: scaleY(0.26);
   transform-origin: bottom;
 }
+
 .col .social li a:hover span:nth-child(2) {
   transform: scaleY(1);
   transform-origin: top;
@@ -241,12 +282,14 @@ a > span {
   border-radius: var(--r) 0 0 var(--r);
   border-right: none;
 }
+
 .col .social li a span:nth-child(4) {
   top: 0;
   right: 0px;
   transform: scaleY(0.3);
   transform-origin: top;
 }
+
 .col .social li a:hover span:nth-child(4) {
   transform: scaleY(1);
   transform-origin: bottom;
@@ -255,17 +298,21 @@ a > span {
   border-radius: 0 var(--r) var(--r) 0;
   border-left: none;
 }
+
 .col .social,
 .col .social * {
   box-sizing: content-box;
 }
+
 .newsletter {
   margin-top: 40px;
 }
+
 .newsletter h2 {
   font-size: 18px;
   font-weight: 600;
 }
+
 .input-field-footer {
   border: 2px solid transparent;
   border-radius: 8px;
@@ -275,6 +322,7 @@ a > span {
   height: 35px;
   font-size: 14px;
 }
+
 .input-field-footer:focus {
   outline: none;
   border: 2px double transparent;
@@ -288,10 +336,12 @@ a > span {
   background-clip: padding-box, border-box;
   background-color: #ffffff;
 }
+
 .validation {
   color: red;
   margin-top: 0;
 }
+
 .submit-btn-footer {
   outline: none;
   border: 2px solid transparent;
@@ -304,22 +354,27 @@ a > span {
   height: 35px;
   white-space: nowrap;
 }
+
 .submit-btn-footer:focus {
   outline: none;
   border: none;
 }
+
 .submit-btn-footer:hover {
   background-color: transparent;
   color: #fff;
   border: 2px solid #ee4d55;
 }
+
 .validation-new {
   color: red;
   margin-bottom: 25px;
 }
+
 .cprt {
   padding: 4px;
 }
+
 .cprt-text {
   width: 100%;
   background-color: #016795;
@@ -330,6 +385,7 @@ a > span {
   margin-bottom: 0px;
   margin-top: -15px;
 }
+
 @media screen and (min-width: 24.375em) {
   .legal .legal-links {
     margin-left: auto;
@@ -338,19 +394,24 @@ a > span {
     display: none;
   }
 }
+
 @media screen and (min-width: 40.375em) {
   .footer-nav > * {
     flex: 1;
   }
+
   .nav-item-extra {
     flex-grow: 2;
   }
+
   .footer-addr {
     flex: 1 0px;
   }
+
   .footer-nav {
     flex: 2 0px;
   }
+
   .validation-new {
     display: none;
   }
@@ -360,6 +421,7 @@ a > span {
     display: none;
   }
 }
+
 @media screen and (max-width: 390px) {
   .validation-new {
     display: none;

@@ -13,6 +13,7 @@
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
+    "jwt-decode": "^3.1.2",
     "mdbreact": "^5.0.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -33,8 +34,8 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
     "styled-components": "^5.2.1",
-    "suneditor-react": "^2.15.2",
-    "web-vitals": "^0.2.4"
+    "suneditor-react": "^2.16.0",
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

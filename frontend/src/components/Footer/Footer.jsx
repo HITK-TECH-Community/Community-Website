@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import style from "./footer.module.scss";
 
+//react-icon
+import { FiCheckSquare } from "react-icons/fi";
+
 export const Footer = () => {
+  const [submited, setSubmited] = useState(false);
   //email state
   const [email, setEmail] = useState("");
   //setting email error
@@ -47,7 +51,8 @@ export const Footer = () => {
     //if isValid = true, form submission trigger
     const isValid = validation();
     if (isValid) {
-      console.log("Succesfully subcribed for our newsletter!");
+      setSubmited(true);
+      console.log("Successfully subscribed for our newsletter!");
       //resetting email value in state after submission of form
       setEmail("");
     }
@@ -63,54 +68,68 @@ export const Footer = () => {
             Technology, Chowbaga Road, Kolkata, West Bengal - 700107, India
             <br />
           </address>
-          <div className={style["newsletter"]}>
-            <h2 className={style["nav-title"]}>Sign Up for our Newsletter</h2>
-            <p>
-              Receive updates and news about various Job Opportunities,
-              Internships, Webinars and Open Source Events.
-            </p>
-
-            <form
-              className="d-flex flex-column flex-md-row align-items-center mt-4"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="text"
-                name="email"
-                className={`${style["input-field-footer"]} py-2`}
-                placeholder="Email Id"
-                onChange={handleEmailChange}
-                value={email}
-              />
-              <br />
-              {Object.keys(emailErr).map((key) => {
-                return (
-                  <div
-                    className={`${style["validation"]} d-sm-block d-md-none`}
-                    key={key}
-                  >
-                    {emailErr[key]}
-                  </div>
-                );
-              })}
-              <button
-                type="submit"
-                className={`mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 `}
-              >
-                Sign Up
-              </button>
-            </form>
-            {Object.keys(emailErr).map((key) => {
-              return (
-                <div
-                  className={`${style["validation-new"]} validation-new d-sm-none d-md-block`}
-                  key={key}
+          {submited ? (
+            <React.Fragment>
+              <div className={style["subscribe-card"]}>
+                <h1 className={style["card-heading"]}>
+                  successfully subscribed to our newsletter
+                  <FiCheckSquare className={style["newsletter-icon"]} />
+                </h1>
+              </div>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <div className={style["newsletter"]}>
+                <h2 className={style["nav-title"]}>
+                  Sign Up for our Newsletter
+                </h2>
+                <p>
+                  Receive updates and news about various Job Opportunities,
+                  Internships, Webinars and Open Source Events.
+                </p>
+                <form
+                  className="d-flex flex-column flex-md-row align-items-center mt-4"
+                  onSubmit={handleSubmit}
                 >
-                  {emailErr[key]}
-                </div>
-              );
-            })}
-          </div>
+                  <input
+                    type="text"
+                    name="email"
+                    className={`${style["input-field-footer"]} py-2`}
+                    placeholder="Email Id"
+                    onChange={handleEmailChange}
+                    value={email}
+                  />
+                  <br />
+                  {Object.keys(emailErr).map((key) => {
+                    return (
+                      <div
+                        className={`${style["validation"]} d-sm-block d-md-none`}
+                        key={key}
+                      >
+                        {emailErr[key]}
+                      </div>
+                    );
+                  })}
+                  <button
+                    type="submit"
+                    className={`mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 `}
+                  >
+                    Sign Up
+                  </button>
+                </form>
+                {Object.keys(emailErr).map((key) => {
+                  return (
+                    <div
+                      className={`${style["validation-new"]} validation-new d-sm-none d-md-block`}
+                      key={key}
+                    >
+                      {emailErr[key]}
+                    </div>
+                  );
+                })}
+              </div>
+            </React.Fragment>
+          )}
         </div>
         <ul className={style["footer-nav"]}>
           <li className={style["nav-item"]}>

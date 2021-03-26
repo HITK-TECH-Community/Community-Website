@@ -7,6 +7,47 @@
   border-top: 1px solid #e5e5e5;
 }
 
+// news-letter section styles
+.card-heading {
+  padding: 10px 2px;
+  margin: 2px auto;
+  text-align: center;
+  text-transform: capitalize;
+  color: #7bf3e9;
+  font-weight: 270;
+  font-size: 1rem;
+  font-family: "Lexend", sans-serif;
+  letter-spacing: 1.2px;
+}
+
+.subscribe-card {
+  width: 90%;
+  height: auto;
+  background: linear-gradient(147deg, #0d1013 0%, #2c3e50 64%);
+  margin: 10% -1%;
+  padding: 6px 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px #e4fffd, -1px -1px 5px #e7fffd;
+}
+
+.newsletter-icon {
+  margin: 0.3rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .goodbye-card {
+    width: 100%;
+    padding-top: 3px;
+  }
+
+  .card-heading {
+    font-size: 0.8rem;
+    padding: 4px 0;
+  }
+}
+
 .footer > * {
   flex: 1 100%;
 }

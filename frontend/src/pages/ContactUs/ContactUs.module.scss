@@ -16,6 +16,27 @@
   padding: 30px 0;
 }
 
+//err msg styles
+.validation {
+  color: #ff2929;
+  margin-top: -1%;
+  margin-bottom: 13px;
+}
+
+.card-heading {
+  padding-top: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.inside-card {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
 .contact-image {
   max-width: 100%;
 }
@@ -45,6 +66,16 @@
   border-radius: 10px;
 }
 
+.goodbye-card {
+  width: 60%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 20% auto;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
 .contact-card-light {
   background-color: #e7e7e7;
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
@@ -67,6 +98,7 @@
   margin-bottom: 0px;
   text-transform: capitalize;
   text-align: center !important;
+  font-size: 1.5rem;
 }
 
 .contact-header-text-light {
@@ -83,8 +115,15 @@
   margin: 0 auto;
 }
 
+.inside-card p {
+  padding: 10px 5px;
+  font-size: 1.5rem;
+  font-weight: 580;
+}
+
 .contact-input {
   position: relative;
+  margin-bottom: 8px;
 }
 
 .contact-input input,
@@ -98,7 +137,7 @@
   margin-right: auto;
   font-size: 14px;
   color: #777777;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
@@ -202,6 +241,77 @@
   color: #777777;
 }
 
+// for dark theme
+.contact-input-dark i {
+  color: whitesmoke;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.submit-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 750px) {
+  .contact-parent {
+    display: block;
+    width: 100%;
+  }
+
+  .child1 {
+    padding: 0 0 10px;
+  }
+
+  .contact-card {
+    width: 95%;
+    margin: 10% auto;
+  }
+
+  .contact-input input,
+  .contact-btn {
+    height: 40px;
+  }
+
+  .goodbye-card {
+    width: 85%;
+    padding-top: 5px;
+  }
+
+  .card-heading {
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+    padding: 9px 0;
+  }
+
+  .inside-card p {
+    padding: 0px;
+    font-size: 1.3rem;
+  }
+
+  .contact-btn {
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    color: black;
+  }
+}
 .text-xs-center {
   text-align: center;
 }
@@ -212,56 +322,5 @@
   // for dark theme
   .contact-input-dark i {
     color: whitesmoke;
-  }
-
-  .submit-btn {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    margin: 0 auto;
-  }
-
-  .submit-btn-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media screen and (max-width: 750px) {
-    .contact-parent {
-      display: block;
-      width: 100%;
-    }
-
-    .child1 {
-      padding: 0 0 10px;
-    }
-
-    .contact-card {
-      width: 95%;
-      margin: 10% auto;
-    }
-
-    .contact-input input,
-    .contact-btn {
-      height: 40px;
-    }
-
-    .contact-btn {
-      font-size: 20px;
-    }
-
-    .submit-btn {
-      width: 60% !important;
-      margin: 0 auto;
-    }
-
-    .submit-btn-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: x-small;
-      color: black;
-    }
   }
 }

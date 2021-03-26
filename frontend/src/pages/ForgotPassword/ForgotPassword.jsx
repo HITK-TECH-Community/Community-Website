@@ -13,23 +13,28 @@ export function ForgotPassword() {
 
   const [formdata, setFormData] = useState({
     email: "",
-    trust: null,
+    // trust: null,
   });
 
   const [formerrors, setFormErrors] = useState({});
 
   const schema = {
-    email: Joi.string().email().required(),
-    trust: Joi.required(),
+    email: Joi.string().email().min(3).max(100).required(),
+    // trust: Joi.required(),
   };
 
   const validate = () => {
     const result = Joi.validate(formdata, schema, { abortEarly: false });
-    if (!result.error) return null;
+    if (!result.error) return true;
     const errors = {};
     for (let item of result.error.details) {
       errors[item.path[0]] = item.message;
     }
+    // result.error.details.map((item) => {
+    //   if (!errors[item.path[0]]) errors[item.path[0]] = item.message;
+    // });
+    // setErrorObj(errors);
+    // return false;
     return errors;
   };
 
@@ -60,6 +65,7 @@ export function ForgotPassword() {
     } else {
       //Call the Server
       console.log("Submitted");
+      submitForgotPassword();
     }
   };
 
@@ -74,11 +80,11 @@ export function ForgotPassword() {
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
     setFormErrors(errors);
-    setEmail(e.target.value);
+    // setEmail(e.target.value);
   };
 
   function submitForgotPassword(e) {
-    e.preventDefault();
+    // e.preventDefault();
     return setSubmited(true);
     // TODO : Connect with backend Api
     // return fetch(`${END_POINT}/auth/forgot-password`, {
@@ -142,12 +148,7 @@ export function ForgotPassword() {
             ) : (
               <React.Fragment>
                 <h1 className={style["card-heading"]}>Trouble Logging In?</h1>
-                <form
-                  onSubmit={() => {
-                    handleSubmit();
-                    submitForgotPassword();
-                  }}
-                >
+                <form onSubmit={handleSubmit} noValidate>
                   <div className={style["inside-card"]}>
                     <div className={`form-group ${style["form-group"]}`}>
                       <div className={style["forgot-password-input"]}>
@@ -158,20 +159,19 @@ export function ForgotPassword() {
                           name="email"
                           placeholder="Email"
                           onChange={handleChange}
-                          required="required"
                           className={style["input-forgot-password"]}
-                          onInvalid={(e) => {
-                            e.target.setCustomValidity(
-                              "Enter a valid Email Id"
-                            );
-                          }}
-                          onInput={(e) => {
-                            e.target.value?.match(
-                              new RegExp(
-                                /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-                              )
-                            ) && e.target.setCustomValidity("");
-                          }}
+                          // onInvalid={(e) => {
+                          //   e.target.setCustomValidity(
+                          //     "Enter a valid Email Id"
+                          //   );
+                          // }}
+                          // onInput={(e) => {
+                          //   e.target.value?.match(
+                          //     new RegExp(
+                          //       /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
+                          //     )
+                          //   ) && e.target.setCustomValidity("");
+                          // }}
                         />
                         <i className="fas fa-at"></i>
                         <div
@@ -180,6 +180,7 @@ export function ForgotPassword() {
                           {formerrors["email"] && (
                             <div>* {formerrors["email"]}</div>
                           )}
+                          {/* {errorObj["email"] && <div>* {errorObj["email"]}</div>} */}
                         </div>
                       </div>
                     </div>

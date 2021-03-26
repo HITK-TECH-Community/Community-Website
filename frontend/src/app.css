@@ -1,29 +1,29 @@
 /* Golbal CSS File */
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 :root {
-	--primary-color: #081624;
-	--secondary-color: #0a183d;
-	--accent-color: #ff005a;
+  --primary-color: #081624;
+  --secondary-color: #0a183d;
+  --accent-color: #ff005a;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: "Nunito", sans-serif;
-	/* font-family: 'Futura LT Book', sans-serif; */
-	font-size: 1rem;
-	background-color: whitesmoke;
-	color: #000;
+  font-family: "Nunito", sans-serif;
+  /* font-family: 'Futura LT Book', sans-serif; */
+  font-size: 1rem;
+  background-color: whitesmoke;
+  color: #000;
 }
 
 .content {
-	margin: auto;
-	overflow: hidden;
-	padding: 1.5rem 0;
+  margin: auto;
+  overflow: hidden;
+  padding: 1.5rem 0;
 }
 
 /* Temproary CSS [for dummy text] */
@@ -33,65 +33,65 @@ body {
 .contact-us,
 .faqs,
 .admin {
-	font-family: "PT Sans", sans-serif;
-	display: flex;
-	height: 90vh;
-	align-items: center;
-	justify-content: center;
-	color: rgb(36, 35, 35);
+  font-family: "PT Sans", sans-serif;
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  color: rgb(36, 35, 35);
 }
 
 /* For the sticky footer */
 .Container {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .Footer {
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 /* Media Query for Small Devices */
 @media screen and (max-width: 600px) {
-	.about-us,
-	.resources,
-	.broadcasts,
-	.contact-us,
-	.faqs,
-	.admin {
-		font-size: 1rem;
-	}
+  .about-us,
+  .resources,
+  .broadcasts,
+  .contact-us,
+  .faqs,
+  .admin {
+    font-size: 1rem;
+  }
 
-	.content {
-		margin: auto;
-		overflow: hidden;
-		padding: 1rem 1.2rem;
-	}
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1rem 1.2rem;
+  }
 }
 
 /* Media Query for Medium Size Devices */
 @media screen and (min-width: 600px) and (max-width: 1050px) {
-	.content {
-		margin: auto;
-		overflow: hidden;
-		padding: 1.5rem 3.5rem;
-	}
+  .content {
+    margin: auto;
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
+  }
 }
 
 /* scroll--bar styles */
 ::-webkit-scrollbar {
-	width: 15px;
-	height: 4px;
+  width: 15px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #1c1c1c;
-	border-left: 9px solid #1c1c1c;
-	border-right: 9px solid #1c1c1c;
+  background: #1c1c1c;
+  border-left: 9px solid #1c1c1c;
+  border-right: 9px solid #1c1c1c;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(#69a9dd, #121f3a);
-	border-left: 5px solid #1c1c1c;
-	border-right: 5px solid #1c1c1c;
-	border-radius: 30px;
+  background-image: linear-gradient(#69a9dd, #121f3a);
+  border-left: 5px solid #1c1c1c;
+  border-right: 5px solid #1c1c1c;
+  border-radius: 30px;
 }

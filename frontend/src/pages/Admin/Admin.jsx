@@ -14,6 +14,7 @@ import { Faq } from "./Components/Faq";
 import { Setting } from "./Components/Setting";
 import { Invite } from "./Components/Setting/Invite";
 import { Manage } from "./Components/Setting/Manage";
+import { ResetPassword } from "./Components/Setting/ResetPassword/ResetPassword";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
@@ -213,6 +214,8 @@ export const Admin = () => {
             <ManageTeams />
           ) : tab === 14 ? (
             <AddTeamMember />
+          ) : tab === 15 ? (
+            <ResetPassword />
           ) : null}
         </div>
       </div>

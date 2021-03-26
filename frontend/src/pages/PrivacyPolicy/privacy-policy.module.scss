@@ -4,6 +4,7 @@
   align-items: center;
   margin: 0 15% 3rem 15%;
   color: white;
+  text-align: justify;
 }
 
 .pp-logo {
@@ -22,7 +23,7 @@
 
 .pp-content {
   color: black;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -37,7 +38,7 @@ li {
 }
 
 .pp-subheading {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 900;
   color: var(--secondary-color);
 }
@@ -54,5 +55,13 @@ li {
 
   .pp-statement-container {
     margin: 2rem 4vw;
+  }
+
+  .pp-content {
+    font-size: 1rem;
+  }
+
+  .pp-subheading {
+    font-size: 1.3rem;
   }
 }

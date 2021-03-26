@@ -20,7 +20,6 @@ const useStyles = makeStyles(() => ({
 
 export const About = (props) => {
   let dark = props.theme;
-  console.log("Theme changed in the about page", dark);
 
   const classes = useStyles();
   return (

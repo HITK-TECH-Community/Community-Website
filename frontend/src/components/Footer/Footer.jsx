@@ -52,7 +52,6 @@ export const Footer = () => {
     const isValid = validation();
     if (isValid) {
       setSubmited(true);
-      console.log("Successfully subscribed for our newsletter!");
       //resetting email value in state after submission of form
       setEmail("");
     }

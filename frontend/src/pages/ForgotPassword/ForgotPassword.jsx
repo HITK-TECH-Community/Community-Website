@@ -2,25 +2,21 @@ import React, { useState } from "react";
 import Joi from "joi-browser";
 import { Button1, Button2 } from "../../components/util/Button/index";
 import style from "./ForgotPassword.module.scss";
-// import { END_POINT } from "../../config/api";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 
 export function ForgotPassword() {
-  const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
   const [submited, setSubmited] = useState(false);
 
   const [formdata, setFormData] = useState({
     email: "",
-    // trust: null,
   });
 
   const [formerrors, setFormErrors] = useState({});
 
   const schema = {
     email: Joi.string().email().min(3).max(100).required(),
-    // trust: Joi.required(),
   };
 
   const validate = () => {
@@ -30,11 +26,6 @@ export function ForgotPassword() {
     for (let item of result.error.details) {
       errors[item.path[0]] = item.message;
     }
-    // result.error.details.map((item) => {
-    //   if (!errors[item.path[0]]) errors[item.path[0]] = item.message;
-    // });
-    // setErrorObj(errors);
-    // return false;
     return errors;
   };
 
@@ -80,26 +71,10 @@ export function ForgotPassword() {
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
     setFormErrors(errors);
-    // setEmail(e.target.value);
   };
 
   function submitForgotPassword(e) {
-    // e.preventDefault();
     return setSubmited(true);
-    // TODO : Connect with backend Api
-    // return fetch(`${END_POINT}/auth/forgot-password`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({email}),
-    // }).then((response) =>response.json()).then((res) => {
-    //   if (res.status === 200) {
-    //     setSubmited(true)
-    //   } else {
-    //     setStatus("Some Error Occured");
-    //   }
-    // });
   }
 
   return (

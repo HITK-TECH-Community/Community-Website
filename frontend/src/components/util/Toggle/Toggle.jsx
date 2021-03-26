@@ -3,7 +3,6 @@ import style from "./toggle.module.scss";
 
 export const Toggle = (props) => {
   const mobile = props.class;
-  console.log("Here", mobile);
   return (
     <div className={`${style["container"]} ${mobile}`}>
       <input

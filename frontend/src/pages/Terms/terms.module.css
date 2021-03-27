@@ -12,6 +12,15 @@
 
 .agreement {
   padding: 60px 20px 60px 20px;
+  font-size: 1.2rem;
+}
+
+.agreement b {
+  font-size: 1.3rem;
+}
+
+.agreement h3 {
+  font-size: 1.7rem;
 }
 
 .terms h1 {
@@ -35,4 +44,15 @@
     font-size: 45px;
   }
 
+  .agreement b {
+    font-size: 15px;
+  }
+
+  .agreement {
+    font-size: 15px;
+  }
+
+  .agreement h3 {
+    font-size: 20px;
+  }
 }

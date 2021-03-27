@@ -442,6 +442,10 @@ input[type="date"]:not(:valid):before {
     display: block;
   }
 
+  .radio-item {
+    display: inline-flex;
+  }
+
   .radio-buttons {
     margin-bottom: 1rem;
   }

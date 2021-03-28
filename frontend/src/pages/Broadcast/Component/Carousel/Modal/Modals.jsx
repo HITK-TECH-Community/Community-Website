@@ -5,6 +5,7 @@ import Fade from "@material-ui/core/Fade";
 import style from "./modals.module.scss";
 
 export function Modals(props) {
+  let dark = props.theme;
   return (
     <div>
       <Modal
@@ -20,10 +21,29 @@ export function Modals(props) {
         }}
       >
         <Fade in={props.open}>
-          <div className={style["modals"]}>
-            <h1 className={style["mod_head"]}>
+          <div
+            className={
+              dark
+                ? `${style["modals-dark"]} ${style["modals"]}`
+                : `${style["modals-light"]} ${style["modals"]}`
+            }
+          >
+            <h1
+              className={
+                dark
+                  ? `${style["mod_head-dark"]} ${style["mod_head"]}`
+                  : `${style["mod_head-light"]} ${style["mod_head"]}`
+              }
+            >
               <span className={style["heading"]}>{props.data.head}</span>
-              <span onClick={props.handleClose} className={style["close-btn"]}>
+              <span
+                onClick={props.handleClose}
+                className={
+                  dark
+                    ? `${style["close-btn-dark"]} ${style["close-btn"]}`
+                    : `${style["close-btn-light"]} ${style["close-btn"]}`
+                }
+              >
                 <i class="fas fa-times"></i>
               </span>
             </h1>
@@ -35,7 +55,15 @@ export function Modals(props) {
               />
               <div className={style["cont"]}>{props.data.desc}</div>
             </div>
-            <h1 className={style["link"]}>Link</h1>
+            <h1
+              className={
+                dark
+                  ? `${style["link-dark"]} ${style["link"]}`
+                  : `${style["link-light"]} ${style["link"]}`
+              }
+            >
+              Link
+            </h1>
           </div>
         </Fade>
       </Modal>

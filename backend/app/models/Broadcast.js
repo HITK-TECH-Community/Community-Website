@@ -19,7 +19,7 @@ const broadcastSchema = new Schema(
       type: Array,
     },
     category: {
-      type: String,
+      type: Array,
     },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }

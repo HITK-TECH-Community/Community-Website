@@ -5,6 +5,6 @@ const { authMiddleware } = require('../../../helpers/middlewares/auth');
 const { addBroadcastValidation } = require('./@validationSchema');
 const addBroadcast = require('./addBroadcast');
 
-router.post('/add', validationMiddleware(addBroadcastValidation), authMiddleware, addBroadcast);
+router.post('/', validationMiddleware(addBroadcastValidation), authMiddleware, addBroadcast);
 
 module.exports = router;

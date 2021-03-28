@@ -8,7 +8,7 @@
     "start": "node index.js",
     "lint": "eslint . --format table",
     "lint:fix": "eslint . --fix --format table",
-    "test": "mocha"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",

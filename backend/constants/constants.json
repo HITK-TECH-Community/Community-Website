@@ -9,5 +9,6 @@
   },
   "PAGINATION_LIMIT": {
     "GET_ADMINS": 3
-  }
+  },
+  "JWT_EMAIL_EXPIRES_IN": "1h"
 }

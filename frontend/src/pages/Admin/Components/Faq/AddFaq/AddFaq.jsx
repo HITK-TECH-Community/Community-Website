@@ -33,7 +33,7 @@ export class AddFaq extends React.Component {
         )
       ) {
         formIsValid = false;
-        errors["question"] = "* Question should consists 8 characters";
+        errors["question"] = "* Question should consists maximum 8 characters";
       }
     }
 
@@ -45,7 +45,7 @@ export class AddFaq extends React.Component {
         )
       ) {
         formIsValid = false;
-        errors["answer"] = "* Answer should consists 8 characters";
+        errors["answer"] = "* Answer should consists maximum 8 characters";
       }
     }
     this.setState({ errors: errors });
@@ -83,26 +83,33 @@ export class AddFaq extends React.Component {
                 <input
                   id="question"
                   type="text"
-                  required="required"
                   name="question"
                   placeholder="Question"
                   onChange={this.handleChange.bind(this, "question")}
                   value={this.state.fields["question"]}
                 />
                 <i className="fas fa-question-circle"></i>
+                <br />
+                <div className={`${styles["validation"]} validation`}>
+                  <div>{this.state.errors["question"]}</div>
+                </div>
+                <br />
               </div>
               
               <div className={styles["faq-input"]}>
                 <input
                   id="answer"
                   type="text"
-                  required="required"
                   name="answer"
                   placeholder="Answer"
                   onChange={this.handleChange.bind(this, "answer")}
                   value={this.state.fields["answer"]}
                 />
                 <i className="fas fa-comment-dots"></i>
+                <br />
+                <div className={`${styles["validation"]} validation`}>
+                  <div>{this.state.errors["answer"]}</div>
+                </div>
                 <br />
               </div>
               <div className={styles["submit-btn"]}>
@@ -114,13 +121,7 @@ export class AddFaq extends React.Component {
               </div>
               </form>
             </div> 
-            <div
-                className={`${styles["validation"]} validation d-sm-none d-md-block`}
-              >
-                <div>{this.state.errors["question"]}</div>
-                <br />
-                <div>{this.state.errors["answer"]}</div>
-              </div> 
+             
           </div>
         </div>
       </div>

@@ -79,7 +79,7 @@ export const Footer = () => {
           ) : (
             <React.Fragment>
               <div className={style["newsletter"]}>
-                <h2 className={style["nav-title"]}>
+                <h2 className={style["footer-logo"]}>
                   Sign Up for our Newsletter
                 </h2>
                 <p>

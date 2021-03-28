@@ -7,8 +7,8 @@ const server = require('../index');
 chai.use(chaiHttp);
 
 before((done) => {
-  // Clearing the test database before testing
-  Admin.remove({}, () => {
+  // Removing the test admin data before running all the test cases
+  Admin.remove({ email: 'john@wick.com' }, () => {
     done();
   });
 });
@@ -38,28 +38,6 @@ describe('Forgot password tests', () => {
         expect(res.body.firstName).to.equal(adminData.firstName);
         expect(res.body.lastName).to.equal(adminData.lastName);
         expect(res.body.isSuperAdmin).to.equal(true);
-        done();
-      });
-  });
-
-  // Step 2 - We log in the admin using the above credentials
-  it('Logging in with the old password', (done) => {
-    const adminData = {
-      email: 'john@wick.com',
-      password: '123asd',
-    };
-
-    chai
-      .request(server)
-      .post('/auth/login')
-      .send(adminData)
-      .end((err, res) => {
-        expect(err).to.equal(null);
-        expect(res.status).to.equal(200);
-        expect(res.body.name).to.equal('john wick');
-        expect(res.body.email).to.equal(adminData.email);
-        expect(res.body.isSuperAdmin).to.equal(true);
-        expect(res.body.token).to.be.a('string');
         done();
       });
   });

@@ -20,8 +20,7 @@ module.exports = async (req, res, next) => {
 
   // Setting EMAIL as the token payload
   const JWTPayload = { email };
-  const JWT_EXPIRY_TIME = '1h';
-  const token = await generateJWT(JWTPayload, JWT_EXPIRY_TIME);
+  const token = await generateJWT(JWTPayload, constants.JWT_EMAIL_EXPIRES_IN);
 
   // Sending the reset password URL as a response (http://localhost:3500/:token)
   res.status(200).send({

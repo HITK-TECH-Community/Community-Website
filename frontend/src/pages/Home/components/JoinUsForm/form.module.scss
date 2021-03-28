@@ -423,7 +423,7 @@ input[type="date"]:not(:valid):before {
 
 @media only screen and (max-width: 640px) {
   .label {
-    margin-left: 0 !important;
+    margin-left: 1rem !important;
     margin-right: 0 !important;
   }
 
@@ -442,12 +442,12 @@ input[type="date"]:not(:valid):before {
     display: block;
   }
 
-  .radio-buttons {
-    margin-bottom: 1rem;
+  .radio-item {
+    display: inline-flex;
   }
 
-  .join-us-form-input1 {
-    text-align: center;
+  .radio-buttons {
+    margin-bottom: 1rem;
   }
 
   .check-buttons {

@@ -5,6 +5,7 @@
   padding-bottom: 15px;
 }
 
+//for dark theme
 #main-dark {
   display: flex;
   flex-direction: column;
@@ -61,10 +62,12 @@
   transition: background 0.3s ease-out;
 }
 
+// for dark theme
 .card-item-dark {
   background: #171717;
   color: whitesmoke !important;
-  box-shadow: 1em 1em 1em rgba(72, 127, 255, 0.1);
+  box-shadow: 1em 1em 1em rgba(72, 127, 255, 0.4);
+  border: 2px solid #016795;
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1em;
@@ -75,6 +78,7 @@
   transition: background 0.3s ease-out;
 }
 
+// for dark theme
 .clickable-card-dark {
   display: flex;
   flex-direction: column;
@@ -100,6 +104,7 @@
   font-weight: bold;
 }
 
+//for dark theme
 .card-title-dark {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -119,8 +124,9 @@
   background-color: #1b2431;
 }
 
+//for dark theme
 .card-item-dark:hover {
-  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
   color: whitesmoke;
   cursor: pointer;
 }

@@ -1,7 +1,23 @@
+.main-dark {
+  background-color: #171717;
+}
+
+.terms-section-dark {
+  background-color: #171717;
+}
+
 .terms {
   color: white;
   background-color: hsl(210, 64%, 9%);
   padding: 40px 40px 40px 40px;
+}
+
+.terms-dark {
+  color: #69a9dd;
+  background-color: hsl(210, 64%, 9%);
+  padding: 40px 40px 40px 40px;
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .terms-img {
@@ -15,12 +31,36 @@
   font-size: 1.2rem;
 }
 
+.agreement-dark {
+  padding: 60px 20px 60px 20px;
+  font-size: 1.2rem;
+}
+
+.agreement-dark b,
+.agreement a {
+  font-size: 1.3rem;
+  color: #69a9dd;
+}
+
+.agreement a {
+  color: #69a9dd;
+}
+
+.agreement-dark p {
+  color: whitesmoke;
+}
+
 .agreement b {
   font-size: 1.3rem;
 }
 
 .agreement h3 {
   font-size: 1.7rem;
+}
+
+.agreement-dark h3 {
+  font-size: 1.7rem;
+  color: #69a9dd;
 }
 
 .terms h1 {
@@ -31,8 +71,20 @@
   text-shadow: 2px 2px grey;
 }
 
+.terms-dark h1 {
+  color: #69a9dd;
+  font-weight: 900;
+  font-family: "Futura LT Book";
+  font-size: 55px;
+  text-shadow: 2px 2px #99cdf7;
+}
+
 .contact-info {
   color: rgb(63, 61, 61);
+}
+
+.contact-info-dark {
+  color: #69a9dd;
 }
 
 @media only screen and (max-width: 600px) {
@@ -44,7 +96,15 @@
     font-size: 45px;
   }
 
+  .terms-dark h1 {
+    font-size: 45px;
+  }
+
   .agreement b {
+    font-size: 15px;
+  }
+
+  .agreement-dark b {
     font-size: 15px;
   }
 
@@ -52,7 +112,15 @@
     font-size: 15px;
   }
 
+  .agreement-dark {
+    font-size: 15px;
+  }
+
   .agreement h3 {
+    font-size: 20px;
+  }
+
+  .agreement-dark h3 {
     font-size: 20px;
   }
 }

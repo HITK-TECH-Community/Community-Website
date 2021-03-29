@@ -2,6 +2,14 @@
   background-color: #f7f7f7;
 }
 
+.main-dark {
+  background-color: #171717;
+}
+
+.not-found-dark {
+  background-color: #171717;
+}
+
 .error {
   display: flex;
   flex-direction: column;
@@ -17,8 +25,21 @@
   object-fit: cover;
 }
 
+.error-logo-dark {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: #171717;
+}
+
 .error-content {
   color: black;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-content-dark {
+  color: whitesmoke;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
@@ -27,6 +48,12 @@
   font-size: 2rem;
   font-weight: 900;
   color: var(--secondary-color);
+}
+
+.error-text-dark {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #69a9dd;
 }
 
 @media screen and (max-width: 750px) {

@@ -5,7 +5,8 @@ import style from "./footer.module.scss";
 //react-icon
 import { FiCheckSquare } from "react-icons/fi";
 
-export const Footer = () => {
+export const Footer = (props) => {
+  let dark = props.theme;
   const [submited, setSubmited] = useState(false);
   //email state
   const [email, setEmail] = useState("");
@@ -59,7 +60,13 @@ export const Footer = () => {
 
   return (
     <React.Fragment>
-      <footer className={style["footer"]}>
+      <footer
+        className={
+          dark
+            ? `${style["footer"]} ${style["footer-dark"]}`
+            : `${style["footer"]}`
+        }
+      >
         <div className={style["footer-addr"]}>
           <h1 className={style["footer-logo"]}>HITK Tech Community</h1>
           <address>
@@ -69,8 +76,20 @@ export const Footer = () => {
           </address>
           {submited ? (
             <React.Fragment>
-              <div className={style["subscribe-card"]}>
-                <h1 className={style["card-heading"]}>
+              <div
+                className={
+                  dark
+                    ? `${style["subscribe-card"]} ${style["subscribe-card-dark"]}`
+                    : `${style["subscribe-card"]} `
+                }
+              >
+                <h1
+                  className={
+                    dark
+                      ? `${style["card-heading"]} ${style["card-heading-dark"]}`
+                      : `${style["card-heading"]} `
+                  }
+                >
                   successfully subscribed to our newsletter
                   <FiCheckSquare className={style["newsletter-icon"]} />
                 </h1>
@@ -91,9 +110,14 @@ export const Footer = () => {
                   onSubmit={handleSubmit}
                 >
                   <input
+                    autoComplete="off"
                     type="text"
                     name="email"
-                    className={`${style["input-field-footer"]} py-2`}
+                    className={
+                      dark
+                        ? `${style["input-field-footer"]} ${style["input-field-footer-dark"]}`
+                        : `${style["input-field-footer"]}`
+                    }
                     placeholder="Email Id"
                     onChange={handleEmailChange}
                     value={email}
@@ -111,7 +135,11 @@ export const Footer = () => {
                   })}
                   <button
                     type="submit"
-                    className={`mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 `}
+                    className={
+                      dark
+                        ? `mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 mt-3 mt-md-0 ${style["submit-btn-footer-dark"]} py-2 px-3 `
+                        : `mt-3 mt-md-0 ${style["submit-btn-footer"]} py-2 px-3 `
+                    }
                   >
                     Sign Up
                   </button>
@@ -261,8 +289,20 @@ export const Footer = () => {
             </div>
           </li>
         </ul>
-        <div className={style["footer-dash"]}>
-          <div className={style["footer-text"]}>
+        <div
+          className={
+            dark
+              ? `${style["footer-dash"]} ${style["footer-dash-dark"]}`
+              : `${style["footer-dash"]}`
+          }
+        >
+          <div
+            className={
+              dark
+                ? `${style["footer-text"]} ${style["footer-text-dark"]}`
+                : `${style["footer-text"]}`
+            }
+          >
             <p>
               Made with{" "}
               <i className="fas fa-heart" style={{ color: "#DB3328" }}></i> by
@@ -272,7 +312,13 @@ export const Footer = () => {
         </div>
       </footer>
 
-      <div className={style["cprt-text"]}>
+      <div
+        className={
+          dark
+            ? `${style["cprt-text"]} ${style["cprt-text-dark"]}`
+            : `${style["cprt-text"]}`
+        }
+      >
         <p className={`${style["cprt"]} py-2`}>
           Copyright © 2020 HITK Tech Community
         </p>

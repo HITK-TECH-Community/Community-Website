@@ -56,6 +56,7 @@ export const ContactUs = (props) => {
       if (formData[key] === "" || formData[key] === null) {
         errors[key] = `${key} is required`;
       }
+      return 0;
     });
     if (errors !== 0) {
       setFormErrors(errors);

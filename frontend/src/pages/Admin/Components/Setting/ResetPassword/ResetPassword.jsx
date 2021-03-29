@@ -12,6 +12,7 @@ export function ResetPassword() {
   const [hideOldPassword, setHideOldPassword] = useState(false);
   const [hideNewPassword, setHideNewPassword] = useState(false);
   const [hideConfirmPassword, setHideConfirmPassword] = useState(false);
+  const [passwordChanged, setPasswordChange] = useState(false);
   const oldPasswordInput = useRef("oldpassword");
   const newPasswordInput = useRef("newpassword");
   const confirmPasswordInput = useRef("confirmpassword");
@@ -61,6 +62,7 @@ export function ResetPassword() {
       .then((response) => {
         if (response.status === 200) {
           setOpenSuccessToast(true);
+          setPasswordChange(true);
         }
         response
           .json()
@@ -86,68 +88,88 @@ export function ResetPassword() {
       </div>
       <div className={style["admin_section"]}>
         <div className={style["admin_card"]}>
-          <h1 className={style["h1"]}>Reset Password</h1>
-          <form onSubmit={handleSubmit}>
-            <div className={style["inside_admin"]}>
-              <div className={style["form_row"]}></div>
-              <div className={style["admin_input"]}>
-                <input
-                  placeholder="Old Password"
-                  id="oldpassword"
-                  name="oldpassword"
-                  type={oldPasswordInput.current}
-                  onChange={(e) => {
-                    setOldPassword(e.currentTarget.value);
-                  }}
-                />
-                <i
-                  className={hideOldPassword ? "fa fa-eye" : "fa fa-eye-slash"}
-                  onClick={() => setHideOldPassword(!hideOldPassword)}
-                ></i>
+          {passwordChanged ? (
+            <React.Fragment>
+              <h1 className={style["card-heading"]}>Password Changed</h1>
+              <div className={style["inside-card"]}>
+                <p style={{ textAlign: "center" }}>
+                  You have successfully changed your password 🎉
+                </p>
+                <br />
               </div>
-              <div className={style["admin_input"]}>
-                <input
-                  placeholder="New Password"
-                  id="newpassword"
-                  name="newpassword"
-                  type={newPasswordInput.current}
-                  onChange={(e) => {
-                    setNewPassword(e.currentTarget.value);
-                  }}
-                />
-                <i
-                  className={hideNewPassword ? "fa fa-eye" : "fa fa-eye-slash"}
-                  onClick={() => setHideNewPassword(!hideNewPassword)}
-                ></i>
-              </div>
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <h1 className={style["h1"]}>Reset Password</h1>
+              <form onSubmit={handleSubmit}>
+                <div className={style["inside_admin"]}>
+                  <div className={style["form_row"]}></div>
+                  <div className={style["admin_input"]}>
+                    <input
+                      placeholder="Old Password"
+                      id="oldpassword"
+                      name="oldpassword"
+                      type={oldPasswordInput.current}
+                      onChange={(e) => {
+                        setOldPassword(e.currentTarget.value);
+                      }}
+                    />
+                    <i
+                      className={
+                        hideOldPassword ? "fa fa-eye" : "fa fa-eye-slash"
+                      }
+                      onClick={() => setHideOldPassword(!hideOldPassword)}
+                    ></i>
+                  </div>
+                  <div className={style["admin_input"]}>
+                    <input
+                      placeholder="New Password"
+                      id="newpassword"
+                      name="newpassword"
+                      type={newPasswordInput.current}
+                      onChange={(e) => {
+                        setNewPassword(e.currentTarget.value);
+                      }}
+                    />
+                    <i
+                      className={
+                        hideNewPassword ? "fa fa-eye" : "fa fa-eye-slash"
+                      }
+                      onClick={() => setHideNewPassword(!hideNewPassword)}
+                    ></i>
+                  </div>
 
-              <div className={style["admin_input"]}>
-                <input
-                  placeholder="Confirm Password"
-                  id="conformpassword"
-                  name="confirmpassword"
-                  type={confirmPasswordInput.current}
-                  onChange={(e) => {
-                    setConfirmPassword(e.currentTarget.value);
-                  }}
-                />
-                <i
-                  className={
-                    hideConfirmPassword ? "fa fa-eye" : "fa fa-eye-slash"
-                  }
-                  onClick={() => setHideConfirmPassword(!hideConfirmPassword)}
-                ></i>
-              </div>
+                  <div className={style["admin_input"]}>
+                    <input
+                      placeholder="Confirm Password"
+                      id="conformpassword"
+                      name="confirmpassword"
+                      type={confirmPasswordInput.current}
+                      onChange={(e) => {
+                        setConfirmPassword(e.currentTarget.value);
+                      }}
+                    />
+                    <i
+                      className={
+                        hideConfirmPassword ? "fa fa-eye" : "fa fa-eye-slash"
+                      }
+                      onClick={() =>
+                        setHideConfirmPassword(!hideConfirmPassword)
+                      }
+                    ></i>
+                  </div>
 
-              <div className={style["submit-btn"]}>
-                <Button2
-                  className={style["submit-btn-text"]}
-                  label="Submit"
-                  type="submit"
-                />
-              </div>
-            </div>
-          </form>
+                  <div className={style["submit-btn"]}>
+                    <Button2
+                      className={style["submit-btn-text"]}
+                      label="Submit"
+                      type="submit"
+                    />
+                  </div>
+                </div>
+              </form>
+            </React.Fragment>
+          )}
         </div>
       </div>
       <SimpleToast

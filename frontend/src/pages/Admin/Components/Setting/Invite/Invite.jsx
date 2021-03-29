@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Button2 } from "../../../../../components/util/Button";
 import style from "./Invite.module.scss";
 import Joi from "joi-browser";
+
 export function Invite() {
   const [formdata, setFormData] = useState({
     email: "",
   });
+
   const [formerrors, setFormErrors] = useState({});
   const schema = {
     email: Joi.string().email().required(),
   };
+
   const validate = () => {
     const result = Joi.validate(formdata, schema, { abortEarly: false });
     if (!result.error) return null;
@@ -19,6 +22,7 @@ export function Invite() {
     }
     return errors;
   };
+
   const validateProperty = (input) => {
     const { name, value } = input;
     const obj = { [name]: value };
@@ -26,25 +30,28 @@ export function Invite() {
     const result = Joi.validate(obj, obj_schema);
     return result.error ? result.error.details[0].message : null;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validate();
-    Object.keys(formdata).map((key) => {
-      if (formdata[key] === "" || formdata[key] === null) {
-        errors[key] = `${key} is not allowed to be empty`;
-      }
-    });
-    if (errors["info"]) {
-      delete errors["info"];
-    }
-    if (Object.keys(errors).length !== 0) {
-      setFormErrors(errors);
-    }
-    if (Object.keys(errors).length !== 0) {
-      console.log(errors);
-    } else {
-      //Call the Server
+    if (errors === null) {
       console.log("Submitted");
+    } else {
+      Object.keys(formdata).map((key) => {
+        if (formdata[key] === "" || formdata[key] === null) {
+          errors[key] = `${key} is not allowed to be empty`;
+        }
+        return 0;
+      });
+      if (Object.keys(errors).length !== 0) {
+        setFormErrors(errors);
+      }
+      if (Object.keys(errors).length !== 0) {
+        console.log(errors);
+      } else {
+        //Call the Server
+        console.log("Submitted");
+      }
     }
   };
   const handleChange = (e) => {

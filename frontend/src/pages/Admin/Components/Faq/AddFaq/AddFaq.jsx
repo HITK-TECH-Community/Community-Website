@@ -90,8 +90,8 @@ export class AddFaq extends React.Component {
                 />
                 <i className="fas fa-question-circle"></i>
                 <br />
-                <div className={`${styles["validation"]} validation`}>
-                  <div>{this.state.errors["question"]}</div>
+                <div>
+                  <div className={`${styles["validation"]} validation`}>{this.state.errors["question"]}</div>
                 </div>
                 <br />
               </div>
@@ -107,8 +107,8 @@ export class AddFaq extends React.Component {
                 />
                 <i className="fas fa-comment-dots"></i>
                 <br />
-                <div className={`${styles["validation"]} validation`}>
-                  <div>{this.state.errors["answer"]}</div>
+                <div>
+                  <div className={`${styles["validation"]} validation`}>{this.state.errors["answer"]}</div>
                 </div>
                 <br />
               </div>

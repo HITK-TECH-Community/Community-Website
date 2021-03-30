@@ -17,7 +17,7 @@ const getTokenFromHeader = async (req) => {
   throw error;
 };
 
-const verifyToken = async (token) => verify(token, config.JWT_SECRET_KEY)
+const verifyToken = async (token) => verify(token, config.JWT_SECRET_KEY);
 
 const authMiddleware = async (req, res, next) => {
   const [err, token] = await to(getTokenFromHeader(req));
@@ -25,11 +25,8 @@ const authMiddleware = async (req, res, next) => {
     next(err);
   }
 
-  const verifyP = await to(verifyToken(token));
-
   const [err2, payload] = await to(verifyToken(token));
   if (err2) {
-
     const error = new ErrorHandler(constants.ERRORS.AUTH, {
       statusCode: 401,
       errStack: err2,

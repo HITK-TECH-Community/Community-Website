@@ -229,8 +229,8 @@
   font-size: 20px;
   text-align: center;
   margin-top: 0px;
+  margin-left: 35px;
   margin-right: 50px;
-  margin-left: 0px;
   margin-bottom: 40px;
   transition: 0.5s;
   float: left;
@@ -348,6 +348,8 @@ a > span {
 .col .social,
 .col .social * {
   box-sizing: content-box;
+  display: block;
+  margin: auto;
 }
 
 .newsletter {

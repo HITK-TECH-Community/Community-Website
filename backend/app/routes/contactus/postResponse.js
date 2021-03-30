@@ -2,14 +2,15 @@ const to = require('await-to-js').default;
 const ContactUs = require('../../models/ContactUs');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-// TODO:const { sendEmail } = require('../../../helpers/emailService');
+const getAdmins = require('./getAdmins');
+const sendEmails = require('./sendEmails');
 
 module.exports = async (req, res, next) => {
   const contactusData = {
     ...req.body,
   };
 
-  const [err, contactUsResponse] = await to(ContactUs.create(contactusData));
+  const [err, response] = await to(ContactUs.create(contactusData));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -20,16 +21,13 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
 
-  // TODO:SEND EMAIL TO ALL ADMINS
+  const getAdminEmails = await getAdmins(req, res, next);
 
-  // eslint-disable-next-line no-underscore-dangle
-  const responseDoc = { ...contactUsResponse._doc };
+  await sendEmails(req, res, getAdminEmails, next);
+
   res.status(200).send({
-    status: 'Success, Your response has been submitted',
-    name: responseDoc.name,
-    email: responseDoc.email,
-    subject: responseDoc.subject,
-    message: responseDoc.message,
+    message: 'Your request has been submitted!',
+    your_response: response,
   });
   return next();
 };

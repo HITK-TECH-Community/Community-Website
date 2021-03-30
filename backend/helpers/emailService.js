@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports.sendEmail = async (email, data, type, next) => {
+module.exports.sendEmail = async (email, data, type) => {
   const template = getMailTemplate(type);
   const { subject } = template;
   let { text } = template;
@@ -37,7 +37,7 @@ module.exports.sendEmail = async (email, data, type, next) => {
       errorStack: err,
       user: email,
     });
-    return next(error);
+    throw error;
   }
   return response;
 };

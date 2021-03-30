@@ -30,6 +30,7 @@ export function Login() {
     const errors = {};
     check.error.details.map((item) => {
       if (!errors[item.path[0]]) errors[item.path[0]] = item.message;
+      return 0;
     });
     setErrorObj(errors);
     return false;

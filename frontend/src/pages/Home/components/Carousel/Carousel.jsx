@@ -8,7 +8,6 @@ import style2 from "./carousel.module.scss";
 
 export function Carousel(props) {
   let dark = props.theme;
-
   const options = {
     loop: true,
     margin: 45,

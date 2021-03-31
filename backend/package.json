@@ -8,7 +8,7 @@
     "start": "node index.js",
     "lint": "eslint . --format table",
     "lint:fix": "eslint . --fix --format table",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests --recursive --timeout 15000"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   "dependencies": {
     "argon2": "^0.27.1",
     "await-to-js": "^2.1.1",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "colors": "^1.4.0",
     "config": "^3.3.3",
     "cors": "^2.8.5",
@@ -33,6 +35,7 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
+    "mocha": "^8.3.2",
     "mongoose": "^5.11.8",
     "nanoid": "^3.1.20",
     "nodemailer": "^6.5.0",

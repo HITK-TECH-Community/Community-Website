@@ -3,8 +3,7 @@ const chaiHttp = require('chai-http');
 const mocha = require('mocha');
 const server = require('../../../index');
 
-const { describe } = mocha;
-const { it } = mocha;
+const { describe, it } = mocha;
 
 // Assertion Style
 chai.should();

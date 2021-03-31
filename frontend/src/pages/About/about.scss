@@ -2,8 +2,13 @@
   color: #1da1f2 !important;
 }
 
-.fa-twitter-square:hover {
+.fa-twitter-square-light:hover {
   color: #1e5475 !important;
+  cursor: pointer;
+}
+
+.fa-twitter-square-dark:hover {
+  color: whitesmoke !important;
   cursor: pointer;
 }
 
@@ -19,17 +24,27 @@
   color: #0e76a8 !important;
 }
 
-.in:hover {
+.in-light:hover {
   cursor: pointer;
   color: #133646 !important;
 }
 
-.fa-github-square {
-  color: rgb(153, 96, 201) !important;
+.in-dark:hover {
+  cursor: pointer;
+  color: whitesmoke !important;
 }
 
-.fa-github-square:hover {
-  color: indigo !important;
+.fa-github-square {
+  color: #6e5494 !important;
+}
+
+.fa-github-square-light:hover {
+  color: #402b5f !important;
+  cursor: pointer;
+}
+
+.fa-github-square-dark:hover {
+  color: whitesmoke !important;
   cursor: pointer;
 }
 
@@ -37,4 +52,3 @@
   color: #000;
   box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19) !important;
 }
-

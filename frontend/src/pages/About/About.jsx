@@ -84,7 +84,12 @@ export const About = (props) => {
         </div>
       </div>
       <div className={style["team"]}>
-        <Typography variant="h4">Founder and Co-Founders</Typography>
+        <Typography
+          variant="h4"
+          className={dark ? `${style["about-dark"]}` : ``}
+        >
+          Founder and Co-Founders
+        </Typography>
         <div
           className={
             dark
@@ -114,20 +119,25 @@ export const About = (props) => {
                         <i
                           href={roleObject.linkedin}
                           className={
-                            style["card-footer"] + ` fab fa-linkedin fa-2x in`
+                            dark
+                              ? `${style["card-footer"]} +  fab fa-linkedin fa-2x in in-dark`
+                              : `${style["card-footer"]} +  fab fa-linkedin fa-2x in in-light`
                           }
                         ></i>
                         <i
                           href={roleObject.twitter}
                           className={
-                            style["card-footer"] +
-                            ` fab fa-twitter-square fa-2x`
+                            dark
+                              ? `${style["card-footer"]} fab fa-twitter-square fa-twitter-square-dark fa-2x`
+                              : `${style["card-footer"]} fab fa-twitter-square fa-twitter-square-light fa-2x`
                           }
                         ></i>
                         <i
                           href={roleObject.github}
                           className={
-                            style["card-footer"] + ` fab fa-github-square fa-2x`
+                            dark
+                              ? `${style["card-footer"]} fab fa-github-square fa-github-square-dark fa-2x`
+                              : `${style["card-footer"]} fab fa-github-square fa-github-square-light fa-2x`
                           }
                         ></i>
                       </div>
@@ -157,7 +167,12 @@ export const About = (props) => {
           })}
         </div>
 
-        <Typography variant="h4">Board Members</Typography>
+        <Typography
+          variant="h4"
+          className={dark ? `${style["about-dark"]}` : ``}
+        >
+          Board Members
+        </Typography>
         <div
           className={
             dark
@@ -187,20 +202,25 @@ export const About = (props) => {
                         <i
                           href={roleObject.linkedin}
                           className={
-                            style["card-footer"] + ` fab fa-linkedin fa-2x in`
+                            dark
+                              ? `${style["card-footer"]} fab fa-linkedin fa-2x in in-dark`
+                              : `${style["card-footer"]} fab fa-linkedin fa-2x in in-light`
                           }
                         ></i>
                         <i
                           href={roleObject.twitter}
                           className={
-                            style["card-footer"] +
-                            ` fab fa-twitter-square fa-2x`
+                            dark
+                              ? `${style["card-footer"]} fab fa-twitter-square fa-twitter-square-dark fa-2x`
+                              : `${style["card-footer"]} fab fa-twitter-square fa-twitter-square-light fa-2x`
                           }
                         ></i>
                         <i
                           href={roleObject.github}
                           className={
-                            style["card-footer"] + ` fab fa-github-square fa-2x`
+                            dark
+                              ? `${style["card-footer"]} fab fa-github-square fa-github-square-dark fa-2x`
+                              : `${style["card-footer"]} fab fa-github-square fa-github-square-light fa-2x`
                           }
                         ></i>
                       </div>

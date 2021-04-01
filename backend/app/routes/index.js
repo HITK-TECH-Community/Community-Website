@@ -10,3 +10,4 @@ router.post('/emailTest', emailTest);
 router.use('/', tinyURL);
 
 module.exports = router;
+

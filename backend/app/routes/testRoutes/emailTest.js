@@ -11,7 +11,7 @@ module.exports.emailTest = async (req, res, next) => {
     const error = new ErrorHandler(constants.ERRORS.UNEXPECTED, {
       statusCode: '500',
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
-      errorStack: err,
+      errStack: err,
     });
     return next(error);
   }

@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: '500',
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
-      errorStack: err,
+      errStack: err,
     });
     return next(error);
   }

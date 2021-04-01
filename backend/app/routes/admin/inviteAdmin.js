@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
       statusCode: '500',
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
       user: res.locals.decode.email,
-      errorStack: err,
+      errStack: err,
     });
     return next(error);
   }

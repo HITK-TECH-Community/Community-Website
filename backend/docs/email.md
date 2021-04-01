@@ -49,9 +49,11 @@ For sending emails use the **sendEmail(email,data,type** function.
 
 in the .env file set the following with proper values
 
+```yaml
 EMAIL_USER=EMAIL_HERE
 EMAIL_PASS=PASSWORD_HERE
 EMAIL_HOST=HOST_PROTOCOL (for gmail - smtp.gmail.com)
+```
 
 **Note** : If you are using gmail make sure to allow less secure apps. Read [docs](https://nodemailer.com/usage/using-gmail/) for more info.
 

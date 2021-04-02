@@ -1,21 +1,46 @@
-.login-section {
+.login-section-light {
   display: flex;
   background-color: #fff;
 }
 
-.login-image {
+// for dark theme
+.login-section-dark {
+  display: flex;
+  background-color: #171717;
+}
+
+.login-image-light {
   flex: 1;
   background-color: var(--secondary-color);
 }
 
-.child1 {
+// for dark theme
+.login-image-dark {
+  flex: 1;
+  background-color: #171717;
+}
+
+.child1-light {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   background-color: #fff;
 }
 
-.login-image img {
+// for dark theme
+.child1-dark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #171717;
+}
+
+.login-image-light img {
+  max-width: 100%;
+}
+
+// for dark theme
+.login-image-dark img {
   max-width: 100%;
 }
 
@@ -32,17 +57,39 @@
 .login-card {
   width: 75%;
   height: auto;
-  background-color: #e7e7e7;
   margin: 20% auto;
   border-radius: 10px;
+}
+
+.login-card-light {
+  background-color: #e7e7e7;
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+// for dark theme
+.login-card-dark {
+  background-color: #282c35;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .card-heading {
   padding: 30px 0;
   text-align: center;
-  color: var(--secondary-color);
   text-transform: capitalize;
+}
+
+.card-heading-light {
+  color: var(--secondary-color);
+}
+
+// for dark theme
+.card-heading-dark {
+  color: #69a9dd;
 }
 
 .inside-card {
@@ -59,18 +106,30 @@
 .login-input input {
   width: 100%;
   height: 50px;
-  border: 1px solid #bbbaba;
   border-radius: 10px;
   padding: 0 25px;
   margin-left: auto;
   margin-right: auto;
   font-size: 14px;
+}
+
+.login-input-light input {
+  border: 1px solid #bbbaba;
   color: #777777;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
-.input-login:focus {
+// for dark theme
+.login-input-dark input {
+  border: 1px solid #414a4c;
+  color: whitesmoke;
+  background-color: #333333;
+  box-shadow: inset 2px 2px 5px rgba(72, 127, 255, 0.1),
+    inset -2px -2px 5px rgba(72, 127, 255, 0.4);
+}
+
+.input-login-light:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -81,7 +140,18 @@
   background-color: #ffffff;
 }
 
-.login-input input:focus {
+// for dark theme
+.input-login-dark:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
+}
+
+.login-input-light input:focus {
   border-color: #1863ff;
   outline: none;
   border: double 2px transparent;
@@ -93,17 +163,45 @@
   background-color: #ffffff;
 }
 
-.login-input input::placeholder {
+// for dark theme
+.login-input-dark input:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
+}
+
+.login-input-light input::placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.login-input input::-webkit-input-placeholder {
+.login-input-light input::-webkit-input-placeholder {
   opacity: 1;
   color: #777777;
 }
 
-.login-input input:focus {
+.login-input-light input:focus {
+  background-color: #ffffff;
+}
+
+// for dark theme
+.login-input-dark input::placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.login-input-dark input::-webkit-input-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.login-input-dark input:focus {
   background-color: #ffffff;
 }
 
@@ -111,12 +209,21 @@
   outline: none;
 }
 
-.login-input i {
+.login-input-light i {
   position: absolute;
   right: 25px;
   top: 15px;
   font-size: 16px;
   color: #777777;
+}
+
+// for dark theme
+.login-input-dark i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+  color: whitesmoke;
 }
 
 .login-input:nth-child(2) i:hover {

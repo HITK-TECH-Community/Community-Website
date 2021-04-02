@@ -1,3 +1,7 @@
+#main-dark {
+  background-color: #171717;
+}
+
 .pp-section {
   display: flex;
   flex-direction: column;
@@ -29,6 +33,14 @@
   margin-bottom: 1.5rem;
 }
 
+.pp-content-dark {
+  color: whitesmoke;
+  font-size: 1.2rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 ul {
   list-style-type: none;
 }
@@ -41,6 +53,16 @@ li {
   font-size: 1.7rem;
   font-weight: 900;
   color: var(--secondary-color);
+}
+
+.pp-subheading-dark {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #69a9dd;
+}
+
+.by-line-dark {
+  color: whitesmoke;
 }
 
 @media (orientation: portrait) {

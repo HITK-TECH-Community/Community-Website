@@ -8,7 +8,10 @@ import "./custom-owl-carousel-style.scss";
 import { Modals } from "./Modal/index.js";
 import dataa from "../../../../test_data/broadcast_text.json";
 
-export function Carousel({ head }) {
+export function Carousel(props) {
+  const head = props.head;
+  let dark = props.theme;
+
   const [open, setOpen] = useState(false);
 
   const handleOpen = (s, h, i) => {
@@ -50,11 +53,25 @@ export function Carousel({ head }) {
 
   return (
     <React.Fragment>
-      <Modals open={open} handleClose={handleClose} data={data} />
+      <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
       <div className={style["slider-div"]}>
         <div className={styles["motive"]}>
-          <h1 className={style["carousel-head"]}>{head}</h1>
-          <div className={styles["dash"]}></div>
+          <h1
+            className={
+              dark
+                ? `${style["carousel-head-dark"]} ${style["carousel-head"]}`
+                : `${style["carousel-head-light"]} ${style["carousel-head"]}`
+            }
+          >
+            {head}
+          </h1>
+          <div
+            className={
+              dark
+                ? `${style["dash"]} ${style["dash-dark"]}`
+                : `${style["dash"]} ${style["dash-light"]}`
+            }
+          ></div>
         </div>
         <OwlCarousel
           className={`${style["slide"]} owl-theme `}
@@ -64,7 +81,13 @@ export function Carousel({ head }) {
           nav={false}
         >
           {dataa.map((item, i) => (
-            <div className={style["slide-card"]}>
+            <div
+              className={
+                dark
+                  ? `${style["slide-card-dark"]} ${style["slide-card"]}`
+                  : `${style["slide-card-light"]} ${style["slide-card"]}`
+              }
+            >
               <h3 className={style["card-head"]}>{item.title}</h3>
               <div
                 className={style["card-text"]}

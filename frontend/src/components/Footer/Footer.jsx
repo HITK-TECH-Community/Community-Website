@@ -68,7 +68,11 @@ export const Footer = (props) => {
         }
       >
         <div className={style["footer-addr"]}>
-          <h1 className={style["footer-logo"]}>HITK Tech Community</h1>
+          <h1
+            className={dark ? style["footer-logo-dark"] : style["footer-logo"]}
+          >
+            HITK Tech Community
+          </h1>
           <address>
             <i className="fas fa-map-marker-alt"></i> Heritage Institute of
             Technology, Chowbaga Road, Kolkata, West Bengal - 700107, India
@@ -98,7 +102,11 @@ export const Footer = (props) => {
           ) : (
             <React.Fragment>
               <div className={style["newsletter"]}>
-                <h2 className={style["nav-title"]}>
+                <h2
+                  className={
+                    dark ? style["nav-title-dark"] : style["nav-title"]
+                  }
+                >
                   Sign Up for our Newsletter
                 </h2>
                 <p>
@@ -160,9 +168,11 @@ export const Footer = (props) => {
         </div>
         <ul className={style["footer-nav"]}>
           <li className={style["nav-item"]}>
-            <h2 className={style["nav-title"]}>Navigation</h2>
+            <h2 className={dark ? style["nav-title-dark"] : style["nav-title"]}>
+              Navigation
+            </h2>
 
-            <ul className={style["nav-ul"]}>
+            <ul className={dark ? style["nav-ul-dark"] : style["nav-ul"]}>
               <li>
                 <Link to="/about-us">About</Link>
               </li>
@@ -186,9 +196,11 @@ export const Footer = (props) => {
           </li>
 
           <li className={style["nav-item"]}>
-            <h2 className={style["nav-title"]}>Other</h2>
+            <h2 className={dark ? style["nav-title-dark"] : style["nav-title"]}>
+              Other
+            </h2>
 
-            <ul className={style["nav-ul"]}>
+            <ul className={dark ? style["nav-ul-dark"] : style["nav-ul"]}>
               <li>
                 <Link to="/privacy-policy">Privacy Policy</Link>
               </li>
@@ -203,12 +215,14 @@ export const Footer = (props) => {
             </ul>
           </li>
           <li>
-            <h2 className={style["nav-title"]}>Social</h2>
-            <ul className={style["nav-ul"]}>
+            <h2 className={dark ? style["nav-title-dark"] : style["nav-title"]}>
+              Social
+            </h2>
+            <ul className={dark ? style["nav-ul-dark"] : style["nav-ul"]}>
               <li>Be sure to give us a follow on the below social links</li>
             </ul>
             <div className={`col ${style["col"]}`}>
-              <ul className={style["social"]}>
+              <ul className={dark ? style["social-dark"] : style["social"]}>
                 <li>
                   <a
                     href="https://www.linkedin.com/company/hitk-tech-community"

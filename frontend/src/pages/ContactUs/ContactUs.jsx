@@ -225,7 +225,7 @@ export const ContactUs = (props) => {
                         data-sitekey="my-public-key"
                       >
                         <Recaptcha
-                          sitekey="6LdDFJkaAAAAAGlnuettVH2Ei4GCy23gP_Sx47S3"
+                          sitekey="6LfHF5kaAAAAABDfNo0xJAtK3aKoL_HN12Sy0uiV"
                           render="explicit"
                           onloadCallback={recaptchaLoaded}
                           verifyCallback={verifyCallback}

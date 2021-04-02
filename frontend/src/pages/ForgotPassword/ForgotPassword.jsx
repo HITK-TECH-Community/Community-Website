@@ -193,18 +193,6 @@ export function ForgotPassword(props) {
                               ? `${style["input-forgot-password-dark"]} ${style["input-forgot-password"]}`
                               : `${style["input-forgot-password-light"]} ${style["input-forgot-password"]}`
                           }
-                          // onInvalid={(e) => {
-                          //   e.target.setCustomValidity(
-                          //     "Enter a valid Email Id"
-                          //   );
-                          // }}
-                          // onInput={(e) => {
-                          //   e.target.value?.match(
-                          //     new RegExp(
-                          //       /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-                          //     )
-                          //   ) && e.target.setCustomValidity("");
-                          // }}
                         />
                         <i className="fas fa-at"></i>
                         <div
@@ -213,7 +201,6 @@ export function ForgotPassword(props) {
                           {formerrors["email"] && (
                             <div>* {formerrors["email"]}</div>
                           )}
-                          {/* {errorObj["email"] && <div>* {errorObj["email"]}</div>} */}
                         </div>
                       </div>
                     </div>

@@ -123,7 +123,7 @@ const App = () => {
                 <Route
                   exact={true}
                   path="/forgot-password"
-                  component={ForgotPassword}
+                  render={() => <ForgotPassword theme={theme} />}
                 />
                 <Route
                   exact={true}

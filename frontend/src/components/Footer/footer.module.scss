@@ -229,7 +229,7 @@
   font-size: 20px;
   text-align: center;
   margin-top: 0px;
-  margin-left: 35px;
+  margin-left: 0;
   margin-right: 50px;
   margin-bottom: 40px;
   transition: 0.5s;
@@ -350,6 +350,12 @@ a > span {
   box-sizing: content-box;
   display: block;
   margin: auto;
+}
+
+.col .social {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: fit-content;
 }
 
 .newsletter {
@@ -476,10 +482,11 @@ a > span {
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 600px) {
   .col .social {
     display: grid;
     grid-template-columns: 50% 50%;
     width: fit-content;
+    margin: auto;
   }
 }

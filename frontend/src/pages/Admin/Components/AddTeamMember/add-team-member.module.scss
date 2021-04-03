@@ -144,6 +144,7 @@
 
 .add-team-member-input {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .add-team-member-input input,
@@ -156,7 +157,6 @@
   margin-left: auto;
   margin-right: auto;
   color: #777777;
-  margin-bottom: 20px;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
@@ -249,4 +249,9 @@
     font-size: x-small;
     color: black;
   }
+}
+
+.validation {
+  color: red;
+  margin-top: 0;
 }

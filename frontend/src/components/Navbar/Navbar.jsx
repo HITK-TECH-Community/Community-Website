@@ -13,10 +13,7 @@ export const Navbar = (props) => {
   return (
     <Fragment>
       <nav className={dark ? style["navbar-div-dark"] : style["navbar-div"]}>
-        <NavLink
-          to="/"
-          className={dark ? style["navbar-logo-dark"] : style["navbar-logo"]}
-        >
+        <NavLink to="/" className={style["navbar-logo"]}>
           <img
             src="./community-logo.png"
             alt="logo"

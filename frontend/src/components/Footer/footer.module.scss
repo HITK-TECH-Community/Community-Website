@@ -25,6 +25,7 @@
   letter-spacing: 1.2px;
 }
 
+//for dark theme
 .card-heading-dark {
   color: #7bf3e9;
 }
@@ -39,6 +40,7 @@
   box-shadow: 1px 1px 7px #e4fffd, -1px -1px 5px #e7fffd;
 }
 
+//for dark theme
 .subscribe-card-dark {
   background: linear-gradient(-157deg, #293642 0%, #171717 64%);
   box-shadow: 1px 1px 7px #e4fffd, -1px -1px 5px #e7fffd;
@@ -156,7 +158,7 @@
 }
 
 .nav-ul-dark a:hover {
-  color: rgba(72, 127, 255, 0.4);
+  color: #69a9dd;
 }
 
 .nav-ul-extra {

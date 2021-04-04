@@ -119,11 +119,7 @@ export function Carousel(props) {
 
               <h3 className={style["card-head"]}>{item.title}</h3>
               <div className={style["card-text"]}>
-                <ul>
-                  {item.features.map((feature, i) => (
-                    <li>{feature}</li>
-                  ))}
-                </ul>
+                {item.desc.substring(0, 210)}...
               </div>
             </div>
           ))}

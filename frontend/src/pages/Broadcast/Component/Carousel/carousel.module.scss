@@ -29,7 +29,8 @@
 
 .slide-card {
   position: relative;
-  min-height: 30em;
+  min-height: 31em;
+  min-width: 20em;
   border-radius: 15px;
   margin: 30px;
   overflow: hidden;
@@ -63,23 +64,12 @@
 
 .card-text {
   line-height: 1.4;
-  padding-right: 2em;
-  text-align: center;
+  padding: 1em;
+  padding-top: 2em;
+  text-align: justify;
+  text-justify: distribute-all-lines;
   font-size: 14px;
   word-spacing: 1px;
-
-  ul {
-    list-style: none;
-    margin: 0 auto;
-    margin-top: 2em;
-    li {
-      text-align: center;
-      &:not(:last-child) {
-        padding-bottom: 5px;
-        border-bottom: 1px solid #016795;
-      }
-    }
-  }
 }
 
 .slide-card-light:hover {

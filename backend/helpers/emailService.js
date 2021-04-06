@@ -20,8 +20,7 @@ const transporter = nodemailer.createTransport({
 
 module.exports.sendEmail = async (email, data, type) => {
   const template = getMailTemplate(type);
-  let { subject } = template;
-  subject = ejs.render(subject, data);
+  const { subject } = template;
   let { text } = template;
   text = ejs.render(text, data);
   const mailOptions = {

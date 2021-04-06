@@ -4,7 +4,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { useSelector } from "react-redux";
 import { END_POINT } from "../../../../../config/api";
 import { Spinner } from "reactstrap";
-
+import Loader from "../../../../../components/util/Loader";
 export function Manage() {
   const token = useSelector((state) => state.token);
 
@@ -36,8 +36,8 @@ export function Manage() {
   return (
     <div>
       <h1 className={style["h1"]}>Manage Admins</h1>
+      {loading && <Loader color="primary" size="lg" />}
       <div className={`${style["container"]} container`}>
-        {loading && <Spinner color="primary" size="lg" />}
         {data.length > 0 && !loading
           ? data.map((item, i) => (
               <div className={`${style["card"]} card`} key={item + i}>

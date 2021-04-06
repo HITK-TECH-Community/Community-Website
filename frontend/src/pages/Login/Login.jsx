@@ -8,13 +8,13 @@ import { SimpleToast } from "../../components/util/Toast";
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
 
-export function Login() {
+export function Login(props) {
   const [hidePassword, setHidePassword] = useState(false);
   const passwordInput = useRef("password");
   const schema = { email: "", password: "" };
   const [credential, setCredential] = useState(schema);
   const dispatch = useDispatch();
-
+  const dark = props.theme;
   const [errorObj, setErrorObj] = useState({});
 
   const validationSchema = {
@@ -30,6 +30,7 @@ export function Login() {
     const errors = {};
     check.error.details.map((item) => {
       if (!errors[item.path[0]]) errors[item.path[0]] = item.message;
+      return 0;
     });
     setErrorObj(errors);
     return false;
@@ -126,16 +127,48 @@ export function Login() {
 
   return (
     <>
-      <div className={style["login-section"]}>
-        <div className={`${style["login-image"]} ${style["child1"]}`}>
+      <div
+        className={
+          dark
+            ? `${style["login-section-dark"]}`
+            : `${style["login-section-light"]}`
+        }
+      >
+        <div
+          className={
+            dark
+              ? `${style["login-image-dark"]} ${style["child1-dark"]}`
+              : `${style["login-image-light"]} ${style["child1-light"]}`
+          }
+        >
           <img src="./images/login.png" alt="login-illustration" />
         </div>
         <div className={`${style["login-form"]} ${style["child2"]}`}>
-          <div className={style["login-card"]}>
-            <h1 className={style["card-heading"]}>Welcome Back</h1>
+          <div
+            className={
+              dark
+                ? `${style["login-card-dark"]} ${style["login-card"]}`
+                : `${style["login-card-light"]} ${style["login-card"]}`
+            }
+          >
+            <h1
+              className={
+                dark
+                  ? `${style["card-heading-dark"]} ${style["card-heading"]}`
+                  : `${style["card-heading-light"]} ${style["card-heading"]}`
+              }
+            >
+              Welcome Back
+            </h1>
             <form onSubmit={loginUser} noValidate>
               <div className={style["inside-card"]}>
-                <div className={style["login-input"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["login-input-dark"]} ${style["login-input"]}`
+                      : `${style["login-input-light"]} ${style["login-input"]}`
+                  }
+                >
                   <input
                     autocomplete="off"
                     id="username"
@@ -143,7 +176,11 @@ export function Login() {
                     name="email"
                     placeholder="Username"
                     onChange={handleChange}
-                    className={style["input-login"]}
+                    className={
+                      dark
+                        ? `${style["input-login-dark"]} ${style["input-login"]}`
+                        : `${style["input-login-light"]} ${style["input-login"]}`
+                    }
                   />
                   <i className="fas fa-user"></i>
                   <div
@@ -152,12 +189,22 @@ export function Login() {
                     {errorObj["email"] && <div>* {errorObj["email"]}</div>}
                   </div>
                 </div>
-                <div className={style["login-input"]}>
+                <div
+                  className={
+                    dark
+                      ? `${style["login-input-dark"]} ${style["login-input"]}`
+                      : `${style["login-input-light"]} ${style["login-input"]}`
+                  }
+                >
                   <input
                     id="password"
                     name="password"
                     placeholder="Password"
-                    className={style["input-login"]}
+                    className={
+                      dark
+                        ? `${style["input-login-dark"]} ${style["input-login"]}`
+                        : `${style["input-login-light"]} ${style["input-login"]}`
+                    }
                     type={passwordInput.current}
                     onChange={handleChange}
                   />

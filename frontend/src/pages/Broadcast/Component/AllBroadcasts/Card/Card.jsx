@@ -13,6 +13,7 @@ function deleteCard(id) {
   setTimeout(() => cardElement.remove(), 1000);
 }
 export function Card(props) {
+  let dark = props.theme;
   const [flipped, setFlipped] = useState(false);
   const handleClick = () => {
     setFlipped(!flipped);
@@ -32,9 +33,16 @@ export function Card(props) {
 
   return (
     <div id={props.id} className={style["card-container"]}>
-      <Modals open={open} handleClose={handleClose} data={data} />
+      <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
       <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
-        <div className={style["card-item"]} onClick={handleClick}>
+        <div
+          className={
+            dark
+              ? `${style["card-item-dark"]} ${style["card-item"]}`
+              : `${style["card-item-light"]} ${style["card-item"]}`
+          }
+          onClick={handleClick}
+        >
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>{props.project.head}</div>
             <div className={style["card-content"]}>
@@ -43,7 +51,14 @@ export function Card(props) {
           </div>
         </div>
 
-        <div className={style["card-item"]} onClick={handleClick}>
+        <div
+          className={
+            dark
+              ? `${style["card-item-dark"]} ${style["card-item"]}`
+              : `${style["card-item-light"]} ${style["card-item"]}`
+          }
+          onClick={handleClick}
+        >
           <div className={style["clickable-card"]}>
             {isSuperAdmin ? (
               <div className={style["admin-controls"]}>
@@ -62,7 +77,11 @@ export function Card(props) {
               </div>
             ) : null}
             <div
-              className={style["card-title"]}
+              className={
+                dark
+                  ? `${style["card-title-dark"]} ${style["card-title"]}`
+                  : `${style["card-title-light"]} ${style["card-title"]}`
+              }
               style={{ marginTop: "60px", marginBottom: "50px" }}
             >
               {props.project.title}
@@ -75,7 +94,11 @@ export function Card(props) {
                   props.project.link
                 )
               }
-              className={style["but"]}
+              className={
+                dark
+                  ? `${style["but-dark"]} ${style["but"]}`
+                  : `${style["but-light"]} ${style["but"]}`
+              }
             >
               View Details
             </button>

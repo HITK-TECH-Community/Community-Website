@@ -53,6 +53,7 @@ export function ResourceSharingForm(props) {
       if (formdata[key] === "" || formdata[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
       }
+      return 0;
     });
     if (errors["info"]) {
       delete errors["info"];

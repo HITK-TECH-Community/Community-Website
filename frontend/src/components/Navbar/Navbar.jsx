@@ -5,13 +5,14 @@ import { Toggle } from "../util/Toggle/index";
 import style from "./navbar.module.scss";
 
 export const Navbar = (props) => {
+  const dark = props.theme;
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNav = () => setIsNavOpen(!isNavOpen);
   const closeMobileMenu = () => setIsNavOpen(false);
 
   return (
     <Fragment>
-      <nav className={style["navbar-div"]}>
+      <nav className={dark ? style["navbar-div-dark"] : style["navbar-div"]}>
         <NavLink to="/" className={style["navbar-logo"]}>
           <img
             src="./community-logo.png"
@@ -20,87 +21,110 @@ export const Navbar = (props) => {
             height="45px"
           />
         </NavLink>
-        <div className={style["menu-icon"]} onClick={toggleNav}>
+        <div
+          className={dark ? style["menu-icon-dark"] : style["menu-icon"]}
+          onClick={toggleNav}
+        >
           <i className={isNavOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
         <ul
           className={
             isNavOpen
-              ? `${style["nav-menu"]} ${style["active"]}`
+              ? dark
+                ? `${style["nav-menu-dark"]} ${style["active"]}`
+                : `${style["nav-menu"]} ${style["active"]}`
+              : dark
+              ? style["nav-menu-dark"]
               : style["nav-menu"]
           }
         >
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
               to="/"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
               exact={true}
             >
               Home
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
               to="/about-us"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
             >
               About Us
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
               to="/resources"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
             >
               Resources
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
               to="/broadcasts"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
             >
               Broadcasts
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
               to="/contact-us"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
             >
               Contact Us
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <NavLink
               to="/faqs"
-              className={style["nav-links"]}
+              className={dark ? style["nav-links-dark"] : style["nav-links"]}
               onClick={closeMobileMenu}
-              activeClassName={style["active-link"]}
+              activeClassName={
+                dark ? style["active-link-dark"] : style["active-link"]
+              }
             >
               FAQs
             </NavLink>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <Link
               to="/admin"
-              className={style["nav-links-mobile"]}
+              className={
+                dark
+                  ? style["nav-links-mobile-dark"]
+                  : style["nav-links-mobile"]
+              }
               onClick={closeMobileMenu}
             >
               admin ?
             </Link>
           </li>
-          <li className={style["nav-item"]}>
+          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <Toggle
               class={style["mobile-toggle"]}
               handleClick={props.handleClick}
@@ -110,8 +134,12 @@ export const Navbar = (props) => {
         </ul>
         <NavLink
           to="/admin"
-          activeClassName={style["button-div"]}
-          className={style["nav-admin-button"]}
+          activeClassName={
+            dark ? style["button-div-dark"] : style["button-div"]
+          }
+          className={
+            dark ? style["nav-admin-button-dark"] : style["nav-admin-button"]
+          }
         >
           admin ?
         </NavLink>

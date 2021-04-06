@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
-import { Button1, Button2 } from "../../components/util/Button/index";
+import { Button2 } from "../../components/util/Button/index";
 import style from "./ForgotPassword.module.scss";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 
-export function ForgotPassword() {
+export function ForgotPassword(props) {
   const [status, setStatus] = useState("");
   const [submited, setSubmited] = useState(false);
+  let dark = props.theme;
 
   const [formdata, setFormData] = useState({
     email: "",
@@ -44,6 +45,7 @@ export function ForgotPassword() {
       if (formdata[key] === "" || formdata[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
       }
+      return 0;
     });
     if (errors["info"]) {
       delete errors["info"];
@@ -79,19 +81,51 @@ export function ForgotPassword() {
 
   return (
     <>
-      <div className={style["forgot-password-section"]}>
-        <div className={`${style["forgot-password-image"]} ${style["child1"]}`}>
+      <div
+        className={
+          dark
+            ? `${style["forgot-password-section-dark"]}`
+            : `${style["forgot-password-section-light"]}`
+        }
+      >
+        <div
+          className={
+            dark
+              ? `${style["forgot-password-image-dark"]} ${style["child1-dark"]}`
+              : `${style["forgot-password-image-light"]} ${style["child1-light"]}`
+          }
+        >
           <img
             src="./images/forgot-password.png"
             alt="forgot-password-illustration"
           />
         </div>
         <div className={`${style["forgot-password-form"]} ${style["child2"]}`}>
-          <div className={style["forgot-password-card"]}>
+          <div
+            className={
+              dark
+                ? `${style["forgot-password-card-dark"]} ${style["forgot-password-card"]}`
+                : `${style["forgot-password-card-light"]} ${style["forgot-password-card"]}`
+            }
+          >
             {submited ? (
               <React.Fragment>
-                <h1 className={style["card-heading"]}>Mail Sent</h1>
-                <div className={style["inside-card"]}>
+                <h1
+                  className={
+                    dark
+                      ? `${style["card-heading-dark"]} ${style["card-heading"]}`
+                      : `${style["card-heading-light"]} ${style["card-heading"]}`
+                  }
+                >
+                  Mail Sent
+                </h1>
+                <div
+                  className={
+                    dark
+                      ? `${style["inside-card-dark"]}`
+                      : `${style["inside-card-light"]}`
+                  }
+                >
                   <p style={{ textAlign: "center" }}>
                     An invitation link has been sent on your registered email,
                     please check your inbox for further steps.
@@ -108,7 +142,7 @@ export function ForgotPassword() {
                     </Grid>
                     <Grid xs={6} style={{ padding: "5%" }}>
                       <Link to="/admin">
-                        <Button1
+                        <Button2
                           id="login-btn"
                           label="Login"
                           className={`${style["back-button"]} ${style["no-border"]}`}
@@ -122,11 +156,31 @@ export function ForgotPassword() {
               </React.Fragment>
             ) : (
               <React.Fragment>
-                <h1 className={style["card-heading"]}>Trouble Logging In?</h1>
+                <h1
+                  className={
+                    dark
+                      ? `${style["card-heading-dark"]} ${style["card-heading"]}`
+                      : `${style["card-heading-light"]} ${style["card-heading"]}`
+                  }
+                >
+                  Trouble Logging In?
+                </h1>
                 <form onSubmit={handleSubmit} noValidate>
-                  <div className={style["inside-card"]}>
+                  <div
+                    className={
+                      dark
+                        ? `${style["inside-card-light"]}`
+                        : `${style["inside-card-light"]}`
+                    }
+                  >
                     <div className={`form-group ${style["form-group"]}`}>
-                      <div className={style["forgot-password-input"]}>
+                      <div
+                        className={
+                          dark
+                            ? `${style["forgot-password-input-dark"]} ${style["forgot-password-input"]}`
+                            : `${style["forgot-password-input-light"]} ${style["forgot-password-input"]}`
+                        }
+                      >
                         <input
                           autocomplete="off"
                           id="username"
@@ -134,19 +188,11 @@ export function ForgotPassword() {
                           name="email"
                           placeholder="Email"
                           onChange={handleChange}
-                          className={style["input-forgot-password"]}
-                          // onInvalid={(e) => {
-                          //   e.target.setCustomValidity(
-                          //     "Enter a valid Email Id"
-                          //   );
-                          // }}
-                          // onInput={(e) => {
-                          //   e.target.value?.match(
-                          //     new RegExp(
-                          //       /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-                          //     )
-                          //   ) && e.target.setCustomValidity("");
-                          // }}
+                          className={
+                            dark
+                              ? `${style["input-forgot-password-dark"]} ${style["input-forgot-password"]}`
+                              : `${style["input-forgot-password-light"]} ${style["input-forgot-password"]}`
+                          }
                         />
                         <i className="fas fa-at"></i>
                         <div
@@ -155,7 +201,6 @@ export function ForgotPassword() {
                           {formerrors["email"] && (
                             <div>* {formerrors["email"]}</div>
                           )}
-                          {/* {errorObj["email"] && <div>* {errorObj["email"]}</div>} */}
                         </div>
                       </div>
                     </div>

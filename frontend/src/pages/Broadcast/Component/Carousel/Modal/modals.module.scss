@@ -1,7 +1,17 @@
 .modals {
   width: 75%;
-  background-color: white !important;
   border-radius: 10px;
+}
+
+.modals-light {
+  color: black;
+  background-color: white !important;
+}
+
+// for dark theme
+.modals-dark {
+  color: whitesmoke;
+  background-color: #171717 !important;
 }
 
 @media (min-width: 992px) and (max-width: 1400px) {
@@ -40,17 +50,32 @@
 }
 
 .link {
-  background-color: #016795;
   font-size: 25px;
   text-align: center;
-  color: white;
   font-weight: bold;
   padding: 1em 0;
 }
 
-.link:hover {
+.link-light {
+  color: white;
+  background-color: #016795;
+}
+
+// for dark theme
+.link-dark {
+  color: whitesmoke;
+  background-color: #121f3a;
+}
+
+.link-light:hover {
   cursor: pointer;
   color: #121f3a;
+}
+
+// for dark theme
+.link-dark:hover {
+  cursor: pointer;
+  color: #016795;
 }
 
 .mod_head {
@@ -63,13 +88,30 @@
   align-items: center;
 }
 
+// for dark theme
+.mod_head-dark {
+  background-color: #121f3a;
+  color: whitesmoke;
+}
+
+.mod_head-light {
+  background-color: #016795;
+  color: white;
+}
+
 .close-btn {
   float: right;
   padding-right: 25px;
 }
 
-.close-btn:hover {
+.close-btn-light:hover {
   color: #121f3a;
+  cursor: pointer;
+}
+
+// for dark theme
+.close-btn-dark:hover {
+  color: #016795;
   cursor: pointer;
 }
 

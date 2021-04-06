@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./get-involved.module.scss";
 
-export const GetInvolved = () => {
+export const GetInvolved = (props) => {
+  const dark = props.theme;
   const arrayCards = [
     [
       "Report Issues",
@@ -25,25 +26,43 @@ export const GetInvolved = () => {
     ],
   ];
   return (
-    <main>
+    <main id={dark ? `${style["main-dark"]}` : style["main"]}>
       <div id={style["hero"]}>
         <div id={style["heading"]}>
-          <div id={style["title"]}>Get Involved!</div>
+          <div id={dark ? `${style["title-dark"]}` : style["title"]}>
+            Get Involved!
+          </div>
         </div>
       </div>
       <div id={style["all-cards"]}>
         {arrayCards.map((element, i) => {
           return (
             <div
-              className={`${style["card-item"]} ${style["card-item2"]} key={${i}}`}
+              className={
+                dark
+                  ? `${style["card-item-dark"]}`
+                  : `${style["card-item"]} ${style["card-item2"]} key={${i}}`
+              }
             >
               <a
                 href="https://github.com/HITK-TECH-Community/Community-Website"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className={style["clickable-card"]}>
-                  <div className={style["card-title"]}>{element[0]}</div>
+                <div
+                  className={
+                    dark
+                      ? `${style["clickable-card-dark"]}`
+                      : style["clickable-card"]
+                  }
+                >
+                  <div
+                    className={
+                      dark ? `${style["card-title-dark"]}` : style["card-title"]
+                    }
+                  >
+                    {element[0]}
+                  </div>
                   <div className={style["card-content"]}>{element[1]}</div>
                 </div>
               </a>

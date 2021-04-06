@@ -28,12 +28,21 @@
   height: 5px;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.dash-light {
   background: rgb(255, 0, 90);
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
     rgba(10, 24, 61, 1) 90%
   );
+}
+
+// for dark theme
+.dash-dark {
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
 }
 
 #hero {
@@ -79,24 +88,53 @@
   width: 100%;
 }
 
+// for dark theme
+.input-input-dark {
+  color: whitesmoke !important;
+}
+
 .search {
-  background-color: rgba(124, 117, 117, 0.2);
   border-radius: 15px;
   margin-right: 16px;
   margin-left: 25px;
   position: relative;
   width: 228px;
-  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
   // border: 3px solid #1B2431;
 }
 
-.search:hover,
-.search:focus-within {
+.search-light {
+  background-color: rgba(124, 117, 117, 0.2);
+  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+}
+
+// for dark theme
+.search-dark {
+  border: 1px solid #414a4c;
+  background-color: #333333;
+  box-shadow: 0.5em 0.5em 0.5em rgba(72, 127, 255, 0.4);
+}
+
+// for dark theme
+.search-dark:focus-within,
+.search-dark:hover {
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.search-light:hover,
+.search-light:focus-within {
   background-color: white !important;
 }
 
 .carousel-head {
   color: #121f3a !important;
+  font-size: 35px !important;
+}
+
+// for dark theme
+.carousel-head-dark {
+  color: #69a9dd !important;
   font-size: 35px !important;
 }
 
@@ -113,7 +151,7 @@
 
   .filters {
     display: flex;
-    margin: 15px auto;
+    margin: 40px auto;
   }
 
   .filters > * {
@@ -141,4 +179,10 @@
 
 .filter-btn {
   background-color: #121f3a !important;
+}
+
+// for dark theme
+.dark {
+  background: #171717;
+  color: whitesmoke;
 }

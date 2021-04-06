@@ -1,12 +1,24 @@
-main {
+#main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 15px;
 }
+
+// for dark theme
+#main-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #171717;
+  padding-bottom: 15px;
+}
+
 #hero {
   display: flex;
   width: 100vw;
 }
+
 #heading {
   display: flex;
   flex-direction: column;
@@ -15,12 +27,23 @@ main {
   margin: 4rem 0 2rem 0;
   text-align: center;
 }
+
 #title {
   display: flex;
   font-size: 4rem;
   line-height: 4rem;
   font-weight: bold;
 }
+
+#title-dark {
+  display: flex;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: bold;
+  color: #69a9dd;
+  box-shadow: rgba(72, 127, 255, 0.1);
+}
+
 #all-cards {
   display: flex;
   justify-content: center;
@@ -28,6 +51,7 @@ main {
   width: 95vw;
   margin: 0.5em;
 }
+
 .card-item {
   background-color: #016795;
   text-align: center;
@@ -40,9 +64,36 @@ main {
   background-position: left center;
   transition: background 0.3s ease-out;
 }
+
+// for dark theme
+.card-item-dark {
+  background: #171717;
+  color: whitesmoke !important;
+  box-shadow: 1em 1em 1em rgba(72, 127, 255, 0.4);
+  border: 2px solid #016795;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 1em;
+  height: auto;
+  width: 15em;
+  margin: 1em;
+  background-position: left center;
+  transition: background 0.3s ease-out;
+}
+
+// for dark theme
+.clickable-card-dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  color: whitesmoke !important;
+}
+
 .card-item2 {
   height: 10em;
 }
+
 .clickable-card {
   display: flex;
   flex-direction: column;
@@ -56,15 +107,34 @@ main {
   line-height: 1.9rem;
   font-weight: bold;
 }
+
+//for dark theme
+.card-title-dark {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  color: #69a9dd !important;
+}
+
 .card-content {
   font-weight: normal;
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
 }
+
 .card-item:hover {
   background-color: #1b2431;
 }
+
+// for dark theme
+.card-item-dark:hover {
+  background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
 @media screen and (orientation: portrait) {
   #hero {
     flex-direction: column;

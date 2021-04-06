@@ -8,11 +8,20 @@ import style2 from "./carousel.module.scss";
 
 export function Carousel(props) {
   let dark = props.theme;
+  var buttonTheme = [];
+  
+  if(dark) {
+    buttonTheme = ["<div class='nav-btn prev-slide white'></div>","<div class='nav-btn next-slide white'></div>"]
+  }
+  else  {
+    buttonTheme = ["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
+  }
 
   const options = {
     loop: true,
     margin: 45,
     nav: true,
+    navText: buttonTheme,
     responsive: {
       0: {
         items: 1,
@@ -57,8 +66,7 @@ export function Carousel(props) {
           className="owl-theme"
           {...options}
           autoplay={true}
-          responsiveClass={true}
-        >
+          responsiveClass={true}>
           <div>
             <img className="owl-image" alt="" src="./images/help.png" />
           </div>

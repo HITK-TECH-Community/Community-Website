@@ -2,13 +2,21 @@
   background-color: #f7f7f7;
 }
 
+.main-dark {
+  background-color: #171717;
+}
+
+.not-found-dark {
+  background-color: #171717;
+}
+
 .error {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 90vh;
-  margin: 0 15% 3rem 15%;
+  margin: 0 15% 0rem 15%;
 }
 
 .error-logo {
@@ -17,8 +25,21 @@
   object-fit: cover;
 }
 
+.error-logo-dark {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: #171717;
+}
+
 .error-content {
   color: black;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-content-dark {
+  color: whitesmoke;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
@@ -29,8 +50,23 @@
   color: var(--secondary-color);
 }
 
+.error-text-dark {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #69a9dd;
+}
+
+.goback {
+  padding-bottom: 30px;
+}
+
 @media screen and (max-width: 750px) {
   .error {
-    margin: 0 5% 3rem 5%;
+    margin: 0 5% 0rem 5%;
   }
+
+  .goback {
+    padding-bottom: 0px;
+  }
+  
 }

@@ -56,6 +56,7 @@ export const ContactUs = (props) => {
       if (formData[key] === "" || formData[key] === null) {
         errors[key] = `${key} is required`;
       }
+      return 0;
     });
     if (errors !== 0) {
       setFormErrors(errors);
@@ -218,13 +219,13 @@ export const ContactUs = (props) => {
                         </div>
                       )}
                     </div>
-                    <div class={style["text-xs-center"]}>
+                    <div className={style["text-xs-center"]}>
                       <div
-                        class={style["g-recaptcha"]}
+                        className={style["g-recaptcha"]}
                         data-sitekey="my-public-key"
                       >
                         <Recaptcha
-                          sitekey="6LfBC4QaAAAAAHoFhHxXordvHQd9tLOUic8WFllR"
+                          sitekey="6LfHF5kaAAAAABDfNo0xJAtK3aKoL_HN12Sy0uiV"
                           render="explicit"
                           onloadCallback={recaptchaLoaded}
                           verifyCallback={verifyCallback}

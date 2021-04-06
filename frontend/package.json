@@ -14,7 +14,6 @@
     "font-awesome": "^4.7.0",
     "joi": "^17.4.0",
     "joi-browser": "^13.4.0",
-    "joi-phone-number": "^5.0.1",
     "jwt-decode": "^3.1.2",
     "mdbreact": "^5.0.1",
     "node-sass": "^4.14.1",

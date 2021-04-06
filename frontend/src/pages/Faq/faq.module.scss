@@ -1,5 +1,4 @@
 .head {
-  color: hsl(210, 64%, 9%);
   text-align: center;
   font-size: 30px;
   font-weight: bold;
@@ -11,6 +10,15 @@
   line-height: 30px;
 }
 
+.head-light {
+  color: hsl(210, 64%, 9%);
+}
+
+// For dark theme
+.head-dark {
+  color: #282c35;
+}
+
 .faq {
   width: 80%;
   margin: 0em auto 1em auto;
@@ -20,14 +28,18 @@
   align-items: center;
 }
 
+.faq-container {
+  padding-bottom: 10px;
+}
+
 .faq-image {
   width: 95%;
+  margin-left: auto;
 }
 
 .faq-block {
   margin-left: 2%;
   width: 60vw;
-  background-color: hsl(210, 64%, 9%);
   height: auto;
   border-radius: 8px;
   padding: 15px 40px;
@@ -36,6 +48,15 @@
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;
+}
+
+.faq-block-light {
+  background-color: hsl(210, 64%, 9%);
+}
+
+// For dark theme
+.faq-block-dark {
+  background-color: #282c35;
 }
 
 .faq-question {
@@ -71,5 +92,23 @@
 
   .faq {
     height: 40rem;
+  }
+}
+
+// For dark theme
+.dark {
+  background-color: #171717;
+  color: whitesmoke;
+}
+
+// For dark theme
+.accord-dark {
+  background: linear-gradient(45deg, #4e4376 0%, #2b5876 90%);
+  margin: 8px 0;
+  border-radius: 10;
+
+  &:hover {
+    background: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    transition: all 0.3s ease-in-out;
   }
 }

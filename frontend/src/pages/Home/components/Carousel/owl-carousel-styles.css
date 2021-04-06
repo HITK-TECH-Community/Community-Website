@@ -1,25 +1,104 @@
 .owl-nav button {
   position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
-  height: 100px;
-  background-color: #000;
-  color: #fff;
+  top: 20%;
   margin: 0;
   transition: all 0.3s ease-in-out;
+  height: 100px;
+}
+
+.carousel-wrap {
+  width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.owl-carousel .owl-nav{
+  overflow: hidden;
+  height: 0px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, 
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: #2caae1;
+}
+
+.owl-carousel .item {
+    text-align: center;
+}
+
+.owl-carousel .nav-btn{
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+}
+
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled{
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.owl-carousel .prev-slide{
+    background: url(../../nav-icon.png) no-repeat scroll 0 0;
+    left: -33px;
+}
+
+.owl-carousel .next-slide{
+    background: url(../../nav-icon.png) no-repeat scroll -24px 0px;
+    right: -33px;
+}
+
+.owl-carousel .prev-slide:hover{
+   background-position: 0px -53px;
+   filter: invert(0);
+}
+
+.owl-carousel .next-slide:hover{
+  background-position: -24px -53px;
+  filter: invert(0);
+}
+
+span.img-text {
+  text-decoration: none;
+  outline: none;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  cursor: pointer;
+  width: 100%;
+  font-size: 23px;
+  display: block;
+  text-transform: capitalize;
+}
+
+span.img-text:hover {
+  color: #2caae1;
+}
+
+.owl-nav button.owl-prev,
+.owl-nav button.owl-next {
+  color: #111;
+  border-radius: 20px !important;
+  padding: 0 15px !important;
+}
+
+.white {
+  filter: invert(1);
+}
+
+.owl-nav button.owl-prev > span,
+.owl-nav button.owl-next > span {
+  transform: translateY(35%);
 }
 
 .owl-nav button.owl-prev {
-  background-color: #121f3a !important;
-  color: #fff !important;
-  padding: 0 15px !important;
   left: 0;
 }
 
 .owl-nav button.owl-next {
-  background-color: #121f3a !important;
-  color: #fff !important;
-  padding: 0 15px !important;
   right: 0;
 }
 
@@ -48,17 +127,6 @@
 .owl-dots button.owl-dot span {
   display: none !important;
 }
-
-.owl-prev,
-.owl-next {
-  font-size: 70px !important;
-}
-
-/* span {
-  font-size: 70px;
-  position: relative;
-  top: 5px;
-} */
 
 .owl-nav button:focus {
   outline: none;

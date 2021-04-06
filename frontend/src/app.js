@@ -123,7 +123,7 @@ const App = () => {
                 <Route
                   exact={true}
                   path="/forgot-password"
-                  component={ForgotPassword}
+                  render={() => <ForgotPassword theme={theme} />}
                 />
                 <Route
                   exact={true}
@@ -160,7 +160,7 @@ const App = () => {
             </div>
           </Switch>
           <ScrollTop />
-          <Footer className="Footer" />
+          <Footer className="Footer" theme={theme} />
         </Router>
       </div>
     </Fragment>

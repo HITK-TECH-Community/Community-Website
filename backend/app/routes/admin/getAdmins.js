@@ -41,6 +41,9 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  res.status(200).send(response);
+  // I have changed the response to an object instead of an array
+  const obj = Object.assign({}, ...response);
+  res.status(200).send(obj);
+
   return next();
 };

@@ -8,8 +8,6 @@ import styles from "./home.module.scss";
 
 export const Home = (props) => {
   let dark = props.theme;
-  console.log("Theme changed in the home page", dark);
-
   return (
     <div
       className={

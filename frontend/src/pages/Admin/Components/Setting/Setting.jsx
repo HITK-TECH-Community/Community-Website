@@ -22,6 +22,11 @@ export function Setting(props) {
               Manage Admins
             </p>
           </div>
+          <div className={style["card"]}>
+            <p className={style["para"]} onClick={() => props.setTab(15)}>
+              Reset Password
+            </p>
+          </div>
         </div>
       </div>
     </React.Fragment>

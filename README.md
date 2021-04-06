@@ -18,8 +18,10 @@ This project aims to build the official site for the community page so that any 
  <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-ExpressJS-grey?style=flat&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/ReactJS%20-%2320232a.svg?logo=react" >   <img src="https://img.shields.io/badge/-NodeJS%20-%2320232a?style=flat&logo=node.js"> 
  
 
-## How to contribute ? 
-- Follow Contributon Guidelines mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/CONTRIBUTING.md)
+## How to contribute ? 🤔
+
+- Get started with the Contributon Guidelines mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/CONTRIBUTING.md)
+- Make sure to follow our conventions mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/frontend/conventions.md)
 
 
 ##  Getting Started 👨‍💻
@@ -54,7 +56,7 @@ Following are the steps to run the backend of the community-website on your loca
 The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
 
 
-## Testing Credentials
+## Testing Credentials 🤖
 
 The dummy admin credentials to login to the admin dashboard are given below -
 

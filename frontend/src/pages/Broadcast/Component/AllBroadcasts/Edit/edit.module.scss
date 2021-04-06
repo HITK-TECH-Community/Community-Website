@@ -8,20 +8,42 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  .div {
-    width: 40%;
-    border-radius: 8px;
-    background: white;
-    padding: 1em;
-    @media (max-width: 600px) {
-      width: 95%;
-    }
-    h1 {
-      width: 100%;
-      font-size: 17px;
-      margin: 0;
-      text-align: center;
-    }
+}
+
+.input-dark {
+  color: whitesmoke;
+}
+
+.div {
+  width: 40%;
+  border-radius: 8px;
+  background: white;
+  padding: 1em;
+  @media (max-width: 600px) {
+    width: 95%;
+  }
+  h1 {
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+// for dark theme
+.div-dark {
+  width: 40%;
+  border-radius: 8px;
+  background: #282c35;
+  padding: 1em;
+  @media (max-width: 600px) {
+    width: 95%;
+  }
+  h1 {
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    text-align: center;
   }
 }
 

@@ -2,8 +2,10 @@ import React from "react";
 import style from "./toggle.module.scss";
 
 export const Toggle = (props) => {
+  const mobile = props.class;
+
   return (
-    <div className={style["container"]}>
+    <div className={`${style["container"]} ${mobile}`}>
       <input
         type="checkbox"
         id="check"

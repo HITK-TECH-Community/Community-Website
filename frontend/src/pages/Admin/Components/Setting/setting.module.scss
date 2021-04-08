@@ -22,25 +22,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #016795;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   color: white;
   border-radius: 20px;
   margin: 2.5%;
-}
-
-.card:hover {
-  background: #1b2431;
+  transition: all 0.5s ease-in;
 }
 
 .para {
   min-width: 70%;
   padding: 0.5em;
+  color: white;
   text-align: center;
   font-size: 17px;
   font-weight: bold;
   border-radius: 20px;
+}
+
+.card-item-light {
+  background-color: #016795;
+  box-shadow: 1em 1em 1em rgb(54, 53, 53);
+}
+
+// for dark theme
+.card-item-dark {
+  background-color: #171717;
+  border: 2px solid #016795;
+  box-shadow: 1em 1em 1em rgba(72, 127, 255, 0.4);
+  color: whitesmoke !important;
+}
+
+.card-item-light:hover {
+  background-color: #1b2431;
+}
+
+// for dark theme
+.card-item-dark:hover {
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
 
 @media (max-width: 600px) {

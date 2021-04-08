@@ -12,7 +12,6 @@
     "bootstrap": "^4.5.3",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
-    "joi": "^17.4.0",
     "joi-browser": "^13.4.0",
     "jwt-decode": "^3.1.2",
     "mdbreact": "^5.0.1",

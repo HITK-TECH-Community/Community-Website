@@ -12,13 +12,13 @@ const broadcastSchema = new Schema(
     link: {
       type: String,
     },
-    isExpired: {
-      type: Boolean,
+    expiresOn: {
+      type: Date,
     },
     imageUrl: {
       type: Array,
     },
-    category: {
+    tags: {
       type: Array,
     },
   },

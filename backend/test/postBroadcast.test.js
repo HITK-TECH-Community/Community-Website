@@ -38,9 +38,9 @@ describe('Test for add Broadcast:', () => {
       content:
         '--this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content ----this is test content --',
       link: 'https://abc.xyz',
-      isExpired: false,
+      expiresOn: new Date(),
       imageUrl: ['http://imageurl@imageurl.com', 'http://imageurl@imageurl.com', 'http://imageurl@imageurl.com'],
-      category: ['tag1', 'tag2', 'tag3'],
+      tags: ['tag1', 'tag2', 'tag3'],
     };
 
     chai

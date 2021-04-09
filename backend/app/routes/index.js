@@ -12,4 +12,3 @@ router.use('/', tinyURL);
 
 router.use('/broadcast', broadcast);
 module.exports = router;
-

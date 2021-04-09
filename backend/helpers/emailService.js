@@ -34,10 +34,10 @@ module.exports.sendEmail = async (email, data, type) => {
     const error = new ErrorHandler(constants.ERRORS.UNEXPECTED, {
       statusCode: '500',
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
-      errorStack: err,
+      errStack: err,
       user: email,
     });
-    return error;
+    throw error;
   }
   return response;
 };

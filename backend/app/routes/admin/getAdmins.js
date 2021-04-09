@@ -37,13 +37,10 @@ module.exports = async (req, res, next) => {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: '500',
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
-      errorStack: err,
+      errStack: err,
     });
     return next(error);
   }
-  // I have changed the response to an object instead of an array
-  const obj = Object.assign({}, ...response);
-  res.status(200).send(obj);
-
+  res.status(200).send(response);
   return next();
 };

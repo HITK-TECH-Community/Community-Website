@@ -9,6 +9,5 @@ router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
 router.use('/', tinyURL);
-
 router.use('/broadcast', broadcast);
 module.exports = router;

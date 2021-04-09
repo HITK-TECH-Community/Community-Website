@@ -8,7 +8,7 @@
     "start": "node index.js",
     "lint": "eslint . --format table",
     "lint:fix": "eslint . --fix --format table",
-    "test": "mocha tests --recursive --timeout 15000"
+    "test": "mocha tests --recursive --timeout 15000 --exit"
   },
   "repository": {
     "type": "git",
@@ -67,6 +67,6 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "nodemon": "^2.0.6",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1"    
   }
 }

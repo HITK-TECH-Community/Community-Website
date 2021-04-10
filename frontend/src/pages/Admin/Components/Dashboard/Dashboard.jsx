@@ -14,7 +14,7 @@ export const Dashboard = (props) => {
     setOpenLoginSuccessToast(false);
   };
 
-  const isSuperAdmin = useSelector(state => state.isSuperAdmin);
+  const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
 
   useEffect(() => {
     const login = window.location.search.substring(1);
@@ -61,13 +61,21 @@ export const Dashboard = (props) => {
     <React.Fragment>
       <h1 className={style["head"]}>Dashboard</h1>
       <div className={style["dash-board"]}>
-        {data.map(d => (
-          <div className={style["crd"]} key={d.name} onClick={() => props.setTab(d.tab)}>
-            <div className={style["head1"]}>
-              {d.icon}
-              <h4> {d.name} </h4>
+        {data.map((d) => (
+          <div
+            className={style["crd"]}
+            key={d.name}
+            onClick={() => props.setTab(d.tab)}
+          >
+            <div className={style["card-content"]}>
+              <div className={style["head1"]}>
+                <span>{d.icon}</span>
+                <h4> {d.name} </h4>
+              </div>
+              <div className={style["content"]}>
+                Get all your {d.name} related details here!
+              </div>
             </div>
-            <div className={style["content"]}>Get all your {d.name} related details here!</div>
           </div>
         ))}
       </div>
@@ -78,5 +86,5 @@ export const Dashboard = (props) => {
         severity="success"
       />
     </React.Fragment>
-  )
-}
+  );
+};

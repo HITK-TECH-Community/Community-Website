@@ -1,51 +1,30 @@
-.login-section-light {
+.login-parent {
   display: flex;
+  padding: 30px 0;
+}
+
+.login-section {
+  padding: 0 20px;
+}
+
+.login-section-light {
   background-color: #fff;
 }
 
 // for dark theme
 .login-section-dark {
-  display: flex;
   background-color: #171717;
 }
 
-.login-image-light {
+.login-child {
   flex: 1;
-  background-color: var(--secondary-color);
 }
 
-// for dark theme
-.login-image-dark {
-  flex: 1;
-  background-color: #171717;
-}
-
-.child1-light {
+.child1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #fff;
-}
-
-// for dark theme
-.child1-dark {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: #171717;
-}
-
-.login-image-light img {
-  max-width: 100%;
-}
-
-// for dark theme
-.login-image-dark img {
-  max-width: 100%;
-}
-
-.login-form {
-  flex: 1;
+  color: #fff;
 }
 
 .child2 {
@@ -54,10 +33,14 @@
   align-items: center;
 }
 
+.login-image {
+  max-width: 100%;
+}
+
 .login-card {
-  width: 75%;
+  width: 65%;
   height: auto;
-  margin: 20% auto;
+  margin: 13% auto;
   border-radius: 10px;
 }
 
@@ -68,6 +51,7 @@
 
 // for dark theme
 .login-card-dark {
+  color: whitesmoke;
   background-color: #282c35;
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
     0px -8px 16px 0px rgba(72, 127, 255, 0.1);
@@ -78,9 +62,11 @@
 }
 
 .card-heading {
-  padding: 30px 0;
-  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 5px;
   text-transform: capitalize;
+  text-align: center !important;
+  font-size: 2rem;
 }
 
 .card-heading-light {
@@ -92,15 +78,9 @@
   color: #69a9dd;
 }
 
-.inside-card {
-  width: 85%;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
-
 .login-input {
   position: relative;
-  margin-bottom: 30px !important;
+  margin-bottom: 10px !important;
 }
 
 .login-input input {
@@ -231,9 +211,17 @@
   color: rgb(17, 133, 17);
 }
 
+//err msg styles
 .validation {
-  color: red;
-  margin-top: 0;
+  color: #ff2929;
+  margin-top: 5px;
+  margin-bottom: 13px;
+}
+
+.inside-contact {
+  width: 85%;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .submit-btn {
@@ -251,18 +239,33 @@
 }
 
 @media screen and (max-width: 750px) {
-  .login-section {
-    flex-direction: column;
+  .login-parent {
+    display: block;
     width: 100%;
   }
 
   .login-card {
-    width: 85%;
+    width: 90%;
     margin: 10% auto;
+  }
+
+  .card-heading {
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+    padding: 9px 0;
   }
 
   .child1 {
     padding: 0 0 10px;
+  }
+
+  .login-input input,
+  .login-btn {
+    height: 50px;
+  }
+
+  .validation {
+    font-size: 0.85rem;
   }
 
   .submit-btn {

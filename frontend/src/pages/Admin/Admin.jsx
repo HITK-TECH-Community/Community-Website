@@ -22,7 +22,7 @@ import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
 
-export const Admin = () => {
+export const Admin = (props) => {
   const [tab, setTab] = useState(1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
@@ -201,7 +201,7 @@ export const Admin = () => {
           ) : tab === 5 ? (
             <Faq setTab={setTab} />
           ) : tab === 6 ? (
-            <Setting setTab={setTab} />
+            <Setting setTab={setTab} theme={props.theme} />
           ) : tab === 7 ? (
             <Invite />
           ) : tab === 8 ? (

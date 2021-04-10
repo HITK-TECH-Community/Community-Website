@@ -3,7 +3,6 @@ import style from "./Manage.module.scss";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useSelector } from "react-redux";
 import { END_POINT } from "../../../../../config/api";
-import { Spinner } from "reactstrap";
 import Loader from "../../../../../components/util/Loader";
 export function Manage() {
   const token = useSelector((state) => state.token);

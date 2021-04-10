@@ -7,6 +7,14 @@
   text-align: center;
 }
 
+.content {
+  overflow: hidden;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .contain {
   width: 80%;
   margin: 2em auto;
@@ -27,6 +35,31 @@
   border-radius: 20px;
   margin: 2.5%;
   transition: all 0.5s ease-in;
+}
+
+.card > .card-content > .head1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin-bottom: -15px;
+}
+
+.card > .card-content > .head1 > h4 {
+  margin-left: 0.7em;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.card > .card-content > .head1 > span {
+  margin-top: 2px;
+}
+
+.card-content {
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .para {

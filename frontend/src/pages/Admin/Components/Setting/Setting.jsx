@@ -16,8 +16,15 @@ export function Setting(props) {
             }
             onClick={() => props.setTab(0)}
           >
-            <i className="fas fa-user fa-fw fa-lg" aria-hidden="true"></i>
-            <p className={style["para"]}>My Profile</p>
+            <div className={style["card-content"]}>
+              <div className={style["head1"]}>
+              <span><i className="fas fa-user fa-fw fa-lg" aria-hidden="true"></i></span>
+              <h4> My Profile </h4>
+              </div>
+              <div className={style["content"]}>
+                Want to manage your profile? Visit here!
+              </div>
+            </div>
           </div>
           <div
             className={
@@ -27,8 +34,15 @@ export function Setting(props) {
             }
             onClick={() => props.setTab(7)}
           >
-            <i className="fas fa-user-plus fa-fw fa-lg" aria-hidden="true"></i>
-            <p className={style["para"]}>Invite Admin</p>
+            <div className={style["card-content"]}>
+              <div className={style["head1"]}>
+              <span><i className="fas fa-user-plus fa-fw fa-lg" aria-hidden="true"></i></span>
+              <h4> Invite Admin </h4>
+              </div>
+              <div className={style["content"]}>
+                Want to invite a new admin? Visit here!
+              </div>
+            </div>
           </div>
           <div
             className={
@@ -38,8 +52,15 @@ export function Setting(props) {
             }
             onClick={() => props.setTab(8)}
           >
-            <i className="fas fa-users fa-fw fa-lg" aria-hidden="true"></i>
-            <p className={style["para"]}>Manage Admins</p>
+            <div className={style["card-content"]}>
+              <div className={style["head1"]}>
+              <span><i className="fas fa-user fa-fw fa-lg" aria-hidden="true"></i></span>
+              <h4> Admins </h4>
+              </div>
+              <div className={style["content"]}>
+                Want to manage the admins? Visit here!
+              </div>
+            </div>
           </div>
           <div
             className={
@@ -49,8 +70,15 @@ export function Setting(props) {
             }
             onClick={() => props.setTab(15)}
           >
-            <i className="fas fa-key fa-fw fa-lg" aria-hidden="true"></i>
-            <p className={style["para"]}>Reset Password</p>
+            <div className={style["card-content"]}>
+              <div className={style["head1"]}>
+              <span><i className="fas fa-key fa-fw fa-lg" aria-hidden="true"></i></span>
+              <h4> Password </h4>
+              </div>
+              <div className={style["content"]}>
+                Want to reset your password? Visit here!
+              </div>
+            </div>
           </div>
         </div>
       </div>

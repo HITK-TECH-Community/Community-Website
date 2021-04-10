@@ -266,7 +266,7 @@ export const About = (props) => {
           variant="h4"
           className={dark ? `${style["about-dark"]}` : ``}
         >
-          Contributors
+          Open Source Contributors
         </Typography>
         <div
           className={

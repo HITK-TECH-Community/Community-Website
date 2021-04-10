@@ -130,110 +130,108 @@ export function Login(props) {
       <div
         className={
           dark
-            ? `${style["login-section-dark"]}`
-            : `${style["login-section-light"]}`
+            ? `${style["login-section"]} ${style["login-section-dark"]}`
+            : `${style["login-section"]} ${style["login-section-light"]}`
         }
       >
-        <div
-          className={
-            dark
-              ? `${style["login-image-dark"]} ${style["child1-dark"]}`
-              : `${style["login-image-light"]} ${style["child1-light"]}`
-          }
-        >
-          <img src="./images/login.png" alt="login-illustration" />
-        </div>
-        <div className={`${style["login-form"]} ${style["child2"]}`}>
-          <div
-            className={
-              dark
-                ? `${style["login-card-dark"]} ${style["login-card"]}`
-                : `${style["login-card-light"]} ${style["login-card"]}`
-            }
-          >
-            <h1
+        <div className={style["login-parent"]}>
+          <div className={`${style["login-child"]} ${style["child1"]}`}>
+            <img
+              src="./images/login.png"
+              alt="login-illustration"
+              className={style["login-image"]}
+            />
+          </div>
+          <div className={`${style["login-child"]} ${style["child2"]}`}>
+            <div
               className={
                 dark
-                  ? `${style["card-heading-dark"]} ${style["card-heading"]}`
-                  : `${style["card-heading-light"]} ${style["card-heading"]}`
+                  ? `${style["login-card"]} ${style["login-card-dark"]}`
+                  : `${style["login-card"]} ${style["login-card-light"]}`
               }
             >
-              Welcome Back
-            </h1>
-            <form onSubmit={loginUser} noValidate>
-              <div className={style["inside-card"]}>
-                <div
-                  className={
-                    dark
-                      ? `${style["login-input-dark"]} ${style["login-input"]}`
-                      : `${style["login-input-light"]} ${style["login-input"]}`
-                  }
-                >
-                  <input
-                    autocomplete="off"
-                    id="username"
-                    type="email"
-                    name="email"
-                    placeholder="Username"
-                    onChange={handleChange}
+              <h1
+                className={
+                  dark
+                    ? `${style["card-heading"]} ${style["card-heading-dark"]}`
+                    : `${style["card-heading"]} ${style["card-heading-light"]}`
+                }
+              >
+                Welcome Back
+              </h1>
+              <form onSubmit={loginUser} noValidate>
+                <div className={style["inside-contact"]}>
+                  <div
                     className={
                       dark
-                        ? `${style["input-login-dark"]} ${style["input-login"]}`
-                        : `${style["input-login-light"]} ${style["input-login"]}`
+                        ? `${style["login-input"]} ${style["login-input-dark"]}`
+                        : `${style["login-input"]} ${style["login-input-light"]}`
                     }
-                  />
-                  <i className="fas fa-user"></i>
-                  <div
-                    className={`${style["validation"]} d-sm-none d-md-block`}
                   >
-                    {errorObj["email"] && <div>* {errorObj["email"]}</div>}
+                    <input
+                      autocomplete="off"
+                      id="username"
+                      type="email"
+                      name="email"
+                      placeholder="Username"
+                      onChange={handleChange}
+                      className={
+                        dark
+                          ? `${style["input-login-dark"]} ${style["input-login"]}`
+                          : `${style["input-login-light"]} ${style["input-login"]}`
+                      }
+                    />
+                    <i className="fas fa-user"></i>
+                    <div className={`${style["validation"]}`}>
+                      {errorObj["email"] && <div>* {errorObj["email"]}</div>}
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={
-                    dark
-                      ? `${style["login-input-dark"]} ${style["login-input"]}`
-                      : `${style["login-input-light"]} ${style["login-input"]}`
-                  }
-                >
-                  <input
-                    id="password"
-                    name="password"
-                    placeholder="Password"
+                  <div
                     className={
                       dark
-                        ? `${style["input-login-dark"]} ${style["input-login"]}`
-                        : `${style["input-login-light"]} ${style["input-login"]}`
+                        ? `${style["login-input"]} ${style["login-input-dark"]}`
+                        : `${style["login-input"]} ${style["login-input-light"]}`
                     }
-                    type={passwordInput.current}
-                    onChange={handleChange}
-                  />
-                  <i
-                    className={hidePassword ? "fa fa-eye" : "fa fa-eye-slash"}
-                    onClick={() => setHidePassword(!hidePassword)}
-                  ></i>
-                  <div
-                    className={`${style["validation"]} d-sm-none d-md-block`}
                   >
-                    {errorObj["password"] && (
-                      <div>* {errorObj["password"]}</div>
-                    )}
+                    <input
+                      id="password"
+                      name="password"
+                      placeholder="Password"
+                      className={
+                        dark
+                          ? `${style["input-login-dark"]} ${style["input-login"]}`
+                          : `${style["input-login-light"]} ${style["input-login"]}`
+                      }
+                      type={passwordInput.current}
+                      onChange={handleChange}
+                    />
+                    <i
+                      className={hidePassword ? "fa fa-eye" : "fa fa-eye-slash"}
+                      onClick={() => setHidePassword(!hidePassword)}
+                    ></i>
+                    <div className={`${style["validation"]}`}>
+                      {errorObj["password"] && (
+                        <div>* {errorObj["password"]}</div>
+                      )}
+                    </div>
                   </div>
+                  <div className={style["submit-btn"]}>
+                    <Button2
+                      id="btn"
+                      label="Sign In"
+                      type="submit"
+                      className={style["submit-btn-text"]}
+                    />
+                  </div>
+                  <Link to="/forgot-password">
+                    <h5 style={{ textAlign: "center" }}>
+                      Forgot your password?
+                    </h5>
+                  </Link>
                 </div>
-                <div className={style["submit-btn"]}>
-                  <Button2
-                    id="btn"
-                    label="Sign In"
-                    type="submit"
-                    className={style["submit-btn-text"]}
-                  />
-                </div>
-                <Link to="/forgot-password">
-                  <h5 style={{ textAlign: "center" }}>Forgot your password?</h5>
-                </Link>
-              </div>
-            </form>
-            {/* <div style={{ color: "red", textAlign: "center", fontWeight: "bold" }}>{status}</div> */}
+              </form>
+              {/* <div style={{ color: "red", textAlign: "center", fontWeight: "bold" }}>{status}</div> */}
+            </div>
           </div>
         </div>
       </div>

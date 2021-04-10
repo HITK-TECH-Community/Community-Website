@@ -169,7 +169,8 @@ export function Login(props) {
                     }
                   >
                     <input
-                      autocomplete="off"
+                      autoFocus="on"
+                      autoComplete="off"
                       id="username"
                       type="email"
                       name="email"

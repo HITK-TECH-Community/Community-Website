@@ -6,7 +6,7 @@ const constants = require('../../../constants');
 module.exports = async (req, res, next) => {
   const [err, broadcast] = await to(Broadcast.findByIdAndDelete(req.params.id));
   if (!broadcast) {
-    const error = new ErrorHandler(constants.ERRORS.DATABASE, {
+    const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,
       message: "Broadcast doesn't exist",
     });

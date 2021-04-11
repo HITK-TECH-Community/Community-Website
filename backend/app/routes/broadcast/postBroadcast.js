@@ -4,7 +4,7 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
-  const [err] = await to(Broadcast.create({ ...req.body }));
+  const [err, { _id }] = await to(Broadcast.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -15,6 +15,7 @@ module.exports = async (req, res, next) => {
   }
   res.status(200).send({
     message: 'Broadcast added successfully',
+    id: _id,
   });
   return next();
 };

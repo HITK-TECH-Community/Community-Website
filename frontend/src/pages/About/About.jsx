@@ -277,7 +277,9 @@ export const About = (props) => {
         ></div>
         <div className="container">
           <div className={style["row1"]}>
-            <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website"/>
+            <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" />
+            </a>
           </div>
         </div>
       </div>

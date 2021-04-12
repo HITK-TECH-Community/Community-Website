@@ -117,6 +117,7 @@ export function ResourceSharingForm(props) {
                 }
               >
                 <input
+                  autoFocus="on"
                   placeholder="Name"
                   id="txt_name"
                   type="text"

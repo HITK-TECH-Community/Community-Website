@@ -84,142 +84,146 @@ export function ForgotPassword(props) {
       <div
         className={
           dark
-            ? `${style["forgot-password-section-dark"]}`
-            : `${style["forgot-password-section-light"]}`
+            ? `${style["forgot-password-section"]} ${style["forgot-password-section-dark"]}`
+            : `${style["forgot-password-section"]} ${style["forgot-password-section-light"]}`
         }
       >
-        <div
-          className={
-            dark
-              ? `${style["forgot-password-image-dark"]} ${style["child1-dark"]}`
-              : `${style["forgot-password-image-light"]} ${style["child1-light"]}`
-          }
-        >
-          <img
-            src="./images/forgot-password.png"
-            alt="forgot-password-illustration"
-          />
-        </div>
-        <div className={`${style["forgot-password-form"]} ${style["child2"]}`}>
+        <div className={style["forgot-password-parent"]}>
           <div
-            className={
-              dark
-                ? `${style["forgot-password-card-dark"]} ${style["forgot-password-card"]}`
-                : `${style["forgot-password-card-light"]} ${style["forgot-password-card"]}`
-            }
+            className={`${style["forgot-password-child"]} ${style["child1"]}`}
           >
-            {submited ? (
-              <React.Fragment>
-                <h1
-                  className={
-                    dark
-                      ? `${style["card-heading-dark"]} ${style["card-heading"]}`
-                      : `${style["card-heading-light"]} ${style["card-heading"]}`
-                  }
-                >
-                  Mail Sent
-                </h1>
-                <div
-                  className={
-                    dark
-                      ? `${style["inside-card-dark"]}`
-                      : `${style["inside-card-light"]}`
-                  }
-                >
-                  <p style={{ textAlign: "center" }}>
-                    An invitation link has been sent on your registered email,
-                    please check your inbox for further steps.
-                  </p>
-                  <Grid container spacing={3}>
-                    <Grid xs={6} style={{ padding: "5%" }}>
-                      <Link to="/">
-                        <Button2
-                          id="home-btn"
-                          label="Home"
-                          className={style["back-button"]}
-                        />
-                      </Link>
-                    </Grid>
-                    <Grid xs={6} style={{ padding: "5%" }}>
-                      <Link to="/admin">
-                        <Button2
-                          id="login-btn"
-                          label="Login"
-                          className={`${style["back-button"]} ${style["no-border"]}`}
-                        />
-                        {console.log(style["back-button"])}
-                      </Link>
-                    </Grid>
-                  </Grid>
-                  <br />
-                </div>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                <h1
-                  className={
-                    dark
-                      ? `${style["card-heading-dark"]} ${style["card-heading"]}`
-                      : `${style["card-heading-light"]} ${style["card-heading"]}`
-                  }
-                >
-                  Trouble Logging In?
-                </h1>
-                <form onSubmit={handleSubmit} noValidate>
+            <img
+              src="./images/forgot-password.png"
+              alt="forgot-password-illustration"
+              className={style["forgot-password-image"]}
+            />
+          </div>
+          <div
+            className={`${style["forgot-password-child"]} ${style["child2"]}`}
+          >
+            <div
+              className={
+                dark
+                  ? `${style["forgot-password-card-dark"]} ${style["forgot-password-card"]}`
+                  : `${style["forgot-password-card-light"]} ${style["forgot-password-card"]}`
+              }
+            >
+              {submited ? (
+                <React.Fragment>
+                  <h1
+                    className={
+                      dark
+                        ? `${style["card-heading-dark"]} ${style["card-heading"]}`
+                        : `${style["card-heading-light"]} ${style["card-heading"]}`
+                    }
+                  >
+                    Mail Sent
+                  </h1>
                   <div
                     className={
                       dark
-                        ? `${style["inside-card-light"]}`
+                        ? `${style["inside-card-dark"]}`
                         : `${style["inside-card-light"]}`
                     }
                   >
-                    <div className={`form-group ${style["form-group"]}`}>
-                      <div
-                        className={
-                          dark
-                            ? `${style["forgot-password-input-dark"]} ${style["forgot-password-input"]}`
-                            : `${style["forgot-password-input-light"]} ${style["forgot-password-input"]}`
-                        }
-                      >
-                        <input
-                          autocomplete="off"
-                          id="username"
-                          type="email"
-                          name="email"
-                          placeholder="Email"
-                          onChange={handleChange}
+                    <p style={{ textAlign: "center" }}>
+                      An invitation link has been sent on your registered email,
+                      please check your inbox for further steps.
+                    </p>
+                    <Grid container spacing={3}>
+                      <Grid xs={6} style={{ padding: "5%" }}>
+                        <Link to="/">
+                          <Button2
+                            id="home-btn"
+                            label="Home"
+                            className={style["back-button"]}
+                          />
+                        </Link>
+                      </Grid>
+                      <Grid xs={6} style={{ padding: "5%" }}>
+                        <Link to="/admin">
+                          <Button2
+                            id="login-btn"
+                            label="Login"
+                            className={`${style["back-button"]} ${style["no-border"]}`}
+                          />
+                          {console.log(style["back-button"])}
+                        </Link>
+                      </Grid>
+                    </Grid>
+                    <br />
+                  </div>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  <h1
+                    className={
+                      dark
+                        ? `${style["card-heading-dark"]} ${style["card-heading"]}`
+                        : `${style["card-heading-light"]} ${style["card-heading"]}`
+                    }
+                  >
+                    Trouble Logging In?
+                  </h1>
+                  <form onSubmit={handleSubmit} noValidate>
+                    <div
+                      className={
+                        dark
+                          ? `${style["inside-card-light"]}`
+                          : `${style["inside-card-light"]}`
+                      }
+                    >
+                      <div className={`form-group ${style["form-group"]}`}>
+                        <div
                           className={
                             dark
-                              ? `${style["input-forgot-password-dark"]} ${style["input-forgot-password"]}`
-                              : `${style["input-forgot-password-light"]} ${style["input-forgot-password"]}`
+                              ? `${style["forgot-password-input-dark"]} ${style["forgot-password-input"]}`
+                              : `${style["forgot-password-input-light"]} ${style["forgot-password-input"]}`
                           }
-                        />
-                        <i className="fas fa-at"></i>
-                        <div
-                          className={`${style["validation"]} validation d-sm-none d-md-block`}
                         >
-                          {formerrors["email"] && (
-                            <div>* {formerrors["email"]}</div>
-                          )}
+                          <input
+                            autoFocus="on"
+                            autoComplete="off"
+                            id="username"
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            onChange={handleChange}
+                            className={
+                              dark
+                                ? `${style["input-forgot-password-dark"]} ${style["input-forgot-password"]}`
+                                : `${style["input-forgot-password-light"]} ${style["input-forgot-password"]}`
+                            }
+                          />
+                          <i className="fas fa-at"></i>
+                          <div className={`${style["validation"]}`}>
+                            {formerrors["email"] && (
+                              <div>* {formerrors["email"]}</div>
+                            )}
+                          </div>
                         </div>
                       </div>
+                      <div className={style["submit-btn"]}>
+                        <Button2
+                          id="btn"
+                          label="Submit"
+                          type="submit"
+                          className={style["submit-btn-text"]}
+                        />
+                      </div>
                     </div>
-                    <div className={style["submit-btn"]}>
-                      <Button2
-                        id="btn"
-                        label="Submit"
-                        type="submit"
-                        className={style["submit-btn-text"]}
-                      />
-                    </div>
-                  </div>
-                </form>
-              </React.Fragment>
-            )}
-            <div
-              style={{ color: "red", textAlign: "center", fontWeight: "bold" }}
-            >
-              {status}
+                  </form>
+                </React.Fragment>
+              )}
+              <div
+                style={{
+                  color: "red",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                {status}
+              </div>
             </div>
           </div>
         </div>

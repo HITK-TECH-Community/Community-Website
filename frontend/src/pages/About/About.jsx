@@ -276,10 +276,10 @@ export const About = (props) => {
           }
         ></div>
         <div className="container">
-          <div className={style["row1"]}>
-            <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
-              <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" />
-            </a>
+          <div className={style["contributors"]}>
+              <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+                <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" alt="contributors"/>
+              </a>
           </div>
         </div>
       </div>

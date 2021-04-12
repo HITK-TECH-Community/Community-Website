@@ -8,6 +8,6 @@ const broadcast = require('./broadcast');
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
-router.use('/', tinyURL);
 router.use('/broadcast', broadcast);
+router.use('/', tinyURL);
 module.exports = router;

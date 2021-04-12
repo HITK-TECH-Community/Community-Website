@@ -20,3 +20,17 @@ Before executing every route function validation middleware gets executed which 
   
     - ![diagram](images/addBroadcast.jpg)
     <br>
+
+- <code> <b> /broadcast/:id </b> </code> [<b>  DELETE</b> ]
+    - Delete broadcast from the database
+    <br>
+
+- <code> <b> /broadcast?page= &limit=  </b> </code> [<b>  GET</b> ]
+    - Get Array of broadcast from the database with limit
+    - query params : 
+        | Parameter   | description |
+        | ----------- | ------------
+        | page        | integer, required |
+        | limit       | integer, required |
+    - This is a public Route (No Auth Required).
+    <br>

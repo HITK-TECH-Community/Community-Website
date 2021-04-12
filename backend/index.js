@@ -1,55 +1,105 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const http = require('http');
-const bodyParser = require('body-parser');
-const responseTime = require('response-time');
-const routes = require('./app/routes');
-const { errorHandler } = require('./helpers/error');
-require('colors');
-require('./helpers/dbConnection');
 require('dotenv').config();
+const cluster = require('cluster');
+const os = require('os');
 
-const app = express();
-const server = http.Server(app);
+if (process.env.CLUSTER === 'yes') {
+  const numCPUs = os.cpus().length;
 
-// Set security headers
-app.use(helmet());
+  if (cluster.isMaster) {
+    console.log(`Starting app in cluster mode with ${numCPUs} workers`);
+    console.log(`Master ${process.pid} is running`);
+    for (let i = 0; i < numCPUs; i += 1) {
+      cluster.fork();
+    }
 
-// CORS
-app.use(cors());
+    cluster.on('exit', (worker, code, signal) => {
+      console.log(`worker ${worker.process.pid} died with code: ${code} and signal: ${signal}`);
+      console.log('starting new worker');
+      cluster.fork();
+    });
 
-// Body Parser
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+    return;
+  }
+  // else it's a worker. continue.
+  console.log(`Worker ${process.pid} started`);
+} else {
+  console.log('Starting app in non-cluster mode. (To start in cluster mode, pass CLUSTER=yes in config file)');
+}
 
-// Response time
-app.use(responseTime({ suffix: false }));
+const http = require('http');
+const app = require('./app');
+/**
+ * Normalize a port into a number, string, or false.
+ */
 
-// Use routes
-app.use('/', routes);
+function normalizePort(val) {
+  const port = parseInt(val, 10);
 
-// Response handler
-// app.use(handleResponse);
+  if (Number.isNaN(port)) {
+    // named pipe
+    return val;
+  }
 
-// Home route
-app.get('/', (_req, res) => {
-  res.status(200).json({ message: 'Hello There!! You are at Community-website Backend' });
-});
+  if (port >= 0) {
+    // port number
+    return port;
+  }
 
-// Error handling middleware
-app.use(errorHandler);
+  return false;
+}
 
-// Start the server
-const PORT = process.env.PORT || 3500;
-server.listen(
-  PORT,
-  console.log(`Server running in ${process.env.ENV || 'development'} mode on port ${PORT}`.brightYellow.underline.bold)
-);
+/**
+ * Get port from environment and store in Express.
+ */
 
-// handle the error safely
-process.on('uncaughtException', (err) => {
-  console.log(err);
-});
+const port = normalizePort(process.env.PORT || '3500');
+app.set('port', port);
 
-module.exports = app;
+/**
+ * Create HTTP server.
+ */
+
+const server = http.createServer(app);
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`);
+      break;
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`);
+      break;
+    default:
+      console.error(error);
+  }
+  throw error;
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  console.log(`Listening on ${bind}`);
+}
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);

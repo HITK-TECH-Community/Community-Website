@@ -23,15 +23,31 @@
 .resource-card {
   width: 75%;
   height: auto;
-  background-color: #e7e7e7;
   margin: 30px auto;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
   padding-bottom: 2rem;
+}
+
+.resource-card-light {
+  background-color: #e7e7e7;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+// for dark theme
+.resource-card-dark {
+  color: whitesmoke;
+  background-color: #282c35;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .resource-input {
   position: relative;
+  margin-bottom: 30px !important;
 }
 
 .resource-input input,
@@ -39,16 +55,30 @@
 .resource-input1 select {
   width: 100%;
   height: 50px;
-  border: 1px solid #bbbaba;
   border-radius: 5px;
   padding: 0 25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.resource-input-light input,
+.resource-input-light textarea,
+.resource-input1-light select {
+  border: 1px solid #bbbaba;
   color: #777777;
-  margin-bottom: 20px;
-  margin-bottom: 30px !important;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+// for dark theme
+.resource-input-dark input,
+.resource-input-dark textarea,
+.resource-input1-dark select {
+  border: 1px solid #414a4c;
+  color: whitesmoke;
+  background-color: #333333;
+  box-shadow: inset 2px 2px 5px rgba(72, 127, 255, 0.1),
+    inset -2px -2px 5px rgba(72, 127, 255, 0.4);
 }
 
 .resource-input input::placeholder,
@@ -57,10 +87,24 @@
   color: #777777;
 }
 
+// for dark theme
+.resource-input-dark input::placeholder,
+.resource-input-dark textarea::placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
 .resource-input input::-moz-placeholder,
 .resource-input textarea::-moz-placeholder {
   opacity: 1;
   color: #777777;
+}
+
+// for dark theme
+.resource-input-dark input::-moz-placeholder,
+.resource-input-dark textarea::-moz-placeholder {
+  opacity: 1;
+  color: whitesmoke;
 }
 
 .resource-input input::-moz-placeholder,
@@ -75,9 +119,22 @@
   color: #777777;
 }
 
-.resource-input input:focus,
-.resource-input textarea:focus,
-.resource-input1 select:focus {
+// for dark theme
+.resource-input-dark input::-moz-placeholder,
+.resource-input-dark textarea::-moz-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+.resource-input-dark input::-webkit-input-placeholder,
+.resource-input-dark textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+.resource-input-light input:focus,
+.resource-input-light textarea:focus,
+.resource-input1-light select:focus {
   outline: none;
   border: double 2px transparent;
   border-radius: 10px;
@@ -86,6 +143,19 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: #ffffff;
+}
+
+// for dark theme
+.resource-input-dark input:focus,
+.resource-input-dark textarea:focus,
+.resource-input1-dark select:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
 }
 
 .resource-input textarea {
@@ -168,14 +238,21 @@
   left: 8px;
   content: " ";
   display: block;
+  border: 4px solid whitesmoke;
+}
+
+.radio-item-light input[type="radio"]:checked + label:after {
   background-image: linear-gradient(
     to right,
     rgba(255, 0, 90, 1),
     rgba(10, 24, 61, 1)
   );
-  border: 4px solid whitesmoke;
 }
 
+// for dark theme
+.radio-item-dark input[type="radio"]:checked + label:after {
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+}
 .resource-input1 {
   margin-bottom: 1.5rem;
 }
@@ -209,8 +286,16 @@ input[type="date"]:not(:valid):before {
   padding: 30px 0;
   font-size: 30px;
   text-align: center;
-  color: var(--secondary-color);
   text-transform: capitalize;
+}
+
+// for dark theme
+.resource-header-text-dark {
+  color: #69a9dd;
+}
+
+.resource-header-text-light {
+  color: var(--secondary-color);
 }
 
 .submit-btn {
@@ -327,4 +412,14 @@ input[type="date"]:not(:valid):before {
     );
     border: 3px solid whitesmoke;
   }
+}
+
+.validation {
+  color: red;
+  margin-top: 0;
+}
+
+// for dark theme
+.label-dark {
+  color: whitesmoke !important;
 }

@@ -9,7 +9,7 @@ const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
   const { longURL } = req.body;
-  const { baseURL } = config;
+  const { BASE_URL } = config;
   urlExists(longURL, (_err, exists) => {
     if (!exists) {
       const error = new ErrorHandler(constants.ERRORS.INPUT, {
@@ -21,7 +21,7 @@ module.exports = async (req, res, next) => {
     return exists;
   });
   const urlCode = nanoid(5);
-  const shortURL = `${baseURL}/${urlCode}`;
+  const shortURL = `${BASE_URL}/${urlCode}`;
   const setData = {
     longURL,
     shortURL,

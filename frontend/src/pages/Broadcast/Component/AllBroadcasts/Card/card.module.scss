@@ -1,14 +1,25 @@
 .card-item {
-  background-color: #016795;
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1em;
-  box-shadow: 0.3em 0.3em 0.4em grey;
   height: auto;
   width: 15em;
   margin: 1em;
   background-position: left center;
-  transition: background 0.3s ease-out;
+  transition: all 0.5s ease-in;
+}
+
+.card-item-light {
+  background-color: #016795;
+  box-shadow: 1em 1em 1em rgb(54, 53, 53);
+}
+
+// for dark theme
+.card-item-dark {
+  background-color: #171717;
+  border: 2px solid #016795;
+  box-shadow: 1em 1em 1em rgba(72, 127, 255, 0.4);
+  color: whitesmoke !important;
 }
 
 .clickable-card {
@@ -20,11 +31,24 @@
   height: 380px;
 }
 
+.clickable-card:hover {
+  cursor: pointer;
+}
+
 .card-title {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   line-height: 1.9rem;
   font-weight: bold;
+}
+
+.card-title-light {
+  color: white;
+}
+
+// for dark theme
+.card-title-dark {
+  color: #69a9dd;
 }
 
 .card-content {
@@ -34,23 +58,39 @@
   width: 100%;
 }
 
-.card-item:hover {
+.card-item-light:hover {
   background-color: #1b2431;
 }
 
+// for dark theme
+.card-item-dark:hover {
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+}
+
 .but {
-  background: white;
   padding: 12px 22px;
   outline: none;
-  border: 2px solid transparent;
+  border-radius: 5%;
   font-size: 18px;
-  color: black;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-in;
   margin-bottom: 20px;
 }
 
-.but:hover {
+.but-light {
+  background: white;
+  border: 1px solid #1b2431;
+  color: black;
+}
+
+// for dark theme
+.but-dark {
+  background: #69a9dd;
+  border: 2px solid #69a9dd;
+  color: #171717;
+}
+
+.but-light:hover {
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
@@ -60,6 +100,14 @@
   border-radius: 4px;
   border: 2px solid
     linear-gradient(45deg, rgba(255, 0, 90, 1) 0%, rgba(10, 24, 61, 1) 90%);
+}
+
+// for dark theme
+.but-dark:hover {
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+  color: whitesmoke;
+  border-radius: 4px;
+  border: 2px solid linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
 }
 
 .admin-controls {
@@ -73,7 +121,7 @@
 .card-container {
   opacity: 1;
   width: 357px;
-  transition: width 1s ease-out, opacity 300ms ease-out;
+  transition: width 0.5s ease-in, opacity 0.5s ease-in;
 }
 
 .gonna-remove {

@@ -33,6 +33,7 @@
 
 .admin_input {
   position: relative;
+  margin-bottom: 30px !important;
 }
 
 .admin_input input {
@@ -42,8 +43,6 @@
   border-radius: 5px;
   padding: 0 25px;
   color: #777777;
-  margin-bottom: 20px;
-  margin-bottom: 30px !important;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
@@ -124,4 +123,8 @@
   .admin_card {
     width: 90%;
   }
+}
+.validation {
+  color: red;
+  margin-top: 0;
 }

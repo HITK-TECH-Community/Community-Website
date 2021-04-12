@@ -6,20 +6,22 @@ import { Link } from "react-router-dom";
 
 export function About(props) {
   return (
-    <div>
-      <h1 className={style["head"]}>About Us</h1>
-      <div className={style["about-us"]}>
-        <div className={style["crd"]}>
+    <div className={style["about"]}>
+      <h1 style={{ textAlign: "center" }}> About Us </h1>
+      <div className={style["cards"]}>
+        <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
               <Link onClick={() => props.setTab(14)} style={{ color: "white" }}>
-              Add Team Member
+                ADD TEAM MEMBER
               </Link>
               <AiOutlinePlus className={style["add"]} />
             </div>
             <div className={style["card-content"]}>
               <p style={{ textAlign: "left" }}>To add a new team member</p>
-              <p style={{ color: "red", cursor: "pointer", textAlign: "left" }}>
+              <p
+                style={{ color: "red", cursor: "pointer", textAlign: "left" }}
+              >
                 <Link onClick={() => props.setTab(14)} style={{ color: "red" }}>
                   CLICK HERE
                 </Link>
@@ -27,14 +29,17 @@ export function About(props) {
             </div>
           </div>
         </div>
-        <div className={style["crd"]}>
+        <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              Manage Teams
+              MANAGE TEAMS
               <AiFillEdit className={style["editt"]} />
             </div>
             <div className={style["card-content"]}>
-              <button className={style["main-btn"]} onClick={()=>props.setTab(13)}>
+              <button
+                className={style["main-btn"]}
+                onClick={() => props.setTab(13)}
+              >
                 Manage here
               </button>
             </div>

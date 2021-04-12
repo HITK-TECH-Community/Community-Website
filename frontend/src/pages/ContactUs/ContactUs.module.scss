@@ -1,11 +1,40 @@
 .contact-section {
-  background: #fff;
   padding: 0 20px;
+}
+
+.contact-section-light {
+  background: #fff;
+}
+
+// for dark theme
+.contact-section-dark {
+  background: #171717;
 }
 
 .contact-parent {
   display: flex;
   padding: 30px 0;
+}
+
+//err msg styles
+.validation {
+  color: #ff2929;
+  margin-top: -1%;
+  margin-bottom: 13px;
+}
+
+.card-heading {
+  padding-top: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.inside-card {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .contact-image {
@@ -32,19 +61,53 @@
 .contact-card {
   width: 75%;
   height: auto;
-  background-color: #e7e7e7;
   margin: 0% auto;
   padding-bottom: 20px;
   border-radius: 10px;
+}
+
+.goodbye-card {
+  width: 60%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 20% auto;
+  padding-bottom: 20px;
+  border-radius: 10px;
   box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.contact-card-light {
+  background-color: #e7e7e7;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+// for dark theme
+.contact-card-dark {
+  color: whitesmoke;
+  background-color: #282c35;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .contact-header-text {
   padding: 15px 0;
   margin-bottom: 0px;
   text-transform: capitalize;
-  color: var(--secondary-color);
   text-align: center !important;
+  font-size: 1.5rem;
+}
+
+.contact-header-text-light {
+  color: var(--secondary-color);
+}
+
+// for dark theme
+.contact-header-text-dark {
+  color: #69a9dd;
 }
 
 .inside-contact {
@@ -52,8 +115,15 @@
   margin: 0 auto;
 }
 
+.inside-card p {
+  padding: 10px 5px;
+  font-size: 1.5rem;
+  font-weight: 580;
+}
+
 .contact-input {
   position: relative;
+  margin-bottom: 8px;
 }
 
 .contact-input input,
@@ -67,9 +137,27 @@
   margin-right: auto;
   font-size: 14px;
   color: #777777;
-  margin-bottom: 20px;
+  margin-bottom: 7px;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.contact-input-light input,
+.contact-input-light textarea {
+  border: 1px solid #bbbaba;
+  color: #777777;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+// for dark theme
+.contact-input-dark input,
+.contact-input-dark textarea {
+  border: 1px solid #414a4c;
+  color: whitesmoke;
+  background-color: #333333;
+  box-shadow: inset 2px 2px 5px rgba(72, 127, 255, 0.1),
+    inset -2px -2px 5px rgba(72, 127, 255, 0.4);
 }
 
 .contact-input input::placeholder,
@@ -90,8 +178,29 @@
   color: #777777;
 }
 
-.contact-input input:focus,
-.contact-input textarea:focus {
+// for dark theme
+.contact-input-dark input::placeholder,
+.contact-input-dark textarea::placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.contact-input-dark input::-moz-placeholder,
+.contact-input-dark textarea::-moz-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+// for dark theme
+.contact-input-dark input::-webkit-input-placeholder,
+.contact-input-dark textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: whitesmoke;
+}
+
+.contact-input-light input:focus,
+.contact-input-light textarea:focus {
   border-color: #1863ff;
   outline: none;
   border: double 2px transparent;
@@ -101,6 +210,18 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: #ffffff;
+}
+
+// for dark theme
+.contact-input-dark input:focus,
+.contact-input-dark textarea:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
 }
 
 .contact-input textarea {
@@ -114,7 +235,15 @@
   right: 25px;
   top: 15px;
   font-size: 16px;
+}
+
+.contact-input-light i {
   color: #777777;
+}
+
+// for dark theme
+.contact-input-dark i {
+  color: whitesmoke;
 }
 
 .submit-btn {
@@ -150,6 +279,22 @@
     height: 40px;
   }
 
+  .goodbye-card {
+    width: 85%;
+    padding-top: 5px;
+  }
+
+  .card-heading {
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+    padding: 9px 0;
+  }
+
+  .inside-card p {
+    padding: 0px;
+    font-size: 1.3rem;
+  }
+
   .contact-btn {
     font-size: 20px;
   }
@@ -165,5 +310,17 @@
     align-items: center;
     font-size: x-small;
     color: black;
+  }
+}
+.text-xs-center {
+  text-align: center;
+}
+
+.g-recaptcha {
+  display: inline-block;
+
+  // for dark theme
+  .contact-input-dark i {
+    color: whitesmoke;
   }
 }

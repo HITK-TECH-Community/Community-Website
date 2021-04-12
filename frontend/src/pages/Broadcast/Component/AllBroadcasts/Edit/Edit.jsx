@@ -13,9 +13,10 @@ export function Edit(props) {
     window.addEventListener("scroll", scrolls);
   }, []);
 
+  let dark = props.theme;
   return props.visible ? (
     <div className={style["popup"]} style={{ top: a }}>
-      <div className={style["div"]}>
+      <div className={dark ? style["div-dark"] : style["div"]}>
         <h1>
           Edit modal
           <CloseIcon
@@ -33,6 +34,9 @@ export function Edit(props) {
               multiline
               value={props.data.title}
               className={style["input"]}
+              InputProps={{
+                className: `${dark ? style["input-dark"] : ""}`,
+              }}
               onChange={props.handleChange}
             />
           </div>
@@ -45,6 +49,9 @@ export function Edit(props) {
               placeholder="Description"
               value={props.data.desc}
               className={style["input"]}
+              InputProps={{
+                className: `${dark ? style["input-dark"] : ""}`,
+              }}
               onChange={props.handleChange}
             />
           </div>
@@ -55,6 +62,9 @@ export function Edit(props) {
               name="link"
               placeholder="Link"
               className={style["input"]}
+              InputProps={{
+                className: `${dark ? style["input-dark"] : ""}`,
+              }}
               onChange={props.handleChange}
               value={props.data.link}
               multiline

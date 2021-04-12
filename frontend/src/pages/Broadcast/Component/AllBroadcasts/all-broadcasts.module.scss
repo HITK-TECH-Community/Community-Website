@@ -28,12 +28,21 @@
   height: 5px;
   border-radius: 20px;
   margin-bottom: 10px;
+}
+
+.dash-light {
   background: rgb(255, 0, 90);
   background: linear-gradient(
     45deg,
     rgba(255, 0, 90, 1) 0%,
     rgba(10, 24, 61, 1) 90%
   );
+}
+
+// for dark theme
+.dash-dark {
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
 }
 
 #hero {
@@ -73,25 +82,60 @@
 
 .input-input {
   padding: 8px 8px 8px 0;
-  box-shadow: inset 2px 2px 5px #d0d0d0, inset -2px -2px 5px #ffffff;
   border-radius: 12px;
   height: 3em;
-  border: 1px solid #eeeeee;
   padding-left: calc(1em + 32px);
   width: 100%;
 }
 
+// for dark theme
+.input-input-dark {
+  color: whitesmoke !important;
+}
+
 .search {
-  background-color: rgba(124, 117, 117, 0.2);
   border-radius: 15px;
   margin-right: 16px;
   margin-left: 25px;
   position: relative;
   width: 228px;
+  // border: 3px solid #1B2431;
 }
 
-.search:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.search-light {
+  background-color: rgba(124, 117, 117, 0.2);
+  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+}
+
+// for dark theme
+.search-dark {
+  border: 1px solid #414a4c;
+  background-color: #333333;
+  box-shadow: 0.5em 0.5em 0.5em rgba(72, 127, 255, 0.4);
+}
+
+// for dark theme
+.search-dark:focus-within,
+.search-dark:hover {
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.search-light:hover,
+.search-light:focus-within {
+  background-color: white !important;
+}
+
+.carousel-head {
+  color: #121f3a !important;
+  font-size: 35px !important;
+}
+
+// for dark theme
+.carousel-head-dark {
+  color: #69a9dd !important;
+  font-size: 35px !important;
 }
 
 @media (min-width: 380px) {
@@ -107,7 +151,11 @@
 
   .filters {
     display: flex;
-    margin: 15px auto;
+    margin: 40px auto;
+  }
+
+  .filters > * {
+    background-color: #121f3a !important;
   }
 }
 
@@ -127,4 +175,14 @@
   .input-input {
     width: 40ch;
   }
+}
+
+.filter-btn {
+  background-color: #121f3a !important;
+}
+
+// for dark theme
+.dark {
+  background: #171717;
+  color: whitesmoke;
 }

@@ -5,7 +5,8 @@
     "DATABASE": "Database Error",
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
-    "USER": "User "
+    "USER": "User ",
+    "UNEXPECTED": "Unexpected Error"
   },
   "PAGINATION_LIMIT": {
     "GET_ADMINS": 3

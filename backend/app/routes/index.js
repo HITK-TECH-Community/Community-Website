@@ -4,10 +4,12 @@ const auth = require('./auth');
 const { emailTest } = require('./testRoutes/emailTest');
 const tinyURL = require('./tinyURL');
 const broadcast = require('./broadcast');
+const FAQ = require('./faq/faq')
 
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
+router.use('/faq', FAQ);
 router.use('/', tinyURL);
 router.use('/broadcast', broadcast);
 module.exports = router;

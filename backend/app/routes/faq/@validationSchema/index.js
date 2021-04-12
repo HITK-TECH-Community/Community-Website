@@ -1,8 +1,9 @@
 const Joi = require('joi');
 
-const faqSchema = Joi.object().keys({
+const FAQValidationSchema = Joi.object().keys({
   question : Joi.string().required(),
   answer : Joi.string().required(),
+  tags : Joi.string().required()
 });
 
-module.exports = faqSchema;
+module.exports = FAQValidationSchema;

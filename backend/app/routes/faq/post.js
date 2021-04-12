@@ -1,7 +1,5 @@
-const {authMiddleware, generateJWT} = require('../../../helpers/middlewares/auth');
 const express = require ("express");
 const FAQ = require('../../models/faq');
-const router = express.Router();
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 

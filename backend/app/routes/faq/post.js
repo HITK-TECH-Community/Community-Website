@@ -1,10 +1,9 @@
+const to = require('await-to-js').default;
 const FAQ = require('../../models/faq');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-const to = require('await-to-js').default;
 
 module.exports = async (req, res, next) => {
-
   const [err] = await to(FAQ.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
@@ -18,4 +17,4 @@ module.exports = async (req, res, next) => {
     message: 'FAQ has been added',
   });
   return next();
- }
+};

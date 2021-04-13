@@ -25,12 +25,12 @@ Before executing every route function validation middleware gets executed which 
     - Delete broadcast from the database
     <br>
 
-- <code> <b> /broadcast?page= &limit=  </b> </code> [<b>  GET</b> ]
+- <code> <b> /broadcast?page= &tags=  </b> </code> [<b>  GET</b> ]
     - Get Array of broadcast from the database with limit
     - query params : 
         | Parameter   | description |
         | ----------- | ------------
-        | page        | integer, required |
-        | limit       | integer, required |
+        | page        | integer, optional |
+        | tags        | string, optional  |
     - This is a public Route (No Auth Required).
     <br>

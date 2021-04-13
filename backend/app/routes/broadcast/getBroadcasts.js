@@ -3,32 +3,37 @@ const Broadcast = require('../../models/Broadcast');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
+const limit = constants.PAGINATION_LIMIT.GET_BROADCASTS;
+
+const getBroadcastsAggregate = (startIndex, match) => {
+  const pipeline = [
+    { $match: match },
+    {
+      $project: {
+        _id: 1,
+        title: 1,
+        // imageUrl: 1,
+        // link: 1,
+        // content: 1,
+        // tags: 1,
+        // expiresOn: 1,
+        createdAt: 1,
+        // updatedAt: 1,
+      },
+    },
+    { $sort: { createdAt: -1 } },
+    { $skip: startIndex && startIndex - 1 },
+    { $limit: startIndex ? limit + 2 : limit + 1 },
+  ];
+  return pipeline;
+};
 module.exports = async (req, res, next) => {
-  const page = parseInt(req.query.page, 10);
-  const limit = parseInt(req.query.limit, 10);
+  const page = parseInt(req.query.page, 10) || 1;
+  // match for tag filtering
+  const match = req.query.tags ? { tags: { $in: req.query.tags.split(',') } } : {};
   const startIndex = (page - 1) * limit;
-  const endIndex = page * limit;
   const results = {};
-  if (!page || !limit) {
-    const error = new ErrorHandler(constants.ERRORS.INPUT, {
-      statusCode: 400,
-      message: 'Input Error: Fetching Failed',
-    });
-    return next(error);
-  }
-  if (startIndex > 0) {
-    results.previous = {
-      page: page - 1,
-      limit,
-    };
-  }
-  if (endIndex < (await Broadcast.countDocuments().exec())) {
-    results.next = {
-      page: page + 1,
-      limit,
-    };
-  }
-  const [err, broadcasts] = await to(Broadcast.find().limit(limit).skip(startIndex).exec());
+  const [err, broadcasts] = await to(Broadcast.aggregate(getBroadcastsAggregate(startIndex, match)).exec());
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -37,7 +42,16 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  results.results = broadcasts;
+  // check if previous page exists
+  if (startIndex > 0) {
+    [results.previous] = broadcasts;
+  }
+  // check if next page exists
+  if (startIndex === 0 || broadcasts.length === limit + 2) {
+    results.next = broadcasts.slice(-1);
+  }
+  // current broadcasts
+  results.results = startIndex ? broadcasts.slice(1, limit + 1) : broadcasts.slice(0, limit);
   res.status(200).json(results);
   return next();
 };

@@ -18,7 +18,7 @@ const FAQSchema = new Schema({
     type: Boolean,
   },
   tags: {
-    type: [String],
+    type: Array,
   },
 });
 

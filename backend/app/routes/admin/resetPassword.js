@@ -1,14 +1,14 @@
+const to = require('await-to-js').default;
 const argon2 = require('argon2');
 const Admin = require('../../models/Admin');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 const { verifyToken } = require('../../../helpers/middlewares/auth');
-const to = require('await-to-js').default;
 
 module.exports = async (req, res, next) => {
   // Extracting the new password from the request
   const { newPassword } = req.body;
-  // Extracting the TOKEN from URl /forgotpassword/:token
+  // Extracting the TOKEN from URl /resetpassword/:token
   const { token } = req.params;
 
   // Verifying the token and extracting the email from the payload
@@ -46,5 +46,6 @@ module.exports = async (req, res, next) => {
   }
 
   // Returning success response
+  next();
   return res.status(200).send({ message: 'Reset Password Successful' });
 };

@@ -159,7 +159,7 @@ const App = () => {
               </Switch>
             </div>
           </Switch>
-          <ScrollTop />
+          <ScrollTop theme={theme}/>
           <Footer className="Footer" theme={theme} />
         </Router>
       </div>

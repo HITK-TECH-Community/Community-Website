@@ -98,6 +98,14 @@
   flex: 49% 49%;
 }
 
+.contributors {
+  margin-bottom: 3rem;
+  display: flex;
+  margin-left: 160px;
+  width: 90%;
+  object-fit: cover;
+}
+
 .cover {
   object-fit: cover;
   object-position: center;
@@ -198,4 +206,16 @@
 .dark {
   background-color: #171717;
   color: whitesmoke;
+}
+
+@media screen and (max-width: 1200px) {
+  .contributors {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .contributors {
+    margin-left: 20px;
+  }
 }

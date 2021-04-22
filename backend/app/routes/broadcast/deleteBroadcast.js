@@ -4,18 +4,24 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
-  const [err, { _id }] = await to(Broadcast.create({ ...req.body }));
+  const [err, broadcast] = await to(Broadcast.findByIdAndDelete(req.params.id));
+  if (!broadcast) {
+    const error = new ErrorHandler(constants.ERRORS.INPUT, {
+      statusCode: 400,
+      message: "Broadcast doesn't exist",
+    });
+    return next(error);
+  }
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
-      message: 'Mongo Error: Insertion Failed',
+      message: 'Mongo Error: Deletion Failed',
       errStack: err,
     });
     return next(error);
   }
   res.status(200).send({
-    message: 'Broadcast added successfully',
-    id: _id,
+    message: 'Broadcast deleted successfully',
   });
   return next();
 };

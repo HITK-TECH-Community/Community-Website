@@ -18,6 +18,7 @@
   display: flex;
   width: 100vw;
 }
+
 #heading {
   display: flex;
   flex-direction: column;
@@ -26,6 +27,7 @@
   margin: 4rem 0 2rem 0;
   text-align: center;
 }
+
 #title {
   display: flex;
   font-size: 4rem;
@@ -49,6 +51,7 @@
   width: 95vw;
   margin: 0.5em;
 }
+
 .card-item {
   background-color: #016795;
   text-align: center;
@@ -90,6 +93,7 @@
 .card-item2 {
   height: 10em;
 }
+
 .clickable-card {
   display: flex;
   flex-direction: column;

@@ -51,6 +51,30 @@ export function Carousel(props) {
     },
   };
 
+  const cardImageArrayLight = dataa.map((item, i) => {
+    const style = {
+      height: "13em",
+      backgroundSize: "cover",
+      backgroundBlendMode: "screen",
+      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
+      backgroundImage: `linear-gradient(45deg,rgba(255, 0, 90, 1) 0%,rgba(10, 24, 61, 1) 90%),url(${item.link})`,
+    };
+    return style;
+  });
+
+  const cardImageArrayDark = dataa.map((item, i) => {
+    const style = {
+      height: "13em",
+      backgroundSize: "cover",
+      backgroundBlendMode: "screen",
+      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
+      backgroundImage: `linear-gradient(45deg, 
+        #4e4376 0%, 
+        #2b5876 90%),url(${item.link})`,
+    };
+    return style;
+  });
+
   return (
     <React.Fragment>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
@@ -87,13 +111,15 @@ export function Carousel(props) {
                   ? `${style["slide-card-dark"]} ${style["slide-card"]}`
                   : `${style["slide-card-light"]} ${style["slide-card"]}`
               }
+              onClick={() => handleOpen(item.desc, item.title, item.link)}
             >
-              <h3 className={style["card-head"]}>{item.title}</h3>
               <div
-                className={style["card-text"]}
-                onClick={() => handleOpen(item.desc, item.title, item.link)}
-              >
-                {item.desc.substring(0, 450)}...
+                style={dark ? cardImageArrayDark[i] : cardImageArrayLight[i]}
+              ></div>
+
+              <h3 className={style["card-head"]}>{item.title}</h3>
+              <div className={style["card-text"]}>
+                {item.desc.substring(0, 210)}...
               </div>
             </div>
           ))}

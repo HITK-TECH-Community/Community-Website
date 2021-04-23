@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export function About(props) {
   return (
     <div className={style["about"]}>
-      <h1 style={{ textAlign: "center" }}> Broadcasts </h1>
+      <h1 style={{ textAlign: "center" }}> About Us </h1>
       <div className={style["cards"]}>
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
@@ -20,7 +20,6 @@ export function About(props) {
             <div className={style["card-content"]}>
               <p style={{ textAlign: "left" }}>To add a new team member</p>
               <p
-                // onClick={openEditor}
                 style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
                 <Link onClick={() => props.setTab(14)} style={{ color: "red" }}>

@@ -19,6 +19,7 @@
 
 .join-us h1 {
   font-size: 3.6rem;
+  margin-bottom: -5px;
 }
 
 .join-us-light h1 {
@@ -28,6 +29,10 @@
 // for dark theme
 .join-us-dark h1 {
   color: #69a9dd;
+}
+
+.join-us h2 {
+  text-align: center;
 }
 
 .subtitle-light {

@@ -25,9 +25,11 @@ export const NotFound = (props) => {
           >
             The page you are looking for is not available.
           </div>
-          <a href="/">
-            <Button3 label="Go Home!" type="submit" />
-          </a>
+          <div className={style["goback"]}>
+            <a href="/">
+              <Button3 label="Go Home!" type="submit" />
+            </a>
+          </div>
         </div>
       </div>
     </main>

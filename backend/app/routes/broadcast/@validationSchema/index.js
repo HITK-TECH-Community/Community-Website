@@ -14,6 +14,8 @@ const postBroadcastValidationSchema = Joi.object().keys({
 const getBroadcastsValidationSchema = Joi.object().keys({
   page: Joi.number().min(1).optional(),
   tags: Joi.string().optional(),
+  year: Joi.number().optional(),
+  month: Joi.number().min(1).max(12).optional(),
 });
 
 module.exports = {

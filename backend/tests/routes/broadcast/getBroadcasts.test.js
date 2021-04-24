@@ -11,11 +11,13 @@ describe('Test for get Broadcasts:', () => {
     const query = {
       page: 2,
       tags: 'tag1,tag2',
+      year: 2021,
+      month: 4,
     };
 
     chai
       .request(server)
-      .get(`/broadcast?page=${query.page}&tags=${query.tags}`)
+      .get(`/broadcast?page=${query.page}&tags=${query.tags}&year=${query.year}&month=${query.month}`)
       .then((res) => {
         expect(res.status).to.equal(200);
         done();

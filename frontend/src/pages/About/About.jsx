@@ -262,6 +262,26 @@ export const About = (props) => {
             return null;
           })}
         </div>
+        <Typography
+          variant="h4"
+          className={dark ? `${style["about-dark"]}` : ``}
+        >
+          Open Source Contributors
+        </Typography>
+        <div
+          className={
+            dark
+              ? `${style["dash"]} ${style["dash-dark"]}`
+              : `${style["dash"]} ${style["dash-light"]}`
+          }
+        ></div>
+        <div className="container">
+          <div className={style["contributors"]}>
+              <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+                <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" alt="contributors"/>
+              </a>
+          </div>
+        </div>
       </div>
     </div>
   );

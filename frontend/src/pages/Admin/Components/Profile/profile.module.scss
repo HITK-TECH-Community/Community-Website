@@ -1,116 +1,109 @@
 .profile-container {
-  margin: 2rem;
+  text-align: center;
 }
-
 .profile-card {
-  margin: 2rem;
-  padding: 4rem 2rem;
-  background-color: #016795;
-  color: white;
-  border-radius: 8px;
-}
-
-.heads {
-  text-align: center;
-}
-
-.user-details {
-  margin: auto 8rem;
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.photos {
-  width: 22.5%;
-  border-radius: 12px;
-}
-
-.details {
-  padding: 2em 3rem;
-  width: 100%;
-}
-
-.edits > h4 {
-  font-size: 16px;
-  font-weight: 200;
-}
-
-.account {
-  margin: 4rem 0;
-  width: 100%;
-}
-
-.account > h2 {
-  text-align: center;
-}
-
-.edits {
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.detail {
-  margin: 2rem 8rem;
-  width: 100%;
+  width: 90%;
+  max-width: 550px;
+  min-height: 30rem;
+  background: #016795;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-}
-
-.conts {
-  display: flex;
+  text-align: center;
   justify-content: space-between;
-  width: 60%;
-  margin: 1em 0;
   align-items: center;
+  margin: 13% auto;
+  padding-bottom: 0.375rem;
+  box-shadow: 0.3em 0.3em 0.4em grey;
 }
 
-.inp {
+.icon-container {
+  align-self: flex-end;
+  position: relative;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.icon {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.image-container {
+  width: 125px;
+  height: 125px;
+  position: relative;
+  top: 4.5rem;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  background: linear-gradient(45deg, #ff005a 14.23%, #0a183d 83.75%);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.img-admin {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.card-info {
+  height: 20rem;
+  width: 98%;
+  background: #fff;
+  margin: 0 auto;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.line {
+  border-bottom: 1px solid #969696;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  top: 8rem;
+}
+
+.name {
+  font-size: 1.75rem;
+  position: relative;
+  top: 6rem;
+}
+
+.contact {
+  font-size: 1.25rem;
+  position: relative;
+  top: 10rem;
+}
+
+.contact-details {
+  margin-bottom: 1rem;
+}
+
+.form {
+  position: relative;
+  top: 6rem;
+}
+
+.input-wrapper {
   width: 50%;
-  padding: 0.75em;
-  border: 2px solid black;
-  border-radius: 12px;
-  margin-left: 10px;
+  margin: 1rem auto;
+}
+
+.input-wrapper input {
+  border: 1px solid #f8f7f7;
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 1rem;
+  box-shadow: inset 2px 2px 5px #c9c9c9, inset -2px -2px 5px #ffffff;
 }
 
 @media (max-width: 600px) {
-  .edits {
-    width: 100%;
+  .card-info {
+    width: 97%;
   }
-
-  .edits > h4 {
-    font-size: 16px;
-  }
-
-  .profile-card {
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .details {
-    margin: 0rem;
-  }
-
-  .detail {
-    margin: 1rem;
-  }
-
-  .user-details {
-    margin: 2rem;
-  }
-
-  .profile-container {
-    margin: 0rem;
-  }
-
-  .conts {
-    width: 90%;
-  }
-
-  .inp {
-    width: 60%;
-    padding: 0.5em;
+  .input-wrapper {
+    width: 70%;
   }
 }

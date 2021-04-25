@@ -98,11 +98,21 @@
   flex: 49% 49%;
 }
 
+#heading-dark {
+  font-size: 2.3rem;
+  color: #fac87b;
+}
+
+#heading-light {
+  font-size: 2.3rem;
+  color: #000;
+}
+
 .contributors {
-  margin-bottom: 3rem;
   display: flex;
-  margin-left: 160px;
-  width: 90%;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -209,14 +219,13 @@
   color: whitesmoke;
 }
 
-@media screen and (max-width: 1200px) {
-  .contributors {
-    margin-left: 0px;
-  }
-}
-
 @media screen and (max-width: 720px) {
-  .contributors {
-    margin-left: 20px;
+  #heading-dark {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  #heading-light {
+    font-size: 1.6rem;
+    text-align: center;
   }
 }

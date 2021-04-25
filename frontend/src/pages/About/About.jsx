@@ -264,7 +264,7 @@ export const About = (props) => {
         </div>
         <Typography
           variant="h4"
-          className={dark ? `${style["about-dark"]}` : ``}
+          id={dark ? `${style["heading-dark"]}` : `${style["heading-light"]}`}
         >
           Open Source Contributors
         </Typography>
@@ -277,9 +277,13 @@ export const About = (props) => {
         ></div>
         <div className="container">
           <div className={style["contributors"]}>
-              <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
-                <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" alt="contributors"/>
-              </a>
+            <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+              <img
+                style={{ maxWidth: "90vw" }}
+                src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website"
+                alt="contributors"
+              />
+            </a>
           </div>
         </div>
       </div>

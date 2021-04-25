@@ -37,13 +37,15 @@ container {
 }
 
 .dashing {
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin: 0 auto 2rem;
+  justify-content: center;
+  margin: 0 auto 3em auto;
 }
 
 .left {
   width: 25%;
+  max-width: 290px;
   display: flex;
   flex-direction: column;
   min-height: 25em;
@@ -57,7 +59,7 @@ container {
 
 .right {
   width: 75%;
-  margin: 2em 2em 0 2em;
+  margin: 2em 0em 0em 2em;
   background-color: white;
   padding: 1em;
   border-radius: 12px;

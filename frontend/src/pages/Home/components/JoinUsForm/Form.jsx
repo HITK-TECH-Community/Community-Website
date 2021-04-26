@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
+import MultiSelect from "react-multi-select-component";
+
 import styles from "./form.module.scss";
 import { Button2 } from "../../../../components/util/Button/index";
 export const JoinUsForm = (props) => {
@@ -16,6 +18,22 @@ export const JoinUsForm = (props) => {
     year: null,
     college: "",
   });
+
+  const options = [
+    { label: "Machine Learning", value: "ml" },
+    { label: "Artificial Intelligence", value: "ai" },
+    { label: "Android", value: "android" },
+    { label: "Web Devlopment", value: "web" },
+    { label: "Poster Making", value: "poster" },
+    { label: "Video Editing", value: "video" },
+    { label: "Social Media", value: "social" },
+    { label: "IOT", value: "iot" },
+    { label: "Content", value: "content" },
+    { label: "Others", value: "other" },
+  ];
+
+  const [domains, setDomains] = useState([]);
+  const [domainError, setDomainError] = useState();
 
   const [formerrors, setFormErrors] = useState({});
 
@@ -66,6 +84,11 @@ export const JoinUsForm = (props) => {
     e.preventDefault();
     const errors = validate();
     console.log(errors);
+    if (domains.length === 0) {
+      setDomainError("* Domains cannot be empty");
+    } else {
+      setDomainError("");
+    }
     if (errors === null || Object.keys(errors).length === 0) {
       setFormErrors({});
       console.log("Submitted", formdata);
@@ -75,7 +98,7 @@ export const JoinUsForm = (props) => {
   };
 
   console.log("form error: ", formerrors);
-  console.log("form data: ", formdata);
+  console.log("form data: ", formdata, domains);
 
   return (
     <div
@@ -133,7 +156,11 @@ export const JoinUsForm = (props) => {
                     <div
                       className={`${styles["validation"]} validation d-sm-none d-md-block`}
                     >
-                      {formerrors["name"] && <div>* {formerrors["name"]}</div>}
+                      {formerrors["name"] ? (
+                        <div>* {formerrors["name"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -156,8 +183,10 @@ export const JoinUsForm = (props) => {
                     <div
                       className={`${styles["validation"]} validation d-sm-none d-md-block`}
                     >
-                      {formerrors["phone"] && (
+                      {formerrors["phone"] ? (
                         <div>* {formerrors["phone"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                   </div>
@@ -207,7 +236,11 @@ export const JoinUsForm = (props) => {
                   <div
                     className={`${styles["validation"]} validation d-sm-none d-md-block`}
                   >
-                    {formerrors["link"] && <div>* {formerrors["link"]}</div>}
+                    {formerrors["link"] ? (
+                      <div>* {formerrors["link"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -230,7 +263,11 @@ export const JoinUsForm = (props) => {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["desc"] && <div>* {formerrors["desc"]}</div>}
+                  {formerrors["desc"] ? (
+                    <div>* {formerrors["desc"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
               <div
@@ -243,137 +280,22 @@ export const JoinUsForm = (props) => {
                 <label className={`mb-4 ${styles["ID"]}`}>
                   Interested Domains
                 </label>
-                <div className={styles["checkbuttons"]}>
-                  <div className="row">
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="ml" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Machine Learning
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="ai" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Artificial Intelligence
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="android" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Android
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="web" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Web Development
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="poster" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Poster Designing
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="video" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Video Editing
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="social" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Social Media Handler
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="iot" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          IoT
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="content" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Content Writing
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-xl-6">
-                      <div
-                        className={`${styles["form_check"]} form-check-inline ${styles["checkbox_item"]}`}
-                      >
-                        <input name="other" type="checkbox" />
-                        <label
-                          className={`${styles["mx-3"]} ${styles["label"]}`}
-                        >
-                          Other
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                <MultiSelect
+                  options={options} // Options to display in the dropdown
+                  value={domains} // Preselected value to persist in dropdown
+                  onChange={setDomains} // Function will trigger on change event
+                  labelledBy={"Domains"} // Property name to display in the dropdown options
+                  className={styles["dropdown"]}
+                />
+
+                <div
+                  className={`${styles["validation"]} validation d-sm-none d-md-block`}
+                >
+                  {domainError ? (
+                    <div>{domainError}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
               <div className={styles["form-group"]}>
@@ -389,6 +311,7 @@ export const JoinUsForm = (props) => {
                     id="txt_other"
                     type="text"
                     name="other"
+                    onChange={handleChange}
                   />
                   <i className={`fas fa-pencil-alt ${styles["pencil"]}`}></i>
                 </div>
@@ -488,7 +411,11 @@ export const JoinUsForm = (props) => {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["year"] && <div>* {formerrors["year"]}</div>}
+                  {formerrors["year"] ? (
+                    <div>* {formerrors["year"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
               <div className={styles["form-group"]}>
@@ -512,8 +439,10 @@ export const JoinUsForm = (props) => {
                   <div
                     className={`${styles["validation"]} validation d-sm-none d-md-block`}
                   >
-                    {formerrors["college"] && (
+                    {formerrors["college"] ? (
                       <div>* {formerrors["college"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
                     )}
                   </div>
                 </div>

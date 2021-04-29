@@ -194,7 +194,7 @@
 }
 
 .badge {
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 .default {
@@ -224,8 +224,54 @@
     font-size: 1.6rem;
     text-align: center;
   }
+
   #heading-light {
     font-size: 1.6rem;
     text-align: center;
+  }
+
+  .card1 {
+    min-width: 315px;
+    max-width: 300px;
+    max-height: 200px;
+    padding: 14px;
+  }
+
+  .card1:hover {
+    transform: none;
+  }
+
+  #Mui-h6 {
+    font-size: 1.2rem;
+  }
+
+  .cover {
+    width: 120px;
+    height: 120px;
+    margin: 10px 0px;
+  }
+
+  #intro {
+    font-size: 0.85rem;
+    padding-top: 2px;
+  }
+
+  .badge {
+    padding: 3px;
+  }
+
+  .badge-container {
+    gap: 5px;
+    margin-top: 12px;
+    font-size: 0.85em;
+  }
+
+  #content {
+    padding: 10px 10px;
+  }
+
+  .card-footer {
+    margin-top: 7px;
+    padding: 5px;
   }
 }

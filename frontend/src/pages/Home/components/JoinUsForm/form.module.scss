@@ -193,6 +193,18 @@
   height: 80px;
 }
 
+.dropdown {
+  --rmsc-main: #4285f4;
+  --rmsc-hover: #333333;
+  --rmsc-selected: #474343;
+  --rmsc-border: #ccc;
+  --rmsc-gray: #aaa;
+  --rmsc-bg: #333333;
+  --rmsc-p: 10px; /* Spacing */
+  --rmsc-radius: 4px; /* Radius */
+  --rmsc-h: 38px; /* Height */
+}
+
 .valid {
   display: flex;
   justify-content: center;

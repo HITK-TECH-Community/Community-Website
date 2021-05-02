@@ -71,6 +71,7 @@
 
 .join-us-form-input {
   position: relative;
+  margin-bottom: 30px !important;
 }
 
 .join-us-form-input input,
@@ -86,8 +87,6 @@
   margin-right: auto;
   font-size: 14px;
   color: #777777;
-  margin-bottom: 20px;
-  margin-bottom: 30px !important;
   background-color: #f1f1f1;
   box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
@@ -192,6 +191,18 @@
   padding-top: 15px;
   resize: none;
   height: 80px;
+}
+
+.dropdown {
+  --rmsc-main: #4285f4;
+  --rmsc-hover: #333333;
+  --rmsc-selected: #474343;
+  --rmsc-border: #ccc;
+  --rmsc-gray: #aaa;
+  --rmsc-bg: #333333;
+  --rmsc-p: 10px; /* Spacing */
+  --rmsc-radius: 4px; /* Radius */
+  --rmsc-h: 38px; /* Height */
 }
 
 .valid {
@@ -303,6 +314,11 @@
     rgba(255, 0, 90, 1),
     rgba(10, 24, 61, 1)
   );
+}
+
+.validation {
+  color: red;
+  margin-top: 0;
 }
 
 // for dark theme

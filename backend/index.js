@@ -71,7 +71,11 @@ function onError(error) {
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-  console.log(`Listening on ${bind}`);
+
+  console.log(
+    `Server running in ${process.env.ENV || 'development'} mode on ${bind} for worker ${process.pid}`.brightYellow
+      .underline.bold
+  );
 }
 
 /**

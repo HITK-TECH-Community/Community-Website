@@ -60,7 +60,6 @@
   display: flex;
   text-align: center;
   width: 70vw;
-  margin-right: 2rem;
   padding-left: 1rem;
   padding-top: 16px;
 }
@@ -69,7 +68,6 @@
   display: flex;
   text-align: center;
   width: 70vw;
-  margin-right: 2rem;
   padding-left: 1rem;
   padding-top: 16px;
 }
@@ -101,11 +99,11 @@
 }
 
 .nav-admin-button {
-  padding: 8px 20px;
+  padding: 8px 11px;
   border-radius: 4px;
   outline: none;
   border: 2px solid #fc0254;
-  font-size: 18px;
+  font-size: 16.5px;
   color: #fff;
   cursor: pointer;
   background-color: #fc0254;
@@ -113,11 +111,11 @@
 }
 
 .nav-admin-button-dark {
-  padding: 8px 20px;
+  padding: 8px 11px;
   border-radius: 4px;
   outline: none;
   border: 2px solid #69a9dd;
-  font-size: 18px;
+  font-size: 16.5px;
   color: #171717;
   cursor: pointer;
   background-color: #69a9dd;
@@ -203,7 +201,7 @@ a.nav-links-dark:hover {
   color: whitesmoke;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1050px) {
+@media screen and (min-width: 860px) and (max-width: 1050px) {
   .nav-item {
     font-size: 0.8rem;
   }
@@ -213,7 +211,7 @@ a.nav-links-dark:hover {
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 860px) {
   .fa-caret-down {
     display: none;
   }

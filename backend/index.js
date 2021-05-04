@@ -1,54 +1,87 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const http = require('http');
-const responseTime = require('response-time');
-const routes = require('./app/routes');
-const { errorHandler } = require('./helpers/error');
-require('colors');
-require('./helpers/dbConnection');
 require('dotenv').config();
+const http = require('http');
 
-const app = express();
-const server = http.Server(app);
+const cluster = require('./helpers/cluster');
 
-// Set security headers
-app.use(helmet());
+if (cluster().isMaster) return;
 
-// CORS
-app.use(cors());
+const app = require('./app');
+/**
+ * Normalize a port into a number, string, or false.
+ */
 
-// Body Parser
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: true }));
+function normalizePort(val) {
+  const port = parseInt(val, 10);
 
-// Response time
-app.use(responseTime({ suffix: false }));
+  if (Number.isNaN(port)) {
+    // named pipe
+    return val;
+  }
 
-// Use routes
-app.use('/', routes);
+  if (port >= 0) {
+    // port number
+    return port;
+  }
 
-// Response handler
-// app.use(handleResponse);
+  return false;
+}
 
-// Home route
-app.get('/', (_req, res) => {
-  res.status(200).json({ message: 'Hello There!! You are at Community-website Backend' });
-});
+/**
+ * Get port from environment and store in Express.
+ */
 
-// Error handling middleware
-app.use(errorHandler);
+const port = normalizePort(process.env.PORT || '3500');
+app.set('port', port);
 
-// Start the server
-const PORT = process.env.PORT || 3500;
-server.listen(
-  PORT,
-  console.log(`Server running in ${process.env.ENV || 'development'} mode on port ${PORT}`.brightYellow.underline.bold)
-);
+/**
+ * Create HTTP server.
+ */
 
-// handle the error safely
-process.on('uncaughtException', (err) => {
-  console.log(err);
-});
+const server = http.createServer(app);
 
-module.exports = app;
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  const bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`);
+      break;
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`);
+      break;
+    default:
+      console.error(error);
+  }
+  throw error;
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+
+  console.log(
+    `Server running in ${process.env.ENV || 'development'} mode on ${bind} for worker ${process.pid}`.brightYellow
+      .underline.bold
+  );
+}
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);

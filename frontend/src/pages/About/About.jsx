@@ -86,7 +86,7 @@ export const About = (props) => {
       <div className={style["team"]}>
         <Typography
           variant="h4"
-          className={dark ? `${style["about-dark"]}` : ``}
+          id={dark ? `${style["heading-dark"]}` : `${style["heading-light"]}`}
         >
           Founder and Co-Founders
         </Typography>
@@ -143,8 +143,15 @@ export const About = (props) => {
                       </div>
                     </div>
                     <div className={classes.details}>
-                      <CardContent className={classes.content}>
-                        <Typography component="h6" variant="h6">
+                      <CardContent
+                        className={classes.content}
+                        id={style["content"]}
+                      >
+                        <Typography
+                          component="h6"
+                          variant="h6"
+                          id={style["Mui-h6"]}
+                        >
                           {roleObject.name}
                         </Typography>
                         <MDBBadge
@@ -154,7 +161,7 @@ export const About = (props) => {
                           {role.toUpperCase()}
                         </MDBBadge>
                         <div>
-                          <p>{roleObject.description}</p>
+                          <p id={style["intro"]}>{roleObject.description}</p>
                         </div>
                         <br />
                       </CardContent>
@@ -169,7 +176,7 @@ export const About = (props) => {
 
         <Typography
           variant="h4"
-          className={dark ? `${style["about-dark"]}` : ``}
+          id={dark ? `${style["heading-dark"]}` : `${style["heading-light"]}`}
         >
           Board Members
         </Typography>
@@ -226,12 +233,19 @@ export const About = (props) => {
                       </div>
                     </div>
                     <div className={classes.details}>
-                      <CardContent className={classes.content}>
-                        <Typography component="h6" variant="h6">
+                      <CardContent
+                        className={classes.content}
+                        id={style["content"]}
+                      >
+                        <Typography
+                          component="h6"
+                          variant="h6"
+                          id={style["Mui-h6"]}
+                        >
                           {roleObject.name}
                         </Typography>
                         <div>
-                          <p>{roleObject.description}</p>
+                          <p id={style["intro"]}>{roleObject.description}</p>
                         </div>
                         <div className={style["badge-container"]}>
                           {roleObject.tags.map((badge) => {
@@ -264,7 +278,7 @@ export const About = (props) => {
         </div>
         <Typography
           variant="h4"
-          className={dark ? `${style["about-dark"]}` : ``}
+          id={dark ? `${style["heading-dark"]}` : `${style["heading-light"]}`}
         >
           Open Source Contributors
         </Typography>
@@ -277,9 +291,13 @@ export const About = (props) => {
         ></div>
         <div className="container">
           <div className={style["contributors"]}>
-              <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
-                <img src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website" alt="contributors"/>
-              </a>
+            <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+              <img
+                style={{ maxWidth: "90vw" }}
+                src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website"
+                alt="contributors"
+              />
+            </a>
           </div>
         </div>
       </div>

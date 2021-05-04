@@ -1,3 +1,10 @@
+container {
+  width: 90%;
+  display : flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
 .welcome-section {
   position: relative;
   background: linear-gradient(
@@ -30,13 +37,15 @@
 }
 
 .dashing {
-  width: 80%;
+  width: 100%;
   display: flex;
-  margin: 0 auto 2rem;
+  justify-content: center;
+  margin: 0 auto 3em auto;
 }
 
 .left {
   width: 25%;
+  max-width: 290px;
   display: flex;
   flex-direction: column;
   min-height: 25em;
@@ -44,14 +53,18 @@
   background-color: white;
   padding: 1em;
   border-radius: 12px;
+  box-shadow: 0px 8px 10px 3px gray;
+  transition: all 0.3s;
 }
 
 .right {
   width: 75%;
-  margin: 2em 2em 0 2em;
+  margin: 2em 0em 0em 2em;
   background-color: white;
   padding: 1em;
   border-radius: 12px;
+  box-shadow: 0px 8px 10px 3px gray;
+  transition: all 0.3s;
 }
 
 .span {
@@ -102,6 +115,7 @@
 
   .left {
     width: 100%;
+    max-width: unset;
   }
 
   .right {

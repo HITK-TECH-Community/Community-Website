@@ -128,7 +128,11 @@ export function ResourceSharingForm(props) {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["name"] && <div>* {formerrors["name"]}</div>}
+                  {formerrors["name"] ? (
+                    <div>* {formerrors["name"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -152,7 +156,11 @@ export function ResourceSharingForm(props) {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["email"] && <div>* {formerrors["email"]}</div>}
+                  {formerrors["email"] ? (
+                    <div>* {formerrors["email"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -176,7 +184,11 @@ export function ResourceSharingForm(props) {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["link"] && <div>* {formerrors["link"]}</div>}
+                  {formerrors["link"] ? (
+                    <div>* {formerrors["link"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -200,8 +212,10 @@ export function ResourceSharingForm(props) {
               <div
                 className={`${style["validation"]} validation d-sm-none d-md-block`}
               >
-                {formerrors["description"] && (
+                {formerrors["description"] ? (
                   <div>* {formerrors["description"]}</div>
+                ) : (
+                  <div>&nbsp; &nbsp;</div>
                 )}
               </div>
             </div>
@@ -352,7 +366,11 @@ export function ResourceSharingForm(props) {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["trust"] && <div>* {formerrors["trust"]}</div>}
+                  {formerrors["trust"] ? (
+                    <div>* {formerrors["trust"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -375,7 +393,11 @@ export function ResourceSharingForm(props) {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["dov"] && <div>* {formerrors["dov"]}</div>}
+                  {formerrors["dov"] ? (
+                    <div>* {formerrors["dov"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
             </div>

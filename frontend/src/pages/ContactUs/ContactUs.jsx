@@ -146,10 +146,12 @@ export const ContactUs = (props) => {
                         onChange={handleChange}
                       />
                       <i className="fas fa-user"></i>
-                      {formerrors["name"] && (
+                      {formerrors["name"] ? (
                         <div className={style["validation"]}>
                           * {formerrors["name"]}
                         </div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                     <div
@@ -168,10 +170,12 @@ export const ContactUs = (props) => {
                         onChange={handleChange}
                       />
                       <i className="fas fa-envelope-open-text"></i>
-                      {formerrors["email"] && (
+                      {formerrors["email"] ? (
                         <div className={style["validation"]}>
                           * {formerrors["email"]}
                         </div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                     <div
@@ -190,10 +194,12 @@ export const ContactUs = (props) => {
                         onChange={handleChange}
                       />
                       <i className="fas fa-pencil-alt"></i>
-                      {formerrors["subject"] && (
+                      {formerrors["subject"] ? (
                         <div className={style["validation"]}>
                           * {formerrors["subject"]}
                         </div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                     <div
@@ -213,10 +219,12 @@ export const ContactUs = (props) => {
                         onChange={handleChange}
                       ></textarea>
                       <i className="fas fa-comment-dots"></i>
-                      {formerrors["message"] && (
+                      {formerrors["message"] ? (
                         <div className={style["validation"]}>
                           * {formerrors["message"]}
                         </div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                     <div className={style["text-xs-center"]}>

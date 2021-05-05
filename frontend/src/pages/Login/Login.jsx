@@ -184,7 +184,11 @@ export function Login(props) {
                     />
                     <i className="fas fa-user"></i>
                     <div className={`${style["validation"]}`}>
-                      {errorObj["email"] && <div>* {errorObj["email"]}</div>}
+                      {errorObj["email"] ? (
+                        <div>* {errorObj["email"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
+                      )}
                     </div>
                   </div>
                   <div
@@ -211,8 +215,10 @@ export function Login(props) {
                       onClick={() => setHidePassword(!hidePassword)}
                     ></i>
                     <div className={`${style["validation"]}`}>
-                      {errorObj["password"] && (
+                      {errorObj["password"] ? (
                         <div>* {errorObj["password"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
                   </div>

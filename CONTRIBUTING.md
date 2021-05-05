@@ -5,7 +5,7 @@ This documentation contains a set of guidelines to help you during the contribut
 We are happy to welcome all the contributions from anyone willing to improve/add new scripts to this project. Thank you for helping out and remember, **no contribution is too small.** 
 
 - Each participant/contributor will be assigned **2 issues (max)** at a time to work.
-- Participants are expected to follow project guidelines and coding style. Structured code is one of our top priority.
+- Participants are expected to follow project guidelines and coding style. Structured code is one of our top priorities.
 - Participants/contributors have **7 days** to complete issues. After that issues will be assigned to others.
 - Participants/contributors have to **comment** on issues they would like to work on, and mentors will assign you.
 - Issues will be assigned on a **first-come, first-serve basis**.
@@ -16,7 +16,7 @@ We are happy to welcome all the contributions from anyone willing to improve/add
 - It might take a day to review your pull request. Please have patience and be nice.
 - We all are here to learn. You are allowed to make mistakes. That's how you learn, right!
 
-- **MAKE SURE TO OPEN A DRAFT PR AS SOON AS YOU START WORKING ON AN ISSUE AND KEEP COMMITING TO IT SO THAT WE CAN KNOW THAT YOU ARE WORKING ON THAT PARTICULAR ISSUE**
+- **MAKE SURE TO OPEN A DRAFT PR AS SOON AS YOU START WORKING ON AN ISSUE AND KEEP COMMITTING TO IT SO THAT WE CAN KNOW THAT YOU ARE WORKING ON THAT PARTICULAR ISSUE**
 
 - Pull Requests review criteria:
   - Please fill the **PR template** properly while making a PR
@@ -115,7 +115,7 @@ A good rule of thumb for the commit message is to have a present tense verb, fol
 - [Writing Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
  
 ## Step 5 : Work Remotely  
-- Now you are ready to your work to the remote repository.  
+- Now you are ready to your work in the remote repository.  
 - When your work is ready and complies with the project conventions, upload your changes to your fork:  
   
 ```  
@@ -126,7 +126,7 @@ $ git push -u origin <branch_name>
 ![br](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/br.png)  
   
 ## Step 6 : Pull Request  🎣
-- Go to your repository in browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution. 
+- Go to your repository in the browser and click on compare and pull requests. Then add a title and description to your pull request that explains your contribution. 
 - Compare
 
 ![compare](https://github.com/LeeRenJie/Community-Website/blob/main/assets/cont-img/compare.png)
@@ -147,3 +147,5 @@ You can refer to the following articles on basics of Git and Github and also con
   
 ## Tip from us😇  
 It always takes time to understand and learn. So, do not worry at all. We know **you have got this**!💪
+
+

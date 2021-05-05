@@ -198,8 +198,10 @@ export function AddTeamMember() {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["fullName"] && (
+                  {formerrors["fullName"] ? (
                     <div>* {formerrors["fullName"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
                   )}
                 </div>
               </div>
@@ -216,8 +218,10 @@ export function AddTeamMember() {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["description"] && (
+                  {formerrors["description"] ? (
                     <div>* {formerrors["description"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
                   )}
                 </div>
               </div>
@@ -233,8 +237,10 @@ export function AddTeamMember() {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["linkedin"] && (
+                  {formerrors["linkedin"] ? (
                     <div>* {formerrors["linkedin"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
                   )}
                 </div>
               </div>
@@ -250,7 +256,11 @@ export function AddTeamMember() {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["github"] && <div>* {formerrors["github"]}</div>}
+                  {formerrors["github"] ? (
+                    <div>* {formerrors["github"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
               <div className={styles["add-team-member-input"]}>
@@ -265,8 +275,10 @@ export function AddTeamMember() {
                 <div
                   className={`${styles["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["twitter"] && (
+                  {formerrors["twitter"] ? (
                     <div>* {formerrors["twitter"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
                   )}
                 </div>
               </div>
@@ -283,7 +295,7 @@ export function AddTeamMember() {
               <div
                 className={`${styles["validation"]} validation d-sm-none d-md-block`}
               >
-                {teamError && <div>{teamError}</div>}
+                {teamError ? <div>{teamError}</div> : <div>&nbsp; &nbsp;</div>}
               </div>
               <br />
               <br />

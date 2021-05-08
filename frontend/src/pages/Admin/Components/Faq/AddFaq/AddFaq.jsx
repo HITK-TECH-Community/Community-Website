@@ -217,7 +217,6 @@ export class AddFaq extends React.Component {
                     )}
                   </div>
                   <br />
-                  <br />
                   <div className={styles["submit-btn"]}>
                     <Button2
                       className={styles["submit-btn-text"]}

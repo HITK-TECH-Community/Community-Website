@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 
 after((done) => {
   // Removing the test admin data before running all the test cases
-  Admin.remove({ email: 'john@wick.com' }, () => {
+  Admin.deleteOne({ email: 'john@wick.com' }, () => {
     done();
   });
 });
@@ -42,7 +42,7 @@ describe('Forgot password tests', () => {
       });
   });
 
-  // Step 3 - We send a request to /resetpassword and get a URL back
+  // Step 3 - We send a request to /forgotpassword and get a URL back
   it('Sending a forgot password request', (done) => {
     const adminData = {
       email: 'john@wick.com',
@@ -50,7 +50,7 @@ describe('Forgot password tests', () => {
 
     chai
       .request(server)
-      .post('/admin/resetpassword')
+      .post('/admin/forgotpassword')
       .send(adminData)
       .end((err, res) => {
         forgotPasswordURL = res.body.resetPasswordURL.replace('http://localhost:3500', ''); // Add the path with token to this varible for our next test case

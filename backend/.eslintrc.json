@@ -31,6 +31,15 @@
             {
                 "argsIgnorePattern": "^_"
             }
+        ],
+        "node/no-unpublished-require": [
+            "error",
+            {
+                "allowModules": [
+                    "chai",
+                    "chai-http"
+                ]
+            }
         ]
     }
 }

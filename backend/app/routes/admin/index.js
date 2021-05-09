@@ -22,7 +22,7 @@ router.get('/createSuperAdmin', createSuperAdmin);
 
 router.post('/superAdmin', validationMiddleware(postSuperAdminSchema), postSuperAdmin);
 router.post('/', validationMiddleware(postSuperAdminSchema), authMiddleware, postAdmin);
-router.post('/resetpassword', validationMiddleware(forgotPasswordSchema), forgotPassword);
+router.post('/forgotpassword', validationMiddleware(forgotPasswordSchema), forgotPassword);
 router.post('/resetpassword/:token', validationMiddleware(resetPasswordSchema), resetPassword);
 
 router.put('/password', validationMiddleware(passwordChangeSchema), authMiddleware, changePassword);

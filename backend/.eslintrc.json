@@ -21,7 +21,8 @@
         "prettier/prettier": [
             "error",
             {
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "varsIgnorePattern": "should|expect"
             }
         ],
         "no-console": "off",
@@ -29,6 +30,15 @@
             "error",
             {
                 "argsIgnorePattern": "^_"
+            }
+        ],
+        "node/no-unpublished-require": [
+            "error",
+            {
+                "allowModules": [
+                    "chai",
+                    "chai-http"
+                ]
             }
         ]
     }

@@ -4,8 +4,8 @@ const { ErrorHandler } = require('../error');
 const config = require('../../config');
 const constants = require('../../constants');
 
-const generateJWT = (payload) => sign(payload, config.JWT_SECRET_KEY, { expiresIn: config.JWT_EXPIRES_IN });
-
+const generateJWT = (payload, expiry = config.JWT_EXPIRES_IN) =>
+  sign(payload, config.JWT_SECRET_KEY, { expiresIn: expiry });
 const getTokenFromHeader = async (req) => {
   if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
     return req.headers.authorization.split(' ')[1];
@@ -38,4 +38,4 @@ const authMiddleware = async (req, res, next) => {
   next();
 };
 
-module.exports = { authMiddleware, generateJWT };
+module.exports = { authMiddleware, generateJWT, verifyToken };

@@ -9,6 +9,7 @@
     "UNEXPECTED": "Unexpected Error"
   },
   "PAGINATION_LIMIT": {
-    "GET_ADMINS": 3
+    "GET_ADMINS": 3,
+    "GET_BROADCASTS": 5
   }
 }

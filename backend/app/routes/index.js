@@ -12,4 +12,5 @@ router.post('/emailTest', emailTest);
 router.use('/faq', FAQ);
 router.use('/', tinyURL);
 router.use('/broadcast', broadcast);
+router.use('/', tinyURL);
 module.exports = router;

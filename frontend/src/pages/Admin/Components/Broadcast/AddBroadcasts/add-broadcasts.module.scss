@@ -92,3 +92,90 @@
     margin: 0 auto;
   }
 }
+.contact-input {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.contact-input input,
+.contact-input textarea {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #bbbaba;
+  border-radius: 10px;
+  padding: 0 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 7px;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.contact-input-light input,
+.contact-input-light textarea {
+  border: 1px solid #bbbaba;
+  color: #777777;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+
+.contact-input input::placeholder,
+.contact-input textarea::placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.contact-input input::-moz-placeholder,
+.contact-input textarea::-moz-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.contact-input input::-webkit-input-placeholder,
+.contact-input textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #777777;
+}
+
+.contact-input-light input:focus,
+.contact-input-light textarea:focus {
+  border-color: #1863ff;
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
+
+// for dark theme
+.contact-input-dark input:focus {
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #2b5876, #4e4376);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: black;
+}
+
+.contact-input textarea {
+  padding-top: 15px;
+  height: 180px;
+  resize: none;
+}
+
+.contact-input i {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 16px;
+}
+
+.contact-input-light i {
+  color: #777777;
+}

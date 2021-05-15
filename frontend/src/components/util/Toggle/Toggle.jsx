@@ -12,6 +12,7 @@ export const Toggle = (props) => {
         className={style["checkbox"]}
         checked={props.theme}
         onChange={() => props.handleClick()}
+        onClick={props.closeMobileMenu}
       />
       <label htmlFor="check" className={style["label"]}>
         <i className={`fas fa-moon ${style["moon"]}`}></i>

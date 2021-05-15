@@ -129,6 +129,7 @@ export const Navbar = (props) => {
               class={style["mobile-toggle"]}
               handleClick={props.handleClick}
               theme={props.theme}
+              closeMobileMenu={closeMobileMenu}
             />
           </li>
         </ul>
@@ -148,6 +149,7 @@ export const Navbar = (props) => {
           class={style["nav-toggle"]}
           handleClick={props.handleClick}
           theme={props.theme}
+          closeMobileMenu={closeMobileMenu}
         />
       </nav>
     </Fragment>

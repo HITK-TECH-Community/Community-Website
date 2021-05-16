@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
@@ -6,13 +6,14 @@ import style from "./carousel.module.scss";
 import styles from "../../../Home/components/Motive/motive.module.scss";
 import "./custom-owl-carousel-style.scss";
 import { Modals } from "./Modal/index.js";
-import dataa from "../../../../test_data/broadcast_text.json";
+import { END_POINT } from "./../../../../config/api";
 
 export function Carousel(props) {
   const head = props.head;
   let dark = props.theme;
 
   const [open, setOpen] = useState(false);
+  const [dataa, setDataa] = useState([]);
 
   const handleOpen = (s, h, i) => {
     setOpen(true);
@@ -75,6 +76,21 @@ export function Carousel(props) {
     return style;
   });
 
+  useEffect(() => {
+    return fetch(`${END_POINT}/broadcast`, {
+      method: "GET",
+    })
+      .then((response) =>
+        response
+          .json()
+          .then((res) => {
+            setDataa(res);
+          })
+          .catch((error) => console.log(error))
+      )
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <React.Fragment>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
@@ -111,7 +127,9 @@ export function Carousel(props) {
                   ? `${style["slide-card-dark"]} ${style["slide-card"]}`
                   : `${style["slide-card-light"]} ${style["slide-card"]}`
               }
-              onClick={() => handleOpen(item.desc, item.title, item.link)}
+              onClick={() =>
+                handleOpen(item.content, item.title, item.imageUrl[0])
+              }
             >
               <div
                 style={dark ? cardImageArrayDark[i] : cardImageArrayLight[i]}
@@ -119,7 +137,7 @@ export function Carousel(props) {
 
               <h3 className={style["card-head"]}>{item.title}</h3>
               <div className={style["card-text"]}>
-                {item.desc.substring(0, 210)}...
+                {item.content.substring(0, 210)}...
               </div>
             </div>
           ))}

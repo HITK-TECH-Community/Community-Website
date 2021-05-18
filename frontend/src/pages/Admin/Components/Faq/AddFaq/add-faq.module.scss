@@ -30,7 +30,7 @@
   width: 75%;
   height: auto;
   background-color: #e7e7e7;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
@@ -126,6 +126,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.selectedClass {
+  margin-top: 10px;
+}
+
+.tagClass {
+  margin-right: 10px;
+  color: white;
+  background-color: #0275d8;
+  border-radius: 33px;
+  padding: 5px;
+}
+
+.removeClass {
+  border-radius: 33%;
+  margin-left: 1%;
+  background-color: #0275d8;
+  border-style: none;
+  color: white;
+  padding-right: 5px;
 }
 
 @media screen and (max-width: 750px) {

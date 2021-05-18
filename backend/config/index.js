@@ -8,6 +8,9 @@ const config = {
   EMAIL_USER: process.env.EMAIL_USER,
   EMAIL_PASS: process.env.EMAIL_PASS,
   EMAIL_HOST: process.env.EMAIL_HOST,
+  CLUSTER: process.env.CLUSTER,
+  JWT_RESET_PASSWORD_EXPIRES_IN: process.env.JWT_RESET_PASSWORD_EXPIRES_IN,
+  LOCAL_DEV_ENV: process.env.LOCAL_DEV_ENV,
 };
 
 module.exports = config;

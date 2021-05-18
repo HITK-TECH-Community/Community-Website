@@ -20,3 +20,19 @@ Before executing every route function validation middleware gets executed which 
   
     - ![diagram](images/addBroadcast.jpg)
     <br>
+
+- <code> <b> /broadcast/:id </b> </code> [<b>  DELETE</b> ]
+    - Delete broadcast from the database
+    <br>
+
+- <code> <b> /broadcast?page= &tags= &year= &month=  </b> </code> [<b>  GET</b> ]
+    - Get Array of 5 broadcast from the database
+    - query params : 
+        | Parameter   | description                         |
+        | ----------- | ------------
+        | page        | integer, optional                   |
+        | tags        | string seperated by comma, optional |
+        | year        | number, optional                    |
+        | month       | number(min(1).max(12)), optional    |
+    - This is a public Route (No Auth Required).
+    <br>

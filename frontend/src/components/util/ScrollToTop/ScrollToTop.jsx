@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { FaArrowCircleUp } from "react-icons/fa";
+import { FaAngleDoubleUp } from "react-icons/fa";
 import style from "./scroll-to-top.module.scss";
 
-export const ScrollTop = () => {
+export const ScrollTop = (props) => {
+  let dark = props.theme;
+  console.log(dark);
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -20,13 +22,11 @@ export const ScrollTop = () => {
   window.addEventListener("scroll", checkScrollTop);
 
   return (
-    <FaArrowCircleUp
-      className={style["scroll-top"]}
+    <FaAngleDoubleUp
+      className={dark ? style["scroll-top-dark"] : style["scroll-top"]}
       onClick={scrollTop}
       size={70}
       style={{
-        height: 40,
-        color: "#FDDC5C",
         display: showScroll ? "flex" : "none",
       }}
     />

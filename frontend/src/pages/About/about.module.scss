@@ -98,6 +98,24 @@
   flex: 49% 49%;
 }
 
+#heading-dark {
+  font-size: 2.3rem;
+  color: #fac87b;
+}
+
+#heading-light {
+  font-size: 2.3rem;
+  color: #000;
+}
+
+.contributors {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  object-fit: cover;
+}
+
 .cover {
   object-fit: cover;
   object-position: center;
@@ -125,18 +143,18 @@
 
 // for dark theme
 .card1-dark {
-  background: #282c35;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+  background: #171717;
+  -webkit-box-shadow: 0px 8px 16px 15px rgba(72, 127, 255, 0.1),
     0px -8px 16px 0px rgba(72, 127, 255, 0.1);
-  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+  -moz-box-shadow: 0px 8px 16px 15px rgba(72, 127, 255, 0.1),
     0px -8px 16px 0px rgba(72, 127, 255, 0.1);
-  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
+  box-shadow: 0px 8px 16px 15px rgba(72, 127, 255, 0.1),
     0px -8px 16px 0px rgba(72, 127, 255, 0.1);
 }
 
 .card1-light {
   background: white;
-  box-shadow: 0 0 16px 2px #00000029;
+  box-shadow: 10px 10px 16px 5px #00000029;
 }
 
 .team-social {
@@ -147,15 +165,16 @@
 }
 
 .card1-light:hover {
-  box-shadow: -1px 16px 40px 0px rgba(0, 0, 0, 0.19);
+  transform: translateY(-5px);
+  background: linear-gradient(59deg, #ffc95cc2 0%, #fff1d6 64%);
 }
 
 // for dark theme
 .card1-dark:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1),
-    0px -8px 16px 0px rgba(72, 127, 255, 0.1);
+  transform: translateY(-5px);
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 74%);
 }
+
 .card1:hover .team-social {
   visibility: visible;
 }
@@ -175,7 +194,7 @@
 }
 
 .badge {
-  margin: 5px 0;
+  margin: 6px 0;
 }
 
 .default {
@@ -198,4 +217,61 @@
 .dark {
   background-color: #171717;
   color: whitesmoke;
+}
+
+@media screen and (max-width: 720px) {
+  #heading-dark {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  #heading-light {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .card1 {
+    min-width: 315px;
+    max-width: 300px;
+    max-height: 200px;
+    padding: 14px;
+  }
+
+  .card1:hover {
+    transform: none;
+  }
+
+  #Mui-h6 {
+    font-size: 1.2rem;
+  }
+
+  .cover {
+    width: 120px;
+    height: 120px;
+    margin: 10px 0px;
+  }
+
+  #intro {
+    font-size: 0.85rem;
+    padding-top: 2px;
+  }
+
+  .badge {
+    padding: 3px;
+  }
+
+  .badge-container {
+    gap: 5px;
+    margin-top: 12px;
+    font-size: 0.85em;
+  }
+
+  #content {
+    padding: 10px 10px;
+  }
+
+  .card-footer {
+    margin-top: 7px;
+    padding: 5px;
+  }
 }

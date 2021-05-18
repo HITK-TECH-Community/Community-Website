@@ -9,6 +9,8 @@
     "UNEXPECTED": "Unexpected Error"
   },
   "PAGINATION_LIMIT": {
-    "GET_ADMINS": 3
-  }
+    "GET_ADMINS": 3,
+    "GET_BROADCASTS": 5
+  },
+  "JWT_RESET_PASSWORD_EXPIRES_IN": "1h"
 }

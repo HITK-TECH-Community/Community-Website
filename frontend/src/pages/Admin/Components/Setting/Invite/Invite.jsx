@@ -89,7 +89,11 @@ export function Invite() {
                 <div
                   className={`${style["validation"]} validation d-sm-none d-md-block`}
                 >
-                  {formerrors["email"] && <div>* {formerrors["email"]}</div>}
+                  {formerrors["email"] ? (
+                    <div>* {formerrors["email"]}</div>
+                  ) : (
+                    <div>&nbsp; &nbsp;</div>
+                  )}
                 </div>
               </div>
 

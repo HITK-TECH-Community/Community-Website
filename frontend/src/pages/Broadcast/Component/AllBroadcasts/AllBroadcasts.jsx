@@ -60,7 +60,6 @@ export function AllBroadcasts(props) {
         response
           .json()
           .then((res) => {
-            console.log(res);
             setArray(res);
           })
           .catch((error) => console.log(error))

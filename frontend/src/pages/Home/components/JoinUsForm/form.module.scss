@@ -194,15 +194,15 @@
 }
 
 .dropdown {
-  --rmsc-main: #4285f4;
-  --rmsc-hover: #333333;
-  --rmsc-selected: #474343;
-  --rmsc-border: #ccc;
-  --rmsc-gray: #aaa;
-  --rmsc-bg: #333333;
-  --rmsc-p: 10px; /* Spacing */
-  --rmsc-radius: 4px; /* Radius */
-  --rmsc-h: 38px; /* Height */
+  --rmsc-main: #4285f4 !important;
+  --rmsc-hover: #333333 !important;
+  --rmsc-selected: #474343 !important;
+  --rmsc-border: #ccc !important;
+  --rmsc-gray: #aaa !important;
+  --rmsc-bg: #333333 !important;
+  --rmsc-p: 10px !important; /* Spacing */
+  --rmsc-radius: 4px !important; /* Radius */
+  --rmsc-h: 38px !important; /* Height */
 }
 
 .valid {

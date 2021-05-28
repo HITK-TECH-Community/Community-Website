@@ -57,7 +57,8 @@ export const Footer = (props) => {
       setEmail("");
     }
   };
-
+  var date = new Date();
+  var year = date.getFullYear();
   return (
     <React.Fragment>
       <footer
@@ -334,7 +335,7 @@ export const Footer = (props) => {
         }
       >
         <p className={`${style["cprt"]} py-2`}>
-          Copyright © 2020 HITK Tech Community
+          Copyright © {year} HITK Tech Community
         </p>
       </div>
     </React.Fragment>

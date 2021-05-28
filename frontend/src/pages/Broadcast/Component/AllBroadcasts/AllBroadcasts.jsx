@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./all-broadcasts.module.scss";
 import styles from "../../../Home/components/Motive/motive.module.scss";
 import dataa from "../../../../test_data/broadcast_text.json";
@@ -7,12 +7,17 @@ import { Search } from "@material-ui/icons";
 import { DropMenu } from "../../../../components/util/DropMenu/index.js";
 import { Card } from "./Card/index.js";
 import { Edit } from "./Edit/index.js";
+import { END_POINT } from "./../../../../config/api";
 
 export function AllBroadcasts(props) {
-  const [array, setArray] = useState([...dataa]);
+  const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
   const [isAdmin] = useState(true);
+  const [tags, setTags] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
+  const [page, setPage] = useState("");
 
   const dark = props.theme;
 
@@ -26,6 +31,41 @@ export function AllBroadcasts(props) {
     a[index] = o;
     setArray(a);
   };
+
+  useEffect(() => {
+    var api = `${END_POINT}/broadcast?page=${page}&tags=${tags}&year=${year}&month=${month}`;
+    if (tags === "") {
+      api = `${END_POINT}/broadcast?page=${page}&year=${year}&month=${month}`;
+    }
+    if (page === "") {
+      const tempApi = api.split("page=&");
+      api = tempApi.join("");
+    }
+    if (year === "") {
+      const tempApi = api.split("year=&");
+      api = tempApi.join("");
+    }
+    if (month === "") {
+      const tempApi = api.split("month=");
+      api = tempApi.join("");
+      api.replace("&month=", "");
+    }
+    if (tags === "" && page === "" && year === "" && month === "") {
+      api = `${END_POINT}/broadcast`;
+    }
+    return fetch(api, {
+      method: "GET",
+    })
+      .then((response) =>
+        response
+          .json()
+          .then((res) => {
+            setArray(res);
+          })
+          .catch((error) => console.log(error))
+      )
+      .catch((err) => console.log(err));
+  }, [tags, page, year, month]);
 
   return (
     <main
@@ -80,6 +120,10 @@ export function AllBroadcasts(props) {
               }
               inputProps={{ "aria-label": "search" }}
               name="search-box"
+              value={tags}
+              onChange={(e) => {
+                setTags(e.currentTarget.value);
+              }}
             />
           </div>
           <div className={style["filters"]}>
@@ -100,12 +144,20 @@ export function AllBroadcasts(props) {
                 "November",
                 "December",
               ]}
+              value={month}
+              onChange={(e) => {
+                setMonth(e.currentTarget.value);
+              }}
             />
             <DropMenu
               theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Year"
               ListItems={["2021", "2020"]}
+              value={year}
+              onChange={(e) => {
+                setYear(e.currentTarget.value);
+              }}
             />
           </div>
         </div>

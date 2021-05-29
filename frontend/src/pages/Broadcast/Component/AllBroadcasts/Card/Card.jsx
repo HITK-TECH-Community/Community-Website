@@ -44,9 +44,9 @@ export function Card(props) {
           onClick={handleClick}
         >
           <div className={style["clickable-card"]}>
-            <div className={style["card-title"]}>{props.project.head}</div>
+            <div className={style["card-title"]}>{props.project.title}</div>
             <div className={style["card-content"]}>
-              {props.project.desc.substring(0, 400)}...
+              {props.project.content.substring(0, 400)}...
             </div>
           </div>
         </div>
@@ -89,9 +89,9 @@ export function Card(props) {
             <button
               onClick={() =>
                 handleOpen(
-                  props.project.desc,
+                  props.project.content,
                   props.project.title,
-                  props.project.link
+                  props.project.imageUrl[0]
                 )
               }
               className={

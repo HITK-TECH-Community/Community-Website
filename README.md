@@ -27,19 +27,36 @@ This project aims to build the official site for the community page so that any 
 ##  Getting Started 👨‍💻
 ### Setup the repository to your local environment.
 
-1. `fork` the repository  - Creates a replica of repository to your local environment.
-2. Clone the repository using `git clone https://github.com/YOUR-USERNAME/Community-Website`  - Downloads all repo files to your machine.
-3. `cd Community-Website`  - Takes you to the root directory of the project.
-
+1. `Fork` the repository  - Creates a replica of repository to your local environment.
+2. Clone the repository - Downloads all repo files to your machine, using
+  ```git
+  git clone https://github.com/YOUR-USERNAME/Community-Website
+  ``` 
+3. Set working directory to the root directory of the project.
+  ```sh
+  cd Community-Website
+  ```
 
 ## Frontend ⚛️
 
 Following are the steps to run the frontend of the community-website on your local. All the frontend code will go in the `frontend` directory. 
 
-1. Navigate to `frontend` folder using `cd frontend`.
-2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm start` to run the server.
-4. Navigate to [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Navigate to `frontend` folder.
+  ```sh
+  cd frontend
+  ```
+2. Install all the required packages and dependencies.
+  ```node
+  npm install
+  ```
+3. Run the server.
+  ```node
+  npm start
+  ```
+4. [Click here](http://localhost:3000) to view it in the browser OR navigate to
+  ```text
+  http://localhost:3000
+  ```
 
 The website is live at [https://hitk-tech-community.netlify.app/](https://hitk-tech-community.netlify.app/)
 
@@ -48,10 +65,22 @@ The website is live at [https://hitk-tech-community.netlify.app/](https://hitk-t
 
 Following are the steps to run the backend of the community-website on your local. All the backend code will go in the `backend` folder.
 
-1. Navigate to `backend` folder using `cd backend`
-2. Run `npm install`. It will install all the required packages and dependencies.
-3. Run `npm start` to run the server in dev mode.
-4. Navigate to [http://localhost:3500](http://localhost:3500) to see the backend server runing in the browser.
+1. Navigate to `backend` folder.
+  ```sh
+  cd backend
+  ```
+2. Install all the required packages and dependencies.
+  ```node
+  npm install
+  ```
+3. Run the server.
+  ```node
+  npm start
+  ```
+4. [Click here](http://localhost:3500) to see the backend server runing in the browser OR navigate to
+  ```text
+  http://localhost:3500
+  ```
 
 The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
 

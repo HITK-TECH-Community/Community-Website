@@ -11,7 +11,7 @@
 }
 
 .input-dark {
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .div {
@@ -35,6 +35,7 @@
   width: 40%;
   border-radius: 8px;
   background: #282c35;
+  color: white !important;
   padding: 1em;
   @media (max-width: 600px) {
     width: 95%;

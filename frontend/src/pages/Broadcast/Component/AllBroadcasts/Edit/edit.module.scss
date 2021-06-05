@@ -11,7 +11,7 @@
 }
 
 .input-dark {
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .div {
@@ -35,6 +35,7 @@
   width: 40%;
   border-radius: 8px;
   background: #282c35;
+  color: white !important;
   padding: 1em;
   @media (max-width: 600px) {
     width: 95%;
@@ -64,12 +65,26 @@
   }
 }
 
+.heading {
+  color: #69a9dd !important;
+  font-size: 25px !important;
+}
+
 .btns1 {
-  width: 60%;
+  background: linear-gradient(to right, #121f3a 0%, #2a4886 50%, #162f66 100%);
+  background-size: 200% auto;
+  outline: none;
+  background-position: left center;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.23);
+  border-radius: 50px;
+  color: #fff;
+  width: 15%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  color: white !important;
-  background-color: blue !important;
-  padding: 0.5em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 15px;
 }

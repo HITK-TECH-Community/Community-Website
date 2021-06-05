@@ -17,7 +17,7 @@ export function Edit(props) {
   return props.visible ? (
     <div className={style["popup"]} style={{ top: a }}>
       <div className={dark ? style["div-dark"] : style["div"]}>
-        <h1>
+        <h1 className={style["heading"]}>
           Edit modal
           <CloseIcon
             style={{ float: "right", cursor: "pointer" }}

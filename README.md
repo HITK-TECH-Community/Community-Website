@@ -3,6 +3,7 @@
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
 [![forks](https://img.shields.io/github/forks/HITK-TECH-Community/Community-Website)](#forks)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8d6b080-423d-45c8-974e-fb1f7986a028/deploy-status)](https://app.netlify.com/sites/canvasboard/deploys)
 [![license](https://img.shields.io/github/license/HITK-TECH-Community/Community-Website)](#license)
 [![Join our Slack community https://www.webiny.com/slack](https://img.shields.io/badge/Slack-Join%20our%20community!-orange)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-njgae7ki-Xn1y4Nmc_bwqwU~tN52vrg)
 

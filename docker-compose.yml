@@ -1,0 +1,58 @@
+version: "3.7"
+
+services:
+  api-server:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    image: api-server
+    container_name: myapp-node-server
+    command: /usr/src/app/node_modules/.bin/nodemon index.js
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3500:3500"
+    depends_on:
+      - mongo
+    env_file: ./backend/.env
+    environment:
+      - NODE_ENV=development
+    networks:
+      - community-app
+  mongo:
+    image: mongo:4.4-bionic
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - community-app
+  react-app:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    image: react-app
+    stdin_open: true
+    container_name: myapp-react-frontend
+    command: npm start
+    volumes:
+      - ./frontend/:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - api-server
+    ports:
+      - "3000:3000"
+    networks:
+      - community-app
+
+networks:
+  community-app:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
+  node_modules:
+  web-root:
+    driver: local

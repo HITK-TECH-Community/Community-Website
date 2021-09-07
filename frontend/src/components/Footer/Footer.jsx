@@ -245,7 +245,7 @@ export const Footer = (props) => {
                 </li>
                 <li>
                   <a
-                    href="https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-jgr1sd87-lhiXHO_x63Kt7h8VBxDaFw"
+                    href="https://hitkteckcommunity.slack.com/join/shared_invite/zt-njgae7ki-Xn1y4Nmc_bwqwU~tN52vrg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

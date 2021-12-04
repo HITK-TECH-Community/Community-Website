@@ -89,7 +89,7 @@ export function Carousel(props) {
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
-  }, []);
+  }, [dataa]);
 
   return (
     <React.Fragment>

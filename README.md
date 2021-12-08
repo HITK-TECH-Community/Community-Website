@@ -83,7 +83,7 @@ Following are the steps to run the backend of the community-website on your loca
   http://localhost:3500
   ```
 
-The backend is live at [https://community-website-backend.herokuapp.com/](https://community-website-backend.herokuapp.com/)
+The backend is live at [https://hitk-community-website-backend.herokuapp.com/](https://hitk-community-website-backend.herokuapp.com/)
 
 
 ## Testing Credentials 🤖
@@ -92,8 +92,8 @@ The dummy admin credentials to login to the admin dashboard are given below -
 
 ```
 {
-    "email" : "admin@gmail.com",
-    "password" : "check"
+    "email" : "hitkadmin@gmail.com",
+    "password" : "password"
 }
 ```
 

@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
-      message: 'Database Error',
+      message: 'Mongo Error: Fetching Failed',
       errStack: err,
     });
     return next(error);

@@ -7,14 +7,14 @@ import styles from "../../../Home/components/Motive/motive.module.scss";
 import "./custom-owl-carousel-style.scss";
 import { Modals } from "./Modal/index.js";
 import { END_POINT } from "./../../../../config/api";
-
+import LoaderFull from "../../../../components/util/Loader";
 export function Carousel(props) {
   const head = props.head;
   let dark = props.theme;
 
   const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useState([]);
-
+  const [isLoaded, setLoaded] = useState(false);
   const handleOpen = (s, h, i) => {
     setOpen(true);
     setData({ head: h, desc: s, img: i });
@@ -85,13 +85,16 @@ export function Carousel(props) {
           .json()
           .then((res) => {
             setDataa(res);
+            setLoaded(true);
           })
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
   }, [dataa]);
 
-  return (
+  return !isLoaded ? (
+    <LoaderFull />
+  ) : (
     <React.Fragment>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
       <div className={style["slider-div"]}>

@@ -8,6 +8,7 @@ import { DropMenu } from "../../../../components/util/DropMenu/index.js";
 import { Card } from "./Card/index.js";
 import { Edit } from "./Edit/index.js";
 import { END_POINT } from "./../../../../config/api";
+import Loader from "../../../../components/util/Loader";
 
 export function AllBroadcasts(props) {
   const [array, setArray] = useState([]);
@@ -18,7 +19,7 @@ export function AllBroadcasts(props) {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [page, setPage] = useState("");
-
+  const [isLoaded, setLoaded] = useState(false);
   const dark = props.theme;
 
   const handler = (i) => {
@@ -61,13 +62,16 @@ export function AllBroadcasts(props) {
           .json()
           .then((res) => {
             setArray(res);
+            setLoaded(true);
           })
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
   }, [tags, page, year, month]);
 
-  return (
+  return !isLoaded ? (
+    <Loader />
+  ) : (
     <main
       className={dark ? `${style["main"]} ${style["dark"]}` : style["main"]}
     >

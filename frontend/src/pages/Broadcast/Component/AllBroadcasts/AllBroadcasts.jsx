@@ -8,7 +8,7 @@ import { DropMenu } from "../../../../components/util/DropMenu/index.js";
 import { Card } from "./Card/index.js";
 import { Edit } from "./Edit/index.js";
 import { END_POINT } from "./../../../../config/api";
-import LoaderFull from "../../../../components/util/Loader";
+import Loader from "../../../../components/util/Loader";
 
 export function AllBroadcasts(props) {
   const [array, setArray] = useState([]);
@@ -70,7 +70,7 @@ export function AllBroadcasts(props) {
   }, [tags, page, year, month]);
 
   return !isLoaded ? (
-    <LoaderFull />
+    <Loader />
   ) : (
     <main
       className={dark ? `${style["main"]} ${style["dark"]}` : style["main"]}

@@ -7,7 +7,7 @@ import styles from "../../../Home/components/Motive/motive.module.scss";
 import "./custom-owl-carousel-style.scss";
 import { Modals } from "./Modal/index.js";
 import { END_POINT } from "./../../../../config/api";
-import LoaderFull from "../../../../components/util/Loader";
+import Loader from "../../../../components/util/Loader";
 export function Carousel(props) {
   const head = props.head;
   let dark = props.theme;
@@ -93,7 +93,7 @@ export function Carousel(props) {
   }, [dataa]);
 
   return !isLoaded ? (
-    <LoaderFull />
+    <Loader />
   ) : (
     <React.Fragment>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />

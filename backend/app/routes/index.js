@@ -4,12 +4,16 @@ const auth = require('./auth');
 const { emailTest } = require('./testRoutes/emailTest');
 const tinyURL = require('./tinyURL');
 const broadcast = require('./broadcast');
-const FAQ = require('./faq/post');
+const faq = require('./faq/post');
+const getFaq = require('./faq/getFaq');
+const deleteFaq = require('./faq/deleteFaq');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
-router.use('/faq', FAQ);
+router.use('/faq', faq);
+router.use('/deleteFaq', deleteFaq);
+router.use('/getFaq', getFaq);
 router.use('/broadcast', broadcast);
 router.use('/', tinyURL);
 module.exports = router;

@@ -1,5 +1,5 @@
 const to = require('await-to-js').default;
-const FAQ = require('../../models/faq');
+const faq = require('../../models/faq');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 const Admin = require('../../models/Admin');
@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  const [err2, response2] = await to(FAQ.findByIdAndDelete(faqId));
+  const [err2, response2] = await to(faq.findByIdAndDelete(faqId));
   if (err2) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,

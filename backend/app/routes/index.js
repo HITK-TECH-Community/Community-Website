@@ -5,8 +5,8 @@ const { emailTest } = require('./testRoutes/emailTest');
 const tinyURL = require('./tinyURL');
 const broadcast = require('./broadcast');
 const faq = require('./faq/post');
-const getFaq = require('./faq/getFaq');
-const deleteFaq = require('./faq/deleteFaq');
+const getFaq = require('./faq/GetFaq');
+const deleteFaq = require('./faq/DeleteFaq');
 
 router.use('/admin', admin);
 router.use('/auth', auth);

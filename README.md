@@ -92,7 +92,14 @@ The dummy admin credentials to login to the admin dashboard are given below -
 
 ```
 {
-    "email" : "hitkadmin@gmail.com",
+    "email" : "hitktechcommunity@gmail.com",
+    "password" : "password"
+}
+
+OR
+
+{
+    "email" : "kajolkumarisingh@gmail.com",
     "password" : "password"
 }
 ```

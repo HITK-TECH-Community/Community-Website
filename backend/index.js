@@ -1,7 +1,17 @@
 require('dotenv').config();
 const http = require('http');
-
+const cronJob = require('./utility/cronJob');
 const cluster = require('./helpers/cluster');
+
+cronJob('0 0 1 * *', async () => {
+  try{
+    
+  }
+  catch(err){
+    console.log(err);
+    return;
+  }
+});
 
 if (cluster().isMaster) return;
 

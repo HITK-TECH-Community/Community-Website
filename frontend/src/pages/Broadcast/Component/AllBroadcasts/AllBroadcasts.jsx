@@ -33,6 +33,10 @@ export function AllBroadcasts(props) {
     "November",
     "December",
   ];
+  const years = [];
+  for (var i = 2020; i <= new Date().getFullYear(); ++i) {
+    years.push(i.toString());
+  }
   const dark = props.theme;
 
   const handler = (i) => {
@@ -82,9 +86,7 @@ export function AllBroadcasts(props) {
       .catch((err) => console.log(err));
   }, [tags, page, year, month]);
 
-  return !isLoaded ? (
-    <Loader />
-  ) : (
+  return (
     <main
       className={dark ? `${style["main"]} ${style["dark"]}` : style["main"]}
     >
@@ -153,17 +155,19 @@ export function AllBroadcasts(props) {
               onClick={(e) => {
                 const { newVal } = e.currentTarget.dataset;
                 const index = months.indexOf(newVal) + 1;
-                index != 0 && setMonth(index);
+                setLoaded(false);
+                index !== 0 && setMonth(index);
               }}
             />
             <DropMenu
               theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Year"
-              ListItems={["2021", "2020"]}
+              ListItems={years}
               value={year}
               onClick={(e) => {
                 const { newVal } = e.currentTarget.dataset;
+                setLoaded(false);
                 setYear(newVal);
               }}
             />
@@ -174,6 +178,7 @@ export function AllBroadcasts(props) {
             <Button4
               text={months[month - 1]}
               onClick={(e) => {
+                setLoaded(false);
                 setMonth("");
               }}
             />
@@ -182,6 +187,7 @@ export function AllBroadcasts(props) {
             <Button4
               text={year}
               onClick={(e) => {
+                setLoaded(false);
                 setYear("");
               }}
             />
@@ -189,18 +195,24 @@ export function AllBroadcasts(props) {
         </div>
       </div>
       <div id={style["all-cards"]}>
-        {array.map((element, i) => {
-          return (
-            <Card
-              theme={dark}
-              project={element}
-              key={`card-${i}`}
-              id={`card-${i}`}
-              handler={() => handler(i)}
-              admin={isAdmin}
-            />
-          );
-        })}
+        {!isLoaded ? (
+          <Loader />
+        ) : array.length === 0 ? (
+          <h1>No Broadcasts Found !</h1>
+        ) : (
+          array.map((element, i) => {
+            return (
+              <Card
+                theme={dark}
+                project={element}
+                key={`card-${i}`}
+                id={`card-${i}`}
+                handler={() => handler(i)}
+                admin={isAdmin}
+              />
+            );
+          })
+        )}
       </div>
     </main>
   );

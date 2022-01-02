@@ -20,6 +20,7 @@ export function AllBroadcasts(props) {
   const [year, setYear] = useState("");
   const [page, setPage] = useState("");
   const [isLoaded, setLoaded] = useState(false);
+  const [filterText, setFilterText] = useState("");
   const dark = props.theme;
 
   const handler = (i) => {
@@ -32,6 +33,12 @@ export function AllBroadcasts(props) {
     a[index] = o;
     setArray(a);
   };
+
+  const filteredItems = array.filter((item) =>
+    item.title.toLocaleLowerCase().includes(filterText)
+  );
+
+  const itemsToDisplay = filterText ? filteredItems : array;
 
   useEffect(() => {
     var api = `${END_POINT}/broadcast?page=${page}&tags=${tags}&year=${year}&month=${month}`;
@@ -67,7 +74,7 @@ export function AllBroadcasts(props) {
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
-  }, [tags, page, year, month]);
+  }, [month, page, tags, year]);
 
   return !isLoaded ? (
     <Loader />
@@ -124,9 +131,9 @@ export function AllBroadcasts(props) {
               }
               inputProps={{ "aria-label": "search" }}
               name="search-box"
-              value={tags}
+              value={filterText}
               onChange={(e) => {
-                setTags(e.currentTarget.value);
+                setFilterText(e.target.value.toLocaleLowerCase());
               }}
             />
           </div>
@@ -167,7 +174,12 @@ export function AllBroadcasts(props) {
         </div>
       </div>
       <div id={style["all-cards"]}>
-        {array.map((element, i) => {
+        {!filteredItems.length && (
+          <div>
+            <h2>No broadcast found ..</h2>
+          </div>
+        )}
+        {itemsToDisplay.map((element, i) => {
           return (
             <Card
               theme={dark}

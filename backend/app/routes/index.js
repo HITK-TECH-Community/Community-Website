@@ -5,8 +5,9 @@ const { emailTest } = require('./testRoutes/emailTest');
 const tinyURL = require('./tinyURL');
 const broadcast = require('./broadcast');
 const faq = require('./faq/post');
-const getFaq = require('./faq/GetFaq');
-const deleteFaq = require('./faq/DeleteFaq');
+const getFaq = require('./faq/getFaq');
+const deleteFaq = require('./faq/deleteFaq');
+const joinUs = require('./joinUs/post');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -16,4 +17,5 @@ router.use('/deleteFaq', deleteFaq);
 router.use('/getFaq', getFaq);
 router.use('/broadcast', broadcast);
 router.use('/', tinyURL);
+router.use('/joinUs', joinUs);
 module.exports = router;

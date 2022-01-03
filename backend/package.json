@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/HITK-TECH-Community/Community-Website#readme",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "argon2": "^0.27.1",
     "await-to-js": "^2.1.1",
     "chai": "^4.3.4",

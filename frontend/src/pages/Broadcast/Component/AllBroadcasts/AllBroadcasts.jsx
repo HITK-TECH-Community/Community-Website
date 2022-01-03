@@ -176,7 +176,7 @@ export function AllBroadcasts(props) {
       <div id={style["all-cards"]}>
         {!filteredItems.length && (
           <div>
-            <h2>No broadcast found ..</h2>
+            <h1>No Broadcasts Found !</h1>
           </div>
         )}
         {itemsToDisplay.map((element, i) => {

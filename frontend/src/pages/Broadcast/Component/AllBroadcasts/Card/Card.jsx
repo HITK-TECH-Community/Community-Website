@@ -45,10 +45,6 @@ export function Card(props) {
     "November",
     "December",
   ];
-  // console.log(date.getMonth());
-  // console.log(date.getFullYear())
-  // console.log(props.project.createdAt);
-  // console.log(date.getMonth());
 
   return (
     <div id={props.id} className={style["card-container"]}>
@@ -67,10 +63,8 @@ export function Card(props) {
             <div className={style["card-content"]}>
               {props.project.content.substring(0, 400)}...
             </div>
-            <div className={style["card-content"]}>
-              {months[date.getMonth()]}
-              <br></br>
-              {date.getFullYear()}
+            <div className={style["card-date"]}>
+              {months[date.getMonth()]},{date.getFullYear()}
             </div>
           </div>
         </div>

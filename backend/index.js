@@ -2,14 +2,15 @@ require('dotenv').config();
 const http = require('http');
 const cronJob = require('./utility/cronJob');
 const cluster = require('./helpers/cluster');
+const joinUs = require('./app/models/joinUs');
 
-cronJob('0 0 1 * *', async () => {
-  try{
-    
-  }
-  catch(err){
-    console.log(err);
-    return;
+// Running Cronjob for 2 months - 0 0 2 * *
+cronJob('0 0 2 * *', async () => {
+  try {
+    const res = await joinUs.deleteMany({});
+    console.log('Join Us data removed');
+  } catch (err) {
+    return err;
   }
 });
 

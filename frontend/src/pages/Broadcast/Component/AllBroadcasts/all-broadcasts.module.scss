@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.filter-info {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .appbar-wrap {
   width: 100%;
   z-index: 2;
@@ -68,7 +74,9 @@
   margin: 0.5em;
   justify-content: center;
 }
-
+#all-cards h1 {
+  margin: 10%;
+}
 .search-icon {
   padding-left: 16px;
   padding-right: 16px;

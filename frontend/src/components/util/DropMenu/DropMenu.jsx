@@ -119,7 +119,11 @@ export function DropMenu(props) {
                   {props.ListItems.map((listItem, index) => (
                     <MenuItem
                       key={index}
-                      onClick={handleClose}
+                      data-new-val={listItem}
+                      onClick={(e) => {
+                        props.onClick(e);
+                        setOpen(false);
+                      }}
                       className={classes.menuListItem}
                     >
                       {listItem}

@@ -9,7 +9,7 @@ import { Card } from "./Card/index.js";
 import { Edit } from "./Edit/index.js";
 import { END_POINT } from "./../../../../config/api";
 import Loader from "../../../../components/util/Loader";
-
+import { Button4 } from "../../../../components/util/Button";
 export function AllBroadcasts(props) {
   const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
@@ -21,6 +21,24 @@ export function AllBroadcasts(props) {
   const [page, setPage] = useState("");
   const [isLoaded, setLoaded] = useState(false);
   const [filterText, setFilterText] = useState("");
+  const months = [
+    "January",
+    "Febuary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const years = [];
+  for (var i = 2020; i <= new Date().getFullYear(); ++i) {
+    years.push(i.toString());
+  }
   const dark = props.theme;
 
   const handler = (i) => {
@@ -76,9 +94,7 @@ export function AllBroadcasts(props) {
       .catch((err) => console.log(err));
   }, [month, page, tags, year]);
 
-  return !isLoaded ? (
-    <Loader />
-  ) : (
+  return (
     <main
       className={dark ? `${style["main"]} ${style["dark"]}` : style["main"]}
     >
@@ -142,35 +158,48 @@ export function AllBroadcasts(props) {
               theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Month"
-              ListItems={[
-                "January",
-                "Febuary",
-                "March",
-                "April",
-                "May",
-                "June",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December",
-              ]}
+              ListItems={months}
               value={month}
-              onChange={(e) => {
-                setMonth(e.currentTarget.value);
+              onClick={(e) => {
+                const { newVal } = e.currentTarget.dataset;
+                const index = months.indexOf(newVal) + 1;
+                setLoaded(false);
+                index !== 0 && setMonth(index);
               }}
             />
             <DropMenu
               theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Year"
-              ListItems={["2021", "2020"]}
+              ListItems={years}
               value={year}
-              onChange={(e) => {
-                setYear(e.currentTarget.value);
+              onClick={(e) => {
+                const { newVal } = e.currentTarget.dataset;
+                setLoaded(false);
+                setYear(newVal);
               }}
             />
           </div>
+        </div>
+        <div className={style["filter-info"]}>
+          {month !== "" && (
+            <Button4
+              text={months[month - 1]}
+              onClick={(e) => {
+                setLoaded(false);
+                setMonth("");
+              }}
+            />
+          )}
+          {year !== "" && (
+            <Button4
+              text={year}
+              onClick={(e) => {
+                setLoaded(false);
+                setYear("");
+              }}
+            />
+          )}
         </div>
       </div>
       <div id={style["all-cards"]}>
@@ -191,6 +220,24 @@ export function AllBroadcasts(props) {
             />
           );
         })}
+        {!isLoaded ? (
+          <Loader />
+        ) : array.length === 0 ? (
+          <h1>No Broadcasts Found !</h1>
+        ) : (
+          array.map((element, i) => {
+            return (
+              <Card
+                theme={dark}
+                project={element}
+                key={`card-${i}`}
+                id={`card-${i}`}
+                handler={() => handler(i)}
+                admin={isAdmin}
+              />
+            );
+          })
+        )}
       </div>
     </main>
   );

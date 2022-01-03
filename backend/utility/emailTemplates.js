@@ -12,3 +12,22 @@ module.exports.getMailTemplate = (type) => {
   };
   return templates[type];
 };
+
+module.exports.JoinUsMailTemplate = (adminName, req) => {
+  const emailContent = `
+  <h4>Hi ${adminName}, </h4> There is new Join Us Request at Community Website with following details : <br><br>
+  <ul>
+  <li>Name - ${req.body.name}</li>
+  <li>Email - ${req.body.email}</li>
+  <li>Linkdin - <a href=${req.body.linkdin}>Linkdin</a></li>
+  <li>College - ${req.body.college}</li>
+  <li>Department - ${req.body.department}</li>
+  <li>Contact - ${req.body.contact}</li>
+  <li>Description - ${req.body.description}</li>
+  <li>Interested Domain - ${req.body.interestedDomain.join(', ')}</li>
+  </ul>
+  <br>
+  Please take the required actions!
+  `;
+  return emailContent;
+};

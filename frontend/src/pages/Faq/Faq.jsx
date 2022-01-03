@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import style from "./faq.module.scss";
 import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast";
+import Loader from "../../components/util/Loader";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -116,9 +117,7 @@ export function Faq(props) {
             }
           >
             {isFetching ? (
-              <Typography variant="h6" align="center" style={{color:"white"}}>
-                Please wait while we fetching FAQs
-              </Typography>
+              <Loader></Loader>
             ) : (
               faqs.map((faq) => (
                 <Accordion

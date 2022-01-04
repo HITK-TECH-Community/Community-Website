@@ -203,7 +203,8 @@ export function AllBroadcasts(props) {
         </div>
       </div>
       <div id={style["all-cards"]}>
-        {!filteredItems.length && (
+        {!isLoaded && <Loader />}
+        {isLoaded && !filteredItems.length && (
           <div>
             <h1>No Broadcasts Found !</h1>
           </div>
@@ -220,24 +221,6 @@ export function AllBroadcasts(props) {
             />
           );
         })}
-        {!isLoaded ? (
-          <Loader />
-        ) : array.length === 0 ? (
-          <h1>No Broadcasts Found !</h1>
-        ) : (
-          array.map((element, i) => {
-            return (
-              <Card
-                theme={dark}
-                project={element}
-                key={`card-${i}`}
-                id={`card-${i}`}
-                handler={() => handler(i)}
-                admin={isAdmin}
-              />
-            );
-          })
-        )}
       </div>
     </main>
   );

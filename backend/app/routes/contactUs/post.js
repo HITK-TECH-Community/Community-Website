@@ -1,13 +1,13 @@
 const to = require('await-to-js').default;
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-const CONTACT = require('../../models/contactUs');
+const contactUs = require('../../models/contactUs');
 const Admin = require('../../models/Admin');
 const sendEmail = require('../../../utility/sendEmail');
 const { ContactUsMailTemplate } = require('../../../utility/emailTemplates');
 
 module.exports = async (req, res, next) => {
-  const [err] = await to(CONTACT.create({ ...req.body }));
+  const [err] = await to(contactUs.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,

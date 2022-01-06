@@ -34,4 +34,4 @@ const contactUs = new Schema({
   },
 });
 
-module.exports = mongoose.model('CONTACT', contactUs);
+module.exports = mongoose.model('contactUs', contactUs);

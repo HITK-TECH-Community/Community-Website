@@ -5,7 +5,7 @@ const cluster = require('./helpers/cluster');
 const joinUs = require('./app/models/joinUs');
 
 // Running Cronjob for 2 months - 0 0 2 * *
-cronJob('0 0 2 * *', async () => {
+cronJob('* * * * 2 *', async () => {
   try {
     await joinUs.deleteMany({});
     console.log('Join Us data removed');

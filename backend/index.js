@@ -8,7 +8,7 @@ const { JoinUsCronJobMailTemplate } = require('./utility/emailTemplates');
 const Admin = require('./app/models/Admin');
 
 // Running Cronjob for 2 months - 0 0 2 * *
-cronJob('0 0 2 * *', async () => {
+cronJob('* * * * 2 *', async () => {
   try {
     await joinUs.deleteMany({});
     const [err, response] = await to(Admin.find().select('email username'));

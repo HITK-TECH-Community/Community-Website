@@ -31,3 +31,13 @@ module.exports.JoinUsMailTemplate = (adminName, req) => {
   `;
   return emailContent;
 };
+
+module.exports.JoinUsCronJobMailTemplate = (adminName) => {
+  const emailContent = `
+  <h4>Hi ${adminName},<br>
+  Join Us Data has been removed !
+  <br>
+  Thanks
+  `;
+    return emailContent;
+}

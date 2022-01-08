@@ -20,6 +20,7 @@ export function AllBroadcasts(props) {
   const [year, setYear] = useState("");
   const [page, setPage] = useState("");
   const [isLoaded, setLoaded] = useState(false);
+  const [filterText, setFilterText] = useState("");
   const months = [
     "January",
     "Febuary",
@@ -50,6 +51,12 @@ export function AllBroadcasts(props) {
     a[index] = o;
     setArray(a);
   };
+
+  const filteredItems = array.filter((item) =>
+    item.title.toLocaleLowerCase().includes(filterText)
+  );
+
+  const itemsToDisplay = filterText ? filteredItems : array;
 
   useEffect(() => {
     var api = `${END_POINT}/broadcast?page=${page}&tags=${tags}&year=${year}&month=${month}`;
@@ -85,7 +92,7 @@ export function AllBroadcasts(props) {
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
-  }, [tags, page, year, month]);
+  }, [month, page, tags, year]);
 
   return (
     <main
@@ -140,9 +147,9 @@ export function AllBroadcasts(props) {
               }
               inputProps={{ "aria-label": "search" }}
               name="search-box"
-              value={tags}
+              value={filterText}
               onChange={(e) => {
-                setTags(e.currentTarget.value);
+                setFilterText(e.target.value.toLocaleLowerCase());
               }}
             />
           </div>
@@ -196,24 +203,24 @@ export function AllBroadcasts(props) {
         </div>
       </div>
       <div id={style["all-cards"]}>
-        {!isLoaded ? (
-          <Loader />
-        ) : array.length === 0 ? (
-          <h1>No Broadcasts Found !</h1>
-        ) : (
-          array.map((element, i) => {
-            return (
-              <Card
-                theme={dark}
-                project={element}
-                key={`card-${i}`}
-                id={`card-${i}`}
-                handler={() => handler(i)}
-                admin={isAdmin}
-              />
-            );
-          })
+        {!isLoaded && <Loader />}
+        {isLoaded && !filteredItems.length && (
+          <div>
+            <h1>No Broadcasts Found !</h1>
+          </div>
         )}
+        {itemsToDisplay.map((element, i) => {
+          return (
+            <Card
+              theme={dark}
+              project={element}
+              key={`card-${i}`}
+              id={`card-${i}`}
+              handler={() => handler(i)}
+              admin={isAdmin}
+            />
+          );
+        })}
       </div>
     </main>
   );

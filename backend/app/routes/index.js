@@ -8,6 +8,7 @@ const faq = require('./faq/post');
 const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
 const joinUs = require('./joinUs/post');
+const contactUs = require('./contactUs/post');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -15,6 +16,7 @@ router.post('/emailTest', emailTest);
 router.use('/faq', faq);
 router.use('/deleteFaq', deleteFaq);
 router.use('/getFaq', getFaq);
+router.use('/contactus', contactUs);
 router.use('/broadcast', broadcast);
 router.use('/', tinyURL);
 router.use('/joinUs', joinUs);

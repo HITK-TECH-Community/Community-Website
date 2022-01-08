@@ -41,3 +41,17 @@ module.exports.JoinUsCronJobMailTemplate = (adminName) => {
   `;
     return emailContent;
 }
+module.exports.ContactUsMailTemplate = (adminName, req) => {
+  const emailContent = `
+  <h4>Hi ${adminName}, </h4> There is new Contact Request at Community Website with following details : <br><br>
+  <ul>
+  <li>Name - ${req.body.name}</li>
+  <li>Email - ${req.body.email}</li>
+  <li>Subject - ${req.body.subject}</li>
+  <li>Message - ${req.body.message}</li>
+  </ul>
+  <br>
+  Please take the required actions!
+  `;
+  return emailContent;
+};

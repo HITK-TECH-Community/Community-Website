@@ -30,6 +30,21 @@ export function Card(props) {
     setData({});
   };
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
+  const date = new Date(props.project.createdAt.slice(0, 10));
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
   return (
     <div id={props.id} className={style["card-container"]}>
@@ -47,6 +62,9 @@ export function Card(props) {
             <div className={style["card-title"]}>{props.project.title}</div>
             <div className={style["card-content"]}>
               {props.project.content.substring(0, 400)}...
+            </div>
+            <div className={style["card-date"]}>
+              {months[date.getMonth()]},{date.getFullYear()}
             </div>
           </div>
         </div>

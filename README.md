@@ -99,7 +99,7 @@ The dummy admin credentials to login to the admin dashboard are given below -
 OR
 
 {
-    "email" : "kajolkumarisingh@gmail.com",
+    "email" : "kajolkumarisingh222@gmail.com",
     "password" : "password"
 }
 ```

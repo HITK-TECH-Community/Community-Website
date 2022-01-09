@@ -37,8 +37,6 @@ cronJob('* * * * 2 *', async () => {
       });
       return next(error);
     }
-
-    console.log('Join Us data removed');
   } catch (err) {
     return err;
   }

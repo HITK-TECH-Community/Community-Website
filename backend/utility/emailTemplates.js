@@ -32,6 +32,15 @@ module.exports.JoinUsMailTemplate = (adminName, req) => {
   return emailContent;
 };
 
+module.exports.JoinUsCronJobMailTemplate = (adminName) => {
+  const emailContent = `
+  <h4>Hi ${adminName},<br>
+  Join Us Data has been removed !
+  <br>
+  Thanks
+  `;
+    return emailContent;
+}
 module.exports.ContactUsMailTemplate = (adminName, req) => {
   const emailContent = `
   <h4>Hi ${adminName}, </h4> There is new Contact Request at Community Website with following details : <br><br>

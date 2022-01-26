@@ -59,5 +59,5 @@ module.exports = async (req, res, next) => {
   }
   results = broadcasts.slice(0, limit);
   res.status(200).json(results);
-  return next();
+  
 };

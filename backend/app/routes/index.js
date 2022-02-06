@@ -9,7 +9,8 @@ const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
 const joinUs = require('./joinUs/post');
 const contactUs = require('./contactUs/post');
-const question = require('./question');
+const question = require('./Q&A/question');
+const answer = require('./Q&A/answers');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -20,6 +21,7 @@ router.use('/getFaq', getFaq);
 router.use('/contactus', contactUs);
 router.use('/broadcast', broadcast);
 router.use('/question', question);
+router.use('/answers', answer);
 router.use('/', tinyURL);
 router.use('/joinUs', joinUs);
 module.exports = router;

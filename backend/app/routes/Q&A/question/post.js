@@ -1,10 +1,10 @@
 const to = require('await-to-js').default;
-const QUESTION = require('../../../models/question');
+const question = require('../../../models/question');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
 module.exports = async (req,res,next) => {
-    const [ err ] = await to(QUESTION.create({ ...req.body }));
+    const [ err ] = await to(question.create({ ...req.body }));
 
     if(err){
         const error = new ErrorHandler(constants.ERRORS.DATABASE,{

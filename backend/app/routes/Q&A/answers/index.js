@@ -1,8 +1,8 @@
 const router = require('express').Router({ mergeParams: true });
 const postAnswer = require('./post');
-const AnswerValidationSchema = require('./@validationSchema');
+const answerValidationSchema = require('./@validationSchema');
 const validation = require('../../../../helpers/middlewares/validation');
 
-router.post('/', validation(AnswerValidationSchema), postAnswer);
+router.post('/', validation(answerValidationSchema), postAnswer);
 
 module.exports = router;

@@ -32,4 +32,4 @@ const answerSchema = new Schema({
     }
 }, { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } });
 
-module.exports = mongoose.model('ANSWERS', answerSchema);
+module.exports = mongoose.model('answer', answerSchema);

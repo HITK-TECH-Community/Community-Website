@@ -3,11 +3,12 @@ const http = require('http');
 const cronJob = require('./utility/cronJob');
 const cluster = require('./helpers/cluster');
 const joinUs = require('./app/models/joinUs');
+const contactUs = require('./app/models/contactUs');
 const sendEmail = require('./utility/sendEmail');
-const { JoinUsCronJobMailTemplate } = require('./utility/emailTemplates');
+const { JoinUsCronJobMailTemplate, ContactUsCronJobMailTemplate } = require('./utility/emailTemplates');
 const Admin = require('./app/models/Admin');
 
-// Running Cronjob for 2 months - 0 0 2 * *
+// Running Join Us cronjob for 2 months - 0 0 2 * *
 cronJob('0 0 2 * *', async () => {
   try {
     await joinUs.deleteMany({});
@@ -27,6 +28,41 @@ cronJob('0 0 2 * *', async () => {
           adminUser.email,
           'Notification : Join Us Data Removed',
           JoinUsCronJobMailTemplate(adminUser.username)
+        );
+      });
+    } catch (err) {
+      const error = new ErrorHandler(constants.ERRORS.EMAIL, {
+        statusCode: 500,
+        message: 'Sendgrid Error',
+        errStack: err,
+      });
+      return next(error);
+    }
+  } catch (err) {
+    return err;
+  }
+});
+
+// Running Contact Us cronjob after every 1 month - 0 0 1 * *
+cronJob('0 0 1 * *', async () => {
+  try {
+    await contactUs.deleteMany({});
+    const [err, response] = await to(Admin.find().select('email username'));
+    if (err) {
+      const error = new ErrorHandler(constants.ERRORS.DATABASE, {
+        statusCode: 500,
+        message: 'Database Error',
+        errStack: err,
+      });
+      return next(error);
+    }
+
+    try {
+      response.map(async (adminUser) => {
+        await sendEmail(
+          adminUser.email,
+          'Notification : Contact Us Data Removed',
+          ContactUsCronJobMailTemplate(adminUser.username)
         );
       });
     } catch (err) {

@@ -7,4 +7,11 @@ const answerValidationSchema = Joi.object().keys({
     created_on : Joi.date().required()
 });
 
-module.exports = answerValidationSchema;
+const getAnswerValidationSchema = Joi.object().keys({
+    question_id : Joi.string().trim().required().max(24).min(24)
+});
+  
+module.exports = {
+    answerValidationSchema,
+    getAnswerValidationSchema,
+};

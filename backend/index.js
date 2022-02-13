@@ -43,8 +43,8 @@ cronJob('0 0 2 * *', async () => {
   }
 });
 
-// Running Contact Us cronjob after every 1 month - 0 0 1 * *
-cronJob('0 0 1 * *', async () => {
+// Running Contact Us cronjob after every 2 months - 0 0 2 * *
+cronJob('0 0 2 * *', async () => {
   try {
     await contactUs.deleteMany({});
     const [err, response] = await to(Admin.find().select('email username'));

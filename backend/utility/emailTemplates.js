@@ -60,7 +60,7 @@ module.exports.ContactUsMailTemplate = (adminName, req) => {
 module.exports.ContactUsCronJobMailTemplate = (adminName) => {
   const emailContent = `
   <h4>Hi ${adminName},<br>
-  Contact Us Data has been removed !
+  The Contact Us Form data of last 2 month has been removed!
   <br>
   Thanks
   `;

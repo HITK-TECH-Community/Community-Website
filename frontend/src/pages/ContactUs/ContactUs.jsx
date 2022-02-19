@@ -8,7 +8,7 @@ import { SimpleToast } from "../../components/util/Toast/index";
 import Loader from "../../components/util/Loader";
 
 export const ContactUs = (props) => {
-  const [isverified, verified] = useState(false);
+  const [isVerified, verified] = useState(false);
   const [contactToast, setContactToast] = useState("");
   const [openSubmitContactSuccess, setOpenSubmitContactSuccess] = useState(
     false

@@ -5,6 +5,7 @@ import style from "./ContactUs.module.scss";
 import Joi from "joi-browser";
 import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast/index";
+import Loader from "../../components/util/Loader";
 
 export const ContactUs = (props) => {
   const [isverified, verified] = useState(false);
@@ -12,6 +13,7 @@ export const ContactUs = (props) => {
   const [openSubmitContactSuccess, setOpenSubmitContactSuccess] = useState(
     false
   );
+  const [isLoading, setIsLoading] = useState(false);
   const [contactToastStatus, setContactToastStatus] = useState("");
   const recaptchaLoaded = () => {
     console.log("Recaptcha loaded");
@@ -88,9 +90,10 @@ export const ContactUs = (props) => {
     setFormData({ ...data, [input.name]: input.value });
     setFormErrors(errors);
   };
-  const submitContactFormData = (formData) => {
+  const submitContactFormData = async (formData) => {
     var api = `${END_POINT}/contactus`;
-    return fetch(api, {
+    setIsLoading(true);
+    return await fetch(api, {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
@@ -103,9 +106,11 @@ export const ContactUs = (props) => {
           data.message === "Database Error" ||
           data.message === "Sendgrid Error"
         ) {
+          setIsLoading(false);
           setContactToast(data.message);
           setContactToastStatus("error");
         } else {
+          setIsLoading(false);
           setContactToastStatus("success");
           setContactToast(data.message);
           setOpenSubmitContactSuccess(true);
@@ -137,14 +142,21 @@ export const ContactUs = (props) => {
         </div>
         <div className={`${style["contact-child"]} ${style["child2"]}`}>
           {submitted ? (
-            contactToastStatus === "success" ? (
+            isLoading ? (
               <React.Fragment>
                 <div className={style["goodbye-card"]}>
-                  <h1 className={style["card-heading"]}>Hello There !</h1>
+                  <Loader height="25vh"/>
+                </div>
+              </React.Fragment>
+            ) : contactToastStatus === "error" ? (
+              <React.Fragment>
+                <div className={style["goodbye-card"]}>
+                  <h1 className={style["card-heading"]}>OOPS !</h1>
                   <div className={style["inside-card"]}>
                     <p style={{ textAlign: "center" }}>
-                      We have heard you! 😄 <br />
-                      We will get back to you very soon if required!
+                      Sorry for the inconvenience caused, our servers are
+                      currently facing some issues. 🔧 <br />
+                      Please try again later!
                     </p>
                   </div>
                 </div>
@@ -152,11 +164,11 @@ export const ContactUs = (props) => {
             ) : (
               <React.Fragment>
                 <div className={style["goodbye-card"]}>
-                  <h1 className={style["card-heading"]}>OOPS !</h1>
+                  <h1 className={style["card-heading"]}>Hello There !</h1>
                   <div className={style["inside-card"]}>
                     <p style={{ textAlign: "center" }}>
-                      Sorry for the inconvenience caused, our servers are currently facing some issues. 🔧 <br /> 
-                      Please try again later! 
+                      We have heard you! 😄 <br />
+                      We will get back to you very soon if required!
                     </p>
                   </div>
                 </div>

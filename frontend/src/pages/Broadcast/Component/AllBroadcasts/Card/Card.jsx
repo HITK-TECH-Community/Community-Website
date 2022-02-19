@@ -4,22 +4,22 @@ import { Modals } from "../../Carousel/Modal/index.js";
 import { Delete, Edit } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { useSelector } from "react-redux";
-
+import { END_POINT } from "../../../../../config/api";
+import { SimpleToast } from "../../../../../components/util/Toast";
 import style from "./card.module.scss";
 
-function deleteCard(id) {
-  const cardElement = document.getElementById(id);
-  cardElement.classList.add("gonnaRemove");
-  setTimeout(() => cardElement.remove(), 1000);
-}
 export function Card(props) {
   let dark = props.theme;
   const [flipped, setFlipped] = useState(false);
+  const [openDeleteSuccess, setOpenDeleteSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState({});
+
   const handleClick = () => {
     setFlipped(!flipped);
   };
-  const [open, setOpen] = useState(false);
-  const [data, setData] = useState({});
+
   const handleOpen = (s, h, i) => {
     setOpen(true);
     setData({ head: h, desc: s, img: i });
@@ -29,6 +29,34 @@ export function Card(props) {
     setOpen(false);
     setData({});
   };
+
+  const handleCloseDeleteToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpenDeleteSuccess(false);
+  };
+
+  function deleteCard(id) {
+    var api = `${END_POINT}/broadcast/${id}`;
+    const token = localStorage.getItem("token");
+    return fetch(api, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(() => {
+        setSuccessMessage("Broadcast deleted successfully");
+        setOpenDeleteSuccess(true);
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch((err) => console.log(err));
+  }
+
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
   const date = new Date(props.project.createdAt.slice(0, 10));
   var months = [
@@ -123,6 +151,14 @@ export function Card(props) {
           </div>
         </div>
       </ReactCardFlip>
+      {openDeleteSuccess && (
+        <SimpleToast
+          open={openDeleteSuccess}
+          message={successMessage}
+          handleCloseToast={handleCloseDeleteToast}
+          severity="success"
+        />
+      )}
     </div>
   );
 }

@@ -14,7 +14,6 @@ export function AllBroadcasts(props) {
   const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
-  const [isAdmin] = useState(true);
   const [tags, setTags] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -215,9 +214,8 @@ export function AllBroadcasts(props) {
               theme={dark}
               project={element}
               key={`card-${i}`}
-              id={`card-${i}`}
+              id={element._id}
               handler={() => handler(i)}
-              admin={isAdmin}
             />
           );
         })}

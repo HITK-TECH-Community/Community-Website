@@ -3,9 +3,18 @@ import { Button2 } from "../../components/util/Button/index";
 import Recaptcha from "react-recaptcha";
 import style from "./ContactUs.module.scss";
 import Joi from "joi-browser";
+import { END_POINT } from "../../config/api";
+import { SimpleToast } from "../../components/util/Toast/index";
+import Loader from "../../components/util/Loader";
 
 export const ContactUs = (props) => {
-  const [isverfied, verified] = useState(false);
+  const [isVerified, verified] = useState(false);
+  const [contactToast, setContactToast] = useState("");
+  const [openSubmitContactSuccess, setOpenSubmitContactSuccess] = useState(
+    false
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [contactToastStatus, setContactToastStatus] = useState("");
   const recaptchaLoaded = () => {
     console.log("Recaptcha loaded");
   };
@@ -25,7 +34,7 @@ export const ContactUs = (props) => {
   });
 
   const [formerrors, setFormErrors] = useState({});
-  const [submited, setSubmited] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const schema = {
     name: Joi.string().trim().required().min(3).label("Name"),
@@ -62,9 +71,10 @@ export const ContactUs = (props) => {
       setFormErrors(errors);
     }
     if (errors) {
-      setSubmited(false);
+      setSubmitted(false);
     } else {
-      setSubmited(true);
+      setSubmitted(true);
+      submitContactFormData(formData);
       setFormData("");
     }
   };
@@ -79,6 +89,40 @@ export const ContactUs = (props) => {
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
     setFormErrors(errors);
+  };
+  const submitContactFormData = async (formData) => {
+    var api = `${END_POINT}/contactus`;
+    setIsLoading(true);
+    return await fetch(api, {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (
+          data.message === "Database Error" ||
+          data.message === "Sendgrid Error"
+        ) {
+          setIsLoading(false);
+          setContactToast(data.message);
+          setContactToastStatus("error");
+        } else {
+          setIsLoading(false);
+          setContactToastStatus("success");
+          setContactToast(data.message);
+          setOpenSubmitContactSuccess(true);
+        }
+      })
+      .catch((err) => {
+        console.info(err);
+      });
+  };
+  const handleCloseContactToast = () => {
+    setOpenSubmitContactSuccess(false);
+    setContactToast("");
   };
   return (
     <div
@@ -97,18 +141,39 @@ export const ContactUs = (props) => {
           />
         </div>
         <div className={`${style["contact-child"]} ${style["child2"]}`}>
-          {submited ? (
-            <React.Fragment>
-              <div className={style["goodbye-card"]}>
-                <h1 className={style["card-heading"]}>Hello There !</h1>
-                <div className={style["inside-card"]}>
-                  <p style={{ textAlign: "center" }}>
-                    We have heard you! 😄 <br />
-                    We will get back to you very soon if required!
-                  </p>
+          {submitted ? (
+            isLoading ? (
+              <React.Fragment>
+                <div className={style["goodbye-card"]}>
+                  <Loader height="25vh"/>
                 </div>
-              </div>
-            </React.Fragment>
+              </React.Fragment>
+            ) : contactToastStatus === "error" ? (
+              <React.Fragment>
+                <div className={style["goodbye-card"]}>
+                  <h1 className={style["card-heading"]}>OOPS !</h1>
+                  <div className={style["inside-card"]}>
+                    <p style={{ textAlign: "center" }}>
+                      Sorry for the inconvenience caused, our servers are
+                      currently facing some issues. 🔧 <br />
+                      Please try again later!
+                    </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <div className={style["goodbye-card"]}>
+                  <h1 className={style["card-heading"]}>Hello There !</h1>
+                  <div className={style["inside-card"]}>
+                    <p style={{ textAlign: "center" }}>
+                      We have heard you! 😄 <br />
+                      We will get back to you very soon if required!
+                    </p>
+                  </div>
+                </div>
+              </React.Fragment>
+            )
           ) : (
             <React.Fragment>
               <div
@@ -255,6 +320,14 @@ export const ContactUs = (props) => {
           )}
         </div>
       </div>
+      {openSubmitContactSuccess && (
+        <SimpleToast
+          open={openSubmitContactSuccess}
+          message={contactToast}
+          handleCloseToast={handleCloseContactToast}
+          severity={contactToastStatus}
+        />
+      )}
     </div>
   );
 };

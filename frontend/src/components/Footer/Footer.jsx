@@ -79,6 +79,7 @@ export const Footer = (props) => {
             Technology, Chowbaga Road, Kolkata, West Bengal - 700107, India
             <br />
           </address>
+          <p>Email: hitktechcommunity@gmail.com</p>
           {submited ? (
             <React.Fragment>
               <div
@@ -295,6 +296,45 @@ export const Footer = (props) => {
                       <div className={style["inner"]}>
                         <i
                           className={`fab fa-github fa-lg ${style["fa-github-own"]}`}
+                        ></i>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://twitter.com/HitkTech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className={style["outer"]}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className={style["inner"]}>
+                        <i
+                          className={`fab fa-twitter fa-lg ${style["fa-github-own"]}`}
+                        ></i>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCaMU1D4pJALSHLo6OsiDzGg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className={style["outer"]}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className={style["inner"]}>
+                        <i
+                          className={`fab fa-youtube fa-lg ${style["fa-github-own"]}`}
                         ></i>
                       </div>
                     </div>

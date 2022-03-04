@@ -1,7 +1,7 @@
 const teamMemberModel = require('../../models/TeamMember');
 module.exports = async (req, res, next) => {
   console.log(req.file);
-  let payload = req.payload;
+  let payload = res.locals.decode;
   if (payload.isSuperAdmin == false) {
     res.status(401).json({ error: 'You are not an admin' });
   }

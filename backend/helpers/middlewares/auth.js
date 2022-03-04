@@ -37,18 +37,5 @@ const authMiddleware = async (req, res, next) => {
   res.locals.decode = payload;
   next();
 };
-function FetchUser(req, res, next) {
-  const token = req.header('auth-token');
-  if (!token) {
-    const error = new ErrorHandler(constants.ERRORS.AUTH, {
-      statusCode: 401,
-      errStack: err2,
-      message: 'JWT authentication failed',
-    });
-    next(error);
-  }
-  const data = verify(token, config.JWT_SECRET_KEY);
-  req.payload = data;
-  next();
-}
-module.exports = { authMiddleware, generateJWT, verifyToken, FetchUser };
+
+module.exports = { authMiddleware, generateJWT, verifyToken };

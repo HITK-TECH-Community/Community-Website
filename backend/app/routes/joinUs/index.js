@@ -6,7 +6,6 @@ const validation = require('../../../helpers/middlewares/validation');
 const {authMiddleware} = require('../../../helpers/middlewares/auth')
 
 router.post('/', validation(JoinUsValidationSchema), postJoinUs);
-// router.get('/', authMiddleware, getJoinUs);
-router.get('/', getJoinUs);
+router.get('/', authMiddleware, getJoinUs);
 
 module.exports = router;

@@ -11,7 +11,7 @@ const joinUs = require('./joinUs/post');
 const contactUs = require('./contactUs/post');
 const question = require('./Q&A/question');
 const answer = require('./Q&A/answers');
-
+const teamMember = require('./teamMember');
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
@@ -24,4 +24,5 @@ router.use('/question', question);
 router.use('/answers', answer);
 router.use('/', tinyURL);
 router.use('/joinUs', joinUs);
+router.use('/teamMember', teamMember);
 module.exports = router;

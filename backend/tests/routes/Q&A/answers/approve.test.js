@@ -40,6 +40,8 @@ describe('Approve test for Answers', () => {
       .send({ answerId: aId, isApproved: !approved })
       .then((res) => {
         expect(res.status).to.equal(200);
+        expect(res.body._id).to.equal(aId);
+        expect(res.body.isApproved).to.equal(!approved);
         done();
       })
       .catch(done);

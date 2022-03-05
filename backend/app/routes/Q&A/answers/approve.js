@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
       if (!answer) {
         return res.status(404).json({ error: 'answer id not found' });
       }
-      answer.isApproved = true;
+      answer.isApproved = !answer.isApproved;
       answer.save().then((answer) => {
         return res.status(200).json(answer);
       });

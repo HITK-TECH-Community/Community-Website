@@ -6,6 +6,7 @@ import MultiSelect from "react-multi-select-component";
 import { Button2 } from "../../../../components/util/Button/index";
 import { Grid } from "@material-ui/core";
 import { SimpleToast } from "./../../../../components/util/Toast/Toast";
+import { END_POINT } from "../../../../config/api";
 
 export function AddTeamMember() {
   const options = [
@@ -103,6 +104,19 @@ export function AddTeamMember() {
 
   console.log("formerrors: ", formerrors);
 
+  const postTeamMember = (teamMemberData) => {
+    fetch(`${END_POINT}/teamMember/addTeamMember`,{
+      method: 'POST',
+      body: JSON.stringify(teamMemberData),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      }
+    }).then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     const errors = validate();
@@ -131,6 +145,8 @@ export function AddTeamMember() {
       console.log(errors);
     } else {
       //Call the Server
+      const teamMemberData = { picUrl: picUrl, teams: teams, ...formdata };
+      postTeamMember(teamMemberData);
       console.log("Submitted");
       const temp = {
         fullName: "",

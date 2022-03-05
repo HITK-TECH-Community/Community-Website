@@ -6,7 +6,9 @@
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
     "USER": "User ",
-    "UNEXPECTED": "Unexpected Error"
+    "UNEXPECTED": "Unexpected Error",
+    "REQEMPTYFIELDS":"Required Fields Not Filled"
+   
   },
   "PAGINATION_LIMIT": {
     "GET_ADMINS": 3,

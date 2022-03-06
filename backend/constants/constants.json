@@ -7,8 +7,6 @@
     "WARNING": "Warning",
     "USER": "User ",
     "UNEXPECTED": "Unexpected Error"
-   
-   
   },
   "PAGINATION_LIMIT": {
     "GET_ADMINS": 3,

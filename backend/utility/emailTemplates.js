@@ -39,8 +39,8 @@ module.exports.JoinUsCronJobMailTemplate = (adminName) => {
   <br>
   Thanks
   `;
-    return emailContent;
-}
+  return emailContent;
+};
 
 module.exports.ContactUsMailTemplate = (adminName, req) => {
   const emailContent = `
@@ -75,7 +75,6 @@ module.exports.ResourceAddedInformingMailTemplate = (adminName, req) => {
   return emailContent;
 };
 
-
 module.exports.ContactUsCronJobMailTemplate = (adminName) => {
   const emailContent = `
   <h4>Hi ${adminName},<br>
@@ -83,5 +82,15 @@ module.exports.ContactUsCronJobMailTemplate = (adminName) => {
   <br>
   Thanks
   `;
-    return emailContent;
-}
+  return emailContent;
+};
+
+module.exports.ResourceDeletedMailTemplate = (adminName) => {
+  const emailContent = `
+  <h2>Hi ${adminName},<b2>
+  The resource data of last 2 month has been removed
+  <br>
+  Thanks
+  `;
+  return emailContent;
+};

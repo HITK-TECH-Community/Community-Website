@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const resourceSchema = new mongoose.Schema(
   {
     name: {
@@ -31,7 +30,6 @@ const resourceSchema = new mongoose.Schema(
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );
-
 module.exports = mongoose.model('RESOURCE', resourceSchema);
 
 

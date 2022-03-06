@@ -6,8 +6,8 @@
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
     "USER": "User ",
-    "UNEXPECTED": "Unexpected Error",
-    "REQEMPTYFIELDS":"Required Fields Not Filled"
+    "UNEXPECTED": "Unexpected Error"
+   
    
   },
   "PAGINATION_LIMIT": {

@@ -34,7 +34,7 @@ export function AddBroadcasts() {
     });
     if (!check.error) return true;
     const errors = {};
-    check.error.details.map((item) => {
+    check.error.details.map(item => {
       if (!errors[item.path[0]]) errors[item.path[0]] = item.message;
       return 0;
     });
@@ -42,7 +42,7 @@ export function AddBroadcasts() {
     return false;
   };
 
-  const validateField = (input) => {
+  const validateField = input => {
     const { name, value } = input;
     const obj = { [name]: value };
     const obj_schema = { [name]: validationSchema[name] };
@@ -51,7 +51,7 @@ export function AddBroadcasts() {
     return result.error ? result.error.details[0].message : null;
   };
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { currentTarget: input } = e;
     const errors = { ...errorObj };
     const errorMessage = validateField(input);
@@ -65,18 +65,18 @@ export function AddBroadcasts() {
   const addTag = () => {
     const tag = tagRef.current.value;
     if (tag.trim()) {
-      setTags((prevTags) => [...prevTags, tag.trim()]);
+      setTags(prevTags => [...prevTags, tag.trim()]);
       setFormData({ ...formData, tags: [...formData.tags, tag.trim()] });
       tagRef.current.value = "";
     }
   };
 
-  const removeTag = (tag) => {
-    setTags(tags.filter((t) => t !== tag));
-    setFormData({ ...formData, tags: formData.tags.filter((t) => t !== tag) });
+  const removeTag = tag => {
+    setTags(tags.filter(t => t !== tag));
+    setFormData({ ...formData, tags: formData.tags.filter(t => t !== tag) });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
     if (isFormValid()) {
       console.log(formData);
@@ -84,7 +84,7 @@ export function AddBroadcasts() {
     }
   };
 
-  const onContentChange = (content) => {
+  const onContentChange = content => {
     let value = "";
     if (content !== "<p></p>" && content !== "<p><br></p>") {
       value = content;
@@ -105,9 +105,10 @@ export function AddBroadcasts() {
             type="text"
             name="title"
             className={styles["form-control-input"]}
-            placeholder="Type here..."
+            placeholder="Broadcast Heading"
             onChange={handleChange}
           />
+          <i className="fas fa-pencil-alt" />
           {errorObj.title && (
             <div className={styles["error"]}>{errorObj.title}</div>
           )}
@@ -153,9 +154,10 @@ export function AddBroadcasts() {
             type="text"
             name="imageUrl"
             className={styles["form-control-input"]}
-            placeholder="Type here..."
+            placeholder="Image url"
             onChange={handleChange}
           />
+          <i className="fas fa-link" />
           {errorObj.imageUrl && (
             <div className={styles["error"]}>{errorObj.imageUrl}</div>
           )}
@@ -168,9 +170,10 @@ export function AddBroadcasts() {
             type="text"
             name="link"
             className={styles["form-control-input"]}
-            placeholder="Type here..."
+            placeholder="Resource Link"
             onChange={handleChange}
           />
+          <i className="fas fa-link" />
           {errorObj.link && (
             <div className={styles["error"]}>{errorObj.link}</div>
           )}
@@ -186,9 +189,8 @@ export function AddBroadcasts() {
           </div>
           <input
             type="text"
-            className={styles["form-control-input"]}
             ref={tagRef}
-            onKeyDown={(e) => {
+            onKeyDown={e => {
               if (e.key === "Enter") {
                 addTag();
               }

@@ -11,6 +11,7 @@ const sendEmail = require('../../../utility/sendEmail');
 const { ResourceAddedInformingMailTemplate } = require('../../../utility/emailTemplates');
 //ResourceAddedInformingMailTemplate
 module.exports = async (req, res, next) => {
+  //Adding resource
   const [err] = await to(Resource.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
@@ -20,6 +21,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
+  //Finding Admin
   const [err1, response] = await to(Admin.find().select('email username'));
   if (err1) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
@@ -29,6 +31,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
+  //Sending email to admin
   try {
     response.map(async (adminUser) => {
       await sendEmail(
@@ -45,46 +48,10 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
+  //Finally giving user message
   res.status(200).send({
     message: 'Resource has been added',
   });
   return next();
-  // try {
-  //   //Destructuring fields which are must
-  //   const { name, email, url, trustLevel, expiryDate } = req.body;
-  //   //If required fields are empty raising special error:
-  //   if (!name || !email || !url || !trustLevel || !expiryDate) {
-  //     const error = new ErrorHandler(constants.ERRORS.REQEMPTYFIELDS, {
-  //       statusCode: 500,
-  //       message: 'Required Fields Must Be Filled',
-  //       user: req.body.email,
-  //       errStack: 'Unable to post resource',
-  //     });
-  //     return next(error);
-  //   }
-  //   //If all important fields are provided going ahead with storing data in DB
-  //   const newResource = await Resource.create({ ...req.body });
-  //   //If data is not stored in DB, throwing DB error
-  //   if (!newResource) {
-  //     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-  //       statusCode: 500,
-  //       message: 'Database Error',
-  //       user: req.body.email,
-  //       errStack: 'Unable to post resource',
-  //     });
-  //     return next(error);
-  //   }
-  //   //Else sending data stored as response
-  //   res.status(200).send(newResource);
-  //   return next();
-  // } catch (e) {
-  //   //If due to some reason data is not posted, User will get this message
-  //   const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-  //     statusCode: 500,
-  //     message: 'Database Error',
-  //     user: req.body.email,
-  //     errStack: 'Unable to post resource',
-  //   });
-  //   return next(error);
-  // }
+  
 };

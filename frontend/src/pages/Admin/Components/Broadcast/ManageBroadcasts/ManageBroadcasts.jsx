@@ -3,7 +3,7 @@ import style from "./manage-broadcasts.module.scss";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
 import { DropMenu } from "../../../../../components/util/DropMenu/index.js";
-import { Card } from "../../../../Broadcast/Component/AllBroadcasts/Card/index.js";
+import { Card } from "../ManageBroadcasts/Card/index.js";
 import { Edit } from "../../../../Broadcast/Component/AllBroadcasts/Edit/index.js";
 import { END_POINT } from "./../../../../../config/api";
 import Loader from "../../../../../components/util/Loader";

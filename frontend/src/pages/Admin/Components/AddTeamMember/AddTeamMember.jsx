@@ -31,6 +31,8 @@ export function AddTeamMember() {
   const [picUrl, setPicUrl] = useState("./images/admin.png");
   const [pic, setPic] = useState();
   const [openSuccess, setOpenSuccessToast] = React.useState(false);
+  const [errorToast, setErrorToast] = useState(false);
+  const [binaryData, setBinaryData] = useState();
 
   const schema = {
     fullName: Joi.string().required(),
@@ -73,7 +75,14 @@ export function AddTeamMember() {
       reader.onload = function (e) {
         setPicUrl(e.target.result);
       };
-      reader.readAsDataURL(files[0]);
+      reader.readAsDataURL(files[0]);    
+      
+      // Image data stored in binary format
+      let reader_binary = new FileReader();
+      reader_binary.onload = function (e) {
+        setBinaryData(e.target.result);
+      };
+      reader_binary.readAsBinaryString(files[0]);
     }
     return;
   };
@@ -87,6 +96,7 @@ export function AddTeamMember() {
       return;
     }
     setOpenSuccessToast(false);
+    setErrorToast(false);
   };
 
   const handleChange = (e) => {
@@ -113,8 +123,14 @@ export function AddTeamMember() {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       }
     }).then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+    .then(data => {
+      console.log(data);
+      setOpenSuccessToast(true);
+    })
+    .catch(error => {
+      console.log(error);
+      setErrorToast(true);
+    });
   };
 
   const onSubmit = (e) => {
@@ -145,7 +161,7 @@ export function AddTeamMember() {
       console.log(errors);
     } else {
       //Call the Server
-      const teamMemberData = { picUrl: picUrl, teams: teams, ...formdata };
+      const teamMemberData = { "full_name": formdata["fullName"], "image": binaryData, "description": formdata["description"], "linkedin_url": formdata["linkedin"], "github_url": formdata["github"], "twitter_url": formdata["twitter"], "teams": teams };
       postTeamMember(teamMemberData);
       console.log("Submitted");
       const temp = {
@@ -157,7 +173,6 @@ export function AddTeamMember() {
       };
       setFormData(temp);
       setTeams([]);
-      setOpenSuccessToast(true);
     }
     return pic;
   };
@@ -328,9 +343,15 @@ export function AddTeamMember() {
       </div>
       <SimpleToast
         open={openSuccess}
-        message="New member added successfully"
+        message="New member added successfully!"
         handleCloseToast={handleCloseToast}
         severity="success"
+      />
+      <SimpleToast 
+        open={errorToast}
+        message="Something went wrong!"
+        handleCloseToast={handleCloseToast}
+        severity="error"
       />
     </div>
   );

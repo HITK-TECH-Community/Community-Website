@@ -12,8 +12,8 @@ describe('Test for add Broadcast:', () => {
   // Step 1 - login as admin
   it('log in as admin at /auth/login', (done) => {
     const loginData = {
-      email: 'admin@gmail.com',
-      password: 'check',
+      email: 'kajolkumarisingh222@gmail.com',
+      password: 'password',
     };
 
     chai

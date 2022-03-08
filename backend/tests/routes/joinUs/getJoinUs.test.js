@@ -1,13 +1,11 @@
 const chai = require('chai');
 const { expect } = require('chai');
 const chaiHttp = require('chai-http');
-const faq = require('../../../app/models/faq');
 const server = require('../../../index');
 
 chai.use(chaiHttp);
 
-// Test for add FAQ
-describe('Test to add FAQ:', () => {
+describe('Test for get join us requests:', () => {
   let token = '';
 
   // Step 1 - login as admin
@@ -32,31 +30,17 @@ describe('Test to add FAQ:', () => {
       .catch(done);
   });
 
-  // Step 2 - Delete Existing Data
-  it('delete existing data..', async() => {
-    await faq.findOneAndDelete({ question : 'This is Test Question' })
-  })
-
-  // Step 3 - add FAQ to DB
-  it('add FAQ to DB at /faq', done => {
-
-    const FAQData = {
-      question: 'This is Test Question',
-      answer: 'This is Test Answer',
-      isActive: true,
-      tags: ['tag1', 'tag2', 'tag3'],
-    };
-
+  // Step 2 - get join us requests
+  it('get join us requests from db from /joinus', (done) => {
     chai
       .request(server)
-      .post('/faq')
+      .get('/joinUs')
       .set('Authorization', `Bearer ${token}`)
-      .send(FAQData)
       .then((res) => {
-        expect(res.status).equal(200);
-        expect(res.body.message).to.equal('FAQ has been added');
+        expect(res.status).to.equal(200);
+        expect(res.body).to.be.an('array');
         done();
-    }).catch(done);
-  })
-
+      })
+      .catch(done);
+  });
 });

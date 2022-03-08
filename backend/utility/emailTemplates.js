@@ -41,6 +41,7 @@ module.exports.JoinUsCronJobMailTemplate = (adminName) => {
   `;
     return emailContent;
 }
+
 module.exports.ContactUsMailTemplate = (adminName, req) => {
   const emailContent = `
   <h4>Hi ${adminName}, </h4> There is new Contact Request at Community Website with following details : <br><br>
@@ -55,3 +56,32 @@ module.exports.ContactUsMailTemplate = (adminName, req) => {
   `;
   return emailContent;
 };
+
+module.exports.ResourceAddedInformingMailTemplate = (adminName, req) => {
+  const emailContent = `
+  <h4>Hi ${adminName}, </h4> There is new Resource added at Community Website with following details : <br><br>
+  <ul>
+  <li>Name - ${req.body.name}</li>
+  <li>Email - ${req.body.email}</li>
+  <li>Resource URL - ${req.body.url}</li>
+  <li>Description - ${req.body.description}</li>
+  <li>Trust level - ${req.body.trustLevel}</li>
+  <li>Expiry date - ${req.body.expiryDate}</li>
+  <li>Additional Information - ${req.body.additionalInfo}</li>
+  </ul>
+  <br>
+  Please take the required actions!
+  `;
+  return emailContent;
+};
+
+
+module.exports.ContactUsCronJobMailTemplate = (adminName) => {
+  const emailContent = `
+  <h4>Hi ${adminName},<br>
+  The Contact Us Form data of last 2 month has been removed!
+  <br>
+  Thanks
+  `;
+    return emailContent;
+}

@@ -13,8 +13,8 @@ describe('Test for delete Broadcast:', () => {
   // Step 1 - login as admin
   it('log in as admin at /auth/login', (done) => {
     const loginData = {
-      email: 'admin@gmail.com',
-      password: 'check',
+      email: 'kajolkumarisingh222@gmail.com',
+      password: 'password',
     };
 
     chai
@@ -72,7 +72,7 @@ describe('Test for delete Broadcast:', () => {
       .catch(done);
   });
 
-  // Step 2 - delete broadcast test if broadcast doesn't exist for given id:
+  // Step 4 - delete broadcast test if broadcast doesn't exist for given id:
   it('delete broadcast from DB with wrong id at /broadcast/:id', (done) => {
     id = '01';
     chai

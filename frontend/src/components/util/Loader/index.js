@@ -28,7 +28,7 @@ class Loader extends Component {
     return (
       <div
         className="d-flex align-items-center w-100"
-        style={{ height: "75vh" }}
+        style={{ height: this.props.height || "75vh" }}
       >
         <div className="text-center w-100">
           <div

@@ -380,7 +380,17 @@ export function ResourceSharingForm(props) {
                   ? `${style["resource-input"]} ${style["resource-input-dark"]} `
                   : `${style["resource-input"]} ${style["resource-input-light"]}`
               }
+            >    <div>
+            <label
+              className={
+                dark
+                  ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                  : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+              }
             >
+              Resource expiry date
+            </label>
+          </div>
               <div className={style["valid-until"]}>
                 <input
                   name="dov"

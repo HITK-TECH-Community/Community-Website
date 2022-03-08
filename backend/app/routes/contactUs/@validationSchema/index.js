@@ -5,6 +5,7 @@ const contactValidationSchema = Joi.object().keys({
   email: Joi.string().trim().email().required(),
   subject: Joi.string().trim().required().min(5),
   message: Joi.string().trim().required().min(8),
+  age: Joi.number().required(),
 });
 
 module.exports = contactValidationSchema;

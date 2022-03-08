@@ -1,7 +1,11 @@
 const router = require('express').Router({ mergeParams: true });
 const contactValidationSchema = require('./@validationSchema');
 const validation = require('../../../helpers/middlewares/validation');
+const postContact = require('./post');
+const getContact = require('./get');
+const { authMiddleware } = require('../../../helpers/middlewares/auth');
 
-router.post('/contactus', validation(contactValidationSchema));
+router.get('/getcontactus', authMiddleware, getContact);
+router.post('/contactus', validation(contactValidationSchema), postContact);
 
 module.exports = router;

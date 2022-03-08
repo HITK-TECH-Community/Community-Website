@@ -5,9 +5,8 @@ const server = require('../../../index');
 const Question = require('../../../app/models/question');
 chai.use(chaiHttp);
 
-// Test for add Broadcast
+// Test for upvoting question
 describe('Test for upvoting question:', () => {
-  // Step 1 - add question to DB
 
   it('upvote question at /question/upvote', (done) => {
     const questionData = {
@@ -17,6 +16,8 @@ describe('Test for upvoting question:', () => {
 
       tags: ['tag1', 'tag2', 'tag3'],
     };
+
+    // Saving question which will be upvoted.
     let postedQuestion = new Question(questionData);
     postedQuestion.save();
     chai

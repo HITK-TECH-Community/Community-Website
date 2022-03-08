@@ -5,9 +5,8 @@ const server = require('../../../index');
 
 chai.use(chaiHttp);
 
-// Test for add Broadcast
-describe('Test for adding question:', () => {
-  // Step 1 - add question to DB
+// Test for posting question
+describe('Test for posting question:', () => {
 
   it('post question at /question', (done) => {
     const questionData = {

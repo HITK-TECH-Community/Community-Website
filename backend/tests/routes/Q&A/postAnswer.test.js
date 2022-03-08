@@ -6,9 +6,8 @@ const Question = require('../../../app/models/question');
 
 chai.use(chaiHttp);
 
-// Test for add Broadcast
+// Test for posting answer
 describe('Test for posting answer:', () => {
-  // Step 1 - add question to DB
 
   it('post answer at /answers', (done) => {
     const questionData = {
@@ -18,6 +17,7 @@ describe('Test for posting answer:', () => {
 
       tags: ['tag1', 'tag2', 'tag3'],
     };
+    // Saving a question in database for which answer will be posted
     let postedQuestion = new Question(questionData);
     postedQuestion.save();
 
@@ -28,6 +28,7 @@ describe('Test for posting answer:', () => {
       created_on: new Date(Date.now()),
     };
 
+    // request to post answer
     chai
       .request(server)
       .post('/answers')

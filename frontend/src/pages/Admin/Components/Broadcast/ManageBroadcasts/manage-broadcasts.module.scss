@@ -1,0 +1,185 @@
+.motive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.motive .dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+@media screen and (max-width: 823px) {
+  .motive {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8rem 0;
+    width: 100%;
+  }
+
+  .motive > div {
+    padding-left: 0;
+  }
+}
+
+.carousel-head {
+  color: #121f3a;
+  font-size: 35px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-info {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.appbar-wrap {
+  width: 100%;
+}
+
+.appbar {
+  margin: auto;
+  min-height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  margin: 15px 10px 15px auto;
+}
+
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.dash-light {
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+#hero {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5em;
+  justify-content: center;
+}
+#all-cards h1 {
+  margin: 10%;
+}
+.search-icon {
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-input {
+  padding: 8px 8px 8px 0;
+  border-radius: 12px;
+  height: 3em;
+  padding-left: calc(1em + 32px);
+  width: 100%;
+}
+
+.search {
+  border-radius: 15px;
+  margin-right: 16px;
+  margin-left: 25px;
+  position: relative;
+  width: 228px;
+  // border: 3px solid #1B2431;
+}
+
+.search-light {
+  background-color: rgba(124, 117, 117, 0.2);
+  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+}
+
+.search-light:hover,
+.search-light:focus-within {
+  background-color: white !important;
+}
+
+.carousel-head {
+  color: #121f3a !important;
+  font-size: 35px !important;
+}
+
+@media (max-width: 780px) {
+  .appbar {
+    justify-content: center;
+  }
+
+  .filters {
+    display: flex;
+    margin: 40px auto;
+  }
+
+  .filters > * {
+    background-color: #121f3a !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #hero {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .input-input {
+    width: 40ch;
+  }
+}
+
+.filter-btn {
+  background-color: #121f3a !important;
+}
+
+h1 {
+  white-space: nowrap;
+}
+
+#all-cards h1 {
+  margin-bottom: 20rem;
+}

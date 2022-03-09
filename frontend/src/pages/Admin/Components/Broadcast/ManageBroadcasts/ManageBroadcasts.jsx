@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import style from "./all-broadcasts.module.scss";
-import styles from "../../../Home/components/Motive/motive.module.scss";
-import dataa from "../../../../test_data/broadcast_text.json";
+import style from "./manage-broadcasts.module.scss";
 import { InputBase } from "@material-ui/core";
 import { Search } from "@material-ui/icons";
-import { DropMenu } from "../../../../components/util/DropMenu/index.js";
-import { Card } from "./Card/index.js";
-import { Edit } from "./Edit/index.js";
-import { END_POINT } from "./../../../../config/api";
-import Loader from "../../../../components/util/Loader";
-import { Button4 } from "../../../../components/util/Button";
-export function AllBroadcasts(props) {
+import { DropMenu } from "../../../../../components/util/DropMenu/index.js";
+import { Card } from "../ManageBroadcasts/Card/index.js";
+import { Edit } from "../../../../Broadcast/Component/AllBroadcasts/Edit/index.js";
+import { END_POINT } from "./../../../../../config/api";
+import Loader from "../../../../../components/util/Loader";
+import { Button4 } from "../../../../../components/util/Button";
+
+export function ManageBroadcasts() {
   const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -20,6 +19,7 @@ export function AllBroadcasts(props) {
   const [page, setPage] = useState("");
   const [isLoaded, setLoaded] = useState(false);
   const [filterText, setFilterText] = useState("");
+  const [handleDelete, setHandleDelete] = useState(0);
   const months = [
     "January",
     "Febuary",
@@ -38,7 +38,6 @@ export function AllBroadcasts(props) {
   for (var i = 2020; i <= new Date().getFullYear(); ++i) {
     years.push(i.toString());
   }
-  const dark = props.theme;
 
   const handler = (i) => {
     setIndex(i);
@@ -91,59 +90,31 @@ export function AllBroadcasts(props) {
           .catch((error) => console.log(error))
       )
       .catch((err) => console.log(err));
-  }, [month, page, tags, year]);
+  }, [month, page, tags, year, handleDelete]);
 
   return (
-    <main
-      className={dark ? `${style["main"]} ${style["dark"]}` : style["main"]}
-    >
+    <div>
       <Edit
-        theme={dark}
         visible={visible}
         setVisible={setVisible}
         handleChange={handleChange}
         data={array[index]}
       />
       <div id={style["hero"]}>
-        <div className={styles["motive"]}>
-          <h1
-            className={
-              dark
-                ? `${style["carousel-head-dark"]}`
-                : `${style["carousel-head"]}`
-            }
-            id={style["heading"]}
-          >
-            All Broadcasts
-          </h1>
-          <div
-            className={
-              dark
-                ? `${style["dash"]} ${style["dash-dark"]}`
-                : `${style["dash"]} ${style["dash-light"]}`
-            }
-          ></div>
+        <div className={style["motive"]}>
+          <h1 className={style["carousel-head"]}>Manage Broadcasts</h1>
+          <div className={`${style["dash"]} ${style["dash-light"]}`}></div>
         </div>
       </div>
       <div className={style["appbar-wrap"]}>
         <div className={style["appbar"]}>
-          <div
-            className={
-              dark
-                ? `${style["search"]} ${style["search-dark"]}`
-                : `${style["search"]} ${style["search-light"]}`
-            }
-          >
+          <div className={`${style["search"]} ${style["search-light"]}`}>
             <div className={style["search-icon"]}>
               <Search />
             </div>
             <InputBase
               placeholder="Find a Broadcast…"
-              className={
-                dark
-                  ? `${style["input-input"]} ${style["input-input-dark"]}`
-                  : `${style["input-input"]} ${style["input-input-light"]}`
-              }
+              className={`${style["input-input"]} ${style["input-input-light"]}`}
               inputProps={{ "aria-label": "search" }}
               name="search-box"
               value={filterText}
@@ -154,7 +125,6 @@ export function AllBroadcasts(props) {
           </div>
           <div className={style["filters"]}>
             <DropMenu
-              theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Month"
               ListItems={months}
@@ -167,7 +137,6 @@ export function AllBroadcasts(props) {
               }}
             />
             <DropMenu
-              theme={dark}
               className={style["filter-btn"]}
               ListName="Filter by Year"
               ListItems={years}
@@ -211,15 +180,16 @@ export function AllBroadcasts(props) {
         {itemsToDisplay.map((element, i) => {
           return (
             <Card
-              theme={dark}
               project={element}
               key={`card-${i}`}
               id={element._id}
               handler={() => handler(i)}
+              handleDelete={handleDelete}
+              setHandleDelete={setHandleDelete}
             />
           );
         })}
       </div>
-    </main>
+    </div>
   );
 }

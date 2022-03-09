@@ -3,6 +3,18 @@
   overflow-x: hidden;
 }
 
+.card {
+  width: 75%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
 .tags-container {
   width: 100%;
   display: flex;
@@ -19,6 +31,7 @@
     font-size: 14px;
     margin: 0;
     outline: none;
+    background: transparent;
   }
 }
 
@@ -136,6 +149,10 @@
 
 .edit {
   padding: 20px;
+  border: 1px solid #bbbaba;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
 }
 
 .dash {

@@ -93,120 +93,114 @@ export function AddBroadcasts() {
   };
 
   return (
-    <form className={styles["editor"]} noValidate onSubmit={onSubmit}>
-      <div className={styles["motive"]}>
-        <h1 className={styles["heading"]}>ADD BROADCAST</h1>
-        <div className={styles["dash"]}></div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>Broadcast heading</p>
-        <div className={styles["form-control"]}>
-          <input
-            type="text"
-            name="title"
-            className={styles["form-control-input"]}
-            placeholder="Broadcast Heading"
-            onChange={handleChange}
-          />
-          <i className="fas fa-pencil-alt" />
-          {errorObj.title && (
-            <div className={styles["error"]}>{errorObj.title}</div>
-          )}
+    <div className={styles["card"]}>
+      <form className={styles["editor"]} noValidate onSubmit={onSubmit}>
+        <div className={styles["motive"]}>
+          <h1 className={styles["heading"]}>ADD BROADCAST</h1>
+          <div className={styles["dash"]}></div>
         </div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>
-          Enter the Broadcast content here...
-        </p>
-        <div className={styles["form-control"]}>
-          <SunEditor
-            lang="en"
-            name="content"
-            placeholder="Please type here..."
-            height="200px"
-            onChange={onContentChange}
-            className={styles["edit"]}
-          />
-          {errorObj.content && (
-            <div className={styles["error"]}>{errorObj.content}</div>
-          )}
-        </div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>Broadcast Date</p>
-        <div className={styles["form-control"]}>
-          <input
-            type="date"
-            name="expiresOn"
-            className={styles["form-control-input"]}
-            placeholder="Type here..."
-            onChange={handleChange}
-          />
-          {errorObj.expiresOn && (
-            <div className={styles["error"]}>{errorObj.expiresOn}</div>
-          )}
-        </div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>Image Url</p>
-        <div className={styles["form-control"]}>
-          <input
-            type="text"
-            name="imageUrl"
-            className={styles["form-control-input"]}
-            placeholder="Image url"
-            onChange={handleChange}
-          />
-          <i className="fas fa-link" />
-          {errorObj.imageUrl && (
-            <div className={styles["error"]}>{errorObj.imageUrl}</div>
-          )}
-        </div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>Link</p>
-        <div className={styles["form-control"]}>
-          <input
-            type="text"
-            name="link"
-            className={styles["form-control-input"]}
-            placeholder="Resource Link"
-            onChange={handleChange}
-          />
-          <i className="fas fa-link" />
-          {errorObj.link && (
-            <div className={styles["error"]}>{errorObj.link}</div>
-          )}
-        </div>
-      </div>
-      <div>
-        <p className={styles["headingg"]}>Enter Tags here...</p>
-        <div className={styles["tags-container"]}>
-          <div className={styles["tags"]}>
-            {tags.map((tag, index) => (
-              <Tag key={index} label={tag} remove={removeTag} />
-            ))}
+        <div>
+          <div className={styles["form-control"]}>
+            <input
+              type="text"
+              name="title"
+              className={styles["form-control-input"]}
+              placeholder="Heading"
+              onChange={handleChange}
+            />
+            <i className="fas fa-pencil-alt" />
+            {errorObj.title && (
+              <div className={styles["error"]}>{errorObj.title}</div>
+            )}
           </div>
-          <input
-            type="text"
-            ref={tagRef}
-            onKeyDown={e => {
-              if (e.key === "Enter") {
-                addTag();
-              }
-            }}
-            placeholder="Hit enter to add tags..."
+        </div>
+        <div>
+          <div className={styles["form-control"]}>
+            <SunEditor
+              lang="en"
+              name="content"
+              placeholder="Please type here..."
+              height="200px"
+              onChange={onContentChange}
+              className={styles["edit"]}
+            />
+            {errorObj.content && (
+              <div className={styles["error"]}>{errorObj.content}</div>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className={styles["form-control"]}>
+            <input
+              type="date"
+              name="expiresOn"
+              className={styles["form-control-input"]}
+              placeholder="Broadcast Date(DD/MM/YY)"
+              onChange={handleChange}
+            />
+            {errorObj.expiresOn && (
+              <div className={styles["error"]}>{errorObj.expiresOn}</div>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className={styles["form-control"]}>
+            <input
+              type="text"
+              name="imageUrl"
+              className={styles["form-control-input"]}
+              placeholder="Image url"
+              onChange={handleChange}
+            />
+            <i className="fas fa-link" />
+            {errorObj.imageUrl && (
+              <div className={styles["error"]}>{errorObj.imageUrl}</div>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className={styles["form-control"]}>
+            <input
+              type="text"
+              name="link"
+              className={styles["form-control-input"]}
+              placeholder="Resource Link"
+              onChange={handleChange}
+            />
+            <i className="fas fa-link" />
+            {errorObj.link && (
+              <div className={styles["error"]}>{errorObj.link}</div>
+            )}
+          </div>
+        </div>
+        <div>
+          <div className={styles["tags-container"]}>
+            <div className={styles["tags"]}>
+              {tags.map((tag, index) => (
+                <Tag key={index} label={tag} remove={removeTag} />
+              ))}
+            </div>
+            <input
+              type="text"
+              ref={tagRef}
+              onKeyDown={e => {
+                if (e.key === "Enter") {
+                  addTag();
+                }
+              }}
+              placeholder="Enter Tags (Hit enter to add tags)"
+            />
+          </div>
+        </div>
+        <div className={styles["submit-btn"]}>
+          <Button2
+            className={styles["submit-btn-text"]}
+            label="Submit"
+            type="submit"
           />
         </div>
-      </div>
-      <div className={styles["submit-btn"]}>
-        <Button2
-          className={styles["submit-btn-text"]}
-          label="Submit"
-          type="submit"
-        />
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

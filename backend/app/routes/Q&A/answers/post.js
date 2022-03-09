@@ -5,8 +5,8 @@ const constants = require('../../../../constants');
 
 module.exports = async (req,res,next) => {
 
-    const [ err ] = await to(answer.create({ ...req.body }));
-
+    const [ err,body ] = await to(answer.create({ ...req.body }));
+    
     if(err){
         const error = new ErrorHandler(constants.ERRORS.DATABASE,{
             statusCode: 500,
@@ -19,6 +19,7 @@ module.exports = async (req,res,next) => {
 
     res.status(200).send({
         message: 'Answer has been added',
+        id: body._id
     });
 
     return next();

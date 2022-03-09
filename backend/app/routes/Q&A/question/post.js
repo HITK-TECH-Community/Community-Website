@@ -4,7 +4,7 @@ const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
 module.exports = async (req,res,next) => {
-    const [ err ] = await to(question.create({ ...req.body }));
+    const [ err,body ] = await to(question.create({ ...req.body }));
 
     if(err){
         const error = new ErrorHandler(constants.ERRORS.DATABASE,{
@@ -18,6 +18,7 @@ module.exports = async (req,res,next) => {
 
     res.status(200).send({
         message: 'Question has been added',
+        id: body._id
     });
 
     return next();

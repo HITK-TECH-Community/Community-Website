@@ -94,11 +94,13 @@
     margin-bottom: 10px;
   }
 }
+
 @media screen and (max-width: 590px) {
   .home_heading h1 {
     font-size: 2.5rem;
   }
 }
+
 @media screen and (max-width: 550px) {
   .overview {
     padding: 1.8rem 0;
@@ -135,6 +137,7 @@
   background-color: #171717;
   color: whitesmoke;
 }
+
 @media screen and (max-width: 368px) {
   .overview h1 {
     font-size: 2.2rem;

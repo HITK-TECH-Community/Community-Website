@@ -63,12 +63,6 @@
     object-fit: cover;
   }
 }
-/* @media (max-width:768px){
-  .overview {
-    flex-direction: column-reverse;
-   
-  }
-} */
 
 @media screen and (max-width: 800px) {
   .overview {
@@ -140,4 +134,9 @@
 .dark {
   background-color: #171717;
   color: whitesmoke;
+}
+@media screen and (max-width: 368px) {
+  .overview h1 {
+    font-size: 2.2rem;
+  }
 }

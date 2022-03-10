@@ -9,6 +9,12 @@ const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
 const joinUs = require('./joinUs/');
 const contactUs = require('./contactUs/post');
+
+const getContactUs = require('./contactUs/get');
+const { authMiddleware } = require('../../helpers/middlewares/auth');
+const contactValidationSchema = require('./contactUs/@validationSchema');
+const validation = require('../../helpers/middlewares/validation');
+
 const question = require('./Q&A/question');
 const answer = require('./Q&A/answers');
 const teamMember = require('./teamMember');
@@ -20,11 +26,12 @@ router.post('/emailTest', emailTest);
 router.use('/faq', faq);
 router.use('/deleteFaq', deleteFaq);
 router.use('/getFaq', getFaq);
-router.use('/contactus', contactUs);
+router.use('/contactus', validation(contactValidationSchema), contactUs);
+router.use('/getcontactus', getContactUs);
 router.use('/broadcast', broadcast);
 router.use('/question', question);
 router.use('/answers', answer);
-router.use('/joinUs', joinUs)
+router.use('/joinUs', joinUs);
 router.use('/teamMember', teamMember);
 router.use('/', tinyURL);
 router.use('/resources', resource);

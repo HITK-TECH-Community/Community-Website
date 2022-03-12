@@ -38,9 +38,8 @@ export function Broadcast(props) {
             </div>
             <div className={style["card-content"]}>
               <Link
-                to="/all-broadcasts"
+                onClick={() => props.setTab(16)}
                 className={style["main-btn"]}
-                type="submit"
               >
                 Manage here
               </Link>

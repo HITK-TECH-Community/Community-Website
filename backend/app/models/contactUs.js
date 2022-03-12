@@ -17,7 +17,6 @@ const contactUs = new Schema({
   },
   subject: {
     type: String,
-    default: true,
     required: true,
   },
   message: {

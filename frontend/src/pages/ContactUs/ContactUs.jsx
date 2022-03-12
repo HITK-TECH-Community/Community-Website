@@ -145,7 +145,7 @@ export const ContactUs = (props) => {
             isLoading ? (
               <React.Fragment>
                 <div className={style["goodbye-card"]}>
-                  <Loader height="25vh"/>
+                  <Loader height="25vh" />
                 </div>
               </React.Fragment>
             ) : contactToastStatus === "error" ? (

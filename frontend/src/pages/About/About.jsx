@@ -40,7 +40,7 @@ export const About = (props) => {
       >
         <div className="row">
           <div className="col-lg-5">
-            <h1 className="first">Who are we and what we do?</h1>
+            <h1>Who are we and what we do?</h1>
             <div
               className={
                 dark

@@ -76,7 +76,7 @@ export function AllBroadcasts(props) {
       api.replace("&month=", "");
     }
     if (tags === "" && page === "" && year === "" && month === "") {
-      api = `${END_POINT}/broadcast`;
+      api = `${END_POINT}/broadcast/all`;
     }
     return fetch(api, {
       method: "GET",

@@ -15,7 +15,7 @@ export const Overview = (props) => {
                 : `${styles["overview"]} ${styles["overview-light"]}`
             }
           >
-            <div>
+            <div className="home_heading">
               <h1>HITK Tech Community</h1>
               <div
                 className={

@@ -26,7 +26,16 @@
 
 .motive h1 {
   text-align: center;
-  line-height: 0.9;
+  line-height: 1.9;
+  font-size: 3.4vw;
+}
+
+@media screen and (max-width: 580px) {
+  .motive h1 {
+    text-align: center;
+    line-height: 0.9;
+    font-size: 5.4vw;
+  }
 }
 
 @media (max-width: 500px) {

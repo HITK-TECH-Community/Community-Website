@@ -124,11 +124,9 @@ export function AddTeamMember() {
       }
     }).then(response => response.json())
     .then(data => {
-      console.log(data);
       setOpenSuccessToast(true);
     })
     .catch(error => {
-      console.log(error);
       setErrorToast(true);
     });
   };
@@ -161,7 +159,8 @@ export function AddTeamMember() {
       console.log(errors);
     } else {
       //Call the Server
-      const teamMemberData = { "full_name": formdata["fullName"], "image": binaryData, "description": formdata["description"], "linkedin_url": formdata["linkedin"], "github_url": formdata["github"], "twitter_url": formdata["twitter"], "teams": teams };
+      const teamLabels = teams.map(team => team.label);
+      const teamMemberData = { "full_name": formdata["fullName"], "image": binaryData, "description": formdata["description"], "linkedin_url": formdata["linkedin"], "github_url": formdata["github"], "twitter_url": formdata["twitter"], "teams": teamLabels };
       postTeamMember(teamMemberData);
       console.log("Submitted");
       const temp = {

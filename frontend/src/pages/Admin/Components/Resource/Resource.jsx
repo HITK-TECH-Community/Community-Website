@@ -15,7 +15,6 @@ export function Resource() {
         });
         const resource = await data.data;
         setResources(resource);
-        console.log(resource);
       } catch (err) {
         console.log("There was some error fetching resource page");
       }

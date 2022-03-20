@@ -1,0 +1,56 @@
+.card-item {
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 1em;
+    height: auto;
+    width: 15em;
+    margin: 1em;
+    display: inline-block;
+    background-position: left center;
+    transition: all 0.5s ease-in;
+    background-color: #016795;
+    box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+  }
+  
+  
+.icon-button span {
+    color: white;
+    margin-left: 16rem;
+  }
+  .icon-button:hover {
+     background-color: #016795;
+  }
+
+  
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.9rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  
+  
+  
+  .card-detail {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 2px;
+  }
+  
+  .card-info {
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+  }
+
+  .card-link{
+      color: white;
+      text-decoration: underline;
+  }

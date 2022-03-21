@@ -4,9 +4,11 @@
   gap: 10px;
   padding: 1.5rem;
 }
+
 .resource-card {
   padding: 2rem;
-  background: linear-gradient(45deg, rgb(113, 113, 245), rgb(71, 71, 219));
+  // background: linear-gradient(45deg, rgb(113, 113, 245), rgb(71, 71, 219));
+  background: #016795;
   border-radius: 10px;
 }
 
@@ -18,17 +20,20 @@
   text-align: center;
   color: #fff;
 }
+
 .resource-card > h4 {
   text-align: center;
   color: #fff;
   margin: 10px;
 }
+
 .button-group {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
+
 .button-url {
   padding: 10px 30px;
   border: none;
@@ -40,9 +45,11 @@
   width: 120px;
   font-weight: bold;
 }
+
 .button-url:hover {
   background: linear-gradient(45deg, rgb(111, 111, 247), rgb(115, 196, 228));
 }
+
 .button-delete {
   padding: 10px 30px;
   border: none;
@@ -54,21 +61,27 @@
   width: 120px;
   font-weight: bold;
 }
+
 .button-delete:hover {
   background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
 }
+
 .description-card {
   padding: 2rem;
   margin: 0;
   font-size: 1.5rem;
   color: #fff;
+  text-align: center;
 }
+
 .description-card > p {
   margin: 10px;
 }
+
 .additional-info {
   font-size: 1rem;
 }
+
 .expire-update-cards {
   display: flex;
   align-items: center;
@@ -77,17 +90,22 @@
   text-align: center;
   color: rgb(41, 41, 41);
 }
+
 .expire-update-card {
-  background: linear-gradient(45deg, rgb(144, 144, 236), rgb(165, 178, 255));
+  background: linear-gradient(45deg, #05abf8, #6dd1ff);
   padding: 1.2rem;
   margin: 2px;
   border-radius: 5px;
 }
+
 .date-expire {
   font-size: 0.8rem;
   color: red;
+  font-weight: bold;
 }
+
 .date-update {
   font-size: 0.8rem;
-  color: green;
+  color: rgb(0, 150, 0);
+  font-weight: bold;
 }

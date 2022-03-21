@@ -112,18 +112,6 @@ export const Navbar = (props) => {
             </NavLink>
           </li>
           <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
-            <NavLink
-              to="/faqs"
-              className={dark ? style["nav-links-dark"] : style["nav-links"]}
-              onClick={closeMobileMenu}
-              activeClassName={
-                dark ? style["active-link-dark"] : style["active-link"]
-              }
-            >
-              Q&A
-            </NavLink>
-          </li>
-          <li className={dark ? style["nav-item-dark"] : style["nav-item"]}>
             <Link
               to="/admin"
               className={

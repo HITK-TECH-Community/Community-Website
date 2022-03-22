@@ -26,19 +26,19 @@ const getAdminsAggregate = (match, page) => {
 module.exports = async (req, res, next) => {
   const page = req.query.page || 1;
   const adminType = req.query.type;
-
-  if(adminType === 'admin'){
-    const adminDetails = await Admin.find({email: req.body.email});
-    res.json(adminDetails[0]);
-    return next();
-  }
-
   let match = {};
-  if (adminType) {
+  console.log(adminType);
+  if (adminType === 'superAdmin') {
     match = {
       isSuperAdmin: adminType === 'superAdmin',
     };
+  } else if (adminType === 'self'){
+    match = {
+      email: adminType === 'self' ? req.body.email : '',
+    };
   }
+
+  console.log(match);
   const [err, response] = await to(Admin.aggregate(getAdminsAggregate(match, page)));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

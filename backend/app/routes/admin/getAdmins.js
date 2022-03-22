@@ -30,11 +30,11 @@ module.exports = async (req, res, next) => {
   console.log(adminType);
   if (adminType === 'superAdmin') {
     match = {
-      isSuperAdmin: adminType === 'superAdmin',
+      isSuperAdmin: true,
     };
-  } else if (adminType === 'self'){
+  } else if (adminType === 'self') {
     match = {
-      email: adminType === 'self' ? req.body.email : '',
+      email: req.body.email || '',
     };
   }
 

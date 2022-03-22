@@ -21,7 +21,7 @@ export function Resource() {
         setResources(resource);
         setLoading(true);
       } catch (err) {
-        setFetchError(true);
+        setOpenError(true);
         setLoading(true);
       }
     };

@@ -8,7 +8,7 @@ import style from "./resource.module.scss";
 export function Resource() {
   const [resourses, setResources] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [fetchError, setFetchError] = useState(false);
+  const [openError, setOpenError] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -32,7 +32,7 @@ export function Resource() {
     if (reason === "clickaway") {
       return;
     }
-    setFetchError(false);
+    setOpenError(false);
   };
 
   return (
@@ -86,7 +86,7 @@ export function Resource() {
         <div className={style["dot-loader"]}></div>
       )}
       <SimpleToast
-        open={fetchError}
+        open={openError}
         message="Unable to load the data!"
         handleCloseToast={handleCloseToast}
         severity="error"

@@ -97,14 +97,16 @@
 .row1 > * {
   flex: 49% 49%;
 }
-
+h1 {
+  line-height: 1.9;
+}
 #heading-dark {
-  font-size: 2.3rem;
+  font-size: 2.3vw;
   color: #fac87b;
 }
 
 #heading-light {
-  font-size: 2.3rem;
+  font-size: 2.3vw;
   color: #000;
 }
 
@@ -273,5 +275,12 @@
   .card-footer {
     margin-top: 7px;
     padding: 5px;
+  }
+}
+
+@media screen and( max-width:449px) {
+  h1 {
+    line-height: 1.9;
+    font-size: 5.4vw;
   }
 }

@@ -18,7 +18,7 @@ const postSuperAdminSchema = Joi.object({
 const getAdminsSchema = Joi.object({
   type: Joi.string()
     .optional()
-    .pattern(/^(superAdmin|admin)$/),
+    .pattern(/^(superAdmin|admin|self)$/),
   page: Joi.number().optional(),
 });
 

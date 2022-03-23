@@ -10,47 +10,51 @@
     transition: all 0.5s ease-in;
     background-color: #016795;
     box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
-  }
+}
   
-  
-.icon-button span {
-    color: white;
-    margin-left: 16rem;
-  }
-  .icon-button:hover {
-     background-color: #016795;
-  }
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+}
 
-  
-  .card-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.9rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  
-  
-  
-  .card-detail {
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2rem;
-    width: 100%;
-    margin-top: 2px;
-  }
-  
-  .card-info {
-      color: white;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      padding: 14px;
-  }
+.icon-button {
+  background-color: #016795;
+}
 
-  .card-link{
-      color: white;
-      text-decoration: underline;
-  }
+.icon-button:hover {
+  background-color: #016795;
+}
+
+.icon {
+  color: white;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  color: white;
+}
+  
+.card-detail {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.card-info {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+}
+
+.card-link{
+    color: white;
+    text-decoration: underline;
+}

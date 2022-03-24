@@ -12,23 +12,6 @@
     box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
 }
   
-.button-container{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.icon-button {
-  background-color: #016795;
-}
-
-.icon-button:hover {
-  background-color: #016795;
-}
-
-.icon {
-  color: white;
-}
-
 .card-title {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -57,4 +40,46 @@
 .card-link{
     color: white;
     text-decoration: underline;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.button-edit {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(115, 196, 228), rgb(111, 111, 247));
+  margin: 5px;
+  color: #fff;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.button-url:hover {
+  background: linear-gradient(45deg, rgb(111, 111, 247), rgb(115, 196, 228));
+}
+
+.button-delete {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(243, 109, 109));
+  margin: 5px;
+  color: #fff;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.button-delete:hover {
+  background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
 }

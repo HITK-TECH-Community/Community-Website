@@ -27,9 +27,13 @@ module.exports = async (req, res, next) => {
   const page = req.query.page || 1;
   const adminType = req.query.type;
   let match = {};
-  if (adminType) {
+  if (adminType === 'superAdmin') {
     match = {
-      isSuperAdmin: adminType === 'superAdmin',
+      isSuperAdmin: true,
+    };
+  } else if (adminType === 'self') {
+    match = {
+      email: req.body.email || '',
     };
   }
   const [err, response] = await to(Admin.aggregate(getAdminsAggregate(match, page)));

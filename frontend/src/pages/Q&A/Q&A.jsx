@@ -195,7 +195,7 @@ function Ques(props) {
                     name="body"
                     onChange={handleChange}
                   />
-                  <i className="fas fa-envelope" style={{ marginTop: 28 }}></i>
+                  <i className="fas fa-envelope" style={{ marginTop: 27 }}></i>
                   <div
                     className={`${style["validation"]} validation d-sm-none d-md-block`}
                   >

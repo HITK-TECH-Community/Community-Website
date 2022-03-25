@@ -34,9 +34,9 @@ export function Faq(props) {
               <AiFillEdit className={style["editt"]} />
             </div>
             <div className={style["card-content"]}>
-              <button className={style["main-btn"]} type="submit">
+              <Link onClick={()=>props.setTab(17)} className={style["main-btn"]}>
                 Manage here
-              </button>
+              </Link>
             </div>
           </div>
         </div>

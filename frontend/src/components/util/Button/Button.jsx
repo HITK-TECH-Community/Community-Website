@@ -36,6 +36,7 @@ export const Button1 = (props) => {
 export const Button2 = (props) => {
   return (
     <button
+      onClick={props.onClick}
       type={props?.type || "button"}
       className={`${style["main-btn"]} ${style["main-btn-2"]} ${props.className}`}
     >

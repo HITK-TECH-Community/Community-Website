@@ -1,5 +1,5 @@
 import React from "react";
-import { Button2 } from "../../components/util/Button";
+import { Button2, Button1 } from "../../components/util/Button";
 import style from "../Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
 
 import { useState } from "react";
@@ -48,6 +48,7 @@ function Ques(props) {
     },
   ];
 
+  const [isButtonPressed, setButtonPressed] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
   );
@@ -70,7 +71,7 @@ function Ques(props) {
 
   const schema = {
     title: Joi.string().required(),
-    body: Joi.string().email().required(),
+    body: Joi.string().required(),
     tags: Joi.required(),
   };
 
@@ -115,7 +116,12 @@ function Ques(props) {
       console.log("Submitted");
     }
   };
-
+  function ActiveButton() {
+    setButtonPressed(!isButtonPressed);
+  }
+  function DeactiveButton() {
+    setButtonPressed(!isButtonPressed);
+  }
   return (
     <div
       className={
@@ -150,118 +156,146 @@ function Ques(props) {
           >
             Ask your questions
           </h3>
-          <form onSubmit={handleSubmit}>
-            <div className={style["inside-resource"]}>
-              <div className={`form-group ${style["form-group"]}`}>
-                <div
-                  className={
-                    dark
-                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                      : `${style["resource-input"]} ${style["resource-input-light"]}`
-                  }
-                >
-                  <input
-                    autoFocus="on"
-                    placeholder="Subect"
-                    type="text"
-                    name="title"
-                    onChange={handleChange}
-                  />
-                  <i className="fas fa-heading"></i>
+          {isButtonPressed ? (
+            <form onSubmit={handleSubmit}>
+              <div className={style["inside-resource"]}>
+                <div className={`form-group ${style["form-group"]}`}>
                   <div
-                    className={`${style["validation"]} validation d-sm-none d-md-block`}
-                  >
-                    {formerrors["title"] ? (
-                      <div>* {formerrors["title"]}</div>
-                    ) : (
-                      <div>&nbsp; &nbsp;</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className={`form-group ${style["form-group"]}`}>
-                <div
-                  className={
-                    dark
-                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                      : `${style["resource-input"]} ${style["resource-input-light"]}`
-                  }
-                >
-                  <input
-                    placeholder="Body"
-                    style={{ height: 100 }}
-                    type="text"
-                    name="body"
-                    onChange={handleChange}
-                  />
-                  <i className="fas fa-envelope" style={{ marginTop: 27 }}></i>
-                  <div
-                    className={`${style["validation"]} validation d-sm-none d-md-block`}
-                  >
-                    {formerrors["body"] ? (
-                      <div>* {formerrors["body"]}</div>
-                    ) : (
-                      <div>&nbsp; &nbsp;</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className={
-                  dark
-                    ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
-                    : `${style["resource-input1"]} ${style["resource-input1-light"]}`
-                }
-              >
-                <div>
-                  <label
                     className={
                       dark
-                        ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                        : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                        ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                        : `${style["resource-input"]} ${style["resource-input-light"]}`
                     }
                   >
-                    Tags
-                  </label>
+                    <input
+                      autoFocus="on"
+                      placeholder="Subject"
+                      type="text"
+                      name="title"
+                      onChange={handleChange}
+                    />
+                    <i className="fas fa-heading"></i>
+                    <div
+                      className={`${style["validation"]} validation d-sm-none d-md-block`}
+                    >
+                      {formerrors["title"] ? (
+                        <div>* {formerrors["title"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <ul className="toppings-list">
-                    {Tags.map((data, index) => {
-                      return (
-                        <li key={index}>
-                          <div className="toppings-list-item">
-                            <div className="left-section">
-                              <input
-                                type="checkbox"
-                                id={`custom-checkbox-${index}`}
-                                name="Tags"
-                                value={data.value}
-                                checked={checkedState[index]}
-                                onChange={() => handleOnChange(index)}
-                              />
-                              <label htmlFor={`custom-checkbox-${index}`}>
-                                {data.value}
-                              </label>
+
+                <div className={`form-group ${style["form-group"]}`}>
+                  <div
+                    className={
+                      dark
+                        ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                        : `${style["resource-input"]} ${style["resource-input-light"]}`
+                    }
+                  >
+                    <input
+                      placeholder="Body"
+                      style={{ height: 100 }}
+                      type="text"
+                      name="body"
+                      onChange={handleChange}
+                    />
+                    <i
+                      className="fas fa-envelope"
+                      style={{ marginTop: 27 }}
+                    ></i>
+                    <div
+                      className={`${style["validation"]} validation d-sm-none d-md-block`}
+                    >
+                      {formerrors["body"] ? (
+                        <div>* {formerrors["body"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={
+                    dark
+                      ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
+                      : `${style["resource-input1"]} ${style["resource-input1-light"]}`
+                  }
+                >
+                  <div>
+                    <label
+                      className={
+                        dark
+                          ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                          : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                      }
+                    >
+                      Tags
+                    </label>
+                  </div>
+                  <div>
+                    <ul className="toppings-list">
+                      {Tags.map((data, index) => {
+                        return (
+                          <li key={index}>
+                            <div className="toppings-list-item">
+                              <div className="left-section">
+                                <input
+                                  type="checkbox"
+                                  id={`custom-checkbox-${index}`}
+                                  name="Tags"
+                                  value={data.value}
+                                  checked={checkedState[index]}
+                                  onChange={() => handleOnChange(index)}
+                                />
+                                <label
+                                  htmlFor={`custom-checkbox-${index}`}
+                                  style={{ paddingLeft: "3%" }}
+                                >
+                                  {data.value}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+
+                <div
+                  className={style["submit-btn"]}
+                  style={{ justifyContent: "space-around" }}
+                >
+                  <Button2
+                    style={{ marginRight: "3%" }}
+                    className={style["submit-btn-text"]}
+                    label="Submit"
+                    type="submit"
+                  />
+                  <Button2
+                    className={style["submit-btn-text"]}
+                    label="Cancel"
+                    onClick={DeactiveButton}
+                  />
                 </div>
               </div>
-
-              <div className={style["submit-btn"]}>
+            </form>
+          ) : (
+            <div className={style["Ask-div-main"]}>
+              <div className={style["Ask-div"]}>
                 <Button2
-                  className={style["submit-btn-text"]}
-                  label="Submit"
-                  type="submit"
+                  className={style["Ask-div-button"]}
+                  label="Ask Question"
+                  style={{ width: 200 }}
+                  onClick={ActiveButton}
                 />
               </div>
             </div>
-          </form>
+          )}
         </div>
       </div>
     </div>

@@ -40,6 +40,12 @@
 .card-link{
     color: white;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-link:hover {
+  color: #fb8500;
+  
 }
 
 .button-group {

@@ -10,12 +10,12 @@ const downvoteAnswer = require('./downvoteAnswer');
 // POST API FOR ANSWER
 router.post('/', validation(answerValidationSchema), postAnswer);
 
-//GET API FOR ANSWERS
+// GET API FOR ANSWERS
 router.get('/', validation(getAnswerValidationSchema), getAnswers);
 
-//INCREASE UPVOTE FOR ANSWERS
+// INCREASE UPVOTE FOR ANSWERS
 router.patch('/upvote', upvoteAnswer);
 
-//DECREASE UPVOTE FOR ANSWERS
+// DECREASE UPVOTE FOR ANSWERS
 router.patch('/downvote', downvoteAnswer);
 module.exports = router;

@@ -9,7 +9,7 @@ require('./helpers/dbConnection');
 
 const app = express();
 
-//making uploads folder public
+// Making uploads folder public
 app.use(express.static('uploads'));
 // Set security headers
 app.use(helmet());

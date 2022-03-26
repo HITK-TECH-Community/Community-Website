@@ -3,11 +3,11 @@ const { expect } = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../../../index');
 const Question = require('../../../app/models/question');
+
 chai.use(chaiHttp);
 
 // Test for upvoting question
 describe('Test for upvoting question:', () => {
-
   it('upvote question at /question/upvote', (done) => {
     const questionData = {
       title: 'testtitle',
@@ -18,12 +18,12 @@ describe('Test for upvoting question:', () => {
     };
 
     // Saving question which will be upvoted.
-    let postedQuestion = new Question(questionData);
+    const postedQuestion = new Question(questionData);
     postedQuestion.save();
     chai
       .request(server)
       .patch('/question/upvote')
-      .send({ questionId: postedQuestion['_id'] })
+      .send({ questionId: postedQuestion._id })
       .then((res) => {
         expect(res.body.message).to.equal('Question has been upvoted');
         done();

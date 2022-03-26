@@ -2,7 +2,6 @@ const to = require('await-to-js').default;
 const contactUs = require('../../models/contactUs');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-const Admin = require('../../models/Admin');
 
 module.exports = async (req, res, next) => {
   const [err, response] = await to(contactUs.find());
@@ -17,4 +16,5 @@ module.exports = async (req, res, next) => {
   res.status(200).send({
     ContactUs: response,
   });
+  return next();
 };

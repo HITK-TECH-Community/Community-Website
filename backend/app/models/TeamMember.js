@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const teamMemberSchema = new Schema({
+const TeamMemberSchema = new Schema({
   full_name: {
     type: String,
     required: true,
@@ -24,4 +24,4 @@ const teamMemberSchema = new Schema({
   },
   teams: [String],
 });
-module.exports = mongoose.model('teammember', teamMemberSchema);
+module.exports = mongoose.model('teammember', TeamMemberSchema);

@@ -7,11 +7,10 @@ const broadcast = require('./broadcast');
 const faq = require('./faq/post');
 const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
-const joinUs = require('./joinUs/');
+const joinUs = require('./joinUs');
 const contactUs = require('./contactUs/post');
 
 const getContactUs = require('./contactUs/get');
-const { authMiddleware } = require('../../helpers/middlewares/auth');
 const contactValidationSchema = require('./contactUs/@validationSchema');
 const validation = require('../../helpers/middlewares/validation');
 

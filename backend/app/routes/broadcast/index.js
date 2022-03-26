@@ -7,6 +7,7 @@ const postBroadcast = require('./postBroadcast');
 const deleteBroadcast = require('./deleteBroadcast');
 const getBroadcasts = require('./getBroadcasts');
 const getallbroadcast = require('./getallbroadcasts');
+
 router.get('/', validationMiddleware(getBroadcastsValidationSchema, 'query'), getBroadcasts);
 router.post('/', validationMiddleware(postBroadcastValidationSchema), authMiddleware, postBroadcast);
 router.delete('/:id', authMiddleware, deleteBroadcast);

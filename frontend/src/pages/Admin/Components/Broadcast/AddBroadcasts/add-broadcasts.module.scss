@@ -130,7 +130,7 @@
     font-weight: 900;
   }
 
-  &:nth-last-child() {
+  &:nth-last-child(n) {
     margin-right: 0;
   }
 }

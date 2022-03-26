@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
-import MultiSelect from "react-multi-select-component";
+import {MultiSelect} from "react-multi-select-component";
 
 import styles from "./form.module.scss";
 import { Button2 } from "../../../../components/util/Button/index";

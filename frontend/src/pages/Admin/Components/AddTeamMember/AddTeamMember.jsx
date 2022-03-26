@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Joi from "joi-browser";
 import styles from "./add-team-member.module.scss";
-import MultiSelect from "react-multi-select-component";
+import {MultiSelect} from "react-multi-select-component";
 
 import { Button2 } from "../../../../components/util/Button/index";
 import { Grid } from "@material-ui/core";

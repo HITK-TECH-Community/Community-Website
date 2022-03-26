@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   useLocation,
 } from "react-router-dom";
@@ -67,109 +67,116 @@ const App = () => {
 
   return (
     <Fragment>
-      <div className="Container">
+      
+       <div className="Container">
         <SimpleToast open={toast} message={"You have changed the theme"} />
-        <Switch>
+
+       <Routes>
           {isSuperAdmin ? (
             <Route
               exact={true}
               path="/admin"
-              render={() => <LoggedIn theme={theme} />}
-            />
-          ) : null}
+              element={ <LoggedIn theme={theme} />}
+              />
+              ) : null}
 
           {isSuperAdmin ? (
-            <Route
+              <Route
               exact={true}
               path="/dashboard"
-              render={() => <Admin theme={theme} />}
-            />
-          ) : null}
+              element={<Admin theme={theme} />}
+              />
+              ) : null}
+
+        </Routes>
           <div>
             <Navbar handleClick={toggleTheme} theme={theme} />
-            <Switch>
+            
+            <Routes>
               <Route
                 exact={true}
                 path="/"
-                render={() => <Home theme={theme} />}
+                element={ <Home theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/about-us"
-                render={() => <About theme={theme} />}
+                element={<About theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/Broadcasts"
-                render={() => <Broadcast theme={theme} />}
+                element={<Broadcast theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/all-broadcasts"
-                render={() => <AllBroadcasts theme={theme} />}
+                element={ <AllBroadcasts theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/resources"
-                render={() => <Resources theme={theme} />}
+                element={ <Resources theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/contact-us"
-                render={() => <ContactUs theme={theme} />}
+                element={ <ContactUs theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/faqs"
-                render={() => <Faq theme={theme} />}
+                element={ <Faq theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/admin"
-                render={() => <Login theme={theme} />}
+                element={<Login theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/forgot-password"
-                render={() => <ForgotPassword theme={theme} />}
+                element={ <ForgotPassword theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/forgot-password/:id"
-                component={ForgotPasswordRecovery}
+                element={ForgotPasswordRecovery}
               />
               <Route
                 exact={true}
                 path="/setting"
-                render={() => <Setting theme={theme} />}
+                element={ <Setting theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/terms"
-                render={() => <Terms theme={theme} />}
+                element={ <Terms theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/get-involved"
-                render={() => <GetInvolved theme={theme} />}
+                element={ <GetInvolved theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/privacy-policy"
-                render={() => <PrivacyPolicy theme={theme} />}
+                element={<PrivacyPolicy theme={theme} />}
               />
               <Route
                 exact={true}
                 path="/join-us-form"
-                render={() => <JoinUsForm theme={theme} />}
+                element={ <JoinUsForm theme={theme} />}
               />
-              <Route render={() => <NotFound theme={theme} />} />
-            </Switch>
+              <Route element={ <NotFound theme={theme} />} />
+            </Routes>
+           
           </div>
-        </Switch>
+
         <ScrollTop theme={theme} />
         <Footer className="Footer" theme={theme} />
       </div>
+      
     </Fragment>
   );
 };

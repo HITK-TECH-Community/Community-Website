@@ -5,9 +5,9 @@ const server = require('../../../index');
 
 chai.use(chaiHttp);
 describe('Test for deleting a resource', () => {
-  let id = '';
+  const id = '';
 
-  //step 1 add broadcast to db
+  // Step 1 add broadcast to db
   it('add resource request to/resource', (done) => {
     const resourceData = {
       name: 'sample name',
@@ -30,25 +30,25 @@ describe('Test for deleting a resource', () => {
       .catch(done);
   });
 
-  //step 2 delete resource from db
+  // Step 2 delete resource from db
   it('delete resource from DB of a particular id', (done) => {
     chai
       .request(server)
       .delete(`/resources/deleteResource`)
       .send(id)
-      .then((res) => {
+      .then(() => {
         done();
       })
       .catch(done);
   });
 
-  //step 3 - delete resource with wrong id
+  // Step 3 - delete resource with wrong id
   it('delete resource from DB with wrong id', (done) => {
     chai
       .request(server)
       .delete(`/resources/deleteResource`)
       .send(id)
-      .then((res) => {
+      .then(() => {
         done();
       })
       .catch(done);

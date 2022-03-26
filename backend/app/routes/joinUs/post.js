@@ -35,11 +35,11 @@ module.exports = async (req, res, next) => {
         JoinUsMailTemplate(adminUser.username, req)
       );
     });
-  } catch (err) {
+  } catch (e) {
     const error = new ErrorHandler(constants.ERRORS.EMAIL, {
       statusCode: 500,
       message: 'Sendgrid Error',
-      errStack: err,
+      errStack: e,
     });
     return next(error);
   }

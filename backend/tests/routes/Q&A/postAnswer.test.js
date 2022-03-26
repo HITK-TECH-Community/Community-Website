@@ -8,7 +8,6 @@ chai.use(chaiHttp);
 
 // Test for posting answer
 describe('Test for posting answer:', () => {
-
   it('post answer at /answers', (done) => {
     const questionData = {
       title: 'testtitle',
@@ -18,10 +17,10 @@ describe('Test for posting answer:', () => {
       tags: ['tag1', 'tag2', 'tag3'],
     };
     // Saving a question in database for which answer will be posted
-    let postedQuestion = new Question(questionData);
+    const postedQuestion = new Question(questionData);
     postedQuestion.save();
 
-    let answerData = {
+    const answerData = {
       question_id: postedQuestion._id,
       created_by: 'test user',
       answer: 'this is test answer',

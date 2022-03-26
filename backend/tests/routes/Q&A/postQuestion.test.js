@@ -7,7 +7,6 @@ chai.use(chaiHttp);
 
 // Test for posting question
 describe('Test for posting question:', () => {
-
   it('post question at /question', (done) => {
     const questionData = {
       title: 'testtitle',

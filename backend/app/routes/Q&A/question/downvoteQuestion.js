@@ -1,10 +1,10 @@
-const question = require('../../../models/question');
 const to = require('await-to-js').default;
+const question = require('../../../models/question');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
 module.exports = async (req, res, next) => {
-  let questionId = req.body.questionId;
+  const { questionId } = req.body;
   const [err] = await to(
     question.updateOne({ _id: questionId }, [
       {
@@ -38,4 +38,5 @@ module.exports = async (req, res, next) => {
   res.status(200).send({
     message: 'Question has been down voted',
   });
+  return next();
 };

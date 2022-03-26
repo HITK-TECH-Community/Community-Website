@@ -1,5 +1,5 @@
-const Broadcast = require('../../models/Broadcast');
 const to = require('await-to-js').default;
+const Broadcast = require('../../models/Broadcast');
 const constants = require('../../../constants');
 const { ErrorHandler } = require('../../../helpers/error');
 
@@ -15,5 +15,5 @@ module.exports = async (req, res, next) => {
   }
 
   res.status(200).json(response);
-  next();
+  return next();
 };

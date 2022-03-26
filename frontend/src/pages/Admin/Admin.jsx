@@ -22,6 +22,7 @@ import { logout } from "../../store/actions/auth";
 import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
+import { ManageFaq } from "./Components/Faq/ManageFaq";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -211,6 +212,8 @@ export const Admin = (props) => {
             <AddBroadcasts />
           ) : tab === 10 ? (
             <AddFaq />
+          ) :tab === 17 ?(
+            <ManageFaq/>
           ) : tab === 13 ? (
             <ManageTeams />
           ) : tab === 14 ? (

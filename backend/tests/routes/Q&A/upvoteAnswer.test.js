@@ -9,7 +9,6 @@ chai.use(chaiHttp);
 
 // Test for upvoting answer
 describe('Test for upvoting answer:', () => {
-
   it('upvote answer at /answers/upvote', (done) => {
     const questionData = {
       title: 'testtitle',
@@ -18,11 +17,11 @@ describe('Test for upvoting answer:', () => {
 
       tags: ['tag1', 'tag2', 'tag3'],
     };
-     // Saving a question in database for which answer will be posted
-    let postedQuestion = new Question(questionData);
+    // Saving a question in database for which answer will be posted
+    const postedQuestion = new Question(questionData);
     postedQuestion.save();
 
-    let answerData = {
+    const answerData = {
       question_id: postedQuestion._id,
       answer: 'this is test answer',
       created_by: 'test user',
@@ -30,12 +29,12 @@ describe('Test for upvoting answer:', () => {
     };
 
     // Saving an answer for above question which will be upvoted.
-    let postedAnswer = new Answer(answerData);
+    const postedAnswer = new Answer(answerData);
     postedAnswer.save();
     chai
       .request(server)
       .patch('/answers/upvote')
-      .send({ answerId: postedAnswer['_id'] })
+      .send({ answerId: postedAnswer._id })
       .then((res) => {
         expect(res.body.message).to.equal('Answer has been upvoted');
         done();

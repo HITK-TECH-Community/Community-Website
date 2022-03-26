@@ -1,0 +1,91 @@
+.card-item {
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 1em;
+    height: auto;
+    width: 15em;
+    margin: 1em;
+    display: inline-block;
+    background-position: left center;
+    transition: all 0.5s ease-in;
+    background-color: #016795;
+    box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+}
+  
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: bold;
+  color: white;
+}
+  
+.card-detail {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.card-info {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+}
+
+.card-link{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.card-link:hover {
+  color: #fb8500;
+  
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.button-edit {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(115, 196, 228), rgb(111, 111, 247));
+  margin: 5px;
+  color: #fff;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.button-url:hover {
+  background: linear-gradient(45deg, rgb(111, 111, 247), rgb(115, 196, 228));
+}
+
+.button-delete {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(243, 109, 109));
+  margin: 5px;
+  color: #fff;
+  width: 100px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.button-delete:hover {
+  background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
+}

@@ -33,13 +33,12 @@ describe('Test to add FAQ:', () => {
   });
 
   // Step 2 - Delete Existing Data
-  it('delete existing data..', async() => {
-    await faq.findOneAndDelete({ question : 'This is Test Question' })
-  })
+  it('delete existing data..', async () => {
+    await faq.findOneAndDelete({ question: 'This is Test Question' });
+  });
 
   // Step 3 - add FAQ to DB
-  it('add FAQ to DB at /faq', done => {
-
+  it('add FAQ to DB at /faq', (done) => {
     const FAQData = {
       question: 'This is Test Question',
       answer: 'This is Test Answer',
@@ -56,7 +55,7 @@ describe('Test to add FAQ:', () => {
         expect(res.status).equal(200);
         expect(res.body.message).to.equal('FAQ has been added');
         done();
-    }).catch(done);
-  })
-
+      })
+      .catch(done);
+  });
 });

@@ -1,10 +1,10 @@
-const answer = require('../../../models/answers');
 const to = require('await-to-js').default;
+const answer = require('../../../models/answers');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
 module.exports = async (req, res, next) => {
-  let answerId = req.body.answerId;
+  const { answerId } = req.body;
   const [err] = await to(answer.updateOne({ _id: answerId }, { $inc: { upvotes: 1 } }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
@@ -15,8 +15,9 @@ module.exports = async (req, res, next) => {
 
     return next(error);
   }
-  
+
   res.status(200).send({
     message: 'Answer has been upvoted',
   });
+  return next();
 };

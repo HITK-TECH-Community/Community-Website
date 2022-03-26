@@ -4,6 +4,8 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button"
+import { Edit, Delete } from "@material-ui/icons"
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { END_POINT } from "../../../../../config/api";
 import Loader from "../../../../../components/util/Loader";
@@ -36,7 +38,7 @@ export function ManageFaq() {
         <div>
             <h1 style={{ textAlign: "center" }}>Manage FAQ</h1>
             <div className={style["faq"]}>
-                <div className={`${style["faq-block"]} ${style["faq-block-dark"]}`}>
+                <div className={`${style["faq-block"]}`}>
                     {isFetching ? (
                         <Loader></Loader>
                     ) : (
@@ -65,10 +67,14 @@ export function ManageFaq() {
                                         &nbsp; &nbsp;{faq.question}
                                     </h3>
                                 </AccordionSummary>
-                                <AccordionDetails>
+                                <AccordionDetails className={style["accord-details"]}>
                                     <Typography style={{ color: "white" }}>
                                         {faq.answer}
                                     </Typography>
+                                    <div className={style["btns-container"]}>
+                                        <Button id={style["update-btn"]} className={style["btns"]} variant="contained" endIcon={<Edit />}>UPDATE</Button>
+                                        <Button id={style["delete-btn"]} className={style["btns"]} variant="contained" endIcon={<Delete />}>DELETE</Button>
+                                    </div>
                                 </AccordionDetails>
                             </Accordion>
                         ))

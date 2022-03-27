@@ -11,10 +11,18 @@
 .close-popup {
   position: relative;
   margin-top: 1%;
-  background: #69a9dd;
-  color: white;
-  margin-left: 95%;
+  background: black;
+  color: #69a9dd;
+  margin-left: 96.5%;
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  border: 1px solid #69a9dd;
+}
+@media (max-width: 650px) {
+  .question_form {
+    width: 85%;
+
+    margin: 5% 5% 5% 5%;
+  }
 }

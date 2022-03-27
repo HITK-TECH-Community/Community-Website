@@ -1,7 +1,7 @@
 import React from "react";
 import { Button2, Button1 } from "../../components/util/Button";
 import style from "../Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
-
+import "./Ques.scss";
 import { useState } from "react";
 import Joi from "joi-browser";
 import QuesImg from "./images/Q&A.svg";
@@ -123,42 +123,30 @@ function Ques(props) {
     setButtonPressed(!isButtonPressed);
   }
   return (
-    <div
-      className={
-        dark
-          ? `${style["resource-section"]} ${style["resource-section-dark"]}`
-          : `${style["resource-section"]} ${style["resource-section-light"]}`
-      }
-    >
-      <div className={`${style["resource-image"]} ${style["child1"]}`}>
-        <img src={QuesImg} alt="" />
-      </div>
-      <div
-        className={
-          dark
-            ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
-            : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
-        }
-      >
+    <div className="popup-creator">
+      {isButtonPressed ? (
         <div
           className={
             dark
-              ? `${style["resource-card"]} ${style["resource-card-dark"]} `
-              : `${style["resource-card"]} ${style["resource-card-light"]}`
+              ? `${style["resource-section"]} ${style["resource-section-dark"]}`
+              : `${style["resource-section"]} ${style["resource-section-light"]}`
           }
         >
-          <h3
-            className={
-              dark
-                ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
-                : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
-            }
-          >
-            Ask your questions
-          </h3>
-          {isButtonPressed ? (
-            <form onSubmit={handleSubmit}>
-              <div className={style["inside-resource"]}>
+          <form className="question_form" onSubmit={handleSubmit}>
+            <button className="close-popup" onClick={DeactiveButton}>
+              X
+            </button>
+            <h3
+              className={
+                dark
+                  ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                  : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
+              }
+            >
+              Ask your questions
+            </h3>
+            <div className={style["inside-resource"]}>
+              <div className="question-inputs">
                 <div className={`form-group ${style["form-group"]}`}>
                   <div
                     className={
@@ -217,87 +205,121 @@ function Ques(props) {
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div
-                  className={
-                    dark
-                      ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
-                      : `${style["resource-input1"]} ${style["resource-input1-light"]}`
-                  }
-                >
-                  <div>
-                    <label
-                      className={
-                        dark
-                          ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                          : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                      }
-                    >
-                      Tags
-                    </label>
-                  </div>
-                  <div>
-                    <ul className="toppings-list">
-                      {Tags.map((data, index) => {
-                        return (
-                          <li key={index}>
-                            <div className="toppings-list-item">
-                              <div className="left-section">
-                                <input
-                                  type="checkbox"
-                                  id={`custom-checkbox-${index}`}
-                                  name="Tags"
-                                  value={data.value}
-                                  checked={checkedState[index]}
-                                  onChange={() => handleOnChange(index)}
-                                />
-                                <label
-                                  htmlFor={`custom-checkbox-${index}`}
-                                  style={{ paddingLeft: "3%" }}
-                                >
-                                  {data.value}
-                                </label>
-                              </div>
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+              <div
+                className={
+                  dark
+                    ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
+                    : `${style["resource-input1"]} ${style["resource-input1-light"]}`
+                }
+              >
+                <div>
+                  <label
+                    className={
+                      dark
+                        ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                        : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                    }
+                    style={{ color: "#69a9dd", fontSize: "25px" }}
+                  >
+                    Tags
+                  </label>
                 </div>
-
-                <div
-                  className={style["submit-btn"]}
-                  style={{ justifyContent: "space-around" }}
-                >
-                  <Button2
-                    style={{ marginRight: "3%" }}
-                    className={style["submit-btn-text"]}
-                    label="Submit"
-                    type="submit"
-                  />
-                  <Button2
-                    className={style["submit-btn-text"]}
-                    label="Cancel"
-                    onClick={DeactiveButton}
-                  />
+                <div>
+                  <ul className="toppings-list">
+                    {Tags.map((data, index) => {
+                      return (
+                        <li key={index}>
+                          <div className="checkbox-item">
+                            <div className="left-section">
+                              <input
+                                type="checkbox"
+                                id={`custom-checkbox-${index}`}
+                                name="Tags"
+                                value={data.value}
+                                checked={checkedState[index]}
+                                onChange={() => handleOnChange(index)}
+                              />
+                              <label
+                                htmlFor={`custom-checkbox-${index}`}
+                                style={{ paddingLeft: "3%", color: "white" }}
+                              >
+                                {data.value}
+                              </label>
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </div>
-            </form>
-          ) : (
-            <div className={style["Ask-div-main"]}>
-              <div className={style["Ask-div"]}>
+
+              <div
+                className={style["submit-btn"]}
+                style={{ justifyContent: "space-around" }}
+              >
                 <Button2
-                  className={style["Ask-div-button"]}
-                  label="Ask Question"
-                  style={{ width: 200 }}
-                  onClick={ActiveButton}
+                  style={{ marginRight: "3%" }}
+                  className={style["submit-btn-text"]}
+                  label="Submit"
+                  type="submit"
                 />
               </div>
             </div>
-          )}
+          </form>
         </div>
-      </div>
+      ) : (
+        <div
+          className={
+            dark
+              ? `${style["resource-section"]} ${style["resource-section-dark"]}`
+              : `${style["resource-section"]} ${style["resource-section-light"]}`
+          }
+        >
+          <div className={`${style["resource-image"]} ${style["child1"]}`}>
+            <img src={QuesImg} alt="" />
+          </div>
+          <div
+            className={
+              dark
+                ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
+                : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
+            }
+          >
+            <div
+              className={
+                dark
+                  ? `${style["resource-card"]} ${style["resource-card-dark"]} `
+                  : `${style["resource-card"]} ${style["resource-card-light"]}`
+              }
+            >
+              <h3
+                className={
+                  dark
+                    ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                    : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
+                }
+              >
+                Ask your questions
+              </h3>
+              {isButtonPressed ? null : (
+                <div className={style["Ask-div-main"]}>
+                  <div className={style["Ask-div"]}>
+                    <Button2
+                      className={style["Ask-div-button"]}
+                      label="Ask Question"
+                      style={{ width: 200 }}
+                      onClick={ActiveButton}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

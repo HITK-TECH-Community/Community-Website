@@ -7,7 +7,7 @@ const sendEmail = require('../../../utility/sendEmail');
 const { JoinUsMailTemplate } = require('../../../utility/emailTemplates');
 
 module.exports = async (req, res, next) => {
-  const [err] = await to(JoinUs.create({ ...req.body }));
+  const [err,createdResponse] = await to(JoinUs.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -46,6 +46,7 @@ module.exports = async (req, res, next) => {
 
   res.status(200).send({
     message: 'Request Submitted Successfully',
+    response : createdResponse
   });
   return next();
 };

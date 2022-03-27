@@ -6,6 +6,6 @@ module.exports = async (req, res, next) => {
     res.status(200).json(AllResources);
     return next();
   } catch (e) {
-    next(e);
+    return next(e);
   }
 };

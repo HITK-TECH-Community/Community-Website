@@ -1,6 +1,6 @@
 const router = require('express').Router({ mergeParams: true });
 const faq = require('./post');
-const getfaq = require('./getFaq.js');
+const getfaq = require('./getFaq');
 const FAQValidationSchema = require('./@validationSchema');
 const validation = require('../../../helpers/middlewares/validation');
 const deleteFaq = require('./deleteFaq');

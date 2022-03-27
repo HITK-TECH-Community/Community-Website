@@ -9,16 +9,16 @@ const downvoteQuestion = require('./downvoteQuestion');
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
-//this route will give all questions from db
+// This route will give all questions from db
 router.get('/getallquestions', getAllQuestion);
 
-//this route will give question by given id
+// This route will give question by given id
 router.get('/getQuestionById', getQuestionById);
 
-//this route will increase upvote by one.
+// This route will increase upvote by one.
 router.patch('/upvote', upvoteQuestion);
 
-//this route will decrease upvote by one.
+// This route will decrease upvote by one.
 router.patch('/downvote', downvoteQuestion);
 
 module.exports = router;

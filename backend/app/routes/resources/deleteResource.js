@@ -1,9 +1,9 @@
 const Resource = require('../../models/resource');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   try {
-    const resourceId = req.body.resourceId; //getting resource id from the body
-    const result = await Resource.findByIdAndDelete(resourceId); // deleting the resource corresponding to reosource id
+    const { resourceId } = req.body; // Getting resource id from the body
+    const result = await Resource.findByIdAndDelete(resourceId); // Deleting the resource corresponding to reosource id
     if (!result) {
       res.json({ error: 'resource id is not valid' });
     }

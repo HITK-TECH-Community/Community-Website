@@ -1,8 +1,8 @@
 const router = require('express').Router({ mergeParams: true });
+const multer = require('multer');
 const addTeam = require('./addTeam');
 const deleteTeamMember = require('./deleteTeamMember');
 const { authMiddleware } = require('../../../helpers/middlewares/auth');
-const multer = require('multer');
 
 const upload = multer({ dest: 'uploads/teamMembersProfile' });
 

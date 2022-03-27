@@ -5,6 +5,7 @@ const constants = require('../../../constants');
 const Admin = require('../../models/Admin');
 const sendEmail = require('../../../utility/sendEmail');
 const { ResourceAddedInformingMailTemplate } = require('../../../utility/emailTemplates');
+
 module.exports = async (req, res, next) => {
   const [err] = await to(Resource.create({ ...req.body }));
   if (err) {
@@ -32,11 +33,11 @@ module.exports = async (req, res, next) => {
         ResourceAddedInformingMailTemplate(adminUser.username, req)
       );
     });
-  } catch (err) {
+  } catch (e) {
     const error = new ErrorHandler(constants.ERRORS.EMAIL, {
       statusCode: 500,
       message: 'Sendgrid Error',
-      errStack: err,
+      errStack: e,
     });
     return next(error);
   }

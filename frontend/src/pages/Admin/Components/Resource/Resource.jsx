@@ -9,6 +9,8 @@ export function Resource() {
   const [resourses, setResources] = useState([]);
   const [loading, setLoading] = useState(false);
   const [openError, setOpenError] = useState(false);
+  const [openDeleteToast, setDeleteToast] = useState(false);
+  const [openDeleteError, setDeleteError] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -28,11 +30,52 @@ export function Resource() {
     fetchResource();
   }, []);
 
+  const onClickDelete = async (id) => {
+    const token = localStorage.getItem("token");
+    setLoading(false)
+    try{
+      const response = await axios.delete(`${END_POINT}/resources/deleteResource`, {
+        headers: { Authorization: `Bearer ${token}` },
+        data: { resourceId: id },
+      });
+      const message = await response.data;
+      setLoading(true)
+      if(message.message === 'resource deleted'){
+        setDeleteToast(true);
+        const filteredResources = resourses.filter((resource) => {
+          return resource._id !== id;
+        })
+        setResources(filteredResources);
+      }
+      else{
+        setDeleteError(true);
+      }
+    }
+    catch(err){
+      setDeleteError(true);
+      setLoading(true);
+    }
+  }
+
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     setOpenError(false);
+  };
+
+  const handleDeleteToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setDeleteToast(false);
+  };
+
+  const handleDeleteError = (event, reason) => {
+    if(reason === "clickaway") {
+      return;
+    }
+    setDeleteError(false);
   };
 
   return (
@@ -68,7 +111,7 @@ export function Resource() {
                     </div>
                   </div>
                   <div className={style["button-group"]}>
-                    <a href={resource.url}>
+                    <a href={resource.url} target="_blank">
                       <button
                         href={resource.url}
                         className={style["button-url"]}
@@ -76,7 +119,7 @@ export function Resource() {
                         URL
                       </button>
                     </a>
-                    <button className={style["button-delete"]}>Delete</button>
+                    <button className={style["button-delete"]} onClick={() => onClickDelete(resource._id)}>Delete</button>
                   </div>
                 </div>
               );
@@ -89,6 +132,18 @@ export function Resource() {
         open={openError}
         message="Unable to load the data!"
         handleCloseToast={handleCloseToast}
+        severity="error"
+      />
+      <SimpleToast
+        open={openDeleteToast}
+        message="Resource deleted successfully!"
+        handleCloseToast={handleDeleteToast}
+        severity="success"
+      />
+      <SimpleToast
+        open={openDeleteError}
+        message="Something went wrong. Try again!"
+        handleCloseToast={handleDeleteError}
         severity="error"
       />
     </div>

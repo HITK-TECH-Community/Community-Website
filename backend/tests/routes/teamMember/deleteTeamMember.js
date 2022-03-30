@@ -2,13 +2,11 @@ const chai = require('chai');
 const { expect } = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../../../index');
-const fs = require('fs');
 chai.use(chaiHttp);
 
 describe('Delete team member from DB',()=> {
     let token = ''
     let id = ''
-
     //Step 1 : login as admin
     it('log in as admin at /auth/login', (done) => {
         const loginData = {
@@ -46,13 +44,13 @@ describe('Delete team member from DB',()=> {
             .post('/teamMember/addTeamMember')
             .set('Authorization', `Bearer ${token}`)
             .set('content-type','multipart/form-data')
-            .field("full_name",testData.full_name)
+            .field("fullName",testData.full_name)
             .field("description",testData.description)
-            .field("linkedin_url",testData.linkedlin_url)
-            .field("github_url",testData.github_url)
-            .field("twitter_url",testData.twitter_url)
+            .field("linkedlinUrl",testData.linkedlin_url)
+            .field("githubUrl",testData.github_url)
+            .field("twitterUrl",testData.twitter_url)
             .field("teams",testData.teams)
-            .attach('image',"./tests/routes/teamMember/file.png",'file.png')
+            .attach('image',"./tests/utils/file.png",'file.png')
             .then((res)=> { 
                 id = res.body.result._id;
                 done();

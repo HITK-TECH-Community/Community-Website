@@ -9,6 +9,6 @@ const updateFaq = require('./updateFaq');
 router.post('/faq', validation(FAQValidationSchema), faq);
 router.get('/getFaq', getfaq);
 router.put('/deleteFaq', deleteFaq);
-router.put('/updateFaq',updateFaq);
+router.patch('/updateFaq',updateFaq);
 
 module.exports = router;

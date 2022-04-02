@@ -7,6 +7,7 @@ const broadcast = require('./broadcast');
 const faq = require('./faq/post');
 const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
+const updateFaq = require('./faq/updateFaq')
 const joinUs = require('./joinUs');
 const contactUs = require('./contactUs/post');
 
@@ -24,6 +25,7 @@ router.use('/auth', auth);
 router.post('/emailTest', emailTest);
 router.use('/faq', faq);
 router.use('/deleteFaq', deleteFaq);
+router.use('/updateFaq',updateFaq)
 router.use('/getFaq', getFaq);
 router.use('/contactus', validation(contactValidationSchema), contactUs);
 router.use('/getcontactus', getContactUs);

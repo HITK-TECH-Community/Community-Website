@@ -4,7 +4,6 @@ import style from "../Resources/components/ResourceSharingForm/resource-sharing-
 import "./Ques.scss";
 import { useState } from "react";
 import Joi from "joi-browser";
-import QuesImg from "./images/Q&A.svg";
 
 function Ques(props) {
   let dark = props.theme;
@@ -243,7 +242,10 @@ function Ques(props) {
                               />
                               <label
                                 htmlFor={`custom-checkbox-${index}`}
-                                style={{ paddingLeft: "3%", color: "white" }}
+                                style={{
+                                  paddingLeft: "3%",
+                                  color: dark ? "white" : "black",
+                                }}
                               >
                                 {data.value}
                               </label>
@@ -278,15 +280,13 @@ function Ques(props) {
               : `${style["resource-section"]} ${style["resource-section-light"]}`
           }
         >
-          <div className={`${style["resource-image"]} ${style["child1"]}`}>
-            <img src={QuesImg} alt="" />
-          </div>
           <div
             className={
               dark
                 ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
                 : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
             }
+            style={{ marginTop: "12%" }}
           >
             <div
               className={

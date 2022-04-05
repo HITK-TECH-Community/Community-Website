@@ -122,7 +122,10 @@ function Ques(props) {
     setButtonPressed(!isButtonPressed);
   }
   return (
-    <div className="popup-creator">
+    <div
+      className="popup-creator"
+      style={{ background: dark ? "#171717" : "white" }}
+    >
       {isButtonPressed ? (
         <div
           className={

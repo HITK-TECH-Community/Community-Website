@@ -1,7 +1,6 @@
 .popup-creator {
   width: 100%;
   min-height: 80vh;
-  background: #171717;
 }
 
 .question_form {
@@ -10,6 +9,7 @@
   border-radius: 7px;
   margin: 5% 5% 5% 25%;
 }
+
 .close-popup {
   position: relative;
   margin-top: 1%;
@@ -21,6 +21,7 @@
   border-radius: 50%;
   border: 1px solid #69a9dd;
 }
+
 @media (max-width: 650px) {
   .question_form {
     width: 85%;

@@ -18,7 +18,7 @@ export function AddBroadcasts() {
     content: "",
     tags: [],
     expiresOn: null,
-    imageUrl: "",
+    imageUrl: [],
     link: "",
   };
   const [formData, setFormData] = useState(schema);

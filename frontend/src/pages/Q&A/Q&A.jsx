@@ -4,6 +4,10 @@ import style from "../Resources/components/ResourceSharingForm/resource-sharing-
 import "./Ques.scss";
 import { useState } from "react";
 import Joi from "joi-browser";
+import Loader from "../../components/util/Loader/index";
+import { SimpleToast } from "../../components/util/Toast";
+import {END_POINT} from "../../config/api"
+import { ErrorSharp } from "@material-ui/icons";
 
 function Ques(props) {
   let dark = props.theme;
@@ -47,6 +51,10 @@ function Ques(props) {
     },
   ];
 
+  const [isUploadingData, setIsUploadingData] = useState(false);
+  const [open, setOpenToast] = useState(false);
+  const [toastMessage,setToastMessage] = useState("");
+  const [severity,setSeverity] = useState('success')
   const [isButtonPressed, setButtonPressed] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
@@ -54,10 +62,15 @@ function Ques(props) {
 
   const [formdata, setFormData] = useState({
     title: "",
-    body: "",
+    description: "",
     tags: [],
   });
 
+  const handleCloseToast = (event, reason) => {
+    setTimeout(() => {
+      setOpenToast(false);
+    }, 500);
+  }
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
@@ -93,27 +106,45 @@ function Ques(props) {
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
   };
+
+  const uploadData = async (formdata) => {
+    try {
+      const url = `${END_POINT}/question`;
+      const response = await fetch(url,{
+        method:"POST",
+        headers : {
+          "content-type":"application/json"
+        },
+        body : JSON.stringify(formdata)
+      });
+      const data = await response.json();
+      setIsUploadingData(false)
+      setToastMessage("Q&A added successfully!")
+      setOpenToast(true)
+      setSeverity("success")
+      console.log(data)
+    }
+    catch(err) {
+      console.log(err)
+      setIsUploadingData(false)
+      setToastMessage("Something went wrong!");
+      setOpenToast(true)
+      setSeverity("error");
+    }
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors = validate();
     Object.keys(formdata).map((key) => {
       if (formdata[key] === "" || formdata[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
+        setFormErrors(errors)
       }
       return 0;
     });
-    if (errors["info"]) {
-      delete errors["info"];
-    }
-    if (Object.keys(errors).length !== 0) {
-      setFormErrors(errors);
-    }
-    if (Object.keys(errors).length !== 0) {
-      console.log(errors);
-    } else {
-      //Call the Server
-      console.log("Submitted");
-    }
+    console.log(formdata)
+    setIsUploadingData(true)
+    uploadData(formdata);
   };
   function ActiveButton() {
     setButtonPressed(!isButtonPressed);
@@ -126,6 +157,7 @@ function Ques(props) {
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
+      <SimpleToast open={open} message={toastMessage} severity={severity} handleCloseToast={handleCloseToast}/>
       {isButtonPressed ? (
         <div
           className={
@@ -189,7 +221,7 @@ function Ques(props) {
                       placeholder="Body"
                       style={{ height: 100 }}
                       type="text"
-                      name="body"
+                      name="description"
                       onChange={handleChange}
                     />
                     <i
@@ -265,6 +297,7 @@ function Ques(props) {
                 className={style["submit-btn"]}
                 style={{ justifyContent: "space-around" }}
               >
+                <div className="data-loader">{isUploadingData?<Loader/>:null}</div>
                 <Button2
                   style={{ marginRight: "3%" }}
                   className={style["submit-btn-text"]}
@@ -277,18 +310,18 @@ function Ques(props) {
         </div>
       ) : (
         <div
-          className={
-            dark
+        className={
+          dark
               ? `${style["resource-section"]} ${style["resource-section-dark"]}`
               : `${style["resource-section"]} ${style["resource-section-light"]}`
-          }
+            }
         >
           <div
             className={
               dark
-                ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
+              ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
                 : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
-            }
+              }
             style={{ marginTop: "12%" }}
           >
             <div
@@ -296,13 +329,13 @@ function Ques(props) {
                 dark
                   ? `${style["resource-card"]} ${style["resource-card-dark"]} `
                   : `${style["resource-card"]} ${style["resource-card-light"]}`
-              }
+                }
             >
               <h3
                 className={
                   dark
-                    ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
-                    : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
+                  ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                  : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
                 }
               >
                 Ask your questions

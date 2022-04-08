@@ -7,11 +7,13 @@ const broadcast = require('./broadcast');
 const faq = require('./faq/post');
 const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
-const joinUs = require('./joinUs/post');
+const joinUs = require('./joinUs/');
 const contactUs = require('./contactUs/post');
 const question = require('./Q&A/question');
 const answer = require('./Q&A/answers');
 const teamMember = require('./teamMember');
+const resource = require('./resources');
+
 router.use('/admin', admin);
 router.use('/auth', auth);
 router.post('/emailTest', emailTest);
@@ -22,7 +24,8 @@ router.use('/contactus', contactUs);
 router.use('/broadcast', broadcast);
 router.use('/question', question);
 router.use('/answers', answer);
-router.use('/', tinyURL);
-router.use('/joinUs', joinUs);
+router.use('/joinUs', joinUs)
 router.use('/teamMember', teamMember);
+router.use('/', tinyURL);
+router.use('/resources', resource);
 module.exports = router;

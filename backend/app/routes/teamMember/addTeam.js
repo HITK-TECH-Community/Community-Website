@@ -1,21 +1,35 @@
-const teamMemberModel = require('../../models/TeamMember');
+const to = require('await-to-js').default;
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
+const TeamMemberModel = require('../../models/TeamMember');
+
 module.exports = async (req, res, next) => {
-  console.log(req.file);
-  let payload = res.locals.decode;
-  if (payload.isSuperAdmin == false) {
+  const payload = res.locals.decode;
+  if (payload.isSuperAdmin === false) {
     res.status(401).json({ error: 'You are not an admin' });
   }
 
-  const { full_name, description, linkedlin_url, github_url, twitter_url, teams } = req.body;
-  const teammember = new teamMemberModel({
-    full_name,
+  const { fullName, description, linkedlinUrl, githubUrl, twitterUrl, teams } = req.body;
+  const teammember = new TeamMemberModel({
+    full_name: fullName,
     image: req.file.path,
     description,
-    linkedlin_url,
-    github_url,
-    twitter_url,
+    linkedlin_url: linkedlinUrl,
+    github_url: githubUrl,
+    twitter_url: twitterUrl,
     teams,
   });
-  const result = await teammember.save();
-  return res.json({ result: result });
+
+  const [err, result] = await to(teammember.save());
+  if (err) {
+    const error = new ErrorHandler(constants.ERRORS.DATABASE, {
+      statusCode: 500,
+      message: 'Database Error',
+      errStack: err,
+    });
+    return next(error);
+  }
+
+  res.status(200).json({ result });
+  return next();
 };

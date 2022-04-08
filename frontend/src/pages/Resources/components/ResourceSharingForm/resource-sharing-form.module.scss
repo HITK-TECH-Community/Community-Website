@@ -1,3 +1,36 @@
+.resource-section {
+  display: flex;
+}
+
+.resource-section-light {
+  background-color: #fff;
+}
+
+// for dark theme
+.resource-section-dark {
+  background: #171717;
+}
+
+.resource-image {
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+}
+
+.resource-image img {
+  max-width: 100%;
+  margin-top: 30px;
+}
+
+.resource-image img .child1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+}
+
 .resource-form {
   flex: 1;
   flex-direction: column;
@@ -301,8 +334,18 @@ input[type="date"]:not(:valid):before {
 .submit-btn {
   display: flex;
   justify-content: center;
+
   width: 40%;
   margin: 0 auto;
+}
+
+.Ask-div-main {
+  width: 100%;
+  text-align: -webkit-center;
+}
+
+.Ask-div {
+  width: 40%;
 }
 
 .submit-btn-text {
@@ -422,4 +465,9 @@ input[type="date"]:not(:valid):before {
 // for dark theme
 .label-dark {
   color: whitesmoke !important;
+}
+@media screen and (max-width: 1047px) {
+  .Ask-div {
+    width: 100%;
+  }
 }

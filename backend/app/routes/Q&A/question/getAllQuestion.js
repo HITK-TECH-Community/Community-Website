@@ -1,10 +1,10 @@
 const question = require('../../../models/question');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   try {
-    let questions = {}; //Empty object filter which matches all the documents
+    const questions = {}; // Empty object filter which matches all the documents
 
-    const allquestions = await question.find(questions); //passing questions as an filter in find method
+    const allquestions = await question.find(questions); // Passing questions as a filter in the find method
 
     return res.json(allquestions);
   } catch (error) {

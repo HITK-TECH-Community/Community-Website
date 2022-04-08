@@ -40,6 +40,14 @@
                     "chai-http"
                 ]
             }
+        ],
+        "no-underscore-dangle":  [
+            "error", 
+            { 
+                "allow": [
+                    "_id"
+                ] 
+            }
         ]
     }
 }

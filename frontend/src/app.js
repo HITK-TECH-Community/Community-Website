@@ -30,6 +30,7 @@ import { Setting } from "./pages/Admin/Components/Setting";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
 import { Resources } from "./pages/Resources/index";
 import { Faq } from "./pages/Faq";
+import Ques from "./pages/Q&A/Q&A.jsx"
 import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
@@ -122,6 +123,11 @@ const App = () => {
                 exact={true}
                 path="/faqs"
                 render={() => <Faq theme={theme} />}
+              />
+              <Route
+                exact={true}
+                path="/Q&A"
+                render={() => <Ques theme={theme} />}
               />
               <Route
                 exact={true}

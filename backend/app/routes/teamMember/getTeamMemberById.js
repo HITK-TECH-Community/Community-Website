@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
         if (!member) {
             return res.status(404).json({ error: 'Not found' });
         }
-        return res.json({ member });
+        return res.json(member);
     } catch (error) {
         res.status(500).json({ error: 'Internal server error' });
     }

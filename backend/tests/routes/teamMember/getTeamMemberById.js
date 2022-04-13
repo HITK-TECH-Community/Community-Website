@@ -68,7 +68,7 @@ describe('Get team member from DB', () => {
       .get(`/teamMember/getTeamMember/${id}`)
       .then((res) => {
         expect(res.status).to.equal(200);
-        expect(res.body.member.full_name).to.equal('Hazem Essam');
+        expect(res.body.full_name).to.equal('Hazem Essam');
         done();
       })
       .catch(done);

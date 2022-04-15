@@ -1,15 +1,32 @@
+const to = require('await-to-js').default;
 const TeamMemberModel = require('../../models/TeamMember');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
 
 module.exports = async (req, res, next) => {
-    try {
-        const memberId = req.params.id;
-        const member = await TeamMemberModel.findById(memberId);
-        if (!member) {
-            return res.status(404).json({ error: 'Not found' });
-        }
-        return res.json(member);
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+  const memberId = req.params.id;
+  const [err, member] = await to(TeamMemberModel.findById(memberId));
+
+  if (err) {
+    const errOptions = {
+      statusCode: 500,
+      message: 'Mongo Error: Fetching failed',
+      errStack: err,
     }
+    const error = new ErrorHandler(constants.ERRORS.DATABASE, errOptions);
+    return next(error);
+  }
+
+  if (!member) {
+    const errOptions = {
+      statusCode: 404,
+      message: `Resource Not Found: No team member with id ${memberId}`,
+      errStack: err,
+    }
+    const error = new ErrorHandler(constants.ERRORS.DATABASE, errOptions);
+    return next(error);
+  }
+
+  return res.json(member);
 }

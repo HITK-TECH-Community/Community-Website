@@ -105,6 +105,7 @@ function Ques(props) {
     const data = { ...formdata };
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
+    setFormErrors({})
   };
 
   const uploadData = async (formdata) => {
@@ -122,10 +123,15 @@ function Ques(props) {
       setToastMessage("Q&A added successfully!")
       setOpenToast(true)
       setSeverity("success")
-      console.log(data)
+      setFormData({
+        title: "",
+        description: "",
+        tags: [],
+      })
+      setFormErrors({})
+      setCheckedState(new Array(Tags.length).fill(false))
     }
     catch(err) {
-      console.log(err)
       setIsUploadingData(false)
       setToastMessage("Something went wrong!");
       setOpenToast(true)
@@ -134,17 +140,20 @@ function Ques(props) {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    let isValid = true;
     const errors = validate();
     Object.keys(formdata).map((key) => {
       if (formdata[key] === "" || formdata[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
         setFormErrors(errors)
+        isValid = false;
       }
       return 0;
     });
-    console.log(formdata)
-    setIsUploadingData(true)
-    uploadData(formdata);
+    if(isValid && formdata.tags.length !== 0) {
+      setIsUploadingData(true)
+      uploadData(formdata);
+    }
   };
   function ActiveButton() {
     setButtonPressed(!isButtonPressed);
@@ -194,6 +203,7 @@ function Ques(props) {
                       placeholder="Subject"
                       type="text"
                       name="title"
+                      value={formdata.title}
                       onChange={handleChange}
                     />
                     <i className="fas fa-heading"></i>
@@ -222,6 +232,7 @@ function Ques(props) {
                       style={{ height: 100 }}
                       type="text"
                       name="description"
+                      value={formdata.description}
                       onChange={handleChange}
                     />
                     <i

@@ -7,7 +7,8 @@ const { verifyToken } = require('../../../helpers/middlewares/auth');
 
 module.exports = async (req, res, next) => {
   // Extracting the new password from the request
-  const { newPassword } = req.body;
+  const { newPassword } = req.body.password;
+
   // Extracting the TOKEN from URl /resetpassword/:token
   const { token } = req.params;
 

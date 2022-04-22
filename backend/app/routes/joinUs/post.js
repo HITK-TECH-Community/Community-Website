@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 const to = require('await-to-js').default;
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');

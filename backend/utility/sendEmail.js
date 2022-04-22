@@ -1,4 +1,8 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable object-shorthand */
 const sgMail = require('@sendgrid/mail');
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const sendEmail = (to, subject, text) => {
   const msg = {
@@ -8,7 +12,7 @@ const sendEmail = (to, subject, text) => {
     html: text,
   };
 
-  sgMail.send(msg, function (err, result) {
+  sgMail.send(msg, (err, result) => {
     if (err) {
       return err;
     }

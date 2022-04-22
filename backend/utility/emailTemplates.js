@@ -39,8 +39,8 @@ module.exports.JoinUsCronJobMailTemplate = (adminName) => {
   <br>
   Thanks
   `;
-    return emailContent;
-}
+  return emailContent;
+};
 
 module.exports.ContactUsMailTemplate = (adminName, req) => {
   const emailContent = `
@@ -64,5 +64,5 @@ module.exports.ContactUsCronJobMailTemplate = (adminName) => {
   <br>
   Thanks
   `;
-    return emailContent;
-}
+  return emailContent;
+};

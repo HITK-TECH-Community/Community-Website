@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 const Joi = require('joi');
 
 const JoinUsValidationSchema = Joi.object().keys({

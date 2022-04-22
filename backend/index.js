@@ -1,3 +1,6 @@
+/* eslint-disable no-shadow */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undef */
 require('dotenv').config();
 const http = require('http');
 const cronJob = require('./utility/cronJob');

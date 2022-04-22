@@ -7,9 +7,9 @@ const validation = require('../../../../helpers/middlewares/validation');
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
-//this route will give all questions from db
+// this route will give all questions from db
 router.get('/getallquestions', getAllQuestion);
 
-//this route will give question by given id
+// this route will give question by given id
 router.get('/getQuestionById', getQuestionById);
 module.exports = router;

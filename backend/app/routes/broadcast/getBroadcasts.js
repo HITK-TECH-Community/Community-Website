@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable consistent-return */
 const to = require('await-to-js').default;
 const Broadcast = require('../../models/Broadcast');
 const { ErrorHandler } = require('../../../helpers/error');

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-destructuring */
 const to = require('await-to-js').default;
 const faq = require('../../models/faq');
 const { ErrorHandler } = require('../../../helpers/error');
@@ -5,9 +7,10 @@ const constants = require('../../../constants');
 const Admin = require('../../models/Admin');
 
 module.exports = async (req, res, next) => {
+  // eslint-disable-next-line prefer-destructuring
   const userId = req.body.userId;
   const faqId = req.body.faqId;
-  if(!userId || !faqId){
+  if (!userId || !faqId) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: `You don't have the required permissions`,
@@ -15,6 +18,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
+  // eslint-disable-next-line no-unused-vars
   const [err, response] = await to(Admin.findById(userId));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

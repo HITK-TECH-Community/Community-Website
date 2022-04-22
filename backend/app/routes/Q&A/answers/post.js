@@ -3,23 +3,22 @@ const answer = require('../../../models/answers');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
-module.exports = async (req,res,next) => {
+module.exports = async (req, res, next) => {
+  const [err] = await to(answer.create({ ...req.body }));
 
-    const [ err ] = await to(answer.create({ ...req.body }));
-
-    if(err){
-        const error = new ErrorHandler(constants.ERRORS.DATABASE,{
-            statusCode: 500,
-            message: 'Database Error',
-            errStack: err,
-        });
-
-        return next(error);
-    }
-
-    res.status(200).send({
-        message: 'Answer has been added',
+  if (err) {
+    const error = new ErrorHandler(constants.ERRORS.DATABASE, {
+      statusCode: 500,
+      message: 'Database Error',
+      errStack: err,
     });
 
-    return next();
-}
+    return next(error);
+  }
+
+  res.status(200).send({
+    message: 'Answer has been added',
+  });
+
+  return next();
+};

@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 const router = require('express').Router({ mergeParams: true });
 const faq = require('./post');
 const getfaq = require('./getFaq.js');

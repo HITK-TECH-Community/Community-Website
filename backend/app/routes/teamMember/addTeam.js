@@ -1,8 +1,12 @@
+/* eslint-disable new-cap */
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 const teamMemberModel = require('../../models/TeamMember');
+
 module.exports = async (req, res, next) => {
   console.log(req.file);
-  let payload = res.locals.decode;
-  if (payload.isSuperAdmin == false) {
+  const payload = res.locals.decode;
+  if (payload.isSuperAdmin === false) {
     res.status(401).json({ error: 'You are not an admin' });
   }
 
@@ -17,5 +21,5 @@ module.exports = async (req, res, next) => {
     teams,
   });
   const result = await teammember.save();
-  return res.json({ result: result });
+  return res.json({ result });
 };

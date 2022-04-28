@@ -9,6 +9,7 @@ const {
   inviteAdminSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
+  updateAdminSchema,
 } = require('./@validationSchema');
 const createSuperAdmin = require('./createSuperAdmin');
 const postSuperAdmin = require('./postSuperAdmin');
@@ -30,7 +31,7 @@ router.post('/forgotpassword', validationMiddleware(forgotPasswordSchema), forgo
 router.post('/resetpassword/:token', validationMiddleware(resetPasswordSchema), resetPassword);
 
 router.put('/password', validationMiddleware(passwordChangeSchema), authMiddleware, changePassword);
+router.put('/updatedadmin/:token', validationMiddleware(updateAdminSchema), updateAdmin);
 
-router.put('/updatedadmin/:token', validationMiddleware(updateAdmin), updateAdmin);
 
 module.exports = router;

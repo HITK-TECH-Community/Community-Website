@@ -1,12 +1,30 @@
 const Admin = require('../../models/Admin');
 
-exports.UpdatedUser = (req, res) => {
-  console.log(req.body);
-  Admin.findByIdAndUpdate(req.params.user_id, { $set: req.body }, (err, result) => {
-    if (err) {
-      console.log(err);
+exports.updateAdmin = (req, res) => {
+
+  try {
+    const { id } = req.params;
+ /*    const { firstName,lastName,contact,username } = req.body; */
+    
+    const admin = await Admin.findOne({
+        _id: id
+    });
+
+    // Admin does not exist
+    if(!admin) {
+        return next();
     }
-    console.log(`RESULT: ${result}`);
-  });
+
+    const updatedAdmin = await Admin.updateOne({
+        _id: id,
+        }, {  
+        $set: result},
+        { upsert: true }
+    );
+
+    res.json(updatedAdmin);
+} catch(error) {
+    next(error);
+}
   res.send('Done');
 };

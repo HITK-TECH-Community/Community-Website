@@ -125,6 +125,17 @@ export function AddBroadcasts() {
       if(errorResponse === false) {
         setSeverity('success')
         setToastMessage("broadcats added successfully!")
+        const schema = {
+          title: "",
+          content: "",
+          tags: [],
+          expiresOn: "dd-mm-yyyy",
+          imageUrl: [],
+          link: "",
+        };
+        setTags([])
+        setImageUrls([])
+        setFormData(schema)
       }
     }
     catch (err) {
@@ -171,6 +182,7 @@ export function AddBroadcasts() {
                 className={styles["form-control-input"]}
                 placeholder="Heading"
                 onChange={handleChange}
+                value={formData.title}
               />
               <i className="fas fa-pencil-alt" />
               {errorObj.title && (
@@ -186,6 +198,7 @@ export function AddBroadcasts() {
                 placeholder="Please type here..."
                 height="200px"
                 onChange={onContentChange}
+                setContents={formData.content}
                 className={styles["edit"]}
               />
               {errorObj.content && (
@@ -199,6 +212,7 @@ export function AddBroadcasts() {
                 type="date"
                 name="expiresOn"
                 className={styles["form-control-input"]}
+                value={formData.expiresOn}
                 placeholder="Broadcast Date(DD/MM/YY)"
                 onChange={handleChange}
               />
@@ -234,6 +248,7 @@ export function AddBroadcasts() {
                 name="link"
                 className={styles["form-control-input"]}
                 placeholder="Resource Link"
+                value={formData.link}
                 onChange={handleChange}
               />
               <i className="fas fa-link" />

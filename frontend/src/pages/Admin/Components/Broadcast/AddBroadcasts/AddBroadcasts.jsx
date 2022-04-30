@@ -113,17 +113,27 @@ export function AddBroadcasts() {
         body: JSON.stringify(formData)
       });
       const data = await response.json();
-      setIsUploadingData(false)
-      setToastMessage("broadcats added successfully!")
-      setOpenToast(true)
-      console.log(data)
+      let errorResponse = false;
+      Object.keys(data).forEach((key)=> {
+        if(key === "errorType") {
+          errorResponse = true;
+          setSeverity('error')
+          setToastMessage(data.errorType)
+
+        }
+      })
+      if(errorResponse === false) {
+        setSeverity('success')
+        setToastMessage("broadcats added successfully!")
+      }
     }
     catch (err) {
-      console.log(err)
-      setIsUploadingData(false)
       setToastMessage("Something went wrong");
-      setOpenToast(true)
       setSeverity("error")
+    }
+    finally {
+      setIsUploadingData(false)
+      setOpenToast(true)
     }
   }
   const onSubmit = e => {

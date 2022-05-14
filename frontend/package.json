@@ -15,38 +15,40 @@
     "font-awesome": "^4.7.0",
     "joi-browser": "^13.4.0",
     "jwt-decode": "^3.1.2",
-    "mdbreact": "^5.0.1",
-    "node-sass": "^4.14.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-card-flip": "^1.0.11",
-    "react-dnd": "^5.0.0",
-    "react-dnd-html5-backend": "^3.0.2",
-    "react-dom": "^17.0.1",
-    "react-icons": "^4.1.0",
-    "react-multi-select-component": "^3.1.5",
+    "mdbreact": "^5.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-card-flip": "^1.1.5",
+    "react-dnd": "^15.1.1",
+    "react-dnd-html5-backend": "^15.1.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-multi-select-component": "^4.2.3",
     "react-owl-carousel": "^2.3.3",
-    "react-popper": "^2.2.4",
+    "react-popper": "^2.2.5",
     "react-recaptcha": "^2.3.10",
-    "react-redux": "^7.2.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
     "react-simple-card": "^2.0.2",
-    "react-tag-input": "^6.5.2",
-    "reactstrap": "^8.7.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
+    "react-tag-input": "^6.8.0",
+    "reactstrap": "^9.0.1",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "sass": "^1.49.9",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.1",
-    "styled-components": "^5.2.1",
-    "suneditor-react": "^2.16.0",
-    "web-vitals": "^1.1.1"
+    "semantic-ui-react": "^2.1.2",
+    "styled-components": "^5.3.5",
+    "suneditor": "^2.42.0",
+    "suneditor-react": "^3.4.0",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "semantic-ui-css-patch"
   },
   "husky": {
     "hooks": {
@@ -78,8 +80,8 @@
     ]
   },
   "devDependencies": {
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
-    "prettier": "^2.2.1"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1"
   }
 }

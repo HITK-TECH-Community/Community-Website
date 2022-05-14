@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import SunEditor from "suneditor-react";
-import "suneditor/dist/css/suneditor.min.css";
+import "suneditor/dist/css/suneditor.min.css"
 import styles from "./add-broadcasts.module.scss";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../../components/util/Button/index";

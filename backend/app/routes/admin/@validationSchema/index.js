@@ -42,6 +42,12 @@ const forgotPasswordSchema = Joi.object({
 const resetPasswordSchema = Joi.object({
   newPassword: Joi.string().required(),
 });
+const updateAdminSchema =Joi.object({
+  firstName:Joi.string(),
+  lastName:Joi.string(),
+  contact,
+  username:Joi.string(),
+})
 
 module.exports = {
   postSuperAdminSchema,
@@ -50,4 +56,5 @@ module.exports = {
   inviteAdminSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
+  updateAdminSchema,
 };

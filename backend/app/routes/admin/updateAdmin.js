@@ -1,6 +1,6 @@
 const Admin = require('../../models/Admin');
 
-exports.updateAdmin = (req, res) => {
+module.exports =async (req, res) => {
 
     try {
         const updatedAdmin = await Admin.findByIdAndUpdate(

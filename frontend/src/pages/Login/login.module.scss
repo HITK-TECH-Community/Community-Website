@@ -281,3 +281,11 @@
     color: black;
   }
 }
+
+.data-loader {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}

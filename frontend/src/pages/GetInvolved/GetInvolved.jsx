@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./get-involved.module.scss";
-
+import { Typography } from "@material-ui/core";
 export const GetInvolved = (props) => {
   const dark = props.theme;
   const arrayCards = [
@@ -70,6 +70,31 @@ export const GetInvolved = (props) => {
           );
         })}
       </div>
+      <Typography
+          variant="h4"
+          id={dark ? `${style["heading-dark"]}` : `${style["heading-light"]}`}
+          style={{marginTop:"40px"}}
+        >
+          Open Source Contributors
+        </Typography>
+        <div
+          className={
+            dark
+              ? `${style["dash"]} ${style["dash-dark"]}`
+              : `${style["dash"]} ${style["dash-light"]}`
+          }
+        ></div>
+        <div className="container">
+          <div className={style["contributors"]}>
+            <a href="https://github.com/HITK-TECH-Community/Community-Website/graphs/contributors">
+              <img
+                style={{ maxWidth: "90vw" }}
+                src="https://contrib.rocks/image?repo=HITK-TECH-Community/Community-Website"
+                alt="contributors"
+              />
+            </a>
+          </div>
+        </div>
     </main>
   );
 };

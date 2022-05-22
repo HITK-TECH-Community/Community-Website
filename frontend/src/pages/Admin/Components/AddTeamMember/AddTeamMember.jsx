@@ -112,8 +112,6 @@ export function AddTeamMember() {
     setFormErrors(errors);
   };
 
-  console.log("formerrors: ", formerrors);
-
   const postTeamMember = (teamMemberData) => {
     fetch(`${END_POINT}/teamMember/addTeamMember`,{
       method: 'POST',

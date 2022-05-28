@@ -7,6 +7,7 @@ import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast";
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
+import Loader from "../../components/util/Loader";
 
 export function Login(props) {
   const [hidePassword, setHidePassword] = useState(false);
@@ -16,7 +17,7 @@ export function Login(props) {
   const dispatch = useDispatch();
   const dark = props.theme;
   const [errorObj, setErrorObj] = useState({});
-
+  const [isLoading,setIsLoading] = useState(false);
   const validationSchema = {
     email: Joi.string().email().required(),
     password: Joi.string().required(),
@@ -90,6 +91,7 @@ export function Login(props) {
 
   function loginUser(e) {
     e.preventDefault();
+    setIsLoading(true);
     if (isFormValid()) {
       return fetch(`${END_POINT}/auth/login`, {
         method: "POST",
@@ -117,6 +119,8 @@ export function Login(props) {
         .catch((err) => {
           setOpenError1Toast(true);
           console.error("must be a backend problem🤔:", err);
+        }).finally(()=> {
+          setIsLoading(false);
         });
     }
   }
@@ -127,6 +131,7 @@ export function Login(props) {
 
   return (
     <>
+    <div className={style["data-loader"]}>{isLoading?<Loader/>:null}</div>
       <div
         className={
           dark

@@ -1,11 +1,12 @@
 const router = require('express').Router({ mergeParams: true });
 const postQuestion = require('./post');
-const QuestionValidationSchema = require('./@validationSchema');
+const { QuestionValidationSchema, updateQuestionStatusSchema } = require('./@validationSchema');
 const getAllQuestion = require('./getAllQuestion');
 const getQuestionById = require('./getQuestionById');
 const validation = require('../../../../helpers/middlewares/validation');
 const upvoteQuestion = require('./upvoteQuestion');
 const downvoteQuestion = require('./downvoteQuestion');
+const updateQuestionStatus = require('./updateQuestionStatus');
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
@@ -20,5 +21,8 @@ router.patch('/upvote', upvoteQuestion);
 
 // This route will decrease upvote by one.
 router.patch('/downvote', downvoteQuestion);
+
+// route for updating the question status
+router.patch('/updateStatus', validation(updateQuestionStatusSchema), updateQuestionStatus);
 
 module.exports = router;

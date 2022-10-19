@@ -45,7 +45,7 @@ const resetPasswordSchema = Joi.object({
 const updateAdminSchema =Joi.object({
   firstName:Joi.string(),
   lastName:Joi.string(),
-  contact,
+  contact:Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
   username:Joi.string(),
 })
 

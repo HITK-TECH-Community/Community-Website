@@ -11,7 +11,13 @@ const getAnswerValidationSchema = Joi.object().keys({
   question_id: Joi.string().trim().required().max(24).min(24),
 });
 
+const updateAnswerStatusSchema = Joi.object().keys({
+  id : Joi.string().min(24).max(24).required(),
+  status : Joi.boolean().required()
+});
+
 module.exports = {
   answerValidationSchema,
   getAnswerValidationSchema,
+  updateAnswerStatusSchema
 };

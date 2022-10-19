@@ -6,4 +6,9 @@ const QuestionValidationSchema = Joi.object().keys({
   tags: Joi.array().required(),
 });
 
-module.exports = QuestionValidationSchema;
+const updateQuestionStatusSchema = Joi.object().keys({
+  id : Joi.string().min(24).max(24).required(),
+  status : Joi.boolean().required()
+});
+
+module.exports = { QuestionValidationSchema, updateQuestionStatusSchema };

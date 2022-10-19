@@ -15,24 +15,23 @@ module.exports = async (req, res, next) => {
 
     // error occured due to the some problem
     if(err) {
-        const Error = new ErrorHandler(constants.ERRORS.DATABASE, {
+        const error = new ErrorHandler(constants.ERRORS.DATABASE, {
             statusCode: 500,
             message: 'Database Error',
             errStack: err,
         });
 
-        return next(Error);
+        return next(error);
     }
 
     // if result is null that means answer with given id is not exist in collection
     if(result === null) {
-        const Error2 = new ErrorHandler(constants.ERRORS.INPUT, {
+        const answerNotExistError = new ErrorHandler(constants.ERRORS.INPUT, {
             statusCode: 400,
             message: 'Answer Not Exist...',
-            errStack: err,
         });
 
-        return next(Error2);
+        return next(answerNotExistError);
     }
 
     // success response

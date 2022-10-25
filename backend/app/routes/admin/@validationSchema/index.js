@@ -47,6 +47,10 @@ const updateAdminSchema =Joi.object({
   lastName:Joi.string(),
   contact:Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
   username:Joi.string(),
+});
+
+const deleteAdminSchema = Joi.object({
+  id : Joi.string().min(24).max(24).required()
 })
 
 module.exports = {
@@ -57,4 +61,5 @@ module.exports = {
   forgotPasswordSchema,
   resetPasswordSchema,
   updateAdminSchema,
+  deleteAdminSchema
 };

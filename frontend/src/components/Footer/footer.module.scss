@@ -188,8 +188,10 @@
 .fa-envelope,
 .fa-github,
 .fa-github-own,
-.fa-envelope-own,
+.fa-instagram-own,
 .fa-slack-own,
+.fa-twitter-own,
+.fa-youtube-own,
 .fa-linkedin-own {
   padding: 5px;
   color: white;
@@ -532,9 +534,8 @@ a > span {
   border: 2px solid transparent;
   border-radius: 8px;
   width: 250px;
-  text-align: left;
+  text-align: center;
   margin-right: 10px;
-  padding-left: 10px;
   height: 35px;
   font-size: 14px;
 }
@@ -544,14 +545,13 @@ a > span {
   border: 2px double transparent;
   border-radius: 8px;
   width: 250px;
-  text-align: left;
+  text-align: center;
   margin-right: 10px;
   background-image: linear-gradient(white, white),
     linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: #ffffff;
-  padding-left: 10px;
 }
 
 .input-field-footer-dark {

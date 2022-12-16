@@ -1,1 +1,2 @@
-web: npm start
+web: echo "starting the app"
+service: node index.js

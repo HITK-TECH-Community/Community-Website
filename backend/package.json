@@ -8,7 +8,8 @@
     "start": "node index.js",
     "lint": "eslint . --format table",
     "lint:fix": "eslint . --fix --format table",
-    "test": "mocha tests --recursive --timeout 15000 --exit"
+    "test": "mocha tests --recursive --timeout 15000 --exit",
+    "heroku-prebuild": "npm install -f"
   },
   "repository": {
     "type": "git",

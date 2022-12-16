@@ -1,2 +1,1 @@
-web: echo "starting the app"
-service: node index.js
+web: node index.js

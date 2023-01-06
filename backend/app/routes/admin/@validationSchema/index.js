@@ -18,7 +18,7 @@ const postSuperAdminSchema = Joi.object({
 const getAdminsSchema = Joi.object({
   type: Joi.string()
     .optional()
-    .pattern(/^(superAdmin|admin)$/),
+    .pattern(/^(superAdmin|admin|self)$/),
   page: Joi.number().optional(),
 });
 
@@ -42,6 +42,16 @@ const forgotPasswordSchema = Joi.object({
 const resetPasswordSchema = Joi.object({
   newPassword: Joi.string().required(),
 });
+const updateAdminSchema =Joi.object({
+  firstName:Joi.string(),
+  lastName:Joi.string(),
+  contact:Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
+  username:Joi.string(),
+});
+
+const deleteAdminSchema = Joi.object({
+  id : Joi.string().min(24).max(24).required()
+})
 
 module.exports = {
   postSuperAdminSchema,
@@ -50,4 +60,6 @@ module.exports = {
   inviteAdminSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
+  updateAdminSchema,
+  deleteAdminSchema
 };

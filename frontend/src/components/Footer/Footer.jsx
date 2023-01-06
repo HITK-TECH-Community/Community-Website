@@ -79,6 +79,14 @@ export const Footer = (props) => {
             Technology, Chowbaga Road, Kolkata, West Bengal - 700107, India
             <br />
           </address>
+          <a
+            href="mailto:hitktechcommunity@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "white" }}
+          >
+            <p>Email: hitktechcommunity@gmail.com</p>
+          </a>
           {submited ? (
             <React.Fragment>
               <div
@@ -264,7 +272,7 @@ export const Footer = (props) => {
                 </li>
                 <li>
                   <a
-                    href="mailto:hitktechcommunity@gmail.com"
+                    href="https://www.instagram.com/hitktechcommunity"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -275,7 +283,7 @@ export const Footer = (props) => {
                       <span></span>
                       <div className={style["inner"]}>
                         <i
-                          className={`fas fa-envelope fa-lg ${style["fa-envelope-own"]}`}
+                          className={`fab fa-instagram fa-lg ${style["fa-instagram-own"]}`}
                         ></i>
                       </div>
                     </div>
@@ -295,6 +303,44 @@ export const Footer = (props) => {
                       <div className={style["inner"]}>
                         <i
                           className={`fab fa-github fa-lg ${style["fa-github-own"]}`}
+                        ></i>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/HitkTech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className={style["outer"]}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className={style["inner"]}>
+                        <i
+                          className={`fab fa-twitter fa-lg ${style["fa-twitter-own"]}`}
+                        ></i>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/channel/UCaMU1D4pJALSHLo6OsiDzGg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className={style["outer"]}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <div className={style["inner"]}>
+                        <i
+                          className={`fab fa-youtube fa-lg ${style["fa-youtube-own"]}`}
                         ></i>
                       </div>
                     </div>

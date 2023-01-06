@@ -1,0 +1,188 @@
+.resource-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 10px;
+  padding: 1.5rem;
+}
+
+.resource-card {
+  padding: 2rem;
+  background: #016795;
+  border-radius: 10px;
+}
+
+.resource-card:hover {
+  box-shadow: 0px 2px 2px 2px gray;
+}
+
+.resource-card > h2 {
+  text-align: center;
+  color: #fff;
+}
+
+.resource-card > h4 {
+  text-align: center;
+  color: #fff;
+  margin: 10px;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-url {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(115, 196, 228), rgb(111, 111, 247));
+  margin: 5px;
+  color: #fff;
+  width: 120px;
+  font-weight: bold;
+}
+
+.button-url:hover {
+  background: linear-gradient(45deg, rgb(111, 111, 247), rgb(115, 196, 228));
+}
+
+.button-delete {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(243, 109, 109));
+  margin: 5px;
+  color: #fff;
+  width: 120px;
+  font-weight: bold;
+}
+
+.button-delete:hover {
+  background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
+}
+
+.description-card {
+  padding: 2rem;
+  margin: 0;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.description-card > p {
+  margin: 10px;
+}
+
+.additional-info {
+  font-size: 1rem;
+}
+
+.expire-update-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  color: rgb(41, 41, 41);
+}
+
+.expire-update-card {
+  background: linear-gradient(45deg, #05abf8, #6dd1ff);
+  padding: 1.2rem;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.date-expire {
+  font-size: 0.8rem;
+  color: red;
+  font-weight: bold;
+}
+
+.date-update {
+  font-size: 0.8rem;
+  color: rgb(0, 150, 0);
+  font-weight: bold;
+}
+
+.dot-loader {
+  position: relative;
+  left: -9450px;
+  top: 300px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #016795;
+  color: #016795;
+  box-shadow: 9999px 0 0 -5px #016795;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+
+.dot-loader::before,
+.dot-loader::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #016795;
+  color: #016795;
+}
+
+.dot-loader::before {
+  box-shadow: 9984px 0 0 -5px #016795;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-loader::after {
+  box-shadow: 10014px 0 0 -5px #016795;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #016795;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #016795;
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px #016795;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #016795;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #016795;
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #016795;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #016795;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #016795;
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #016795;
+  }
+}

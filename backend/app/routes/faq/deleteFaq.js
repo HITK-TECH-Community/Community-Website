@@ -5,9 +5,9 @@ const constants = require('../../../constants');
 const Admin = require('../../models/Admin');
 
 module.exports = async (req, res, next) => {
-  const userId = req.body.userId;
-  const faqId = req.body.faqId;
-  if(!userId || !faqId){
+  const { userId } = req.body;
+  const { faqId } = req.body;
+  if (!userId || !faqId) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: `You don't have the required permissions`,
@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  const [err, response] = await to(Admin.findById(userId));
+  const [err] = await to(Admin.findById(userId));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  const [err2, response2] = await to(faq.findByIdAndDelete(faqId));
+  const [err2] = await to(faq.findByIdAndDelete(faqId));
   if (err2) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,

@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { Modals } from "../../Carousel/Modal/index.js";
-import { Delete, Edit } from "@material-ui/icons";
-import { IconButton } from "@material-ui/core";
-import { useSelector } from "react-redux";
-
 import style from "./card.module.scss";
 
-function deleteCard(id) {
-  const cardElement = document.getElementById(id);
-  cardElement.classList.add("gonnaRemove");
-  setTimeout(() => cardElement.remove(), 1000);
-}
 export function Card(props) {
   let dark = props.theme;
   const [flipped, setFlipped] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState({});
+
   const handleClick = () => {
     setFlipped(!flipped);
   };
-  const [open, setOpen] = useState(false);
-  const [data, setData] = useState({});
+
   const handleOpen = (s, h, i) => {
     setOpen(true);
     setData({ head: h, desc: s, img: i });
@@ -29,7 +22,7 @@ export function Card(props) {
     setOpen(false);
     setData({});
   };
-  const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
+
   const date = new Date(props.project.createdAt.slice(0, 10));
   var months = [
     "January",
@@ -78,22 +71,6 @@ export function Card(props) {
           onClick={handleClick}
         >
           <div className={style["clickable-card"]}>
-            {isSuperAdmin ? (
-              <div className={style["admin-controls"]}>
-                <IconButton
-                  className={style["icon-button"]}
-                  onClick={props.handler}
-                >
-                  <Edit />
-                </IconButton>
-                <IconButton
-                  className={style["icon-button"]}
-                  onClick={() => deleteCard(props.id)}
-                >
-                  <Delete />
-                </IconButton>
-              </div>
-            ) : null}
             <div
               className={
                 dark

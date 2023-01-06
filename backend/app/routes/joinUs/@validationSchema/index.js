@@ -5,8 +5,6 @@ const JoinUsValidationSchema = Joi.object().keys({
   email: Joi.string().required(),
   linkdin: Joi.string().required(),
   description: Joi.string().required(),
-  domain: Joi.array().required(),
-  department: Joi.string().required(),
   year: Joi.string().required(),
   college: Joi.string().required(),
   contact: Joi.string().required(),

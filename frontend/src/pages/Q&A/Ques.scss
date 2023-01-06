@@ -1,0 +1,39 @@
+.popup-creator {
+  width: 100%;
+  min-height: 80vh;
+}
+
+.question_form {
+  width: 50%;
+  border: 2px solid #2a4886;
+  border-radius: 7px;
+  margin: 5% 5% 5% 25%;
+}
+
+.close-popup {
+  position: relative;
+  margin-top: 1%;
+  background: black;
+  color: #69a9dd;
+  margin-left: 96.5%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #69a9dd;
+}
+
+@media (max-width: 650px) {
+  .question_form {
+    width: 85%;
+
+    margin: 5% 5% 5% 5%;
+  }
+}
+
+.data-loader {
+  width: 100%;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+  align-items: center;
+}

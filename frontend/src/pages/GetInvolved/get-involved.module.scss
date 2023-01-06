@@ -143,3 +143,50 @@
     max-width: 100vw;
   }
 }
+
+#heading-dark {
+  font-size: 2.3vw;
+  color: #fac87b;
+}
+
+#heading-light {
+  font-size: 2.3vw;
+  color: #000;
+}
+
+.contributors {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dash {
+  width: 250px;
+  height: 5px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+.dash-light {
+  background: rgb(255, 0, 90);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 90, 1) 0%,
+    rgba(10, 24, 61, 1) 90%
+  );
+}
+
+// for dark theme
+.dash-dark {
+  background: #2b5876;
+  background: linear-gradient(45deg, #2b5876 0%, #4e4376 90%);
+}

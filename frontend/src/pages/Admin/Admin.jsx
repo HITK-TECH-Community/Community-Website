@@ -16,11 +16,13 @@ import { Invite } from "./Components/Setting/Invite";
 import { Manage } from "./Components/Setting/Manage";
 import { ResetPassword } from "./Components/Setting/ResetPassword/ResetPassword";
 import { AddBroadcasts } from "./Components/Broadcast/AddBroadcasts";
+import { ManageBroadcasts } from "./Components/Broadcast/ManageBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
 import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
+import { ManageFaq } from "./Components/Faq/ManageFaq";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -210,12 +212,16 @@ export const Admin = (props) => {
             <AddBroadcasts />
           ) : tab === 10 ? (
             <AddFaq />
+          ) :tab === 17 ?(
+            <ManageFaq/>
           ) : tab === 13 ? (
             <ManageTeams />
           ) : tab === 14 ? (
             <AddTeamMember />
           ) : tab === 15 ? (
             <ResetPassword />
+          ) : tab === 16 ? (
+            <ManageBroadcasts />
           ) : null}
         </div>
       </div>

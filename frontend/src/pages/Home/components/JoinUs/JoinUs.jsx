@@ -15,13 +15,13 @@ export const JoinUs = (props) => {
             : `${styles["join-us"]} ${styles["join-us-light"]}`
         }
       >
-        <h1 className={styles["title"]}>Join Us</h1>
+        <h1 className={styles["title"]}>Why not join us?</h1>
         <div className={styles["dash"]}></div>
         <h2 className={styles["subtitle"]}>
-          Join us in the mission of reducing the knowledge gap in students.
+          Join in the mission of reducing the knowledge gap in students.
         </h2>
         <Link to="/join-us-form">
-          <Button3 label="Join Us!" type="submit" />
+          <Button3 label="Join" type="submit" />
         </Link>
       </div>
     </Fragment>

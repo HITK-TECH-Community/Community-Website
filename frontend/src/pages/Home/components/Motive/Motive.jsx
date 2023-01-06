@@ -35,9 +35,12 @@ export const Motive = (props) => {
                 ></div>
               </div>
               <p className="text text-white my-3">
-                At HITK Tech Community, we believe there is no limit to
-                learning. The more you learn, the more places you will go. Our
-                community aims at:
+                At HITK Tech Community, we believe there is{" "}
+                <b>no limit to learning </b>
+                <br />
+                <b>" The more you learn, the more places you will go "</b>
+                <br />
+                Our community aims at:
               </p>
             </div>
           </div>

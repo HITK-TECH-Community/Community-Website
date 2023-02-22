@@ -161,15 +161,13 @@ export function ResourceSharingForm(props) {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <div className={style["goodbye-card"]} style={{ marginTop: "50%" }}>
-              <div className={style["submit-btn"]}>
-                <NavLink to="/">
-                  <Button2
-                    className={style["submit-btn-text"]}
-                    label="Go Back to Home"
-                    type="submit"
-                  />
-                </NavLink>
+            <div className={style["goodbye-card"]}>
+              <h1 className={style["card-heading"]}>Hello There !</h1>
+              <div className={style["inside-card"]}>
+                <p style={{ textAlign: "center" }}>
+                  Congratulations !!! ✨ <br />
+                  Your Resource has been successfully added. 😄
+                </p>
               </div>
             </div>
           </React.Fragment>

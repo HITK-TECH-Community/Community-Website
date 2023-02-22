@@ -471,3 +471,34 @@ input[type="date"]:not(:valid):before {
     width: 100%;
   }
 }
+
+//Card Styles
+.card-heading {
+  padding-top: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+  font-size: 1.6rem !important;
+}
+
+.inside-card {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.goodbye-card {
+  width: 60%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 20% auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.inside-card p {
+  padding: 10px 5px;
+  font-size: 1.5rem !important;
+  font-weight: 580;
+}

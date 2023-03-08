@@ -11,7 +11,8 @@ module.exports = async (req, res, next) => {
       message: 'The server encountered an unexpected condition which prevented it from fulfilling the request.',
       errStack: err,
     });
-    return next(error);
+    console.log(error);
+    next(error);
   }
   if (!url) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
@@ -19,7 +20,6 @@ module.exports = async (req, res, next) => {
       message: 'No URL found',
     });
     next(error);
-    return false;
   }
   return res.status(200).redirect(url.longURL);
 };

@@ -88,7 +88,7 @@ The backend is live at [https://community-website-backend.onrender.com/](https:/
 
 ## Testing Credentials 🤖
 
-The dummy admin credentials to login to the admin dashboard are given below -
+The testing admin credentials to login to the admin dashboard are given below -
 
 ```
 {

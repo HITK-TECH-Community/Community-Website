@@ -61,7 +61,7 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: rgb(97, 97, 248);
+  background-color: rgb(124, 124, 252);
   margin: 5px;
   color: #fff;
   width: 100px;
@@ -71,7 +71,7 @@
 }
 
 .button-edit:hover {
-  background-color: rgb(111, 111, 247);
+  background-color: rgb(177, 177, 250);
 }
 
 .button-delete {
@@ -79,7 +79,7 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: rgb(243, 77, 77);
+  background-color: #fc0254;
   margin: 5px;
   color: #fff;
   width: 100px;
@@ -89,5 +89,5 @@
 }
 
 .button-delete:hover {
-  background-color: rgb(243, 112, 112);
+  background-color: #fc3779;
 }

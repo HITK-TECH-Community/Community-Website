@@ -52,6 +52,7 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   margin-top: 40px;
 }
 
@@ -60,16 +61,17 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background: linear-gradient(45deg, rgb(115, 196, 228), rgb(111, 111, 247));
+  background-color: rgb(97, 97, 248);
   margin: 5px;
   color: #fff;
   width: 100px;
   font-size: medium;
   font-weight: bold;
+  transition: background-color 200ms;
 }
 
-.button-url:hover {
-  background: linear-gradient(45deg, rgb(111, 111, 247), rgb(115, 196, 228));
+.button-edit:hover {
+  background-color: rgb(111, 111, 247);
 }
 
 .button-delete {
@@ -77,14 +79,15 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background: linear-gradient(45deg, rgb(255, 0, 0), rgb(243, 109, 109));
+  background-color: rgb(243, 77, 77);
   margin: 5px;
   color: #fff;
   width: 100px;
   font-size: medium;
   font-weight: bold;
+  transition: background-color 200ms;
 }
 
 .button-delete:hover {
-  background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
+  background-color: rgb(243, 112, 112);
 }

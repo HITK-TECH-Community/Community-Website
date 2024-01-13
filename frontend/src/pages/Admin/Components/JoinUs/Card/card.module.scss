@@ -1,17 +1,17 @@
 .card-item {
-    text-align: center;
-    font-size: 1.5rem;
-    border-radius: 1em;
-    height: auto;
-    width: 15em;
-    margin: 1em;
-    display: inline-block;
-    background-position: left center;
-    transition: all 0.5s ease-in;
-    background-color: #016795;
-    box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 1em;
+  height: auto;
+  width: 15em;
+  margin: 1em;
+  display: inline-block;
+  background-position: left center;
+  transition: all 0.5s ease-in;
+  background-color: #016795;
+  box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
 }
-  
+
 .card-title {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -19,7 +19,7 @@
   font-weight: bold;
   color: white;
 }
-  
+
 .card-detail {
   font-weight: bold;
   text-align: center;
@@ -29,23 +29,22 @@
 }
 
 .card-info {
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    padding: 14px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
 }
 
-.card-link{
-    color: white;
-    text-decoration: underline;
-    cursor: pointer;
+.card-link {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .card-link:hover {
   color: #fb8500;
-  
 }
 
 .button-group {
@@ -89,3 +88,81 @@
 .button-delete:hover {
   background: linear-gradient(45deg, rgb(243, 109, 109), rgb(255, 0, 0));
 }
+
+// .dot-loader {
+//   position: relative;
+//   left: -9450px;
+//   top: 300px;
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 5px;
+//   background-color: #016795;
+//   color: #016795;
+//   box-shadow: 9999px 0 0 -5px #016795;
+//   animation: dotPulse 1.5s infinite linear;
+//   animation-delay: 0.25s;
+// }
+
+// .dot-loader::before,
+// .dot-loader::after {
+//   content: "";
+//   display: inline-block;
+//   position: absolute;
+//   top: 0;
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 5px;
+//   background-color: #016795;
+//   color: #016795;
+// }
+
+// .dot-loader::before {
+//   box-shadow: 9984px 0 0 -5px #016795;
+//   animation: dotPulseBefore 1.5s infinite linear;
+//   animation-delay: 0s;
+// }
+
+// .dot-loader::after {
+//   box-shadow: 10014px 0 0 -5px #016795;
+//   animation: dotPulseAfter 1.5s infinite linear;
+//   animation-delay: 0.5s;
+// }
+
+// @keyframes dotPulseBefore {
+//   0% {
+//     box-shadow: 9984px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 9984px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 9984px 0 0 -5px #016795;
+//   }
+// }
+
+// @keyframes dotPulse {
+//   0% {
+//     box-shadow: 9999px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 9999px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 9999px 0 0 -5px #016795;
+//   }
+// }
+
+// @keyframes dotPulseAfter {
+//   0% {
+//     box-shadow: 10014px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 10014px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 10014px 0 0 -5px #016795;
+//   }
+// }

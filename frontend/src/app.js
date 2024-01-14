@@ -59,7 +59,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("Theme changed");
+    // console.log("Theme changed");
   }, [theme, toast]);
 
   useEffect(() => {

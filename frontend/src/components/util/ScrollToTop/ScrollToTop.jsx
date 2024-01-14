@@ -4,7 +4,7 @@ import style from "./scroll-to-top.module.scss";
 
 export const ScrollTop = (props) => {
   let dark = props.theme;
-  console.log(dark);
+  // console.log(dark);
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {

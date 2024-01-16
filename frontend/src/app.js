@@ -59,10 +59,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    // console.log("Theme changed");
-  }, [theme, toast]);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 

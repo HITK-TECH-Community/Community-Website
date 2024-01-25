@@ -1,13 +1,14 @@
-const router = require('express').Router({ mergeParams: true });
-const postJoinUs = require('./post');
-const getJoinUs = require('./get');
-const JoinUsValidationSchema = require('./@validationSchema');
-const validation = require('../../../helpers/middlewares/validation');
-const {authMiddleware} = require('../../../helpers/middlewares/auth')
-const deleteJoinUs = require("./deleteJoinUs")
+import express from "express";
+import postJoinUs from "./post"
+import getJoinUs from "./get";
+import JoinUsValidationSchema from './@validationSchema'
+import validation from '../../../helpers/middlewares/validation'
+import { authMiddleware } from "../../../helpers/middlewares/auth";
+import deleteJoinUs from "./deleteJoinUs"
+const router = express.Router({mergeParams:true})
 
 router.post('/', validation(JoinUsValidationSchema), postJoinUs);
 router.get('/', authMiddleware, getJoinUs);
 router.delete('/deleteJoinUs',deleteJoinUs)
 
-module.exports = router;
+export default router;

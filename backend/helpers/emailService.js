@@ -1,10 +1,11 @@
-const nodemailer = require('nodemailer');
-const to = require('await-to-js').default;
-const ejs = require('ejs');
-const { ErrorHandler } = require('./error');
-const constants = require('../constants');
-const { EMAIL_USER, EMAIL_PASS, EMAIL_HOST } = require('../config/index');
-const { getMailTemplate } = require('../utility/emailTemplates');
+import nodemailer from "nodemailer"
+import to from "await-to-js"
+import ejs from "ejs"
+import { ErrorHandler } from "./error";
+import constants from "../constants"
+import {EMAIL_HOST,EMAIL_PASS,EMAIL_USER} from "../config/index"
+import { getMailTemplate } from "../utility/emailTemplates";
+
 
 const transporter = nodemailer.createTransport({
   type: 'SMTP',
@@ -18,7 +19,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-module.exports.sendEmail = async (email, data, type) => {
+export default sendEmail = async (email, data, type) => {
   const template = getMailTemplate(type);
   const { subject } = template;
   let { text } = template;

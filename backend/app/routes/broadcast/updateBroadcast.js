@@ -1,9 +1,9 @@
-const to = require('await-to-js').default;
-const Broadcast = require('../../models/Broadcast');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
+import to from "await-to-js"
+import Broadcast from '../../models/Broadcast';
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
 
-module.exports  = async (req, res, next) => {
+export default async (req, res, next) => {
     if(Object.keys(req.body).length <= 1) {
         return res.status(200).send({
             message : "Not Sufficient Data"

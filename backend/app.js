@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const responseTime = require('response-time');
-const routes = require('./app/routes');
-const { errorHandler } = require('./helpers/error');
+import express from "express";
+import cors from "cors";
+import helmet from "helmet"
+import responseTime from "response-time";
+import routes from "./app/routes"
+import {errorHandler} from "./helpers/error"
 require('colors');
 require('./helpers/dbConnection');
 
@@ -43,4 +43,4 @@ process.on('uncaughtException', (err) => {
   console.log(err);
 });
 
-module.exports = app;
+export default app;

@@ -1,9 +1,9 @@
-const { default: to } = require("await-to-js");
-const constants = require("../../../constants");
-const { ErrorHandler } = require("../../../helpers/error");
-const Admin = require("../../models/Admin");
+import to from "await-to-js"
+import constants from "../../../constants";
+import  {ErrorHandler} from "../../../helpers/error";
+import Admin from "../../models/Admin";
 
-module.exports = async (req, res, next) => {
+export default async (req, res, next) => {
     const { isSuperAdmin } = res.locals.decode;
 
     if(!isSuperAdmin) {

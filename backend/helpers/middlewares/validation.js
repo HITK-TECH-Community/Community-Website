@@ -1,5 +1,7 @@
-const { ErrorHandler } = require('../error');
-const constants = require('../../constants');
+
+import { ErrorHandler } from '../error';
+import constants from "../../constants"
+
 
 const middleware = (schema, type = 'body') => (req, res, next) => {
   const { error, value } = schema.validate(type === 'body' ? req.body : req[type], { abortEarly: false });
@@ -17,4 +19,4 @@ const middleware = (schema, type = 'body') => (req, res, next) => {
   res.locals[type] = value;
   return next();
 };
-module.exports = middleware;
+export default middleware;

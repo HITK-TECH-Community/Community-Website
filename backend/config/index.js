@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from "dotenv";
+dotenv.config();
 
 const config = {
   MONGO_DB_URL: process.env.MONGO_DB_URL,
@@ -13,4 +14,4 @@ const config = {
   LOCAL_DEV_ENV: process.env.LOCAL_DEV_ENV,
 };
 
-module.exports = config;
+export default config;

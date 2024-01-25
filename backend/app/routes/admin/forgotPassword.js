@@ -1,10 +1,10 @@
-const Admin = require('../../models/Admin');
-const config = require('../../../config');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const { generateJWT } = require('../../../helpers/middlewares/auth');
+import Admin from '../../models/Admin'
+import config from '../../../config';
+import { ErrorHandler } from '../../../helpers/error';
+import constants from '../../../constants';
+import { generateJWT } from '../../../helpers/middlewares/auth';
 
-module.exports = async (req, res, next) => {
+export default async (req, res, next) => {
   const { email } = req.body;
   const userRecord = await Admin.findOne({ email });
   if (!userRecord) {

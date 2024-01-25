@@ -1,6 +1,6 @@
-const question = require('../../../models/question');
+import question from '../../../models/question';
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
   try {
     const { questionId } = req.body; // Getting question id from body
     const result = await question.findOne({ _id: questionId }); // Find the question corresponding to the given id

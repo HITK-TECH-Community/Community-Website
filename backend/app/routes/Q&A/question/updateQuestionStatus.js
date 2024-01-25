@@ -1,11 +1,12 @@
-const to  = require("await-to-js").default;
 
-const constants = require("../../../../constants");
-const { ErrorHandler } = require("../../../../helpers/error");
+import to from "await-to-js"
+import constants from "../../../../constants";
+import { ErrorHandler } from "../../../../helpers/error";
+import question from "../../../models/question"
 
-const question = require("../../../models/question");
 
-module.exports = async (req, res, next) => {
+
+export default async (req, res, next) => {
     // getting id and status from body
     const id = req.body.id;
     const status = req.body.status

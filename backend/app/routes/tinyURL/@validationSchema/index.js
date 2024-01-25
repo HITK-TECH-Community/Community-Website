@@ -1,7 +1,7 @@
-const Joi = require('joi');
+import Joi from "joi"
 
 const tinyURLSchema = Joi.object().keys({
   longURL: Joi.string().required().uri(),
 });
 
-module.exports = tinyURLSchema;
+export default tinyURLSchema;

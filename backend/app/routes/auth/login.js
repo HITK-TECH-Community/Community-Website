@@ -1,10 +1,10 @@
-const argon2 = require('argon2');
-const Admin = require('../../models/Admin');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const { generateJWT } = require('../../../helpers/middlewares/auth');
+import argon2 from "argon2"
+import Admin from '../../models/Admin'
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
+import { generateJWT } from "../../../helpers/middlewares/auth";
 
-module.exports = async (req, res, next) => {
+export default async (req, res, next) => {
   const { email, password } = req.body;
   const userRecord = await Admin.findOne({ email });
   if (!userRecord) {

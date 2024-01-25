@@ -1,20 +1,17 @@
-require('dotenv').config();
-const to = require('await-to-js').default;
-const http = require('http');
-const { ErrorHandler } = require('./helpers/error');
-const constants = require('./constants');
-const cronJob = require('./utility/cronJob');
-const cluster = require('./helpers/cluster');
-const joinUs = require('./app/models/joinUs');
-const contactUs = require('./app/models/contactUs');
-const sendEmail = require('./utility/sendEmail');
-const Resource = require('./app/models/resource');
-const {
-  JoinUsCronJobMailTemplate,
-  ContactUsCronJobMailTemplate,
-  ResourceDeletedMailTemplate,
-} = require('./utility/emailTemplates');
-const Admin = require('./app/models/Admin');
+import dotenv from "dotenv";
+import to from "await-to-js"
+import http from "http";
+import {ErrorHandler} from "./helpers/error"
+import constants from "./constants"
+import cronJob from "./utility/cronJob"
+import cluster from "./helpers/cluster";
+import joinUs from "./app/models/joinUs"
+import contactUs from "./app/models/contactUs"
+import sendEmail from "./utility/sendEmail"
+import Resource from "./app/models/resource"
+import { JoinUsCronJobMailTemplate,ContactUsCronJobMailTemplate,ResourceDeletedMailTemplate } from "./utility/emailTemplates";
+import Admin from "./app/models/Admin"
+dotenv.config();
 
 // Cron job to delete all resource data for 2months
 cronJob('0 0 2 * *', async (req, res, next) => {
@@ -203,4 +200,4 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-module.exports = app;
+export default app;

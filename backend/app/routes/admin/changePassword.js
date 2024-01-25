@@ -1,10 +1,11 @@
-const to = require('await-to-js').default;
-const argon2 = require('argon2');
-const Admin = require('../../models/Admin');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
+import to from "await-to-js"
+import argon2 from "argon2"
+import Admin from '../../models/Admin';
+import { ErrorHandler } from '../../../helpers/error';
+import constants from '../../../constants';
 
-module.exports = async (req, res, next) => {
+
+export default  async (req, res, next) => {
   const { oldPassword, newPassword } = req.body;
 
   if (oldPassword === newPassword) {

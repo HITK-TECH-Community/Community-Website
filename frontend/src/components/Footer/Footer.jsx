@@ -23,7 +23,7 @@ export const Footer = (props) => {
       isValid = false;
     }
     if (!email.trim()) {
-      emailErr.emailRequired = "* Email is required";
+      emailErr.emailRequired = "";
       isValid = false;
     }
     setEmailErr(emailErr);
@@ -230,6 +230,7 @@ export const Footer = (props) => {
             <ul className={dark ? style["nav-ul-dark"] : style["nav-ul"]}>
               <li>Be sure to give us a follow on the below social links</li>
             </ul>
+
             <div className={`col ${style["col"]}`}>
               <ul className={dark ? style["social-dark"] : style["social"]}>
                 <li>

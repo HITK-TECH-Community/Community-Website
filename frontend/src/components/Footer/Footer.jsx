@@ -23,7 +23,7 @@ export const Footer = (props) => {
       isValid = false;
     }
     if (!email.trim()) {
-      emailErr.emailRequired = "";
+      emailErr.emailRequired = "* Email is required";
       isValid = false;
     }
     setEmailErr(emailErr);

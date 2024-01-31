@@ -197,11 +197,6 @@
   color: white;
 }
 
-.fa-envelope:hover,
-.fa-envelope-own:hover {
-  color: #c71610;
-}
-
 .fa-linkedin:hover,
 .fa-linkedin-own:hover {
   color: #0088cc;
@@ -210,6 +205,12 @@
 .fa-slack:hover,
 .fa-slack-own:hover {
   color: #dd2a7b;
+}
+
+
+.fa-envelope:hover,
+.fa-envelope-own:hover {
+  color: #c71610;
 }
 
 .fa-instagram:hover,

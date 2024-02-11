@@ -1,10 +1,9 @@
-import to from "await-to-js";
-import { ErrorHandler } from "../../../helpers/error";
-import { sendEmail } from "../../../helpers/emailService";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const { ErrorHandler } = require('../../../helpers/error');
+const { sendEmail } = require('../../../helpers/emailService');
+const constants = require('../../../constants');
 
-
-export default emailTest = async (req, res, next) => {
+module.exports.emailTest = async (req, res, next) => {
   const { email, data, type } = req.body;
 
   const [err, response] = await to(sendEmail(email, data, type));

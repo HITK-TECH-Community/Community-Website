@@ -1,7 +1,6 @@
+const Resource = require('../../models/resource');
 
-import Resource from '../../models/resource'
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   try {
     const AllResources = await Resource.find();
     res.status(200).json(AllResources);

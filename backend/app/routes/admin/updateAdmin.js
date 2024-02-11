@@ -1,6 +1,6 @@
-import Admin from '../../models/Admin'
+const Admin = require('../../models/Admin');
 
-export default async (req, res) => {
+module.exports =async (req, res) => {
 
     try {
         const updatedAdmin = await Admin.findByIdAndUpdate(

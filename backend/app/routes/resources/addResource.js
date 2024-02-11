@@ -1,13 +1,12 @@
-import to from "await-to-js"
-import Resource from '../../models/resource'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
-import Admin from '../../models/Admin'
-import sendEmail from "../../../utility/sendEmail";
-import { ResourceAddedInformingMailTemplate } from "../../../utility/emailTemplates";
+const to = require('await-to-js').default;
+const Resource = require('../../models/resource');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
+const Admin = require('../../models/Admin');
+const sendEmail = require('../../../utility/sendEmail');
+const { ResourceAddedInformingMailTemplate } = require('../../../utility/emailTemplates');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const [err] = await to(Resource.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

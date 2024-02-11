@@ -1,15 +1,14 @@
-import express from "express";
-import addaResource from './addResource'
-import deleteResource from "./deleteResource"
-import getResource from "./getResource"
-import validation from '../../../helpers/middlewares/validation'
-import ResourcesValidationSchema from './@validationSchema'
-import { authMiddleware } from "../../../helpers/middlewares/auth";
-const router = express.Router({mergeParams:true})
+const router = require('express').Router({ mergeParams: true });
+const addaResource = require('./addResource');
+const deleteResource = require('./deleteResource');
+const getResource = require('./getResource');
+const validation = require('../../../helpers/middlewares/validation');
+const ResourcesValidationSchema = require('./@validationSchema');
+const { authMiddleware } = require('../../../helpers/middlewares/auth');
 
 router.post('/', validation(ResourcesValidationSchema), addaResource);
 
 // Route for deleting a resource
 router.delete('/deleteResource', deleteResource);
 router.get('/getresources', authMiddleware, getResource);
-export default router;
+module.exports = router;

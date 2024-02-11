@@ -1,11 +1,11 @@
-import to from "await-to-js"
-import argon2 from "argon2"
-import Admin from '../../models/Admin'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
-import { verifyToken } from "../../../helpers/middlewares/auth";
+const to = require('await-to-js').default;
+const argon2 = require('argon2');
+const Admin = require('../../models/Admin');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
+const { verifyToken } = require('../../../helpers/middlewares/auth');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   // Extracting the new password from the request
   const { newPassword } = req.body;
   // Extracting the TOKEN from URl /resetpassword/:token

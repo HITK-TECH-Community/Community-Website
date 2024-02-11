@@ -1,9 +1,9 @@
-import to from "await-to-js"
-import Broadcast from '../../models/Broadcast'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const Broadcast = require('../../models/Broadcast');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const [err, broadcast] = await to(Broadcast.findByIdAndDelete(req.params.id));
   if (!broadcast) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {

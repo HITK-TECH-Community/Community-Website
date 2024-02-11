@@ -1,15 +1,14 @@
-import express from "express";
-import faq from "./post"
-import getfaq from "./getFaq"
-import FAQValidationSchema from './@validationSchema'
-import validation from '../../../helpers/middlewares/validation';
-import deleteFaq from "./deleteFaq"
-import updateFaq from "./updateFaq";
-const router = express.Router({mergeParams:true})
+const router = require('express').Router({ mergeParams: true });
+const faq = require('./post');
+const getfaq = require('./getFaq');
+const FAQValidationSchema = require('./@validationSchema');
+const validation = require('../../../helpers/middlewares/validation');
+const deleteFaq = require('./deleteFaq');
+const updateFaq = require('./updateFaq');
 
 router.post('/faq', validation(FAQValidationSchema), faq);
 router.get('/getFaq', getfaq);
 router.put('/deleteFaq', deleteFaq);
 router.patch('/updateFaq',updateFaq);
 
-export default router;
+module.exports = router;

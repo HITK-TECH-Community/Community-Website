@@ -1,8 +1,8 @@
-import Joi from "joi";
+const Joi = require('joi');
 
 const loginSchema = Joi.object().keys({
   email: Joi.string().required(),
   password: Joi.string().required(),
 });
 
-export default loginSchema;
+module.exports = loginSchema;

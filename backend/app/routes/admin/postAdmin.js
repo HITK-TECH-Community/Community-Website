@@ -1,10 +1,10 @@
-import to from "await-to-js"
-import argon2 from "argon2";
-import Admin from '../../models/Admin'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const argon2 = require('argon2');
+const Admin = require('../../models/Admin');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const adminData = {
     ...req.body,
     isSuperAdmin: false,

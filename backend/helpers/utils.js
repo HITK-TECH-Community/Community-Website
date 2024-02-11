@@ -13,4 +13,4 @@ const replaceWithStrInObj = (obj, key, defaultString) => (obj[key] ? obj[key] : 
  */
 const replaceWithBlankStrInObj = (obj, key) => replaceWithStrInObj(obj, key, '');
 
-export{ replaceWithBlankStrInObj, replaceWithStrInObj };
+module.exports = { replaceWithBlankStrInObj, replaceWithStrInObj };

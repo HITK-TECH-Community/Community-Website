@@ -1,8 +1,7 @@
+const cluster = require('cluster');
+const os = require('os');
 
-import cluster from 'cluster';
-import os from "os";
-
-export default () => {
+module.exports = () => {
   if (process.env.CLUSTER === 'yes') {
     const numCPUs = os.cpus().length;
 

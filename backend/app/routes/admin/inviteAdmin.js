@@ -1,9 +1,9 @@
-import to from "await-to-js";
-import { ErrorHandler } from "../../../helpers/error";
-import { sendEmail } from "../../../helpers/emailService";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const { ErrorHandler } = require('../../../helpers/error');
+const { sendEmail } = require('../../../helpers/emailService');
+const constants = require('../../../constants');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const { email, data } = req.body;
   const type = 'INVITE-ADMIN';
 

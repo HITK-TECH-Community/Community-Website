@@ -1,4 +1,4 @@
-import Joi from "joi"
+const Joi = require('joi');
 
 const QuestionValidationSchema = Joi.object().keys({
   title: Joi.string().trim().required().min(5),
@@ -11,4 +11,4 @@ const updateQuestionStatusSchema = Joi.object().keys({
   status : Joi.boolean().required()
 });
 
-export { QuestionValidationSchema, updateQuestionStatusSchema };
+module.exports = { QuestionValidationSchema, updateQuestionStatusSchema };

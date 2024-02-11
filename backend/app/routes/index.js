@@ -1,26 +1,24 @@
-import express from "express";
-import admin from "./admin"
-import auth from "./auth"
-import {emailTest} from './testRoutes/emailTest'
-import tinyURL from "./tinyURL"
-import broadcast from "./broadcast"
-import faq from "./faq/post"
-import getFaq from "./faq/getFaq"
-import deleteFaq from "./faq/deleteFaq"
-import updateFaq from "./faq/updateFaq"
-import joinUs from "./joinUs"
-import contactUs from "./contactUs"
+const router = require('express').Router({ mergeParams: true });
+const admin = require('./admin');
+const auth = require('./auth');
+const { emailTest } = require('./testRoutes/emailTest');
+const tinyURL = require('./tinyURL');
+const broadcast = require('./broadcast');
+const faq = require('./faq/post');
+const getFaq = require('./faq/getFaq');
+const deleteFaq = require('./faq/deleteFaq');
+const updateFaq = require('./faq/updateFaq')
+const joinUs = require('./joinUs');
+const contactUs = require('./contactUs/post');
 
+const getContactUs = require('./contactUs/get');
+const contactValidationSchema = require('./contactUs/@validationSchema');
+const validation = require('../../helpers/middlewares/validation');
 
-import getContactUs from "./contactUs/get"
-import contactValidationSchema from "./contactUs/@validationSchema"
-import validation from '../../helpers/middlewares/validation'
-
-import question from "./Q&A/question"
-import answer from "./Q&A/answers"
-import teamMember from "./teamMember"
-import resource from "./resources"
-const router = express.Router({mergeParams:true});
+const question = require('./Q&A/question');
+const answer = require('./Q&A/answers');
+const teamMember = require('./teamMember');
+const resource = require('./resources');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -38,4 +36,4 @@ router.use('/joinUs', joinUs);
 router.use('/teamMember', teamMember);
 router.use('/', tinyURL);
 router.use('/resources', resource);
-export default router;
+module.exports = router;

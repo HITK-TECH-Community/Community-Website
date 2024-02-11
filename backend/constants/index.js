@@ -1,3 +1,3 @@
-import constants from "./constants.json"
+const constants = require('./constants.json');
 
-export default constants;
+module.exports = constants;

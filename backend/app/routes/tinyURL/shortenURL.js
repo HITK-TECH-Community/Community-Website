@@ -1,14 +1,13 @@
 // const urlExists = require('url-exists');
-import nanoid from "nanoid"
-import to from "await-to-js"
-import urlExists from "url-exists"
-import config from "../../../config";
-import Url from '../../models/tinyURL'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const { nanoid } = require('nanoid');
+const to = require('await-to-js').default;
+const urlExists = require('url-exists');
+const config = require('../../../config');
+const Url = require('../../models/tinyURL');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const { longURL } = req.body;
   const { BASE_URL } = config;
   urlExists(longURL, (_err, exists) => {

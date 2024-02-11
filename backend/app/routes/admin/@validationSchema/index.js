@@ -1,4 +1,4 @@
-import Joi from "joi"
+const Joi = require('joi');
 
 const postSuperAdminSchema = Joi.object({
   firstName: Joi.string()
@@ -53,7 +53,7 @@ const deleteAdminSchema = Joi.object({
   id : Joi.string().min(24).max(24).required()
 })
 
-export {
+module.exports = {
   postSuperAdminSchema,
   getAdminsSchema,
   passwordChangeSchema,

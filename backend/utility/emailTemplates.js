@@ -1,19 +1,19 @@
 // This function will be used to generate a template which will be utilized in all email types
 // module.exports.generateHtml(data){};
 
-const getMailTemplate = (type) => {
+module.exports.getMailTemplate = (type) => {
   const templates = {
     'INVITE-ADMIN': {
       // html:"",
       subject: '[INVITATION] Invited to become an admin',
       text:
-        `Hi <%= name %> \n We would love for you to join us at HITK Tech Community as an admin.\n\tHITK Tech Community is a platform built by the students and for the students with the main intent of increasing awareness towards plethora of opportunities and internships in tech all around/over the year. This will not only give practical work experience/exposure to students, but will also help everyone to know and grab their required opportunities in time!\nClick on <%= link %> for further action`,
+        'Hi <%= name %> \n We would love for you to join us at HITK Tech Community as an admin.\n\tHITK Tech Community is a platform built by the students and for the students with the main intent of increasing awareness towards plethora of opportunities and internships in tech all around/over the year. This will not only give practical work experience/exposure to students, but will also help everyone to know and grab their required opportunities in time!\nClick on <%= link %> for further action',
     },
   };
   return templates[type];
 };
 
-const JoinUsMailTemplate = (adminName, req) => {
+module.exports.JoinUsMailTemplate = (adminName, req) => {
   const emailContent = `
   <h4>Hi ${adminName}, </h4> There is new Join Us Request at Community Website with following details : <br><br>
   <ul>
@@ -32,7 +32,7 @@ const JoinUsMailTemplate = (adminName, req) => {
   return emailContent;
 };
 
-const JoinUsCronJobMailTemplate = (adminName) => {
+module.exports.JoinUsCronJobMailTemplate = (adminName) => {
   const emailContent = `
   <h4>Hi ${adminName},<br>
   Join Us Data has been removed !
@@ -42,7 +42,7 @@ const JoinUsCronJobMailTemplate = (adminName) => {
   return emailContent;
 };
 
-const ContactUsMailTemplate = (adminName, req) => {
+module.exports.ContactUsMailTemplate = (adminName, req) => {
   const emailContent = `
   <h4>Hi ${adminName}, </h4> There is new Contact Request at Community Website with following details : <br><br>
   <ul>
@@ -57,7 +57,7 @@ const ContactUsMailTemplate = (adminName, req) => {
   return emailContent;
 };
 
-const ResourceAddedInformingMailTemplate = (adminName, req) => {
+module.exports.ResourceAddedInformingMailTemplate = (adminName, req) => {
   const emailContent = `
   <h4>Hi ${adminName}, </h4> There is new Resource added at Community Website with following details : <br><br>
   <ul>
@@ -75,7 +75,7 @@ const ResourceAddedInformingMailTemplate = (adminName, req) => {
   return emailContent;
 };
 
-const ContactUsCronJobMailTemplate = (adminName) => {
+module.exports.ContactUsCronJobMailTemplate = (adminName) => {
   const emailContent = `
   <h4>Hi ${adminName},<br>
   The Contact Us Form data of last 2 month has been removed!
@@ -85,7 +85,7 @@ const ContactUsCronJobMailTemplate = (adminName) => {
   return emailContent;
 };
 
-const ResourceDeletedMailTemplate = (adminName) => {
+module.exports.ResourceDeletedMailTemplate = (adminName) => {
   const emailContent = `
   <h2>Hi ${adminName},<b2>
   The resource data of last 2 month has been removed
@@ -94,13 +94,3 @@ const ResourceDeletedMailTemplate = (adminName) => {
   `;
   return emailContent;
 };
-
-export {
-  getMailTemplate,
-  JoinUsMailTemplate,
-  JoinUsCronJobMailTemplate,
-  ContactUsMailTemplate,
-  ResourceAddedInformingMailTemplate,
-  ContactUsCronJobMailTemplate,
-  ResourceDeletedMailTemplate
-}

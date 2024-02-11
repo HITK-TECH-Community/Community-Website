@@ -1,4 +1,4 @@
-import Joi from "joi"
+const Joi = require('joi');
 
 const contactValidationSchema = Joi.object().keys({
   name: Joi.string().trim().required().min(3),
@@ -7,4 +7,4 @@ const contactValidationSchema = Joi.object().keys({
   message: Joi.string().trim().required().min(8),
 });
 
-export default contactValidationSchema;
+module.exports = contactValidationSchema;

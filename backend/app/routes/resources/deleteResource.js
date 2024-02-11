@@ -1,7 +1,6 @@
+const Resource = require('../../models/resource');
 
-import Resource from "../../models/resource"
-
-export default async (req, res) => {
+module.exports = async (req, res) => {
   try {
     const { resourceId } = req.body; // Getting resource id from the body
     const result = await Resource.findByIdAndDelete(resourceId); // Deleting the resource corresponding to reosource id

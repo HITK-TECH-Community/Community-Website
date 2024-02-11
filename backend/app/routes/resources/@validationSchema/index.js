@@ -1,4 +1,4 @@
-import Joi from "joi"
+const Joi = require('joi');
 
 const ResourcesValidationSchema = Joi.object().keys({
   name: Joi.string().trim().required().min(3),
@@ -10,4 +10,4 @@ const ResourcesValidationSchema = Joi.object().keys({
   additionalInfo: Joi.string().trim().min(5),
 });
 
-export default ResourcesValidationSchema;
+module.exports = ResourcesValidationSchema;

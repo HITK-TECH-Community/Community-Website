@@ -1,6 +1,6 @@
-import question from '../../../models/question'
+const question = require('../../../models/question');
 
-export default async (req, res) => {
+module.exports = async (req, res) => {
   try {
     const questions = {}; // Empty object filter which matches all the documents
 

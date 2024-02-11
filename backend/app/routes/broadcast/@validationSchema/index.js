@@ -1,4 +1,4 @@
-import Joi from "joi";
+const Joi = require('joi');
 
 const postBroadcastValidationSchema = Joi.object().keys({
   title: Joi.string().required(),
@@ -29,7 +29,7 @@ const getBroadcastsValidationSchema = Joi.object().keys({
   month: Joi.number().min(1).max(12).optional(),
 });
 
-export {
+module.exports = {
   postBroadcastValidationSchema,
   getBroadcastsValidationSchema,
   updateBroadcastValidationSchema

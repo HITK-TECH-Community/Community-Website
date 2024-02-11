@@ -1,10 +1,9 @@
-import to from "await-to-js"
-import FAQ from '../../models/faq'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const FAQ = require('../../models/faq');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const [err,response] = await to(FAQ.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

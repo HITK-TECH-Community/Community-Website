@@ -1,6 +1,5 @@
-
-import mongoose from 'mongoose';
-import config from "../config"
+const mongoose = require('mongoose');
+const config = require('../config');
 
 function connect() {
   mongoose.connect(config.MONGO_DB_URL, {
@@ -38,4 +37,4 @@ function connect() {
   });
 }
 
-export default connect();
+module.exports = connect();

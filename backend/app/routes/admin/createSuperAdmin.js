@@ -1,10 +1,9 @@
-import to from "await-to-js"
-import Admin from '../../models/Admin';
-import {ErrorHandler} from '../../../helpers/error';
-import constants  from "../../../constants";
+const to = require('await-to-js').default;
+const Admin = require('../../models/Admin');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const options = { upsert: true, new: true, setDefaultsOnInsert: true };
   const adminData = {
     firstName: 'Root',

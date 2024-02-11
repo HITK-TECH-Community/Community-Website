@@ -1,6 +1,6 @@
-import joinUsModel from '../../models/joinUs';
+const joinUsModel = require('../../models/joinUs');
 
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   try {
     const joinRequests = await joinUsModel.find();
     res.status(200).json(joinRequests);

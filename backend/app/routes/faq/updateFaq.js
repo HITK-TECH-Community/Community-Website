@@ -1,6 +1,6 @@
-import FAQ from '../../models/faq';
+const FAQ = require('../../models/faq');
 
-export default async(req,res,next) => {
+module.exports = async(req,res,next) => {
     try {
         let faqId = req.body.faqId;
         let faq = await FAQ.findById(faqId);

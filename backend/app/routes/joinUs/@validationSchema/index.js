@@ -1,4 +1,4 @@
-import Joi from "joi";
+const Joi = require('joi');
 
 const JoinUsValidationSchema = Joi.object().keys({
   name: Joi.string().required(),
@@ -13,4 +13,4 @@ const JoinUsValidationSchema = Joi.object().keys({
   department: Joi.string(),
 });
 
-export default JoinUsValidationSchema;
+module.exports = JoinUsValidationSchema;

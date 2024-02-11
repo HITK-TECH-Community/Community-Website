@@ -1,7 +1,6 @@
-import express from "expresss";
-import validationMiddleware from '../../../helpers/middlewares/validation'
-import { authMiddleware } from "../../../helpers/middlewares/auth";
-const router = express.Router({ mergeParams: true });
+const router = require('express').Router({ mergeParams: true });
+const validationMiddleware = require('../../../helpers/middlewares/validation');
+const { authMiddleware } = require('../../../helpers/middlewares/auth');
 
 const {
   postSuperAdminSchema,
@@ -38,4 +37,4 @@ router.put('/:id/:token', validationMiddleware(updateAdminSchema), updateAdmin);
 
 router.delete('/deleteAdmin', validationMiddleware(deleteAdminSchema), authMiddleware, deleteAdmin);
 
-export default router;
+module.exports = router;

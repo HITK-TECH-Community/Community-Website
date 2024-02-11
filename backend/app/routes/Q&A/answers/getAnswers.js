@@ -1,11 +1,10 @@
-import to from "await-to-js"
-import mongoose from "mongoose";
-import Answer from '../../../models/answers'
-import { ErrorHandler } from "../../../../helpers/error";
-import constants from "../../../../constants";
+const to = require('await-to-js').default;
+const mongoose = require('mongoose');
+const Answer = require('../../../models/answers');
+const { ErrorHandler } = require('../../../../helpers/error');
+const constants = require('../../../../constants');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const qId = req.body.question_id;
 
   const [err, answers] = await to(

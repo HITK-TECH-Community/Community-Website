@@ -1,10 +1,9 @@
-import to from "await-to-js"
-import tinyURL from '../../models/tinyURL'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const tinyURL = require('../../models/tinyURL');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
-
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const [err, url] = await to(tinyURL.findOne({ urlCode: req.params.code }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

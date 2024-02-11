@@ -1,8 +1,7 @@
-
-import cron from "node-cron"
+const cron = require('node-cron');
 
 const cronJob = (time, fnc) => {
   cron.schedule(time, fnc);
 };
 
-export default cronJob;
+module.exports = cronJob;

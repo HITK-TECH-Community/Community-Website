@@ -1,7 +1,7 @@
-import to from "await-to-js"
-import Broadcast from '../../models/Broadcast'
-import { ErrorHandler } from "../../../helpers/error";
-import constants from "../../../constants";
+const to = require('await-to-js').default;
+const Broadcast = require('../../models/Broadcast');
+const { ErrorHandler } = require('../../../helpers/error');
+const constants = require('../../../constants');
 
 const limit = constants.PAGINATION_LIMIT.GET_BROADCASTS;
 
@@ -30,7 +30,7 @@ const getBroadcastsAggregate = (startIndex, match) => {
   ];
   return pipeline;
 };
-export default async (req, res, next) => {
+module.exports = async (req, res, next) => {
   const page = parseInt(req.query.page, 10) || 1;
   const tags = req.query.tags?.split(',');
   const year = parseInt(req.query.year, 10);

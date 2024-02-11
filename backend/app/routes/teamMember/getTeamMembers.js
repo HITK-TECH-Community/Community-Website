@@ -1,10 +1,12 @@
-const to = require('await-to-js').default;
-const TeamMemberModel = require('../../models/TeamMember');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
+
+import to from "await-to-js"
+import TeamMemberModel from '../../models/TeamMember'
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
 
 
-module.exports = async (req, res, next) => {
+
+export default async (req, res, next) => {
   const [err, members] = await to(TeamMemberModel.find());
 
   if (err) {

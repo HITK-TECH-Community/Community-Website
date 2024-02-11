@@ -1,12 +1,14 @@
-const router = require('express').Router({ mergeParams: true });
-const postQuestion = require('./post');
-const { QuestionValidationSchema, updateQuestionStatusSchema } = require('./@validationSchema');
-const getAllQuestion = require('./getAllQuestion');
-const getQuestionById = require('./getQuestionById');
-const validation = require('../../../../helpers/middlewares/validation');
-const upvoteQuestion = require('./upvoteQuestion');
-const downvoteQuestion = require('./downvoteQuestion');
-const updateQuestionStatus = require('./updateQuestionStatus');
+
+import express from "express";
+import postQuestion from "./post";
+import {QuestionValidationSchema , updateQuestionStatusSchema} from './@validationSchema'
+import getAllQuestion from './getAllQuestion'
+import getQuestionById from "./getQuestionById"
+import validation from '../../../../helpers/middlewares/validation'
+import upvoteQuestion from "./upvoteQuestion"
+import downvoteQuestion from "./downvoteQuestion"
+import updateQuestionStatus from "./updateQuestionStatus"
+const router = express.Router({mergeParams:true})
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
@@ -25,4 +27,4 @@ router.patch('/downvote', downvoteQuestion);
 // route for updating the question status
 router.patch('/updateStatus', validation(updateQuestionStatusSchema), updateQuestionStatus);
 
-module.exports = router;
+export default router;

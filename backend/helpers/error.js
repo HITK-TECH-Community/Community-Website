@@ -1,4 +1,5 @@
-const utils = require('./utils');
+
+import utils from "./utils"
 
 class ErrorHandler extends Error {
   constructor(errorType, error) {
@@ -15,4 +16,4 @@ const errorHandler = (err, _req, res, _next) => {
   res.status(err.statusCode).json(err);
 };
 
-module.exports = { ErrorHandler, errorHandler };
+export { ErrorHandler, errorHandler };

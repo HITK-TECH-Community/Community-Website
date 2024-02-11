@@ -1,10 +1,10 @@
-const to = require('await-to-js').default;
-const faq = require('../../models/faq');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const Admin = require('../../models/Admin');
+import to from "await-to-js"
+import faq from '../../models/faq'
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
+import Admin from '../../models/Admin'
 
-module.exports = async (req, res, next) => {
+export default async (req, res, next) => {
   const { userId } = req.body;
   const { faqId } = req.body;
   if (!userId || !faqId) {

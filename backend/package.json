@@ -2,6 +2,7 @@
   "name": "community-website",
   "version": "1.0.0",
   "description": "HITK Community Website",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

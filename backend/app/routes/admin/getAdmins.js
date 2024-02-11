@@ -1,7 +1,7 @@
-const to = require('await-to-js').default;
-const Admin = require('../../models/Admin');
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
+import to from "await-to-js";
+import Admin from '../../models/Admin'
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
 
 const getAdminsAggregate = (match, page) => {
   const pipeline = [
@@ -23,7 +23,7 @@ const getAdminsAggregate = (match, page) => {
   return pipeline;
 };
 
-module.exports = async (req, res, next) => {
+export default async (req, res, next) => {
   const page = req.query.page || 1;
   const adminType = req.query.type;
   let match = {};

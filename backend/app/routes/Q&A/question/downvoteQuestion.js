@@ -1,9 +1,10 @@
-const to = require('await-to-js').default;
-const question = require('../../../models/question');
-const { ErrorHandler } = require('../../../../helpers/error');
-const constants = require('../../../../constants');
+import to from "await-to-js"
+import question from '../../../models/question';
+import { ErrorHandler } from "../../../../helpers/error";
+import constants from "../../../../constants";
 
-module.exports = async (req, res, next) => {
+
+export default async (req, res, next) => {
   const { questionId } = req.body;
   const [err] = await to(
     question.updateOne({ _id: questionId }, [

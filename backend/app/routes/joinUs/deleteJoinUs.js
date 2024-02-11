@@ -1,5 +1,6 @@
-const joinUsModel = require('../../models/joinUs');
-module.exports = async(req,res,next) => {
+import joinUsModel from '../../models/joinUs';
+
+export default async(req,res,next) => {
     try {
         const id = req.body.itemId
         const result = await joinUsModel.findByIdAndDelete(id);

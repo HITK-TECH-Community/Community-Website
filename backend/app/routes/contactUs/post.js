@@ -1,12 +1,13 @@
-const to = require('await-to-js').default;
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const contactUs = require('../../models/contactUs');
-const Admin = require('../../models/Admin');
-const sendEmail = require('../../../utility/sendEmail');
-const { ContactUsMailTemplate } = require('../../../utility/emailTemplates');
+import to from "await-to-js"
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
+import contactUs from '../../models/contactUs'
+import Admin from '../../models/Admin'
+import sendEmail from "../../../utility/sendEmail";
+import { ContactUsMailTemplate } from "../../../utility/emailTemplates";
 
-module.exports = async (req, res, next) => {
+
+export default async (req, res, next) => {
   const [err] = await to(contactUs.create({ ...req.body }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

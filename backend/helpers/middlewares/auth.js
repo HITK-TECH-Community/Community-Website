@@ -1,8 +1,9 @@
-const to = require('await-to-js').default;
-const { sign, verify } = require('jsonwebtoken');
-const { ErrorHandler } = require('../error');
-const config = require('../../config');
-const constants = require('../../constants');
+import to from "await-to-js"
+import {sign , verify} from "jsonwebtoken"
+import { ErrorHandler } from "../error";
+import config from "../../config"
+import constants from "../../constants"
+
 
 const generateJWT = (payload, expiry = config.JWT_EXPIRES_IN) =>
   sign(payload, config.JWT_SECRET_KEY, { expiresIn: expiry });
@@ -38,4 +39,4 @@ const authMiddleware = async (req, res, next) => {
   next();
 };
 
-module.exports = { authMiddleware, generateJWT, verifyToken };
+export { authMiddleware, generateJWT, verifyToken };

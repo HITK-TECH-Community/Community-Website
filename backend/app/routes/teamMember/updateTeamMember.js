@@ -1,6 +1,6 @@
-const TeamMemberModel = require('../../models/TeamMember');
+import TeamMemberModel from '../../models/TeamMember'
 
-module.exports = async(req,res) => {
+export default async(req,res) => {
     try {
         const payload = res.locals.decode;
         let teamMember = await TeamMemberModel.findById(req.body.teamMemberId)

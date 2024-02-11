@@ -1,8 +1,9 @@
-const router = require('express').Router({ mergeParams: true });
-const login = require('./login');
-const loginSchema = require('./@validationSchema');
-const validation = require('../../../helpers/middlewares/validation');
+import express from "express";
+import login from "./login";
+import loginSchema from './@validationSchema'
+import validation from '../../../helpers/middlewares/validation'
+const router = express.Router({ mergeParams: true });
 
 router.post('/login', validation(loginSchema), login);
 
-module.exports = router;
+export default router;

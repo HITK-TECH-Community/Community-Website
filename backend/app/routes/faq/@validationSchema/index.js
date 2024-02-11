@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from "joi";
 
 const FAQValidationSchema = Joi.object().keys({
   question: Joi.string().required(),
@@ -6,4 +6,4 @@ const FAQValidationSchema = Joi.object().keys({
   tags: Joi.array().required(),
 });
 
-module.exports = FAQValidationSchema;
+export default FAQValidationSchema;

@@ -1,9 +1,10 @@
-const to = require('await-to-js').default;
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const TeamMemberModel = require('../../models/TeamMember');
+import to from "await-to-js"
+import { ErrorHandler } from "../../../helpers/error";
+import constants from "../../../constants";
+import TeamMemberModel from '../../models/TeamMember'
 
-module.exports = async (req, res, next) => {
+
+export default async (req, res, next) => {
   const payload = res.locals.decode;
   if (payload.isSuperAdmin === false) {
     res.status(401).json({ error: 'You are not an admin' });

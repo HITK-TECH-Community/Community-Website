@@ -207,14 +207,30 @@
   color: #dd2a7b;
 }
 
+
 .fa-envelope:hover,
 .fa-envelope-own:hover {
   color: #c71610;
 }
 
+.fa-instagram:hover,
+.fa-instagram-own:hover {
+  color: #f77737;
+}
+
 .fa-github:hover,
 .fa-github-own:hover {
   color: #7af7cd;
+}
+
+.fa-twitter:hover,
+.fa-twitter-own:hover {
+  color: #1da1f2;
+}
+
+.fa-youtube:hover,
+.fa-youtube-own:hover {
+  color: #ff0000;
 }
 
 .footer-dash {
@@ -570,6 +586,14 @@ a > span {
 
 .input-field-footer-dark::placeholder {
   color: #fff;
+}
+
+.input-field-footer::placeholder {
+  color: #555555;
+}
+
+.input-field-footer:focus::placeholder {
+  color: #999999;
 }
 
 .validation {

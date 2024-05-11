@@ -4,28 +4,39 @@
 }
 
 .question_form {
-  width: 50%;
   border: 2px solid #2a4886;
   border-radius: 7px;
-  margin: 5% 5% 5% 25%;
+  padding: 1rem;
+}
+
+// fixed missplacement of close btn
+
+.close-btn{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .close-popup {
-  position: relative;
-  margin-top: 1%;
-  background: black;
-  color: #69a9dd;
-  margin-left: 96.5%;
+  background: #000;
+  color: #55b3ff;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   border: 1px solid #69a9dd;
 }
 
+//
+
+ul{
+  padding: 0rem;
+}
+.toppings-list{
+
+}
+
 @media (max-width: 650px) {
   .question_form {
-    width: 85%;
-
+    width: 90%;
     margin: 5% 5% 5% 5%;
   }
 }

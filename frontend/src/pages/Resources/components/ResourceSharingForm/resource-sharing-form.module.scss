@@ -217,8 +217,12 @@
 }
 
 .inside-resource {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 [type="radio"] {

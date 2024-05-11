@@ -176,9 +176,11 @@ function Ques(props) {
           }
         >
           <form className="question_form" onSubmit={handleSubmit}>
+            <div className="close-btn">
             <button className="close-popup" onClick={DeactiveButton}>
               X
             </button>
+            </div>
             <h3
               className={
                 dark
@@ -188,7 +190,7 @@ function Ques(props) {
             >
               Ask your questions
             </h3>
-            <div className={style["inside-resource"]}>
+            <div className={style["inside-resource"] }>
               <div className="question-inputs">
                 <div className={`form-group ${style["form-group"]}`}>
                   <div

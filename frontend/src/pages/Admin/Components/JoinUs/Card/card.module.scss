@@ -91,3 +91,81 @@
 .button-delete:hover {
   background-color: #fc3779;
 }
+
+// .dot-loader {
+//   position: relative;
+//   left: -9450px;
+//   top: 300px;
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 5px;
+//   background-color: #016795;
+//   color: #016795;
+//   box-shadow: 9999px 0 0 -5px #016795;
+//   animation: dotPulse 1.5s infinite linear;
+//   animation-delay: 0.25s;
+// }
+
+// .dot-loader::before,
+// .dot-loader::after {
+//   content: "";
+//   display: inline-block;
+//   position: absolute;
+//   top: 0;
+//   width: 10px;
+//   height: 10px;
+//   border-radius: 5px;
+//   background-color: #016795;
+//   color: #016795;
+// }
+
+// .dot-loader::before {
+//   box-shadow: 9984px 0 0 -5px #016795;
+//   animation: dotPulseBefore 1.5s infinite linear;
+//   animation-delay: 0s;
+// }
+
+// .dot-loader::after {
+//   box-shadow: 10014px 0 0 -5px #016795;
+//   animation: dotPulseAfter 1.5s infinite linear;
+//   animation-delay: 0.5s;
+// }
+
+// @keyframes dotPulseBefore {
+//   0% {
+//     box-shadow: 9984px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 9984px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 9984px 0 0 -5px #016795;
+//   }
+// }
+
+// @keyframes dotPulse {
+//   0% {
+//     box-shadow: 9999px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 9999px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 9999px 0 0 -5px #016795;
+//   }
+// }
+
+// @keyframes dotPulseAfter {
+//   0% {
+//     box-shadow: 10014px 0 0 -5px #016795;
+//   }
+//   30% {
+//     box-shadow: 10014px 0 0 2px #016795;
+//   }
+//   60%,
+//   100% {
+//     box-shadow: 10014px 0 0 -5px #016795;
+//   }
+// }

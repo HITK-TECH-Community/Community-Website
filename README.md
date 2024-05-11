@@ -26,6 +26,9 @@ This project aims to build the official site for the community page so that any 
 
 
 ##  Getting Started 👨‍💻
+
+**NOTE - You must be on NODE Version 14**
+
 ### Setup the repository to your local environment.
 
 1. `Fork` the repository  - Creates a replica of repository to your local environment.

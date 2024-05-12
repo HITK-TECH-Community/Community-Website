@@ -1,8 +1,10 @@
 import style from "./card.module.scss";
 
 export function Card(props) {
-    return (
+  
 
+    return (
+        
         <div className={style["card-item"]}>
             <div className={style["card-info"]}>
                 <h1>{props.content.name}</h1>
@@ -13,13 +15,12 @@ export function Card(props) {
                 <h3 className={style['card-detail']}>{props.content.contact}</h3>
                 <p>{props.content.description}</p>
                 <p>{props.content.email}</p>
-                <a className={style['card-link']} href={props.content.linkedin}>Linkdin</a>
-                 <div className={style["button-group"]}>
-                    <button className={style["button-edit"]}>URL</button>
-                    <button className={style["button-delete"]}>Delete</button>
+                <a className={style['card-link']} href={props.content.linkdin} target="_blank" rel="noreferrer">LinkedIn</a>
+                 <div className={style["button-group"]}>  
+                    <button className={style["button-delete"]}   onClick={() => props.onClickDelete(props.content._id)}>Delete</button>
                   </div>
             </div>
-
+          
         </div>
     );
 }

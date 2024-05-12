@@ -1,10 +1,8 @@
 import { useState } from "react";
 import style from "./card.module.scss";
 export function Card(props) {
-    
-        const [isDelete, setIsDelete] = useState(true);
+
         const [isLoading, setIsLoading] = useState(false);
-      
         const handleDeleteClick = async () => {
           setIsLoading(true);
           try {
@@ -33,7 +31,6 @@ export function Card(props) {
                 <button className={style["button-delete"]} onClick={handleDeleteClick}>Delete
                 </button>
                  )}
-
                 </div>
             </div>
         </div>

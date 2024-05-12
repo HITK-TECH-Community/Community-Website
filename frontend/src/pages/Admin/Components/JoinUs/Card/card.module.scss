@@ -91,3 +91,77 @@
 .button-delete:hover {
   background-color: #fc3779;
 }
+
+.dot-loader {
+  position: relative;
+  margin:15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #000000;
+  animation: dotPulse 1s infinite linear; /* Added animation for main dot */
+  animation-delay: 0.25s;
+}
+
+.dot-loader::before,
+.dot-loader::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #000000;
+}
+
+.dot-loader::before {
+  left: -15px;
+  box-shadow: 15px 0 0 -5px #000000;
+  animation: dotPulseBefore 1s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-loader::after {
+  left: 15px;
+  box-shadow: -15px 0 0 -5px #000000;
+  animation: dotPulseAfter 1s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+  30% {
+    box-shadow: 0 0 0 2px #000000;
+  }
+  60%,
+  100% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+}
+@keyframes dotPulse {
+  0% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+  30% {
+    box-shadow: 0 0 0 2px #000000;
+  }
+  60%,
+  100% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+}
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+  30% {
+    box-shadow: 0 0 0 2px #000000;
+  }
+  60%,
+  100% {
+    box-shadow: 0 0 0 -5px #000000;
+  }
+}

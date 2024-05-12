@@ -37,7 +37,6 @@ export function JoinUs() {
   const token = localStorage.getItem("token");
   
     try {
-      await new Promise(resolve => setTimeout(resolve, 5000));
       const response = await axios.delete(`${END_POINT}/joinUs/deleteJoinUs`, {
         headers: { Authorization: `Bearer ${token}` },
         data: { itemId: id },

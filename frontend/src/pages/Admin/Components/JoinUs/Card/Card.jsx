@@ -17,7 +17,7 @@ export function Card(props) {
                 <p>{props.content.email}</p>
                 <a className={style['card-link']} href={props.content.linkdin} target="_blank" rel="noreferrer">LinkedIn</a>
                  <div className={style["button-group"]}>  
-                    <button className={style["button-delete"]}   onClick={() => props.onClickDelete(props.content._id)}>Delete</button>
+                    <button className={style["button-delete"]}   onClick={() => props.OnClickDelete(props.content._id)}>Delete</button>
                   </div>
             </div>
           

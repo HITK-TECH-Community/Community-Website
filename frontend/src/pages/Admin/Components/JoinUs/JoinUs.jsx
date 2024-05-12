@@ -12,7 +12,7 @@ import { SimpleToast } from "../../../../components/util/Toast/Toast.jsx";
 export function JoinUs() {
   const [joinUsData, setJoinUsData] = useState([]);
   const [isLoaded,setIsLoaded] = useState(false);
-  const fetchJoinUs = async () => {
+  const FetchJoinUs = async () => {
     const response = await fetch(`${END_POINT}/joinUs`, {
       method: "GET",
       headers: {
@@ -28,15 +28,15 @@ export function JoinUs() {
 
     /* card deleting functionality */
 
-  const handleDeleteSuccess = (id) => {
+  const HandleDeleteSuccess = (id) => {
     setJoinUsData(prevData => prevData.filter(item => item._id !== id));
     console.log(id);
   };
 
-  const [openDeleteToast, setDeleteToast] = useState(false);
-  const [openDeleteError, setDeleteError] = useState(false);
+  const [OpenDeleteToast, setDeleteToast] = useState(false);
+  const [OpenDeleteError, setDeleteError] = useState(false);
 
-  const onClickDelete = async (id) => {
+  const OnClickDelete = async (id) => {
     const token = localStorage.getItem("token");
   
     try {
@@ -49,7 +49,7 @@ export function JoinUs() {
       if (message.message === "Deleted successfully") {
         setDeleteToast(true);
         // update and set the joinUsData 
-        handleDeleteSuccess(id);
+        HandleDeleteSuccess(id);
       
         
       } else {
@@ -62,14 +62,14 @@ export function JoinUs() {
     }
   };
 
-  const handleDeleteToast = (event, reason) => {
+  const HandleDeleteToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     setDeleteToast(false);
   };
 
-  const handleDeleteError = (event, reason) => {
+  const HandleDeleteError = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -79,7 +79,7 @@ export function JoinUs() {
 
   useEffect(() => {
     setIsLoaded(true)
-    fetchJoinUs()
+    FetchJoinUs()
   }, [])
  
   return (
@@ -92,7 +92,7 @@ export function JoinUs() {
             {
               joinUsData.map((data) => {
                 return (
-                  <Card key={data._id} content={data} onClickDelete={onClickDelete}/>
+                  <Card key={data._id} content={data} OnClickDelete={OnClickDelete}/>
                 );
               })
             }
@@ -100,15 +100,15 @@ export function JoinUs() {
         </Grid>
       </div>}
       <SimpleToast
-                open={openDeleteToast}
+                open={OpenDeleteToast}
                 message="Resource deleted successfully!"
-                handleCloseToast={handleDeleteToast}
+                handleCloseToast={HandleDeleteToast}
                 severity="success"
             />
             <SimpleToast
-                open={openDeleteError}
+                open={OpenDeleteError}
                 message="Something went wrong. Try again!"
-                handleCloseToast={handleDeleteError}
+                handleCloseToast={HandleDeleteError}
                 severity="error"
             />
     </div>

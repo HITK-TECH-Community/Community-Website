@@ -105,8 +105,12 @@ export function Login(props) {
             .json()
             .then((res) => {
               if (response.status === 200) {
+                const firstName = res.name.split(' ')[0];
                 localStorage.setItem("token", res.token);
                 localStorage.setItem("isSuperAdmin", res.isSuperAdmin);
+                localStorage.setItem("firstName", firstName);
+                localStorage.setItem("email", res.email);
+                localStorage.setItem("phone", res.phone);
                 window.location = "/dashboard?loggedin";
               } else if (response.status === 400) {
                 setOpenError2Toast(true);
@@ -114,7 +118,9 @@ export function Login(props) {
                 setOpenError3Toast(true);
               }
             })
-            .catch((err) => setOpenError3Toast(true))
+            .catch((err) => {
+              console.error(err);
+              setOpenError3Toast(true)})
         )
         .catch((err) => {
           setOpenError1Toast(true);

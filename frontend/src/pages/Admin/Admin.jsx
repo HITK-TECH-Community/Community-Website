@@ -30,6 +30,7 @@ export const Admin = (props) => {
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
   const closeMobileMenu = () => setIsMenuOpen(false);
   const dispatch = useDispatch();
+  const firstName = localStorage.getItem("firstName");
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -55,7 +56,7 @@ export const Admin = (props) => {
               className={style["img-admin"]}
               alt="admin_img"
             />
-            <h1 className={style["h1"]}>Welcome Admin!</h1>
+            <h1 className={style["h1"]}>Welcome {firstName}!</h1>
           </div>
           <ul
             className={

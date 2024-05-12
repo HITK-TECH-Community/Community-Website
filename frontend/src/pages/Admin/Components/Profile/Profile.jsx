@@ -9,6 +9,12 @@ export function Profile() {
   const [phone, setPhone] = useState("+91-1234567891");
   const [edit, setEdit] = useState(false);
 
+  useEffect(() => {
+    setName(localStorage.getItem("firstName"));
+    setEmail(localStorage.getItem("email"));
+    setPhone(localStorage.getItem("phone"));
+  },[setName,setEmail,setPhone])
+
   return (
     <div className={style["profile-container"]}>
       <h1>My Profile</h1>

@@ -38,22 +38,23 @@ export function ManageTeams() {
             <div style={{display:"flex", justifyContent:"center",alignItems:"center"}}>
               <img src={d.image || "./images/defaultUser.png"} style={{margin:"auto", borderRadius:"50%", width:"200px", height:"200px"}} alt="" />
             </div>
-            <h4> {d.full_name} </h4>
+            <h2 className="head1"> {d.full_name} </h2>
             <div className={style["content"]}>
               <h3 style={{fontWeight:"bolder"}}>About</h3> {d.description}
             </div>
             <div className={style["content"]}>
-            <h3 style={{fontWeight:"bold"}}>LinkedIn</h3><a href={d.linkedin_url} target="_blank" rel="noopener noreferrer" >{d.linkedin_url&&`${d.linkedin_url?.slice(0,10)}...${d.linkedin_url?.slice(d.linkedin_url?.length - 10)}`}</a>
+            {d.linkedin_url&&<a href={d.linkedin_url} className={style["url"]} target="_blank" rel="noopener noreferrer" >Linkedin</a>}
             </div>
             <div className={style["content"]}>
-            <h3 style={{fontWeight:"bold"}}>GitHub</h3><a href={d.github_url} target="_blank" rel="noopener noreferrer" >{d.github_url&&`${d.github_url?.slice(0,10)}...${d.github_url?.slice(d.github_url?.length - 10)}`}</a>
+            {d.github_url&&<a href={d.github_url} className={style["url"]} target="_blank" rel="noopener noreferrer" >GitHub</a>}
             </div>
             <div className={style["content"]}>
-            <h3 style={{fontWeight:"bold"}}>Twitter</h3><a href={d.twitter_url} target="_blank" rel="noopener noreferrer" >{d.twitter_url&&`${d.twitter_url?.slice(0,10)}...${d.twitter_url?.slice(d.twitter_url?.length - 10)}`}</a>
+            {d.twitter_url&&<a href={d.twitter_url} className={style["url"]} target="_blank" rel="noopener noreferrer" >Twitter</a>}
             </div>
             <div className={style["content"]}>
             <h3 style={{fontWeight:"bold"}}>Team</h3>{d.teams?.join(", ")}
             </div>
+            <button className={style["delete"]}>Delete</button>
           </div>
         ))}
       </div>

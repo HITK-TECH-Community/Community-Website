@@ -78,4 +78,24 @@
   }
 }
 
+.url{
+  text-decoration: underline;
+  color: white;
+}
 
+.url:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+.delete{
+  width: 90px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}

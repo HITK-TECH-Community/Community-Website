@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   useLocation,
 } from "react-router-dom";
 import { SimpleToast } from "../src/components/util/Toast/index";
@@ -30,7 +31,7 @@ import { Setting } from "./pages/Admin/Components/Setting";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/index";
 import { Resources } from "./pages/Resources/index";
 import { Faq } from "./pages/Faq";
-import Ques from "./pages/Q&A/Q&A.jsx"
+import Ques from "./pages/Q&A/Q&A.jsx";
 import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
@@ -81,7 +82,13 @@ const App = () => {
               path="/dashboard"
               render={() => <Admin theme={theme} />}
             />
-          ) : null}
+          ) : (
+            <Route
+              exact={true}
+              path="/dashboard"
+              render={() => <Redirect to="/admin" />}
+            />
+          )}
           <div>
             <Navbar handleClick={toggleTheme} theme={theme} />
             <Switch>

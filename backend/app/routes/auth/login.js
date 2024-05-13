@@ -32,6 +32,7 @@ module.exports = async (req, res, next) => {
     name: `${userRecord.firstName} ${userRecord.lastName}`,
     email: userRecord.email,
     isSuperAdmin: userRecord.isSuperAdmin,
+    phone: userRecord.contact,
   };
   const JWT = generateJWT(JWTPayload);
   const response = { ...JWTPayload, token: JWT };

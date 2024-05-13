@@ -1,3 +1,11 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable prefer-const */
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 const teamMemberModel = require('../../models/TeamMember');
 module.exports = async(req,res,next) => {
     try {

@@ -9,15 +9,14 @@ module.exports = async (req, res, next) => {
     res.status(401).json({ error: 'You are not an admin' });
   }
 
-  const { fullName, description, linkedlinUrl, githubUrl, twitterUrl, teams } = req.body;
   const teammember = new TeamMemberModel({
-    full_name: fullName,
-    image: req.file.path,
-    description,
-    linkedlin_url: linkedlinUrl,
-    github_url: githubUrl,
-    twitter_url: twitterUrl,
-    teams,
+    full_name: req.body?.full_name,
+    image: req.body?.image,
+    description: req.body?.description,
+    linkedin_url: req.body?.linkedin_url,
+    github_url: req.body?.github_url,
+    twitter_url: req.body?.twitter_url,
+    teams: req.body?.teams,
   });
 
   const [err, result] = await to(teammember.save());

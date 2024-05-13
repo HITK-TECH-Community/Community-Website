@@ -1,3 +1,10 @@
+/* eslint-disable no-shadow */
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable prefer-const */
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 const FAQ = require('../../models/faq');
 
 module.exports = async(req,res,next) => {
@@ -7,6 +14,7 @@ module.exports = async(req,res,next) => {
         if(faq == null) {
             return res.json({message:"invalid id"});
         }
+        
         const updatedFaq = {question:req.body.question,answer:req.body.answer,isActive:req.body.isActive,tags:req.body.tags};
         FAQ.findByIdAndUpdate(faqId,{$set:updatedFaq},{new:true},function(err,faq) {
             if (err) return res.status(500).send({error: err});

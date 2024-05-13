@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import style from "./profile.module.scss";
@@ -6,7 +6,7 @@ import style from "./profile.module.scss";
 export function Profile() {
   const [name, setName] = useState("Super Admin Name");
   const [email, setEmail] = useState("xyz@gmail.com");
-  const [phone, setPhone] = useState("+91-1234567891");
+  const [phone, setPhone] = useState("+91-123456789");
   const [edit, setEdit] = useState(false);
 
   useEffect(() => {

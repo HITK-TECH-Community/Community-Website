@@ -5,8 +5,9 @@
 .manage-teams {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 1.5em;
+  gap: 20px;
   margin: 2em;
+  height: auto;
 }
 
 .content {
@@ -19,6 +20,7 @@
 
 .crd {
   min-width: 100px;
+  max-width: 470px;
   min-height: 12em;
   display: flex;
   flex-direction: column;
@@ -50,18 +52,21 @@
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 983px) {
   .manage-teams {
     grid-template-columns: auto;
     margin: 1em 0;
+    justify-content: center;
   }
 
   .conts {
     width: 90%;
   }
-
+  .crd{
+    max-width: 400px;
+  }
   .content {
-    overflow: hidden;
+    overflow-wrap: break-word;
     padding: 1rem 1.2rem;
   }
 }
@@ -71,4 +76,26 @@
     overflow: hidden;
     padding: 1.5rem 3.5rem;
   }
+}
+
+.url{
+  text-decoration: underline;
+  color: white;
+}
+
+.url:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+.delete{
+  width: 90px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }

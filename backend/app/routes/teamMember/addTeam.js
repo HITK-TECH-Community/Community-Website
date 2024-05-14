@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
   const { fullName, description, linkedinUrl, githubUrl, twitterUrl, teams } = req.body;
   const teammember = new TeamMemberModel({
     full_name: fullName,
-    image: req.file.path,
+    image: req.file?.path,
     description,
     linkedin_url: linkedinUrl,
     github_url: githubUrl,

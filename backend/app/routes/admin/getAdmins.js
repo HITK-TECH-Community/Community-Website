@@ -33,7 +33,7 @@ module.exports = async (req, res, next) => {
     };
   } else if (adminType === 'self') {
     match = {
-      email: req.body.email || '',
+      email: req.query.email || '',
     };
   }
   const [err, response] = await to(Admin.aggregate(getAdminsAggregate(match, page)));

@@ -193,6 +193,9 @@ function Ques(props) {
     });
 
     if (!response.ok) {
+      setToastMessage("Failed to upvote question");
+      setOpenToast(true);
+      setSeverity("error");
       throw new Error("Failed to upvote question");
     }
     // const data = await response.json();
@@ -212,7 +215,10 @@ function Ques(props) {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to upvote question");
+      setToastMessage("Failed to downvote question");
+      setOpenToast(true);
+      setSeverity("error");
+      throw new Error("Failed to downvote question");
     }
     // const data = await response.json();
     // console.log(data);
@@ -224,9 +230,6 @@ function Ques(props) {
 
   useEffect(() => {
     getQues();
-    setToastMessage("Fetching Questions...");
-    setOpenToast(true);
-    setSeverity("success");
   }, []);
 
   return (

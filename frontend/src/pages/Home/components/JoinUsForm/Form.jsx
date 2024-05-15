@@ -285,7 +285,9 @@ export const JoinUsForm = (props) => {
                   value={domains} // Preselected value to persist in dropdown
                   onChange={setDomains} // Function will trigger on change event
                   labelledBy={"Domains"} // Property name to display in the dropdown options
-                  className={dark ? styles["dropdown"] : ""}
+                  className={
+                    dark ? styles["dropdown-dark"] : styles["dropdown"]
+                  }
                 />
 
                 <div

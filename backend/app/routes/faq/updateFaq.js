@@ -7,6 +7,7 @@ module.exports = async(req,res,next) => {
         if(faq == null) {
             return res.json({message:"invalid id"});
         }
+        
         const updatedFaq = {question:req.body.question,answer:req.body.answer,isActive:req.body.isActive,tags:req.body.tags};
         FAQ.findByIdAndUpdate(faqId,{$set:updatedFaq},{new:true},function(err,faq) {
             if (err) return res.status(500).send({error: err});

@@ -22,11 +22,72 @@
   border: 1px solid #69a9dd;
 }
 
+.question-cards {
+  width: 100%;
+  height: auto;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 40px 40px 40px;
+}
+
+.question-card {
+  width: 350px;
+  height: auto;
+  background: #282c35;
+  border-radius: 10px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-up {
+  padding: 10px;
+}
+
+.card-down {
+  width: 100%;
+  height: auto;
+  background-color: #243e74;
+  color: white;
+  padding: 10px;
+  border-top: 1px solid white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-down p {
+  margin: 0;
+}
+
+.vote-btn {
+  background-color: #69a9dd;
+  outline: 1px solid white;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
 @media (max-width: 650px) {
   .question_form {
     width: 85%;
 
     margin: 5% 5% 5% 5%;
+  }
+}
+@media (max-width: 400px) {
+  .question-cards {
+    padding: 40px 10px 40px 10px;
+  }
+  .question-card {
+    width: 100%;
   }
 }
 

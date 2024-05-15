@@ -7,7 +7,11 @@ import Joi from "joi-browser";
 import Loader from "../../components/util/Loader/index";
 import { SimpleToast } from "../../components/util/Toast";
 import { END_POINT } from "../../config/api";
-import { ErrorSharp } from "@material-ui/icons";
+import {
+  AirplayTwoTone,
+  ErrorSharp,
+  SettingsBluetoothSharp,
+} from "@material-ui/icons";
 
 function Ques(props) {
   let dark = props.theme;
@@ -59,6 +63,7 @@ function Ques(props) {
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
   );
+  const [loading, setLoading] = useState(true);
 
   const [formdata, setFormData] = useState({
     title: "",
@@ -172,6 +177,7 @@ function Ques(props) {
     })
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false);
         setQuestions(data);
         // console.log(data);
       });
@@ -191,6 +197,9 @@ function Ques(props) {
     }
     // const data = await response.json();
     getQues();
+    setToastMessage("Upvote Successfully");
+    setOpenToast(true);
+    setSeverity("success");
   };
 
   const downvote = async (questionId) => {
@@ -208,10 +217,16 @@ function Ques(props) {
     // const data = await response.json();
     // console.log(data);
     getQues();
+    setToastMessage("Downvote Successfully");
+    setOpenToast(true);
+    setSeverity("success");
   };
 
   useEffect(() => {
     getQues();
+    setToastMessage("Fetching Questions...");
+    setOpenToast(true);
+    setSeverity("success");
   }, []);
 
   return (
@@ -219,7 +234,9 @@ function Ques(props) {
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
-      {getQuestions.length >= 0 ? (
+      {getQuestions.length <= 0 ? (
+        <Loader></Loader>
+      ) : (
         <div className="question-cards">
           {getQuestions.map((item, key) => (
             <div className="question-card" key={key}>
@@ -251,8 +268,6 @@ function Ques(props) {
             </div>
           ))}
         </div>
-      ) : (
-        <Loader />
       )}
 
       <SimpleToast

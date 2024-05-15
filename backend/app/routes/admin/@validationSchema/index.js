@@ -20,6 +20,7 @@ const getAdminsSchema = Joi.object({
     .optional()
     .pattern(/^(superAdmin|admin|self)$/),
   page: Joi.number().optional(),
+  email: Joi.string().email().optional(),
 });
 
 const passwordChangeSchema = Joi.object({

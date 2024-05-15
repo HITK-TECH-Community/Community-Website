@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button2, Button1 } from "../../components/util/Button";
 import style from "../Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
 import "./Ques.scss";
@@ -6,7 +6,7 @@ import { useState } from "react";
 import Joi from "joi-browser";
 import Loader from "../../components/util/Loader/index";
 import { SimpleToast } from "../../components/util/Toast";
-import {END_POINT} from "../../config/api"
+import { END_POINT } from "../../config/api";
 import { ErrorSharp } from "@material-ui/icons";
 
 function Ques(props) {
@@ -53,8 +53,8 @@ function Ques(props) {
 
   const [isUploadingData, setIsUploadingData] = useState(false);
   const [open, setOpenToast] = useState(false);
-  const [toastMessage,setToastMessage] = useState("");
-  const [severity,setSeverity] = useState('success')
+  const [toastMessage, setToastMessage] = useState("");
+  const [severity, setSeverity] = useState("success");
   const [isButtonPressed, setButtonPressed] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
@@ -70,7 +70,7 @@ function Ques(props) {
     setTimeout(() => {
       setOpenToast(false);
     }, 500);
-  }
+  };
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
@@ -105,39 +105,38 @@ function Ques(props) {
     const data = { ...formdata };
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
-    setFormErrors({})
+    setFormErrors({});
   };
 
   const uploadData = async (formdata) => {
     try {
       const url = `${END_POINT}/question`;
-      const response = await fetch(url,{
-        method:"POST",
-        headers : {
-          "content-type":"application/json"
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
         },
-        body : JSON.stringify(formdata)
+        body: JSON.stringify(formdata),
       });
       const data = await response.json();
-      setIsUploadingData(false)
-      setToastMessage("Q&A added successfully!")
-      setOpenToast(true)
-      setSeverity("success")
+      setIsUploadingData(false);
+      setToastMessage("Q&A added successfully!");
+      setOpenToast(true);
+      setSeverity("success");
       setFormData({
         title: "",
         description: "",
         tags: [],
-      })
-      setFormErrors({})
-      setCheckedState(new Array(Tags.length).fill(false))
-    }
-    catch(err) {
-      setIsUploadingData(false)
+      });
+      setFormErrors({});
+      setCheckedState(new Array(Tags.length).fill(false));
+    } catch (err) {
+      setIsUploadingData(false);
       setToastMessage("Something went wrong!");
-      setOpenToast(true)
+      setOpenToast(true);
       setSeverity("error");
     }
-  }
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     let isValid = true;
@@ -145,13 +144,13 @@ function Ques(props) {
     Object.keys(formdata).map((key) => {
       if (formdata[key] === "" || formdata[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
-        setFormErrors(errors)
+        setFormErrors(errors);
         isValid = false;
       }
       return 0;
     });
-    if(isValid && formdata.tags.length !== 0) {
-      setIsUploadingData(true)
+    if (isValid && formdata.tags.length !== 0) {
+      setIsUploadingData(true);
       uploadData(formdata);
     }
   };
@@ -161,12 +160,107 @@ function Ques(props) {
   function DeactiveButton() {
     setButtonPressed(!isButtonPressed);
   }
+
+  const [getQuestions, setQuestions] = useState([]);
+
+  function getQues() {
+    fetch(`${END_POINT}/question/getallquestions`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setQuestions(data);
+        // console.log(data);
+      });
+  }
+
+  const upvote = async (questionId) => {
+    const response = await fetch(`${END_POINT}/question/upvote`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ questionId }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to upvote question");
+    }
+    // const data = await response.json();
+    getQues();
+  };
+
+  const downvote = async (questionId) => {
+    const response = await fetch(`${END_POINT}/question/downvote`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ questionId }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to upvote question");
+    }
+    // const data = await response.json();
+    // console.log(data);
+    getQues();
+  };
+
+  useEffect(() => {
+    getQues();
+  }, []);
+
   return (
     <div
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
-      <SimpleToast open={open} message={toastMessage} severity={severity} handleCloseToast={handleCloseToast}/>
+      {getQuestions.length >= 0 ? (
+        <div className="question-cards">
+          {getQuestions.map((item, key) => (
+            <div className="question-card" key={key}>
+              <div className="card-up">
+                <p>{item.title}</p>
+                <p>{item.description}</p>
+                {item.tags.map((i, key) => (
+                  <span className="tag-space" key={key}>
+                    #{i}
+                  </span>
+                ))}
+              </div>
+              <div className="card-down">
+                <div>
+                  <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
+                </div>
+                <div>
+                  <button className="vote-btn" onClick={() => upvote(item._id)}>
+                    👍{item.upvotes}
+                  </button>
+                  <button
+                    className="vote-btn"
+                    onClick={() => downvote(item._id)}
+                  >
+                    👎 {item.downvote}
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Loader />
+      )}
+
+      <SimpleToast
+        open={open}
+        message={toastMessage}
+        severity={severity}
+        handleCloseToast={handleCloseToast}
+      />
       {isButtonPressed ? (
         <div
           className={
@@ -308,7 +402,9 @@ function Ques(props) {
                 className={style["submit-btn"]}
                 style={{ justifyContent: "space-around" }}
               >
-                <div className="data-loader">{isUploadingData?<Loader/>:null}</div>
+                <div className="data-loader">
+                  {isUploadingData ? <Loader /> : null}
+                </div>
                 <Button2
                   style={{ marginRight: "3%" }}
                   className={style["submit-btn-text"]}
@@ -321,18 +417,18 @@ function Ques(props) {
         </div>
       ) : (
         <div
-        className={
-          dark
+          className={
+            dark
               ? `${style["resource-section"]} ${style["resource-section-dark"]}`
               : `${style["resource-section"]} ${style["resource-section-light"]}`
-            }
+          }
         >
           <div
             className={
               dark
-              ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
+                ? `${style["resource-form"]} ${style["resource-form-dark"]} ${style["child2"]}`
                 : `${style["resource-form"]} ${style["resource-form-light"]} ${style["child2"]}`
-              }
+            }
             style={{ marginTop: "12%" }}
           >
             <div
@@ -340,13 +436,13 @@ function Ques(props) {
                 dark
                   ? `${style["resource-card"]} ${style["resource-card-dark"]} `
                   : `${style["resource-card"]} ${style["resource-card-light"]}`
-                }
+              }
             >
               <h3
                 className={
                   dark
-                  ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
-                  : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
+                    ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                    : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
                 }
               >
                 Ask your questions

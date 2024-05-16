@@ -2,7 +2,7 @@ const question = require('../../../models/question');
 
 module.exports = async (req, res) => {
   try {
-    const { questionId } = req.body; // Getting question id from body
+    const { questionId } = req.params; // Getting question id from body
     const result = await question.findOne({ _id: questionId }); // Find the question corresponding to the given id
     return res.json(result);
   } catch (error) {

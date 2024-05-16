@@ -20,7 +20,8 @@ import { ManageBroadcasts } from "./Components/Broadcast/ManageBroadcasts";
 import { AddFaq } from "./Components/Faq/AddFaq";
 import { logout } from "../../store/actions/auth";
 import decode from "jwt-decode";
-
+import axios from "axios";
+import { END_POINT } from "../../config/api";
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
 
@@ -30,7 +31,25 @@ export const Admin = (props) => {
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
   const closeMobileMenu = () => setIsMenuOpen(false);
   const dispatch = useDispatch();
-  const firstName = localStorage.getItem("firstName");
+  const [adminData, setAdminData] = useState({});
+  const FetchAdminData = async () => {
+    try {
+      const baseUrl = `${END_POINT}/admin`;
+      const params = {
+        type: "self",
+        email: localStorage.getItem("email"),
+      };
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      };
+      // Make the GET request using Axios
+      const response = await axios.get(baseUrl, { params, headers });
+      setAdminData(response.data[0]);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -39,6 +58,8 @@ export const Admin = (props) => {
       if (Date.now() >= exp * 1000) {
         localStorage.setItem("expired", true);
         logout(dispatch); //Key expired
+      } else {
+        FetchAdminData();
       }
     } catch (err) {
       logout(dispatch);
@@ -56,7 +77,7 @@ export const Admin = (props) => {
               className={style["img-admin"]}
               alt="admin_img"
             />
-            <h1 className={style["h1"]}>Welcome {firstName}!</h1>
+            <h1 className={style["h1"]}>Welcome {adminData.firstName}!</h1>
           </div>
           <ul
             className={
@@ -188,7 +209,7 @@ export const Admin = (props) => {
         </div>
         <div className={style["right"]}>
           {tab === 0 ? (
-            <Profile />
+            <Profile adminData={adminData} />
           ) : tab === 1 ? (
             <Dashboard setTab={setTab} />
           ) : tab === 2 ? (
@@ -213,8 +234,8 @@ export const Admin = (props) => {
             <AddBroadcasts />
           ) : tab === 10 ? (
             <AddFaq />
-          ) :tab === 17 ?(
-            <ManageFaq/>
+          ) : tab === 17 ? (
+            <ManageFaq />
           ) : tab === 13 ? (
             <ManageTeams />
           ) : tab === 14 ? (

@@ -10,7 +10,9 @@ export function Profile(props) {
   const [edit, setEdit] = useState(false);
 
   useEffect(() => {
-    let Name = props.adminData.firstName + " " + props.adminData.lastName;
+    let firstName = props.adminData.firstName ? props.adminData.firstName : "";
+    let lastName = props.adminData.lastName ? props.adminData.lastName : "";
+    let Name = firstName + " " + lastName;
     setName(Name);
     setEmail(props.adminData.email);
     setPhone(props.adminData.contact);

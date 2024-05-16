@@ -74,7 +74,7 @@ function Ques(props) {
   const handleCloseToast = (event, reason) => {
     setTimeout(() => {
       setOpenToast(false);
-    }, 500);
+    }, 1000);
   };
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -124,10 +124,19 @@ function Ques(props) {
         body: JSON.stringify(formdata),
       });
       const data = await response.json();
+      
       setIsUploadingData(false);
-      setToastMessage("Q&A added successfully!");
-      setOpenToast(true);
-      setSeverity("success");
+      console.log(data)
+      if(!data.errorType){
+        setToastMessage("Q&A added successfully!");
+        setOpenToast(true);
+        setSeverity("success");
+
+      }else{
+        setToastMessage(`${data.errStack}`);
+        setOpenToast(true);
+        setSeverity("error");
+      }
       setFormData({
         title: "",
         description: "",
@@ -421,14 +430,14 @@ function Ques(props) {
                 style={{ justifyContent: "space-around" }}
               >
                 <div className="data-loader">
-                  {isUploadingData ? <Loader /> : null}
-                </div>
-                <Button2
+                  {isUploadingData ? <Loader /> : <Button2
                   style={{ marginRight: "3%" }}
                   className={style["submit-btn-text"]}
                   label="Submit"
                   type="submit"
-                />
+                />}
+                </div>
+                
               </div>
             </div>
           </form>

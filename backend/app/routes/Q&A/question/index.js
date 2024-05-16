@@ -14,7 +14,7 @@ router.post('/', validation(QuestionValidationSchema), postQuestion);
 router.get('/getallquestions', getAllQuestion);
 
 // This route will give question by given id
-router.get('/:getQuestionById', getQuestionById);
+router.get('/getQuestionById/:questionId', getQuestionById);
 
 // This route will increase upvote by one.
 router.patch('/upvote', upvoteQuestion);

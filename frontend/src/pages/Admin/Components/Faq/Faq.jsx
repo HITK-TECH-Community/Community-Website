@@ -40,6 +40,19 @@ export function Faq(props) {
             </div>
           </div>
         </div>
+        <div className={style["card-item"]}>
+          <div className={style["clickable-card"]}>
+            <div className={style["card-title"]}>
+              MANAGE Q&A
+              <AiFillEdit className={style["editt"]} />
+            </div>
+            <div className={style["card-content"]}>
+              <div onClick={()=>props.setTab(18)} className={style["main-btn"]}>
+                Manage here
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

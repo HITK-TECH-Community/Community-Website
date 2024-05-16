@@ -6,6 +6,7 @@ import MultiSelect from "react-multi-select-component";
 import { Button2 } from "../../../../components/util/Button/index";
 import { Grid } from "@material-ui/core";
 import { SimpleToast } from "./../../../../components/util/Toast/Toast";
+import { END_POINT } from "../../../../config/api";
 
 export function AddTeamMember() {
   const options = [
@@ -27,10 +28,12 @@ export function AddTeamMember() {
   const [formerrors, setFormErrors] = useState({});
   const [teamError, setTeamError] = useState();
   const [teams, setTeams] = useState([]);
+  const [selectTeam, setSelectTeam] = useState([]);
   const [picUrl, setPicUrl] = useState("./images/admin.png");
   const [pic, setPic] = useState();
-  const [openSuccess, setOpenSuccessToast] = React.useState(false);
-
+  const [toastStatus,setToastStatus] = useState(false);
+  const [toastMessage,setToastMessage] = useState("");
+  const [toastType,setToastType] = useState("")
   const schema = {
     fullName: Joi.string().required(),
     description: Joi.string().required(),
@@ -85,7 +88,7 @@ export function AddTeamMember() {
     if (reason === "clickaway") {
       return;
     }
-    setOpenSuccessToast(false);
+    setToastStatus(false);
   };
 
   const handleChange = (e) => {
@@ -101,9 +104,8 @@ export function AddTeamMember() {
     setFormErrors(errors);
   };
 
-  console.log("formerrors: ", formerrors);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
     if (formdata["linkedin"] === "") {
@@ -131,7 +133,15 @@ export function AddTeamMember() {
       console.log(errors);
     } else {
       //Call the Server
-      console.log("Submitted");
+      const form = new FormData();
+      form.append("fullName", formdata?.fullName);
+      form.append("description", formdata?.description);
+      form.append("linkedinUrl", formdata?.linkedin);
+      form.append("githubUrl", formdata.github);
+      form.append("twitterUrl", formdata.twitter);
+      form.append("teams", selectTeam);
+      form.append("image", pic);
+      await addTeamMember(form)
       const temp = {
         fullName: "",
         description: "",
@@ -141,9 +151,28 @@ export function AddTeamMember() {
       };
       setFormData(temp);
       setTeams([]);
-      setOpenSuccessToast(true);
+      setPicUrl("./images/admin.png")
+      setToastType("success")
+      setToastMessage("User added Successfully!")
+      setToastStatus(true);
     }
     return pic;
+  };
+  const addTeamMember = async (data) => {
+    try {
+      let url = `${END_POINT}/teamMember/addTeamMember`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: data,
+      });
+    } catch (error) {
+      setToastMessage("Sorry! Error is adding team Member")
+      setToastType("error")
+      setToastStatus(true);
+    }
   };
   return (
     <div className={styles["add-team-member-section"]}>
@@ -288,7 +317,13 @@ export function AddTeamMember() {
               <MultiSelect
                 options={options} // Options to display in the dropdown
                 value={teams} // Preselected value to persist in dropdown
-                onChange={setTeams} // Function will trigger on change event
+                onChange={(selectedOptions) => {
+                  const selectedValues = selectedOptions.map(
+                    (option) => option.value
+                  );
+                  setSelectTeam(selectedValues);
+                  setTeams(selectedOptions);
+                }}
                 labelledBy={"Teams"} // Property name to display in the dropdown options
                 className={styles["dropdown"]}
               />
@@ -310,12 +345,13 @@ export function AddTeamMember() {
           </div>
         </div>
       </div>
-      <SimpleToast
-        open={openSuccess}
-        message="New member added successfully"
+      
+      {toastStatus && <SimpleToast
+        open={toastStatus}
+        message={toastMessage}
         handleCloseToast={handleCloseToast}
-        severity="success"
-      />
+        severity={toastType}
+      />}
     </div>
   );
 }

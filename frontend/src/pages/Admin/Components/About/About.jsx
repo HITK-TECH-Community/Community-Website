@@ -2,7 +2,6 @@ import React from "react";
 import style from "./about-us.module.scss";
 import { AiFillEdit } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
 export function About(props) {
   return (
@@ -12,9 +11,9 @@ export function About(props) {
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              <Link onClick={() => props.setTab(14)} style={{ color: "white" }}>
+              <div onClick={() => props.setTab(14)} style={{ color: "white" }}>
                 ADD TEAM MEMBER
-              </Link>
+              </div>
               <AiOutlinePlus className={style["add"]} />
             </div>
             <div className={style["card-content"]}>
@@ -22,9 +21,9 @@ export function About(props) {
               <p
                 style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
-                <Link onClick={() => props.setTab(14)} style={{ color: "red" }}>
+                <div onClick={() => props.setTab(14)} style={{ color: "red" }}>
                   CLICK HERE
-                </Link>
+                </div>
               </p>
             </div>
           </div>

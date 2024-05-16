@@ -31,8 +31,9 @@ export function AddTeamMember() {
   const [selectTeam, setSelectTeam] = useState([]);
   const [picUrl, setPicUrl] = useState("./images/admin.png");
   const [pic, setPic] = useState();
-  const [openSuccess, setOpenSuccessToast] = React.useState(false);
-  const [openError,setOpenError] = useState(false);
+  const [toastStatus,setToastStatus] = useState(false);
+  const [toastMessage,setToastMessage] = useState("");
+  const [toastType,setToastType] = useState("")
   const schema = {
     fullName: Joi.string().required(),
     description: Joi.string().required(),
@@ -87,8 +88,7 @@ export function AddTeamMember() {
     if (reason === "clickaway") {
       return;
     }
-    setOpenSuccessToast(false);
-    setOpenError(false)
+    setToastStatus(false);
   };
 
   const handleChange = (e) => {
@@ -152,7 +152,9 @@ export function AddTeamMember() {
       setFormData(temp);
       setTeams([]);
       setPicUrl("./images/admin.png")
-      setOpenSuccessToast(true);
+      setToastType("success")
+      setToastMessage("User added Successfully!")
+      setToastStatus(true);
     }
     return pic;
   };
@@ -167,7 +169,9 @@ export function AddTeamMember() {
         body: data,
       });
     } catch (error) {
-      setOpenError(true)
+      setToastMessage("Sorry! Error is adding team Member")
+      setToastType("error")
+      setToastStatus(true);
     }
   };
   return (
@@ -341,18 +345,13 @@ export function AddTeamMember() {
           </div>
         </div>
       </div>
-      <SimpleToast
-        open={openSuccess}
-        message="New member added successfully"
+      
+      {toastStatus && <SimpleToast
+        open={toastStatus}
+        message={toastMessage}
         handleCloseToast={handleCloseToast}
-        severity="success"
-      />
-      <SimpleToast
-        open={openError}
-        message="Sorry! Unable to add new team member."
-        handleCloseToast={handleCloseToast}
-        severity="error"
-      />
+        severity={toastType}
+      />}
     </div>
   );
 }

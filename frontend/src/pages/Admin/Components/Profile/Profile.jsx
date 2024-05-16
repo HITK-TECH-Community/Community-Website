@@ -3,17 +3,17 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import style from "./profile.module.scss";
 
-export function Profile() {
+export function Profile(props) {
   const [name, setName] = useState("Super Admin Name");
   const [email, setEmail] = useState("xyz@gmail.com");
   const [phone, setPhone] = useState("+91-123456789");
   const [edit, setEdit] = useState(false);
-
+  console.log(props);
   useEffect(() => {
-    setName(localStorage.getItem("firstName"));
-    setEmail(localStorage.getItem("email"));
-    setPhone(localStorage.getItem("phone"));
-  },[setName,setEmail,setPhone])
+    setName(props.adminData.firstName);
+    setEmail(props.adminData.email);
+    setPhone(props.adminData.contact);
+  }, [setName, setEmail, setPhone]);
 
   return (
     <div className={style["profile-container"]}>

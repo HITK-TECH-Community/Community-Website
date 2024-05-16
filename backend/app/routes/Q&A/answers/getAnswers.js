@@ -5,7 +5,7 @@ const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
 
 module.exports = async (req, res, next) => {
-  const qId = req.body.question_id;
+  const qId = req.params.questionId;
 
   const [err, answers] = await to(
     Answer.aggregate([{ $match: { question_id: mongoose.Types.ObjectId(qId) } }, { $sort: { upvotes: -1 } }])

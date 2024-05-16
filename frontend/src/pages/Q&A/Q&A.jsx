@@ -124,10 +124,17 @@ function Ques(props) {
         body: JSON.stringify(formdata),
       });
       const data = await response.json();
+      if(data.errStack){
+        setToastMessage(`${data.errStack}`);
+        setOpenToast(true);
+        setSeverity("error");
+      }else{
+        setToastMessage("Q&A added successfully!");
+        setOpenToast(true);
+        setSeverity("success");
+      }
       setIsUploadingData(false);
-      setToastMessage("Q&A added successfully!");
-      setOpenToast(true);
-      setSeverity("success");
+     
       setFormData({
         title: "",
         description: "",
@@ -421,14 +428,13 @@ function Ques(props) {
                 style={{ justifyContent: "space-around" }}
               >
                 <div className="data-loader">
-                  {isUploadingData ? <Loader /> : null}
-                </div>
-                <Button2
+                  {isUploadingData ? <Loader /> :  <Button2
                   style={{ marginRight: "3%" }}
                   className={style["submit-btn-text"]}
                   label="Submit"
                   type="submit"
-                />
+                />}
+                </div>
               </div>
             </div>
           </form>

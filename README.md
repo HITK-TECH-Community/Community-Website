@@ -26,6 +26,8 @@ This project aims to build the official site for the community page so that any 
 
 ## Getting Started 👨‍💻
 
+**NOTE - You must be on NODE Version 14.19.0**
+
 ### Setup the repository to your local environment.
 
 1. `Fork` the repository - Creates a replica of repository to your local environment.
@@ -41,44 +43,59 @@ git clone https://github.com/YOUR-USERNAME/Community-Website
 cd Community-Website
 ```
 
-
 ## NVM
 
-**Setting up the node version 14.19.0 and npm version 6.14.16**
+**Setting Up Node version 14.19.0 and npm version 6.14.16**
 
-1. Install Node Version Manager (nvm) from [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases). 
-To check if nvm has correctly installed 
+1. Install Node Version Manager (nvm):
+   * Download the latest version of nvm for your operating system from the official nvm repository:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases).
+   * Follow the installation instructions provided on the website
+2. Verify nvm Installation:
+   * Open a terminal window.
+   * Type the following command and press Enter:
+
 ```sh
 nvm -v
 ```
- it should give you the current version of nvm installed.
 
-2. Install node version 14.19.0
-```sh 
+* This command should display the currently installed version of nvm.
+
+3. Install Node.js version 14.19.0:
+   * In your terminal window, type the following command and press Enter:
+
+```sh
 nvm install 14.19.0
 ```
 
-3. Install npm version 6.14.16
-```sh 
-npm install npm@6.14.16
+4. Install npm version 6.14.16
+
+```sh
+npm install npm@6.14.16 -g
 ```
 
-4. Set node version to 14
+5. Switch to Node.js version 14.19.0:
+   * Use the following command to activate Node.js version 14.19.0:
+
 ```sh
 nvm use 14
 ```
 
-5. Check if you are using the correct version by following commands
+5. Verify Node.js and npm Version:
+   * Check the installed Node.js version by running:
+
 ```sh
 node -v
 ```
-Should return ```v14.19.0```
 
-```sh 
-npm -v 
+* The output should be `v14.19.0`.
+
+* Verify the installed npm version by running:
+
+```sh
+npm -v
 ```
-Should return ```6.14.16```
 
+* The output should be `6.14.16`
 
 ## Frontend ⚛️
 

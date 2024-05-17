@@ -46,20 +46,20 @@ cd Community-Website
 **Setting Up Node version 14.19.0 and npm version 6.14.16**
 
 1. Install Node Version Manager (nvm):
-   _Download the latest version of nvm for your operating system from the official nvm repository:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)._
-   _Follow the installation instructions provided on the website_
+   *Download the latest version of nvm for your operating system from the official nvm repository:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases).
+   *Follow the installation instructions provided on the website
 2. Verify nvm Installation:
-   _Open a terminal window._
-   _Type the following command and press Enter:_
+   *Open a terminal window.
+   *Type the following command and press Enter:
 
 ```sh
 nvm -v
 ```
 
-_This command should display the currently installed version of nvm._
+\*This command should display the currently installed version of nvm.
 
 3. Install Node.js version 14.19.0:
-   _In your terminal window, type the following command and press Enter:_
+   \*In your terminal window, type the following command and press Enter:
 
 ```sh
 nvm install 14.19.0
@@ -72,20 +72,20 @@ npm install npm@6.14.16 -g
 ```
 
 5. Switch to Node.js version 14.19.0:
-   _Use the following command to activate Node.js version 14.19.0:_
+   \*Use the following command to activate Node.js version 14.19.0:
 
 ```sh
 nvm use 14
 ```
 
 5. Verify Node.js and npm Version:
-   _Check the installed Node.js version by running:_
+   \*Check the installed Node.js version by running:
 
 ```sh
 node -v
 ```
 
-_The output should be `v14.19.0`._
+\*The output should be `v14.19.0`.
 
 _Verify the installed npm version by running:_
 
@@ -93,7 +93,7 @@ _Verify the installed npm version by running:_
 npm -v
 ```
 
-_The output should be `6.14.16`_
+\*The output should be `6.14.16`
 
 ## Frontend ⚛️
 

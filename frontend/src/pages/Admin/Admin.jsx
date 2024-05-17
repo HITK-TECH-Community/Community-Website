@@ -25,6 +25,7 @@ import { END_POINT } from "../../config/api";
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
 import { QandA } from "./Components/Faq/Q&A/QandA";
+import { Manageqa } from "./Components/Faq/Q&A/ManageQ&A/ManageQ&A";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -176,7 +177,7 @@ export const Admin = (props) => {
                   className="fas fa-question fa-fw fa-lg"
                   aria-hidden="true"
                 ></i>
-                <div className={style["span"]}>FAQs</div>
+                <div className={style["span"]}>FAQs and Q&As</div>
               </div>
             </li>
             <li onClick={closeMobileMenu}>
@@ -247,7 +248,9 @@ export const Admin = (props) => {
           ) : tab === 16 ? (
             <ManageBroadcasts />
           ) : tab === 18 ? (
-            <QandA />
+            <QandA setQId={setQId} setTab={setTab} tab={tab} />
+          ) : tab === 19 ? (
+            <Manageqa qId={qId} setTab={setTab} />
           ) : null}
         </div>
       </div>

@@ -1,4 +1,5 @@
 # Community-Website
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-bot-orange.svg?style=flat-square)](#contributors-)
 [![Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 [![Issues](https://img.shields.io/github/issues/HITK-TECH-Community/Community-Website)](#issues)
@@ -16,78 +17,114 @@ This project aims to build the official site for the community page so that any 
 
 ## Tech Stack 🗃
 
- <img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-ExpressJS-grey?style=flat&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/ReactJS%20-%2320232a.svg?logo=react" >   <img src="https://img.shields.io/badge/-NodeJS%20-%2320232a?style=flat&logo=node.js"> 
- 
+<img src="https://img.shields.io/badge/-MongoDB-yellow?style=flat&logo=mongoDB"> <img src="https://img.shields.io/badge/-ExpressJS-grey?style=flat&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/ReactJS%20-%2320232a.svg?logo=react" > <img src="https://img.shields.io/badge/-NodeJS%20-%2320232a?style=flat&logo=node.js">
 
 ## How to contribute ? 🤔
 
 - Get started with the Contributon Guidelines mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/CONTRIBUTING.md)
 - Make sure to follow our conventions mentioned [here](https://github.com/HITK-TECH-Community/Community-Website/blob/main/frontend/conventions.md)
 
-
-##  Getting Started 👨‍💻
-
-**NOTE - You must be on NODE Version 14.19.0**
+## Getting Started 👨‍💻
 
 ### Setup the repository to your local environment.
 
-1. `Fork` the repository  - Creates a replica of repository to your local environment.
+1. `Fork` the repository - Creates a replica of repository to your local environment.
 2. Clone the repository - Downloads all repo files to your machine, using
-  ```git
-  git clone https://github.com/YOUR-USERNAME/Community-Website
-  ``` 
+
+```git
+git clone https://github.com/YOUR-USERNAME/Community-Website
+```
+
 3. Set working directory to the root directory of the project.
-  ```sh
-  cd Community-Website
-  ```
+
+```sh
+cd Community-Website
+```
+
+
+## NVM
+
+**Setting up the node version 14.19.0 and npm version 6.14.16**
+
+1. Install Node Version Manager (nvm) from [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases). To check if nvm has correctly installed ```nvm -v```
+it should give you the current version of nvm installed.
+
+2. Install node version 14.19.0
+```nvm install 14.19.0```
+
+3. Install npm version 6.14.16
+```npm install npm@6.14.16```
+
+4. Set node version to 14
+```nvm use 14```
+
+5. Check if you are using the correct version by following commands
+```node -v```
+Should return **v14.19.0**
+
+```npm -v```
+Should return **6.14.16**
+
 
 ## Frontend ⚛️
 
-Following are the steps to run the frontend of the community-website on your local. All the frontend code will go in the `frontend` directory. 
+Following are the steps to run the frontend of the community-website on your local. All the frontend code will go in the `frontend` directory.
 
 1. Navigate to `frontend` folder.
-  ```sh
-  cd frontend
-  ```
+
+```sh
+cd frontend
+```
+
 2. Install all the required packages and dependencies.
-  ```node
-  npm install
-  ```
+
+```node
+npm install
+```
+
 3. Run the server.
-  ```node
-  npm start
-  ```
+
+```node
+npm start
+```
+
 4. [Click here](http://localhost:3000) to view it in the browser OR navigate to
-  ```text
-  http://localhost:3000
-  ```
+
+```text
+http://localhost:3000
+```
 
 The website is live at [https://hitk-tech-community.netlify.app/](https://hitk-tech-community.netlify.app/)
-
 
 ## Backend 💻
 
 Following are the steps to run the backend of the community-website on your local. All the backend code will go in the `backend` folder.
 
 1. Navigate to `backend` folder.
-  ```sh
-  cd backend
-  ```
+
+```sh
+cd backend
+```
+
 2. Install all the required packages and dependencies.
-  ```node
-  npm install
-  ```
+
+```node
+npm install
+```
+
 3. Run the server.
-  ```node
-  npm start
-  ```
+
+```node
+npm start
+```
+
 4. [Click here](http://localhost:3500) to see the backend server runing in the browser OR navigate to
-  ```text
-  http://localhost:3500
-  ```
+
+```text
+http://localhost:3500
+```
 
 The backend is live at [https://community-website-backend.onrender.com/](https://community-website-backend.onrender.com/)
-
 
 ## Testing Credentials 🤖
 
@@ -107,22 +144,20 @@ OR
 }
 ```
 
-
 ## Related Repositories 📂
 
 - [HITK-TECH-Community/HITK_Tech_Community](https://github.com/HITK-TECH-Community/HITK_Tech_Community) : The repository containing all the broadcasts done by HITK-TECH-Community
-
 
 ## Community 👥
 
 [![Slack](https://img.shields.io/badge/chat-on_slack-purple.svg?style=for-the-badge&logo=slack)](https://join.slack.com/t/hitkteckcommunity/shared_invite/zt-njgae7ki-Xn1y4Nmc_bwqwU~tN52vrg)
 
 ## Programs We have been associated with 🤍
+
 <a href="https://kwoc.kossiitkgp.org/" target="_blank"><img src="assets/KWoC.png" width="180px" height="180px"></a>
 <a href="https://swoc.tech/index.html" target="_blank"><img src="assets/SWoC.png" width="180px" height="180px"></a>
 <a href="https://devscript.tech/woc/" target="_blank"><img src="assets/DWoC.png" width="180px" height="180px"></a>
 <a href="https://gssoc.girlscript.tech/" target="_blank"><img src="assets/GSSoC.png" width="180px" height="180px"></a>
-
 
 ## Contributors 🌟
 

@@ -9,22 +9,28 @@ export function Manageqa({ setTab, qId }) {
   const [ans, setAns] = useState([]);
   const [qns, setQns] = useState();
   const [toogle, setToogle] = useState(false);
-  const [isLoaded,setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [toast, setToast] = useState({
     toastStatus: false,
     toastType: "",
     toastMessage: "",
   });
   const getQuestion = async (id) => {
-    setIsLoaded(true)
+    setIsLoaded(true);
     try {
       const qUrl = `${END_POINT}/question/getQuestionById/${id}`;
       const qResponse = await fetch(qUrl);
       const qRes = await qResponse.json();
       setQns(qRes);
+      setToast({
+        ...toast,
+        toastMessage: "Successfully get Question",
+        toastStatus: true,
+        toastType: "success",
+      });
     } catch (error) {
       console.log(error);
-      setIsLoaded(false)
+      setIsLoaded(false);
       setToast({
         ...toast,
         toastMessage: "Check network failed to fetch",
@@ -68,10 +74,16 @@ export function Manageqa({ setTab, qId }) {
       const aResponse = await fetch(aUrl);
       const aRes = await aResponse.json();
       setAns(aRes.data);
-      setIsLoaded(false)
+      setIsLoaded(false);
+      setToast({
+        ...toast,
+        toastMessage: "Successfully get answers",
+        toastStatus: true,
+        toastType: "success",
+      });
     } catch (error) {
       console.log(error);
-      setIsLoaded(false)
+      setIsLoaded(false);
       setToast({
         ...toast,
         toastMessage: "Check network failed to fetch",
@@ -126,60 +138,68 @@ export function Manageqa({ setTab, qId }) {
         <AiOutlineArrowLeft size={"35px"} onClick={() => setTab(18)} />
       </div>
       <div className={style["data-loader"]}>{isLoaded ? <Loader /> : null}</div>
-      {isLoaded || <div className={style["card-item"]}>
-        <div className={style["card-info"]}>
-          <h1>{qns?.title}</h1>
-          <div className={style["questionBox"]}>
-            <h3 className={style["card-question"]}>{qns?.description}</h3>
-            <div className={style["button-group"]}>
-              <button
-                className={
-                  qns?.isApproved
-                    ? style["button-delete"]
-                    : style["button-approve"]
-                }
-                id={`${qns?._id}`}
-                onClick={(e) => {
-                  updateQuestion(e.currentTarget.id, !qns?.isApproved);
-                  
-                }}
-              >
-                {qns?.isApproved ? "DisApprove" : "Approve"}
-              </button>
-              <button className={style["button-delete"]}>Delete</button>
-            </div>
-          </div>
-
-          {ans?.map((a) => (
-            <div className={style["answerBox"]}>
-              <h3 className={style["card-answer"]}>{a.answer}</h3>
+      {isLoaded || (
+        <div className={style["card-item"]}>
+          <div className={style["card-info"]}>
+            <h1>{qns?.title}</h1>
+            <h2>Question</h2>
+            <div className={style["questionBox"]}>
+              <h3 className={style["card-question"]}>{qns?.description}</h3>
               <div className={style["button-group"]}>
                 <button
                   className={
-                    a?.isApproved
+                    qns?.isApproved
                       ? style["button-delete"]
                       : style["button-approve"]
                   }
-                  id={`${a._id}`}
+                  id={`${qns?._id}`}
                   onClick={(e) => {
-                    updateAnswer(e.currentTarget.id, !a?.isApproved);
-                    
+                    updateQuestion(e.currentTarget.id, !qns?.isApproved);
                   }}
                 >
-                  {a?.isApproved ? "DisApprove" : "Approve"}
+                  {qns?.isApproved ? "DisApprove" : "Approve"}
                 </button>
                 <button className={style["button-delete"]}>Delete</button>
               </div>
             </div>
-          ))}
 
-          <div style={{ display: "flex", padding: "10px 30px 10px 30px" }}>
-            {qns?.tags?.map((tag) => (
-              <p className={style["tags"]}>{tag}</p>
-            ))}
+            {ans?.length !== 0 ? (
+              <span>No answers Found</span>
+            ) : (
+              ans?.map((a) => (
+                <>
+                  <h2>Answers</h2>
+                  <div className={style["answerBox"]}>
+                    <h3 className={style["card-answer"]}>{a.answer}</h3>
+                    <div className={style["button-group"]}>
+                      <button
+                        className={
+                          a?.isApproved
+                            ? style["button-delete"]
+                            : style["button-approve"]
+                        }
+                        id={`${a._id}`}
+                        onClick={(e) => {
+                          updateAnswer(e.currentTarget.id, !a?.isApproved);
+                        }}
+                      >
+                        {a?.isApproved ? "DisApprove" : "Approve"}
+                      </button>
+                      <button className={style["button-delete"]}>Delete</button>
+                    </div>
+                  </div>
+                </>
+              ))
+            )}
+
+            <div style={{ display: "flex", padding: "10px 30px 10px 30px" }}>
+              {qns?.tags?.map((tag) => (
+                <p className={style["tags"]}>{tag}</p>
+              ))}
+            </div>
           </div>
         </div>
-      </div>}
+      )}
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

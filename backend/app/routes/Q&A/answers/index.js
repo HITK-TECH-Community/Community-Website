@@ -12,7 +12,7 @@ const updateAnswerStatus = require('./updateAnswerStatus');
 router.post('/', validation(answerValidationSchema), postAnswer);
 
 // GET API FOR ANSWERS
-router.get('/:questionId', validation(getAnswerValidationSchema), getAnswers);
+router.get('/:questionId', getAnswers);
 
 // INCREASE UPVOTE FOR ANSWERS
 router.patch('/upvote', upvoteAnswer);

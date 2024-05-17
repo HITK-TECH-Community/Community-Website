@@ -46,8 +46,12 @@ cd Community-Website
 
 **Setting up the node version 14.19.0 and npm version 6.14.16**
 
-1. Install Node Version Manager (nvm) from [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases). To check if nvm has correctly installed ```nvm -v```
-it should give you the current version of nvm installed.
+1. Install Node Version Manager (nvm) from [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases). 
+To check if nvm has correctly installed 
+```sh
+nvm -v
+```
+ it should give you the current version of nvm installed.
 
 2. Install node version 14.19.0
 ```sh 
@@ -68,12 +72,12 @@ nvm use 14
 ```sh
 node -v
 ```
-Should return **v14.19.0**
+Should return ```v14.19.0```
 
 ```sh 
 npm -v 
 ```
-Should return **6.14.16**
+Should return ```6.14.16```
 
 
 ## Frontend ⚛️

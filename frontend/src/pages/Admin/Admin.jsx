@@ -23,8 +23,6 @@ import decode from "jwt-decode";
 
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
-import { QandA } from "./Components/Faq/Q&A/QandA";
-import { Manageqa } from "./Components/Faq/Q&A/ManageQ&A/ManageQ&A";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -225,10 +223,6 @@ export const Admin = (props) => {
             <ResetPassword />
           ) : tab === 16 ? (
             <ManageBroadcasts />
-          ) : tab === 18 ? (
-            <QandA setTab={setTab} setQId={setQId} tab={tab} />
-          ) : tab === 19 ? (
-            <Manageqa setTab={setTab} qId={qId} />
           ) : null}
         </div>
       </div>

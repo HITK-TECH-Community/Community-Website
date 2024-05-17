@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export function Faq(props) {
   return (
     <div className={style["faq"]}>
-      <h1 style={{ textAlign: "center" }}> FAQS </h1>
+      <h1 style={{ textAlign: "center" }}> FAQs and Q&As </h1>
       <div className={style["cards"]}>
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>

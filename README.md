@@ -50,19 +50,29 @@ cd Community-Website
 it should give you the current version of nvm installed.
 
 2. Install node version 14.19.0
-```nvm install 14.19.0```
+```sh 
+nvm install 14.19.0
+```
 
 3. Install npm version 6.14.16
-```npm install npm@6.14.16```
+```sh 
+npm install npm@6.14.16
+```
 
 4. Set node version to 14
-```nvm use 14```
+```sh
+nvm use 14
+```
 
 5. Check if you are using the correct version by following commands
-```node -v```
+```sh
+node -v
+```
 Should return **v14.19.0**
 
-```npm -v```
+```sh 
+npm -v 
+```
 Should return **6.14.16**
 
 

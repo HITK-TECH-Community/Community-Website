@@ -24,6 +24,7 @@ import axios from "axios";
 import { END_POINT } from "../../config/api";
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
+import { QandA } from "./Components/Faq/Q&A/QandA";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -245,6 +246,8 @@ export const Admin = (props) => {
             <ResetPassword />
           ) : tab === 16 ? (
             <ManageBroadcasts />
+          ) : tab === 18 ? (
+            <QandA />
           ) : null}
         </div>
       </div>

@@ -4,7 +4,7 @@ import { END_POINT } from "../../../../../config/api";
 import Loader from "../../../../../components/util/Loader";
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
 
-export function QandA({ setTab, setQId, tab }) {
+export function QandA() {
   const [cards, setCards] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);

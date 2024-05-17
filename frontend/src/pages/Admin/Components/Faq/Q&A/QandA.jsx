@@ -44,16 +44,24 @@ export function QandA() {
         for (let index = 0; index < questions.length; index++) {
           const element = questions[index];
           const res = await getAnswer(element);
-          res.map((item) => answer.push(item));
+          if(res!=undefined){
+            res?.map((item) => answer.push(item));
+          }
         }
         setIsLoaded(false);
-        setCards([...questions, ...answer]);
+        if(answer.length){
+          setCards([...questions, ...answer]);
+        }else{
+          setCards(questions);
+        }
+        
       } catch (error) {
         console.log(error);
+        setIsLoaded(false)
       }
     };
 
-    if (questions.length) {
+    if (questions?.length) {
       getData();
     }
   }, [questions]);

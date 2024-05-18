@@ -23,14 +23,11 @@ const useStyles = makeStyles((theme) => ({
   },
   buttons: {
     display: "flex",
-    marginTop:"10px",
+    marginTop: "10px",
     justifyContent: "center",
     gap: "10px",
   },
 }));
-
-
-
 
 export function Manageqa({ setTab, qId }) {
   const [ans, setAns] = useState([]);
@@ -72,7 +69,7 @@ export function Manageqa({ setTab, qId }) {
 
   const handleOpenConfirmModal = (id) => {
     setConfirmDelete(true);
-    setQuestionToDelete(id)
+    setQuestionToDelete(id);
   };
 
   const handleCloseConfirmModal = () => {
@@ -98,7 +95,7 @@ export function Manageqa({ setTab, qId }) {
         toastStatus: true,
         toastType: "success",
       });
-      setToogle(!toogle)
+      setToogle(!toogle);
     } catch (error) {
       console.log(error);
       setToast({
@@ -129,7 +126,7 @@ export function Manageqa({ setTab, qId }) {
         toastStatus: true,
         toastType: "success",
       });
-      setTab(18)
+      setTab(18);
       setToogle(!toogle);
     } catch (error) {
       console.log(error);
@@ -247,36 +244,57 @@ export function Manageqa({ setTab, qId }) {
       </div>
       <div className={style["data-loader"]}>{isLoaded ? <Loader /> : null}</div>
       {isLoaded || (
-        <div className={style["card-item"]}>
-          <div className={style["card-info"]}>
-            <h1>{qns?.title}</h1>
-            <h2>Question</h2>
-            <div className={style["questionBox"]}>
-              <h3 className={style["card-question"]}>{qns?.description}</h3>
-              <div className={style["button-group"]}>
-                <button
-                  className={
-                    qns?.isApproved
-                      ? style["button-delete"]
-                      : style["button-approve"]
-                  }
-                  id={`${qns?._id}`}
-                  onClick={(e) => {
-                    updateQuestion(e.currentTarget.id, !qns?.isApproved);
-                  }}
-                >
-                  {qns?.isApproved ? "DisApprove" : "Approve"}
-                </button>
-                <button name={`${qns?._id}`} onClick={(e)=>handleOpenConfirmModal(e.currentTarget.name)} className={style["button-delete"]}>Delete</button>
+        <>
+        <h1 className={style["head"]}>Question</h1>
+          <div className={style["question"]}>
+          <div className={style["card-item"]}>
+            <div className={style["card-info"]}>
+              <h1>{qns?.title}</h1>
+              <div className={style["questionBox"]}>
+                <h3 className={style["card-question"]}>{qns?.description}</h3>
+                <div className={style["button-group"]}>
+                  <button
+                    className={
+                      qns?.isApproved
+                        ? style["button-delete"]
+                        : style["button-approve"]
+                    }
+                    id={`${qns?._id}`}
+                    onClick={(e) => {
+                      updateQuestion(e.currentTarget.id, !qns?.isApproved);
+                    }}
+                  >
+                    {qns?.isApproved ? "Reject" : "Approve"}
+                  </button>
+                  <button
+                    name={`${qns?._id}`}
+                    onClick={(e) =>
+                      handleOpenConfirmModal(e.currentTarget.name)
+                    }
+                    className={style["button-delete"]}
+                  >
+                    Delete
+                  </button>
+                </div>
+                <div style={{ display: "flex", padding: "10px 30px 10px 30px" }}>
+                {qns?.tags?.map((tag) => (
+                  <p className={style["tags"]}>{tag}</p>
+                ))}
               </div>
+              </div>
+              
             </div>
+          </div>
+          </div>
+          <h1 className={style["head"]}>Answers</h1>
 
-            {ans?.length === 0 ? (
-              <span>No answers Found</span>
-            ) : (
-              ans?.map((a) => (
-                <>
-                  <h2>Answers</h2>
+          {ans?.length === 0 ? (
+            <span>No answers Found</span>
+          ) : (
+            <div className={ans?.length==1?style["question"]:style["answer"]}>
+              {ans?.map((a) => (
+              <div className={style["card-item"]}>
+                <div className={style["card-info"]}>
                   <div className={style["answerBox"]}>
                     <h3 className={style["card-answer"]}>{a.answer}</h3>
                     <div className={style["button-group"]}>
@@ -291,45 +309,58 @@ export function Manageqa({ setTab, qId }) {
                           updateAnswer(e.currentTarget.id, !a?.isApproved);
                         }}
                       >
-                        {a?.isApproved ? "DisApprove" : "Approve"}
+                        {a?.isApproved ? "Reject" : "Approve"}
                       </button>
-                      <button name={`${a?._id}`} onClick={(e)=>handleDeleteAnswer(e.currentTarget.name)} className={style["button-delete"]}>Delete</button>
+                      <button
+                        name={`${a?._id}`}
+                        onClick={(e) =>
+                          handleDeleteAnswer(e.currentTarget.name)
+                        }
+                        className={style["button-delete"]}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
-                </>
-              ))
-            )}
-
-            <div style={{ display: "flex", padding: "10px 30px 10px 30px" }}>
-              {qns?.tags?.map((tag) => (
-                <p className={style["tags"]}>{tag}</p>
+                </div>
+              </div>
               ))}
             </div>
-          </div>
-        </div>
+          )}
+        </>
       )}
-      {<Modal
-        open={confirmDelete}
-        onClose={handleCloseConfirmModal}
-        className={classes.modal}
-      >
-        <div className={classes.paper}>
-          <Typography variant="h6" component="h2">
-            Confirm Delete
-          </Typography>
-          <Typography sx={{ mt: 2 }}>
-            Are you sure you want to delete this question and all its answers?
-          </Typography>
-          <div className={classes.buttons}>
-          <Button onClick={handleDeleteQuestion} variant="contained" color="secondary">
-            Confirm
-          </Button>
-          <Button onClick={handleCloseConfirmModal} variant="contained" color="primary">
-            Cancel
-          </Button>
+      {
+        <Modal
+          open={confirmDelete}
+          onClose={handleCloseConfirmModal}
+          className={classes.modal}
+        >
+          <div className={classes.paper}>
+            <Typography variant="h6" component="h2">
+              Confirm Delete
+            </Typography>
+            <Typography sx={{ mt: 2 }}>
+              Are you sure you want to delete this question and all its answers?
+            </Typography>
+            <div className={classes.buttons}>
+              <Button
+                onClick={handleDeleteQuestion}
+                variant="contained"
+                color="secondary"
+              >
+                Confirm
+              </Button>
+              <Button
+                onClick={handleCloseConfirmModal}
+                variant="contained"
+                color="primary"
+              >
+                Cancel
+              </Button>
+            </div>
           </div>
-        </div>
-      </Modal>}
+        </Modal>
+      }
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

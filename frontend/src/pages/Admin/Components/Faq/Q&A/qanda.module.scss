@@ -19,11 +19,14 @@
 }
 
 .crd {
-  min-width: 100px;
+  min-width: 220px;
   max-width: 470px;
+  width: 100%;
   min-height: 12em;
   display: flex;
+  margin: auto;
   flex-direction: column;
+  padding: 15px 8px 8px 8px;
   align-items: center;
   justify-content: center;
   background-color: #016795;
@@ -55,7 +58,7 @@
 @media (max-width: 983px) {
   .manage-teams {
     grid-template-columns: auto;
-    margin: 1em 0;
+    margin: auto;
     justify-content: center;
   }
 
@@ -68,6 +71,10 @@
   .content {
     overflow-wrap: break-word;
     padding: 1rem 1.2rem;
+  }
+  .manage-qas{
+    display: grid;
+    grid-template-columns: auto;
   }
 }
 

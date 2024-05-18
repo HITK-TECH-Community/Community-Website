@@ -4,12 +4,13 @@
   border-radius: 1em;
   height: auto;
   width: 90%;
-  margin: 10px auto 30px  4%;
+  margin: 10px auto 30px  auto;
   display: inline-block;
   background-position: left center;
   transition: all 0.5s ease-in;
   background-color: #016795;
   box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
+  max-width: 400px;
 }
 
 .card-title {
@@ -19,7 +20,10 @@
   font-weight: bold;
   color: white;
 }
-
+.question{
+  display: flex;
+  justify-content: center;
+}
 .card-question {
   font-weight: bold;
   text-align: left;
@@ -37,13 +41,17 @@
 }
 
 .questionBox{
-  display: flex;
+  display: grid;
+  justify-content: center;
   margin: 5px;
+  gap: 10px;
 }
 
 .answerBox{
-  display: flex;
+  display: grid;
+  justify-content: center;
   margin: 5px;
+  gap: 10px;
 }
 
 .card-info {
@@ -65,7 +73,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 2px;
+  margin: 5px 2px 2px 2px;
 }
 
 .button-approve {
@@ -80,6 +88,11 @@
   font-size: medium;
   font-weight: bold;
   transition: background-color 200ms;
+}
+
+.answer{
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .button-edit:hover {
@@ -124,5 +137,10 @@
   }
   .questionBox{
     display: block;
+  }
+  .answer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 }

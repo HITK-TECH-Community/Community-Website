@@ -163,7 +163,7 @@ export function Manageqa({ setTab, qId }) {
               </div>
             </div>
 
-            {ans?.length !== 0 ? (
+            {ans?.length === 0 ? (
               <span>No answers Found</span>
             ) : (
               ans?.map((a) => (

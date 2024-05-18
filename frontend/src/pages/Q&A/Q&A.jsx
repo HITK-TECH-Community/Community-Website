@@ -389,7 +389,6 @@ function Ques(props) {
                       color: "#69a9dd",
                       fontSize: "25px",
                       textAlign: "center",
-                      // paddingLeft: "1.5rem",
                     }}
                   >
                     Tags

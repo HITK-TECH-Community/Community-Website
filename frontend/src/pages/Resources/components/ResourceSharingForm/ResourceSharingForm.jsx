@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../components/util/Button/index";
 import style from "./resource-sharing-form.module.scss";

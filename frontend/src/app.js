@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import {
-  // BrowserRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,

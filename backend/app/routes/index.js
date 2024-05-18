@@ -10,6 +10,7 @@ const deleteFaq = require('./faq/deleteFaq');
 const updateFaq = require('./faq/updateFaq')
 const joinUs = require('./joinUs');
 const contactUs = require('./contactUs/post');
+const deleteContactUs = require("./contactUs/delete");
 
 const getContactUs = require('./contactUs/get');
 const contactValidationSchema = require('./contactUs/@validationSchema');
@@ -29,6 +30,7 @@ router.use('/updateFaq',updateFaq)
 router.use('/getFaq', getFaq);
 router.use('/contactus', validation(contactValidationSchema), contactUs);
 router.use('/getcontactus', getContactUs);
+router.use("/deleteContactUs", deleteContactUs);
 router.use('/broadcast', broadcast);
 router.use('/question', question);
 router.use('/answers', answer);

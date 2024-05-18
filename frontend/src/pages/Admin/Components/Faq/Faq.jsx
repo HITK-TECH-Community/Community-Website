@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export function Faq(props) {
   return (
     <div className={style["faq"]}>
-      <h1 style={{ textAlign: "center" }}> FAQS </h1>
+      <h1 style={{ textAlign: "center" }}> FAQs and Q&As </h1>
       <div className={style["cards"]}>
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
@@ -37,6 +37,19 @@ export function Faq(props) {
               <Link onClick={()=>props.setTab(17)} className={style["main-btn"]}>
                 Manage here
               </Link>
+            </div>
+          </div>
+        </div>
+        <div className={style["card-item"]}>
+          <div className={style["clickable-card"]}>
+            <div className={style["card-title"]}>
+              MANAGE Q&A
+              <AiFillEdit className={style["editt"]} />
+            </div>
+            <div className={style["card-content"]}>
+              <div onClick={()=>props.setTab(18)} className={style["main-btn"]}>
+                Manage here
+              </div>
             </div>
           </div>
         </div>

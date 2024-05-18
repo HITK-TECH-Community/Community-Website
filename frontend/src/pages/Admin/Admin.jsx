@@ -24,6 +24,8 @@ import axios from "axios";
 import { END_POINT } from "../../config/api";
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
+import { QandA } from "./Components/Faq/Q&A/QandA";
+import { Manageqa } from "./Components/Faq/Q&A/ManageQ&A/ManageQ&A";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -31,6 +33,8 @@ export const Admin = (props) => {
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
   const closeMobileMenu = () => setIsMenuOpen(false);
   const dispatch = useDispatch();
+  const firstName = localStorage.getItem("firstName");
+  const [qId,setQId] = useState("")
   const [adminData, setAdminData] = useState({});
   const FetchAdminData = async () => {
     try {
@@ -50,7 +54,6 @@ export const Admin = (props) => {
       console.error("There was a problem with the fetch operation:", error);
     }
   };
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     try {
@@ -174,7 +177,7 @@ export const Admin = (props) => {
                   className="fas fa-question fa-fw fa-lg"
                   aria-hidden="true"
                 ></i>
-                <div className={style["span"]}>FAQs</div>
+                <div className={style["span"]}>FAQs and Q&As</div>
               </div>
             </li>
             <li onClick={closeMobileMenu}>
@@ -244,6 +247,10 @@ export const Admin = (props) => {
             <ResetPassword />
           ) : tab === 16 ? (
             <ManageBroadcasts />
+          ) : tab === 18 ? (
+            <QandA setQId={setQId} setTab={setTab} tab={tab} />
+          ) : tab === 19 ? (
+            <Manageqa qId={qId} setTab={setTab} />
           ) : null}
         </div>
       </div>

@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.manage-teams {
+.manage-qas {
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
@@ -20,7 +20,7 @@
 
 .crd {
   min-width: 100px;
-  max-width: 440px;
+  max-width: 470px;
   min-height: 12em;
   display: flex;
   flex-direction: column;
@@ -78,21 +78,24 @@
   }
 }
 
-.url{
-  text-decoration: underline;
-  color: white;
+.crd > div > .tags {
+  background-color: gray;
+  color: black;
+  padding: 0px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  height: 18px;
+  margin-top: 0;
+  border-radius: 10px;
+  font-size: x-small;
 }
 
-.url:hover{
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-.delete{
-  width: 90px;
-  background-color: red;
-  color: white;
-  font-weight: bold;
+.manage{
+  width: 120px;
+  background-color: white;
+  color: black;
   margin-bottom: 20px;
   margin-top: 15px;
   padding: 10px;

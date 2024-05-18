@@ -81,6 +81,7 @@
 .resource-input {
   position: relative;
   margin-bottom: 30px !important;
+  width: 35rem;
 }
 
 .resource-input input,
@@ -217,8 +218,11 @@
 }
 
 .inside-resource {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 85%;
-  margin: 0 auto;
 }
 
 [type="radio"] {
@@ -352,6 +356,23 @@ input[type="date"]:not(:valid):before {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .resource-input {
+    width: 23rem;
+  }
+
+  .toppings-list {
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .resource-input {
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 750px) {

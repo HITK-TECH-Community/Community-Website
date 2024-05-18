@@ -124,17 +124,17 @@ function Ques(props) {
         body: JSON.stringify(formdata),
       });
       const data = await response.json();
-      if(data.errStack){
+      if (data.errStack) {
         setToastMessage(`${data.errStack}`);
         setOpenToast(true);
         setSeverity("error");
-      }else{
+      } else {
         setToastMessage("Q&A added successfully!");
         setOpenToast(true);
         setSeverity("success");
       }
       setIsUploadingData(false);
-     
+
       setFormData({
         title: "",
         description: "",
@@ -385,7 +385,12 @@ function Ques(props) {
                         ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
                         : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
                     }
-                    style={{ color: "#69a9dd", fontSize: "25px" }}
+                    style={{
+                      color: "#69a9dd",
+                      fontSize: "25px",
+                      textAlign: "center",
+                      // paddingLeft: "1.5rem",
+                    }}
                   >
                     Tags
                   </label>
@@ -425,15 +430,19 @@ function Ques(props) {
 
               <div
                 className={style["submit-btn"]}
-                style={{ justifyContent: "space-around" }}
+                style={{ justifyContent: "space-around", marginBottom: "1rem" }}
               >
                 <div className="data-loader">
-                  {isUploadingData ? <Loader /> :  <Button2
-                  style={{ marginRight: "3%" }}
-                  className={style["submit-btn-text"]}
-                  label="Submit"
-                  type="submit"
-                />}
+                  {isUploadingData ? (
+                    <Loader />
+                  ) : (
+                    <Button2
+                      style={{ marginRight: "3%" }}
+                      className={style["submit-btn-text"]}
+                      label="Submit"
+                      type="submit"
+                    />
+                  )}
                 </div>
               </div>
             </div>

@@ -7,6 +7,8 @@ const getAnswers = require('./getAnswers');
 const upvoteAnswer = require('./upvoteAnswer');
 const downvoteAnswer = require('./downvoteAnswer');
 const updateAnswerStatus = require('./updateAnswerStatus');
+const { authMiddleware } = require('../../../../helpers/middlewares/auth');
+const deleteAnswer = require('./deleteAnswer');
 
 // POST API FOR ANSWER
 router.post('/', validation(answerValidationSchema), postAnswer);
@@ -22,5 +24,8 @@ router.patch('/downvote', downvoteAnswer);
 
 // Update Answer Status
 router.patch('/updateStatus', validation(updateAnswerStatusSchema), updateAnswerStatus);
+
+// Delete Answer by Id
+router.delete('/deleteanswer', authMiddleware, deleteAnswer);
 
 module.exports = router;

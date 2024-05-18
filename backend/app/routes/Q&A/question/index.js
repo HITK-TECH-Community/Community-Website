@@ -7,6 +7,8 @@ const validation = require('../../../../helpers/middlewares/validation');
 const upvoteQuestion = require('./upvoteQuestion');
 const downvoteQuestion = require('./downvoteQuestion');
 const updateQuestionStatus = require('./updateQuestionStatus');
+const { authMiddleware } = require('../../../../helpers/middlewares/auth');
+const deleteQuestion = require('./deleteQuestion');
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
@@ -24,5 +26,8 @@ router.patch('/downvote', downvoteQuestion);
 
 // route for updating the question status
 router.patch('/updateStatus', validation(updateQuestionStatusSchema), updateQuestionStatus);
+
+// route for deleting the question with answers
+router.delete('/deletequestion', authMiddleware, deleteQuestion);
 
 module.exports = router;

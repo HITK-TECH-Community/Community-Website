@@ -9,9 +9,8 @@ import { SimpleToast } from "../../../../components/util/Toast";
 
 export function ResourceSharingForm(props) {
   const [resourceToast, setResourceToast] = useState("");
-  const [openSubmitResourceSuccess, setOpenSubmitResourceSuccess] = useState(
-    false
-  );
+  const [openSubmitResourceSuccess, setOpenSubmitResourceSuccess] =
+    useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [resourceToastStatus, setResourceToastStatus] = useState("");
 

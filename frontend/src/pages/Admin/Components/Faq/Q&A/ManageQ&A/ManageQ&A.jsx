@@ -1,9 +1,36 @@
 import { useEffect, useState } from "react";
 import { END_POINT } from "../../../../../../config/api";
 import style from "./manage.module.scss";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { SimpleToast } from "../../../../../../components/util/Toast/Toast";
 import Loader from "../../../../../../components/util/Loader";
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+  buttons: {
+    display: "flex",
+    marginTop:"10px",
+    justifyContent: "center",
+    gap: "10px",
+  },
+}));
+
+
+
 
 export function Manageqa({ setTab, qId }) {
   const [ans, setAns] = useState([]);
@@ -15,6 +42,9 @@ export function Manageqa({ setTab, qId }) {
     toastType: "",
     toastMessage: "",
   });
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [questionToDelete, setQuestionToDelete] = useState(null);
+  const classes = useStyles();
   const getQuestion = async (id) => {
     setIsLoaded(true);
     try {
@@ -39,6 +69,79 @@ export function Manageqa({ setTab, qId }) {
       });
     }
   };
+
+  const handleOpenConfirmModal = (id) => {
+    setConfirmDelete(true);
+    setQuestionToDelete(id)
+  };
+
+  const handleCloseConfirmModal = () => {
+    setConfirmDelete(false);
+  };
+
+  const handleDeleteAnswer = async (answerId) => {
+    try {
+      const url = `${END_POINT}/answers/deleteanswer`;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({ answerId }),
+      });
+
+      const data = await response.json();
+      setToast({
+        ...toast,
+        toastMessage: "Successfully deleted answer",
+        toastStatus: true,
+        toastType: "success",
+      });
+      setToogle(!toogle)
+    } catch (error) {
+      console.log(error);
+      setToast({
+        ...toast,
+        toastMessage: "Unable to delete answer",
+        toastStatus: true,
+        toastType: "error",
+      });
+    }
+  };
+
+  const handleDeleteQuestion = async () => {
+    try {
+      const url = `${END_POINT}/question/deletequestion`;
+      const response = await fetch(url, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({ questionId: questionToDelete }),
+      });
+
+      const data = await response.json();
+      setToast({
+        ...toast,
+        toastMessage: "Successfully deleted question",
+        toastStatus: true,
+        toastType: "success",
+      });
+      setTab(18)
+      setToogle(!toogle);
+    } catch (error) {
+      console.log(error);
+      setToast({
+        ...toast,
+        toastMessage: "Unable to delete question",
+        toastStatus: true,
+        toastType: "error",
+      });
+    }
+  };
+
   const updateQuestion = async (id, status) => {
     try {
       const qUrl = `${END_POINT}/question/updateStatus`;
@@ -68,6 +171,7 @@ export function Manageqa({ setTab, qId }) {
       });
     }
   };
+
   const getAnswer = async (questionId) => {
     try {
       const aUrl = `${END_POINT}/answers/${questionId}`;
@@ -92,6 +196,7 @@ export function Manageqa({ setTab, qId }) {
       });
     }
   };
+
   const updateAnswer = async (id, status) => {
     try {
       const aUrl = `${END_POINT}/answers/updateStatus`;
@@ -121,16 +226,19 @@ export function Manageqa({ setTab, qId }) {
       });
     }
   };
+
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
     setToast({ ...toast, toastStatus: false });
   };
+
   useEffect(() => {
     getQuestion(qId);
     getAnswer(qId);
   }, [toogle]);
+
   return (
     <div>
       <h1 className={style["head"]}>Manage Q&A</h1>
@@ -159,7 +267,7 @@ export function Manageqa({ setTab, qId }) {
                 >
                   {qns?.isApproved ? "DisApprove" : "Approve"}
                 </button>
-                <button className={style["button-delete"]}>Delete</button>
+                <button name={`${qns?._id}`} onClick={(e)=>handleOpenConfirmModal(e.currentTarget.name)} className={style["button-delete"]}>Delete</button>
               </div>
             </div>
 
@@ -178,14 +286,14 @@ export function Manageqa({ setTab, qId }) {
                             ? style["button-delete"]
                             : style["button-approve"]
                         }
-                        id={`${a._id}`}
+                        id={`${a?._id}`}
                         onClick={(e) => {
                           updateAnswer(e.currentTarget.id, !a?.isApproved);
                         }}
                       >
                         {a?.isApproved ? "DisApprove" : "Approve"}
                       </button>
-                      <button className={style["button-delete"]}>Delete</button>
+                      <button name={`${a?._id}`} onClick={(e)=>handleDeleteAnswer(e.currentTarget.name)} className={style["button-delete"]}>Delete</button>
                     </div>
                   </div>
                 </>
@@ -200,6 +308,28 @@ export function Manageqa({ setTab, qId }) {
           </div>
         </div>
       )}
+      {<Modal
+        open={confirmDelete}
+        onClose={handleCloseConfirmModal}
+        className={classes.modal}
+      >
+        <div className={classes.paper}>
+          <Typography variant="h6" component="h2">
+            Confirm Delete
+          </Typography>
+          <Typography sx={{ mt: 2 }}>
+            Are you sure you want to delete this question and all its answers?
+          </Typography>
+          <div className={classes.buttons}>
+          <Button onClick={handleDeleteQuestion} variant="contained" color="secondary">
+            Confirm
+          </Button>
+          <Button onClick={handleCloseConfirmModal} variant="contained" color="primary">
+            Cancel
+          </Button>
+          </div>
+        </div>
+      </Modal>}
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

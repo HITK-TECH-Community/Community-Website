@@ -38,10 +38,8 @@ export function ManageTeams() {
         }
         _image.push({ image: formattedPath, id: item._id });
       });
-      console.log(_image);
       setImage(_image);
       setCards(res);
-      console.log(res);
       setToast({
         ...toast,
         toastMessage: "Successfully get Teams",

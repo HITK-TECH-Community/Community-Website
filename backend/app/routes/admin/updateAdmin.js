@@ -11,7 +11,9 @@ module.exports =async (req, res) => {
 
    // Delete previous image if it exists
     if (admin.image && admin.image!=="undefined" && req.file?.path) {
+      if (fs.existsSync(path.join(__dirname,'..' ,'..','..', admin.image))) {
         fs.unlinkSync(path.join(__dirname,'..' ,'..','..', admin.image)); 
+      }
     }
     
     try {
@@ -31,7 +33,7 @@ module.exports =async (req, res) => {
       { $set: updateFields },
       { new: true }
     );
-        res.status(200).json({updatedAdmin,updateFields});
+        res.status(200).json({updatedAdmin,"Req.Body":updateFields});
       } catch (err) {
         res.status(500).json(err);
       }

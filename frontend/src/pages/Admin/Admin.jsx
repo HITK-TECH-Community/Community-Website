@@ -50,6 +50,7 @@ export const Admin = (props) => {
       };
       
       const response = await axios.get(baseUrl, { params, headers });
+      // image retrieving
       let formattedPath = response.data[0].image?.replace(/\\/g, "/");
       if (formattedPath?.startsWith("uploads/")) {
         formattedPath = formattedPath.replace("uploads/", "");

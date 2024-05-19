@@ -57,10 +57,9 @@ export const Admin = (props) => {
           formattedPath = `${END_POINT}/${formattedPath}`;
         }
       }
-      
       if(formattedPath!=="undefined" && formattedPath){
-        setImage(formattedPath);
-      }
+          setImage(formattedPath);
+        }
       setAdminData(response.data[0]);
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);

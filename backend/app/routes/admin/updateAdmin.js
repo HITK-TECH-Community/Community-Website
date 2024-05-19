@@ -13,22 +13,25 @@ module.exports =async (req, res) => {
     if (admin.image && admin.image!=="undefined" && req.file?.path) {
         fs.unlinkSync(path.join(__dirname,'..' ,'..','..', admin.image)); 
     }
-
+    
     try {
-      let updateFields = { ...req.body };
+      let updateFields = {
+            firstName:req.body.firstName,
+            lastName:req.body.lastName,
+            contact:req.body.contact,
+            username:req.body.username
+          };
     if (req.file?.path) {
       updateFields.image = req.file.path;
     }else{
       updateFields.image = admin.image;
     }
-
     const updatedAdmin = await Admin.findByIdAndUpdate(
       req.params.id,
       { $set: updateFields },
       { new: true }
     );
-
-        res.status(200).json(updatedAdmin);
+        res.status(200).json({updatedAdmin,updateFields});
       } catch (err) {
         res.status(500).json(err);
       }

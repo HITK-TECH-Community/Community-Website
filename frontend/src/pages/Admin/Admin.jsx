@@ -53,12 +53,12 @@ export const Admin = (props) => {
       let formattedPath = response.data[0].image?.replace(/\\/g, "/");
       if (formattedPath?.startsWith("uploads/")) {
         formattedPath = formattedPath.replace("uploads/", "");
-        if (formattedPath) {
+        if (formattedPath && formattedPath !=="undefined") {
           formattedPath = `${END_POINT}/${formattedPath}`;
         }
       }
       
-      if(formattedPath){
+      if(formattedPath!=="undefined" && formattedPath){
         setImage(formattedPath);
       }
       setAdminData(response.data[0]);

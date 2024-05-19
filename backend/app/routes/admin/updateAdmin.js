@@ -9,15 +9,17 @@ module.exports =async (req, res) => {
       return res.status(404).json({ error: 'Admin not found' });
     }
 
-    // Delete previous image if it exists
-    if (admin.image) {
-      fs.unlinkSync(path.join(__dirname,'..' ,'..','..', admin.image));
+   // Delete previous image if it exists
+    if (admin.image && admin.image!=="undefined" && req.file?.path) {
+        fs.unlinkSync(path.join(__dirname,'..' ,'..','..', admin.image)); 
     }
 
     try {
       let updateFields = { ...req.body };
     if (req.file?.path) {
       updateFields.image = req.file.path;
+    }else{
+      updateFields.image = admin.image;
     }
 
     const updatedAdmin = await Admin.findByIdAndUpdate(

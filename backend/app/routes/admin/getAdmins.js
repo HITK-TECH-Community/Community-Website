@@ -47,5 +47,5 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
   res.status(200).send(response);
-  
+  return next();
 };

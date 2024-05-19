@@ -1,18 +1,33 @@
 const Admin = require('../../models/Admin');
+const fs = require('fs');
+const path = require('path');
 
 module.exports =async (req, res) => {
+   const admin = await Admin.findById(req.params.id);
+
+    if (!admin) {
+      return res.status(404).json({ error: 'Admin not found' });
+    }
+
+    // Delete previous image if it exists
+    if (admin.image) {
+      fs.unlinkSync(path.join(__dirname,'..' ,'..','..', admin.image));
+    }
 
     try {
-        const updatedAdmin = await Admin.findByIdAndUpdate(
-          req.params.id,
-          {
-            $set: req.body,
-          },
-          { new: true }
-        );
+      let updateFields = { ...req.body };
+    if (req.file?.path) {
+      updateFields.image = req.file.path;
+    }
+
+    const updatedAdmin = await Admin.findByIdAndUpdate(
+      req.params.id,
+      { $set: updateFields },
+      { new: true }
+    );
+
         res.status(200).json(updatedAdmin);
       } catch (err) {
-        res.status(500).json(err);
-      }
-  res.send('Done');
+        res.status(500).json({err});
+      } 
 };

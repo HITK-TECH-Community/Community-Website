@@ -1,55 +1,26 @@
-const to = require('await-to-js').default;
-const { ErrorHandler } = require('../../../helpers/error');
-const constants = require('../../../constants');
-const Contact = require("../../models/contactUs");
-const Admin = require("../../models/Admin");
+const mongoose = require('mongoose');
+const ContactUs = require('../../models/contactUs');
 
-// Controller to delete a contact by adminid and contactdocumentid
 module.exports = async (req, res, next) => {
-    const { contactId, adminId } = req.body;
+  try {
+    const payload = res.locals.decode;
+    const { contactUsId } = req.body;
 
-    // Check if contactId is provided
-    if (!contactId || !adminId) {
-        const error = new ErrorHandler(constants.ERRORS.VALIDATION, {
-            statusCode: 400,
-            message: 'Validation Error',
-            errStack: 'Both IDs are required to delete a contact',
-        });
-        return next(error);
-    }
-    //Find if the user is admin or not
-    const admin = await to(Admin.findOne({ _id: adminId }));
-    if (!admin) {
-        const error = new ErrorHandler(constants.ERRORS.USER, {
-            statusCode: 400,
-            message: "Admin Validation Error",
-            errStack: "Admin user provided not found in database"
-        })
-        return next(error);
-    }
-    // Delete the contact
-    const [err, result] = await to(Contact.findByIdAndDelete(contactId));
-
-    if (err) {
-        const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-            statusCode: 500,
-            message: 'Database Error',
-            errStack: err,
-        });
-        return next(error);
+    if (!payload.isSuperAdmin) {
+      return res.status(401).json({ error: 'You are not authorized to perform this action' });
     }
 
-    if (!result) {
-        const error = new ErrorHandler(constants.ERRORS.NOT_FOUND, {
-            statusCode: 404,
-            message: 'Contact Not Found',
-        });
-        return next(error);
+    if (!mongoose.Types.ObjectId.isValid(contactUsId)) {
+      return res.status(400).json({ error: 'Invalid Contact Us ID' });
     }
 
-    res.status(200).send({
-        message: 'Contact deleted successfully',
-    });
+    const contactUsEntry = await ContactUs.findByIdAndDelete(contactUsId);
+    if (!contactUsEntry) {
+      return res.status(404).json({ error: 'Contact Us entry not found' });
+    }
 
-    return next();
-};
+    return res.status(200).json({ message: 'Contact Us entry deleted successfully' });
+  } catch (error) {
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

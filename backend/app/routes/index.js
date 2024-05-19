@@ -9,13 +9,7 @@ const getFaq = require('./faq/getFaq');
 const deleteFaq = require('./faq/deleteFaq');
 const updateFaq = require('./faq/updateFaq')
 const joinUs = require('./joinUs');
-const contactUs = require('./contactUs/post');
-const deleteContactUs = require("./contactUs/delete");
-
-const getContactUs = require('./contactUs/get');
-const contactValidationSchema = require('./contactUs/@validationSchema');
-const validation = require('../../helpers/middlewares/validation');
-
+const contactus = require('./contactUs')
 const question = require('./Q&A/question');
 const answer = require('./Q&A/answers');
 const teamMember = require('./teamMember');
@@ -28,9 +22,7 @@ router.use('/faq', faq);
 router.use('/deleteFaq', deleteFaq);
 router.use('/updateFaq',updateFaq)
 router.use('/getFaq', getFaq);
-router.use('/contactus', validation(contactValidationSchema), contactUs);
-router.use('/getcontactus', getContactUs);
-router.use("/deleteContactUs", deleteContactUs);
+router.use('/contactus', contactus);
 router.use('/broadcast', broadcast);
 router.use('/question', question);
 router.use('/answers', answer);

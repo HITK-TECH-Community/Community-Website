@@ -139,12 +139,12 @@ export function Profile(props) {
     let firstName = props.adminData.firstName ? props.adminData.firstName : "";
     let lastName = props.adminData.lastName ? props.adminData.lastName : "";
     let Name = firstName + " " + lastName;
-    setName(Name || "xyz@gmail.com");
-    setFirstName(firstName || "xyz@gmail.com");
-    setLastName(lastName || "xyz@gmail.com");
+    setName(Name || "xyz");
+    setFirstName(firstName || "xyz");
+    setLastName(lastName || "");
     setEmail(props.adminData.email || "xyz@gmail.com");
-    setPhone(props.adminData.contact || "xyz@gmail.com");
-    setUsername(props.adminData.username || "xyz@gmail.com");
+    setPhone(props.adminData.contact || "+919099999990");
+    setUsername(props.adminData.username || "xyzIo");
   }, [props]);
 
   return (

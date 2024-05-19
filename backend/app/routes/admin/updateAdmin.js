@@ -33,7 +33,7 @@ module.exports =async (req, res) => {
       { $set: updateFields },
       { new: true }
     );
-        res.status(200).json({updatedAdmin,"Req.Body":updateFields});
+        res.status(200).json({"Req.Body":updateFields});
       } catch (err) {
         res.status(500).json(err);
       }

@@ -6,15 +6,16 @@
   align-items: center;
   justify-content: center;
 }
-
+//Updated the background color of join us section in light mode
 .join-us-light {
-  background-image: linear-gradient(141deg, #ff551f, #fabf67 60%, #ff8f6c);
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,170,233,1) 99%);
 }
 
-// for dark theme
+// Updated the background color of join us section in Dark mode
 .join-us-dark {
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  
+  background: linear-gradient(45deg, #4e4376, #2b5876 90%);
 }
 
 .join-us h1 {

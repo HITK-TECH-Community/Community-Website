@@ -16,6 +16,8 @@ export function Contact() {
     toastMessage: "",
   });
   const fetchJoinUs = async () => {
+    setIsLoaded(true);
+    try{
     const response = await fetch(`${END_POINT}/contactus/getcontactus`, {
       method: "GET",
       headers: {
@@ -25,6 +27,20 @@ export function Contact() {
     });
     const data = await response.json();
     setContactUsData(data.ContactUs);
+    setToast({
+        ...toast,
+        toastMessage: "Successfully get data!",
+        toastStatus: true,
+        toastType: "success",
+      });
+    }catch(error){
+      setToast({
+        ...toast,
+        toastMessage: "Unable to get data!",
+        toastStatus: true,
+        toastType: "error",
+      });
+    }
     setIsLoaded(false);
   };
   const handleCloseToast = (event, reason) => {

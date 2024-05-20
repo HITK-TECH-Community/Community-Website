@@ -80,8 +80,7 @@
 
 .resource-input {
   position: relative;
-  margin-bottom: 30px !important;
-  width: 35rem;
+  margin-bottom: 8px;
 }
 
 .resource-input input,
@@ -218,11 +217,8 @@
 }
 
 .inside-resource {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 85%;
+  margin: 0 auto;
 }
 
 [type="radio"] {

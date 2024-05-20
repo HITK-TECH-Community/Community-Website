@@ -36,6 +36,7 @@ import { Broadcast } from "./pages/Broadcast/index";
 import { AllBroadcasts } from "./pages/Broadcast/Component/AllBroadcasts/index";
 import { GetInvolved } from "./pages/GetInvolved";
 import { ForgotPasswordRecovery } from "./pages/ForgotPasswordRecovery/index";
+import GetAnswer from "./pages/Q&A/Components/GetAnswer/GetAnswer.jsx";
 
 import { useSelector } from "react-redux";
 
@@ -131,6 +132,11 @@ const App = () => {
                 exact={true}
                 path="/Q&A"
                 render={() => <Ques theme={theme} />}
+              />
+              <Route
+                exact={true}
+                path="/getanswers/:answerId"
+                render={() => <GetAnswer theme={theme} />}
               />
               <Route
                 exact={true}

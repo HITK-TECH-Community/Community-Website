@@ -77,8 +77,6 @@ export function Profile(props) {
       contact:phone,   
     };
     const formData = new FormData();
-
-    // Append form fields to FormData
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
     formData.append('username', username);

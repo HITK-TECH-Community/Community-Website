@@ -17,7 +17,7 @@ module.exports =async (req, res) => {
     }
     
     try {
-      let updateFields = {
+      const updateFields = {
             firstName:req.body.firstName,
             lastName:req.body.lastName,
             contact:req.body.contact,
@@ -33,9 +33,10 @@ module.exports =async (req, res) => {
       { $set: updateFields },
       { new: true }
     );
-        res.status(200).json({"Req.Body":updateFields});
+      return  res.status(200).json({"Req.Body":updateFields,"updatedDoc":updatedAdmin});
       } catch (err) {
-        res.status(500).json(err);
+      return res.status(500).json(err);
       }
+      
   res.send('Done');
 };

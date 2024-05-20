@@ -1,6 +1,6 @@
 import style from "./card.module.scss";
 
-export function Card({ content: { email, message, name, subject } }) {
+export function Card({ content: { email, message, name, subject }, id , handleDelete }) {
   return (
     <div className={style["card-item"]}>
       <div className={style["card-info"]}>
@@ -12,7 +12,7 @@ export function Card({ content: { email, message, name, subject } }) {
           <a href={`mailto:${email}`}>
             <button className={style["button-edit"]}>Reply</button>
           </a>
-          <button className={style["button-delete"]}>Delete</button>
+          <button name={`${id}`} onClick={(e)=>handleDelete(e.currentTarget.name)} className={style["button-delete"]}>Delete</button>
         </div>
       </div>
     </div>

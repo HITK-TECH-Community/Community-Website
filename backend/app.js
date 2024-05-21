@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const responseTime = require('response-time');
 const routes = require('./app/routes');
 const { errorHandler } = require('./helpers/error');
+const cookieParser = require('cookie-parser');
 require('colors');
 require('./helpers/dbConnection');
 
@@ -23,6 +24,9 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Response time
 app.use(responseTime({ suffix: false }));
+
+// cookie
+app.use(cookieParser());
 
 // Use routes
 app.use('/', routes);

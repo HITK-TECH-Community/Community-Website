@@ -354,23 +354,6 @@ input[type="date"]:not(:valid):before {
   align-items: center;
 }
 
-@media screen and (max-width: 1200px) {
-  .resource-input {
-    width: 23rem;
-  }
-
-  .toppings-list {
-    display: flex;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .resource-input {
-    width: auto;
-  }
-}
-
 @media screen and (max-width: 750px) {
   .resource-section {
     flex-direction: column;

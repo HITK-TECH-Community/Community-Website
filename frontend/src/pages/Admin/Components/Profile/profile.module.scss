@@ -40,16 +40,20 @@
   vertical-align: middle;
   background: linear-gradient(45deg, #ff005a 14.23%, #0a183d 83.75%);
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
 }
 
 .img-admin {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   margin: auto;
+  object-fit: cover; 
+  object-position: center; 
+  border-radius: 50%;  
 }
 
 .card-info {
-  height: 20rem;
+  height: 32rem;
   width: 98%;
   background: #fff;
   margin: 0 auto;
@@ -89,6 +93,12 @@
   width: 50%;
   margin: 1rem auto;
 }
+.input-wrapper-btn {
+  width: 50%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
 
 .input-wrapper input {
   border: 1px solid #f8f7f7;
@@ -97,6 +107,29 @@
   border-radius: 5px;
   padding: 0 1rem;
   box-shadow: inset 2px 2px 5px #c9c9c9, inset -2px -2px 5px #ffffff;
+}
+.data-loader {
+  width: 100%;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.edit-icon{
+  position: absolute;
+  top:0;
+  right:5px;
+  padding:2px;
+  color:black;
+  background-color: white;
+  border:solid white 1px;
+  border-radius: 100px;
+}
+.error-message {
+  height: 1rem;
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 @media (max-width: 600px) {

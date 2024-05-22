@@ -9,6 +9,7 @@ const downvoteQuestion = require('./downvoteQuestion');
 const updateQuestionStatus = require('./updateQuestionStatus');
 const { authMiddleware } = require('../../../../helpers/middlewares/auth');
 const deleteQuestion = require('./deleteQuestion');
+const { checkVoteCookie } = require('../../../../helpers/middlewares/cookie');
 
 router.post('/', validation(QuestionValidationSchema), postQuestion);
 
@@ -19,10 +20,10 @@ router.get('/getallquestions', getAllQuestion);
 router.get('/getQuestionById/:questionId', getQuestionById);
 
 // This route will increase upvote by one.
-router.patch('/upvote', upvoteQuestion);
+router.patch('/upvote',checkVoteCookie, upvoteQuestion);
 
 // This route will decrease upvote by one.
-router.patch('/downvote', downvoteQuestion);
+router.patch('/downvote',checkVoteCookie, downvoteQuestion);
 
 // route for updating the question status
 router.patch('/updateStatus', validation(updateQuestionStatusSchema), updateQuestionStatus);

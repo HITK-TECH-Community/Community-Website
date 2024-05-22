@@ -33,12 +33,13 @@ export const Admin = (props) => {
   const toggleNav = () => setIsMenuOpen(!isMenuOpen);
   const closeMobileMenu = () => setIsMenuOpen(false);
   const dispatch = useDispatch();
-  const firstName = localStorage.getItem("firstName");
+  const [update,setUpdate]=useState(true);
   const [qId,setQId] = useState("")
   const [adminData, setAdminData] = useState({});
+  const [image,setImage]=useState('./images/admin.png');
   const FetchAdminData = async () => {
     try {
-      const baseUrl = `${END_POINT}/admin`;
+      const baseUrl = `${END_POINT}/admin/`;
       const params = {
         type: "self",
         email: localStorage.getItem("email"),
@@ -47,8 +48,18 @@ export const Admin = (props) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       };
-      // Make the GET request using Axios
+      
       const response = await axios.get(baseUrl, { params, headers });
+      let formattedPath = response.data[0].image?.replace(/\\/g, "/");
+      if (formattedPath?.startsWith("uploads/")) {
+        formattedPath = formattedPath.replace("uploads/", "");
+        if (formattedPath && formattedPath !=="undefined") {
+          formattedPath = `${END_POINT}/${formattedPath}`;
+        }
+      }
+      if(formattedPath!=="undefined" && formattedPath){
+          setImage(formattedPath);
+        }
       setAdminData(response.data[0]);
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
@@ -68,7 +79,7 @@ export const Admin = (props) => {
       logout(dispatch);
     }
     return true;
-  }, [dispatch]);
+  }, [dispatch,update]);
 
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -76,7 +87,7 @@ export const Admin = (props) => {
         <div className={style["left"]}>
           <div className={style["welcome-section"]} onClick={() => setTab(0)}>
             <img
-              src="./images/admin.png"
+              src={image}
               className={style["img-admin"]}
               alt="admin_img"
             />
@@ -212,7 +223,7 @@ export const Admin = (props) => {
         </div>
         <div className={style["right"]}>
           {tab === 0 ? (
-            <Profile adminData={adminData} />
+            <Profile adminData={{...adminData,image}} update={()=>{setUpdate(!update)}} />
           ) : tab === 1 ? (
             <Dashboard setTab={setTab} />
           ) : tab === 2 ? (

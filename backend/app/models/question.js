@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const { Schema } = mongoose;
 
 const questionSchema = new Schema(
@@ -15,7 +14,7 @@ const questionSchema = new Schema(
       required: true,
     },
     tags: {
-      type: Array,
+      type: [String], 
     },
     isApproved: {
       type: Boolean,
@@ -29,4 +28,4 @@ const questionSchema = new Schema(
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );
 
-module.exports = mongoose.model('QUESTION', questionSchema);
+module.exports = mongoose.model('Question', questionSchema);

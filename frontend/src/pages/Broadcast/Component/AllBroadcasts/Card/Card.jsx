@@ -13,9 +13,9 @@ export function Card(props) {
     setFlipped(!flipped);
   };
 
-  const handleOpen = (s, h, i) => {
+  const handleOpen = (s, h, i, l) => {
     setOpen(true);
-    setData({ head: h, desc: s, img: i });
+    setData({ head: h, desc: s, img: i, link: l });
   };
 
   const handleClose = () => {
@@ -53,9 +53,7 @@ export function Card(props) {
         >
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>{props.project.title}</div>
-            <div className={style["card-content"]}>
-              {props.project.content.substring(0, 400)}...
-            </div>
+            <div className={style["card-content"]} dangerouslySetInnerHTML={{__html: props.project.content}} />
             <div className={style["card-date"]}>
               {months[date.getMonth()]},{date.getFullYear()}
             </div>
@@ -86,7 +84,8 @@ export function Card(props) {
                 handleOpen(
                   props.project.content,
                   props.project.title,
-                  props.project.imageUrl[0]
+                  props.project.imageUrl[0],
+                  props.project.link
                 )
               }
               className={

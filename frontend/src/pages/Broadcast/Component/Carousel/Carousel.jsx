@@ -15,9 +15,9 @@ export function Carousel(props) {
   const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
-  const handleOpen = (s, h, i) => {
+  const handleOpen = (s, h, i, l) => {
     setOpen(true);
-    setData({ head: h, desc: s, img: i });
+    setData({ head: h, desc: s, img: i, link: l });
   };
 
   const handleClose = () => {
@@ -131,7 +131,7 @@ export function Carousel(props) {
                   : `${style["slide-card-light"]} ${style["slide-card"]}`
               }
               onClick={() =>
-                handleOpen(item.content, item.title, item.imageUrl[0])
+                handleOpen(item.content, item.title, item.imageUrl[0], item?.link)
               }
             >
               <div
@@ -139,9 +139,7 @@ export function Carousel(props) {
               ></div>
 
               <h3 className={style["card-head"]}>{item.title}</h3>
-              <div className={style["card-text"]}>
-                {item.content.substring(0, 210)}...
-              </div>
+              <div className={style["card-text"]} dangerouslySetInnerHTML={{__html: item.content}} />
             </div>
           ))}
         </OwlCarousel>

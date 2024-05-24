@@ -6,6 +6,7 @@ import style from "./modals.module.scss";
 
 export function Modals(props) {
   let dark = props.theme;
+  console.log(props)
   return (
     <div>
       <Modal
@@ -53,7 +54,7 @@ export function Modals(props) {
                 className={style["image"]}
                 alt="dummy_img"
               />
-              <div className={style["cont"]}>{props.data.desc}</div>
+              <div className={style["cont"]} dangerouslySetInnerHTML={{__html:props.data.desc}} />
             </div>
             <h1
               className={
@@ -61,6 +62,7 @@ export function Modals(props) {
                   ? `${style["link-dark"]} ${style["link"]}`
                   : `${style["link-light"]} ${style["link"]}`
               }
+              onClick={()=>window.open(props.data.link,"_blank")}
             >
               Link
             </h1>

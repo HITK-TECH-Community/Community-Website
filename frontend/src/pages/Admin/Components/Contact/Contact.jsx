@@ -88,8 +88,8 @@ export function Contact() {
       <h1 style={{ textAlign: "center" }}> Contact Us </h1>
       {isLoaded ? <div className={style["data-loader"]}><Loader /></div>:
       <div className={style["card-container"]}>
-        <Grid container spacing={2} alignItems="center" justifyContent="center">
-          <Grid item>
+        <Grid container spacing={2} >
+          <Grid item alignItems="center" justifyContent="center">
             {contactUsData &&
               contactUsData.map((data) => {
                 return <Card key={data._id} id={data._id} handleDelete={handleDelete} content={data} />;

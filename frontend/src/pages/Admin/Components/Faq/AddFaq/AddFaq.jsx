@@ -1,63 +1,23 @@
-import React from "react";
-import { WithContext as ReactTags } from "react-tag-input";
+import React, { useRef, useState } from "react";
 import styles from "./add-faq.module.scss";
 import { Button2 } from "../../../../../components/util/Button/index";
-import { END_POINT } from "./../../../../../config/api";
-import { SimpleToast } from "./../../../../../components/util/Toast/Toast";
+import { SimpleToast } from "../../../../../components/util/Toast/Toast";
+import { END_POINT } from "../../../../../config/api";
 
-const KeyCodes = {
-  comma: 188,
-  enter: 13,
-};
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
+export function AddFaq() {
+  const tagRef = useRef();
+  const [tags, setTags] = useState([]);
+  const [formData, setFormData] = useState({ question: "", answer: "", tags: [] });
+  const [errorObj, setErrorObj] = useState({});
+  const [successToast, setSuccessToast] = useState(false);
+  const [errorToast, setErrorToast] = useState(false);
 
-export class AddFaq extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fields: {},
-      errors: {},
-      tags: [],
-      token: localStorage.getItem("token"),
-      successToast: false,
-      errorToast: false,
-    };
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleAddition = this.handleAddition.bind(this);
-    this.handleDrag = this.handleDrag.bind(this);
-    this.handleCloseToast = this.handleCloseToast.bind(this);
-  }
+  const handleCloseToast = () => {
+    setSuccessToast(false);
+    setErrorToast(false);
+  };
 
-  handleCloseToast(event, reason) {
-    if (reason === "clickaway") {
-      return;
-    }
-    this.setState({ errorToast: false });
-    this.setState({ successToast: false });
-  }
-
-  handleDelete(i) {
-    const { tags } = this.state;
-    this.setState({
-      tags: tags.filter((tag, index) => index !== i),
-    });
-  }
-
-  handleAddition(tag) {
-    this.setState((state) => ({ tags: [...state.tags, tag] }));
-  }
-
-  handleDrag(tag, currPos, newPos) {
-    const tags = [...this.state.tags];
-    const newTags = tags.slice();
-    newTags.splice(currPos, 1);
-    newTags.splice(newPos, 0, tag);
-    this.setState({ tags: newTags });
-  }
-
-  handleValidation() {
-    let fields = this.state.fields;
-    let tags = this.state.tags;
+  const handleValidation = () => {
     let errors = {};
     let formIsValid = true;
 
@@ -65,183 +25,192 @@ export class AddFaq extends React.Component {
       formIsValid = false;
       errors["tags"] = "* Please provide the necessary tags";
     }
-    if (!fields["question"]) {
+    if (!formData["question"]) {
       formIsValid = false;
       errors["question"] = "* Question cannot be empty";
     }
 
-    if (!fields["answer"]) {
+    if (!formData["answer"]) {
       formIsValid = false;
       errors["answer"] = "* Answer cannot be empty";
     }
 
-    if (typeof fields["question"] !== "undefined") {
-      if (fields["question"].length < 9) {
-        formIsValid = false;
-        errors["question"] = "* Question should consists mimimum 8 characters";
-      }
+    if (formData["question"] && formData["question"].length < 8) {
+      formIsValid = false;
+      errors["question"] = "* Question should consist of a minimum of 8 characters";
     }
 
-    if (typeof fields["answer"] !== "undefined") {
-      if (fields["answer"].length < 9) {
-        formIsValid = false;
-        errors["answer"] = "* Answer should consists mimimum 8 characters";
-      }
+    if (formData["answer"] && formData["answer"].length < 8) {
+      formIsValid = false;
+      errors["answer"] = "* Answer should consist of a minimum of 8 characters";
     }
-    this.setState({ errors: errors });
+
+    setErrorObj(errors);
     return formIsValid;
-  }
+  };
 
-  contactSubmit(e) {
-    e.preventDefault();
-    if (this.handleValidation()) {
-      let tags = this.state.tags;
-      return fetch(`${END_POINT}/faq`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + this.state.token,
-        },
-        body: JSON.stringify({ ...this.state.fields, tags }),
-      })
-        .then((response) => {
-          if (response.status === 200) {
-            this.setState({
-              successToast: true,
-              tags: [],
-              fields: { question: "", answer: "" },
-              errors: {},
-            });
-          }
-          response
-            .json()
-            .then((res) => {
-              if (res.statusCode === 500) {
-                this.setState({ errorToast: true });
-              }
-            })
-            .catch((err) => {
-              console.log("Error: ", err);
-            });
-        })
-        .catch((err) => {
-          console.error("must be a backend problem🤔:", err);
-        });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const addTag = () => {
+    const tag = tagRef.current.value.trim();
+    if (tag && !tags.includes(tag)) {
+      setTags([...tags, tag]);
+      setFormData({ ...formData, tags: [...tags, tag] });
+      tagRef.current.value = "";
     }
-  }
+  };
 
-  handleChange(field, e) {
-    let fields = this.state.fields;
-    fields[field] = e.target.value;
-    this.setState({ fields });
-  }
+  const removeTag = (tagToRemove) => {
+    const newTags = tags.filter(tag => tag !== tagToRemove);
+    setTags(newTags);
+    setFormData({ ...formData, tags: newTags });
+  };
 
-  render() {
-    return (
-      <div className={styles["faq-section"]}>
-        <div className={styles["faq-parent"]}>
-          <div className={styles["faq-child"] + " " + styles["child1"]}>
-            <div className={styles["faq-card"]}>
-              <h1 className={styles["faq-header-text"]}>Add &nbsp; Faq</h1>
-              <div className={styles["inside-faq"]}>
-                <form onSubmit={this.contactSubmit.bind(this)}>
-                  <div className={styles["faq-input"]}>
-                    <input
-                      id="question"
-                      type="text"
-                      name="question"
-                      placeholder="Question"
-                      onChange={this.handleChange.bind(this, "question")}
-                      value={this.state.fields["question"]}
-                    />
-                    <i className="fas fa-question-circle"></i>
-                    <br />
-                    <div>
-                      {this.state.errors["question"] ? (
-                        <div className={`${styles["validation"]} validation`}>
-                          {this.state.errors["question"]}
-                        </div>
-                      ) : (
-                        <div>&nbsp;&nbsp;</div>
-                      )}
-                    </div>
-                    <br />
-                  </div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (handleValidation()) {
+      try {
+        const response = await fetch(`${END_POINT}/faq`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(formData),
+        });
 
-                  <div className={styles["faq-input"]}>
-                    <input
-                      id="answer"
-                      type="text"
-                      name="answer"
-                      placeholder="Answer"
-                      onChange={this.handleChange.bind(this, "answer")}
-                      value={this.state.fields["answer"]}
-                    />
-                    <i className="fas fa-comment-dots"></i>
-                    <br />
-                    <div>
-                      {this.state.errors["answer"] ? (
-                        <div className={`${styles["validation"]} validation`}>
-                          {this.state.errors["answer"]}
-                        </div>
-                      ) : (
-                        <div>&nbsp;&nbsp;</div>
-                      )}
-                    </div>
-                    <br />
-                  </div>
+        if (response.status === 200) {
+          setSuccessToast(true);
+          setFormData({ question: "", answer: "", tags: [] });
+          setTags([]);
+        } else {
+          setErrorToast(true);
+        }
+      } catch (error) {
+        setErrorToast(true);
+      }
+    }
+  };
 
-                  <div className={styles["faq-input"]}>
-                    <ReactTags
-                      inputFieldPosition="top"
-                      tags={this.state.tags}
-                      handleDelete={this.handleDelete}
-                      handleAddition={this.handleAddition}
-                      handleDrag={this.handleDrag}
-                      delimiters={delimiters}
-                      classNames={{
-                        selected: styles["selectedClass"],
-                        tag: styles["tagClass"],
-                        remove: styles["removeClass"],
-                      }}
-                    />
-                    <i className="fas fa-tag"></i>
-                  </div>
+  return (
+    <div className={styles["faq-section"]}>
+      <div className={styles["faq-parent"]}>
+        <div className={styles["faq-child"] + " " + styles["child1"]}>
+          <div className={styles["faq-card"]}>
+            <h1 className={styles["faq-header-text"]}>Add &nbsp; Faq</h1>
+            <div className={styles["inside-faq"]}>
+              <form onSubmit={handleSubmit}>
+                <div className={styles["faq-input"]}>
+                  <input
+                    id="question"
+                    type="text"
+                    name="question"
+                    placeholder="Question"
+                    onChange={handleChange}
+                    value={formData.question}
+                  />
+                  <i className="fas fa-question-circle"></i>
+                  <br />
                   <div>
-                    {this.state.errors["tags"] ? (
+                    {errorObj.question ? (
                       <div className={`${styles["validation"]} validation`}>
-                        {this.state.errors["tags"]}
+                        {errorObj.question}
                       </div>
                     ) : (
                       <div>&nbsp;&nbsp;</div>
                     )}
                   </div>
                   <br />
-                  <div className={styles["submit-btn"]}>
-                    <Button2
-                      className={styles["submit-btn-text"]}
-                      label="Submit"
-                      type="submit"
+                </div>
+
+                <div className={styles["faq-input"]}>
+                  <input
+                    id="answer"
+                    type="text"
+                    name="answer"
+                    placeholder="Answer"
+                    onChange={handleChange}
+                    value={formData.answer}
+                  />
+                  <i className="fas fa-comment-dots"></i>
+                  <br />
+                  <div>
+                    {errorObj.answer ? (
+                      <div className={`${styles["validation"]} validation`}>
+                        {errorObj.answer}
+                      </div>
+                    ) : (
+                      <div>&nbsp;&nbsp;</div>
+                    )}
+                  </div>
+                  <br />
+                </div>
+
+                <div className={styles["faq-input"]}>
+                  <div className={styles["tags-container"]}>
+                    <div className={styles["tags"]}>
+                      {tags.map((tag, index) => (
+                        <Tag key={index} label={tag} remove={removeTag} />
+                      ))}
+                    </div>
+                    <input
+                      type="text"
+                      ref={tagRef}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          addTag();
+                        }
+                      }}
+                      placeholder="Enter Tags (Hit enter to add tags)"
                     />
                   </div>
-                </form>
-              </div>
+                  <i className="fas fa-tag"></i>
+                  <div>
+                    {errorObj.tags ? (
+                      <div className={`${styles["validation"]} validation`}>
+                        {errorObj.tags}
+                      </div>
+                    ) : (
+                      <div>&nbsp;&nbsp;</div>
+                    )}
+                  </div>
+                </div>
+
+                <div className={styles["submit-btn"]}>
+                  <Button2
+                    className={styles["submit-btn-text"]}
+                    label="Submit"
+                    type="submit"
+                  />
+                </div>
+              </form>
             </div>
           </div>
         </div>
-        <SimpleToast
-          open={this.state.successToast}
-          message="FAQ has been added"
-          handleCloseToast={this.handleCloseToast}
-          severity="success"
-        />
-        <SimpleToast
-          open={this.state.errorToast}
-          message="Database Error"
-          handleCloseToast={this.handleCloseToast}
-          severity="error"
-        />
       </div>
-    );
-  }
+      <SimpleToast
+        open={successToast}
+        message="FAQ has been added"
+        handleCloseToast={handleCloseToast}
+        severity="success"
+      />
+      <SimpleToast
+        open={errorToast}
+        message="Database Error"
+        handleCloseToast={handleCloseToast}
+        severity="error"
+      />
+    </div>
+  );
 }
+
+const Tag = ({ label, remove }) => (
+  <div className={styles["tag"]} onClick={() => remove(label)}>
+    <span className={styles["tag-label"]}>{label}</span>
+    <span className={styles["tag-remove"]}>x</span>
+  </div>
+);

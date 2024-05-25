@@ -7,7 +7,7 @@ const deleteContactUs = require('./delete');
 const { authMiddleware } = require('../../../helpers/middlewares/auth');
 
 router.get('/getcontactus', getContact);
-router.post('/',authMiddleware, validation(contactValidationSchema), postContact);
+router.post('/', validation(contactValidationSchema), postContact);
 router.delete("/deleteContactUs",authMiddleware, deleteContactUs);
 
 module.exports = router;

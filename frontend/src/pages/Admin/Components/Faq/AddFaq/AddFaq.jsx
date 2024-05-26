@@ -96,7 +96,7 @@ export class AddFaq extends React.Component {
     e.preventDefault();
     if (this.handleValidation()) {
       let tags = this.state.tags;
-      return fetch(`${END_POINT}/faq`, {
+      return fetch(`${END_POINT}/faq/faq`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

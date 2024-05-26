@@ -2,12 +2,14 @@ const to = require('await-to-js').default;
 const faq = require('../../models/faq');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-const Admin = require('../../models/Admin');
 
 module.exports = async (req, res, next) => {
-  const { userId } = req.body;
   const { faqId } = req.body;
-  if (!userId || !faqId) {
+  const payload = res.locals.decode;
+  if (!payload.isSuperAdmin) {
+    return res.status(401).json({ error: 'You are not authorized to perform this action' });
+  }
+  if (!faqId) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: `You don't have the required permissions`,
@@ -15,17 +17,8 @@ module.exports = async (req, res, next) => {
     });
     return next(error);
   }
-  const [err] = await to(Admin.findById(userId));
+  const [err] = await to(faq.findByIdAndDelete(faqId));
   if (err) {
-    const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-      statusCode: 500,
-      message: `You don't have the required permissions`,
-      errStack: err,
-    });
-    return next(error);
-  }
-  const [err2] = await to(faq.findByIdAndDelete(faqId));
-  if (err2) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
       message: `Faq doesn't exist`,

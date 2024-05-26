@@ -91,3 +91,10 @@
 .button-delete:hover {
   background-color: #fc3779;
 }
+
+@media (max-width: 441px) {
+  .card-item {
+    width: 70vw;
+    margin: 0.5em 1em 1em 1.5em;
+  }
+}

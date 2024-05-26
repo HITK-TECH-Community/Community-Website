@@ -4,6 +4,10 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
+  const payload = res.locals.decode;
+  if (!payload.isSuperAdmin) {
+    return res.status(401).json({ error: 'You are not authorized to perform this action' });
+  }
   const [err, response] = await to(contactUs.find());
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {

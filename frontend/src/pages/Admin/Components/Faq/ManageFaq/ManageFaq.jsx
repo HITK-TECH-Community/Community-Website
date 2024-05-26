@@ -1,12 +1,9 @@
 import React from "react";
-import React from "react";
 import { useEffect, useState } from "react";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import { Edit, Delete } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
 import { Edit, Delete } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";

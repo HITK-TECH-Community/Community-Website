@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { MDBBadge } from "mdbreact";
 import teamData from "../../test_data/team-roles.json";
-
 import style from "./about.module.scss";
 import "./about.scss";
+import { END_POINT } from "../../config/api";
 
 const useStyles = makeStyles(() => ({
   details: {
@@ -20,6 +20,26 @@ const useStyles = makeStyles(() => ({
 
 export const About = (props) => {
   let dark = props.theme;
+  const [team, setTeam] = useState([]);
+  useEffect(() => {
+    getTeam();
+  }, []);
+  const getTeam = async () => {
+    try {
+      const url = `${END_POINT}/teamMember/getTeamMembers/`;
+      const response = await fetch(url);
+      const data = await response.json();
+      const _data = data.map((item) => {
+        return {
+          ...item,
+          teams: item.teams[0].split(","),
+        };
+      });
+      setTeam(_data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const classes = useStyles();
   return (
@@ -188,11 +208,10 @@ export const About = (props) => {
           }
         ></div>
         <div className={style["row2"]}>
-          {Object.keys(teamData).map((role) => {
-            if (role === "member") {
-              return teamData[role].map((roleObject) => {
+          { team.map((roleObject,index) => {
                 return (
                   <div
+                  key={index}
                     className={
                       dark
                         ? `${style["card1"]} ${style["card1-dark"]}`
@@ -203,11 +222,12 @@ export const About = (props) => {
                       <img
                         alt="profile"
                         className={style["cover"]}
-                        src={roleObject.profile_pic}
+                        src={roleObject.image||"./images/defaultUser.png"}
                       />
                       <div className={style["team-social"]}>
                         <i
-                          href={roleObject.linkedin}
+                          href={roleObject.linkedin_url}
+                          onClick={() => window.open(roleObject.linkedin_url,"_blank")}
                           className={
                             dark
                               ? `${style["card-footer"]} fab fa-linkedin fa-2x in in-dark`
@@ -215,7 +235,8 @@ export const About = (props) => {
                           }
                         ></i>
                         <i
-                          href={roleObject.twitter}
+                          href={roleObject.twitter_url}
+                          onClick={() => window.open(roleObject.twitter_url,"_blank")}
                           className={
                             dark
                               ? `${style["card-footer"]} fab fa-twitter-square fa-twitter-square-dark fa-2x`
@@ -223,7 +244,8 @@ export const About = (props) => {
                           }
                         ></i>
                         <i
-                          href={roleObject.github}
+                          href={roleObject.github_url}
+                          onClick={() => window.open(roleObject.github_url,"_blank")}
                           className={
                             dark
                               ? `${style["card-footer"]} fab fa-github-square fa-github-square-dark fa-2x`
@@ -242,23 +264,24 @@ export const About = (props) => {
                           variant="h6"
                           id={style["Mui-h6"]}
                         >
-                          {roleObject.name}
+                          {roleObject?.full_name}
                         </Typography>
                         <div>
-                          <p id={style["intro"]}>{roleObject.description}</p>
+                          <p id={style["intro"]}>{roleObject?.description}</p>
                         </div>
                         <div className={style["badge-container"]}>
-                          {roleObject.tags.map((badge) => {
+                          {roleObject?.teams?.map((badge) => {
                             return (
                               <MDBBadge
                                 className={
-                                  (badge === "Open Source" &&
+                                  (badge === "open-source" &&
                                     style["primary"]) ||
-                                  (badge === "Social Media" &&
+                                  (badge === "social" &&
                                     style["default"]) ||
-                                  (badge === "Broadcast" &&
+                                  (badge === "broadcast" &&
                                     style["broadcast"]) ||
-                                  (badge === "Core Team" && style["info"])
+                                  (badge === "design" && style["info"]) ||
+                                  (badge === "resource-sharing" && style["info"])
                                 }
                               >
                                 {badge}
@@ -271,10 +294,7 @@ export const About = (props) => {
                     </div>
                   </div>
                 );
-              });
-            }
-            return null;
-          })}
+              })}
         </div>
       </div>
     </div>

@@ -73,7 +73,7 @@ export function AddFaq() {
     e.preventDefault();
     if (handleValidation()) {
       try {
-        const response = await fetch(`${END_POINT}/faq`, {
+        const response = await fetch(`${END_POINT}/faq/postFaq`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -56,7 +56,7 @@ export function Faq(props) {
   };
 
   const fetchFaqs = () => {
-    fetch(`${END_POINT}/getFaq`, {
+    fetch(`${END_POINT}/faq/getFaq`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

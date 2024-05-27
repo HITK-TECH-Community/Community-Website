@@ -7,6 +7,8 @@ import teamData from "../../test_data/team-roles.json";
 import style from "./about.module.scss";
 import "./about.scss";
 import { END_POINT } from "../../config/api";
+import Loader from "../../components/util/Loader";
+import { SimpleToast } from "../../components/util/Toast/Toast";
 
 const useStyles = makeStyles(() => ({
   details: {
@@ -22,10 +24,17 @@ export const About = (props) => {
   let dark = props.theme;
   const [team, setTeam] = useState([]);
   const [image, setImage] = useState([]);
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     getTeam();
   }, []);
   const getTeam = async () => {
+    setIsLoaded(true);
     try {
       const url = `${END_POINT}/teamMember/getTeamMembers/`;
       const response = await fetch(url);
@@ -49,9 +58,28 @@ export const About = (props) => {
       });
       setTeam(_data);
       setImage(_image);
+      setToast({
+        ...toast,
+        toastMessage: "Successfully get Board Members",
+        toastStatus: true,
+        toastType: "success",
+      });
     } catch (error) {
       console.error(error);
+      setToast({
+        ...toast,
+        toastMessage: "Sorry! Unable to Board Members",
+        toastStatus: true,
+        toastType: "error",
+      });
     }
+    setIsLoaded(false);
+  };
+  const handleCloseToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
   };
 
   const classes = useStyles();
@@ -202,7 +230,7 @@ export const About = (props) => {
           }
         ></div>
         <div className={style["row2"]}>
-          {team.map((roleObject, index) => {
+          {isLoaded?<Loader/> : team.map((roleObject, index) => {
             return (
               <div
                 key={index}
@@ -298,6 +326,14 @@ export const About = (props) => {
           })}
         </div>
       </div>
+      {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
     </div>
   );
 };

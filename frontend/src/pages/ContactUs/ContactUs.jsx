@@ -3,16 +3,15 @@ import { Button2 } from "../../components/util/Button/index";
 import Recaptcha from "react-recaptcha";
 import style from "./ContactUs.module.scss";
 import Joi from "joi-browser";
-import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast/index";
 import Loader from "../../components/util/Loader";
+import { postContactUs } from "../../service/ContactUs";
 
 export const ContactUs = (props) => {
   const [isVerified, verified] = useState(false);
   const [contactToast, setContactToast] = useState("");
-  const [openSubmitContactSuccess, setOpenSubmitContactSuccess] = useState(
-    false
-  );
+  const [openSubmitContactSuccess, setOpenSubmitContactSuccess] =
+    useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [contactToastStatus, setContactToastStatus] = useState("");
   const recaptchaLoaded = () => {
@@ -91,34 +90,27 @@ export const ContactUs = (props) => {
     setFormErrors(errors);
   };
   const submitContactFormData = async (formData) => {
-    var api = `${END_POINT}/contactus`;
     setIsLoading(true);
-    return await fetch(api, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (
-          data.message === "Database Error" ||
-          data.message === "Sendgrid Error"
-        ) {
-          setIsLoading(false);
-          setContactToast(data.message);
-          setContactToastStatus("error");
-        } else {
-          setIsLoading(false);
-          setContactToastStatus("success");
-          setContactToast(data.message);
-          setOpenSubmitContactSuccess(true);
-        }
-      })
-      .catch((err) => {
-        console.info(err);
-      });
+    try {
+      const data = await postContactUs(formData);
+      if (
+        data.message === "Database Error" ||
+        data.message === "Sendgrid Error"
+      ) {
+        setIsLoading(false);
+        setContactToast(data.message);
+        setContactToastStatus("error");
+      } else {
+        setIsLoading(false);
+        setContactToastStatus("success");
+        setContactToast(data.message);
+        setOpenSubmitContactSuccess(true);
+      }
+    } catch (error) {
+      setIsLoading(false);
+      setContactToast("Server Error");
+      setContactToastStatus("error");
+    }
   };
   const handleCloseContactToast = () => {
     setOpenSubmitContactSuccess(false);

@@ -6,6 +6,18 @@
     height: 37rem;
     align-items: center;
 }
+
+.faq-input {
+  border-color: #1863ff;
+  outline: none;
+  border: double 2px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white),
+  linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-color: #ffffff;
+}
   
 .faq-container {
     padding-bottom: 10px;
@@ -60,7 +72,6 @@
     margin-top: 20px;
 }
 .btns {
-    color: white;
     font-weight: bolder;
 }
 #delete-btn {
@@ -74,3 +85,100 @@
     display: flex;
     flex-direction: column;
 }
+.edit-dialog {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 30px;
+    border-radius: 15px;
+    z-index: 10013;
+    width: 60%;
+    height: auto;
+    background-color: #e7e7e7;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+  }
+
+.edit-dialog-heading {
+    text-align: center; 
+    padding-top: 20px;
+}
+  
+.edit-form {
+    width: 85%;
+    margin: 0 auto;
+}
+  
+.edit-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+}
+  
+.edit-form input[type="text"],
+.edit-form textarea {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #bbbaba;
+    border-radius: 10px;
+    padding: 0 25px;
+    color: #777777;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    box-shadow: inset 2px 2px 5px #888888, inset -2px -2px 5px #ffffff;
+}
+  
+.edit-form textarea {
+    height: 180px;
+    resize: none;
+}
+  
+.edit-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+  }
+  
+.submit-btn-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+@media screen and (max-width: 750px) {
+    .edit-dialog {
+      width: 95%;
+      margin: 10% auto;
+    }
+  
+    .edit-form input,
+    .edit-form textarea {
+      height: 40px;
+    }
+  
+    .edit-actions button {
+      font-size: 14px;
+    }
+}
+  

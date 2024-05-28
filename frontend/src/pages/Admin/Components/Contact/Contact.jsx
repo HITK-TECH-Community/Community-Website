@@ -17,23 +17,8 @@ export function Contact() {
   });
   const fetchJoinUs = async () => {
     setIsLoaded(true);
-    try{
-    const data = await getContactUs();
+    const data = await getContactUs(setToast, toast);
     setContactUsData(data);
-    setToast({
-        ...toast,
-        toastMessage: "Successfully get data!",
-        toastStatus: true,
-        toastType: "success",
-      });
-    }catch(error){
-      setToast({
-        ...toast,
-        toastMessage: "Unable to get data!",
-        toastStatus: true,
-        toastType: "error",
-      });
-    }
     setIsLoaded(false);
   };
   const handleCloseToast = (event, reason) => {
@@ -43,24 +28,8 @@ export function Contact() {
     setToast({ ...toast, toastStatus: false });
   };
   const handleDelete = async (id) => {
-    try {
-      const data = await deleteContactUs(id);
-      setToast({
-        ...toast,
-        toastMessage: "Successfully deleted!",
-        toastStatus: true,
-        toastType: "success",
-      });
+      const data = await deleteContactUs(id, setToast, toast);
       fetchJoinUs()
-    } catch (error) {
-      console.log(error);
-      setToast({
-        ...toast,
-        toastMessage: "Unable to delete!",
-        toastStatus: true,
-        toastType: "error",
-      });
-    }
   };
   useEffect(() => {
     setIsLoaded(true);

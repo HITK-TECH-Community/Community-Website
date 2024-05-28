@@ -9,11 +9,12 @@ import { postContactUs } from "../../service/ContactUs";
 
 export const ContactUs = (props) => {
   const [isVerified, verified] = useState(false);
-  const [contactToast, setContactToast] = useState("");
-  const [openSubmitContactSuccess, setOpenSubmitContactSuccess] =
-    useState(false);
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const [isLoading, setIsLoading] = useState(false);
-  const [contactToastStatus, setContactToastStatus] = useState("");
   const recaptchaLoaded = () => {
     console.log("Recaptcha loaded");
   };
@@ -91,30 +92,14 @@ export const ContactUs = (props) => {
   };
   const submitContactFormData = async (formData) => {
     setIsLoading(true);
-    try {
-      const data = await postContactUs(formData);
-      if (
-        data.message === "Database Error" ||
-        data.message === "Sendgrid Error"
-      ) {
-        setIsLoading(false);
-        setContactToast(data.message);
-        setContactToastStatus("error");
-      } else {
-        setIsLoading(false);
-        setContactToastStatus("success");
-        setContactToast(data.message);
-        setOpenSubmitContactSuccess(true);
-      }
-    } catch (error) {
-      setIsLoading(false);
-      setContactToast("Server Error");
-      setContactToastStatus("error");
-    }
+    const data = await postContactUs(formData,setToast,toast);
+    setIsLoading(false);
   };
-  const handleCloseContactToast = () => {
-    setOpenSubmitContactSuccess(false);
-    setContactToast("");
+  const handleCloseContactToast = (event,reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
   };
   return (
     <div
@@ -140,7 +125,7 @@ export const ContactUs = (props) => {
                   <Loader height="25vh" />
                 </div>
               </React.Fragment>
-            ) : contactToastStatus === "error" ? (
+            ) : toast.toastStatus === "error" ? (
               <React.Fragment>
                 <div className={style["goodbye-card"]}>
                   <h1 className={style["card-heading"]}>OOPS !</h1>
@@ -312,12 +297,12 @@ export const ContactUs = (props) => {
           )}
         </div>
       </div>
-      {openSubmitContactSuccess && (
+      {toast.toastStatus && (
         <SimpleToast
-          open={openSubmitContactSuccess}
-          message={contactToast}
+          open={toast.toastStatus}
+          message={toast.toastMessage}
           handleCloseToast={handleCloseContactToast}
-          severity={contactToastStatus}
+          severity={toast.toastType}
         />
       )}
     </div>

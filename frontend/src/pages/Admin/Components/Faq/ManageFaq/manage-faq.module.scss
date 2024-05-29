@@ -10,7 +10,7 @@
 .faq-input {
   border-color: #1863ff;
   outline: none;
-  border: double 2px transparent;
+  border: double 1px transparent;
   border-radius: 10px;
   background-image: linear-gradient(white, white),
   linear-gradient(to right, rgba(255, 0, 90, 1), rgba(10, 24, 61, 1));
@@ -99,7 +99,6 @@
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
 }
 .blur-background {
     position: fixed;
@@ -165,11 +164,24 @@
     align-items: center;
 }
 
+.error {
+    color: rgb(219, 0, 0);
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.checkbox {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
   
 @media screen and (max-width: 750px) {
     .edit-dialog {
       width: 95%;
-      margin: 10% auto;
+      margin: 20% auto;
     }
   
     .edit-form input,

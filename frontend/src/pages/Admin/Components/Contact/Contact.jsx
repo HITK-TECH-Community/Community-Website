@@ -1,11 +1,11 @@
 import React from "react";
-import { END_POINT } from "../../../../config/api";
 import { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { Card } from "./Card/index.js";
 import style from "./contactus.module.scss";
 import Loader from "../../../../components/util/Loader";
 import { SimpleToast } from "../../../../components/util/Toast/Toast.jsx";
+import { deleteContactUs, getContactUs } from "../../../../service/ContactUs.jsx";
 
 export function Contact() {
   const [contactUsData, setContactUsData] = useState([]);
@@ -17,30 +17,8 @@ export function Contact() {
   });
   const fetchJoinUs = async () => {
     setIsLoaded(true);
-    try{
-    const response = await fetch(`${END_POINT}/contactus/getcontactus`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    const data = await response.json();
-    setContactUsData(data.ContactUs);
-    setToast({
-        ...toast,
-        toastMessage: "Successfully get data!",
-        toastStatus: true,
-        toastType: "success",
-      });
-    }catch(error){
-      setToast({
-        ...toast,
-        toastMessage: "Unable to get data!",
-        toastStatus: true,
-        toastType: "error",
-      });
-    }
+    const data = await getContactUs(setToast, toast);
+    setContactUsData(data);
     setIsLoaded(false);
   };
   const handleCloseToast = (event, reason) => {
@@ -50,34 +28,8 @@ export function Contact() {
     setToast({ ...toast, toastStatus: false });
   };
   const handleDelete = async (id) => {
-    try {
-      const url = `${END_POINT}/contactus/deleteContactUs`;
-      const response = await fetch(url, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({ contactUsId: id }),
-      });
-
-      const data = await response.json();
-      setToast({
-        ...toast,
-        toastMessage: "Successfully deleted!",
-        toastStatus: true,
-        toastType: "success",
-      });
+      const data = await deleteContactUs(id, setToast, toast);
       fetchJoinUs()
-    } catch (error) {
-      console.log(error);
-      setToast({
-        ...toast,
-        toastMessage: "Unable to delete!",
-        toastStatus: true,
-        toastType: "error",
-      });
-    }
   };
   useEffect(() => {
     setIsLoaded(true);

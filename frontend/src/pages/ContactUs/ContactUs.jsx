@@ -3,18 +3,18 @@ import { Button2 } from "../../components/util/Button/index";
 import Recaptcha from "react-recaptcha";
 import style from "./ContactUs.module.scss";
 import Joi from "joi-browser";
-import { END_POINT } from "../../config/api";
 import { SimpleToast } from "../../components/util/Toast/index";
 import Loader from "../../components/util/Loader";
+import { postContactUs } from "../../service/ContactUs";
 
 export const ContactUs = (props) => {
   const [isVerified, verified] = useState(false);
-  const [contactToast, setContactToast] = useState("");
-  const [openSubmitContactSuccess, setOpenSubmitContactSuccess] = useState(
-    false
-  );
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const [isLoading, setIsLoading] = useState(false);
-  const [contactToastStatus, setContactToastStatus] = useState("");
   const recaptchaLoaded = () => {
     console.log("Recaptcha loaded");
   };
@@ -91,38 +91,15 @@ export const ContactUs = (props) => {
     setFormErrors(errors);
   };
   const submitContactFormData = async (formData) => {
-    var api = `${END_POINT}/contactus`;
     setIsLoading(true);
-    return await fetch(api, {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (
-          data.message === "Database Error" ||
-          data.message === "Sendgrid Error"
-        ) {
-          setIsLoading(false);
-          setContactToast(data.message);
-          setContactToastStatus("error");
-        } else {
-          setIsLoading(false);
-          setContactToastStatus("success");
-          setContactToast(data.message);
-          setOpenSubmitContactSuccess(true);
-        }
-      })
-      .catch((err) => {
-        console.info(err);
-      });
+    const data = await postContactUs(formData,setToast,toast);
+    setIsLoading(false);
   };
-  const handleCloseContactToast = () => {
-    setOpenSubmitContactSuccess(false);
-    setContactToast("");
+  const handleCloseContactToast = (event,reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
   };
   return (
     <div
@@ -148,7 +125,7 @@ export const ContactUs = (props) => {
                   <Loader height="25vh" />
                 </div>
               </React.Fragment>
-            ) : contactToastStatus === "error" ? (
+            ) : toast.toastStatus === "error" ? (
               <React.Fragment>
                 <div className={style["goodbye-card"]}>
                   <h1 className={style["card-heading"]}>OOPS !</h1>
@@ -320,12 +297,12 @@ export const ContactUs = (props) => {
           )}
         </div>
       </div>
-      {openSubmitContactSuccess && (
+      {toast.toastStatus && (
         <SimpleToast
-          open={openSubmitContactSuccess}
-          message={contactToast}
+          open={toast.toastStatus}
+          message={toast.toastMessage}
           handleCloseToast={handleCloseContactToast}
-          severity={contactToastStatus}
+          severity={toast.toastType}
         />
       )}
     </div>

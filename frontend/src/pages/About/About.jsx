@@ -6,9 +6,9 @@ import { MDBBadge } from "mdbreact";
 import teamData from "../../test_data/team-roles.json";
 import style from "./about.module.scss";
 import "./about.scss";
-import { END_POINT } from "../../config/api";
 import Loader from "../../components/util/Loader";
 import { SimpleToast } from "../../components/util/Toast/Toast";
+import { getTeamMembers } from "../../service/About";
 
 const useStyles = makeStyles(() => ({
   details: {
@@ -35,44 +35,9 @@ export const About = (props) => {
   }, []);
   const getTeam = async () => {
     setIsLoaded(true);
-    try {
-      const url = `${END_POINT}/teamMember/getTeamMembers/`;
-      const response = await fetch(url);
-      const data = await response.json();
-      const _data = data.map((item) => {
-        return {
-          ...item,
-          teams: item.teams[0].split(","),
-        };
-      });
-      let _image = [];
-      await _data?.map((item) => {
-        let formattedPath = item.image?.replace(/\\/g, "/");
-        if (formattedPath?.startsWith("uploads/")) {
-          formattedPath = formattedPath.replace("uploads/", "");
-          if (formattedPath) {
-            formattedPath = `${END_POINT}/${formattedPath}`;
-          }
-        }
-        _image.push({ image: formattedPath, id: item._id });
-      });
-      setTeam(_data);
+      const {teamMembers, _image} = await getTeamMembers(setToast, toast);
+      setTeam(teamMembers);
       setImage(_image);
-      setToast({
-        ...toast,
-        toastMessage: "Successfully get Board Members",
-        toastStatus: true,
-        toastType: "success",
-      });
-    } catch (error) {
-      console.error(error);
-      setToast({
-        ...toast,
-        toastMessage: "Sorry! Unable to Board Members",
-        toastStatus: true,
-        toastType: "error",
-      });
-    }
     setIsLoaded(false);
   };
   const handleCloseToast = (event, reason) => {

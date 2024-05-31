@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -11,6 +10,7 @@ import { END_POINT } from "../../../../../config/api";
 import Loader from "../../../../../components/util/Loader";
 import style from "./manage-faq.module.scss";
 import { SimpleToast } from "../../../../../components/util/Toast";
+import { Button2 } from "../../../../../components/util/Button/index";
 
 export function ManageFaq() {
   const [faqs, setFaqs] = useState([]);
@@ -19,34 +19,38 @@ export function ManageFaq() {
   const [open, setOpenToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [severity, setSeverity] = useState("success");
-  const [reload, setReload] = useState(true);
-  const handleCloseToast = () => {
+  const [reload, setReload] = useState(false);
+  const [faqObject, setFaqObject] = useState({});
+  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleCloseToast = useCallback(() => {
     setTimeout(() => {
       setOpenToast(false);
     }, 500);
-  };
+  }, []);
+
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  async function fetchAllFaq() {
+
+  const fetchAllFaq = useCallback(async () => {
+    setIsFetching(true);
     try {
       const response = await fetch(`${END_POINT}/faq/getFaq`);
       const data = await response.json();
-      console.log(data);
       setFaqs(data.Faq);
       setIsFetching(false);
     } catch (err) {
       console.log(err.message);
       setIsFetching(false);
     }
-  }
+  }, []);
 
   const deleteFaq = async (faqId) => {
     setIsFetching(true);
     const url = `${END_POINT}/faq/deleteFaq`;
-    const body = {
-      faqId: faqId,
-    };
+    const body = { faqId: faqId };
     const headers = {
       "Content-Type": "application/json",
       authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -73,9 +77,70 @@ export function ManageFaq() {
       setIsFetching(false);
     }
   };
+
+  const updateFaq = async (faqId, updatedFaqDetails) => {
+    try {
+      const response = await fetch(`${END_POINT}/faq/updateFaq`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({ faqId, ...updatedFaqDetails }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update FAQ");
+      }
+
+      const data = await response.json();
+      setToastMessage(data.message);
+      setOpenToast(true);
+      setSeverity("success");
+      setReload((prev) => !prev);
+    } catch (error) {
+      console.error("Failed to update FAQ:", error.message);
+      setToastMessage("Failed to update FAQ");
+      setOpenToast(true);
+      setSeverity("error");
+    }
+  };
+
+  const handleEdit = (faqId) => {
+    const editedFaq = faqs.find((faq) => faq._id === faqId);
+    setFaqObject(editedFaq);
+    setOpenEditDialog(true);
+  };
+
+  const handleSaveEdit = () => {
+    if (validateForm()) {
+      updateFaq(faqObject._id, faqObject);
+      setOpenEditDialog(false);
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setOpenEditDialog(false);
+  };
+
+  const validateForm = () => {
+    const errors = {};
+    if (!faqObject.question) {
+      errors.question = "* Question is required";
+    }
+    if (!faqObject.answer) {
+      errors.answer = "* Answer is required";
+    }
+    if (!faqObject.tags.length || faqObject.tags[0] === "") {
+      errors.tags = "* At least one tag is required";
+    }
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   useEffect(() => {
     fetchAllFaq();
-  }, [reload]);
+  }, [fetchAllFaq, reload]);
 
   return (
     <div>
@@ -129,8 +194,9 @@ export function ManageFaq() {
                       className={style["btns"]}
                       variant="contained"
                       endIcon={<Edit />}
+                      onClick={() => handleEdit(faq._id)}
                     >
-                      UPDATE
+                      EDIT
                     </Button>
                     <Button
                       id={style["delete-btn"]}
@@ -148,6 +214,81 @@ export function ManageFaq() {
           )}
         </div>
       </div>
+      {faqObject && openEditDialog && (
+        <div className={style["blur-background"]}>
+          <div className={style["edit-dialog"]}>
+            <h2 className={style["edit-dialog-heading"]}>Edit FAQ</h2>
+            <div className={style["edit-form"]}>
+              <label htmlFor="editedQuestion">Question:</label>
+              <input
+                id="editedQuestion"
+                type="text"
+                value={faqObject.question}
+                onChange={(e) =>
+                  setFaqObject({ ...faqObject, question: e.target.value })
+                }
+                className={style["faq-input"]}
+              />
+              {formErrors.question && (
+                <span className={style["error"]}>{formErrors.question}</span>
+              )}
+              <label htmlFor="editedAnswer">Answer:</label>
+              <input
+                id="editedAnswer"
+                type="text"
+                value={faqObject.answer}
+                onChange={(e) =>
+                  setFaqObject({ ...faqObject, answer: e.target.value })
+                }
+                className={style["faq-input"]}
+              />
+              {formErrors.answer && (
+                <span className={style["error"]}>{formErrors.answer}</span>
+              )}
+              <label htmlFor="editedIsActive">Is Active:</label>
+              <input
+                id="editedIsActive"
+                type="checkbox"
+                checked={faqObject.isActive}
+                onChange={(e) =>
+                  setFaqObject({ ...faqObject, isActive: e.target.checked })
+                }
+                className={style["checkbox"]}
+              />
+              <label htmlFor="editedTags">Tags:</label>
+              <input
+                id="editedTags"
+                type="text"
+                value={faqObject.tags.join(",")}
+                onChange={(e) =>
+                  setFaqObject({
+                    ...faqObject,
+                    tags: e.target.value.split(",").map(tag => tag.trim()),
+                  })
+                }
+                className={style["faq-input"]}
+              />
+              {formErrors.tags && (
+                <span className={style["error"]}>{formErrors.tags}</span>
+              )}
+              <div className={style["submit-btn"]}>
+                <Button2
+                  className={style["submit-btn-text"]}
+                  label="Save"
+                  type="submit"
+                  onClick={handleSaveEdit}
+                />
+                <Button2
+                  className={style["submit-btn-text"]}
+                  label="Cancel"
+                  type="button"
+                  onClick={handleCancelEdit}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <SimpleToast
         open={open}
         message={toastMessage}

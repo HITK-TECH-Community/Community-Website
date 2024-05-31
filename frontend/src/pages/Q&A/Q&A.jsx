@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button2, Button1 } from "../../components/util/Button";
 import style from "../Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
 import "./Ques.scss";
@@ -7,11 +8,6 @@ import Joi from "joi-browser";
 import Loader from "../../components/util/Loader/index";
 import { SimpleToast } from "../../components/util/Toast";
 import { END_POINT } from "../../config/api";
-import {
-  AirplayTwoTone,
-  ErrorSharp,
-  SettingsBluetoothSharp,
-} from "@material-ui/icons";
 
 function Ques(props) {
   let dark = props.theme;
@@ -272,6 +268,9 @@ function Ques(props) {
                     onClick={() => downvote(item._id)}
                   >
                     👎 {item.downvote}
+                  </button>
+                  <button>
+                    <Link to={`/getanswers/${item._id}`}>Get Answer</Link>
                   </button>
                 </div>
               </div>

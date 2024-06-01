@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import style from "./qanda.module.scss";
-import { END_POINT } from "../../../../../config/api";
+import { getAllQuestions } from "../../../../../service/Faq";
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
 import Loader from "../../../../../components/util/Loader";
+import { hideToast } from "../../../../../service/toastService";
 
 export function QandA({ setTab, setQId, tab }) {
   const [cards, setCards] = useState([]);
@@ -12,34 +13,25 @@ export function QandA({ setTab, setQId, tab }) {
     toastType: "",
     toastMessage: "",
   });
+
   const getdata = async () => {
-    setIsLoaded(true)
-    try {
-      const url = `${END_POINT}/question/getallquestions`;
-      const response = await fetch(url);
-      const res = await response.json();
-      setCards(res);
-    } catch (error) {
-      console.log(error);
-      setToast({
-        ...toast,
-        toastMessage: "Check network failed to fetch",
-        toastStatus: true,
-        toastType: "error",
-      });
-      
-    }
-    setIsLoaded(false)
+    setIsLoaded(true);
+    const data = await getAllQuestions(setToast, toast);
+    setCards(data);
+    setIsLoaded(false);
   };
+
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-    setToast({ ...toast, toastStatus: false });
+    hideToast(setToast);
   };
+
   useEffect(() => {
     getdata();
   }, [tab]);
+
   return (
     <div>
       <h1 className={style["head"]}>Manage Q&A</h1>

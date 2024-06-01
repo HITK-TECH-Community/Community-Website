@@ -2,19 +2,24 @@ import React, { useRef, useState } from "react";
 import styles from "./add-faq.module.scss";
 import { Button2 } from "../../../../../components/util/Button/index";
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
-import { END_POINT } from "../../../../../config/api";
+import { postFaq } from "../../../../../service/Faq"; 
 
 export function AddFaq() {
   const tagRef = useRef();
   const [tags, setTags] = useState([]);
   const [formData, setFormData] = useState({ question: "", answer: "", tags: [] });
   const [errorObj, setErrorObj] = useState({});
-  const [successToast, setSuccessToast] = useState(false);
-  const [errorToast, setErrorToast] = useState(false);
+  const [toast, setToast] = useState({
+    toastMessage: "",
+    toastStatus: false,
+    toastType: "success",
+  });
 
   const handleCloseToast = () => {
-    setSuccessToast(false);
-    setErrorToast(false);
+    setToast({
+      ...toast,
+      toastStatus: false,
+    });
   };
 
   const handleValidation = () => {
@@ -72,25 +77,10 @@ export function AddFaq() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (handleValidation()) {
-      try {
-        const response = await fetch(`${END_POINT}/faq/postFaq`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify(formData),
-        });
-
-        if (response.status === 200) {
-          setSuccessToast(true);
-          setFormData({ question: "", answer: "", tags: [] });
-          setTags([]);
-        } else {
-          setErrorToast(true);
-        }
-      } catch (error) {
-        setErrorToast(true);
+      const { success } = await postFaq(formData, setToast, toast);
+      if (success) {
+        setFormData({ question: "", answer: "", tags: [] });
+        setTags([]);
       }
     }
   };
@@ -193,16 +183,10 @@ export function AddFaq() {
         </div>
       </div>
       <SimpleToast
-        open={successToast}
-        message="FAQ has been added"
+        open={toast.toastStatus}
+        message={toast.toastMessage}
         handleCloseToast={handleCloseToast}
-        severity="success"
-      />
-      <SimpleToast
-        open={errorToast}
-        message="Database Error"
-        handleCloseToast={handleCloseToast}
-        severity="error"
+        severity={toast.toastType}
       />
     </div>
   );

@@ -38,7 +38,12 @@ export const ContactUs = (props) => {
 
   const schema = {
     name: Joi.string().trim().required().min(3).label("Name"),
-    email: Joi.string().trim().email().required().label("Email"),
+    email: Joi.string()
+      .trim()
+      .email({ minDomainAtoms: 2 })
+      .regex(/@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/) // Updated regex for valid domains
+      .required()
+      .label("Email"),
     subject: Joi.string().trim().required().min(5).label("Subject"),
     message: Joi.string().trim().required().min(8).label("Message"),
   };

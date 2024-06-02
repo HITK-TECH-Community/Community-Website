@@ -191,6 +191,15 @@ function Ques(props) {
   }
 
   const upvote = async (questionId) => {
+    const userVote = getQuestions.find(
+      (question) => question._id === questionId
+    )?.userVote;
+
+    if (userVote === "upvote") {
+      await removeVote(questionId);
+      return;
+    }
+
     const response = await fetch(`${END_POINT}/question/upvote`, {
       method: "PATCH",
       headers: {
@@ -205,14 +214,38 @@ function Ques(props) {
       setSeverity("error");
       throw new Error("Failed to upvote question");
     }
-    // const data = await response.json();
-    getQues();
-    setToastMessage("Upvote Successfully");
+
+    const updatedQuestions = getQuestions.map((question) => {
+      if (question._id === questionId) {
+        return {
+          ...question,
+          upvotes: question.upvotes + 1,
+          userVote: "upvote",
+          downvotes:
+            userVote === "downvote"
+              ? question.downvotes - 1
+              : question.downvotes,
+        };
+      }
+      return question;
+    });
+    setQuestions(updatedQuestions);
+
+    setToastMessage("Upvoted Successfully");
     setOpenToast(true);
     setSeverity("success");
   };
 
   const downvote = async (questionId) => {
+    const userVote = getQuestions.find(
+      (question) => question._id === questionId
+    )?.userVote;
+
+    if (userVote === "downvote") {
+      await removeVote(questionId);
+      return;
+    }
+
     const response = await fetch(`${END_POINT}/question/downvote`, {
       method: "PATCH",
       headers: {
@@ -227,10 +260,55 @@ function Ques(props) {
       setSeverity("error");
       throw new Error("Failed to downvote question");
     }
-    // const data = await response.json();
-    // console.log(data);
-    getQues();
-    setToastMessage("Downvote Successfully");
+
+    const updatedQuestions = getQuestions.map((question) => {
+      if (question._id === questionId) {
+        return {
+          ...question,
+          downvotes: question.downvotes + 1,
+          userVote: "downvote",
+          upvotes:
+            userVote === "upvote" ? question.upvotes - 1 : question.upvotes,
+        };
+      }
+      return question;
+    });
+    setQuestions(updatedQuestions);
+
+    setToastMessage("Downvoted Successfully");
+    setOpenToast(true);
+    setSeverity("success");
+  };
+
+  const removeVote = async (questionId) => {
+    const response = await fetch(`${END_POINT}/question/removevote`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ questionId }),
+    });
+
+    if (!response.ok) {
+      setToastMessage("Failed to remove vote");
+      setOpenToast(true);
+      setSeverity("error");
+      throw new Error("Failed to remove vote");
+    }
+
+    const updatedQuestions = getQuestions.map((question) => {
+      if (question._id === questionId) {
+        return {
+          ...question,
+          [question.userVote]: question[question.userVote] - 1,
+          userVote: null,
+        };
+      }
+      return question;
+    });
+    setQuestions(updatedQuestions);
+
+    setToastMessage("Vote removed successfully");
     setOpenToast(true);
     setSeverity("success");
   };

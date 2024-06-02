@@ -10,6 +10,7 @@ import { Edit } from "./Edit/index.js";
 import { END_POINT } from "./../../../../config/api";
 import Loader from "../../../../components/util/Loader";
 import { Button4 } from "../../../../components/util/Button";
+import { customBoardcast } from "../../../../service/Broadcast.jsx";
 export function AllBroadcasts(props) {
   const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
@@ -78,20 +79,15 @@ export function AllBroadcasts(props) {
     if (tags === "" && page === "" && year === "" && month === "") {
       api = `${END_POINT}/broadcast/all`;
     }
-    return fetch(api, {
-      method: "GET",
-    })
-      .then((response) =>
-        response
-          .json()
-          .then((res) => {
-            setArray(res);
-            setLoaded(true);
-          })
-          .catch((error) => console.log(error))
-      )
-      .catch((err) => console.log(err));
+    getData(api);
   }, [month, page, tags, year]);
+
+  const getData = async (api)=>{
+    setLoaded(false);
+    const result = await customBoardcast(api);
+    setArray(result);
+    setLoaded(true);
+  }
 
   return (
     <main

@@ -6,12 +6,17 @@ import style from "./carousel.module.scss";
 import styles from "../../../Home/components/Motive/motive.module.scss";
 import "./custom-owl-carousel-style.scss";
 import { Modals } from "./Modal/index.js";
-import { END_POINT } from "./../../../../config/api";
 import Loader from "../../../../components/util/Loader";
+import { boardcast } from "../../../../service/Broadcast.jsx";
+import { SimpleToast } from "../../../../components/util/Toast/Toast.jsx";
 export function Carousel(props) {
   const head = props.head;
   let dark = props.theme;
-
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  })
   const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
@@ -77,21 +82,20 @@ export function Carousel(props) {
   });
 
   useEffect(() => {
-    return fetch(`${END_POINT}/broadcast`, {
-      method: "GET",
-    })
-      .then((response) =>
-        response
-          .json()
-          .then((res) => {
-            setDataa(res);
-            setLoaded(true);
-          })
-          .catch((error) => console.log(error))
-      )
-      .catch((err) => console.log(err));
+    getData();
   }, []);
-
+  const getData = async () => {
+    setLoaded(false);
+    const result = await boardcast(setToast,toast)
+    setDataa(result);
+    setLoaded(true);
+  }
+  const handleCloseToast = (event,reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
+  };
   return !isLoaded ? (
     <Loader />
   ) : (
@@ -143,6 +147,14 @@ export function Carousel(props) {
             </div>
           ))}
         </OwlCarousel>
+        {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
       </div>
     </React.Fragment>
   );

@@ -191,13 +191,11 @@ function Ques(props) {
   }
 
   const upvote = async (questionId) => {
-    // Check if the user has already upvoted this question
     const userVote = getQuestions.find(
       (question) => question._id === questionId
     )?.userVote;
 
     if (userVote === "upvote") {
-      // User has already upvoted, remove the upvote
       await removeVote(questionId);
       return;
     }
@@ -217,13 +215,16 @@ function Ques(props) {
       throw new Error("Failed to upvote question");
     }
 
-    // Update the user's vote status for this question to upvote
     const updatedQuestions = getQuestions.map((question) => {
       if (question._id === questionId) {
         return {
           ...question,
           upvotes: question.upvotes + 1,
           userVote: "upvote",
+          downvotes:
+            userVote === "downvote"
+              ? question.downvotes - 1
+              : question.downvotes,
         };
       }
       return question;
@@ -236,13 +237,11 @@ function Ques(props) {
   };
 
   const downvote = async (questionId) => {
-    // Check if the user has already downvoted this question
     const userVote = getQuestions.find(
       (question) => question._id === questionId
     )?.userVote;
 
     if (userVote === "downvote") {
-      // User has already downvoted, remove the downvote
       await removeVote(questionId);
       return;
     }
@@ -262,13 +261,14 @@ function Ques(props) {
       throw new Error("Failed to downvote question");
     }
 
-    // Update the user's vote status for this question to downvote
     const updatedQuestions = getQuestions.map((question) => {
       if (question._id === questionId) {
         return {
           ...question,
-          downvote: question.downvote + 1,
+          downvotes: question.downvotes + 1,
           userVote: "downvote",
+          upvotes:
+            userVote === "upvote" ? question.upvotes - 1 : question.upvotes,
         };
       }
       return question;
@@ -296,7 +296,6 @@ function Ques(props) {
       throw new Error("Failed to remove vote");
     }
 
-    // Remove the user's vote status for this question
     const updatedQuestions = getQuestions.map((question) => {
       if (question._id === questionId) {
         return {

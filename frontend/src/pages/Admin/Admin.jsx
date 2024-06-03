@@ -48,7 +48,7 @@ export const Admin = (props) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       };
-      
+       
       const response = await axios.get(baseUrl, { params, headers });
       let formattedPath = response.data[0].image?.replace(/\\/g, "/");
       if (formattedPath?.startsWith("uploads/")) {

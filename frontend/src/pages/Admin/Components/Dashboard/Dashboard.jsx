@@ -70,7 +70,7 @@ export const Dashboard = (props) => {
             <div className={style["card-content"]}>
               <div className={style["head1"]}>
                 <span>{d.icon}</span>
-                <h4> {d.name} </h4>
+                <h4 className="headmd"> {d.name} </h4>
               </div>
               <div className={style["content"]}>
                 Get all your {d.name} related details here!

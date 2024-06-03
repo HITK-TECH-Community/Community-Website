@@ -4,18 +4,20 @@ import { Modals } from "../../../../../Broadcast/Component/Carousel/Modal/index.
 import { Delete, Edit } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { useSelector } from "react-redux";
-import { END_POINT } from "../../../../../../config/api";
 import { SimpleToast } from "../../../../../../components/util/Toast";
 import style from "./card.module.scss";
+import { deleteBoardcast } from "../../../../../../service/Broadcast.jsx";
 
 export function Card(props) {
   let dark = props.theme;
   const [flipped, setFlipped] = useState(false);
-  const [openDeleteSuccess, setOpenDeleteSuccess] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
   const [open, setOpen] = useState(false);
   const [data, setData] = useState({});
-
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const handleClick = () => {
     setFlipped(!flipped);
   };
@@ -34,25 +36,14 @@ export function Card(props) {
     if (reason === "clickaway") {
       return;
     }
-    setOpenDeleteSuccess(false);
+    setToast({ ...toast, toastStatus: false });
   };
 
-  function deleteCard(id) {
-    var api = `${END_POINT}/broadcast/${id}`;
-    const token = localStorage.getItem("token");
-    return fetch(api, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then(() => {
-        setSuccessMessage("Broadcast deleted successfully");
-        setOpenDeleteSuccess(true);
+  async function deleteCard(id) {
+    const res = await deleteBoardcast(id, setToast, toast);
+      if (res) {
         props.setHandleDelete(props.handleDelete + 1);
-      })
-      .catch((err) => console.log(err));
+      }
   }
 
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
@@ -149,12 +140,12 @@ export function Card(props) {
           </div>
         </div>
       </ReactCardFlip>
-      {openDeleteSuccess && (
+      {toast.toastStatus && (
         <SimpleToast
-          open={openDeleteSuccess}
-          message={successMessage}
+          open={toast.toastStatus}
+          message={toast.toastMessage}
           handleCloseToast={handleCloseDeleteToast}
-          severity="success"
+          severity={toast.toastType}
         />
       )}
     </div>

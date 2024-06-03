@@ -6,13 +6,18 @@ import Joi from "joi-browser";
 import { Button2 } from "../../../../../components/util/Button/index";
 import  Loader  from "../../../../../components/util/Loader/index";
 import { SimpleToast } from "../../../../../components/util/Toast/index";
-import { END_POINT } from "../../../../../config/api"
+import { postBoardcast } from "../../../../../service/Broadcast";
 
 export function AddBroadcasts() {
   const tagRef = useRef();
   const imageRef = useRef();
   const [tags, setTags] = useState([]);
   const [imageUrls, setImageUrls] = useState([]);
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const schema = {
     title: "",
     content: "",
@@ -24,13 +29,11 @@ export function AddBroadcasts() {
   const [formData, setFormData] = useState(schema);
   const [errorObj, setErrorObj] = useState({});
   const [isUploadingData, setIsUploadingData] = useState(false);
-  const [open, setOpenToast] = useState(false);
-  const [toastMessage,setToastMessage] = useState("");
-  const [severity,setSeverity] = useState('success')
   const handleCloseToast = (event, reason) => {
-    setTimeout(() => {
-      setOpenToast(false);
-    }, 500);
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
   }
 
   const validationSchema = {
@@ -102,29 +105,8 @@ export function AddBroadcasts() {
     setFormData({ ...formData, imageUrl: formData.imageUrl.filter(u => u !== url) });
   }
   async function uploadData(formData) {
-    try {
-      let url = `${END_POINT}/broadcast`
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem('token')}`
-        },
-        body: JSON.stringify(formData)
-      });
-      const data = await response.json();
-      let errorResponse = false;
-      Object.keys(data).forEach((key)=> {
-        if(key === "errorType") {
-          errorResponse = true;
-          setSeverity('error')
-          setToastMessage(data.errorType)
-
-        }
-      })
-      if(errorResponse === false) {
-        setSeverity('success')
-        setToastMessage("broadcats added successfully!")
+    const response = await postBoardcast(formData, setToast, toast);
+      if(response) {
         const schema = {
           title: "",
           content: "",
@@ -137,22 +119,14 @@ export function AddBroadcasts() {
         setImageUrls([])
         setFormData(schema)
       }
-    }
-    catch (err) {
-      setToastMessage("Something went wrong");
-      setSeverity("error")
-    }
-    finally {
-      setIsUploadingData(false)
-      setOpenToast(true)
-    }
   }
-  const onSubmit = e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (isFormValid()) {
       // TODO: send data to server
       setIsUploadingData(true)
-      uploadData(formData);
+      await uploadData(formData);
+      setIsUploadingData(false)
     }
   };
 
@@ -167,7 +141,14 @@ export function AddBroadcasts() {
   return (
     <div>
       <div className={styles["add-broadcasts-container"]}>
-      <SimpleToast open={open} message={toastMessage} severity={severity} handleCloseToast={handleCloseToast}/>
+      {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
       <div className={styles["card"]}>
         <form className={styles["editor"]} noValidate onSubmit={onSubmit}>
           <div className={styles["motive"]}>

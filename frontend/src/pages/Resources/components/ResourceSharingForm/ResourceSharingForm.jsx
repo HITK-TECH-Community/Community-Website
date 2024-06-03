@@ -3,16 +3,17 @@ import { NavLink, useHistory } from "react-router-dom";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../components/util/Button/index";
 import style from "./resource-sharing-form.module.scss";
-import { END_POINT } from "../../../../config/api";
 import Loader from "../../../../components/util/Loader";
 import { SimpleToast } from "../../../../components/util/Toast";
+import { postResources } from "../../../../service/Resources";
 
 export function ResourceSharingForm(props) {
-  const [resourceToast, setResourceToast] = useState("");
-  const [openSubmitResourceSuccess, setOpenSubmitResourceSuccess] =
-    useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [resourceToastStatus, setResourceToastStatus] = useState("");
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
 
   let dark = props.theme;
 
@@ -57,7 +58,7 @@ export function ResourceSharingForm(props) {
     return result.error ? result.error.details[0].message : null;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
     Object.keys(formdata).map((key) => {
@@ -72,9 +73,11 @@ export function ResourceSharingForm(props) {
     if (errors) {
       setSubmitted(false);
     } else {
-      setSubmitted(true);
-      submitResourceFormData(formdata);
+      setIsLoading(true);
+      await postResources(formdata, setToast, toast);
       setFormData("");
+      setIsLoading(false);
+      setSubmitted(true);
       console.log("Submitted");
     }
   };
@@ -92,42 +95,11 @@ export function ResourceSharingForm(props) {
     setFormErrors(errors);
   };
 
-  const submitResourceFormData = async (formdata) => {
-    var api = `${END_POINT}/resources/`;
-    setIsLoading(true);
-    return await fetch(api, {
-      method: "POST",
-      body: JSON.stringify(formdata),
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (
-          data.message === "Database Error" ||
-          data.message === "Sendgrid Error"
-        ) {
-          setIsLoading(false);
-          setResourceToast(data.message);
-          setResourceToastStatus("error");
-        } else {
-          setIsLoading(false);
-          setResourceToastStatus("success");
-          setResourceToast(data.message);
-          setOpenSubmitResourceSuccess(true);
-        }
-      })
-      .catch((err) => {
-        console.info(err);
-      });
-  };
-
-  console.log(resourceToast);
-
-  const handleCloseResourceToast = () => {
-    setOpenSubmitResourceSuccess(false);
-    setResourceToast("");
+  const handleCloseResourceToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
   };
 
   return (
@@ -145,7 +117,7 @@ export function ResourceSharingForm(props) {
               <Loader height="25vh" />
             </div>
           </React.Fragment>
-        ) : resourceToastStatus === "error" ? (
+        ) : toast.toastType === "error" ? (
           <React.Fragment>
             <div className={style["goodbye-card"]}>
               <h1 className={style["card-heading"]}>OOPS !</h1>
@@ -522,13 +494,12 @@ export function ResourceSharingForm(props) {
           </form>
         </div>
       )}
-
-      {openSubmitResourceSuccess && (
+      {toast.toastStatus && (
         <SimpleToast
-          open={openSubmitResourceSuccess}
-          message={resourceToast}
+          open={toast.toastStatus}
+          message={toast.toastMessage}
           handleCloseToast={handleCloseResourceToast}
-          severity={resourceToastStatus}
+          severity={toast.toastType}
         />
       )}
     </div>

@@ -1,81 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { END_POINT } from "../../../../config/api";
-import axios from "axios";
 import { SimpleToast } from "../../../../components/util/Toast";
 import "./resource.module.scss";
 import style from "./resource.module.scss";
+import { deleteResource, getResources } from "../../../../service/Resources";
+import Loader from "../../../../components/util/Loader";
 
 export function Resource() {
   const [resourses, setResources] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [openError, setOpenError] = useState(false);
-  const [openDeleteToast, setDeleteToast] = useState(false);
-  const [openDeleteError, setDeleteError] = useState(false);
+
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const fetchResource = async () => {
-      try {
-        const data = await axios.get(`${END_POINT}/resources/getresources`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const resource = await data.data;
-        setResources(resource);
-        setLoading(true);
-      } catch (err) {
-        setOpenError(true);
-        setLoading(true);
-      }
-    };
     fetchResource();
   }, []);
 
+  const fetchResource = async () => {
+    setLoading(false);
+    const resource = await getResources(setToast, toast);
+    setResources(resource);
+    setLoading(true);
+  };
+
   const onClickDelete = async (id) => {
-    const token = localStorage.getItem("token");
-    setLoading(false)
-    try{
-      const response = await axios.delete(`${END_POINT}/resources/deleteResource`, {
-        headers: { Authorization: `Bearer ${token}` },
-        data: { resourceId: id },
-      });
-      const message = await response.data;
-      setLoading(true)
-      if(message.message === 'resource deleted'){
-        setDeleteToast(true);
-        const filteredResources = resourses.filter((resource) => {
-          return resource._id !== id;
-        })
-        setResources(filteredResources);
-      }
-      else{
-        setDeleteError(true);
-      }
-    }
-    catch(err){
-      setDeleteError(true);
-      setLoading(true);
-    }
-  }
+    setLoading(false);
+    await deleteResource(id, setToast, toast);
+    await fetchResource();
+    setLoading(true);
+  };
 
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-    setOpenError(false);
-  };
-
-  const handleDeleteToast = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setDeleteToast(false);
-  };
-
-  const handleDeleteError = (event, reason) => {
-    if(reason === "clickaway") {
-      return;
-    }
-    setDeleteError(false);
+    setToast({ ...toast, toastStatus: false });
   };
 
   return (
@@ -119,33 +81,30 @@ export function Resource() {
                         URL
                       </button>
                     </a>
-                    <button className={style["button-delete"]} onClick={() => onClickDelete(resource._id)}>Delete</button>
+                    <button
+                      className={style["button-delete"]}
+                      onClick={() => onClickDelete(resource._id)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               );
             })}
         </div>
       ) : (
-        <div className={style["dot-loader"]}></div>
+        <div className={style["dot-loader"]}>
+          <Loader />
+        </div>
       )}
-      <SimpleToast
-        open={openError}
-        message="Unable to load the data!"
-        handleCloseToast={handleCloseToast}
-        severity="error"
-      />
-      <SimpleToast
-        open={openDeleteToast}
-        message="Resource deleted successfully!"
-        handleCloseToast={handleDeleteToast}
-        severity="success"
-      />
-      <SimpleToast
-        open={openDeleteError}
-        message="Something went wrong. Try again!"
-        handleCloseToast={handleDeleteError}
-        severity="error"
-      />
+      {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
     </div>
   );
 }

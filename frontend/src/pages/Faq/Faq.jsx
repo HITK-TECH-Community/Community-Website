@@ -6,7 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import style from "./faq.module.scss";
-import { END_POINT } from "../../config/api";
+import { getFaq } from "../../service/Faq";
 import { SimpleToast } from "../../components/util/Toast";
 import Loader from "../../components/util/Loader";
 
@@ -55,31 +55,16 @@ export function Faq(props) {
     setError(false);
   };
 
-  const fetchFaqs = () => {
-    fetch(`${END_POINT}/faq/getFaq`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) =>
-        response.json().then((res) => {
-          if (response.status === 200) {
-            setFaqs(res.Faq);
-            setIsFetching(false);
-          } else {
-            setFaqs([]);
-            setIsFetching(false);
-            setError(true);
-          }
-        })
-      )
-      .catch((err) => {
-        setFaqs([]);
-        setIsFetching(false);
-        setError(true);
-        console.error("Unexpected Error occured: ", err);
-      });
+  const fetchFaqs = async () => {
+    try {
+      const faqs = await getFaq();
+      setFaqs(faqs);
+      setIsFetching(false);
+    } catch (error) {
+      setFaqs([]);
+      setError(true);
+      setIsFetching(false);
+    }
   };
 
   useEffect(() => {

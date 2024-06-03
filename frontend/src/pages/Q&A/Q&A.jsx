@@ -1,68 +1,41 @@
-import React, { useEffect } from "react";
-import { Button2, Button1 } from "../../components/util/Button";
+import React, { useEffect, useState } from "react";
+import { Button2 } from "../../components/util/Button";
 import style from "../Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
 import "./Ques.scss";
-import { useState } from "react";
 import Joi from "joi-browser";
 import Loader from "../../components/util/Loader/index";
 import { SimpleToast } from "../../components/util/Toast";
-import { END_POINT } from "../../config/api";
-import {
-  AirplayTwoTone,
-  ErrorSharp,
-  SettingsBluetoothSharp,
-} from "@material-ui/icons";
+import { getAllQuestion, uploadData, upvote, downvote } from "../../service/Faq";
+import { showToast, hideToast } from "../../service/toastService";
 
 function Ques(props) {
   let dark = props.theme;
 
   const Tags = [
-    {
-      value: "ml",
-    },
-    {
-      value: "open-source",
-    },
-    {
-      value: "deap-learning",
-    },
-    {
-      value: "cp",
-    },
-    {
-      value: "block-chain",
-    },
-    {
-      value: "mern",
-    },
-    {
-      value: "android",
-    },
-    {
-      value: "mean",
-    },
-    {
-      value: "javascript",
-    },
-    {
-      value: "java",
-    },
-    {
-      value: "c++",
-    },
-    {
-      value: "python",
-    },
+    { value: "ml" },
+    { value: "open-source" },
+    { value: "deap-learning" },
+    { value: "cp" },
+    { value: "block-chain" },
+    { value: "mern" },
+    { value: "android" },
+    { value: "mean" },
+    { value: "javascript" },
+    { value: "java" },
+    { value: "c++" },
+    { value: "python" },
   ];
 
   const [isUploadingData, setIsUploadingData] = useState(false);
-  const [open, setOpenToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-  const [severity, setSeverity] = useState("success");
   const [isButtonPressed, setButtonPressed] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
   );
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const [loading, setLoading] = useState(true);
 
   const [formdata, setFormData] = useState({
@@ -71,11 +44,10 @@ function Ques(props) {
     tags: [],
   });
 
-  const handleCloseToast = (event, reason) => {
-    setTimeout(() => {
-      setOpenToast(false);
-    }, 500);
+  const handleCloseToast = () => {
+    hideToast(setToast);
   };
+
   const handleOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
@@ -113,42 +85,6 @@ function Ques(props) {
     setFormErrors({});
   };
 
-  const uploadData = async (formdata) => {
-    try {
-      const url = `${END_POINT}/question`;
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(formdata),
-      });
-      const data = await response.json();
-      if (data.errStack) {
-        setToastMessage(`${data.errStack}`);
-        setOpenToast(true);
-        setSeverity("error");
-      } else {
-        setToastMessage("Q&A added successfully!");
-        setOpenToast(true);
-        setSeverity("success");
-      }
-      setIsUploadingData(false);
-
-      setFormData({
-        title: "",
-        description: "",
-        tags: [],
-      });
-      setFormErrors({});
-      setCheckedState(new Array(Tags.length).fill(false));
-    } catch (err) {
-      setIsUploadingData(false);
-      setToastMessage("Something went wrong!");
-      setOpenToast(true);
-      setSeverity("error");
-    }
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
     let isValid = true;
@@ -163,80 +99,44 @@ function Ques(props) {
     });
     if (isValid && formdata.tags.length !== 0) {
       setIsUploadingData(true);
-      uploadData(formdata);
+      uploadData(formdata, setToast)
+        .then(() => {
+          setIsUploadingData(false);
+          setFormData({
+            title: "",
+            description: "",
+            tags: [],
+          });
+          setFormErrors({});
+          setCheckedState(new Array(Tags.length).fill(false));
+        })
+        .catch(() => {
+          setIsUploadingData(false);
+        });
     }
   };
-  function ActiveButton() {
-    setButtonPressed(!isButtonPressed);
-  }
-  function DeactiveButton() {
-    setButtonPressed(!isButtonPressed);
-  }
 
   const [getQuestions, setQuestions] = useState([]);
 
-  function getQues() {
-    fetch(`${END_POINT}/question/getallquestions`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setLoading(false);
-        setQuestions(data);
-        // console.log(data);
-      });
-  }
-
-  const upvote = async (questionId) => {
-    const response = await fetch(`${END_POINT}/question/upvote`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ questionId }),
+  const fetchQuestions = () => {
+    getAllQuestion(setToast).then((data) => {
+      setLoading(false);
+      setQuestions(data);
     });
-
-    if (!response.ok) {
-      setToastMessage("Failed to upvote question");
-      setOpenToast(true);
-      setSeverity("error");
-      throw new Error("Failed to upvote question");
-    }
-    // const data = await response.json();
-    getQues();
-    setToastMessage("Upvote Successfully");
-    setOpenToast(true);
-    setSeverity("success");
   };
 
-  const downvote = async (questionId) => {
-    const response = await fetch(`${END_POINT}/question/downvote`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ questionId }),
-    });
-
-    if (!response.ok) {
-      setToastMessage("Failed to downvote question");
-      setOpenToast(true);
-      setSeverity("error");
-      throw new Error("Failed to downvote question");
-    }
-    // const data = await response.json();
-    // console.log(data);
-    getQues();
-    setToastMessage("Downvote Successfully");
-    setOpenToast(true);
-    setSeverity("success");
+  const handleUpvote = async (questionId) => {
+    await upvote(questionId, setToast);
+    fetchQuestions();
+  };
+  
+  const handleDownvote = async (questionId) => {
+    await downvote(questionId, setToast);
+    fetchQuestions();
   };
 
   useEffect(() => {
-    getQues();
+    fetchQuestions();
   }, []);
 
   return (
@@ -245,7 +145,7 @@ function Ques(props) {
       style={{ background: dark ? "#171717" : "white" }}
     >
       {getQuestions.length <= 0 ? (
-        <Loader></Loader>
+        <Loader />
       ) : (
         <div className="question-cards">
           {getQuestions.map((item, key) => (
@@ -264,12 +164,12 @@ function Ques(props) {
                   <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
                 </div>
                 <div>
-                  <button className="vote-btn" onClick={() => upvote(item._id)}>
+                  <button className="vote-btn" onClick={() => handleUpvote(item._id)}>
                     👍{item.upvotes}
                   </button>
                   <button
                     className="vote-btn"
-                    onClick={() => downvote(item._id)}
+                    onClick={() => handleDownvote(item._id)}
                   >
                     👎 {item.downvote}
                   </button>
@@ -280,12 +180,14 @@ function Ques(props) {
         </div>
       )}
 
-      <SimpleToast
-        open={open}
-        message={toastMessage}
-        severity={severity}
-        handleCloseToast={handleCloseToast}
-      />
+      {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
       {isButtonPressed ? (
         <div
           className={
@@ -295,13 +197,13 @@ function Ques(props) {
           }
         >
           <form className="question_form" onSubmit={handleSubmit}>
-            <button className="close-popup" onClick={DeactiveButton}>
+            <button className="close-popup" onClick={() => setButtonPressed(false)}>
               X
             </button>
             <h3
               className={
                 dark
-                  ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                  ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]}`
                   : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
               }
             >
@@ -313,7 +215,7 @@ function Ques(props) {
                   <div
                     className={
                       dark
-                        ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                        ? `${style["resource-input"]} ${style["resource-input-dark"]}`
                         : `${style["resource-input"]} ${style["resource-input-light"]}`
                     }
                   >
@@ -326,9 +228,7 @@ function Ques(props) {
                       onChange={handleChange}
                     />
                     <i className="fas fa-heading"></i>
-                    <div
-                      className={`${style["validation"]} validation d-sm-none d-md-block`}
-                    >
+                    <div className={`${style["validation"]} validation d-sm-none d-md-block`}>
                       {formerrors["title"] ? (
                         <div>* {formerrors["title"]}</div>
                       ) : (
@@ -342,7 +242,7 @@ function Ques(props) {
                   <div
                     className={
                       dark
-                        ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                        ? `${style["resource-input"]} ${style["resource-input-dark"]}`
                         : `${style["resource-input"]} ${style["resource-input-light"]}`
                     }
                   >
@@ -354,13 +254,8 @@ function Ques(props) {
                       value={formdata.description}
                       onChange={handleChange}
                     />
-                    <i
-                      className="fas fa-envelope"
-                      style={{ marginTop: 27 }}
-                    ></i>
-                    <div
-                      className={`${style["validation"]} validation d-sm-none d-md-block`}
-                    >
+                    <i className="fas fa-envelope" style={{ marginTop: 27 }}></i>
+                    <div className={`${style["validation"]} validation d-sm-none d-md-block`}>
                       {formerrors["body"] ? (
                         <div>* {formerrors["body"]}</div>
                       ) : (
@@ -374,7 +269,7 @@ function Ques(props) {
               <div
                 className={
                   dark
-                    ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
+                    ? `${style["resource-input1"]} ${style["resource-input1-dark"]}`
                     : `${style["resource-input1"]} ${style["resource-input1-light"]}`
                 }
               >
@@ -427,10 +322,7 @@ function Ques(props) {
                 </div>
               </div>
 
-              <div
-                className={style["submit-btn"]}
-                style={{ justifyContent: "space-around", marginBottom: "1rem" }}
-              >
+              <div className={style["submit-btn"]} style={{ justifyContent: "space-around", marginBottom: "1rem" }}>
                 <div className="data-loader">
                   {isUploadingData ? (
                     <Loader />
@@ -466,14 +358,14 @@ function Ques(props) {
             <div
               className={
                 dark
-                  ? `${style["resource-card"]} ${style["resource-card-dark"]} `
+                  ? `${style["resource-card"]} ${style["resource-card-dark"]}`
                   : `${style["resource-card"]} ${style["resource-card-light"]}`
               }
             >
               <h3
                 className={
                   dark
-                    ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]} `
+                    ? `${style["resource-header-text"]} ${style["resource-header-text-dark"]}`
                     : `${style["resource-header-text"]} ${style["resource-header-text-light"]}`
                 }
               >
@@ -486,7 +378,7 @@ function Ques(props) {
                       className={style["Ask-div-button"]}
                       label="Ask Question"
                       style={{ width: 200 }}
-                      onClick={ActiveButton}
+                      onClick={() => setButtonPressed(true)}
                     />
                   </div>
                 </div>

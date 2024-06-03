@@ -6,29 +6,32 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Edit, Delete } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { END_POINT } from "../../../../../config/api";
+import { getFaq, deleteFaq, updateFaq } from "../../../../../service/Faq";
 import Loader from "../../../../../components/util/Loader";
 import style from "./manage-faq.module.scss";
-import { SimpleToast } from "../../../../../components/util/Toast";
 import { Button2 } from "../../../../../components/util/Button/index";
+import { SimpleToast } from "../../../../../components/util/Toast";
 
 export function ManageFaq() {
   const [faqs, setFaqs] = useState([]);
   const [expanded, setExpanded] = useState(false);
   const [isFetching, setIsFetching] = useState(true);
-  const [open, setOpenToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
-  const [severity, setSeverity] = useState("success");
   const [reload, setReload] = useState(false);
   const [faqObject, setFaqObject] = useState({});
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [formErrors, setFormErrors] = useState({});
+  const [toast, setToast] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  });
 
-  const handleCloseToast = useCallback(() => {
-    setTimeout(() => {
-      setOpenToast(false);
-    }, 500);
-  }, []);
+  const handleCloseToast = () => {
+    setToast({
+      ...toast,
+      toastStatus: false,
+    });
+  };
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -37,72 +40,21 @@ export function ManageFaq() {
   const fetchAllFaq = useCallback(async () => {
     setIsFetching(true);
     try {
-      const response = await fetch(`${END_POINT}/faq/getFaq`);
-      const data = await response.json();
-      setFaqs(data.Faq);
+      const faqsData = await getFaq();
+      setFaqs(faqsData);
       setIsFetching(false);
-    } catch (err) {
-      console.log(err.message);
-      setIsFetching(false);
-    }
-  }, []);
-
-  const deleteFaq = async (faqId) => {
-    setIsFetching(true);
-    const url = `${END_POINT}/faq/deleteFaq`;
-    const body = { faqId: faqId };
-    const headers = {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    };
-    try {
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: headers,
-        body: JSON.stringify(body),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setToastMessage(data.message);
-      setOpenToast(true);
-      setSeverity("success");
-      setReload(!reload);
     } catch (error) {
-      setToastMessage("Failed to delete Faq");
-      setOpenToast(true);
-      setSeverity("error");
-    } finally {
+      console.error("Failed to fetch FAQs:", error.message);
       setIsFetching(false);
     }
-  };
+  }, [reload]);
 
-  const updateFaq = async (faqId, updatedFaqDetails) => {
+  const handleDelete = async (faqId) => {
     try {
-      const response = await fetch(`${END_POINT}/faq/updateFaq`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({ faqId, ...updatedFaqDetails }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to update FAQ");
-      }
-
-      const data = await response.json();
-      setToastMessage(data.message);
-      setOpenToast(true);
-      setSeverity("success");
+      await deleteFaq(faqId, setToast, toast);
       setReload((prev) => !prev);
     } catch (error) {
-      console.error("Failed to update FAQ:", error.message);
-      setToastMessage("Failed to update FAQ");
-      setOpenToast(true);
-      setSeverity("error");
+      console.error("Failed to delete FAQ:", error.message);
     }
   };
 
@@ -114,8 +66,14 @@ export function ManageFaq() {
 
   const handleSaveEdit = () => {
     if (validateForm()) {
-      updateFaq(faqObject._id, faqObject);
-      setOpenEditDialog(false);
+      updateFaq(faqObject._id, faqObject, setToast, toast)
+        .then(() => {
+          setReload((prev) => !prev);
+          setOpenEditDialog(false);
+        })
+        .catch((error) => {
+          console.error("Failed to update FAQ:", error.message);
+        });
     }
   };
 
@@ -159,11 +117,7 @@ export function ManageFaq() {
               >
                 <AccordionSummary
                   style={{ color: "white" }}
-                  expandIcon={
-                    <ExpandMoreIcon
-                      style={{ color: "white", fontSize: "27px" }}
-                    />
-                  }
+                  expandIcon={<ExpandMoreIcon style={{ color: "white", fontSize: "27px" }} />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
@@ -176,18 +130,12 @@ export function ManageFaq() {
                     }}
                   >
                     <h3 className={style["faq-question"]}>
-                      <i
-                        className="fa fa-question-circle"
-                        aria-hidden="true"
-                      ></i>
-                      &nbsp; &nbsp;{faq.question}
+                      <i className="fa fa-question-circle" aria-hidden="true"></i>&nbsp;&nbsp;{faq.question}
                     </h3>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails className={style["accord-details"]}>
-                  <Typography style={{ color: "white" }}>
-                    {faq.answer}
-                  </Typography>
+                  <Typography style={{ color: "white" }}>{faq.answer}</Typography>
                   <div className={style["btns-container"]}>
                     <Button
                       id={style["update-btn"]}
@@ -203,7 +151,7 @@ export function ManageFaq() {
                       className={style["btns"]}
                       variant="contained"
                       endIcon={<Delete />}
-                      onClick={() => deleteFaq(faq._id)}
+                      onClick={() => handleDelete(faq._id)}
                     >
                       DELETE
                     </Button>
@@ -263,7 +211,7 @@ export function ManageFaq() {
                 onChange={(e) =>
                   setFaqObject({
                     ...faqObject,
-                    tags: e.target.value.split(",").map(tag => tag.trim()),
+                    tags: e.target.value.split(",").map((tag) => tag.trim()),
                   })
                 }
                 className={style["faq-input"]}
@@ -290,9 +238,9 @@ export function ManageFaq() {
         </div>
       )}
       <SimpleToast
-        open={open}
-        message={toastMessage}
-        severity={severity}
+        open={toast.toastStatus} 
+        message={toast.toastMessage} 
+        severity={toast.toastType} 
         handleCloseToast={handleCloseToast}
       />
     </div>

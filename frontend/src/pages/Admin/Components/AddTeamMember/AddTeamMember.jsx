@@ -7,6 +7,7 @@ import { Button2 } from "../../../../components/util/Button/index";
 import { Grid } from "@material-ui/core";
 import { SimpleToast } from "./../../../../components/util/Toast/Toast";
 import { END_POINT } from "../../../../config/api";
+import { postTeamMember } from "../../../../service/About";
 
 export function AddTeamMember() {
   const options = [
@@ -24,16 +25,17 @@ export function AddTeamMember() {
     twitter: "",
     github: "",
   });
-
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
   const [formerrors, setFormErrors] = useState({});
   const [teamError, setTeamError] = useState();
   const [teams, setTeams] = useState([]);
   const [selectTeam, setSelectTeam] = useState([]);
   const [picUrl, setPicUrl] = useState("./images/admin.png");
   const [pic, setPic] = useState();
-  const [toastStatus,setToastStatus] = useState(false);
-  const [toastMessage,setToastMessage] = useState("");
-  const [toastType,setToastType] = useState("")
   const schema = {
     fullName: Joi.string().required(),
     description: Joi.string().required(),
@@ -88,7 +90,7 @@ export function AddTeamMember() {
     if (reason === "clickaway") {
       return;
     }
-    setToastStatus(false);
+    setToast({ ...toast, toastStatus: false });
   };
 
   const handleChange = (e) => {
@@ -141,7 +143,7 @@ export function AddTeamMember() {
       form.append("twitterUrl", formdata.twitter);
       form.append("teams", selectTeam);
       form.append("image", pic);
-      await addTeamMember(form)
+      await postTeamMember(form,setToast,toast);
       const temp = {
         fullName: "",
         description: "",
@@ -151,28 +153,9 @@ export function AddTeamMember() {
       };
       setFormData(temp);
       setTeams([]);
-      setPicUrl("./images/admin.png")
-      setToastType("success")
-      setToastMessage("User added Successfully!")
-      setToastStatus(true);
+      setPicUrl("./images/admin.png");
     }
     return pic;
-  };
-  const addTeamMember = async (data) => {
-    try {
-      let url = `${END_POINT}/teamMember/addTeamMember`;
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: data,
-      });
-    } catch (error) {
-      setToastMessage("Sorry! Error is adding team Member")
-      setToastType("error")
-      setToastStatus(true);
-    }
   };
   return (
     <div className={styles["add-team-member-section"]}>
@@ -346,12 +329,14 @@ export function AddTeamMember() {
         </div>
       </div>
       
-      {toastStatus && <SimpleToast
-        open={toastStatus}
-        message={toastMessage}
-        handleCloseToast={handleCloseToast}
-        severity={toastType}
-      />}
+      {toast.toastStatus && (
+        <SimpleToast
+          open={toast.toastStatus}
+          message={toast.toastMessage}
+          handleCloseToast={handleCloseToast}
+          severity={toast.toastType}
+        />
+      )}
     </div>
   );
 }

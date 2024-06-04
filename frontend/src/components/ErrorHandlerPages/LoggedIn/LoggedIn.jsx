@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./logged-in.module.scss";
-import { Button3 } from "../../util/Button/Button";
+import { Button1 } from "../../util/Button/Button";
 
 export const LoggedIn = () => {
   return (
@@ -19,7 +19,7 @@ export const LoggedIn = () => {
             Please visit your Dashboard Here!👇
           </div>
           <a href="/dashboard">
-            <Button3 label="Go to Dashboard!" type="submit" />
+            <Button1 label="Go to Dashboard!" type="submit" />
           </a>
         </div>
       </div>

@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import React, { useRef, useState } from "react";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../components/util/Button/index";
+import { formatTag } from '../../../../components/util/Tags';
 import style from "./resource-sharing-form.module.scss";
 import Loader from "../../../../components/util/Loader";
 import { SimpleToast } from "../../../../components/util/Toast";
-import { postResources } from "../../../../service/Resources";
+import { postResource } from "../../../../service/Resources";
 
 export function ResourceSharingForm(props) {
+  const tagRef = useRef();
+  const imageRef = useRef();
+  const [tags, setTags] = useState([]);
+  const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [toast, setToast] = useState({
     toastStatus: false,
@@ -17,31 +21,29 @@ export function ResourceSharingForm(props) {
 
   let dark = props.theme;
 
-  const [formdata, setFormData] = useState({
-    name: "",
-    email: "",
-    url: "",
-    description: "",
-    trustLevel: null,
-    expiryDate: "",
-    additionalInfo: "",
+  const [formData, setFormData] = useState({
+    title: "",
+    content: "",
+    tags: [],
+    expiresOn: "",
+    imageUrl: [],
+    link: "",
   });
 
   const [formerrors, setFormErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
   const schema = {
-    name: Joi.string().trim().required().min(3).label("Name"),
-    email: Joi.string().trim().email().required().label("Email"),
-    url: Joi.string().uri().required().label("Url"),
-    description: Joi.string().trim().required().min(8).label("Description"),
-    trustLevel: Joi.required().label("TrustLevel"),
-    expiryDate: Joi.date().required().label("ExpiryDate"),
-    additionalInfo: Joi.string().trim().label("AdditionalInfo"),
+    title: Joi.string().trim().required().min(3).label("Title"),
+    content: Joi.string().trim().required().min(8).label("Content"),
+    tags: Joi.array().items(Joi.string()).min(1).required().label("Tags"),
+    expiresOn: Joi.date().label("Expires On"),
+    imageUrl: Joi.array().items(Joi.string()).min(1).required().label("Image Url"),
+    link: Joi.string().uri().label("Link"),
   };
 
   const validate = () => {
-    const result = Joi.validate(formdata, schema, { abortEarly: false });
+    const result = Joi.validate(formData, schema, { abortEarly: false });
     if (!result.error) return null;
     const errors = {};
     for (let item of result.error.details) {
@@ -61,21 +63,25 @@ export function ResourceSharingForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
-    Object.keys(formdata).map((key) => {
-      if (formdata[key] === "" || formdata[key] === null) {
+    Object.keys(formData).forEach((key) => {
+      if (formData[key] === "" || formData[key] === null) {
         errors[key] = `${key} is not allowed to be empty`;
       }
-      return 0;
     });
-    if (errors !== 0) {
+    if (errors && Object.keys(errors).length !== 0) {
       setFormErrors(errors);
-    }
-    if (errors) {
       setSubmitted(false);
     } else {
       setIsLoading(true);
-      await postResources(formdata, setToast, toast);
-      setFormData("");
+      await postResource(formData, setToast, toast);
+      setFormData({
+        title: "",
+        content: "",
+        tags: [],
+        expiresOn: "",
+        imageUrl: [],
+        link: "",
+      });
       setIsLoading(false);
       setSubmitted(true);
       console.log("Submitted");
@@ -89,7 +95,7 @@ export function ResourceSharingForm(props) {
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
 
-    const data = { ...formdata };
+    const data = { ...formData };
     data[input.name] = input.value;
     setFormData({ ...data, [input.name]: input.value });
     setFormErrors(errors);
@@ -100,6 +106,37 @@ export function ResourceSharingForm(props) {
       return;
     }
     setToast({ ...toast, toastStatus: false });
+  };
+
+  const addTag = (e) => {
+    e.preventDefault();
+    const tag = formatTag(tagRef.current.value.trim(), "Hyphens");
+    if (tag && !tags.includes(tag)) {
+      setTags([...tags, tag]);
+      setFormData({ ...formData, tags: [...tags, tag] });
+      tagRef.current.value = "";
+    }
+  };
+
+  const removeTag = (tagToRemove) => {
+    const newTags = tags.filter(tag => tag !== tagToRemove);
+    setTags(newTags);
+    setFormData({ ...formData, tags: newTags });
+  };
+
+  const addImageUrl = (e) => {
+    e.preventDefault();
+    const url = imageRef.current.value;
+    if (url.trim()) {
+      setImageUrls(prevUrl => [...prevUrl, url.trim()]);
+      setFormData({ ...formData, imageUrl: [...formData.imageUrl, url.trim()] });
+      imageRef.current.value = "";
+    }
+  };
+
+  const removeImageUrl = (url) => {
+    setImageUrls(imageUrls.filter(u => u !== url));
+    setFormData({ ...formData, imageUrl: formData.imageUrl.filter(u => u !== url) });
   };
 
   return (
@@ -172,18 +209,163 @@ export function ResourceSharingForm(props) {
                 >
                   <input
                     autoFocus="on"
-                    placeholder="Name"
-                    id="txt_name"
+                    placeholder="Title"
+                    id="txt_title"
                     type="text"
-                    name="name"
+                    name="title"
                     onChange={handleChange}
                   />
-                  <i className="fas fa-user"></i>
+                  <i className="fas fa-heading"></i>
                   <div
                     className={`${style["validation"]} validation d-sm-none d-md-block`}
                   >
-                    {formerrors["name"] ? (
-                      <div>* {formerrors["name"]}</div>
+                    {formerrors["title"] ? (
+                      <div>* {formerrors["title"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className={`form-group ${style["form-group"]}`}>
+                <div
+                  className={
+                    dark
+                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                      : `${style["resource-input"]} ${style["resource-input-light"]}`
+                  }
+                >
+                   <textarea
+                    placeholder="Resource Description"
+                    id="txt_content"
+                    rows="6"
+                    cols="20"
+                    type="text"
+                    name="content"
+                    onChange={handleChange}
+                  ></textarea>
+                  <i className="fas fa-comment-dots"></i>
+                  <div
+                    className={`${style["validation"]} validation d-sm-none d-md-block`}
+                  >
+                    {formerrors["content"] ? (
+                      <div>* {formerrors["content"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className={`form-group ${style["form-group"]}`}>
+                <div
+                  className={
+                    dark
+                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                      : `${style["resource-input"]} ${style["resource-input-light"]}`
+                  }
+                >
+                <div className={style["tags-container"]}>
+                  <div className={style["tags"]}>
+                    {tags.map((tag, index) => (
+                      <Tag key={index} label={tag} remove={removeTag} />
+                    ))}
+                  </div>
+                    <input
+                     type="text"
+                     ref={tagRef}
+                     onKeyDown={(e) => {
+                       if (e.key === "Enter") {
+                         e.preventDefault();
+                         addTag(e);
+                       }
+                     }}
+                     placeholder="Enter Tags (Hit enter to add tags)"
+                    />
+                     <i className="fas fa-tag"></i>
+                  </div>
+                  <div
+                    className={`${style["validation"]} validation d-sm-none d-md-block`}
+                  >
+                    {formerrors["tags"] ? (
+                      <div>* {formerrors["tags"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className={`form-group ${style["form-group"]}`}>
+              <label
+                  className={
+                    dark
+                      ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                      : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
+                  }
+                >
+                  Resource expiry date
+                </label>
+                <div
+                  className={
+                    dark
+                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                      : `${style["resource-input"]} ${style["resource-input-light"]}`
+                  }
+                > 
+                  <input
+                    type="date"
+                    name="expiresOn"
+                    className={style["form-control-input"]}
+                    value={formData.expiresOn}
+                    placeholder="Broadcast Date(DD/MM/YY)"
+                    onChange={handleChange}
+                  />
+                  <div
+                    className={`${style["validation"]} validation d-sm-none d-md-block`}
+                  >
+                    {formerrors["expiresOn"] ? (
+                      <div>* {formerrors["expiresOn"]}</div>
+                    ) : (
+                      <div>&nbsp; &nbsp;</div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className={`form-group ${style["form-group"]}`}>
+                <div
+                  className={
+                    dark
+                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
+                      : `${style["resource-input"]} ${style["resource-input-light"]}`
+                  }
+                >
+                  <div className={style["tags-container"]}>
+                    <div className={style["tags"]}>
+                      {imageUrls.map((tag, index) => (
+                        <ImageUrl key={index} label={tag} remove={removeImageUrl} />
+                      ))}
+                    </div>
+                    <input
+                      type="text"
+                      ref={imageRef}
+                      onKeyDown={e => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          addImageUrl(e);
+                        }
+                      }}
+                      placeholder="Enter Image url (Hit enter to add image url)"
+                    />
+                    <i className="fas fa-image" />
+                  </div>
+                  <div
+                    className={`${style["validation"]} validation d-sm-none d-md-block`}
+                  >
+                    {formerrors["imageUrl"] ? (
+                      <div>* {formerrors["imageUrl"]}</div>
                     ) : (
                       <div>&nbsp; &nbsp;</div>
                     )}
@@ -200,46 +382,18 @@ export function ResourceSharingForm(props) {
                   }
                 >
                   <input
-                    placeholder="Email ID"
-                    id="txt_email"
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                  />
-                  <i className="fas fa-envelope"></i>
-                  <div
-                    className={`${style["validation"]} validation d-sm-none d-md-block`}
-                  >
-                    {formerrors["email"] ? (
-                      <div>* {formerrors["email"]}</div>
-                    ) : (
-                      <div>&nbsp; &nbsp;</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className={`form-group ${style["form-group"]}`}>
-                <div
-                  className={
-                    dark
-                      ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                      : `${style["resource-input"]} ${style["resource-input-light"]}`
-                  }
-                >
-                  <input
-                    placeholder="Resource URL"
+                    placeholder="Resource Link"
                     id="txt_link"
                     type="url"
-                    name="url"
+                    name="link"
                     onChange={handleChange}
                   />
                   <i className="fas fa-link"></i>
                   <div
                     className={`${style["validation"]} validation d-sm-none d-md-block`}
                   >
-                    {formerrors["url"] ? (
-                      <div>* {formerrors["url"]}</div>
+                    {formerrors["link"] ? (
+                      <div>* {formerrors["link"]}</div>
                     ) : (
                       <div>&nbsp; &nbsp;</div>
                     )}
@@ -247,242 +401,6 @@ export function ResourceSharingForm(props) {
                 </div>
               </div>
 
-              <div
-                className={
-                  dark
-                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                    : `${style["resource-input"]} ${style["resource-input-light"]}`
-                }
-              >
-                <textarea
-                  placeholder="Resource Description"
-                  id={style["txt-desc"]}
-                  rows="6"
-                  cols="20"
-                  name="description"
-                  onChange={handleChange}
-                ></textarea>
-                <i className="fas fa-comment-dots"></i>
-                <div
-                  className={`${style["validation"]} validation d-sm-none d-md-block`}
-                >
-                  {formerrors["description"] ? (
-                    <div>* {formerrors["description"]}</div>
-                  ) : (
-                    <div>&nbsp; &nbsp;</div>
-                  )}
-                </div>
-              </div>
-              <div
-                className={
-                  dark
-                    ? `${style["resource-input1"]} ${style["resource-input1-dark"]} `
-                    : `${style["resource-input1"]} ${style["resource-input1-light"]}`
-                }
-              >
-                <div>
-                  <label
-                    className={
-                      dark
-                        ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                        : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                    }
-                  >
-                    Level Of Trust
-                  </label>
-                </div>
-                <div className={style["radio-buttons"]}>
-                  <div
-                    className={
-                      dark
-                        ? `${style["radio-item"]} ${style["radio-item-dark"]}`
-                        : `${style["radio-item"]} ${style["radio-item-light"]}`
-                    }
-                  >
-                    <input
-                      type="radio"
-                      id="ritema"
-                      name="trustLevel"
-                      value={1}
-                      onChange={handleChange}
-                    />
-                    <label
-                      className={
-                        dark
-                          ? `mx-3 ${style["label"]} ${style["label-dark"]}`
-                          : `mx-3 ${style["label"]}`
-                      }
-                      htmlFor="ritema"
-                    >
-                      1
-                    </label>
-                  </div>
-                  <div
-                    className={
-                      dark
-                        ? `${style["radio-item"]} ${style["radio-item-dark"]}`
-                        : `${style["radio-item"]} ${style["radio-item-light"]}`
-                    }
-                  >
-                    <input
-                      type="radio"
-                      id="ritemb"
-                      name="trustLevel"
-                      value={2}
-                      onChange={handleChange}
-                    />
-                    <label
-                      className={
-                        dark
-                          ? `mx-3 ${style["label"]} ${style["label-dark"]}`
-                          : `mx-3 ${style["label"]}`
-                      }
-                      htmlFor="ritemb"
-                    >
-                      2
-                    </label>
-                  </div>
-                  <div
-                    className={
-                      dark
-                        ? `${style["radio-item"]} ${style["radio-item-dark"]}`
-                        : `${style["radio-item"]} ${style["radio-item-light"]}`
-                    }
-                  >
-                    <input
-                      type="radio"
-                      id="ritemc"
-                      name="trustLevel"
-                      value={3}
-                      onChange={handleChange}
-                    />
-                    <label
-                      className={
-                        dark
-                          ? `mx-3 ${style["label"]} ${style["label-dark"]}`
-                          : `mx-3 ${style["label"]}`
-                      }
-                      htmlFor="ritemc"
-                    >
-                      3
-                    </label>
-                  </div>
-                  <div
-                    className={
-                      dark
-                        ? `${style["radio-item"]} ${style["radio-item-dark"]}`
-                        : `${style["radio-item"]} ${style["radio-item-light"]}`
-                    }
-                  >
-                    <input
-                      type="radio"
-                      id="ritemd"
-                      name="trustLevel"
-                      value={4}
-                      onChange={handleChange}
-                    />
-                    <label
-                      className={
-                        dark
-                          ? `mx-3 ${style["label"]} ${style["label-dark"]}`
-                          : `mx-3 ${style["label"]}`
-                      }
-                      htmlFor="ritemd"
-                    >
-                      4
-                    </label>
-                  </div>
-                  <div
-                    className={
-                      dark
-                        ? `${style["radio-item"]} ${style["radio-item-dark"]}`
-                        : `${style["radio-item"]} ${style["radio-item-light"]}`
-                    }
-                  >
-                    <input
-                      type="radio"
-                      id="riteme"
-                      name="trustLevel"
-                      value={5}
-                      onChange={handleChange}
-                    />
-                    <label
-                      className={
-                        dark
-                          ? `mx-3 ${style["label"]} ${style["label-dark"]}`
-                          : `mx-3 ${style["label"]}`
-                      }
-                      htmlFor="riteme"
-                    >
-                      5
-                    </label>
-                  </div>
-                  <div
-                    className={`${style["validation"]} validation d-sm-none d-md-block`}
-                  >
-                    {formerrors["trustLevel"] ? (
-                      <div>* {formerrors["trustLevel"]}</div>
-                    ) : (
-                      <div>&nbsp; &nbsp;</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div
-                className={
-                  dark
-                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                    : `${style["resource-input"]} ${style["resource-input-light"]}`
-                }
-              >
-                <div>
-                  <label
-                    className={
-                      dark
-                        ? `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                        : `mb-3 ${style["level-of-trust"]} ${style["level-of-trust-dark"]}`
-                    }
-                  >
-                    Resource expiry date
-                  </label>
-                </div>
-                <div className={style["valid-until"]}>
-                  <input
-                    name="expiryDate"
-                    className={style["textbox-n"]}
-                    type="date"
-                    id="date"
-                    placeholder="Valid Until:&nbsp;"
-                    onChange={handleChange}
-                  />
-                  <div
-                    className={`${style["validation"]} validation d-sm-none d-md-block`}
-                  >
-                    {formerrors["expiryDate"] ? (
-                      <div>* {formerrors["expiryDate"]}</div>
-                    ) : (
-                      <div>&nbsp; &nbsp;</div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div
-                className={
-                  dark
-                    ? `${style["resource-input"]} ${style["resource-input-dark"]} `
-                    : `${style["resource-input"]} ${style["resource-input-light"]}`
-                }
-              >
-                <textarea
-                  placeholder="Additional Info (Optional)"
-                  id="txt_info"
-                  rows="6"
-                  cols="20"
-                  name="additionalInfo"
-                  onChange={handleChange}
-                ></textarea>
-                <i className="fas fa-pencil-alt"></i>
-              </div>
               <div className={style["submit-btn"]}>
                 <Button2
                   className={style["submit-btn-text"]}
@@ -504,4 +422,22 @@ export function ResourceSharingForm(props) {
       )}
     </div>
   );
+}
+
+const Tag = ({ label, remove }) => {
+  return (
+    <div className={style["tag"]} onClick={() => remove(label)}>
+      <span className={style["tag-label"]}>{label}</span>
+      <span className={style["tag-remove"]}>x</span>
+    </div>
+  );
+};
+
+const ImageUrl = ({ label, remove }) => {
+  return (
+    <div className={style["tag"]} onClick={() => remove(label)}>
+      <span className={style["tag-label"]}>{label}</span>
+      <span className={style["tag-remove"]}>x</span>
+    </div>
+  )
 }

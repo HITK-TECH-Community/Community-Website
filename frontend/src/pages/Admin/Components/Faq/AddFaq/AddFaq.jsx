@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./add-faq.module.scss";
 import { Button2 } from "../../../../../components/util/Button/index";
+import { formatTag } from '../../../../../components/util/Tags';
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
 import { postFaq } from "../../../../../service/Faq"; 
 
@@ -60,7 +61,7 @@ export function AddFaq() {
   };
 
   const addTag = () => {
-    const tag = tagRef.current.value.trim();
+    const tag = formatTag(tagRef.current.value.trim(), "Hyphens");
     if (tag && !tags.includes(tag)) {
       setTags([...tags, tag]);
       setFormData({ ...formData, tags: [...tags, tag] });

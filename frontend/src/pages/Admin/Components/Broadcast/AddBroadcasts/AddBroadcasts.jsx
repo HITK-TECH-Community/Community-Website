@@ -4,6 +4,7 @@ import "suneditor/dist/css/suneditor.min.css";
 import styles from "./add-broadcasts.module.scss";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../../components/util/Button/index";
+import { formatTag } from '../../../../../components/util/Tags';
 import  Loader  from "../../../../../components/util/Loader/index";
 import { SimpleToast } from "../../../../../components/util/Toast/index";
 import { postBoardcast } from "../../../../../service/Broadcast";
@@ -80,10 +81,10 @@ export function AddBroadcasts() {
   };
 
   const addTag = () => {
-    const tag = tagRef.current.value;
-    if (tag.trim()) {
-      setTags(prevTags => [...prevTags, tag.trim()]);
-      setFormData({ ...formData, tags: [...formData.tags, tag.trim()] });
+    const tag = formatTag(tagRef.current.value.trim(), "Hyphens");
+    if (tag) {
+      setTags(prevTags => [...prevTags, tag]);
+      setFormData({ ...formData, tags: [...formData.tags, tag] });
       tagRef.current.value = "";
     }
   };

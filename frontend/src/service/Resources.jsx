@@ -65,34 +65,6 @@ const postResource = async (data, setToast) => {
   }
 };
 
-// const postResources = async (data, setToast, toast) => {
-//   try {
-//     const response = await fetch(`${END_POINT}/resources/`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "multipart/form-data",
-//       },
-//       body: JSON.stringify(data),
-//     });
-//     const _data = await response.json();
-//     setToast({
-//       ...toast,
-//       toastMessage: POST_SUCCESS,
-//       toastStatus: true,
-//       toastType: "success",
-//     });
-//     return _data;
-//   } catch (err) {
-//     console.log(err);
-//     setToast({
-//       ...toast,
-//       toastMessage: POST_FAIL,
-//       toastStatus: true,
-//       toastType: "error",
-//     });
-//   }
-// };
-
 const deleteResource = async (id, setToast, toast) => {
   try {
     const response = await fetch(`${END_POINT}/resources/deleteResource`, {

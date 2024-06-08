@@ -21,6 +21,10 @@ const broadcastSchema = new Schema(
     tags: {
       type: Array,
     },
+    isApproved: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );

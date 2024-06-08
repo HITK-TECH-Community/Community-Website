@@ -8,47 +8,12 @@ const cluster = require('./helpers/cluster');
 const joinUs = require('./app/models/joinUs');
 const contactUs = require('./app/models/contactUs');
 const sendEmail = require('./utility/sendEmail');
-const Resource = require('./app/models/resource');
 const {
   JoinUsCronJobMailTemplate,
   ContactUsCronJobMailTemplate,
-  ResourceDeletedMailTemplate,
 } = require('./utility/emailTemplates');
 const Admin = require('./app/models/Admin');
 
-// Cron job to delete all resource data for 2months
-cronJob('0 0 2 * *', async (req, res, next) => {
-  try {
-    await Resource.deleteMany({});
-    console.log('deleting resource data');
-    const [err, response] = await to(Admin.find().select('email username'));
-    if (err) {
-      const error = new ErrorHandler(constants.ERRORS.DATABASE, {
-        statusCode: 500,
-        message: 'admin not found',
-        errStack: err,
-      });
-      return next(error);
-    }
-    try {
-      response.map(async (admin) => {
-        // eslint-disable-next-line no-unused-expressions, no-sequences
-        admin.email, 'Notifcation : Resource data deleted', ResourceDeletedMailTemplate(admin.username);
-      });
-    } catch (e) {
-      const error = new ErrorHandler(constants.ERRORS.EMAIL, {
-        statusCode: 500,
-        message: 'Sendgrid Error',
-        errStack: e,
-      });
-      return next(error);
-    }
-  } catch (error) {
-    return res.json(error);
-  }
-  return next();
-});
-// Running Join Us cronjob for 2 months - 0 0 2 * *
 cronJob('0 0 2 * *', async (req, res, next) => {
   try {
     await joinUs.deleteMany({});

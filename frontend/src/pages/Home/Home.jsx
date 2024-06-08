@@ -3,6 +3,7 @@ import { Overview } from "./components/Overview/index";
 import { Motive } from "./components/Motive/index";
 import { Carousel } from "./components/Carousel/index";
 import { JoinUs } from "./components/JoinUs/index";
+import { Testimonials } from "./components/Testimonials";
 
 import styles from "./home.module.scss";
 
@@ -18,6 +19,7 @@ export const Home = (props) => {
       <Motive theme={dark} />
       <Carousel theme={dark} />
       <JoinUs theme={dark} />
+      <Testimonials theme={dark} />
     </div>
   );
 };

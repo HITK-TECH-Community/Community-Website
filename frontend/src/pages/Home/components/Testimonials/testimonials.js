@@ -1,3 +1,4 @@
+// TODO - Remove this file after api gets integrated
 const testimonials = [
   {
     name: "John Doe",

@@ -46,11 +46,6 @@ export const Dashboard = (props) => {
       tab: 11,
     },
     {
-      name: "Resources",
-      icon: <i className="fa fa-book fa-lg" aria-hidden="true"></i>,
-      tab: 12,
-    },
-    {
       name: "FAQ",
       icon: <LiveHelpIcon style={{ fontSize: 23 }} />,
       tab: 5,

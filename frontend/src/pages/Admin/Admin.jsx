@@ -9,7 +9,6 @@ import { ManageTeams } from "./Components/MangeTeams";
 import { AddTeamMember } from "./Components/AddTeamMember";
 import { About } from "./Components/About";
 import { JoinUs } from "./Components/JoinUs";
-import { Resource } from "./Components/Resource";
 import { Faq } from "./Components/Faq";
 import { Setting } from "./Components/Setting";
 import { Invite } from "./Components/Setting/Invite";
@@ -167,19 +166,6 @@ export const Admin = (props) => {
             <li onClick={closeMobileMenu}>
               <div
                 className={
-                  tab === 12
-                    ? style["features-icons"]
-                    : style["features-icons1"]
-                }
-                onClick={() => setTab(12)}
-              >
-                <i className="fas fa-book fa-fw fa-lg" aria-hidden="true"></i>
-                <div className={style["span"]}>Resources</div>
-              </div>
-            </li>
-            <li onClick={closeMobileMenu}>
-              <div
-                className={
                   tab === 5 ? style["features-icons"] : style["features-icons1"]
                 }
                 onClick={() => setTab(5)}
@@ -234,8 +220,6 @@ export const Admin = (props) => {
             <About setTab={setTab} />
           ) : tab === 11 ? (
             <JoinUs />
-          ) : tab === 12 ? (
-            <Resource />
           ) : tab === 5 ? (
             <Faq setTab={setTab} />
           ) : tab === 6 ? (

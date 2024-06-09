@@ -1,14 +1,9 @@
 const router = require('express').Router({ mergeParams: true });
-const addaResource = require('./addResource');
-const deleteResource = require('./deleteResource');
-const getResource = require('./getResource');
+const postResource = require('./postResource');
 const validation = require('../../../helpers/middlewares/validation');
-const ResourcesValidationSchema = require('./@validationSchema');
-const { authMiddleware } = require('../../../helpers/middlewares/auth');
+const postResourceValidationSchema = require('./@validationSchema');
 
-router.post('/', validation(ResourcesValidationSchema), addaResource);
+// adding resouce in broadcast schema
+router.post('/', validation(postResourceValidationSchema), postResource);
 
-// Route for deleting a resource
-router.delete('/deleteResource', deleteResource);
-router.get('/getresources', authMiddleware, getResource);
 module.exports = router;

@@ -11,6 +11,7 @@ const question = require('./Q&A/question');
 const answer = require('./Q&A/answers');
 const teamMember = require('./teamMember');
 const resource = require('./resources');
+const testimonial = require('./testimonial');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -24,4 +25,5 @@ router.use('/joinUs', joinUs);
 router.use('/teamMember', teamMember);
 router.use('/', tinyURL);
 router.use('/resources', resource);
+router.use('/testimonials', testimonial);
 module.exports = router;

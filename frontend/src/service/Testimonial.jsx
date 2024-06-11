@@ -13,7 +13,7 @@ export async function getTestimonials(setTestimonials, setToast) {
     if (response.ok) {
       const data = await response.json();
       setTestimonials(data);
-      showToast(setToast, "Testimonials fetched successfully", "success");
+      // we won't be showing the success message for this as it looks wierd on the home page.
     } else {
       showToast(setToast, "Failed to fetch testimonials.", "error");
     }

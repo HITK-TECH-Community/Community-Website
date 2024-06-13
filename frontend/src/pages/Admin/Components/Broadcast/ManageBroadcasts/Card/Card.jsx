@@ -6,7 +6,10 @@ import { IconButton } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { SimpleToast } from "../../../../../../components/util/Toast";
 import style from "./card.module.scss";
-import { deleteBoardcast } from "../../../../../../service/Broadcast.jsx";
+import {
+  UpdateBoardCast,
+  deleteBoardcast,
+} from "../../../../../../service/Broadcast.jsx";
 
 export function Card(props) {
   let dark = props.theme;
@@ -38,13 +41,30 @@ export function Card(props) {
     }
     setToast({ ...toast, toastStatus: false });
   };
-
   async function deleteCard(id) {
     const res = await deleteBoardcast(id, setToast, toast);
-      if (res) {
-        props.setHandleDelete(props.handleDelete + 1);
-      }
+    if (res) {
+      props.setHandleDelete(props.handleDelete + 1);
+    }
   }
+
+  const handleApprove = async () => {
+    const { project } = props;
+    const data = {
+      id: project._id,
+      content: project.content,
+      link: project.link,
+      expiresOn: project.expiresOn,
+      imageUrl: project.imageUrl,
+      tags: project.tags,
+      isApproved: true,
+      title: project.title,
+    };
+    const res = await UpdateBoardCast(data, setToast, toast);
+    if (res) {
+      props.setHandleDelete(props.handleDelete + 1);
+    }
+  };
 
   const isSuperAdmin = useSelector((state) => state.isSuperAdmin);
   const date = new Date(props.project.createdAt.slice(0, 10));
@@ -137,6 +157,24 @@ export function Card(props) {
             >
               View Details
             </button>
+            <div className={style["button-group"]}>
+              <button
+                className={
+                  !props?.project?.isApproved
+                    ? style["button-approve"]
+                    : style["button-info"]
+                }
+                onClick={!props?.project?.isApproved && handleApprove}
+              >
+                {props?.project?.isApproved ? "Approved" : "Approve"}
+              </button>
+              <button
+                className={style["button-delete"]}
+                onClick={() => deleteCard(props.id)}
+              >
+                Reject
+              </button>
+            </div>
           </div>
         </div>
       </ReactCardFlip>

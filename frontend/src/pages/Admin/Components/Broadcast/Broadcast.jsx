@@ -37,12 +37,12 @@ export function Broadcast(props) {
               <AiFillEdit className={style["editt"]} />
             </div>
             <div className={style["card-content"]}>
-              <Link
+              <div
                 onClick={() => props.setTab(16)}
                 className={style["main-btn"]}
               >
                 Manage here
-              </Link>
+              </div>
             </div>
           </div>
         </div>

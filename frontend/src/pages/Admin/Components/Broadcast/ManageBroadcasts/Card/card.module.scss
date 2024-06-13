@@ -14,6 +14,66 @@
   box-shadow: 0.5em 0.5em 0.5em rgb(54, 53, 53);
 }
 
+.button-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 5px 2px 5px 2px;
+}
+
+.button-approve {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(6, 158, 41);
+  margin: 5px;
+  color: #fff;
+  width: 120px;
+  font-size: medium;
+  font-weight: bold;
+  transition: background-color 200ms;
+}
+
+.button-edit:hover {
+  background-color: rgb(10, 205, 53);
+}
+
+.button-info {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(4, 123, 182);
+  margin: 5px;
+  color: #fff;
+  width: 120px;
+  font-size: medium;
+  font-weight: bold;
+  transition: background-color 200ms;
+}
+
+.button-delete {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #fc0254;
+  margin: 5px;
+  color: #fff;
+  width: 120px;
+  font-size: medium;
+  font-weight: bold;
+  transition: background-color 200ms;
+  text-align: center;
+}
+
+.button-delete:hover {
+  background-color: #fc3779;
+}
+
 // for dark theme
 .card-item-dark {
   background-color: #171717;
@@ -28,7 +88,7 @@
   align-items: center;
   padding: 1.5em;
   color: var(--bs-light);
-  height: 380px;
+  height: 410px;
 }
 
 .clickable-card:hover {

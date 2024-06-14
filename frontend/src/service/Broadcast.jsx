@@ -108,4 +108,41 @@ const postBoardcast = async ( data, setToast, toast) => {
   }
 };
 
-export { boardcast, customBoardcast, deleteBoardcast, postBoardcast };
+const UpdateBoardCast = async (data, setToast, toast) => {
+  try {
+    const response = await fetch(`${END_POINT}/broadcast/update`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+      throw new Error("Failed to Approve");
+    }
+    setToast({
+      ...toast,
+      toastMessage: "Successfully Approved",
+      toastStatus: true,
+      toastType: "success",
+    });
+    return true;
+  } catch (error) {
+    console.log("Failed to Approve", error.message);
+    setToast({
+      ...toast,
+      toastMessage: "Failed to Approve",
+      toastStatus: true,
+      toastType: "error",
+    });
+  }
+};
+
+export {
+  boardcast,
+  customBoardcast,
+  deleteBoardcast,
+  postBoardcast,
+  UpdateBoardCast,
+};

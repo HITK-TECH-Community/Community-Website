@@ -5,7 +5,12 @@ import "./Ques.scss";
 import Joi from "joi-browser";
 import Loader from "../../components/util/Loader/index";
 import { SimpleToast } from "../../components/util/Toast";
-import { getAllQuestion, uploadData, upvote, downvote } from "../../service/Faq";
+import {
+  getAllQuestion,
+  uploadData,
+  upvote,
+  downvote,
+} from "../../service/Faq";
 import { showToast, hideToast } from "../../service/toastService";
 
 function Ques(props) {
@@ -109,6 +114,7 @@ function Ques(props) {
           });
           setFormErrors({});
           setCheckedState(new Array(Tags.length).fill(false));
+          setButtonPressed(false);
         })
         .catch(() => {
           setIsUploadingData(false);
@@ -129,7 +135,7 @@ function Ques(props) {
     await upvote(questionId, setToast);
     fetchQuestions();
   };
-  
+
   const handleDownvote = async (questionId) => {
     await downvote(questionId, setToast);
     fetchQuestions();
@@ -164,7 +170,10 @@ function Ques(props) {
                   <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
                 </div>
                 <div>
-                  <button className="vote-btn" onClick={() => handleUpvote(item._id)}>
+                  <button
+                    className="vote-btn"
+                    onClick={() => handleUpvote(item._id)}
+                  >
                     👍{item.upvotes}
                   </button>
                   <button
@@ -197,7 +206,10 @@ function Ques(props) {
           }
         >
           <form className="question_form" onSubmit={handleSubmit}>
-            <button className="close-popup" onClick={() => setButtonPressed(false)}>
+            <button
+              className="close-popup"
+              onClick={() => setButtonPressed(false)}
+            >
               X
             </button>
             <h3
@@ -228,7 +240,9 @@ function Ques(props) {
                       onChange={handleChange}
                     />
                     <i className="fas fa-heading"></i>
-                    <div className={`${style["validation"]} validation d-sm-none d-md-block`}>
+                    <div
+                      className={`${style["validation"]} validation d-sm-none d-md-block`}
+                    >
                       {formerrors["title"] ? (
                         <div>* {formerrors["title"]}</div>
                       ) : (
@@ -254,8 +268,13 @@ function Ques(props) {
                       value={formdata.description}
                       onChange={handleChange}
                     />
-                    <i className="fas fa-envelope" style={{ marginTop: 27 }}></i>
-                    <div className={`${style["validation"]} validation d-sm-none d-md-block`}>
+                    <i
+                      className="fas fa-envelope"
+                      style={{ marginTop: 27 }}
+                    ></i>
+                    <div
+                      className={`${style["validation"]} validation d-sm-none d-md-block`}
+                    >
                       {formerrors["body"] ? (
                         <div>* {formerrors["body"]}</div>
                       ) : (
@@ -322,7 +341,10 @@ function Ques(props) {
                 </div>
               </div>
 
-              <div className={style["submit-btn"]} style={{ justifyContent: "space-around", marginBottom: "1rem" }}>
+              <div
+                className={style["submit-btn"]}
+                style={{ justifyContent: "space-around", marginBottom: "1rem" }}
+              >
                 <div className="data-loader">
                   {isUploadingData ? (
                     <Loader />

@@ -25,6 +25,9 @@ import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
 import { QandA } from "./Components/Faq/Q&A/QandA";
 import { Manageqa } from "./Components/Faq/Q&A/ManageQ&A/ManageQ&A";
+import { Testimonial } from "./Components/Testimonial";
+import { AddTestimonial } from "./Components/Testimonial/AddTestimonial";
+import { ManageTestimonial } from "./Components/Testimonial/ManageTestimonial";
 
 export const Admin = (props) => {
   const [tab, setTab] = useState(1);
@@ -180,6 +183,20 @@ export const Admin = (props) => {
             <li onClick={closeMobileMenu}>
               <div
                 className={
+                  tab === 20 ? style["features-icons"] : style["features-icons1"]
+                }
+                onClick={() => setTab(20)}
+              >
+                <i
+                  className="fas fa-solid fa-comments fa-fw fa-lg"
+                  aria-hidden="true"
+                ></i>
+                <div className={style["span"]}>Testimonial</div>
+              </div>
+            </li>
+            <li onClick={closeMobileMenu}>
+              <div
+                className={
                   tab === 6 ? style["features-icons"] : style["features-icons1"]
                 }
                 onClick={() => setTab(6)}
@@ -246,6 +263,12 @@ export const Admin = (props) => {
             <QandA setQId={setQId} setTab={setTab} tab={tab} />
           ) : tab === 19 ? (
             <Manageqa qId={qId} setTab={setTab} />
+          ) : tab === 20 ? (
+            <Testimonial setTab={setTab} />
+          ) : tab === 21 ? (
+            <AddTestimonial setTab={setTab} />
+          ) : tab === 22 ? (
+            <ManageTestimonial setTab={setTab} />
           ) : null}
         </div>
       </div>

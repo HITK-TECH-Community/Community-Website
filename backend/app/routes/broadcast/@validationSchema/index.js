@@ -19,6 +19,7 @@ const updateBroadcastValidationSchema = Joi.object().keys({
     .min(new Date(new Date() - 100000)),
   imageUrl: Joi.array().min(1).items(Joi.string().uri()),
   tags: Joi.array().min(1).items(Joi.string()),
+  isApproved: Joi.boolean().required(),
   id : Joi.string().min(24).max(24).required()
 });
 

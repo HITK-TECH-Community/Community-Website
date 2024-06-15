@@ -1,31 +1,30 @@
 import React from "react";
-import style from "./broadcast.module.scss";
+import style from "./testimonial.module.scss";
 import { AiFillEdit } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
-import { Link } from "react-router-dom";
 
-export function Broadcast(props) {
+export function Testimonial(props) {
   return (
     <div className={style["broadcast"]}>
-      <h1 style={{ textAlign: "center" }}> Broadcasts </h1>
+      <h1 style={{ textAlign: "center" }}> Testimonial </h1>
       <div className={style["cards"]}>
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              <Link onClick={() => props.setTab(9)} style={{ color: "white" }}>
-                ADD BROADCAST
-              </Link>
+              <div onClick={() => props.setTab(21)} style={{ color: "white" }}>
+                CREATE TESTIMONIAL
+              </div>
               <AiOutlinePlus className={style["add"]} />
             </div>
             <div className={style["card-content"]}>
-              <p style={{ textAlign: "left" }}>To add a new broadcast</p>
+              <p style={{ textAlign: "left" }}>To Create a new Testimonial</p>
               <p
                 // onClick={openEditor}
                 style={{ color: "red", cursor: "pointer", textAlign: "left" }}
               >
-                <Link onClick={() => props.setTab(9)} style={{ color: "red" }}>
+                <div onClick={() => props.setTab(21)} style={{ color: "red" }}>
                   CLICK HERE
-                </Link>
+                </div>
               </p>
             </div>
           </div>
@@ -33,12 +32,12 @@ export function Broadcast(props) {
         <div className={style["card-item"]}>
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>
-              MANAGE BROADCASTS
+              MANAGE TESTIMONIAL
               <AiFillEdit className={style["editt"]} />
             </div>
             <div className={style["card-content"]}>
               <div
-                onClick={() => props.setTab(16)}
+                onClick={() => props.setTab(22)}
                 className={style["main-btn"]}
               >
                 Manage here

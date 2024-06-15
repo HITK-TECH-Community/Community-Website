@@ -1,0 +1,112 @@
+.head {
+  text-align: center;
+}
+
+.manage-testimonials {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  margin: 2em;
+  height: auto;
+}
+
+.content {
+  overflow: hidden;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.content h3{
+  font-weight: "bolder";
+}
+
+.crd {
+  min-width: 100px;
+  max-width: 440px;
+  min-height: 12em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #016795;
+  box-shadow: rgba(141, 113, 113, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  color: white;
+  border-radius: 20px;
+}
+
+.crd img {
+  margin: auto;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: 25px;
+}
+.crd:hover {
+  color: white;
+  background: #1b2431;
+}
+
+.crd > .head1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  margin: 0.5em;
+}
+
+.crd > .head1 > h4 {
+  margin: 0 1em;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 983px) {
+  .manage-testimonials {
+    grid-template-columns: auto;
+    margin: 1em 0;
+    justify-content: center;
+  }
+
+  .conts {
+    width: 90%;
+  }
+  .crd{
+    max-width: 400px;
+  }
+  .content {
+    overflow-wrap: break-word;
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+  .content {
+    overflow: hidden;
+    padding: 1.5rem 3.5rem;
+  }
+}
+
+.url{
+  text-decoration: underline;
+  color: white;
+}
+
+.url:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+.delete{
+  width: 90px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}

@@ -60,20 +60,16 @@ export function ManageTestimonial() {
               </div>
               <h2 className="head1"> {testimonial.name} </h2>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Position</h3>{" "}
-                {testimonial.position}
+                <h3>Position</h3> {testimonial.position}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Company</h3>{" "}
-                {testimonial.company}
+                <h3>Company</h3> {testimonial.company}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Testimonial</h3>{" "}
-                {testimonial.text}
+                <h3>Testimonial</h3> {testimonial.text}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Rating</h3>{" "}
-                {testimonial.rating}
+                <h3>Rating</h3> {testimonial.rating}
               </div>
               <button
                 name={`${testimonial._id}`}

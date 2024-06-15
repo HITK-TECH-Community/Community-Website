@@ -3,15 +3,15 @@ import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import Joi from "joi-browser";
 import { Button2 } from "../../../../components/util/Button";
-import "../../../../pages/Resources/components/ResourceSharingForm/resource-sharing-form.module.scss";
-import style from "./profile.module.scss";
+import  "../../../../pages/Resources/components/ResourceSharingForm/resource-sharing-form.module.scss"
+import  style from "./profile.module.scss";
 import Loader from "../../../../components/util/Loader";
 import { END_POINT } from "../../../../config/api";
 import { SimpleToast } from "../../../../components/util/Toast";
 export function Profile(props) {
   const [name, setName] = useState("Super Admin Name");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstName,setFirstName]=useState("");
+  const [lastName,setLastName]=useState("");
   const [email, setEmail] = useState("xyz@gmail.com");
   const [username, setUsername] = useState("xyz");
   const [phone, setPhone] = useState("+91-123456789");
@@ -29,27 +29,15 @@ export function Profile(props) {
     lastName: "Invalid Last Name",
     email: "Invalid Email",
     phone: "Invalid Phone Number Format +91XXXXXXXXX",
-    username: "Invalid Username",
+    username:"Invalid Username"
   };
-
+  
   const validationSchema = {
-    firstName: Joi.string()
-      .regex(/^[A-Za-z]+$/)
-      .required()
-      .label("First Name"),
-    lastName: Joi.string()
-      .regex(/^[A-Za-z]*$/)
-      .required()
-      .label("Last Name"),
+    firstName: Joi.string().regex(/^[A-Za-z]+$/).required().label("First Name"),
+    lastName: Joi.string().regex(/^[A-Za-z]*$/).required().label("Last Name"),
     email: Joi.string().email().required().label("Email"),
-    phone: Joi.string()
-      .regex(/[+]91[6-9]{1}[0-9]{9}$/)
-      .required()
-      .label("Contact Number"),
-    username: Joi.string()
-      .regex(/^[A-Za-z][A-Za-z0-9_]{7,29}$/)
-      .required()
-      .label("Username"),
+    phone: Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/).required().label("Contact Number"),
+    username: Joi.string().regex(/^[A-Za-z][A-Za-z0-9_]{7,29}$/).required().label("Username")
   };
 
   const handleCloseToast = () => {
@@ -59,19 +47,19 @@ export function Profile(props) {
   };
 
   const validateForm = () => {
-    const obj = { firstName, lastName, email, phone, username };
+    const obj = { firstName, lastName, email, phone,username };
     const options = { abortEarly: false };
     const { error } = Joi.validate(obj, validationSchema, options);
     if (!error) return null;
 
     const errors = {};
-    error.details.forEach((err) => {
+    error.details.forEach(err => {
       const field = err.path[0];
       errors[field] = errorMessages[field] || "Invalid Input";
     });
     return errors;
   };
-  const updateAdmin = async (e) => {
+  const updateAdmin = async(e) => {
     e.preventDefault();
 
     const validationErrors = validateForm();
@@ -80,47 +68,44 @@ export function Profile(props) {
     if (validationErrors) return;
     setErrors({});
 
-    console.log(firstName, lastName, phone, email);
-    const token = localStorage.getItem("token");
+    console.log(firstName,lastName,phone,email);
+    const token =localStorage.getItem('token')
     const data = {
       firstName,
       lastName,
-      username,
-      contact: phone,
+      username, 
+      contact:phone,   
     };
     const formData = new FormData();
-    formData.append("firstName", firstName);
-    formData.append("lastName", lastName);
-    formData.append("username", username);
-    formData.append("contact", phone);
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('username', username);
+    formData.append('contact', phone);
     formData.append("image", pic);
     setLoading(true);
     try {
-      const response = await fetch(
-        `${END_POINT}/admin/${props.adminData._id}/${token}`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          body: formData,
-        }
-      );
+      const response = await fetch(`${END_POINT}/admin/${props.adminData._id}/${token}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body:formData,
+      });
 
       if (!response.ok) {
-        setToastMessage("Failed to update admin");
-        setOpenToast(true);
-        setSeverity("error");
-        throw new Error("Failed to update admin");
-      } else {
-        setToastMessage("Updated Successfully");
-        setOpenToast(true);
-        setSeverity("success");
-        // re-render the Admin Page as it is updated
-        props.update();
+      setToastMessage("Failed to update admin");
+      setOpenToast(true);
+      setSeverity("error");
+        throw new Error('Failed to update admin');
+      }else{
+      setToastMessage("Updated Successfully");
+      setOpenToast(true);
+      setSeverity("success");
+      // re-render the Admin Page as it is updated
+      props.update();
       }
     } catch (error) {
-      console.error("Error updating admin:", error);
+      console.error('Error updating admin:', error);
       setToastMessage("Failed to update admin");
       setOpenToast(true);
       setSeverity("error");
@@ -162,7 +147,7 @@ export function Profile(props) {
 
   return (
     <div className={style["profile-container"]}>
-      <SimpleToast
+    <SimpleToast
         open={open}
         message={toastMessage}
         severity={severity}
@@ -178,82 +163,60 @@ export function Profile(props) {
           )}
         </div>
         <div className={style["image-container"]} onClick={changePic}>
-          <img src={picUrl} className={style["img-admin"]} alt="admin_img" />
-          <input
-            id="profile-pic-input"
-            type="file"
-            accept="image/*"
-            capture="camera"
-            onChange={onPicChange}
-            style={{ display: "none" }}
+          
+          <img
+            src={picUrl}
+            className={style["img-admin"]}
+            alt="admin_img"
           />
+          <input
+                      id="profile-pic-input"
+                      type="file"
+                      accept="image/*"
+                      capture="camera"
+                      onChange={onPicChange}
+                      style={{ display: "none" }}
+                    />
         </div>
         <div className={style["card-info"]}>
           {edit ? (
             <form onSubmit={updateAdmin} noValidate>
               <div className={style["form"]}>
                 <div className={style["input-wrapper"]}>
-                  <input
-                    type="text"
-                    placeholder="FirstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    required
-                  />
+                  <input type="text" placeholder="FirstName" value={firstName} onChange={(e)=>setFirstName(e.target.value)} required/>
                   <div className={style["error-message"]}>
                     {errors.firstName && <span>{errors.firstName}</span>}
                   </div>
+
                 </div>
                 <div className={style["input-wrapper"]}>
-                  <input
-                    type="text"
-                    placeholder="LastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
+                  <input type="text" placeholder="LastName" value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
                   <div className={style["error-message"]}>
                     {errors.lastName && <span>{errors.lastName}</span>}
                   </div>
                 </div>
                 <div className={style["input-wrapper"]}>
-                  <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
+                  <input type="text" placeholder="Username" value={username} onChange={(e)=>setUsername(e.target.value)}/>
                   <div className={style["error-message"]}>
                     {errors.username && <span>{errors.username}</span>}
                   </div>
                 </div>
                 <div className={style["input-wrapper"]}>
-                  <input
-                    type="tel"
-                    maxLength="13"
-                    placeholder="phone number  +91XXXXXXXXX"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    required
-                  />
+                  <input type="tel"  maxLength="13" placeholder="phone number  +91XXXXXXXXX" value={phone} onChange={(e)=>setPhone(e.target.value)} required/>
                   <div className={`${style["error-message"]}`}>
                     {errors.phone && <span>{errors.phone}</span>}
                   </div>
                 </div>
                 <div className={style["input-wrapper-btn"]}>
                   <div className={"submit-btn"}>
-                    <div className="data-loader">
-                      {loading ? (
-                        <Loader />
-                      ) : (
-                        <Button2
-                          id="btn"
-                          label="Update"
-                          type="submit"
-                          className={"submit-btn-text"}
-                        />
-                      )}
+                  <div className="data-loader">
+                  {loading ? (
+                      <Loader />  
+                    ) : (
+                      <Button2 id="btn" label="Update" type="submit" className={"submit-btn-text"} />
+                    )}
                     </div>
-                  </div>
+                    </div>
                 </div>
               </div>
             </form>

@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import style from "./manage-testimonial.module.scss";
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
 import Loader from "../../../../../components/util/Loader";
-import { deleteTestimonial, getTestimonials } from "../../../../../service/Testimonial";
+import {
+  deleteTestimonial,
+  getTestimonials,
+} from "../../../../../service/Testimonial";
 
 export function ManageTestimonial() {
   const [testimonials, setTestimonials] = useState([]);
@@ -16,7 +19,7 @@ export function ManageTestimonial() {
 
   const getdata = async () => {
     setIsLoaded(true);
-    await getTestimonials(setTestimonials,setToast);
+    await getTestimonials(setTestimonials, setToast);
     setIsLoaded(false);
   };
 
@@ -41,39 +44,36 @@ export function ManageTestimonial() {
     <div>
       <h1 className={style["head"]}>Manage Testimonials</h1>
       {isLoaded ? (
-        <div className={style["data-loader"]}><Loader /></div>
+        <div className={style["data-loader"]}>
+          <Loader />
+        </div>
       ) : (
         <div className={style["manage-testimonials"]}>
           {testimonials?.map((testimonial, index) => (
             <div className={style["crd"]} key={index}>
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <div>
                 <img
-                  src={
-                    (testimonial.image) ||
-                    "./images/defaultUser.png"
-                  }
-                  style={{
-                    margin: "auto",
-                    borderRadius: "50%",
-                    width: "200px",
-                    height: "200px",
-                    marginTop: "25px",
-                  }}
+                  src={testimonial.image || "./images/defaultUser.png"}
+                  className={style["image"]}
                   alt=""
                 />
               </div>
               <h2 className="head1"> {testimonial.name} </h2>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Position</h3> {testimonial.position}
+                <h3 style={{ fontWeight: "bolder" }}>Position</h3>{" "}
+                {testimonial.position}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Company</h3> {testimonial.company}
+                <h3 style={{ fontWeight: "bolder" }}>Company</h3>{" "}
+                {testimonial.company}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Testimonial</h3> {testimonial.text}
+                <h3 style={{ fontWeight: "bolder" }}>Testimonial</h3>{" "}
+                {testimonial.text}
               </div>
               <div className={style["content"]}>
-                <h3 style={{ fontWeight: "bolder" }}>Rating</h3> {testimonial.rating}
+                <h3 style={{ fontWeight: "bolder" }}>Rating</h3>{" "}
+                {testimonial.rating}
               </div>
               <button
                 name={`${testimonial._id}`}

@@ -107,14 +107,15 @@ export function AddTestimonial() {
       
       await addTestimonial(form, setToast, toast);
 
-      // const temp = {
-      //   name: "",
-      //   position: "",
-      //   company: "",
-      //   text: "",
-      //   rating: "",
-      // };
-      // setFormData(temp);
+      const temp = {
+        ...formData,
+        name: "",
+        position: "",
+        company: "",
+        text: "",
+        rating: "",
+      };
+      setFormData(temp);
     }
     return pic;
   };

@@ -67,9 +67,6 @@ const deleteTestimonial = async (id, setToast,toast) => {
 }
 
 const addTestimonial = async (testimonial, setToast,toast) => {
-  for (const [key, value] of testimonial.entries()) {
-    console.log(`${key}:`, value);
-  }
   try {
     const response = await fetch(`${END_POINT}/testimonials/`, {
       method: "POST",

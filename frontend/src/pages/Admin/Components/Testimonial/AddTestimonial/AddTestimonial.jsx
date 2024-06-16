@@ -11,7 +11,7 @@ export function AddTestimonial() {
     name: "",
     position: "",
     company: "",
-    image: "https://i.pinimg.com/originals/f4/cd/d8/f4cdd85c50e44aa59a303fb163ff90f8.jpg",
+    image: "",
     text: "",
     rating: "",
   });
@@ -27,7 +27,7 @@ export function AddTestimonial() {
     name: Joi.string().required().label("Name"),
     position: Joi.string().required().label("Position"),
     company: Joi.string().required().label("Company"),
-    image: Joi.any().required().label("Image"),
+    image: Joi.any().optional().label("Image"),
     text: Joi.string().required().label("Text"),
     rating: Joi.number().required().min(1).max(5).label("Rating"),
   };
@@ -55,6 +55,7 @@ export function AddTestimonial() {
 
     if (files && files[0]) {
       setPic(files[0]);
+      setFormData({ ...formData, image: files[0] });
       let reader = new FileReader();
       reader.onload = function (e) {
         setPicUrl(e.target.result);
@@ -96,17 +97,24 @@ export function AddTestimonial() {
       console.log(errors);
     } else {
       // Call the server
-      await addTestimonial(formData, setToast, toast);
+      const form = new FormData();
+      form.append("name", formData.name);
+      form.append("position", formData.position);
+      form.append("company", formData.company);
+      form.append("text", formData.text);
+      form.append("rating", formData.rating);
+      form.append("image", formData.image);
+      
+      await addTestimonial(form, setToast, toast);
 
-      const temp = {
-        name: "",
-        position: "",
-        company: "",
-        text: "",
-        rating: "",
-      };
-      setFormData(temp);
-      setPicUrl("./images/testimonialImg.png");
+      // const temp = {
+      //   name: "",
+      //   position: "",
+      //   company: "",
+      //   text: "",
+      //   rating: "",
+      // };
+      // setFormData(temp);
     }
     return pic;
   };
@@ -124,6 +132,7 @@ export function AddTestimonial() {
             <form
               className={styles["inside-add-testimonial"]}
               onSubmit={onSubmit}
+              enctype="multipart/form-data"
             >
               <Grid container>
                 <Grid xs={12} sm={2} md={3} />

@@ -53,7 +53,7 @@ export function ManageTestimonial() {
             <div className={style["crd"]} key={index}>
               <div>
                 <img
-                  src={testimonial.image || "./images/defaultUser.png"}
+                  src={testimonial.image}
                   className={style["image"]}
                   alt=""
                 />

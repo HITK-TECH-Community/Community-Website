@@ -225,6 +225,7 @@ export function Profile(props) {
               <div className={style["name"]}>{name}</div>
               <div className={style["line"]}></div>
               <div className={style["contact"]}>
+                <div className={style["contact-details"]}>{username}</div>
                 <div className={style["contact-details"]}>{email}</div>
                 <div className={style["contact-details"]}>{phone}</div>
               </div>

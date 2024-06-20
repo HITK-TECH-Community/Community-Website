@@ -13,7 +13,20 @@ async function getTestimonials(setTestimonials, setToast) {
 
     if (response.ok) {
       const data = await response.json();
-      setTestimonials(data);
+      let _data = [...data]
+      await data?.map((item,index) => {
+        let formattedPath = item.image?.replace(/\\/g, "/");
+        if (formattedPath?.startsWith("uploads/")) {
+          formattedPath = formattedPath.replace("uploads/", "");
+          if (formattedPath) {
+            formattedPath = `${END_POINT}/${formattedPath}`;
+          }
+        }else{
+          formattedPath = "./images/testimonialImg.png";
+        }
+        _data[index].image = formattedPath;
+      });
+      setTestimonials(_data);
       // we won't be showing the success message for this as it looks wierd on the home page.
     } else {
       showToast(setToast, "Failed to fetch testimonials.", "error");
@@ -58,10 +71,9 @@ const addTestimonial = async (testimonial, setToast,toast) => {
     const response = await fetch(`${END_POINT}/testimonials/`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
-      body: JSON.stringify(testimonial),
+      body: testimonial,
     });
     const res = await response.json();
     if (!response.ok) {

@@ -4,7 +4,7 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 
 module.exports = async (req, res, next) => {
-  const [err, { _id }] = await to(Testimonial.create({ ...req.body }));
+  const [err, { _id }] = await to(Testimonial.create({ ...req.body, image: req.file?.path }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,

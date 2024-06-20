@@ -37,7 +37,7 @@ export function Profile(props) {
     lastName: Joi.string().regex(/^[A-Za-z]*$/).required().label("Last Name"),
     email: Joi.string().email().required().label("Email"),
     phone: Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/).required().label("Contact Number"),
-    username: Joi.string().regex(/^[A-Za-z]+$/).required().label("Username")
+    username: Joi.string().regex(/^[A-Za-z][A-Za-z0-9_]{7,29}$/).required().label("Username")
   };
 
   const handleCloseToast = () => {
@@ -225,6 +225,7 @@ export function Profile(props) {
               <div className={style["name"]}>{name}</div>
               <div className={style["line"]}></div>
               <div className={style["contact"]}>
+                <div className={style["contact-details"]}>{username}</div>
                 <div className={style["contact-details"]}>{email}</div>
                 <div className={style["contact-details"]}>{phone}</div>
               </div>

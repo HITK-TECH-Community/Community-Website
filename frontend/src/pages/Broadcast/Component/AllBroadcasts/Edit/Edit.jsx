@@ -1,83 +1,128 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./edit.module.scss";
-import { TextField } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import { Button2 } from "../../../../../components/util/Button/index";
+import SunEditor from "suneditor-react";
+import "suneditor/dist/css/suneditor.min.css";
+import { SimpleToast } from "../../../../../components/util/Toast";
+import { UpdateBoardCast } from "../../../../../service/Broadcast.jsx";
 
 export function Edit(props) {
-  const [a, seta] = useState();
-  function scrolls() {
-    let b = window.scrollY;
-    seta(b);
-  }
-  useEffect(() => {
-    window.addEventListener("scroll", scrolls);
-  }, []);
+  const [toast, setToast] = useState({
+    toastStatus: false,
+    toastType: "",
+    toastMessage: "",
+  });
 
-  let dark = props.theme;
-  return props.visible ? (
-    <div className={style["popup"]} style={{ top: a }}>
-      <div className={dark ? style["div-dark"] : style["div"]}>
-        <h1 className={style["heading"]}>
-          Edit modal
-          <CloseIcon
-            style={{ float: "right", cursor: "pointer" }}
-            onClick={() => props.setVisible(false)}
-          />
-        </h1>
-        <form>
-          <div className={style["form"]}>
-            <h5>Title:</h5>
-            <TextField
-              type="text"
-              name="title"
-              placeholder="Title"
-              multiline
-              value={props.data.title}
-              className={style["input"]}
-              InputProps={{
-                className: `${dark ? style["input-dark"] : ""}`,
-              }}
-              onChange={props.handleChange}
+  const handleCloseToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
+    props.setVisible(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    props.handleChange({ target: { name, value } });
+  };
+
+  const handleContentChange = (content) => {
+    props.handleChange({ target: { name: 'content', value: content } });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { data } = props;
+    const newData = {
+      id: data._id,
+      content:data.content,
+      link: data.link,
+      expiresOn: data.expiresOn,
+      imageUrl: data.imageUrl,
+      tags: data.tags,
+      isApproved: data.isApproved,
+      title: data.title,
+    };
+
+    await UpdateBoardCast(newData, setToast, toast);
+  };
+
+  const { visible, data } = props;
+
+  return visible ? (
+    <div className={style["popup"]}>
+      <div className={style["card"]}>
+        <form className={style["editor"]} onSubmit={handleSubmit}>
+          <div className={style["motive"]}>
+            <h1 className={style["heading"]}>Edit Broadcast</h1>
+            <div className={style["dash"]} />
+          </div>
+          <div>
+            <div className={style["form-control"]}>
+              <input
+                type="text"
+                name="title"
+                className={style["form-control-input"]}
+                placeholder="Title"
+                value={data.title}
+                onChange={handleInputChange}
+              />
+              <i className="fas fa-pencil-alt" />
+            </div>
+          </div>
+          <div>
+            <div className={style["form-control"]}>
+              <SunEditor
+                name="content"
+                placeholder="Description"
+                setContents={data.content}
+                onChange={handleContentChange} 
+                height="100px"
+                className={style["edit"]}
+                onSetContents={(content) =>
+                  handleInputChange({ target: { name: "content", value: content } })
+                }
+              />
+            </div>
+          </div>
+          <div>
+            <div className={style["form-control"]}>
+              <input
+                type="text"
+                name="link"
+                className={style["form-control-input"]}
+                placeholder="Resource Link"
+                value={data.link}
+                onChange={handleInputChange}
+              />
+              <i className="fas fa-link" />
+            </div>
+          </div>
+          <div className={style["submit-btn"]}>
+            <Button2
+              className={style["submit-btn-text"]}
+              label="Update"
+              type="submit"
+            />
+            <Button2
+              className={style["submit-btn-text"]}
+              label="Cancel"
+              type="button"
+              onClick={() => props.setVisible(false)}
             />
           </div>
-          <div className={style.form}>
-            <h5>Description:</h5>
-            <TextField
-              type="text"
-              name="desc"
-              multiline
-              placeholder="Description"
-              value={props.data.desc}
-              className={style["input"]}
-              InputProps={{
-                className: `${dark ? style["input-dark"] : ""}`,
-              }}
-              onChange={props.handleChange}
-            />
-          </div>
-          <div className={style.form}>
-            <h5>Link:</h5>
-            <TextField
-              type="text"
-              name="link"
-              placeholder="Link"
-              className={style["input"]}
-              InputProps={{
-                className: `${dark ? style["input-dark"] : ""}`,
-              }}
-              onChange={props.handleChange}
-              value={props.data.link}
-              multiline
-            />
-          </div>
-          <button
-            className={style["btns1"]}
-            onClick={() => props.setVisible(false)}
-          >
-            Edit
-          </button>
         </form>
       </div>
+      {toast.toastStatus && (
+        <div className={style["toast-overlay"]}>
+          <SimpleToast
+            open={toast.toastStatus}
+            message={toast.toastMessage}
+            handleCloseToast={handleCloseToast}
+            severity={toast.toastType}
+          />
+        </div>
+      )}
     </div>
   ) : null;
 }

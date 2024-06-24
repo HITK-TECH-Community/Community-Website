@@ -44,25 +44,56 @@ export function Edit(props) {
       title: data.title,
     };
 
-    await UpdateBoardCast(newData, setToast, toast);
+   try {
+      await UpdateBoardCast(newData,setToast, toast);
+      setToast({
+        toastStatus: true,
+        toastType: "success",
+        toastMessage: "Broadcast updated successfully!",
+      });
+    } catch (error) {
+      console.error("Error updating broadcast:", error);
+      setToast({
+        toastStatus: true,
+        toastType: "error",
+        toastMessage: "Failed to update broadcast. Please try again.",
+      });
+    }
   };
 
-  const { visible, data } = props;
+  const { visible, data} = props;
+  let dark = props.theme;
 
   return visible ? (
     <div className={style["popup"]}>
-      <div className={style["card"]}>
+      <div  className={
+            dark
+              ? `${style["card"]} ${style["card-dark"]} `
+              : `${style["card"]} ${style["card-light"]}`
+          }>
         <form className={style["editor"]} onSubmit={handleSubmit}>
           <div className={style["motive"]}>
-            <h1 className={style["heading"]}>Edit Broadcast</h1>
-            <div className={style["dash"]} />
+            <h1 className={
+              dark
+                ? `${style["header-text"]} ${style["header-text-dark"]} `
+                : `${style["header-text"]} ${style["header-text-light"]}`
+            }>Edit Broadcast</h1>
+            <div className={
+                  dark 
+                    ? `${style.dash} ${style["dash-dark"]}` 
+                    : `${style.dash} ${style["dash-light"]}`
+            } />
           </div>
           <div>
-            <div className={style["form-control"]}>
+            <div className={
+                  dark
+                    ? `${style["input"]} ${style["input-dark"]} `
+                    : `${style["input"]} ${style["input-light"]}`
+                }>
               <input
                 type="text"
                 name="title"
-                className={style["form-control-input"]}
+                // className={style["form-control-input"]}
                 placeholder="Title"
                 value={data.title}
                 onChange={handleInputChange}
@@ -71,7 +102,11 @@ export function Edit(props) {
             </div>
           </div>
           <div>
-            <div className={style["form-control"]}>
+            <div className={
+                  dark
+                    ? `${style["input"]} ${style["input-dark"]} `
+                    : `${style["input"]} ${style["input-light"]}`
+                }>
               <SunEditor
                 name="content"
                 placeholder="Description"
@@ -86,11 +121,14 @@ export function Edit(props) {
             </div>
           </div>
           <div>
-            <div className={style["form-control"]}>
+            <div className={
+                  dark
+                    ? `${style["input"]} ${style["input-dark"]} `
+                    : `${style["input"]} ${style["input-light"]}`
+                }>
               <input
                 type="text"
                 name="link"
-                className={style["form-control-input"]}
                 placeholder="Resource Link"
                 value={data.link}
                 onChange={handleInputChange}

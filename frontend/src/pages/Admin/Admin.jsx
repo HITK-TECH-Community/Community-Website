@@ -258,7 +258,7 @@ export const Admin = (props) => {
           ) : tab === 15 ? (
             <ResetPassword />
           ) : tab === 16 ? (
-            <ManageBroadcasts theme={props.theme}/>
+            <ManageBroadcasts />
           ) : tab === 18 ? (
             <QandA setQId={setQId} setTab={setTab} tab={tab} />
           ) : tab === 19 ? (

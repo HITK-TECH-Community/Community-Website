@@ -10,7 +10,7 @@ import Loader from "../../../../../components/util/Loader";
 import { Button4 } from "../../../../../components/util/Button";
 import { customBoardcast } from "../../../../../service/Broadcast.jsx";
 
-export function ManageBroadcasts(props) {
+export function ManageBroadcasts() {
   const [array, setArray] = useState([]);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -86,7 +86,6 @@ export function ManageBroadcasts(props) {
     setArray(result);
     setLoaded(true);
   }
-  const { theme } = props;
   return (
     <div>
       <Edit
@@ -94,7 +93,6 @@ export function ManageBroadcasts(props) {
         setVisible={setVisible}
         handleChange={handleChange}
         data={array[index]}
-        theme={theme}
       />
       <div id={style["hero"]}>
         <div className={style["motive"]}>

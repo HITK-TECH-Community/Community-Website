@@ -3,7 +3,7 @@ const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
 const contactUs = require('../../models/contactUs');
 const Admin = require('../../models/Admin');
-const sendEmail = require('../../../utility/sendEmail');
+const {sendEmail} = require('../../../utility/sendEmail');
 const { ContactUsMailTemplate } = require('../../../utility/emailTemplates');
 
 module.exports = async (req, res, next) => {

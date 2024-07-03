@@ -6,7 +6,8 @@
     "CRITICAL": "Critical Error",
     "WARNING": "Warning",
     "USER": "User ",
-    "UNEXPECTED": "Unexpected Error"
+    "UNEXPECTED": "Unexpected Error",
+    "SUBSCRIBER_EXISTS": "Subscriber already exists"
   },
   "PAGINATION_LIMIT": {
     "GET_ADMINS": 3,

@@ -105,7 +105,6 @@ export function Card(props) {
             </div>
           </div>
         </div>
-
         <div
           className={
             dark
@@ -119,7 +118,9 @@ export function Card(props) {
               <div className={style["admin-controls"]}>
                 <IconButton
                   className={style["icon-button"]}
-                  onClick={props.handler}
+                  onClick={() => {
+                    props.setIndex(props.index);
+                  }}
                 >
                   <Edit />
                 </IconButton>

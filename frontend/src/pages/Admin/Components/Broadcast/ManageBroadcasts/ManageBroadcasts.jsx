@@ -12,7 +12,7 @@ import { customBoardcast } from "../../../../../service/Broadcast.jsx";
 
 export function ManageBroadcasts() {
   const [array, setArray] = useState([]);
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState("");
   const [visible, setVisible] = useState(false);
   const [tags, setTags] = useState("");
   const [month, setMonth] = useState("");
@@ -21,6 +21,10 @@ export function ManageBroadcasts() {
   const [isLoaded, setLoaded] = useState(false);
   const [filterText, setFilterText] = useState("");
   const [handleDelete, setHandleDelete] = useState(0);
+  useEffect(() => {
+    if (index === "") setVisible(false);
+    else setVisible(true);
+  }, [index]);
   const months = [
     "January",
     "Febuary",
@@ -85,7 +89,7 @@ export function ManageBroadcasts() {
     const result = await customBoardcast(api);
     setArray(result);
     setLoaded(true);
-  }
+  };
   return (
     <div>
       <Edit
@@ -178,6 +182,8 @@ export function ManageBroadcasts() {
               key={`card-${i}`}
               id={element._id}
               handler={() => handler(i)}
+              index={i}
+              setIndex={setIndex}
               handleDelete={handleDelete}
               setHandleDelete={setHandleDelete}
             />

@@ -19,6 +19,8 @@
   border-radius: 8px;
   background: white;
   padding: 1em;
+  height: 100%;
+  overflow-y: scroll;
   @media (max-width: 600px) {
     width: 95%;
   }

@@ -86,7 +86,12 @@ export function Edit(props) {
       imageUrl: broadcast.imageUrl.filter((u) => u !== url),
     });
   };
-
+  const handleCloseToast = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setToast({ ...toast, toastStatus: false });
+  };
   const handleUpdate = async () => {
     setIsUploadingData(true);
     const { _id, imageUrl, tags, title, link, expiresOn, isApproved } =

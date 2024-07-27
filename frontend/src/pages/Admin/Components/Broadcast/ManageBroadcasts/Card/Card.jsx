@@ -6,7 +6,6 @@ import { IconButton } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { SimpleToast } from "../../../../../../components/util/Toast";
 import style from "./card.module.scss";
-import DOMPurify from "dompurify";
 import {
   UpdateBoardCast,
   deleteBoardcast,
@@ -84,13 +83,6 @@ export function Card(props) {
     "December",
   ];
 
-  const sanitizedContent = DOMPurify.sanitize(props.project.content);
-
-  const truncatedContent =
-    sanitizedContent.length > 400
-      ? sanitizedContent.substring(0, 400) + "..."
-      : sanitizedContent;
-
   return (
     <div id={props.id} className={style["card-container"]}>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
@@ -105,15 +97,17 @@ export function Card(props) {
         >
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>{props.project.title}</div>
-            <div
-              className={style["card-content"]}
-              dangerouslySetInnerHTML={{ __html: truncatedContent }}
-            />
+            <div className={style["card-content"]}>
+              {props.project.content.length > 200
+                ? `${props.project.content.substring(0, 200)}...`
+                : props.project.content}
+            </div>
             <div className={style["card-date"]}>
               {months[date.getMonth()]},{date.getFullYear()}
             </div>
           </div>
         </div>
+
         <div
           className={
             dark
@@ -127,9 +121,7 @@ export function Card(props) {
               <div className={style["admin-controls"]}>
                 <IconButton
                   className={style["icon-button"]}
-                  onClick={() => {
-                    props.setIndex(props.index);
-                  }}
+                  onClick={props.handler}
                 >
                   <Edit />
                 </IconButton>

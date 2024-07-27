@@ -2,11 +2,12 @@
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1em;
-  height: auto;
+  height: 350px; /* Set a fixed height for consistency */
   width: 15em;
   margin: 1em;
   background-position: left center;
   transition: all 0.5s ease-in;
+  overflow: hidden; /* Ensure content does not overflow */
 }
 
 .card-item-light {
@@ -116,6 +117,13 @@
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
+  max-height: 140px; // Ensure content does not overflow card size
+  overflow: hidden; // Prevent scrolling and hide overflow
+  text-overflow: ellipsis; // Indicate overflow with ellipsis
+  white-space: normal; // Allow text to wrap within max height
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .card-item-light:hover {

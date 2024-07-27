@@ -2,11 +2,12 @@
   text-align: center;
   font-size: 1.5rem;
   border-radius: 1em;
-  height: auto;
-  width: 15em;
+  height: 450px; // Fixed height for uniform card size
+  width: 300px; // Set a width that accommodates the content
   margin: 1em;
   background-position: left center;
   transition: all 0.5s ease-in;
+  overflow: hidden; // Prevent scrolling and hide overflow
 }
 
 .card-item-light {
@@ -26,9 +27,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between; // Ensure space distribution between elements
   padding: 1.5em;
   color: var(--bs-light);
-  height: 380px;
+  height: 100%; // Take full height of the card
+  overflow: hidden; // Prevent scrolling and hide overflow
 }
 
 .clickable-card:hover {
@@ -56,9 +59,13 @@
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  display: inline-block;
+  max-height: 140px; // Ensure content does not overflow card size
+  overflow: hidden; // Prevent scrolling and hide overflow
+  text-overflow: ellipsis; // Indicate overflow with ellipsis
+  white-space: normal; // Allow text to wrap within max height
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .card-item-light:hover {

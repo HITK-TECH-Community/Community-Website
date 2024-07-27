@@ -29,13 +29,15 @@
 
 .slide-card {
   position: relative;
-  min-height: 31em;
-  min-width: 20em;
+  height: 31em; // Fixed height for the cards
+  width: 20em; // Fixed width for the cards
   border-radius: 15px;
   margin: 30px;
   overflow: hidden;
   margin-bottom: 70px;
   backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
 }
 
 .slide-card-light {
@@ -64,12 +66,19 @@
 
 .card-text {
   line-height: 1.4;
-  padding: 1em;
-  padding-top: 2em;
+  // padding: 1em;
+  // padding-top: 2em;
+  margin: 5%;
   text-align: justify;
   text-justify: distribute-all-lines;
   font-size: 14px;
   word-spacing: 1px;
+  // margin-bottom: 13%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .slide-card-light:hover {

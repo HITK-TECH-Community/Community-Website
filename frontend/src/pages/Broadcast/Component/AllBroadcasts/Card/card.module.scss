@@ -56,6 +56,9 @@
   text-align: center;
   font-size: 1.2rem;
   width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline-block;
 }
 
 .card-item-light:hover {

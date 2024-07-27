@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import { Modals } from "../../Carousel/Modal/index.js";
 import style from "./card.module.scss";
+import DOMPurify from "dompurify";
 
 export function Card(props) {
   let dark = props.theme;
@@ -39,6 +40,12 @@ export function Card(props) {
     "December",
   ];
 
+  const sanitizedContent = DOMPurify.sanitize(props.project.content);
+  const truncatedContent =
+    sanitizedContent.length > 250
+      ? sanitizedContent.substring(0, 250) + "..."
+      : sanitizedContent;
+
   return (
     <div id={props.id} className={style["card-container"]}>
       <Modals theme={dark} open={open} handleClose={handleClose} data={data} />
@@ -53,7 +60,10 @@ export function Card(props) {
         >
           <div className={style["clickable-card"]}>
             <div className={style["card-title"]}>{props.project.title}</div>
-            <div className={style["card-content"]} dangerouslySetInnerHTML={{__html: props.project.content}} />
+            <div
+              className={style["card-content"]}
+              dangerouslySetInnerHTML={{ __html: truncatedContent }}
+            />
             <div className={style["card-date"]}>
               {months[date.getMonth()]},{date.getFullYear()}
             </div>

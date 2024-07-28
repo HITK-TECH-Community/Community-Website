@@ -15,7 +15,7 @@ const getAdminsAggregate = (match, page) => {
         email: 1,
         contact: 1,
         isSuperAdmin: 1,
-        image:1
+        image: 1,
       },
     },
     { $skip: constants.PAGINATION_LIMIT.GET_ADMINS * (Number(page) - 1) },

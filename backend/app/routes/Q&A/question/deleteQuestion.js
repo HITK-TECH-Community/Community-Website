@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Question = require('../../../models/question');
 const Answer = require('../../../models/answers');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   try {
     const payload = res.locals.decode;
     const { questionId } = req.body;

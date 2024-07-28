@@ -20,10 +20,10 @@ router.get('/getallquestions', getAllQuestion);
 router.get('/getQuestionById/:questionId', getQuestionById);
 
 // This route will increase upvote by one.
-router.patch('/upvote',checkVoteCookie, upvoteQuestion);
+router.patch('/upvote', checkVoteCookie, upvoteQuestion);
 
 // This route will decrease upvote by one.
-router.patch('/downvote',checkVoteCookie, downvoteQuestion);
+router.patch('/downvote', checkVoteCookie, downvoteQuestion);
 
 // route for updating the question status
 router.patch('/updateStatus', validation(updateQuestionStatusSchema), updateQuestionStatus);

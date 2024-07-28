@@ -8,10 +8,7 @@ const cluster = require('./helpers/cluster');
 const joinUs = require('./app/models/joinUs');
 const contactUs = require('./app/models/contactUs');
 const sendEmail = require('./utility/sendEmail');
-const {
-  JoinUsCronJobMailTemplate,
-  ContactUsCronJobMailTemplate,
-} = require('./utility/emailTemplates');
+const { JoinUsCronJobMailTemplate, ContactUsCronJobMailTemplate } = require('./utility/emailTemplates');
 const Admin = require('./app/models/Admin');
 
 cronJob('0 0 2 * *', async (req, res, next) => {

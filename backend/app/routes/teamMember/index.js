@@ -21,6 +21,6 @@ const upload = multer({ storage: store });
 router.get('/getTeamMembers/', getTeamMembers);
 router.get('/getTeamMember/:id', getTeamMemberById);
 router.post('/addTeamMember', authMiddleware, upload.single('image'), addTeam);
-router.put('/updateTeamMember',authMiddleware,upload.single('image'),updateTeamMember);
-router.delete("/deleteTeamMember",authMiddleware,deleteTeamMember);
+router.put('/updateTeamMember', authMiddleware, upload.single('image'), updateTeamMember);
+router.delete('/deleteTeamMember', authMiddleware, deleteTeamMember);
 module.exports = router;

@@ -43,16 +43,16 @@ const forgotPasswordSchema = Joi.object({
 const resetPasswordSchema = Joi.object({
   newPassword: Joi.string().required(),
 });
-const updateAdminSchema =Joi.object({
-  firstName:Joi.string(),
-  lastName:Joi.string(),
-  contact:Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
-  username:Joi.string(),
+const updateAdminSchema = Joi.object({
+  firstName: Joi.string(),
+  lastName: Joi.string(),
+  contact: Joi.string().regex(/[+]91[6-9]{1}[0-9]{9}$/, 'phone'),
+  username: Joi.string(),
 });
 
 const deleteAdminSchema = Joi.object({
-  id : Joi.string().min(24).max(24).required()
-})
+  id: Joi.string().min(24).max(24).required(),
+});
 
 module.exports = {
   postSuperAdminSchema,
@@ -62,5 +62,5 @@ module.exports = {
   forgotPasswordSchema,
   resetPasswordSchema,
   updateAdminSchema,
-  deleteAdminSchema
+  deleteAdminSchema,
 };

@@ -12,12 +12,12 @@ const getAnswerValidationSchema = Joi.object().keys({
 });
 
 const updateAnswerStatusSchema = Joi.object().keys({
-  id : Joi.string().min(24).max(24).required(),
-  status : Joi.boolean().required()
+  id: Joi.string().min(24).max(24).required(),
+  status: Joi.boolean().required(),
 });
 
 module.exports = {
   answerValidationSchema,
   getAnswerValidationSchema,
-  updateAnswerStatusSchema
+  updateAnswerStatusSchema,
 };

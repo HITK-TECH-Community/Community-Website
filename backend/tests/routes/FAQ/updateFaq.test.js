@@ -56,30 +56,29 @@ describe('Test to update FAQ:', () => {
         expect(res.status).equal(200);
         expect(res.body.message).to.equal('FAQ has been added');
         id = res.body.response._id;
-        done()
+        done();
       })
       .catch(done);
   });
 
-  //step 4 : update faq in db
-  it('update faq', (done)=> {
+  // step 4 : update faq in db
+  it('update faq', (done) => {
     const UpdatedFAQData = {
       faqId: id,
       question: 'This is Test Question',
       answer: 'updating answer',
       isActive: true,
-      tags: ['tag1', 'tag2', 'tag3','tag5'],
+      tags: ['tag1', 'tag2', 'tag3', 'tag5'],
     };
 
     chai
       .request(server)
-      .patch("/updateFaq")
-      .set("content-type","application/json")
+      .patch('/updateFaq')
+      .set('content-type', 'application/json')
       .send(UpdatedFAQData)
-      .end((err,res) => {
-        expect(res.body.message).to.equal("FAQ updated successfully")
+      .end((err, res) => {
+        expect(res.body.message).to.equal('FAQ updated successfully');
         done();
-      })
-      
+      });
   });
 });

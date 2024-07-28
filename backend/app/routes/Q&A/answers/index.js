@@ -1,5 +1,5 @@
 const router = require('express').Router({ mergeParams: true });
-const { answerValidationSchema, getAnswerValidationSchema, updateAnswerStatusSchema } = require('./@validationSchema');
+const { answerValidationSchema, updateAnswerStatusSchema } = require('./@validationSchema');
 const validation = require('../../../../helpers/middlewares/validation');
 
 const postAnswer = require('./post');

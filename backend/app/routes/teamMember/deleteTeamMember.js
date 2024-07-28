@@ -1,11 +1,11 @@
-const teamMemberModel = require('../../models/TeamMember');
 const fs = require('fs');
 const path = require('path');
+const teamMemberModel = require('../../models/TeamMember');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   try {
     const payload = res.locals.decode;
-    const memberId = req.body.memberId;
+    const { memberId } = req.body;
     if (payload.isSuperAdmin === false) {
       return res.status(401).json({ error: 'You are not an admin' });
     }

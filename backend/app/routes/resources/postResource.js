@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
   }
   res.status(200).send({
     message: 'Resource added successfully',
-    response: response,
+    response,
   });
   return next();
 };

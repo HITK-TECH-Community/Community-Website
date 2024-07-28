@@ -29,7 +29,6 @@ module.exports = async (req, res, next) => {
 
   // Hashing the new password
   const hashedPassword = await argon2.hash(newPassword);
-
   // Finding and updating the admin password
   const [err] = await to(Admin.findOneAndUpdate({ email }, { passwordHash: hashedPassword }, { new: true }));
 
@@ -37,7 +36,7 @@ module.exports = async (req, res, next) => {
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,
-      message: 'Something went wrong',
+      message: 'Reset Password Failed',
       user: email,
       errStack: 'Reset Password',
     });

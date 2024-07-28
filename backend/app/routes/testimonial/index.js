@@ -2,10 +2,8 @@ const router = require('express').Router({ mergeParams: true });
 const multer = require('multer');
 const { nanoid } = require('nanoid');
 const path = require('path');
-const validationMiddleware = require('../../../helpers/middlewares/validation');
 const { authMiddleware } = require('../../../helpers/middlewares/auth');
 
-const { postTestimonialValidationSchema } = require('./@validationSchema');
 const postTestimonial = require('./postTestimonial');
 const getTestimonials = require('./getTestimonials');
 const deleteTestimonial = require('./deleteTestimonial');

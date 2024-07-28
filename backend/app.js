@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const responseTime = require('response-time');
+const cookieParser = require('cookie-parser');
 const routes = require('./app/routes');
 const { errorHandler } = require('./helpers/error');
-const cookieParser = require('cookie-parser');
 require('colors');
 require('./helpers/dbConnection');
 

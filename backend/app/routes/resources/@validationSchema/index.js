@@ -11,4 +11,4 @@ const postResourceValidationSchema = Joi.object().keys({
   tags: Joi.array().min(1).items(Joi.string()).required(),
 });
 
-module.exports =  postResourceValidationSchema;
+module.exports = postResourceValidationSchema;

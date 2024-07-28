@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const ContactUs = require('../../models/contactUs');
 
-module.exports = async (req, res, next) => {
+module.exports = async (req, res) => {
   try {
     const payload = res.locals.decode;
     const { contactUsId } = req.body;
@@ -23,4 +23,4 @@ module.exports = async (req, res, next) => {
   } catch (error) {
     return res.status(500).json({ error: 'Internal server error' });
   }
-}
+};

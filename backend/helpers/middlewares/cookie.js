@@ -11,6 +11,7 @@ const checkVoteCookie = (req, res, next) => {
   }
 
   next();
+  return null;
 };
 
-module.exports = { checkVoteCookie, getVoteCookieName }
+module.exports = { checkVoteCookie, getVoteCookieName };

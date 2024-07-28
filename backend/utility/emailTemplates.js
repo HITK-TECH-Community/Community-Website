@@ -94,3 +94,15 @@ module.exports.ResourceDeletedMailTemplate = (adminName) => {
   `;
   return emailContent;
 };
+
+module.exports.resetPasswordMailTemplate = (data) => {
+  const emailContent = `
+    <h2>Hello, ${data.adminName}</h2>
+    Click below link to reset your password<br>
+    <a href=${data.url} target="_blank">Reset password link</a>
+    <br>
+    <br>
+    Please ignore this mail If you not request the service
+  `;
+  return emailContent;
+};

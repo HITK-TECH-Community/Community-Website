@@ -18,6 +18,7 @@ const getBroadcastsAggregate = (startIndex, match) => {
         expiresOn: 1,
         createdAt: 1,
         updatedAt: 1,
+        isApproved: 1,
         year: { $year: '$createdAt' },
         month: { $month: '$createdAt' },
       },

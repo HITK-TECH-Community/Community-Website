@@ -87,8 +87,8 @@ export function Card(props) {
   const sanitizedContent = DOMPurify.sanitize(props.project.content);
 
   const truncatedContent =
-    sanitizedContent.length > 400
-      ? sanitizedContent.substring(0, 400) + "..."
+    sanitizedContent.length > 250
+      ? sanitizedContent.substring(0, 250) + "..."
       : sanitizedContent;
 
   return (
@@ -167,17 +167,16 @@ export function Card(props) {
             >
               View Details
             </button>
+          
             <div className={style["button-group"]}>
-              <button
-                className={
-                  !props?.project?.isApproved
-                    ? style["button-approve"]
-                    : style["button-info"]
-                }
-                onClick={!props?.project?.isApproved && handleApprove}
-              >
-                {props?.project?.isApproved ? "Approved" : "Approve"}
-              </button>
+            {!props?.project?.isApproved && (
+                <button
+                  className={style["button-approve"]}
+                  onClick={handleApprove}
+                >
+                  Approve
+                </button>
+              )}
               <button
                 className={style["button-delete"]}
                 onClick={() => deleteCard(props.id)}

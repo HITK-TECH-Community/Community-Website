@@ -9,6 +9,8 @@ import { Modals } from "./Modal/index.js";
 import Loader from "../../../../components/util/Loader";
 import { boardcast } from "../../../../service/Broadcast.jsx";
 import { SimpleToast } from "../../../../components/util/Toast/Toast.jsx";
+import DOMPurify from "dompurify";
+
 export function Carousel(props) {
   const head = props.head;
   let dark = props.theme;
@@ -87,7 +89,8 @@ export function Carousel(props) {
   const getData = async () => {
     setLoaded(false);
     const result = await boardcast(setToast,toast)
-    setDataa(result);
+    const approvedBroadcasts = result.filter(broadcast => broadcast.isApproved);
+    setDataa(approvedBroadcasts);
     setLoaded(true);
   }
   const handleCloseToast = (event,reason) => {
@@ -96,6 +99,14 @@ export function Carousel(props) {
     }
     setToast({ ...toast, toastStatus: false });
   };
+
+  const truncatedContent = (content, maxLength) => {
+    if (content.length > maxLength) {
+      return content.substring(0, maxLength) + '...';
+    }
+    return content;
+  };
+
   return !isLoaded ? (
     <Loader />
   ) : (
@@ -143,7 +154,8 @@ export function Carousel(props) {
               ></div>
 
               <h3 className={style["card-head"]}>{item.title}</h3>
-              <div className={style["card-text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              <div className={style["card-text"]} 
+              dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(truncatedContent(item.content, 250)),}} />
             </div>
           ))}
         </OwlCarousel>

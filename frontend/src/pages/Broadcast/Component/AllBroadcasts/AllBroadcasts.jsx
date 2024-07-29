@@ -82,12 +82,12 @@ export function AllBroadcasts(props) {
     getData(api);
   }, [month, page, tags, year]);
 
-  const getData = async (api)=>{
+  const getData = async (api) => {
     setLoaded(false);
     const result = await customBoardcast(api);
-    setArray(result);
+    setArray(filterApprovedBroatcast(result));
     setLoaded(true);
-  }
+  };
 
   return (
     <main
@@ -219,3 +219,9 @@ export function AllBroadcasts(props) {
     </main>
   );
 }
+
+const filterApprovedBroatcast = (broadcasts) => {
+  return broadcasts.filter((broadcast) => {
+    return broadcast.isApproved == true;
+  });
+};

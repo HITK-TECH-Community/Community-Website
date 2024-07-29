@@ -16,6 +16,19 @@
   align-content: center;
 }
 
+.tags-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.tag-space {
+  width: fit-content;
+}
+
 .close-popup {
   color: black;
   background: #69a9dd;

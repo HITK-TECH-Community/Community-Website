@@ -11,6 +11,7 @@ const config = {
   CLUSTER: process.env.CLUSTER,
   JWT_RESET_PASSWORD_EXPIRES_IN: process.env.JWT_RESET_PASSWORD_EXPIRES_IN,
   LOCAL_DEV_ENV: process.env.LOCAL_DEV_ENV,
+  FRONTEND_URL:process.env.FRONTEND_URL
 };
 
 module.exports = config;

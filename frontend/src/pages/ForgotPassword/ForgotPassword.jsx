@@ -4,12 +4,23 @@ import { Button2 } from "../../components/util/Button/index";
 import style from "./ForgotPassword.module.scss";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import { SimpleToast } from "../../components/util/Toast";
+import axios from "axios";
+import { END_POINT } from "../../config/api";
 
 export function ForgotPassword(props) {
   const [status, setStatus] = useState("");
   const [submited, setSubmited] = useState(false);
   let dark = props.theme;
+  const [toast, setToast] = useState({
+    open: false,
+    message: "",
+    severity: "",
+  });
 
+  const handleCloseToast = () => {
+    setToast({ open: false, message: "", severity: "" });
+  };
   const [formdata, setFormData] = useState({
     email: "",
   });
@@ -75,8 +86,29 @@ export function ForgotPassword(props) {
     setFormErrors(errors);
   };
 
-  function submitForgotPassword(e) {
-    return setSubmited(true);
+  function submitForgotPassword() {
+    setToast({ open: true, message: "Loading...", severity: "info" });
+    axios
+      .post(
+        `${END_POINT}/admin/forgotpassword`,
+        {
+          email: formdata?.email,
+        },
+        { responseType: "json" }
+      )
+      .then(function (res) {
+        setToast({
+          open: true,
+          message: "Reset mail sent",
+          severity: "success",
+        });
+        setSubmited(true);
+      })
+      .catch(function (error) {
+        setToast({ open: true, message: "User not found", severity: "error" });
+        setFormData({ email: "" });
+      });
+    return null;
   }
 
   return (
@@ -189,6 +221,7 @@ export function ForgotPassword(props) {
                             name="email"
                             placeholder="Email"
                             onChange={handleChange}
+                            value={formdata.email}
                             className={
                               dark
                                 ? `${style["input-forgot-password-dark"]} ${style["input-forgot-password"]}`
@@ -227,6 +260,12 @@ export function ForgotPassword(props) {
             </div>
           </div>
         </div>
+        <SimpleToast
+          open={toast.open}
+          message={toast.message}
+          handleCloseToast={handleCloseToast}
+          severity={toast.severity}
+        />
       </div>
     </>
   );

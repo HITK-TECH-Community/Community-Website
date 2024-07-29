@@ -37,7 +37,7 @@ module.exports = async (req, res, next) => {
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
       statusCode: 400,
-      message: 'Something went wrong',
+      message: 'Reset Password Failed',
       user: email,
       errStack: 'Reset Password',
     });

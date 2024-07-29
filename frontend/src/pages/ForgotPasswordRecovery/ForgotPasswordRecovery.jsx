@@ -3,14 +3,19 @@ import style from "./ForgotPasswordRecovery.module.scss";
 import { Button2 } from "../../components/util/Button/index";
 import { SimpleToast } from "../../components/util/Toast";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { END_POINT } from "../../config/api";
 
 export function ForgotPasswordRecovery() {
   const [new_password, setNewPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const [openPasswordChanged, setPasswordChanged] = useState(false);
+  const [openPasswordChangeFailed, setPasswordChangeFailed] = useState(false);
   const [openUnmatchedPassword, setUnmatchedPassword] = useState(false);
   const [checkUpdatedPassword, setCheckUpdatedPassword] = useState(false);
+
+  const { id } = useParams();
 
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
@@ -18,19 +23,39 @@ export function ForgotPasswordRecovery() {
     }
     setPasswordChanged(false);
     setUnmatchedPassword(false);
+    setPasswordChangeFailed(false);
   };
   function handleSubmit(e) {
     e.preventDefault();
     if (new_password === confirm_password) {
       setNewPassword("");
       setConfirmPassword("");
-      setPasswordChanged(true);
-      setCheckUpdatedPassword(true);
+      handleResetPassword();
     } else {
       setUnmatchedPassword(true);
       setNewPassword("");
       setConfirmPassword("");
     }
+  }
+
+  async function handleResetPassword() {
+    axios
+      .post(
+        `${END_POINT}/admin/resetpassword/${id}`,
+        {
+          newPassword: new_password,
+        },
+        { responseType: "json" }
+      )
+      .then(function (res) {
+        setPasswordChanged(true);
+        setCheckUpdatedPassword(true);
+      })
+      .catch(function (error) {
+        setPasswordChangeFailed(true);
+        setNewPassword("");
+        setConfirmPassword("");
+      });
   }
 
   return (
@@ -131,6 +156,12 @@ export function ForgotPasswordRecovery() {
       <SimpleToast
         open={openUnmatchedPassword}
         message="Passwords Does Not Match!"
+        handleCloseToast={handleCloseToast}
+        severity="error"
+      />
+      <SimpleToast
+        open={openPasswordChangeFailed}
+        message="Password change failed"
         handleCloseToast={handleCloseToast}
         severity="error"
       />

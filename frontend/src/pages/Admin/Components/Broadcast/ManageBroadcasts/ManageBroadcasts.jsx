@@ -9,6 +9,7 @@ import { END_POINT } from "./../../../../../config/api";
 import Loader from "../../../../../components/util/Loader";
 import { Button4 } from "../../../../../components/util/Button";
 import { customBoardcast } from "../../../../../service/Broadcast.jsx";
+import { useSelector } from "react-redux";
 
 export function ManageBroadcasts() {
   const [array, setArray] = useState([]);
@@ -18,9 +19,26 @@ export function ManageBroadcasts() {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [page, setPage] = useState("");
+  const [approval, setApproval] = useState("");
   const [isLoaded, setLoaded] = useState(false);
   const [filterText, setFilterText] = useState("");
   const [handleDelete, setHandleDelete] = useState(0);
+  const isAdmin = useSelector((state) => state?.isSuperAdmin);
+
+  const filterByApproval = (broadcasts) => {
+    let itemsToDisplay = [];
+    if (approval == "Approved")
+      itemsToDisplay = broadcasts.filter((item) => {
+        return item.isApproved === true;
+      });
+    else if (approval == "Unapproved")
+      itemsToDisplay = broadcasts.filter((item) => {
+        return item.isApproved === false;
+      });
+    else itemsToDisplay = broadcasts;
+    return itemsToDisplay;
+  };
+
   useEffect(() => {
     if (index === "") setVisible(false);
     else setVisible(true);
@@ -83,11 +101,11 @@ export function ManageBroadcasts() {
       api = `${END_POINT}/broadcast/all`;
     }
     getData(api);
-  }, [month, page, tags, year, handleDelete]);
+  }, [month, page, tags, year, handleDelete, approval]);
   const getData = async (api) => {
     setLoaded(false);
     const result = await customBoardcast(api);
-    setArray(result);
+    setArray(filterByApproval(result));
     setLoaded(true);
   };
   return (
@@ -145,6 +163,19 @@ export function ManageBroadcasts() {
                 setYear(newVal);
               }}
             />
+            {isAdmin && (
+              <DropMenu
+                className={style["filter-btn"]}
+                ListName="Filter by Approval"
+                ListItems={["Approved", "Unapproved"]}
+                value={approval}
+                onClick={(e) => {
+                  const { newVal } = e.currentTarget.dataset;
+                  setLoaded(false);
+                  setApproval(newVal);
+                }}
+              />
+            )}
           </div>
         </div>
         <div className={style["filter-info"]}>
@@ -163,6 +194,15 @@ export function ManageBroadcasts() {
               onClick={(e) => {
                 setLoaded(false);
                 setYear("");
+              }}
+            />
+          )}
+          {approval !== "" && (
+            <Button4
+              text={approval}
+              onClick={(e) => {
+                setLoaded(false);
+                setApproval("");
               }}
             />
           )}

@@ -2,127 +2,127 @@ import { END_POINT } from "../config/api";
 import { showToast } from "./toastService";
 
 export async function postFaq(formData, setToast, toast) {
-    try {
-      const response = await fetch(`${END_POINT}/faq/postFaq`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        setToast({
-          ...toast,
-          toastMessage: "FAQ has been added",
-          toastStatus: true,
-          toastType: "success",
-        });
-        return { success: true };
-      } else {
-        setToast({
-          ...toast,
-          toastMessage: "Database Error",
-          toastStatus: true,
-          toastType: "error",
-        });
-        return { success: false, error: "Database Error" };
-      }
-    } catch (error) {
+  try {
+    const response = await fetch(`${END_POINT}/faq/postFaq`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       setToast({
         ...toast,
-        toastMessage: "Network Error",
-        toastStatus: true,
-        toastType: "error",
-      });
-      return { success: false, error: "Network Error" };
-    }
-  }
-
-export async function getFaq() {
-    try {
-      const response = await fetch(`${END_POINT}/faq/getFaq`);
-      if (!response.ok) {
-        throw new Error("Failed to fetch FAQs");
-      }
-      const data = await response.json();
-      return data.Faq;
-    } catch (error) {
-      console.error("Failed to fetch FAQs:", error.message);
-      throw new Error("Failed to fetch FAQs");
-    }
-}
-
-export const deleteFaq  = async (faqId, setToast, toast) => {
-    const url = `${END_POINT}/faq/deleteFaq`;
-    const body = { faqId: faqId };
-    const headers = {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    };
-    try {
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: headers,
-        body: JSON.stringify(body),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setToast({
-        ...toast,
-        toastMessage: data.message,
+        toastMessage: "FAQ has been added",
         toastStatus: true,
         toastType: "success",
       });
-      return data.message;
-    } catch (error) {
-      console.error("Failed to delete FAQ:", error.message);
+      return { success: true };
+    } else {
       setToast({
         ...toast,
-        toastMessage: "Failed to delete FAQ",
+        toastMessage: "Database Error",
         toastStatus: true,
         toastType: "error",
       });
-      throw new Error("Failed to delete FAQ");
+      return { success: false, error: "Database Error" };
     }
+  } catch (error) {
+    setToast({
+      ...toast,
+      toastMessage: "Network Error",
+      toastStatus: true,
+      toastType: "error",
+    });
+    return { success: false, error: "Network Error" };
+  }
+}
+
+export async function getFaq() {
+  try {
+    const response = await fetch(`${END_POINT}/faq/getFaq`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch FAQs");
+    }
+    const data = await response.json();
+    return data.Faq;
+  } catch (error) {
+    console.error("Failed to fetch FAQs:", error.message);
+    throw new Error("Failed to fetch FAQs");
+  }
+}
+
+export const deleteFaq = async (faqId, setToast, toast) => {
+  const url = `${END_POINT}/faq/deleteFaq`;
+  const body = { faqId: faqId };
+  const headers = {
+    "Content-Type": "application/json",
+    authorization: `Bearer ${localStorage.getItem("token")}`,
+  };
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: headers,
+      body: JSON.stringify(body),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    setToast({
+      ...toast,
+      toastMessage: data.message,
+      toastStatus: true,
+      toastType: "success",
+    });
+    return data.message;
+  } catch (error) {
+    console.error("Failed to delete FAQ:", error.message);
+    setToast({
+      ...toast,
+      toastMessage: "Failed to delete FAQ",
+      toastStatus: true,
+      toastType: "error",
+    });
+    throw new Error("Failed to delete FAQ");
+  }
 };
 
 export const updateFaq = async (faqId, updatedFaqDetails, setToast, toast) => {
-    try {
-        const response = await fetch(`${END_POINT}/faq/updateFaq`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-            body: JSON.stringify({ faqId, ...updatedFaqDetails }),
-        });
+  try {
+    const response = await fetch(`${END_POINT}/faq/updateFaq`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({ faqId, ...updatedFaqDetails }),
+    });
 
-        if (!response.ok) {
-            throw new Error("Failed to update FAQ");
-        }
-
-        const data = await response.json();
-        setToast({
-            ...toast,
-            toastMessage: data.message,
-            toastStatus: true,
-            toastType: "success",
-        });
-        return data.message;
-    } catch (error) {
-        console.error("Failed to update FAQ:", error.message);
-        setToast({
-            ...toast,
-            toastMessage: "Failed to update FAQ",
-            toastStatus: true,
-            toastType: "error",
-        });
-        throw new Error("Failed to update FAQ");
+    if (!response.ok) {
+      throw new Error("Failed to update FAQ");
     }
+
+    const data = await response.json();
+    setToast({
+      ...toast,
+      toastMessage: data.message,
+      toastStatus: true,
+      toastType: "success",
+    });
+    return data.message;
+  } catch (error) {
+    console.error("Failed to update FAQ:", error.message);
+    setToast({
+      ...toast,
+      toastMessage: "Failed to update FAQ",
+      toastStatus: true,
+      toastType: "error",
+    });
+    throw new Error("Failed to update FAQ");
+  }
 };
 
 export const getAllQuestions = async (setToast, toast) => {
@@ -292,6 +292,7 @@ export const upvote = async (questionId, handleToast) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({ questionId }),
     });
     if (!response.ok) {
@@ -300,7 +301,7 @@ export const upvote = async (questionId, handleToast) => {
     showToast(handleToast, "Upvote Successfully");
     return response.json();
   } catch (error) {
-    showToast(handleToast, "Failed to upvote question", "error");
+    showToast(handleToast, "You have already voted", "error");
     throw new Error("Failed to upvote question");
   }
 };
@@ -312,6 +313,7 @@ export const downvote = async (questionId, handleToast) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify({ questionId }),
     });
     if (!response.ok) {
@@ -320,7 +322,7 @@ export const downvote = async (questionId, handleToast) => {
     showToast(handleToast, "Downvote Successfully");
     return response.json();
   } catch (error) {
-    showToast(handleToast, "Failed to downvote question", "error");
+    showToast(handleToast, "You have already voted", "error");
     throw new Error("Failed to downvote question");
   }
 };

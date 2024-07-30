@@ -6,25 +6,11 @@ const { getVoteCookieName } = require('../../../../helpers/middlewares/cookie');
 
 module.exports = async (req, res, next) => {
   const { questionId } = req.body;
-  const [err] = await to(
-    question.updateOne({ _id: questionId }, [
-      {
-        $set: {
-          upvotes: {
-            $cond: [
-              {
-                $gt: ['$upvotes', 0],
-              },
-              {
-                $subtract: ['$upvotes', 1],
-              },
-              0,
-            ],
-          },
-        },
-      },
-    ])
-  );
+  const existingQues=await question.findById(questionId)
+  if(!existingQues.downvotes){
+    const [err] = await to(question.updateOne({ _id: questionId },{$set:{downvotes:0}}));
+  }
+  const [err] = await to(question.updateOne({ _id: questionId }, { $inc: { downvotes: 1 } }));
   if (err) {
     console.log(err);
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
@@ -36,7 +22,7 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
 
-  res.cookie(getVoteCookieName('question', questionId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000 });
+  res.cookie(getVoteCookieName('question', questionId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000, sameSite: "none", secure: true });
   res.status(200).send({
     message: 'Question has been down voted',
   });

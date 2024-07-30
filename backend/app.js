@@ -15,8 +15,20 @@ app.use(express.static('uploads'));
 // Set security headers
 app.use(helmet());
 
+// cookie
+app.use(cookieParser());
+
 // CORS
-app.use(cors());
+// app.use(cors());
+app.use(cors({credentials:true,origin:process.env.FRONTEND_URL}));
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Credentials', true);
+  res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,UPDATE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+  next();
+});
 
 // Body Parser
 app.use(express.json({ limit: '50mb' }));
@@ -25,8 +37,6 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 // Response time
 app.use(responseTime({ suffix: false }));
 
-// cookie
-app.use(cookieParser());
 
 // Use routes
 app.use('/', routes);

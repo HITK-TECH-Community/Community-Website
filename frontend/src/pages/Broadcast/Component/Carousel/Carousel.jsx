@@ -18,7 +18,7 @@ export function Carousel(props) {
     toastStatus: false,
     toastType: "",
     toastMessage: "",
-  })
+  });
   const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
@@ -62,10 +62,14 @@ export function Carousel(props) {
   const cardImageArrayLight = dataa.map((item, i) => {
     const style = {
       height: "13em",
-      backgroundSize: "cover",
+      backgroundSize: "23.9em",
+      //backgroundSize: "cover", // Cover the entire area
+      margin: "0 auto",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
       backgroundBlendMode: "screen",
-      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
-      backgroundImage: `linear-gradient(45deg,rgba(255, 0, 90, 1) 0%,rgba(10, 24, 61, 1) 90%),url(${item.link})`,
+      // clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
+      backgroundImage: `linear-gradient(45deg,rgba(255, 0, 90, 1) 0%,rgba(10, 24, 61, 1) 90%),url(${item.imageUrl[0]})`,
     };
     return style;
   });
@@ -73,12 +77,16 @@ export function Carousel(props) {
   const cardImageArrayDark = dataa.map((item, i) => {
     const style = {
       height: "13em",
-      backgroundSize: "cover",
+      backgroundSize: "23.9em",
+      //backgroundSize: "cover", // Cover the entire area
+      margin: "0 auto",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
       backgroundBlendMode: "screen",
-      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
+      // clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
       backgroundImage: `linear-gradient(45deg, 
         #4e4376 0%, 
-        #2b5876 90%),url(${item.link})`,
+        #2b5876 90%),url(${item.imageUrl[0]})`,
     };
     return style;
   });
@@ -88,12 +96,14 @@ export function Carousel(props) {
   }, []);
   const getData = async () => {
     setLoaded(false);
-    const result = await boardcast(setToast,toast)
-    const approvedBroadcasts = result.filter(broadcast => broadcast.isApproved);
+    const result = await boardcast(setToast, toast);
+    const approvedBroadcasts = result.filter(
+      (broadcast) => broadcast.isApproved
+    );
     setDataa(approvedBroadcasts);
     setLoaded(true);
-  }
-  const handleCloseToast = (event,reason) => {
+  };
+  const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -102,7 +112,7 @@ export function Carousel(props) {
 
   const truncatedContent = (content, maxLength) => {
     if (content.length > maxLength) {
-      return content.substring(0, maxLength) + '...';
+      return content.substring(0, maxLength) + "...";
     }
     return content;
   };
@@ -146,7 +156,12 @@ export function Carousel(props) {
                   : `${style["slide-card-light"]} ${style["slide-card"]}`
               }
               onClick={() =>
-                handleOpen(item.content, item.title, item.imageUrl[0], item?.link)
+                handleOpen(
+                  item.content,
+                  item.title,
+                  item.imageUrl[0],
+                  item?.link
+                )
               }
             >
               <div
@@ -154,19 +169,25 @@ export function Carousel(props) {
               ></div>
 
               <h3 className={style["card-head"]}>{item.title}</h3>
-              <div className={style["card-text"]} 
-              dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(truncatedContent(item.content, 250)),}} />
+              <div
+                className={style["card-text"]}
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(
+                    truncatedContent(item.content, 250)
+                  ),
+                }}
+              />
             </div>
           ))}
         </OwlCarousel>
         {toast.toastStatus && (
-        <SimpleToast
-          open={toast.toastStatus}
-          message={toast.toastMessage}
-          handleCloseToast={handleCloseToast}
-          severity={toast.toastType}
-        />
-      )}
+          <SimpleToast
+            open={toast.toastStatus}
+            message={toast.toastMessage}
+            handleCloseToast={handleCloseToast}
+            severity={toast.toastType}
+          />
+        )}
       </div>
     </React.Fragment>
   );

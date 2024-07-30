@@ -123,10 +123,12 @@ function Ques(props) {
   };
 
   const [getQuestions, setQuestions] = useState([]);
-
   const fetchQuestions = () => {
     getAllQuestion(setToast).then((data) => {
       setLoading(false);
+      data = data.map((item) => {
+        return { ...item, tags: item.tags[0] };
+      });
       setQuestions(data);
     });
   };
@@ -154,38 +156,48 @@ function Ques(props) {
         <Loader />
       ) : (
         <div className="question-cards">
-          {getQuestions.map((item, key) => (
-            <div className="question-card" key={key}>
-              <div className="card-up">
-                <p>{item.title}</p>
-                <p>{item.description}</p>
-                {item.tags.map((i, key) => (
-                  <span className="tag-space" key={key}>
-                    #{i}
-                  </span>
-                ))}
-              </div>
-              <div className="card-down">
-                <div>
-                  <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
+          {getQuestions?.map((item, key) => {
+            let tags = [...Object.values(item.tags)];
+            return (
+              <div className="question-card" key={key}>
+                <div className="card-up">
+                  <p>{item.title}</p>
+                  <p>{item.description}</p>
+                  <div className="tags-container">
+                    {tags.map((i, index) => {
+                      if (i == true)
+                        return (
+                          <span className="tag-space" key={index}>
+                            {i === true ? `#${Tags[index].value}` : ""}
+                          </span>
+                        );
+                    })}
+                  </div>
                 </div>
-                <div>
-                  <button
-                    className="vote-btn"
-                    onClick={() => handleUpvote(item._id)}
-                  >
-                    👍{item.upvotes}
-                  </button>
-                  <button
-                    className="vote-btn"
-                    onClick={() => handleDownvote(item._id)}
-                  >
-                    👎 {item.downvote}
-                  </button>
+                <div className="card-down">
+                  <div>
+                    <p>
+                      Created At {new Date(item.createdAt).toLocaleString()}
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      className="vote-btn"
+                      onClick={() => handleUpvote(item._id)}
+                    >
+                      👍{item.upvotes}
+                    </button>
+                    <button
+                      className="vote-btn"
+                      onClick={() => handleDownvote(item._id)}
+                    >
+                      👎 {item?.downvote}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 

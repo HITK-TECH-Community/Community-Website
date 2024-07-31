@@ -7,7 +7,7 @@ import { hideToast } from "../../../../../service/toastService";
 
 export function QandA({ setTab, setQId, tab }) {
   const [cards, setCards] = useState([]);
-  const [isLoaded,setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
   const [toast, setToast] = useState({
     toastStatus: false,
     toastType: "",
@@ -47,8 +47,10 @@ export function QandA({ setTab, setQId, tab }) {
               <h5>Status</h5> {`${d.isApproved ? "Approved" : "Not Approved"}`}
             </div>
             <div style={{ display: "flex" }}>
-              {d.tags.map((tag) => (
-                <p className={style["tags"]}>{tag}</p>
+              {d.tags.map((tag, idx) => (
+                <p key={idx} className={style["tags"]}>
+                  {tag.value || tag}
+                </p>
               ))}
             </div>
             <button

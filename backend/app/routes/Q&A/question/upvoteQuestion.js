@@ -16,7 +16,7 @@ module.exports = async (req, res, next) => {
     return next(error);
   }
 
-  res.cookie(getVoteCookieName('question', questionId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000 });
+  res.cookie(getVoteCookieName('question', questionId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000,sameSite:"none",secure:true });
 
   res.status(200).send({
     message: 'Question has been upvoted',

@@ -173,7 +173,7 @@ export function Carousel(props) {
                 className={style["card-text"]}
                 dangerouslySetInnerHTML={{
                   __html: DOMPurify.sanitize(
-                    truncatedContent(item.content, 250)
+                    truncatedContent(item.content, 170)
                   ),
                 }}
               />

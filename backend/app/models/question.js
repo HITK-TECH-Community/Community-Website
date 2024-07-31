@@ -25,6 +25,10 @@ const questionSchema = new Schema(
       type: Number,
       default: 0,
     },
+    downvotes:{
+      type:Number,
+      default:0
+    }
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );

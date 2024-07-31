@@ -191,7 +191,7 @@ function Ques(props) {
                       className="vote-btn"
                       onClick={() => handleDownvote(item._id)}
                     >
-                      👎 {item?.downvote}
+                      👎 {item?.downvotes}
                     </button>
                   </div>
                 </div>

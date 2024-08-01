@@ -59,8 +59,17 @@ function Ques(props) {
     );
 
     setCheckedState(updatedCheckedState);
-    formdata.tags.length = 0;
-    formdata.tags.push(checkedState);
+
+    const selectedTags = updatedCheckedState
+      .map((currentState, index) => {
+        if (currentState === true) {
+          return Tags[index].value;
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
+
+    setFormData({ ...formdata, tags: selectedTags });
   };
 
   const schema = {
@@ -130,9 +139,6 @@ function Ques(props) {
   const fetchQuestions = () => {
     getAllQuestion(setToast).then((data) => {
       setLoading(true);
-      data = data.map((item) => {
-        return { ...item, tags: item.tags[0] };
-      });
       setQuestions(filterApprovedQuestions(data));
     });
   };
@@ -154,61 +160,53 @@ function Ques(props) {
 
   return (
     <div
-      className="popup-creator"
-      style={{ background: dark ? "#171717" : "white" }}
-    >
-      {
-        !loading ?
-          <Loader /> :
-          getQuestions.length == 0 ?
-            <div>
-              <h1 className="py-5 text-center">No Questions Found !</h1>
-            </div>
-            :
-            <div className="question-cards">
-              {getQuestions?.map((item, key) => {
-                let tags = [...Object.values(item.tags)];
-                return (
-                  <div className="question-card" key={key}>
-                    <div className="card-up">
-                      <p>{item.title}</p>
-                      <p>{item.description}</p>
-                      <div className="tags-container">
-                        {tags.map((i, index) => {
-                          if (i == true)
-                            return (
-                              <span className="tag-space" key={index}>
-                                {i === true ? `#${Tags[index].value}` : ""}
-                              </span>
-                            );
-                        })}
-                      </div>
-                    </div>
-                    <div className="card-down">
-                      <div>
-                        <p>
-                          Created At {new Date(item.createdAt).toLocaleString()}
-                        </p>
-                      </div>
-                      <div>
-                        <button
-                          className="vote-btn"
-                          onClick={() => handleUpvote(item._id)}
-                        >
-                          👍{item.upvotes}
-                        </button>
-                        <button
-                          className="vote-btn"
-                          onClick={() => handleDownvote(item._id)}
-                        >
-                          👎 {item?.downvotes}
-                        </button>
-                      </div>
-                    </div>
+    className="popup-creator"
+    style={{ background: dark ? "#171717" : "white" }}
+  >
+    {
+      !loading ?
+        <Loader /> :
+        getQuestions.length == 0 ?
+          <div>
+            <h1 className="py-5 text-center">No Questions Found !</h1>
+          </div>
+          :
+          <div className="question-cards">
+            {getQuestions?.map((item, key) => (
+              <div className="question-card" key={key}>
+                <div className="card-up">
+                  <p>{item.title}</p>
+                  <p>{item.description}</p>
+                  <div className="tags-container">
+                    {item.tags.map((tag, index) => (
+                      <span className="tag-space" key={index}>
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
-                );
-              })}
-            </div>
+                </div>
+                <div className="card-down">
+                  <div>
+                    <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <button
+                      className="vote-btn"
+                      onClick={() => handleUpvote(item._id)}
+                    >
+                      👍{item.upvotes}
+                    </button>
+                    <button
+                      className="vote-btn"
+                      onClick={() => handleDownvote(item._id)}
+                    >
+                      👎 {item?.downvotes}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
       }
       {toast.toastStatus && (
         <SimpleToast

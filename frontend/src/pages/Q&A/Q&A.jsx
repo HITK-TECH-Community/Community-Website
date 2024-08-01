@@ -122,14 +122,18 @@ function Ques(props) {
     }
   };
 
+  const filterApprovedQuestions = (questions) => {
+    return questions.filter((question) => question.isApproved == true)
+  }
+
   const [getQuestions, setQuestions] = useState([]);
   const fetchQuestions = () => {
     getAllQuestion(setToast).then((data) => {
-      setLoading(false);
+      setLoading(true);
       data = data.map((item) => {
         return { ...item, tags: item.tags[0] };
       });
-      setQuestions(data);
+      setQuestions(filterApprovedQuestions(data));
     });
   };
 
@@ -144,6 +148,7 @@ function Ques(props) {
   };
 
   useEffect(() => {
+    setLoading(false)
     fetchQuestions();
   }, []);
 
@@ -152,55 +157,59 @@ function Ques(props) {
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
-      {getQuestions.length <= 0 ? (
-        <Loader />
-      ) : (
-        <div className="question-cards">
-          {getQuestions?.map((item, key) => {
-            let tags = [...Object.values(item.tags)];
-            return (
-              <div className="question-card" key={key}>
-                <div className="card-up">
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
-                  <div className="tags-container">
-                    {tags.map((i, index) => {
-                      if (i == true)
-                        return (
-                          <span className="tag-space" key={index}>
-                            {i === true ? `#${Tags[index].value}` : ""}
-                          </span>
-                        );
-                    })}
+      {
+        !loading ?
+          <Loader /> :
+          getQuestions.length == 0 ?
+            <div>
+              <h1 className="py-5 text-center">No Questions Found !</h1>
+            </div>
+            :
+            <div className="question-cards">
+              {getQuestions?.map((item, key) => {
+                let tags = [...Object.values(item.tags)];
+                return (
+                  <div className="question-card" key={key}>
+                    <div className="card-up">
+                      <p>{item.title}</p>
+                      <p>{item.description}</p>
+                      <div className="tags-container">
+                        {tags.map((i, index) => {
+                          if (i == true)
+                            return (
+                              <span className="tag-space" key={index}>
+                                {i === true ? `#${Tags[index].value}` : ""}
+                              </span>
+                            );
+                        })}
+                      </div>
+                    </div>
+                    <div className="card-down">
+                      <div>
+                        <p>
+                          Created At {new Date(item.createdAt).toLocaleString()}
+                        </p>
+                      </div>
+                      <div>
+                        <button
+                          className="vote-btn"
+                          onClick={() => handleUpvote(item._id)}
+                        >
+                          👍{item.upvotes}
+                        </button>
+                        <button
+                          className="vote-btn"
+                          onClick={() => handleDownvote(item._id)}
+                        >
+                          👎 {item?.downvotes}
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="card-down">
-                  <div>
-                    <p>
-                      Created At {new Date(item.createdAt).toLocaleString()}
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      className="vote-btn"
-                      onClick={() => handleUpvote(item._id)}
-                    >
-                      👍{item.upvotes}
-                    </button>
-                    <button
-                      className="vote-btn"
-                      onClick={() => handleDownvote(item._id)}
-                    >
-                      👎 {item?.downvotes}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
+                );
+              })}
+            </div>
+      }
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

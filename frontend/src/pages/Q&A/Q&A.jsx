@@ -62,8 +62,17 @@ function Ques(props) {
     );
 
     setCheckedState(updatedCheckedState);
-    formdata.tags.length = 0;
-    formdata.tags.push(checkedState);
+
+    const selectedTags = updatedCheckedState
+      .map((currentState, index) => {
+        if (currentState === true) {
+          return Tags[index].value;
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
+
+    setFormData({ ...formdata, tags: selectedTags });
   };
 
   const schema = {
@@ -125,14 +134,15 @@ function Ques(props) {
     }
   };
 
+  const filterApprovedQuestions = (questions) => {
+    return questions.filter((question) => question.isApproved == true)
+  }
+
   const [getQuestions, setQuestions] = useState([]);
   const fetchQuestions = () => {
     getAllQuestion(setToast).then((data) => {
-      setLoading(false);
-      data = data.map((item) => {
-        return { ...item, tags: item.tags[0] };
-      });
-      setQuestions(data);
+      setLoading(true);
+      setQuestions(filterApprovedQuestions(data));
     });
   };
 
@@ -147,6 +157,7 @@ function Ques(props) {
   };
 
   useEffect(() => {
+    setLoading(false)
     fetchQuestions();
   }, []);
 
@@ -168,21 +179,16 @@ function Ques(props) {
                   <p>{item.title}</p>
                   <p>{item.description}</p>
                   <div className="tags-container">
-                    {tags.map((i, index) => {
-                      if (i == true)
-                        return (
-                          <span className="tag-space" key={index}>
-                            {i === true ? `#${Tags[index].value}` : ""}
-                          </span>
-                        );
-                    })}
+                    {item.tags.map((tag, index) => (
+                      <span className="tag-space" key={index}>
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="card-down">
                   <div>
-                    <p>
-                      Created At {new Date(item.createdAt).toLocaleString()}
-                    </p>
+                    <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
                   </div>
                   <div>
                     <button
@@ -204,11 +210,9 @@ function Ques(props) {
                   setOpen(true)
                 }}>Answers</button>
               </div>
-            );
-          })}
+            ))}
         </div>
-      )}
-
+      }
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

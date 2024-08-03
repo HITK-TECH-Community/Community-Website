@@ -326,3 +326,26 @@ export const downvote = async (questionId, handleToast) => {
     throw new Error("Failed to downvote question");
   }
 };
+
+export const postAnswer = async (data, setToast) => {
+  try {
+    showToast(setToast,"Posting...","info")
+    const url = `${END_POINT}/answers/`;
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const res = await response.json();
+    if(response.status==200)
+      showToast(setToast, "Answer posted successfully","success");
+    else
+      showToast(setToast, "Failed to Post Answer", "error");
+    return res;
+  } catch (error) {
+    showToast(setToast, "Failed to Post Answer", "error");
+    throw new Error("Failed to post answer");
+  }
+}

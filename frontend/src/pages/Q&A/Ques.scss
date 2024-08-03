@@ -69,6 +69,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .card-up {
@@ -136,4 +137,17 @@
   height: 60px;
   justify-content: center;
   align-items: center;
+}
+.answer-btn{
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 5px 8px;
+  border: none;
+  outline: none !important;
+  background-color: white;
+  font-family: "Futura LT Book";
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
 }

@@ -1,0 +1,84 @@
+:root{
+    font-family: "Futura LT Book";
+}
+.modal-container {
+    width: 70%;
+    height: auto;
+    background-color: white;
+    outline: none !important;
+    padding: 20px 20px;
+    border-radius: 12px;
+    h2{
+        margin: 0;
+    }
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    outline: none !important;
+}
+.close-icon-container{
+    display: flex;
+    justify-content: end;
+}
+.close-icon{
+    font-size: 24px;
+    padding-right: 20px;
+    cursor: pointer;
+    color:#243e74;
+}
+.ques-title{
+    color:#243e74;
+}
+.ques-description{
+    font-size: 16px;
+    margin: 10px auto;
+}
+.tag-container{
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.answer-form{
+    width: 100%;
+    margin: 14px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+.answer-field{
+    width: 85%;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.post-answer-btn{
+    width: 15%;
+    padding: 10px 20px;
+    background-color: #243e74;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    outline: none;
+}
+@media screen and (max-width:768px) {
+    .modal-container{
+        width: 90%;
+    }
+    .close-icon{
+        padding-right: 5px;
+    }
+    .answer-field{
+        width: 70%;
+    }
+    .post-answer-btn{
+        width: 25%;
+    }
+}

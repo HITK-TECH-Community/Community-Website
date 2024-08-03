@@ -12,6 +12,7 @@ import {
   downvote,
 } from "../../service/Faq";
 import { showToast, hideToast } from "../../service/toastService";
+import { AnswerModel } from './AnswerModel/index'
 
 function Ques(props) {
   let dark = props.theme;
@@ -36,6 +37,8 @@ function Ques(props) {
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
   );
+  const [open, setOpen] = useState(false)
+  const [currentQuestion, setCurrentQuestion] = useState({})
   const [toast, setToast] = useState({
     toastStatus: false,
     toastType: "",
@@ -152,9 +155,10 @@ function Ques(props) {
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
+      <AnswerModel theme={dark} open={open} data={currentQuestion} handleClose={setOpen} />
       {getQuestions.length <= 0 ? (
         <Loader />
-      ) : (
+      ) :
         <div className="question-cards">
           {getQuestions?.map((item, key) => {
             let tags = [...Object.values(item.tags)];
@@ -195,11 +199,15 @@ function Ques(props) {
                     </button>
                   </div>
                 </div>
+                <button className="answer-btn" onClick={() => {
+                  setCurrentQuestion(item)
+                  setOpen(true)
+                }}>Answers</button>
               </div>
-            );
-          })}
+            )
+          })};
         </div>
-      )}
+      }
 
       {toast.toastStatus && (
         <SimpleToast

@@ -1,6 +1,7 @@
-:root{
+:root {
     font-family: "Futura LT Book";
 }
+
 .modal-container {
     width: 70%;
     height: auto;
@@ -8,9 +9,13 @@
     outline: none !important;
     padding: 20px 20px;
     border-radius: 12px;
-    h2{
+
+    h2 {
         margin: 0;
     }
+
+    max-height: 100%;
+    overflow-y: scroll;
 }
 
 .modal {
@@ -22,44 +27,52 @@
     overflow-y: scroll;
     outline: none !important;
 }
-.close-icon-container{
+
+.close-icon-container {
     display: flex;
     justify-content: end;
 }
-.close-icon{
+
+.close-icon {
     font-size: 24px;
     padding-right: 20px;
     cursor: pointer;
-    color:#243e74;
+    color: #243e74;
 }
-.ques-title{
-    color:#243e74;
+
+.ques-title {
+    color: #243e74;
 }
-.ques-description{
+
+.ques-description {
     font-size: 16px;
     margin: 10px auto;
 }
-.tag-container{
+
+.tag-container {
     width: 100%;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
 }
-.answer-form{
+
+.answer-form {
     width: 100%;
     margin: 14px auto;
     display: flex;
     justify-content: space-between;
     gap: 8px;
 }
-.answer-field{
+
+.answer-field {
     width: 85%;
     padding: 10px 20px;
     outline: none;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
-.post-answer-btn{
+
+.post-answer-btn {
     width: 15%;
     padding: 10px 20px;
     background-color: #243e74;
@@ -68,17 +81,52 @@
     border-radius: 8px;
     outline: none;
 }
+
+.answer-title {
+    color: #243e74;
+}
+
+.answer-container {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+    p {
+        margin-top: 8px;
+        font-size: 16px;
+    }
+}
+
+.answer-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h5 {
+        margin: 0;
+    }
+
+    p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+
 @media screen and (max-width:768px) {
-    .modal-container{
+    .modal-container {
         width: 90%;
     }
-    .close-icon{
+
+    .close-icon {
         padding-right: 5px;
     }
-    .answer-field{
+
+    .answer-field {
         width: 70%;
     }
-    .post-answer-btn{
+
+    .post-answer-btn {
         width: 25%;
     }
 }

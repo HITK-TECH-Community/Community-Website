@@ -63,9 +63,10 @@ export function Carousel(props) {
     const style = {
       height: "13em",
       backgroundSize: "cover",
+      backgroundPosition: "center",
       backgroundBlendMode: "screen",
-      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
-      backgroundImage: `linear-gradient(45deg,rgba(255, 0, 90, 1) 0%,rgba(10, 24, 61, 1) 90%),url(${item.link})`,
+      backgroundImage: `linear-gradient(45deg,rgba(255, 0, 90, 1) 0%,
+      rgba(10, 24, 61, 1) 90%), url(${item.imageUrl[0]})`,
     };
     return style;
   });
@@ -74,11 +75,11 @@ export function Carousel(props) {
     const style = {
       height: "13em",
       backgroundSize: "cover",
+      backgroundPosition: "center",
       backgroundBlendMode: "screen",
-      clipPath: "polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)",
       backgroundImage: `linear-gradient(45deg, 
         #4e4376 0%, 
-        #2b5876 90%),url(${item.link})`,
+        #2b5876 90%),url(${item.imageUrl[0]})`,
     };
     return style;
   });
@@ -149,13 +150,13 @@ export function Carousel(props) {
                 handleOpen(item.content, item.title, item.imageUrl[0], item?.link)
               }
             >
-              <div
+              <div 
                 style={dark ? cardImageArrayDark[i] : cardImageArrayLight[i]}
               ></div>
-
+              
               <h3 className={style["card-head"]}>{item.title}</h3>
               <div className={style["card-text"]} 
-              dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(truncatedContent(item.content, 250)),}} />
+              dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(truncatedContent(item.content, 170)),}} />
             </div>
           ))}
         </OwlCarousel>

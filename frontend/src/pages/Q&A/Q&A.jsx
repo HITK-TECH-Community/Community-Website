@@ -12,6 +12,7 @@ import {
   downvote,
 } from "../../service/Faq";
 import { showToast, hideToast } from "../../service/toastService";
+import { AnswerModel } from './AnswerModel/index'
 
 function Ques(props) {
   let dark = props.theme;
@@ -36,6 +37,8 @@ function Ques(props) {
   const [checkedState, setCheckedState] = useState(
     new Array(Tags.length).fill(false)
   );
+  const [open, setOpen] = useState(false)
+  const [currentQuestion, setCurrentQuestion] = useState({})
   const [toast, setToast] = useState({
     toastStatus: false,
     toastType: "",
@@ -59,8 +62,17 @@ function Ques(props) {
     );
 
     setCheckedState(updatedCheckedState);
-    formdata.tags.length = 0;
-    formdata.tags.push(checkedState);
+
+    const selectedTags = updatedCheckedState
+      .map((currentState, index) => {
+        if (currentState === true) {
+          return Tags[index].value;
+        }
+        return null;
+      })
+      .filter((item) => item !== null);
+
+    setFormData({ ...formdata, tags: selectedTags });
   };
 
   const schema = {
@@ -122,14 +134,15 @@ function Ques(props) {
     }
   };
 
+  const filterApprovedQuestions = (questions) => {
+    return questions.filter((question) => question.isApproved == true)
+  }
+
   const [getQuestions, setQuestions] = useState([]);
   const fetchQuestions = () => {
     getAllQuestion(setToast).then((data) => {
-      setLoading(false);
-      data = data.map((item) => {
-        return { ...item, tags: item.tags[0] };
-      });
-      setQuestions(data);
+      setLoading(true);
+      setQuestions(filterApprovedQuestions(data));
     });
   };
 
@@ -144,6 +157,7 @@ function Ques(props) {
   };
 
   useEffect(() => {
+    setLoading(false)
     fetchQuestions();
   }, []);
 
@@ -152,33 +166,32 @@ function Ques(props) {
       className="popup-creator"
       style={{ background: dark ? "#171717" : "white" }}
     >
-      {getQuestions.length <= 0 ? (
-        <Loader />
-      ) : (
-        <div className="question-cards">
-          {getQuestions?.map((item, key) => {
-            let tags = [...Object.values(item.tags)];
-            return (
+      <AnswerModel theme={dark} open={open} data={currentQuestion} handleClose={setOpen} />
+    {
+      !loading ?
+        <Loader /> :
+        getQuestions.length == 0 ?
+          <div>
+            <h1 className="py-5 text-center">No Questions Found !</h1>
+          </div>
+          :
+          <div className="question-cards">
+            {getQuestions?.map((item, key) => (
               <div className="question-card" key={key}>
                 <div className="card-up">
                   <p>{item.title}</p>
                   <p>{item.description}</p>
                   <div className="tags-container">
-                    {tags.map((i, index) => {
-                      if (i == true)
-                        return (
-                          <span className="tag-space" key={index}>
-                            {i === true ? `#${Tags[index].value}` : ""}
-                          </span>
-                        );
-                    })}
+                    {item.tags.map((tag, index) => (
+                      <span className="tag-space" key={index}>
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="card-down">
                   <div>
-                    <p>
-                      Created At {new Date(item.createdAt).toLocaleString()}
-                    </p>
+                    <p>Created At {new Date(item.createdAt).toLocaleString()}</p>
                   </div>
                   <div>
                     <button
@@ -195,12 +208,15 @@ function Ques(props) {
                     </button>
                   </div>
                 </div>
+                <button className="answer-btn" onClick={() => {
+                  setCurrentQuestion(item)
+                  setOpen(true)
+                }}>Answers</button>
               </div>
-            );
-          })}
+            )
+            )};
         </div>
-      )}
-
+      }
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

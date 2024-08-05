@@ -24,7 +24,6 @@ import { END_POINT } from "../../config/api";
 import { useDispatch } from "react-redux";
 import { ManageFaq } from "./Components/Faq/ManageFaq";
 import { QandA } from "./Components/Faq/Q&A/QandA";
-import { Manageqa } from "./Components/Faq/Q&A/ManageQ&A/ManageQ&A";
 import { Testimonial } from "./Components/Testimonial";
 import { AddTestimonial } from "./Components/Testimonial/AddTestimonial";
 import { ManageTestimonial } from "./Components/Testimonial/ManageTestimonial";
@@ -261,8 +260,6 @@ export const Admin = (props) => {
             <ManageBroadcasts />
           ) : tab === 18 ? (
             <QandA setQId={setQId} setTab={setTab} tab={tab} />
-          ) : tab === 19 ? (
-            <Manageqa qId={qId} setTab={setTab} />
           ) : tab === 20 ? (
             <Testimonial setTab={setTab} />
           ) : tab === 21 ? (

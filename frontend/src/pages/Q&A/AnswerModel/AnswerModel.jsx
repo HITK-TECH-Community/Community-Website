@@ -30,7 +30,7 @@ export function AnswerModel(props) {
     function timeStampFormatter(time) {
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         const messageTime = new Date(time)
-        return `${String(messageTime.getDate())} ${String(months[messageTime.getMonth()])} ${String(messageTime.getFullYear())} ${String(messageTime.getHours() % 12 || 12).padStart(2, '0')}:${String(messageTime.getMinutes()).padStart(2, '0')} ${messageTime.getHours() >= 12 ? 'pm' : 'am'}`
+        return `${String(messageTime.getDate())} ${String(months[messageTime.getMonth()])} ${String(messageTime.getFullYear())}`
     }
     const Tags = [
         { value: "ml" },
@@ -128,8 +128,8 @@ export function AnswerModel(props) {
                                                     <div className="answer-header">
                                                         <h5>{ans.created_by || "Anonymous"}</h5>
                                                         <p>{timeStampFormatter(ans.created_on)}</p>
+                                                        {(maxUpvote!=0&&maxUpvote==ans.upvotes)&&<p className="most-relevant-label" style={{ backgroundColor: dark && "#69a9dd",color:dark&&"#fff"}}>Most relevant</p>}
                                                     </div>
-                                                    {(maxUpvote!=0&&maxUpvote==ans.upvotes)&&<p className="most-relevant-label" style={{ backgroundColor: dark && "#69a9dd",color:dark&&"#fff"}}>Most relevant</p>}
                                                     <p>{ans.answer}</p>
                                                     <div>
                                                         <button

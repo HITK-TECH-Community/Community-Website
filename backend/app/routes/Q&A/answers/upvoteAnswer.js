@@ -2,6 +2,7 @@ const to = require('await-to-js').default;
 const answer = require('../../../models/answers');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
+const { getVoteCookieName } = require('../../../../helpers/middlewares/cookie');
 
 module.exports = async (req, res, next) => {
   const { answerId } = req.body;
@@ -15,6 +16,8 @@ module.exports = async (req, res, next) => {
 
     return next(error);
   }
+
+  res.cookie(getVoteCookieName('answer', answerId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000,sameSite:"none",secure:true });
 
   res.status(200).send({
     message: 'Answer has been upvoted',

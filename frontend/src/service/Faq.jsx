@@ -329,7 +329,7 @@ export const downvote = async (questionId, handleToast) => {
 
 export const postAnswer = async (data, setToast) => {
   try {
-    showToast(setToast,"Posting...","info")
+    showToast(setToast, "Posting...", "info")
     const url = `${END_POINT}/answers/`;
     const response = await fetch(url, {
       method: "POST",
@@ -339,13 +339,55 @@ export const postAnswer = async (data, setToast) => {
       body: JSON.stringify(data),
     });
     const res = await response.json();
-    if(response.status==200)
-      showToast(setToast, "Thanks for answering, it has been sent to admins for review and will appear here on approval","success");
+    if (response.status == 200)
+      showToast(setToast, "Thanks for answering, it has been sent to admins for review and will appear here on approval", "success");
     else
       showToast(setToast, "Failed to Post Answer", "error");
     return res;
   } catch (error) {
     showToast(setToast, "Failed to Post Answer", "error");
     throw new Error("Failed to post answer");
+  }
+}
+
+export const upvoteAnswer = async (answerId, handleToast) => {
+  try {
+    const response = await fetch(`${END_POINT}/answers/upvote`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ answerId }),
+    });
+    if (!response.ok) {
+      throw new Error("Failed to upvote question");
+    }
+    showToast(handleToast, "Upvote Successfully");
+    return response.json();
+  } catch (error) {
+    showToast(handleToast, "You have already voted", "error");
+    throw new Error("Failed to upvote answer");
+  }
+}
+
+export const downvoteAnswer = async(answerId, handleToast) => {
+  try {
+    const response = await fetch(`${END_POINT}/answers/downvote`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ answerId }),
+    });
+    if (!response.ok) {
+      throw new Error("Failed to downvote question");
+    }
+    showToast(handleToast, "Downvote Successfully");
+    return response.json();
+  } catch (error) {
+    showToast(handleToast, "You have already voted", "error");
+    throw new Error("Failed to downvote answer");
   }
 }

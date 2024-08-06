@@ -123,7 +123,14 @@
     margin: 5px;
     cursor: pointer;
   }
-  
+.most-relevant-label{
+    width: fit-content;
+    background-color: #243e74;
+    font-size: 12px !important;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 8px;
+}  
 
 @media screen and (max-width:768px) {
     .modal-container {

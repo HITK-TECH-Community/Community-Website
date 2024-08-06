@@ -9,6 +9,7 @@ export function AnswerModel(props) {
     const [answer, setAnswer] = useState("")
     const [author, setAuthor] = useState("")
     const [answers, setAnswers] = useState([])
+    const[maxUpvote,setMaxUpvote]=useState(0)
     const [toast, setToast] = useState({
         toastStatus: false,
         toastType: "",
@@ -19,6 +20,7 @@ export function AnswerModel(props) {
     }
     async function fetchAnswers() {
         const data = await getAnswers(props.data._id, setToast)
+        setMaxUpvote(data.map(function(o) { return o.upvotes; }).sort().reverse()[0])
         setAnswers(filterAnswers(data))
     }
     useEffect(() => {
@@ -127,6 +129,7 @@ export function AnswerModel(props) {
                                                         <h5>{ans.created_by || "Anonymous"}</h5>
                                                         <p>{timeStampFormatter(ans.created_on)}</p>
                                                     </div>
+                                                    {(maxUpvote!=0&&maxUpvote==ans.upvotes)&&<p className="most-relevant-label" style={{ backgroundColor: dark && "#69a9dd",color:dark&&"#fff"}}>Most relevant</p>}
                                                     <p>{ans.answer}</p>
                                                     <div>
                                                         <button

@@ -2,21 +2,16 @@ import React, { useEffect, useState } from "react";
 import style from "./qanda.module.scss";
 import {
   getAllQuestions,
-  deleteAnswer,
   deleteQuestion,
   updateQuestionStatus,
-  updateAnswerStatus,
-  getAnswers,
 } from "../../../../../service/Faq";
 import { SimpleToast } from "../../../../../components/util/Toast/Toast";
-import Loader from "../../../../../components/util/Loader";
-import { hideToast, showToast } from "../../../../../service/toastService";
+import { hideToast } from "../../../../../service/toastService";
 import Modal from "@material-ui/core/Modal";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import { AnswersModel } from "./AnswersModel/AnswersModel";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -40,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
 export function QandA() {
   const [cards, setCards] = useState([]);
-  const [expandedCards, setExpandedCards] = useState({});
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [open, setOpen] = useState(false)
+  const [currentQuesId, setCurrentQuesId] = useState("")
   const [toast, setToast] = useState({
     toastStatus: false,
     toastType: "",
@@ -52,10 +47,9 @@ export function QandA() {
   const classes = useStyles();
 
   const getQuestions = async () => {
-    setIsLoaded(true);
+    setToast({ toastStatus: true, toastMessage: "Loading...", toastType: "info" })
     const data = await getAllQuestions(setToast, toast);
     setCards(data);
-    setIsLoaded(false);
   };
 
   const handleOpenConfirmModal = (id) => {
@@ -82,58 +76,11 @@ export function QandA() {
     await updateQuestionStatus(id, status, setToast);
   };
 
-  const handleDeleteAnswer = async (answerId) => {
-    const questionId = Object.keys(expandedCards)[0];
-    const prevAnswers = expandedCards[questionId]?.answers || [];
-  
-    setExpandedCards((prev) => ({
-      ...prev,
-      [questionId]: {
-        ...prev[questionId],
-        answers: prevAnswers.filter(answer => answer._id !== answerId),
-      },
-    }));
-  
-    await deleteAnswer(answerId, setToast);
-  };
-  
-  const updateAnswer = async (id, status) => {
-    const questionId = Object.keys(expandedCards)[0];
-    const prevAnswers = expandedCards[questionId]?.answers || [];
-
-    setExpandedCards((prev) => ({
-      ...prev,
-      [questionId]: {
-        ...prev[questionId],
-        answers: prevAnswers.map(answer =>
-          answer._id === id ? { ...answer, isApproved: status } : answer
-        ),
-      },
-    }));
-  
-    await updateAnswerStatus(id, status, setToast);
-  };
-
   const handleToggleExpand = async (id) => {
-    if (expandedCards[id]) {
-      setExpandedCards((prev) => {
-        const newExpanded = { ...prev };
-        delete newExpanded[id];
-        return newExpanded;
-      });
-    } else {
-      setIsLoaded(true);
-      const aRes = await getAnswers(id, setToast);
-      setExpandedCards((prev) => ({
-        ...prev,
-        [id]: {
-          answers: aRes,
-        },
-      }));
-      setIsLoaded(false);
-    }
+    setCurrentQuesId(id)
+    setOpen(true)
   };
-  
+
 
   const handleCloseToast = (event, reason) => {
     if (reason === "clickaway") {
@@ -148,8 +95,8 @@ export function QandA() {
 
   return (
     <div>
+      <AnswersModel open={open} data={{ _id: currentQuesId }} handleClose={setOpen} />
       <h1 className={style["head"]}>Manage Q&A</h1>
-      <div className={style["data-loader"]}>{isLoaded && <Loader />}</div>
       <div className={style["manage-qas"]}>
         {cards?.map((qns, index) => (
           <div className={style["crd"]} key={index}>
@@ -172,55 +119,24 @@ export function QandA() {
               >
                 {qns?.isApproved ? "Reject" : "Approve"}
               </button>
-              <button
-                name={`${qns?._id}`}
-                onClick={(e) => handleOpenConfirmModal(e.currentTarget.name)}
-                className={style["button-delete"]}
-              >
-                Delete
-              </button>
+              {
+                qns.isApproved == true &&
+                <button
+                  name={`${qns?._id}`}
+                  onClick={(e) => handleOpenConfirmModal(e.currentTarget.name)}
+                  className={style["button-delete"]}
+                >
+                  Delete
+                </button>
+              }
             </div>
             <button
               id={`${qns._id}`}
               onClick={() => handleToggleExpand(qns._id)}
               className={style["manage"]}
             >
-              {expandedCards[qns._id] ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-              {expandedCards[qns._id] ? "Hide Answers" : "Show Answers"}
+              View Answers
             </button>
-            {expandedCards[qns._id] && (
-              <div className={style["answers"]}>
-                {expandedCards[qns._id].answers?.length === 0 ? (
-                  <span>No answers Found</span>
-                ) : (
-                  expandedCards[qns._id].answers.map((a) => (
-                    <div className={style["card-item"]} key={a?._id}>
-                      <div className={style["card-info"]}>
-                        <div className={style["answerBox"]}>
-                          <h3 className={style["card-answer"]}>{a.answer}</h3>
-                          <div className={style["button-group"]}>
-                            <button
-                              className={a?.isApproved ? style["button-delete"] : style["button-approve"]}
-                              id={`${a?._id}`}
-                              onClick={(e) => updateAnswer(e.currentTarget.id, !a?.isApproved)}
-                            >
-                              {a?.isApproved ? "Reject" : "Approve"}
-                            </button>
-                            <button
-                              name={`${a?._id}`}
-                              onClick={(e) => handleDeleteAnswer(e.currentTarget.name)}
-                              className={style["button-delete"]}
-                            >
-                              Delete
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            )}
           </div>
         ))}
       </div>

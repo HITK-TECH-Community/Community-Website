@@ -1,0 +1,104 @@
+:root {
+    font-family: "Futura LT Book";
+}
+
+.modal-container {
+    width: 70%;
+    height: auto;
+    background-color: white;
+    outline: none !important;
+    padding: 20px 20px;
+    border-radius: 12px;
+
+    h2 {
+        margin: 0;
+    }
+
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    outline: none !important;
+}
+
+.close-icon-container {
+    display: flex;
+    justify-content: end;
+}
+
+.close-icon {
+    font-size: 24px;
+    padding-right: 20px;
+    cursor: pointer;
+    color: #243e74;
+}
+
+.answer-container {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+    p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-approve {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(6, 158, 41);
+    margin: 5px;
+    color: #fff;
+    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 200ms;
+}
+
+.button-delete {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #fc0254;
+    margin: 5px;
+    color: #fff;
+    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: background-color 200ms;
+    text-align: center;
+}
+
+.button-delete:hover {
+    background-color: #fc3779;
+}
+
+@media screen and (max-width:768px) {
+    .modal-container {
+        width: 90%;
+    }
+
+    .close-icon {
+        padding-right: 5px;
+    }
+}

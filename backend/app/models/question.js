@@ -28,6 +28,11 @@ const questionSchema = new Schema(
     downvotes:{
       type:Number,
       default:0
+    },
+    created_by:{
+      type:String,
+      required:true,
+      trim:true
     }
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }

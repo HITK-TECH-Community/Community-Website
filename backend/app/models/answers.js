@@ -27,6 +27,10 @@ const answerSchema = new Schema(
       type: Number,
       default: 0,
     },
+    downvotes:{
+      type:Number,
+      default:0
+    },
     created_on: {
       type: Date,
       required: true,

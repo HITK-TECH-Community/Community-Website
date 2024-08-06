@@ -9,6 +9,7 @@ const downvoteAnswer = require('./downvoteAnswer');
 const updateAnswerStatus = require('./updateAnswerStatus');
 const { authMiddleware } = require('../../../../helpers/middlewares/auth');
 const deleteAnswer = require('./deleteAnswer');
+const { checkVoteCookie } = require('../../../../helpers/middlewares/cookie');
 
 // POST API FOR ANSWER
 router.post('/', validation(answerValidationSchema), postAnswer);
@@ -17,10 +18,10 @@ router.post('/', validation(answerValidationSchema), postAnswer);
 router.get('/:questionId', getAnswers);
 
 // INCREASE UPVOTE FOR ANSWERS
-router.patch('/upvote', upvoteAnswer);
+router.patch('/upvote', checkVoteCookie,upvoteAnswer);
 
 // DECREASE UPVOTE FOR ANSWERS
-router.patch('/downvote', downvoteAnswer);
+router.patch('/downvote', checkVoteCookie,downvoteAnswer);
 
 // Update Answer Status
 router.patch('/updateStatus', validation(updateAnswerStatusSchema), updateAnswerStatus);

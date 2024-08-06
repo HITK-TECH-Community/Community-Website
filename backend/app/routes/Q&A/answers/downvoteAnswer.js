@@ -2,29 +2,11 @@ const to = require('await-to-js').default;
 const answer = require('../../../models/answers');
 const { ErrorHandler } = require('../../../../helpers/error');
 const constants = require('../../../../constants');
+const { getVoteCookieName } = require('../../../../helpers/middlewares/cookie');
 
 module.exports = async (req, res, next) => {
   const { answerId } = req.body;
-  const [err] = await to(
-    answer.updateOne({ _id: answerId }, [
-      {
-        $set: {
-          upvotes: {
-            $cond: [
-              {
-                $gt: ['$upvotes', 0],
-              },
-              {
-                $subtract: ['$upvotes', 1],
-              },
-              0,
-            ],
-          },
-        },
-      },
-    ])
-  );
-
+  const [err] = await to(answer.updateOne({ _id: answerId }, { $inc: { downvotes: 1 } }));
   if (err) {
     const error = new ErrorHandler(constants.ERRORS.DATABASE, {
       statusCode: 500,
@@ -34,6 +16,8 @@ module.exports = async (req, res, next) => {
 
     return next(error);
   }
+
+  res.cookie(getVoteCookieName('answer', answerId), true, { maxAge: 20 * 365 * 24 * 60 * 60 * 1000,sameSite:"none",secure:true });
 
   res.status(200).send({
     message: 'Answer has been down voted',

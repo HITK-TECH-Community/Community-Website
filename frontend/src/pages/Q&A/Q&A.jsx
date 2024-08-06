@@ -50,6 +50,7 @@ function Ques(props) {
     title: "",
     description: "",
     tags: [],
+    created_by:""
   });
 
   const handleCloseToast = () => {
@@ -79,6 +80,7 @@ function Ques(props) {
     title: Joi.string().required(),
     body: Joi.string().required(),
     tags: Joi.required(),
+    created_by:Joi.string().required()
   };
 
   const validate = () => {
@@ -188,6 +190,9 @@ function Ques(props) {
                       </span>
                     ))}
                   </div>
+                  <div>
+                    <p className="question-author">- {item?.created_by||"Anonymous"}</p>
+                  </div>
                 </div>
                 <div className="card-down">
                   <div>
@@ -214,7 +219,7 @@ function Ques(props) {
                 }}>Answers</button>
               </div>
             )
-            )};
+            )}
         </div>
       }
       {toast.toastStatus && (
@@ -251,6 +256,34 @@ function Ques(props) {
             </h3>
             <div className={style["inside-resource"]}>
               <div className="question-inputs">
+              <div className={`form-group ${style["form-group"]}`}>
+                  <div
+                    className={
+                      dark
+                        ? `${style["resource-input"]} ${style["resource-input-dark"]}`
+                        : `${style["resource-input"]} ${style["resource-input-light"]}`
+                    }
+                  >
+                    <input
+                      autoFocus="on"
+                      placeholder="Your Name"
+                      type="text"
+                      name="created_by"
+                      value={formdata.created_by}
+                      onChange={handleChange}
+                    />
+                    <i className="fas fa-heading"></i>
+                    <div
+                      className={`${style["validation"]} validation d-sm-none d-md-block`}
+                    >
+                      {formerrors["title"] ? (
+                        <div>* {formerrors["title"]}</div>
+                      ) : (
+                        <div>&nbsp; &nbsp;</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
                 <div className={`form-group ${style["form-group"]}`}>
                   <div
                     className={

@@ -201,9 +201,12 @@
   --rmsc-border: #ccc !important;
   --rmsc-gray: #aaa !important;
   --rmsc-bg: #333333 !important;
-  --rmsc-p: 10px !important; /* Spacing */
-  --rmsc-radius: 4px !important; /* Radius */
-  --rmsc-h: 38px !important; /* Height */
+  --rmsc-p: 10px !important;
+  /* Spacing */
+  --rmsc-radius: 4px !important;
+  /* Radius */
+  --rmsc-h: 38px !important;
+  /* Height */
 }
 
 .dropdown {
@@ -211,9 +214,12 @@
   --rmsc-selected: #474343 !important;
   --rmsc-border: #838383 !important;
   --rmsc-bg: #e7e7e7 !important;
-  --rmsc-p: 10px !important; /* Spacing */
-  --rmsc-radius: 4px !important; /* Radius */
-  --rmsc-h: 38px !important; /* Height */
+  --rmsc-p: 10px !important;
+  /* Spacing */
+  --rmsc-radius: 4px !important;
+  /* Radius */
+  --rmsc-h: 38px !important;
+  /* Height */
 }
 
 .valid {
@@ -284,7 +290,7 @@
   background-color: transparent;
 }
 
-.checkbox-item input[type="checkbox"]:checked + label:after {
+.checkbox-item input[type="checkbox"]:checked+label:after {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -292,11 +298,9 @@
   left: 8px;
   content: " ";
   display: block;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 90, 1),
-    rgba(10, 24, 61, 1)
-  );
+  background-image: linear-gradient(to right,
+      rgba(255, 0, 90, 1),
+      rgba(10, 24, 61, 1));
   border: 4px solid whitesmoke;
 }
 
@@ -307,7 +311,7 @@
   margin-bottom: 10px;
 }
 
-.radio-item input[type="radio"]:checked + label:after {
+.radio-item input[type="radio"]:checked+label:after {
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -319,12 +323,10 @@
   border: 4px solid whitesmoke;
 }
 
-.radio-item-light input[type="radio"]:checked + label:after {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 90, 1),
-    rgba(10, 24, 61, 1)
-  );
+.radio-item-light input[type="radio"]:checked+label:after {
+  background-image: linear-gradient(to right,
+      rgba(255, 0, 90, 1),
+      rgba(10, 24, 61, 1));
 }
 
 .validation {
@@ -333,7 +335,7 @@
 }
 
 // for dark theme
-.radio-item-dark input[type="radio"]:checked + label:after {
+.radio-item-dark input[type="radio"]:checked+label:after {
   background-image: linear-gradient(to right, #2b5876, #4e4376);
 }
 
@@ -480,4 +482,31 @@ input[type="date"]:not(:valid):before {
   .check-buttons {
     text-align: left;
   }
+}
+
+.goodbye-card {
+  width: 60%;
+  height: auto;
+  background-color: #e7e7e7;
+  margin: 20% auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px #888888, -5px -5px 15px #ffffff;
+}
+
+.card-heading {
+  font-size: 1.6rem;
+  margin-bottom: 3px;
+  padding: 9px 0;
+  text-align: center;
+}
+
+.inside-card {
+  width: 75%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+}
+
+.inside-card p {
+  padding: 0px;
+  font-size: 1.3rem;
 }

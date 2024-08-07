@@ -12,6 +12,7 @@ const answer = require('./Q&A/answers');
 const teamMember = require('./teamMember');
 const resource = require('./resources');
 const testimonial = require('./testimonial');
+const subscriber=require('./subscribers');
 
 router.use('/admin', admin);
 router.use('/auth', auth);
@@ -26,4 +27,5 @@ router.use('/teamMember', teamMember);
 router.use('/', tinyURL);
 router.use('/resources', resource);
 router.use('/testimonials', testimonial);
+router.use('/subscriber',subscriber)
 module.exports = router;

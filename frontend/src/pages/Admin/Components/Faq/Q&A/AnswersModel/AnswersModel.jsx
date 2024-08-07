@@ -101,7 +101,7 @@ export function AnswersModel(props) {
                                                                         Reject
                                                                     </button>
                                                                     <button
-                                                                        className={"button-delete"}
+                                                                        className={"button-approve"}
                                                                         id={`${ans?._id}`}
                                                                         onClick={(e) => updateAnswer(e.currentTarget.id, true)}
                                                                     >

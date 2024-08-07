@@ -131,7 +131,7 @@ export function QandA() {
                       Reject
                     </button>
                     <button
-                      className={style["button-delete"]}
+                      className={style["button-approve"]}
                       id={`${qns?._id}`}
                       onClick={(e) => updateQuestion(e.currentTarget.id, true)}
                     >

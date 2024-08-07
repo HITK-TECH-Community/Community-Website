@@ -82,21 +82,34 @@ export function AnswersModel(props) {
                                                     </div>
                                                     <p>{ans.answer}</p>
                                                     <div className={"button-group"}>
-                                                        <button
-                                                            className={ans?.isApproved ? "button-delete" : "button-approve"}
-                                                            id={`${ans?._id}`}
-                                                            onClick={(e) => updateAnswer(e.currentTarget.id, !ans?.isApproved)}
-                                                        >
-                                                            {ans?.isApproved ? "Reject" : "Approve"}
-                                                        </button>
-                                                        {ans.isApproved == true &&
-                                                            <button
-                                                                name={`${ans?._id}`}
-                                                                onClick={(e) => handleDeleteAnswer(e.currentTarget.name)}
-                                                                className={"button-delete"}
-                                                            >
-                                                                Delete
-                                                            </button>}
+                                                        {
+                                                            ans.isApproved ?
+                                                                <button
+                                                                    name={`${ans?._id}`}
+                                                                    onClick={(e) => handleDeleteAnswer(e.currentTarget.name)}
+                                                                    className={"button-delete"}
+                                                                >
+                                                                    Delete
+                                                                </button>
+                                                                :
+                                                                <>
+                                                                    <button
+                                                                        className={"button-delete"}
+                                                                        id={`${ans?._id}`}
+                                                                        onClick={(e) => handleDeleteAnswer(e.currentTarget.id)}
+                                                                    >
+                                                                        Reject
+                                                                    </button>
+                                                                    <button
+                                                                        className={"button-delete"}
+                                                                        id={`${ans?._id}`}
+                                                                        onClick={(e) => updateAnswer(e.currentTarget.id, true)}
+                                                                    >
+                                                                        Approve
+                                                                    </button>
+                                                                </>
+
+                                                        }
                                                     </div>
                                                 </div>
                                             )

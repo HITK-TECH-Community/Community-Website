@@ -112,22 +112,32 @@ export function QandA() {
               </div>
             </div>
             <div className={style["button-group"]}>
-              <button
-                className={qns?.isApproved ? style["button-delete"] : style["button-approve"]}
-                id={`${qns?._id}`}
-                onClick={(e) => updateQuestion(e.currentTarget.id, !qns?.isApproved)}
-              >
-                {qns?.isApproved ? "Reject" : "Approve"}
-              </button>
               {
-                qns.isApproved == true &&
-                <button
-                  name={`${qns?._id}`}
-                  onClick={(e) => handleOpenConfirmModal(e.currentTarget.name)}
-                  className={style["button-delete"]}
-                >
-                  Delete
-                </button>
+                qns.isApproved ?
+                  <button
+                    name={`${qns?._id}`}
+                    onClick={(e) => handleOpenConfirmModal(e.currentTarget.name)}
+                    className={style["button-delete"]}
+                  >
+                    Delete
+                  </button>
+                  :
+                  <>
+                    <button
+                      className={style["button-delete"]}
+                      id={`${qns?._id}`}
+                      onClick={(e) => handleOpenConfirmModal(e.currentTarget.id)}
+                    >
+                      Reject
+                    </button>
+                    <button
+                      className={style["button-delete"]}
+                      id={`${qns?._id}`}
+                      onClick={(e) => updateQuestion(e.currentTarget.id, true)}
+                    >
+                      Approve
+                    </button>
+                  </>
               }
             </div>
             <button

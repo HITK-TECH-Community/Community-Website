@@ -106,3 +106,17 @@ module.exports.resetPasswordMailTemplate = (data) => {
   `;
   return emailContent;
 };
+
+module.exports.welcomeSubscriberMailTemplate=()=>{
+  const emailContent=`
+    <h2>Hello There, 👋</h2><br/>
+    Welcome to HITK Tech Community! 💐
+    <br/><br/>
+    Thanks for subscribing to our newsletter and joining our community.We're so happy to have you.🤩 
+    <br/><br/>
+    Bye for now!
+    <br/>
+    The HITK Tech Community Team
+  `
+  return emailContent
+}

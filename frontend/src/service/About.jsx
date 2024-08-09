@@ -1,4 +1,11 @@
-import { DELETE_FAIL, DELETE_SUCCESS, GET_FAIL, GET_SUCCESS, POST_FAIL, POST_SUCCUSS } from "../common/constants";
+import {
+  DELETE_FAIL,
+  DELETE_SUCCESS,
+  GET_FAIL,
+  GET_SUCCESS,
+  POST_FAIL,
+  POST_SUCCUSS,
+} from "../common/constants";
 import { END_POINT } from "../config/api";
 
 const getTeamMembers = async (setToast, toast) => {
@@ -12,22 +19,22 @@ const getTeamMembers = async (setToast, toast) => {
     });
     const data = await response.json();
     const _data = data.map((item) => {
-        return {
-          ...item,
-          teams: item.teams[0].split(","),
-        };
-      });
-      let _image = [];
-      await _data?.map((item) => {
-        let formattedPath = item.image?.replace(/\\/g, "/");
-        if (formattedPath?.startsWith("uploads/")) {
-          formattedPath = formattedPath.replace("uploads/", "");
-          if (formattedPath) {
-            formattedPath = `${END_POINT}/${formattedPath}`;
-          }
+      return {
+        ...item,
+        teams: item.teams,
+      };
+    });
+    let _image = [];
+    await _data?.map((item) => {
+      let formattedPath = item.image?.replace(/\\/g, "/");
+      if (formattedPath?.startsWith("uploads/")) {
+        formattedPath = formattedPath.replace("uploads/", "");
+        if (formattedPath) {
+          formattedPath = `${END_POINT}/${formattedPath}`;
         }
-        _image.push({ image: formattedPath, id: item._id });
-      });
+      }
+      _image.push({ image: formattedPath, id: item._id });
+    });
 
     setToast({
       ...toast,
@@ -47,12 +54,13 @@ const getTeamMembers = async (setToast, toast) => {
   }
 };
 
-const postTeamMember = async (data,setToast,toast) => {
+const postTeamMember = async (data, setToast, toast) => {
   try {
     const response = await fetch(`${END_POINT}/teamMember/addTeamMember`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify(data),
     });
@@ -105,4 +113,4 @@ const deleteTeamMember = async (id, setToast, toast) => {
   }
 };
 
-export { getTeamMembers, postTeamMember, deleteTeamMember};
+export { getTeamMembers, postTeamMember, deleteTeamMember };

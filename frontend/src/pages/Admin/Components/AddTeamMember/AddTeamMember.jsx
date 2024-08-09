@@ -106,7 +106,6 @@ export function AddTeamMember() {
     setFormErrors(errors);
   };
 
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const errors = validate();
@@ -135,15 +134,15 @@ export function AddTeamMember() {
       console.log(errors);
     } else {
       //Call the Server
-      const form = new FormData();
-      form.append("fullName", formdata?.fullName);
-      form.append("description", formdata?.description);
-      form.append("linkedinUrl", formdata?.linkedin);
-      form.append("githubUrl", formdata.github);
-      form.append("twitterUrl", formdata.twitter);
-      form.append("teams", selectTeam);
-      form.append("image", pic);
-      await postTeamMember(form,setToast,toast);
+      const form = new Object();
+      form["fullName"] = formdata?.fullName;
+      form["description"] = formdata?.description;
+      form["linkedinUrl"] = formdata?.linkedin;
+      form["githubUrl"] = formdata.github;
+      form["twitterUrl"] = formdata.twitter;
+      form["teams"] = selectTeam;
+      form["image"] = pic;
+      await postTeamMember(form, setToast, toast);
       const temp = {
         fullName: "",
         description: "",
@@ -328,7 +327,7 @@ export function AddTeamMember() {
           </div>
         </div>
       </div>
-      
+
       {toast.toastStatus && (
         <SimpleToast
           open={toast.toastStatus}

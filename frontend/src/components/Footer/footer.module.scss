@@ -207,7 +207,6 @@
   color: #dd2a7b;
 }
 
-
 .fa-envelope:hover,
 .fa-envelope-own:hover {
   color: #c71610;
@@ -703,7 +702,7 @@ a > span {
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 1124px) {
   .col .social {
     display: grid;
     grid-template-columns: 50% 50%;

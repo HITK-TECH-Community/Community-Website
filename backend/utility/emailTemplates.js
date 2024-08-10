@@ -120,3 +120,21 @@ module.exports.welcomeSubscriberMailTemplate=()=>{
   `
   return emailContent
 }
+
+module.exports.broadcastPublishMailTemplate=(data)=>{
+  const emailContent=`
+    <h2>Hello there</h2>
+    <h3>${data?.title}</h3>
+    ${data?.content}
+    <a href="${data?.link}" target="_blank">Click here</a>
+    <br/>
+    For more resource <a href="https://hitk-tech-community.netlify.app/broadcasts" target="_blank">See all broadcasts</a>
+    <br/>
+    <br/>
+    Best regards<br/>
+    <span style="font-weight:bold;">The HITK Tech Community</span>
+
+  `;
+
+  return emailContent;
+}

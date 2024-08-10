@@ -4,6 +4,8 @@ import { Button2 } from "../../../../../components/util/Button";
 import { END_POINT } from "./../../../../../config/api";
 import { SimpleToast } from "./../../../../../components/util/Toast/Toast";
 import style from "./reset-password.module.scss";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../../../store/actions/auth";
 
 export function ResetPassword() {
   const [oldPassword, setOldPassword] = useState("");
@@ -16,6 +18,7 @@ export function ResetPassword() {
   const oldPasswordInput = useRef("oldpassword");
   const newPasswordInput = useRef("newpassword");
   const confirmPasswordInput = useRef("confirmpassword");
+  const dispatch = useDispatch();
 
   const token = useSelector((state) => state.token);
 
@@ -63,6 +66,7 @@ export function ResetPassword() {
         if (response.status === 200) {
           setOpenSuccessToast(true);
           setPasswordChange(true);
+          logout(dispatch);
         }
         response
           .json()

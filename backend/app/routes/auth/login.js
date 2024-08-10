@@ -2,10 +2,10 @@ const argon2 = require('argon2');
 const Admin = require('../../models/Admin');
 const { ErrorHandler } = require('../../../helpers/error');
 const constants = require('../../../constants');
-const { generateJWT } = require('../../../helpers/middlewares/auth');
+const { generateJWT,generateJWTWithOutExpire } = require('../../../helpers/middlewares/auth');
 
 module.exports = async (req, res, next) => {
-  const { email, password } = req.body;
+  const { email, password,keepMeLoggedIn } = req.body;
   const userRecord = await Admin.findOne({ email });
   if (!userRecord) {
     const error = new ErrorHandler(constants.ERRORS.INPUT, {
@@ -34,7 +34,8 @@ module.exports = async (req, res, next) => {
     isSuperAdmin: userRecord.isSuperAdmin,
     phone: userRecord.contact,
   };
-  const JWT = generateJWT(JWTPayload);
+  const JWT = keepMeLoggedIn?generateJWTWithOutExpire(JWTPayload):generateJWT(JWTPayload);
+  const updateRefreshToken=await Admin.findByIdAndUpdate(userRecord.id,{refreshToken:JWT})
   const response = { ...JWTPayload, token: JWT };
   return res.status(200).send(response);
 };

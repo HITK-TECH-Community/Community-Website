@@ -37,6 +37,10 @@ const adminSchema = new Schema(
       type: String,
       trim: true,
     },
+    refreshToken:{
+      type:String,
+      trim:true
+    }
   },
   { timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' } }
 );

@@ -36,7 +36,7 @@ module.exports = async (req, res, next) => {
   const hashedPassword = await argon2.hash(newPassword);
 
   const [err] = await to(
-    Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { passwordHash: hashedPassword } })
+    Admin.findOneAndUpdate({ email: userRecord.email }, { $set: { passwordHash: hashedPassword,refreshToken:"" } })
   );
 
   if (err) {

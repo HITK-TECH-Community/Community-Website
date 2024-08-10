@@ -60,6 +60,7 @@ export function Card(props) {
       tags: project.tags,
       isApproved: true,
       title: project.title,
+      approving: true,
     };
     const res = await UpdateBoardCast(data, setToast, toast);
     if (res) {
@@ -167,9 +168,9 @@ export function Card(props) {
             >
               View Details
             </button>
-          
+
             <div className={style["button-group"]}>
-            {!props?.project?.isApproved && (
+              {!props?.project?.isApproved && (
                 <button
                   className={style["button-approve"]}
                   onClick={handleApprove}

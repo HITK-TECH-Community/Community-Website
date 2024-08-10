@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
   const hashedPassword = await argon2.hash(newPassword);
 
   // Finding and updating the admin password
-  const [err] = await to(Admin.findOneAndUpdate({ email }, { passwordHash: hashedPassword }, { new: true }));
+  const [err] = await to(Admin.findOneAndUpdate({ email }, { passwordHash: hashedPassword,refreshToken:"" }, { new: true }));
 
   // Throwing error in admin not found
   if (err) {

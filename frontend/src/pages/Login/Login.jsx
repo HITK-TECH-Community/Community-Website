@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button2 } from "../../components/util/Button/index";
+import { Checkbox } from "@material-ui/core";
 import style from "./login.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/actions";
@@ -17,10 +18,11 @@ export function Login(props) {
   const dispatch = useDispatch();
   const dark = props.theme;
   const [errorObj, setErrorObj] = useState({});
-  const [isLoading,setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const validationSchema = {
     email: Joi.string().email().required(),
     password: Joi.string().required(),
+    keepMeLoggedIn: Joi.boolean(),
   };
 
   const isFormValid = () => {
@@ -105,7 +107,7 @@ export function Login(props) {
             .json()
             .then((res) => {
               if (response.status === 200) {
-                const firstName = res.name.split(' ')[0];
+                const firstName = res.name.split(" ")[0];
                 localStorage.setItem("token", res.token);
                 localStorage.setItem("isSuperAdmin", res.isSuperAdmin);
                 localStorage.setItem("firstName", firstName);
@@ -120,12 +122,14 @@ export function Login(props) {
             })
             .catch((err) => {
               console.error(err);
-              setOpenError3Toast(true)})
+              setOpenError3Toast(true);
+            })
         )
         .catch((err) => {
           setOpenError1Toast(true);
           console.error("must be a backend problem🤔:", err);
-        }).finally(()=> {
+        })
+        .finally(() => {
           setIsLoading(false);
         });
     }
@@ -137,7 +141,9 @@ export function Login(props) {
 
   return (
     <>
-    <div className={style["data-loader"]}>{isLoading?<Loader/>:null}</div>
+      <div className={style["data-loader"]}>
+        {isLoading ? <Loader /> : null}
+      </div>
       <div
         className={
           dark
@@ -232,6 +238,26 @@ export function Login(props) {
                         <div>&nbsp; &nbsp;</div>
                       )}
                     </div>
+                  </div>
+                  <div className={style["checkbox-container"]}>
+                    <input
+                      type="checkbox"
+                      name="keepMeLoggedIn"
+                      id="checkBox"
+                      value={credential?.keepMeLoggedIn}
+                      onChange={(e) => {
+                        setCredential({
+                          ...credential,
+                          keepMeLoggedIn: e.target.checked,
+                        });
+                      }}
+                    />
+                    <label
+                      className={style["checkbox-label"]}
+                      htmlFor="checkBox"
+                    >
+                      Keep Me Logged In
+                    </label>
                   </div>
                   <div className={style["submit-btn"]}>
                     <Button2
